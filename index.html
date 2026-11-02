@@ -301,7 +301,7 @@
 
       <button onclick="switchTab('practice')" id="tab-btn-practice" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
         <i data-lucide="check-square" class="w-4 h-4 text-emerald-700"></i>
-        <span>Luyện Tập HSK 1-5</span>
+        <span>Luyện Tập 4 Kỹ Năng</span>
       </button>
 
       <button onclick="switchTab('flashcards')" id="tab-btn-flashcards" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
@@ -1253,56 +1253,85 @@
       </div>
     </section>
 
-    <!-- TAB: LUYỆN TẬP HSK 1 - HSK 5 -->
+    <!-- TAB: LUYỆN TẬP HSK 1 - HSK 6 (4 KỸ NĂNG NGHE - NÓI - ĐỌC - VIẾT) -->
     <section id="tab-practice" class="hidden space-y-6">
       <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-amber-50/80 via-[#FAF7F2] to-white border border-amber-300/40">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/70 text-amber-900 border border-amber-200 text-xs font-bold mb-3">
               <i data-lucide="award" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-              <span>Trung Tâm Luyện Đề & Phản Xạ Ngữ Pháp HSK 1 - HSK 5</span>
+              <span>Trung Tâm Luyện Đề & Phản Xạ 4 Kỹ Năng HSK 1 - HSK 6</span>
             </div>
             <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
-              Luyện Tập Thực Chiến Theo Cấp Độ
+              Luyện Tập Thực Chiến Toàn Diện 4 Kỹ Năng
             </h2>
-            <p class="text-sm text-stone-600 max-w-2xl">
-              Hệ thống bài tập phân tầng từ HSK 1 đến HSK 5 bao gồm: Chọn từ điền chỗ trống, Sắp xếp trật tự câu (连词成句), Phân biệt thành ngữ & cấu trúc phức, chấm điểm tức thì kèm giải thích cặn kẽ.
+            <p class="text-sm text-stone-600 max-w-2xl leading-relaxed">
+              Hệ thống bài tập phân tầng từ <strong>HSK 1 đến HSK 6</strong> tích hợp đầy đủ <strong>4 kỹ năng: Nghe - Nói - Đọc - Viết</strong>. Bao gồm: Nghe/Đọc đoạn văn điền từ, Tìm nội dung chính, Chọn từ đồng nghĩa / trái nghĩa, Ghép câu hoàn chỉnh (连词成句), Trả lời câu hỏi và Luyện phát âm nhận diện giọng nói AI.
             </p>
           </div>
 
           <!-- Score / Progress Widget -->
           <div class="flex items-center gap-4 bg-amber-50/70 px-4 py-3 rounded-2xl border border-amber-200/80 shadow-xs">
             <div>
-              <p class="text-xs text-stone-500 font-medium">Đúng:</p>
+              <p class="text-xs text-stone-500 font-medium">Đã làm đúng:</p>
               <p class="text-lg font-bold text-amber-950">
                 <span id="practiceCorrectCount">0</span> / <span id="practiceTotalCount">0</span>
               </p>
             </div>
-            <button onclick="resetPracticeLevel()" class="p-2 rounded-xl bg-white hover:bg-amber-100 text-amber-800 border border-amber-200 transition-all text-xs font-semibold flex items-center gap-1 shadow-xs" title="Làm lại cấp độ này">
+            <button onclick="resetPracticeLevel()" class="p-2 rounded-xl bg-white hover:bg-amber-100 text-amber-800 border border-amber-200 transition-all text-xs font-semibold flex items-center gap-1 shadow-xs" title="Làm lại bộ câu hỏi này">
               <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
               <span>Làm lại</span>
             </button>
           </div>
         </div>
 
-        <!-- HSK Level Filter Pills -->
-        <div class="flex items-center gap-2 overflow-x-auto pt-6 border-t border-amber-200/60 mt-6">
-          <span class="text-xs text-stone-500 font-bold whitespace-nowrap">Chọn cấp độ:</span>
-          <button onclick="filterPracticeLevel(1)" id="btn-practice-hsk-1" class="px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm transition-all whitespace-nowrap">
-            HSK 1 (Nền tảng)
-          </button>
-          <button onclick="filterPracticeLevel(2)" id="btn-practice-hsk-2" class="px-4 py-2 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-            HSK 2 (Sơ cấp)
-          </button>
-          <button onclick="filterPracticeLevel(3)" id="btn-practice-hsk-3" class="px-4 py-2 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-            HSK 3 (Trung cấp)
-          </button>
-          <button onclick="filterPracticeLevel(4)" id="btn-practice-hsk-4" class="px-4 py-2 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-            HSK 4 (Nâng cao)
-          </button>
-          <button onclick="filterPracticeLevel(5)" id="btn-practice-hsk-5" class="px-4 py-2 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-            HSK 5 (Thành thạo)
-          </button>
+        <!-- Filter Controls: Level & Skill -->
+        <div class="space-y-4 pt-6 border-t border-amber-200/60 mt-6">
+          <!-- HSK Level Filter Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1">
+            <span class="text-xs text-stone-500 font-bold whitespace-nowrap min-w-[70px]">Cấp độ:</span>
+            <button onclick="filterPracticeLevel('all')" id="btn-practice-hsk-all" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              🌟 Tất Cả Cấp Độ
+            </button>
+            <button onclick="filterPracticeLevel(1)" id="btn-practice-hsk-1" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm transition-all whitespace-nowrap">
+              HSK 1 (Nền tảng)
+            </button>
+            <button onclick="filterPracticeLevel(2)" id="btn-practice-hsk-2" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 2 (Sơ cấp)
+            </button>
+            <button onclick="filterPracticeLevel(3)" id="btn-practice-hsk-3" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 3 (Trung cấp)
+            </button>
+            <button onclick="filterPracticeLevel(4)" id="btn-practice-hsk-4" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 4 (Nâng cao)
+            </button>
+            <button onclick="filterPracticeLevel(5)" id="btn-practice-hsk-5" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 5 (Thành thạo)
+            </button>
+            <button onclick="filterPracticeLevel(6)" id="btn-practice-hsk-6" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 6 (Đỉnh cao C2)
+            </button>
+          </div>
+
+          <!-- Skill Filter Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1">
+            <span class="text-xs text-stone-500 font-bold whitespace-nowrap min-w-[70px]">Kỹ năng:</span>
+            <button onclick="filterPracticeSkill('all')" id="btn-practice-skill-all" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm transition-all whitespace-nowrap">
+              🌟 Tất Cả Kỹ Năng
+            </button>
+            <button onclick="filterPracticeSkill('listening')" id="btn-practice-skill-listening" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap flex items-center gap-1.5">
+              <span>🎧 Nghe (听力)</span>
+            </button>
+            <button onclick="filterPracticeSkill('speaking')" id="btn-practice-skill-speaking" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap flex items-center gap-1.5">
+              <span>🗣️ Nói (口语)</span>
+            </button>
+            <button onclick="filterPracticeSkill('reading')" id="btn-practice-skill-reading" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap flex items-center gap-1.5">
+              <span>📖 Đọc (阅读)</span>
+            </button>
+            <button onclick="filterPracticeSkill('writing')" id="btn-practice-skill-writing" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap flex items-center gap-1.5">
+              <span>✍️ Viết (写作)</span>
+            </button>
+          </div>
         </div>
       </div>
 
