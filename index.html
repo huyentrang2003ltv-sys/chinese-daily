@@ -266,17 +266,12 @@
 
       <button onclick="switchTab('grammar')" id="tab-btn-grammar" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
         <i data-lucide="compass" class="w-4 h-4 text-purple-800"></i>
-        <span>Ngữ Pháp Toàn Thư</span>
+        <span>Ngữ Pháp</span>
       </button>
 
       <button onclick="switchTab('culture')" id="tab-btn-culture" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
         <i data-lucide="landmark" class="w-4 h-4 text-red-700"></i>
         <span>Văn Hóa & Lịch Sử</span>
-      </button>
-
-      <button onclick="switchTab('mindmap')" id="tab-btn-mindmap" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
-        <i data-lucide="git-fork" class="w-4 h-4 text-amber-700"></i>
-        <span>Bản Đồ Ngữ Pháp</span>
       </button>
 
       <button onclick="switchTab('confusions')" id="tab-btn-confusions" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
@@ -774,34 +769,107 @@
       <div id="activeReadingContainer" class="space-y-6"></div>
     </section>
 
-    <!-- TAB: CẨM NANG NGỮ PHÁP TIẾNG TRUNG CHUYÊN SÂU -->
+    <!-- TAB: NGỮ PHÁP (KẾT HỢP BẢN ĐỒ CÂY TƯ DUY & CẨM NANG TOÀN THƯ) -->
     <section id="tab-grammar" class="hidden space-y-6">
       <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-purple-900/5 via-[#FAF7F2] to-amber-50/60 border border-amber-300/40 shadow-xs">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-purple-50 text-purple-900 border border-purple-200/80 text-xs font-bold mb-3">
               <i data-lucide="compass" class="w-3.5 h-3.5 text-purple-700"></i>
-              <span>Hệ Thống Hóa Toàn Diện Theo Cụm Chức Năng</span>
+              <span>Hệ Thống Ngữ Pháp Toàn Diện (Bản Đồ Cây Tư Duy & Cẩm Nang Toàn Thư)</span>
             </div>
             <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
-              Cẩm Nang Ngữ Pháp Tiếng Trung Chuyên Sâu (语法全书)
+              Ngữ Pháp Tiếng Trung (语法)
             </h2>
             <p class="text-sm text-stone-600 max-w-2xl leading-relaxed">
-              Hệ thống hóa toàn bộ các mẫu câu trọng điểm, câu so sánh, câu chữ 把 - 被, các loại bổ ngữ (kết quả, xu hướng, khả năng), trợ từ ngữ khí và các cặp liên từ cố định thường gặp trong đề thi HSK.
+              Hệ thống hóa toàn diện cấu trúc ngữ pháp tiếng Hán qua 2 chế độ học tập song hành: <strong>Bản Đồ Cây Tư Duy (Mindmap)</strong> trực quan đa tầng và <strong>Cẩm Nang Chuyên Đề Toàn Thư</strong> (công thức, câu chữ 把 - 被 - 比, 7 bổ ngữ và cặp liên từ HSK).
             </p>
           </div>
 
-          <div class="flex items-center gap-2 bg-amber-50/70 px-4 py-3 rounded-2xl border border-amber-200/80 shrink-0">
-            <div>
-              <p class="text-[11px] text-stone-500 font-semibold uppercase">Chủ điểm ngữ pháp:</p>
-              <p class="text-xl font-serif-luxury font-black text-[#8B1E1E]" id="grammarCountBadge">26 Chuyên Đề Cốt Lõi</p>
+          <!-- Dual Mode Switcher -->
+          <div class="flex items-center gap-1.5 p-1.5 rounded-2xl bg-amber-100/70 border border-amber-300/80 shadow-2xs shrink-0">
+            <button onclick="setGrammarViewMode('mindmap')" id="btn-grammar-view-mindmap" class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer">
+              <i data-lucide="git-fork" class="w-4 h-4"></i>
+              <span>🌳 Bản Đồ Cây Tư Duy</span>
+            </button>
+            <button onclick="setGrammarViewMode('compendium')" id="btn-grammar-view-compendium" class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer">
+              <i data-lucide="book-open" class="w-4 h-4"></i>
+              <span>📚 Cẩm Nang Chuyên Đề</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- SUB-VIEW 1: BẢN ĐỒ CÂY TƯ DUY (MINDMAP) -->
+      <div id="grammar-view-mindmap" class="space-y-6">
+        <div class="glass-card rounded-2xl p-6 bg-gradient-to-r from-amber-50/80 via-[#FAF7F2] to-amber-50/40 border border-amber-300/40 shadow-xs space-y-4">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-stone-700 flex items-center gap-1.5">
+                <i data-lucide="git-branch" class="w-4 h-4 text-[#8B1E1E]"></i>
+                Mô hình cây đại thụ 6 trụ cột (Bấm vào nút nhánh để bung/thu):
+              </span>
+            </div>
+            <div class="flex flex-wrap items-center gap-2 shrink-0">
+              <button onclick="expandAllMindmapNodes()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-md shadow-red-950/20 cursor-pointer">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span>Bung Tất Cả Nhánh</span>
+              </button>
+              <button onclick="collapseAllMindmapNodes()" class="px-4 py-2 rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer">
+                <i data-lucide="minimize-2" class="w-3.5 h-3.5"></i>
+                <span>Thu Về Gốc Cây</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Fast Branch Filters & Mindmap Search -->
+          <div class="pt-4 border-t border-amber-200/60 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar" id="mindmapBranchFilterBar">
+              <span class="text-xs font-bold text-stone-500 whitespace-nowrap">Chọn nhánh:</span>
+              <button onclick="filterMindmapBranch('all')" id="btn-branch-all" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap">
+                🌳 Toàn Cây (6 Nhánh)
+              </button>
+              <button onclick="filterMindmapBranch('word_order')" id="btn-branch-word_order" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+                1. Trật Tự Câu
+              </button>
+              <button onclick="filterMindmapBranch('complements')" id="btn-branch-complements" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+                2. 7 Bổ Ngữ
+              </button>
+              <button onclick="filterMindmapBranch('special_sentences')" id="btn-branch-special_sentences" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+                3. Câu 把/被/比
+              </button>
+              <button onclick="filterMindmapBranch('three_de')" id="btn-branch-three_de" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+                4. Trợ Từ 的-得-地
+              </button>
+              <button onclick="filterMindmapBranch('aspect_particles')" id="btn-branch-aspect_particles" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+                5. Trợ Từ 了-过-着
+              </button>
+              <button onclick="filterMindmapBranch('connectors')" id="btn-branch-connectors" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+                6. Mạch Liên Từ
+              </button>
+            </div>
+
+            <div class="relative w-full md:w-64">
+              <i data-lucide="search" class="absolute left-3.5 top-2.5 w-4 h-4 text-stone-400"></i>
+              <input 
+                id="mindmapSearchInput"
+                type="text" 
+                placeholder="Tìm nhánh ngữ pháp, công thức..." 
+                class="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-white border border-amber-200 text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] shadow-2xs"
+              />
             </div>
           </div>
         </div>
 
+        <!-- Mindmap Tree Container -->
+        <div id="mindmapNodesContainer" class="space-y-6"></div>
+      </div>
+
+      <!-- SUB-VIEW 2: CẨM NANG CHUYÊN ĐỀ (COMPENDIUM) -->
+      <div id="grammar-view-compendium" class="hidden space-y-6">
         <!-- Filter & Search Toolbar -->
-        <div class="pt-6 border-t border-amber-200/60 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="flex items-center gap-1.5 overflow-x-auto pb-1">
+        <div class="glass-card rounded-2xl p-5 bg-gradient-to-r from-purple-900/5 via-[#FAF7F2] to-amber-50/60 border border-amber-300/40 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
             <span class="text-xs font-bold text-stone-500 whitespace-nowrap">Chuyên mục:</span>
             <button onclick="filterGrammarCategory('all')" id="btn-grammar-all" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-2xs transition-all whitespace-nowrap">
               🌟 Tất Cả
@@ -823,20 +891,23 @@
             </button>
           </div>
 
-          <div class="relative w-full md:w-64">
-            <i data-lucide="search" class="absolute left-3.5 top-2.5 w-4 h-4 text-stone-400"></i>
-            <input 
-              id="grammarSearchInput"
-              type="text" 
-              placeholder="Tìm công thức, ví dụ..." 
-              class="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-white border border-amber-200 text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] shadow-2xs"
-            />
+          <div class="flex items-center gap-3">
+            <span class="text-xs font-bold text-[#8B1E1E] font-serif-luxury whitespace-nowrap" id="grammarCountBadge">26 Chuyên Đề</span>
+            <div class="relative w-full md:w-56">
+              <i data-lucide="search" class="absolute left-3 top-2.5 w-3.5 h-3.5 text-stone-400"></i>
+              <input 
+                id="grammarSearchInput"
+                type="text" 
+                placeholder="Tìm công thức, ví dụ..." 
+                class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl bg-white border border-amber-200 text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] shadow-2xs"
+              />
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- Grammar Compendium Cards Container -->
-      <div id="grammarGridContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        <!-- Grammar Compendium Cards Container -->
+        <div id="grammarGridContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </div>
     </section>
     <section id="tab-culture" class="hidden space-y-6">
       <!-- Section Banner Rực Rỡ -->
@@ -893,81 +964,6 @@
 
       <!-- Culture Cards Container -->
       <div id="cultureCardsContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-    </section>
-
-    <!-- TAB 2: BẢN ĐỒ CÂY TƯ DUY NGỮ PHÁP TIẾNG TRUNG -->
-    <section id="tab-mindmap" class="hidden space-y-6">
-      <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-amber-50/80 via-[#FAF7F2] to-amber-50/40 border border-amber-300/40 shadow-xs">
-        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-          <div class="max-w-3xl">
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100/80 text-amber-900 border border-amber-300 text-xs font-bold mb-3 shadow-xs">
-              <i data-lucide="git-branch" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-              <span>Mô Hình Đại Thụ Ngữ Pháp Cốt Lõi (语法思维大树)</span>
-            </div>
-            <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
-              Bản Đồ Cây Tư Duy Ngữ Pháp Tiếng Trung
-            </h2>
-            <p class="text-sm lg:text-base text-stone-600 leading-relaxed">
-              Mô hình cây đại thụ phân tầng độc bản: Khởi nguồn từ <strong>Gốc Rễ Tư Duy Cốt Lõi</strong>, vươn tỏa thành <strong>6 Trụ Cột Nhánh Lớn</strong>, và từ mỗi nhánh phân hóa thành <strong>26 Nhánh Con Chi Tiết</strong> kèm công thức chuẩn, mẹo nhớ và ví dụ thực chiến.
-            </p>
-          </div>
-
-          <!-- Tree View Controls -->
-          <div class="flex flex-wrap items-center gap-2 shrink-0">
-            <button onclick="expandAllMindmapNodes()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-md shadow-red-950/20">
-              <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
-              <span>Bung Tất Cả Nhánh</span>
-            </button>
-            <button onclick="collapseAllMindmapNodes()" class="px-4 py-2 rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs">
-              <i data-lucide="minimize-2" class="w-3.5 h-3.5"></i>
-              <span>Thu Về Gốc Cây</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Filter & Search Toolbar -->
-        <div class="pt-6 border-t border-amber-200/60 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <!-- Fast Branch Filters -->
-          <div class="flex items-center gap-1.5 overflow-x-auto pb-1" id="mindmapBranchFilterBar">
-            <span class="text-xs font-bold text-stone-500 whitespace-nowrap">Chọn nhánh:</span>
-            <button onclick="filterMindmapBranch('all')" id="btn-branch-all" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap">
-              🌳 Toàn Cây (6 Nhánh)
-            </button>
-            <button onclick="filterMindmapBranch('word_order')" id="btn-branch-word_order" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              1. Trật Tự Câu
-            </button>
-            <button onclick="filterMindmapBranch('complements')" id="btn-branch-complements" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              2. 7 Bổ Ngữ
-            </button>
-            <button onclick="filterMindmapBranch('special_sentences')" id="btn-branch-special_sentences" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              3. Câu 把/被/比
-            </button>
-            <button onclick="filterMindmapBranch('three_de')" id="btn-branch-three_de" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              4. Trợ Từ 的-得-地
-            </button>
-            <button onclick="filterMindmapBranch('aspect_particles')" id="btn-branch-aspect_particles" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              5. Trợ Từ 了-过-着
-            </button>
-            <button onclick="filterMindmapBranch('connectors')" id="btn-branch-connectors" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              6. Mạch Liên Từ
-            </button>
-          </div>
-
-          <!-- Mindmap Search -->
-          <div class="relative w-full md:w-64">
-            <i data-lucide="search" class="absolute left-3.5 top-2.5 w-4 h-4 text-stone-400"></i>
-            <input 
-              id="mindmapSearchInput"
-              type="text" 
-              placeholder="Tìm nhánh ngữ pháp, công thức..." 
-              class="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-white border border-amber-200 text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] shadow-2xs"
-            />
-          </div>
-        </div>
-      </div>
-
-      <!-- Mindmap Tree Container -->
-      <div id="mindmapNodesContainer" class="space-y-6"></div>
     </section>
 
     <!-- TAB 3: PHÂN BIỆT TỪ DỄ LẪN -->
@@ -1604,6 +1600,134 @@
         <button onclick="closeExamResultModal()" class="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-md shadow-amber-600/20 transition-all">
           Xem Lại Đề Thi
         </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHI TIẾT BÀI HỌC GIÁO TRÌNH HÁN NGỮ (Lesson Detail Modal) -->
+  <div id="lessonDetailModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-slate-950/70 backdrop-blur-md">
+    <div class="bg-[#FFFDF9] w-full max-w-5xl rounded-3xl border border-amber-300/80 shadow-2xl relative flex flex-col max-h-[92vh] overflow-hidden text-stone-800">
+      <!-- Modal Header -->
+      <div class="p-5 md:p-6 bg-gradient-to-r from-red-900/10 via-[#FAF7F2] to-amber-50/80 border-b border-amber-200/80 relative shrink-0">
+        <button onclick="closeLessonDetailModal()" class="absolute top-5 right-5 text-stone-400 hover:text-[#8B1E1E] p-2 rounded-xl hover:bg-amber-100/60 transition-colors cursor-pointer" title="Đóng cửa sổ">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 pr-10">
+          <div>
+            <div class="flex items-center gap-2 mb-1.5 flex-wrap">
+              <span id="lessonModalVolumeBadge" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-red-100 text-[#8B1E1E] border border-red-200">
+                Hán Ngữ 1 • Bài 1
+              </span>
+              <span id="lessonModalCategoryBadge" class="text-xs font-bold text-amber-900 bg-amber-100/70 px-2.5 py-0.5 rounded-md border border-amber-200">
+                Ngữ âm & Chào hỏi
+              </span>
+            </div>
+            <div class="flex items-baseline gap-3 flex-wrap">
+              <h2 id="lessonModalTitleHanzi" class="text-2xl md:text-3xl font-hanzi font-black text-stone-900 tracking-wide">你好</h2>
+              <span id="lessonModalTitlePinyin" class="text-base md:text-lg font-bold text-[#8B1E1E]">Nǐ hǎo</span>
+              <span id="lessonModalTitleMeaning" class="text-sm font-medium text-stone-600">"Xin chào"</span>
+            </div>
+          </div>
+          <div class="flex items-center gap-2">
+            <button id="lessonModalHeaderAudioBtn" onclick="playLessonTitleAudio()" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white text-xs font-bold shadow-sm hover:opacity-95 transition-all flex items-center gap-1.5 cursor-pointer">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
+              <span>Phát Âm Tiêu Đề</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sub-Tabs Switcher -->
+        <div class="flex items-center gap-2 mt-4 pt-3 border-t border-amber-200/60 overflow-x-auto no-scrollbar">
+          <button onclick="switchLessonSubTab('dialogues')" id="btn-lesson-subtab-dialogues" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs whitespace-nowrap cursor-pointer">
+            📖 1. Bài Khóa & Audio
+          </button>
+          <button onclick="switchLessonSubTab('vocabulary')" id="btn-lesson-subtab-vocabulary" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
+            📝 2. Bảng Từ Vựng (<span id="lessonModalVocabCount">0</span>)
+          </button>
+          <button onclick="switchLessonSubTab('grammar')" id="btn-lesson-subtab-grammar" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
+            📐 3. Ngữ Pháp & Công Thức
+          </button>
+          <button onclick="switchLessonSubTab('quiz')" id="btn-lesson-subtab-quiz" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
+            ✍️ 4. Trắc Nghiệm Củng Cố
+          </button>
+          <button onclick="switchLessonSubTab('culture')" id="btn-lesson-subtab-culture" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
+            🏮 5. Ghi Chú Văn Hóa & Mẹo Học
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal Body (Scrollable Content) -->
+      <div class="p-5 md:p-8 overflow-y-auto space-y-6 flex-1 bg-[#FAF7F2]/40" id="lessonModalContentArea">
+        <!-- Sub-panel 1: Dialogues -->
+        <div id="lessonSubPanel-dialogues" class="space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
+              <i data-lucide="message-square" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>Bài Khóa Đối Thoại Chuẩn Giọng Bắc Kinh</span>
+            </h4>
+            <button onclick="playAllLessonDialogues()" class="px-3 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200/80 text-amber-900 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
+              <i data-lucide="play" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+              <span>Nghe Toàn Bộ Bài Khóa</span>
+            </button>
+          </div>
+          <div id="lessonDialoguesContainer" class="space-y-3"></div>
+        </div>
+
+        <!-- Sub-panel 2: Vocabulary -->
+        <div id="lessonSubPanel-vocabulary" class="hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
+              <i data-lucide="book-open" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>Bảng Từ Vựng & Âm Hán-Việt Toàn Diện</span>
+            </h4>
+            <span class="text-xs text-stone-500">Bấm loa để nghe phát âm, bấm dấu sao để lưu vào Sổ tay</span>
+          </div>
+          <div id="lessonVocabularyContainer" class="grid grid-cols-1 md:grid-cols-2 gap-3.5"></div>
+        </div>
+
+        <!-- Sub-panel 3: Grammar Points -->
+        <div id="lessonSubPanel-grammar" class="hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
+              <i data-lucide="compass" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>Ngữ Pháp Cốt Lõi, Công Thức & Đối Chiếu Việt - Trung</span>
+            </h4>
+          </div>
+          <div id="lessonGrammarContainer" class="space-y-4"></div>
+        </div>
+
+        <!-- Sub-panel 4: Quiz -->
+        <div id="lessonSubPanel-quiz" class="hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
+              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>Luyện Tập Trắc Nghiệm Tức Thì</span>
+            </h4>
+            <span id="lessonQuizScoreTracker" class="text-xs font-bold text-[#8B1E1E] bg-red-50 border border-red-200 px-3 py-1 rounded-full">
+              Chưa trả lời
+            </span>
+          </div>
+          <div id="lessonQuizContainer" class="space-y-4"></div>
+        </div>
+
+        <!-- Sub-panel 5: Culture & Tips -->
+        <div id="lessonSubPanel-culture" class="hidden space-y-4">
+          <div id="lessonCultureContainer" class="space-y-4"></div>
+        </div>
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="p-4 px-6 bg-white border-t border-amber-200/80 flex items-center justify-between shrink-0 text-xs">
+        <span class="text-stone-500 flex items-center gap-1.5">
+          <i data-lucide="info" class="w-4 h-4 text-amber-600"></i>
+          <span>Trích xuất chuẩn mực theo bộ Giáo Trình Hán Ngữ 6 Quyển - ĐH Ngôn Ngữ Bắc Kinh (BLCU)</span>
+        </span>
+        <div class="flex items-center gap-2">
+          <button onclick="closeLessonDetailModal()" class="px-5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold transition-all cursor-pointer">
+            Đóng
+          </button>
+        </div>
       </div>
     </div>
   </div>

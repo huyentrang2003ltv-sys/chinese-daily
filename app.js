@@ -40,6 +40,7 @@ let activeReadingCategory = 'all';
 let readingSearchQuery = '';
 let readingQuizAnswers = {};
 let activeGrammarCategory = 'all';
+let activeGrammarViewMode = 'mindmap';
 let grammarSearchQuery = '';
 let mindmapActiveBranch = 'all';
 let mindmapSearchQuery = '';
@@ -497,14 +498,13 @@ function ensureTabRendered(tabId) {
     case 'grammar':
       renderGrammarCompendium();
       setupGrammarSearch();
+      renderMindmap();
+      setupMindmapControls();
+      setGrammarViewMode(activeGrammarViewMode || 'mindmap');
       break;
     case 'culture':
       renderCultureCards();
       setupCultureSearch();
-      break;
-    case 'mindmap':
-      renderMindmap();
-      setupMindmapControls();
       break;
     case 'confusions':
       renderConfusions();
@@ -602,10 +602,14 @@ async function initApp() {
 
 // Tab Switching
 function switchTab(tabId) {
+  if (tabId === 'mindmap') {
+    tabId = 'grammar';
+    setGrammarViewMode('mindmap');
+  }
   activeTab = tabId;
   const tabs = [
     'etymology', 'jiaocheng', 'radicals', 'writing', 'chengyu', 'readings', 'grammar',
-    'culture', 'mindmap', 'confusions', 'translation', 'aichat', 'mockexam',
+    'culture', 'confusions', 'translation', 'aichat', 'mockexam',
     'pathway', 'practice', 'flashcards', 'dictionary'
   ];
   
@@ -4043,6 +4047,38 @@ function playAllReadingParagraphs() {
 // =========================================================================
 // 5. CẨM NANG NGỮ PHÁP TIẾNG TRUNG CHUYÊN SÂU (GRAMMAR)
 // =========================================================================
+function setGrammarViewMode(mode) {
+  activeGrammarViewMode = mode;
+  const mindmapView = document.getElementById('grammar-view-mindmap');
+  const compendiumView = document.getElementById('grammar-view-compendium');
+  const btnMindmap = document.getElementById('btn-grammar-view-mindmap');
+  const btnCompendium = document.getElementById('btn-grammar-view-compendium');
+
+  if (mode === 'mindmap') {
+    if (mindmapView) mindmapView.classList.remove('hidden');
+    if (compendiumView) compendiumView.classList.add('hidden');
+    if (btnMindmap) {
+      btnMindmap.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer';
+    }
+    if (btnCompendium) {
+      btnCompendium.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer';
+    }
+    renderMindmap();
+  } else {
+    if (mindmapView) mindmapView.classList.add('hidden');
+    if (compendiumView) compendiumView.classList.remove('hidden');
+    if (btnCompendium) {
+      btnCompendium.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer';
+    }
+    if (btnMindmap) {
+      btnMindmap.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer';
+    }
+    renderGrammarCompendium();
+  }
+  const tabGrammar = document.getElementById('tab-grammar');
+  if (tabGrammar) refreshIcons(tabGrammar);
+}
+
 function filterGrammarCategory(cat) {
   activeGrammarCategory = cat;
   const categories = ['all', 'comparison', 'ba_bei', 'complements', 'particles_adverbs', 'fixed_connectors'];
@@ -4201,6 +4237,10 @@ function setupJiaochengSearch() {
   }, 120));
 }
 
+let currentActiveLesson = null;
+let currentLessonSubTab = 'dialogues';
+let lessonQuizResponses = {};
+
 function renderJiaocheng() {
   const container = document.getElementById('jiaochengGridContainer');
   if (!container) return;
@@ -4224,8 +4264,10 @@ function renderJiaocheng() {
 
   if (jiaochengSearchQuery) {
     lessons = lessons.filter(l => {
-      const dialogueText = l.sampleDialogue ? `${l.sampleDialogue.hanzi} ${l.sampleDialogue.vietnamese}` : '';
-      const target = `${l.titleHanzi} ${l.titlePinyin} ${l.titleMeaning} ${l.category} ${l.grammarPoints} ${dialogueText} ${l.keyWords}`.toLowerCase();
+      const dialoguesText = (l.dialogues || []).map(d => `${d.hanzi} ${d.pinyin} ${d.vi}`).join(' ');
+      const vocabText = (l.vocabulary || []).map(v => `${v.hanzi} ${v.pinyin} ${v.meaning} ${v.sinoViet || ''}`).join(' ');
+      const grammarText = (l.grammarPoints || []).map(g => `${g.title} ${g.formula} ${g.explanation}`).join(' ');
+      const target = `${l.titleHanzi} ${l.titlePinyin} ${l.titleMeaning} ${l.category} ${l.introduction || ''} ${grammarText} ${dialoguesText} ${vocabText}`.toLowerCase();
       return target.includes(jiaochengSearchQuery);
     });
   }
@@ -4240,7 +4282,7 @@ function renderJiaocheng() {
       <div class="col-span-full py-12 text-center text-stone-400">
         <i data-lucide="book-open" class="w-12 h-12 mx-auto mb-3 opacity-40 text-stone-400"></i>
         <p class="font-bold text-stone-600">Không tìm thấy bài học nào phù hợp với từ khóa</p>
-        <p class="text-xs text-stone-400 mt-1">Hãy thử tìm theo chữ Hán, Pinyin hoặc tên ngữ pháp (VD: 把, 比, 旗袍, sườn xám)...</p>
+        <p class="text-xs text-stone-400 mt-1">Hãy thử tìm theo chữ Hán, Pinyin, tên ngữ pháp hoặc từ vựng (VD: 把, 比, 换钱, 苹果)...</p>
       </div>
     `;
     refreshIcons(container);
@@ -4258,8 +4300,11 @@ function renderJiaocheng() {
 
   container.innerHTML = lessons.map(lesson => {
     const vMeta = volumeColorMap[lesson.volume] || { bg: 'bg-stone-100 text-stone-800 border-stone-200', tag: `Quyển ${lesson.volume}` };
-    const safeDialogue = lesson.sampleDialogue ? lesson.sampleDialogue.hanzi.replace(/'/g, "\\'") : '';
-    const safeTitle = lesson.titleHanzi.replace(/'/g, "\\'");
+    const safeTitle = (lesson.titleHanzi || '').replace(/'/g, "\\'");
+    const firstDialogue = lesson.dialogues && lesson.dialogues[0] ? lesson.dialogues[0] : null;
+    const safeDialogue = firstDialogue ? firstDialogue.hanzi.replace(/'/g, "\\'") : '';
+    const grammarSummary = (lesson.grammarPoints || []).map(g => g.title).join(' • ') || 'Trọng điểm cấu trúc ngữ pháp';
+    const vocabPreview = (lesson.vocabulary || []).slice(0, 5);
 
     return `
       <div class="glass-card rounded-2xl p-5 border border-amber-200/90 hover:border-[#8B1E1E]/50 transition-all space-y-3.5 bg-[#FFFDF9]/95 shadow-xs hover:shadow-md flex flex-col justify-between">
@@ -4297,45 +4342,502 @@ function renderJiaocheng() {
               <i data-lucide="compass" class="w-3 h-3 text-[#8B1E1E]"></i>
               Ngữ pháp cốt lõi:
             </span>
-            <p class="text-stone-700 leading-relaxed font-sans">${lesson.grammarPoints}</p>
+            <p class="text-stone-700 leading-relaxed font-sans line-clamp-2">${grammarSummary}</p>
           </div>
 
           <!-- Sample Dialogue -->
-          ${lesson.sampleDialogue ? `
+          ${firstDialogue ? `
             <div class="p-3 rounded-xl bg-stone-50/80 border border-stone-200/80 text-xs space-y-1.5">
               <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Mẫu câu thực tế:</span>
-                <button onclick="playChineseTTS('${safeDialogue}')" class="text-stone-400 hover:text-[#8B1E1E] transition-colors" title="Nghe mẫu câu này">
+                <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Hội thoại thực tế (${firstDialogue.speaker}):</span>
+                <button onclick="playChineseTTS('${safeDialogue}')" class="text-stone-400 hover:text-[#8B1E1E] transition-colors" title="Nghe câu này">
                   <i data-lucide="play-circle" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
                 </button>
               </div>
-              <p class="font-hanzi font-bold text-stone-900 text-[13px]">${lesson.sampleDialogue.hanzi}</p>
-              <p class="text-stone-600 italic text-[11px]">${lesson.sampleDialogue.vietnamese}</p>
+              <p class="font-hanzi font-bold text-stone-900 text-[13px]">${firstDialogue.hanzi}</p>
+              <p class="text-stone-600 italic text-[11px]">${firstDialogue.vi}</p>
             </div>
           ` : ''}
 
-          <!-- Vocabulary -->
+          <!-- Vocabulary Preview -->
           <div class="space-y-1 pt-1">
-            <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block">Từ mới then chốt:</span>
-            <p class="text-xs text-stone-700 leading-relaxed font-sans bg-amber-50/30 p-2 rounded-lg border border-amber-100/60">${lesson.keyWords}</p>
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block">Từ mới then chốt:</span>
+              <span class="text-[10px] text-stone-400">${lesson.vocabulary ? lesson.vocabulary.length : 0} từ</span>
+            </div>
+            <div class="flex flex-wrap gap-1.5">
+              ${vocabPreview.map(v => `
+                <span class="px-2 py-0.5 rounded-lg bg-amber-50 text-[11px] font-medium text-stone-700 border border-amber-200/60 flex items-center gap-1">
+                  <span class="font-hanzi font-bold text-stone-900">${v.hanzi}</span>
+                  <span class="text-[10px] text-stone-500">${v.pinyin}</span>
+                </span>
+              `).join('')}
+              ${lesson.vocabulary && lesson.vocabulary.length > 5 ? `<span class="px-1.5 py-0.5 text-[10px] text-stone-400 font-bold self-center">+${lesson.vocabulary.length - 5}</span>` : ''}
+            </div>
           </div>
         </div>
 
-        <!-- Footer Action -->
-        <div class="pt-2 border-t border-amber-100 flex items-center justify-between text-xs">
+        <!-- Master Action: Open Detailed Lesson Modal -->
+        <div class="pt-3 border-t border-amber-100 space-y-2">
           <button 
-            onclick="quickSearchFromLesson('${lesson.titleHanzi}')" 
-            class="text-[#8B1E1E] hover:underline font-semibold flex items-center gap-1 text-[11px] cursor-pointer">
-            <i data-lucide="search" class="w-3 h-3"></i>
-            Tra cứu trong Từ Điển
+            onclick="openLessonDetailModal('${lesson.id}')"
+            class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white text-xs font-bold shadow-xs hover:opacity-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <i data-lucide="book-open" class="w-4 h-4"></i>
+            <span>Xem Chi Tiết Toàn Bộ Bài Học</span>
           </button>
-          <span class="text-[10px] text-stone-400">ĐH Ngôn Ngữ Bắc Kinh</span>
+          
+          <div class="flex items-center justify-between text-xs pt-1">
+            <button 
+              onclick="quickSearchFromLesson('${lesson.titleHanzi}')" 
+              class="text-[#8B1E1E] hover:underline font-semibold flex items-center gap-1 text-[11px] cursor-pointer">
+              <i data-lucide="search" class="w-3 h-3"></i>
+              Tra trong Từ Điển
+            </button>
+            <span class="text-[10px] text-stone-400">Giáo Trình Hán Ngữ 6 Quyển</span>
+          </div>
         </div>
       </div>
     `;
   }).join('');
 
   refreshIcons(container);
+}
+
+function quickSearchFromLesson(text) {
+  const searchInput = document.getElementById('globalSearchInput');
+  if (searchInput) {
+    searchInput.value = text;
+    handleGlobalSearch(text);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+}
+
+// =========================================================================
+// INTERACTIVE LESSON DETAIL MODAL (CHI TIẾT BÀI HỌC GIÁO TRÌNH HÁN NGỮ)
+// =========================================================================
+
+function openLessonDetailModal(lessonId) {
+  if (!jiaochengData || !jiaochengData.lessons) return;
+  const lesson = jiaochengData.lessons.find(l => l.id === lessonId);
+  if (!lesson) return;
+
+  currentActiveLesson = lesson;
+  lessonQuizResponses = {};
+
+  // Header information
+  const volumeBadge = document.getElementById('lessonModalVolumeBadge');
+  const catBadge = document.getElementById('lessonModalCategoryBadge');
+  const titleHanzi = document.getElementById('lessonModalTitleHanzi');
+  const titlePinyin = document.getElementById('lessonModalTitlePinyin');
+  const titleMeaning = document.getElementById('lessonModalTitleMeaning');
+  const vocabCountEl = document.getElementById('lessonModalVocabCount');
+
+  if (volumeBadge) volumeBadge.innerText = `${lesson.volumeName || lesson.volume} • Bài ${lesson.lessonNum}`;
+  if (catBadge) catBadge.innerText = lesson.category;
+  if (titleHanzi) titleHanzi.innerText = lesson.titleHanzi;
+  if (titlePinyin) titlePinyin.innerText = lesson.titlePinyin;
+  if (titleMeaning) titleMeaning.innerText = `"${lesson.titleMeaning}"`;
+  if (vocabCountEl) vocabCountEl.innerText = (lesson.vocabulary || []).length;
+
+  // Render Sub-panels
+  renderLessonDialogues(lesson.dialogues || []);
+  renderLessonVocabulary(lesson.vocabulary || []);
+  renderLessonGrammar(lesson.grammarPoints || []);
+  renderLessonQuiz(lesson.practiceQuiz || []);
+  renderLessonCulture(lesson);
+
+  // Default to dialogues sub-tab
+  switchLessonSubTab('dialogues');
+
+  // Show modal
+  const modal = document.getElementById('lessonDetailModal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    refreshIcons(modal);
+  }
+}
+
+function closeLessonDetailModal() {
+  const modal = document.getElementById('lessonDetailModal');
+  if (modal) {
+    modal.classList.add('hidden');
+  }
+}
+
+function switchLessonSubTab(tabName) {
+  currentLessonSubTab = tabName;
+  const subTabs = ['dialogues', 'vocabulary', 'grammar', 'quiz', 'culture'];
+
+  subTabs.forEach(t => {
+    const btn = document.getElementById(`btn-lesson-subtab-${t}`);
+    const panel = document.getElementById(`lessonSubPanel-${t}`);
+    if (btn) {
+      if (t === tabName) {
+        btn.className = 'lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs whitespace-nowrap cursor-pointer';
+      } else {
+        btn.className = 'lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer';
+      }
+    }
+    if (panel) {
+      if (t === tabName) {
+        panel.classList.remove('hidden');
+      } else {
+        panel.classList.add('hidden');
+      }
+    }
+  });
+
+  const modal = document.getElementById('lessonDetailModal');
+  if (modal) refreshIcons(modal);
+}
+
+function playLessonTitleAudio() {
+  if (!currentActiveLesson) return;
+  playChineseTTS(currentActiveLesson.titleHanzi);
+}
+
+function playAllLessonDialogues() {
+  if (!currentActiveLesson || !currentActiveLesson.dialogues) return;
+  const text = currentActiveLesson.dialogues.map(d => d.hanzi).join(' ');
+  playChineseTTS(text);
+}
+
+function renderLessonDialogues(dialogues) {
+  const container = document.getElementById('lessonDialoguesContainer');
+  if (!container) return;
+
+  if (!dialogues || dialogues.length === 0) {
+    container.innerHTML = `<p class="text-xs text-stone-400 py-4 text-center">Không có bài khóa cho bài học này.</p>`;
+    return;
+  }
+
+  container.innerHTML = dialogues.map((d, idx) => {
+    const safeText = d.hanzi.replace(/'/g, "\\'");
+    return `
+      <div class="p-4 rounded-2xl bg-white border border-amber-200/80 shadow-2xs hover:border-amber-300 transition-all flex items-start justify-between gap-4">
+        <div class="flex items-start gap-3">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#8B1E1E] to-[#B8860B] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+            ${d.speaker}
+          </div>
+          <div class="space-y-1">
+            <p class="font-hanzi text-lg md:text-xl font-bold text-stone-900 tracking-wide leading-relaxed">${d.hanzi}</p>
+            <p class="text-xs font-semibold text-[#8B1E1E] tracking-wide font-sans">${d.pinyin}</p>
+            <p class="text-xs text-stone-600 font-sans italic pt-0.5">${d.vi}</p>
+          </div>
+        </div>
+        <button 
+          onclick="playChineseTTS('${safeText}')" 
+          class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all shrink-0 cursor-pointer"
+          title="Nghe phát âm chuẩn câu này">
+          <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
+        </button>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderLessonVocabulary(vocabList) {
+  const container = document.getElementById('lessonVocabularyContainer');
+  if (!container) return;
+
+  if (!vocabList || vocabList.length === 0) {
+    container.innerHTML = `<p class="col-span-full text-xs text-stone-400 py-4 text-center">Chưa có danh sách từ vựng.</p>`;
+    return;
+  }
+
+  container.innerHTML = vocabList.map(v => {
+    const safeHanzi = v.hanzi.replace(/'/g, "\\'");
+    const safeMeaning = (v.meaning || '').replace(/'/g, "\\'");
+    const safeExample = (v.example || '').replace(/'/g, "\\'");
+    const isSaved = isWordSaved(v.hanzi);
+
+    return `
+      <div class="p-4 rounded-2xl bg-white border border-amber-200/80 shadow-2xs hover:border-amber-300 transition-all space-y-2.5 flex flex-col justify-between">
+        <div class="space-y-2">
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-baseline gap-2 flex-wrap">
+              <span class="font-hanzi text-2xl font-black text-stone-900 tracking-wide">${v.hanzi}</span>
+              <span class="text-xs font-bold text-[#8B1E1E]">${v.pinyin}</span>
+              ${v.sinoViet ? `<span class="text-[11px] font-semibold text-amber-900 bg-amber-100/70 px-2 py-0.5 rounded-md">Hán-Việt: ${v.sinoViet}</span>` : ''}
+            </div>
+            <div class="flex items-center gap-1.5 shrink-0">
+              <button 
+                onclick="playChineseTTS('${safeHanzi}')" 
+                class="p-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all cursor-pointer"
+                title="Nghe từ này">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+              </button>
+              <button 
+                onclick="toggleSaveWord('${safeHanzi}', '${v.pinyin}', '${safeMeaning}')" 
+                class="p-1.5 rounded-lg ${isSaved ? 'bg-amber-500 text-white' : 'bg-stone-50 hover:bg-stone-100 text-stone-400 hover:text-amber-600'} border border-stone-200 transition-all cursor-pointer"
+                title="${isSaved ? 'Đã lưu trong Sổ tay' : 'Lưu vào Sổ tay'}">
+                <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-stone-100 text-stone-600 border border-stone-200">${v.pos || 'Từ vựng'}</span>
+            <p class="text-xs font-semibold text-stone-800">${v.meaning}</p>
+          </div>
+
+          ${v.example ? `
+            <div class="p-2.5 rounded-xl bg-amber-50/40 border border-amber-200/50 text-xs space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold text-amber-900 uppercase tracking-wider">Ví dụ ứng dụng:</span>
+                <button onclick="playChineseTTS('${safeExample}')" class="text-stone-400 hover:text-[#8B1E1E]" title="Nghe câu ví dụ">
+                  <i data-lucide="play-circle" class="w-3 h-3 text-[#8B1E1E]"></i>
+                </button>
+              </div>
+              <p class="font-hanzi font-bold text-stone-900 text-xs">${v.example}</p>
+            </div>
+          ` : ''}
+        </div>
+
+        <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-[11px]">
+          <button onclick="quickSearchFromLesson('${safeHanzi}')" class="text-[#8B1E1E] hover:underline flex items-center gap-1 font-medium cursor-pointer">
+            <i data-lucide="search" class="w-3 h-3"></i>
+            Chiết tự & Thứ tự nét
+          </button>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function renderLessonGrammar(grammarList) {
+  const container = document.getElementById('lessonGrammarContainer');
+  if (!container) return;
+
+  if (!grammarList || grammarList.length === 0) {
+    container.innerHTML = `<p class="text-xs text-stone-400 py-4 text-center">Chưa có điểm ngữ pháp nào được ghi chú.</p>`;
+    return;
+  }
+
+  container.innerHTML = grammarList.map((g, idx) => `
+    <div class="p-5 md:p-6 rounded-2xl bg-white border border-purple-200/90 shadow-2xs space-y-4">
+      <div class="flex items-start justify-between gap-3">
+        <div class="flex items-center gap-2.5">
+          <span class="w-7 h-7 rounded-lg bg-gradient-to-tr from-[#4A306D] to-[#613D8F] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+            ${idx + 1}
+          </span>
+          <h4 class="text-base font-bold text-stone-900 tracking-tight">${g.title}</h4>
+        </div>
+        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-purple-50 text-purple-800 border border-purple-200">
+          Trọng Điểm Ngữ Pháp
+        </span>
+      </div>
+
+      <!-- Formula Pill Box -->
+      ${g.formula ? `
+        <div class="p-3.5 rounded-xl bg-gradient-to-r from-purple-50 via-amber-50/40 to-purple-50/20 border border-purple-200 text-xs space-y-1">
+          <span class="text-[10px] font-bold uppercase tracking-wider text-purple-900 flex items-center gap-1.5">
+            <i data-lucide="cpu" class="w-3.5 h-3.5 text-[#4A306D]"></i>
+            Công thức ngữ pháp toán học hóa:
+          </span>
+          <p class="font-mono font-bold text-stone-900 text-xs md:text-sm tracking-wide">${g.formula}</p>
+        </div>
+      ` : ''}
+
+      <!-- Detailed Explanation -->
+      <div class="text-xs text-stone-700 leading-relaxed space-y-1.5 font-sans">
+        <span class="font-bold text-stone-900 block">Bản chất ngữ pháp:</span>
+        <p class="bg-stone-50 p-3 rounded-xl border border-stone-200/80">${g.explanation}</p>
+      </div>
+
+      <!-- Vietnamese Contrast & Common Mistakes -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+        ${g.vietnameseContrast ? `
+          <div class="p-3.5 rounded-xl bg-blue-50/60 border border-blue-200/80 space-y-1">
+            <span class="font-bold text-blue-900 flex items-center gap-1.5 text-[11px]">
+              <i data-lucide="repeat" class="w-3.5 h-3.5 text-blue-700"></i>
+              Đối chiếu với Ngữ pháp Tiếng Việt:
+            </span>
+            <p class="text-stone-700 leading-relaxed">${g.vietnameseContrast}</p>
+          </div>
+        ` : ''}
+        ${g.commonMistakes ? `
+          <div class="p-3.5 rounded-xl bg-rose-50/60 border border-rose-200/80 space-y-1">
+            <span class="font-bold text-rose-900 flex items-center gap-1.5 text-[11px]">
+              <i data-lucide="alert-triangle" class="w-3.5 h-3.5 text-rose-700"></i>
+              Lỗi sai người Việt hay mắc phải:
+            </span>
+            <p class="text-stone-700 leading-relaxed">${g.commonMistakes}</p>
+          </div>
+        ` : ''}
+      </div>
+
+      <!-- Examples -->
+      ${g.examples && g.examples.length ? `
+        <div class="space-y-2 pt-2 border-t border-purple-100">
+          <span class="text-[11px] font-bold text-purple-900 uppercase tracking-wider block">Câu ví dụ kinh điển:</span>
+          <div class="space-y-2">
+            ${g.examples.map(ex => {
+              const safeHanzi = ex.hanzi.replace(/'/g, "\\'");
+              return `
+                <div class="p-3 rounded-xl bg-purple-50/30 border border-purple-100 flex items-center justify-between gap-3 text-xs">
+                  <div>
+                    <p class="font-hanzi font-bold text-stone-900 text-sm">${ex.hanzi}</p>
+                    <p class="text-stone-500 font-semibold">${ex.pinyin}</p>
+                    <p class="text-stone-700 italic">${ex.vi}</p>
+                  </div>
+                  <button onclick="playChineseTTS('${safeHanzi}')" class="p-2 rounded-xl bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 shrink-0 cursor-pointer" title="Nghe câu này">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#4A306D]"></i>
+                  </button>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </div>
+      ` : ''}
+    </div>
+  `).join('');
+}
+
+function renderLessonQuiz(quizList) {
+  const container = document.getElementById('lessonQuizContainer');
+  const tracker = document.getElementById('lessonQuizScoreTracker');
+  if (!container) return;
+
+  if (!quizList || quizList.length === 0) {
+    container.innerHTML = `<p class="text-xs text-stone-400 py-4 text-center">Chưa có bài tập trắc nghiệm cho bài này.</p>`;
+    if (tracker) tracker.innerText = 'Không có câu hỏi';
+    return;
+  }
+
+  if (tracker) tracker.innerText = `0 / ${quizList.length} Câu đúng`;
+
+  container.innerHTML = quizList.map((q, qIdx) => `
+    <div class="p-5 md:p-6 rounded-2xl bg-white border border-amber-200/90 shadow-2xs space-y-4" id="lessonQuizCard-${qIdx}">
+      <div class="flex items-start gap-3">
+        <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-[#8B1E1E] to-[#B8860B] text-white flex items-center justify-center font-bold text-xs shrink-0">
+          ${qIdx + 1}
+        </span>
+        <h4 class="text-sm md:text-base font-bold text-stone-900 leading-snug">${q.question}</h4>
+      </div>
+
+      <!-- Multiple Options -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
+        ${q.options.map((opt, optIdx) => `
+          <button 
+            id="lessonQuizOptBtn-${qIdx}-${optIdx}" 
+            onclick="handleLessonQuizChoice(${qIdx}, ${optIdx}, ${q.answer}, '${q.explanation.replace(/'/g, "\\'")}')"
+            class="p-3 rounded-xl border border-stone-200 hover:border-amber-400 hover:bg-amber-50/60 transition-all text-xs text-left font-medium text-stone-800 flex items-center gap-2 cursor-pointer">
+            <span class="w-5 h-5 rounded-md bg-stone-100 text-stone-700 font-bold flex items-center justify-center text-[10px] shrink-0">
+              ${['A', 'B', 'C', 'D'][optIdx] || optIdx}
+            </span>
+            <span class="flex-1">${opt}</span>
+          </button>
+        `).join('')}
+      </div>
+
+      <!-- Explanation Box (Initially Hidden) -->
+      <div id="lessonQuizExplain-${qIdx}" class="hidden p-3.5 rounded-xl border text-xs leading-relaxed space-y-1"></div>
+    </div>
+  `).join('');
+}
+
+function handleLessonQuizChoice(qIdx, optIdx, correctIdx, explanation) {
+  if (lessonQuizResponses[qIdx] !== undefined) return; // Prevent multiple clicks
+  lessonQuizResponses[qIdx] = optIdx;
+
+  const isCorrect = (optIdx === correctIdx);
+  const selectedBtn = document.getElementById(`lessonQuizOptBtn-${qIdx}-${optIdx}`);
+  const correctBtn = document.getElementById(`lessonQuizOptBtn-${qIdx}-${correctIdx}`);
+  const explainBox = document.getElementById(`lessonQuizExplain-${qIdx}`);
+
+  if (isCorrect) {
+    if (selectedBtn) {
+      selectedBtn.className = 'p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold text-xs text-left flex items-center gap-2';
+    }
+  } else {
+    if (selectedBtn) {
+      selectedBtn.className = 'p-3 rounded-xl border-2 border-rose-500 bg-rose-50 text-rose-950 font-medium text-xs text-left flex items-center gap-2';
+    }
+    if (correctBtn) {
+      correctBtn.className = 'p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold text-xs text-left flex items-center gap-2';
+    }
+  }
+
+  if (explainBox) {
+    explainBox.classList.remove('hidden');
+    if (isCorrect) {
+      explainBox.className = 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50/80 text-emerald-950 text-xs leading-relaxed space-y-1';
+      explainBox.innerHTML = `
+        <span class="font-bold flex items-center gap-1.5 text-emerald-900">
+          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
+          Chính xác!
+        </span>
+        <p>${explanation}</p>
+      `;
+    } else {
+      explainBox.className = 'p-3.5 rounded-xl border border-rose-300 bg-rose-50/80 text-rose-950 text-xs leading-relaxed space-y-1';
+      explainBox.innerHTML = `
+        <span class="font-bold flex items-center gap-1.5 text-rose-900">
+          <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600"></i>
+          Chưa chính xác! Đáp án đúng là: ${['A', 'B', 'C', 'D'][correctIdx]}
+        </span>
+        <p>${explanation}</p>
+      `;
+    }
+    refreshIcons(explainBox);
+  }
+
+  // Update Score Tracker
+  const totalQuestions = currentActiveLesson.practiceQuiz ? currentActiveLesson.practiceQuiz.length : 0;
+  let correctCount = 0;
+  Object.keys(lessonQuizResponses).forEach(k => {
+    const qIndex = parseInt(k, 10);
+    const q = currentActiveLesson.practiceQuiz[qIndex];
+    if (q && lessonQuizResponses[qIndex] === q.answer) {
+      correctCount++;
+    }
+  });
+
+  const tracker = document.getElementById('lessonQuizScoreTracker');
+  if (tracker) {
+    tracker.innerText = `${correctCount} / ${totalQuestions} Câu đúng`;
+    if (Object.keys(lessonQuizResponses).length === totalQuestions) {
+      if (correctCount === totalQuestions) {
+        tracker.className = 'text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full';
+      } else {
+        tracker.className = 'text-xs font-bold text-amber-800 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full';
+      }
+    }
+  }
+}
+
+function renderLessonCulture(lesson) {
+  const container = document.getElementById('lessonCultureContainer');
+  if (!container) return;
+
+  container.innerHTML = `
+    <!-- Introduction Card -->
+    <div class="p-6 rounded-2xl bg-white border border-amber-200/90 shadow-2xs space-y-3">
+      <div class="flex items-center gap-2">
+        <span class="p-2 rounded-xl bg-amber-100 text-amber-900">
+          <i data-lucide="info" class="w-5 h-5 text-[#8B1E1E]"></i>
+        </span>
+        <h4 class="text-base font-bold text-stone-900">Giới Thiệu & Bối Cảnh Bài Học</h4>
+      </div>
+      <p class="text-xs md:text-sm text-stone-700 leading-relaxed font-sans bg-amber-50/40 p-4 rounded-xl border border-amber-200/60">
+        ${lesson.introduction || 'Bài học trang bị tri thức nền tảng trong bộ Giáo Trình Hán Ngữ.'}
+      </p>
+    </div>
+
+    <!-- Cultural Insights & Learning Tips -->
+    <div class="p-6 rounded-2xl bg-gradient-to-r from-amber-50/60 via-[#FAF7F2] to-amber-100/40 border border-amber-300/80 shadow-2xs space-y-3">
+      <div class="flex items-center gap-2">
+        <span class="p-2 rounded-xl bg-[#8B1E1E] text-white">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+        </span>
+        <h4 class="text-base font-bold text-stone-900">Ghi Chú Văn Hóa & Mẹo Học Chuẩn Bản Xứ</h4>
+      </div>
+      <p class="text-xs md:text-sm text-stone-800 leading-relaxed font-sans bg-white/90 p-4 rounded-xl border border-amber-200/80">
+        ${lesson.culturalTips || 'Hãy luyện nói to rõ từng câu, bắt chước khẩu hình người bản xứ và vận dụng ngay vào thực tế.'}
+      </p>
+    </div>
+  `;
 }
 
 function quickSearchFromLesson(text) {
