@@ -4349,8 +4349,8 @@ function renderJiaocheng() {
           ${firstDialogue ? `
             <div class="p-3 rounded-xl bg-stone-50/80 border border-stone-200/80 text-xs space-y-1.5">
               <div class="flex items-center justify-between">
-                <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Hội thoại thực tế (${firstDialogue.speaker}):</span>
-                <button onclick="playChineseTTS('${safeDialogue}')" class="text-stone-400 hover:text-[#8B1E1E] transition-colors" title="Nghe câu này">
+                <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Hội thoại (${firstDialogue.displayName || firstDialogue.speaker}):</span>
+                <button onclick="playChineseTTS('${safeDialogue}', '${firstDialogue.gender || 'female'}')" class="text-stone-400 hover:text-[#8B1E1E] transition-colors" title="Nghe câu này">
                   <i data-lucide="play-circle" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
                 </button>
               </div>
@@ -4416,13 +4416,19 @@ function quickSearchFromLesson(text) {
 // INTERACTIVE LESSON DETAIL MODAL (CHI TIẾT BÀI HỌC GIÁO TRÌNH HÁN NGỮ)
 // =========================================================================
 
+let isDialoguePlaying = false;
+let dialoguePlayIndex = 0;
+let dialoguePlayTimeout = null;
+let currentLessonFIBSelections = {};
+
 function openLessonDetailModal(lessonId) {
   if (!jiaochengData || !jiaochengData.lessons) return;
   const lesson = jiaochengData.lessons.find(l => l.id === lessonId);
   if (!lesson) return;
 
   currentActiveLesson = lesson;
-  lessonQuizResponses = {};
+  stopDialogueSequence();
+  currentLessonFIBSelections = {};
 
   // Header information
   const volumeBadge = document.getElementById('lessonModalVolumeBadge');
@@ -4431,6 +4437,8 @@ function openLessonDetailModal(lessonId) {
   const titlePinyin = document.getElementById('lessonModalTitlePinyin');
   const titleMeaning = document.getElementById('lessonModalTitleMeaning');
   const vocabCountEl = document.getElementById('lessonModalVocabCount');
+  const qaCountEl = document.getElementById('lessonModalQACount');
+  const fibCountEl = document.getElementById('lessonModalFIBCount');
 
   if (volumeBadge) volumeBadge.innerText = `${lesson.volumeName || lesson.volume} • Bài ${lesson.lessonNum}`;
   if (catBadge) catBadge.innerText = lesson.category;
@@ -4438,12 +4446,15 @@ function openLessonDetailModal(lessonId) {
   if (titlePinyin) titlePinyin.innerText = lesson.titlePinyin;
   if (titleMeaning) titleMeaning.innerText = `"${lesson.titleMeaning}"`;
   if (vocabCountEl) vocabCountEl.innerText = (lesson.vocabulary || []).length;
+  if (qaCountEl) qaCountEl.innerText = (lesson.comprehensionQA || []).length;
+  if (fibCountEl) fibCountEl.innerText = (lesson.fillInBlanks || []).length;
 
   // Render Sub-panels
   renderLessonDialogues(lesson.dialogues || []);
   renderLessonVocabulary(lesson.vocabulary || []);
   renderLessonGrammar(lesson.grammarPoints || []);
-  renderLessonQuiz(lesson.practiceQuiz || []);
+  renderLessonQA(lesson.comprehensionQA || []);
+  renderLessonFillInBlanks(lesson.fillInBlanks || []);
   renderLessonCulture(lesson);
 
   // Default to dialogues sub-tab
@@ -4458,6 +4469,7 @@ function openLessonDetailModal(lessonId) {
 }
 
 function closeLessonDetailModal() {
+  stopDialogueSequence();
   const modal = document.getElementById('lessonDetailModal');
   if (modal) {
     modal.classList.add('hidden');
@@ -4466,7 +4478,7 @@ function closeLessonDetailModal() {
 
 function switchLessonSubTab(tabName) {
   currentLessonSubTab = tabName;
-  const subTabs = ['dialogues', 'vocabulary', 'grammar', 'quiz', 'culture'];
+  const subTabs = ['dialogues', 'vocabulary', 'grammar', 'qa', 'fillblanks', 'culture'];
 
   subTabs.forEach(t => {
     const btn = document.getElementById(`btn-lesson-subtab-${t}`);
@@ -4493,13 +4505,96 @@ function switchLessonSubTab(tabName) {
 
 function playLessonTitleAudio() {
   if (!currentActiveLesson) return;
-  playChineseTTS(currentActiveLesson.titleHanzi);
+  playChineseTTS(currentActiveLesson.titleHanzi, 'female');
 }
 
-function playAllLessonDialogues() {
-  if (!currentActiveLesson || !currentActiveLesson.dialogues) return;
-  const text = currentActiveLesson.dialogues.map(d => d.hanzi).join(' ');
-  playChineseTTS(text);
+// ---------------- DIALOGUES WITH CHARACTER VOICE PLAYBACK ----------------
+function stopDialogueSequence() {
+  isDialoguePlaying = false;
+  if (dialoguePlayTimeout) {
+    clearTimeout(dialoguePlayTimeout);
+    dialoguePlayTimeout = null;
+  }
+  if (currentTtsAudio) {
+    try {
+      currentTtsAudio.pause();
+      currentTtsAudio.currentTime = 0;
+    } catch (e) {}
+  }
+  document.querySelectorAll('.dialogue-bubble').forEach(el => {
+    el.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70', 'scale-[1.01]', 'shadow-md');
+  });
+  const playBtn = document.getElementById('btnPlayDialogueSequence');
+  const stopBtn = document.getElementById('btnStopDialogueSequence');
+  if (playBtn) playBtn.classList.remove('hidden');
+  if (stopBtn) stopBtn.classList.add('hidden');
+}
+
+function playDialogueSequence() {
+  if (!currentActiveLesson || !currentActiveLesson.dialogues || !currentActiveLesson.dialogues.length) return;
+  stopDialogueSequence();
+  isDialoguePlaying = true;
+  dialoguePlayIndex = 0;
+
+  const playBtn = document.getElementById('btnPlayDialogueSequence');
+  const stopBtn = document.getElementById('btnStopDialogueSequence');
+  if (playBtn) playBtn.classList.add('hidden');
+  if (stopBtn) stopBtn.classList.remove('hidden');
+
+  playNextDialogueLine();
+}
+
+function playNextDialogueLine() {
+  if (!isDialoguePlaying || !currentActiveLesson || !currentActiveLesson.dialogues) return;
+  const dialogues = currentActiveLesson.dialogues;
+  if (dialoguePlayIndex >= dialogues.length) {
+    stopDialogueSequence();
+    return;
+  }
+
+  const line = dialogues[dialoguePlayIndex];
+  const bubbleEl = document.getElementById(`dialogueBubble-${dialoguePlayIndex}`);
+
+  // Highlight current active dialogue bubble
+  document.querySelectorAll('.dialogue-bubble').forEach(el => {
+    el.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70', 'scale-[1.01]', 'shadow-md');
+  });
+  if (bubbleEl) {
+    bubbleEl.classList.add('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70', 'scale-[1.01]', 'shadow-md');
+    bubbleEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  // Choose character voice gender
+  const voiceGender = line.gender || (line.speaker.includes('玛丽') || line.speaker.includes('田芳') || line.speaker.includes('女') ? 'female' : 'male');
+  const speed = currentTtsSpeed || 0.85;
+  const ttsUrl = `/api/tts?text=${encodeURIComponent(line.hanzi)}&gender=${voiceGender}&speed=${speed}`;
+
+  const audio = new Audio(ttsUrl);
+  currentTtsAudio = audio;
+
+  audio.onended = () => {
+    if (!isDialoguePlaying) return;
+    dialoguePlayIndex++;
+    dialoguePlayTimeout = setTimeout(() => {
+      playNextDialogueLine();
+    }, 1100); // 1.1s natural pause between speakers
+  };
+
+  audio.onerror = () => {
+    if (!isDialoguePlaying) return;
+    dialoguePlayIndex++;
+    dialoguePlayTimeout = setTimeout(() => {
+      playNextDialogueLine();
+    }, 1000);
+  };
+
+  audio.play().catch(err => {
+    console.warn('Audio play failed in sequence:', err);
+    if (isDialoguePlaying) {
+      dialoguePlayIndex++;
+      dialoguePlayTimeout = setTimeout(playNextDialogueLine, 1000);
+    }
+  });
 }
 
 function renderLessonDialogues(dialogues) {
@@ -4513,29 +4608,45 @@ function renderLessonDialogues(dialogues) {
 
   container.innerHTML = dialogues.map((d, idx) => {
     const safeText = d.hanzi.replace(/'/g, "\\'");
+    const isFemale = d.gender === 'female';
+    const voiceTag = isFemale ? '👩 Giọng Nữ (Xiaoxiao)' : '👨 Giọng Nam (Yunxi)';
+    const avatarBadgeColor = isFemale ? 'from-rose-500 to-amber-600' : 'from-blue-600 to-indigo-800';
+    const cardBorderColor = isFemale ? 'border-rose-200/80 bg-rose-50/15' : 'border-blue-200/80 bg-blue-50/15';
+
     return `
-      <div class="p-4 rounded-2xl bg-white border border-amber-200/80 shadow-2xs hover:border-amber-300 transition-all flex items-start justify-between gap-4">
+      <div id="dialogueBubble-${idx}" class="dialogue-bubble p-4 md:p-5 rounded-2xl bg-white border ${cardBorderColor} shadow-2xs hover:border-amber-300 transition-all flex flex-col md:flex-row md:items-start justify-between gap-3 md:gap-4">
         <div class="flex items-start gap-3">
-          <div class="w-8 h-8 rounded-full bg-gradient-to-tr from-[#8B1E1E] to-[#B8860B] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
-            ${d.speaker}
+          <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr ${avatarBadgeColor} text-white flex flex-col items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+            <span class="text-base leading-none">${d.avatar || (isFemale ? '👩' : '👨')}</span>
           </div>
-          <div class="space-y-1">
+          <div class="space-y-1.5 flex-1">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="text-xs font-black text-stone-900">${d.displayName || d.speaker}</span>
+              ${d.role ? `<span class="text-[10px] text-stone-500 bg-stone-100 px-2 py-0.5 rounded-md font-medium">${d.role}</span>` : ''}
+              <span class="text-[10px] font-bold ${isFemale ? 'text-rose-700 bg-rose-50 border-rose-200' : 'text-blue-700 bg-blue-50 border-blue-200'} border px-2 py-0.5 rounded-full">
+                ${voiceTag}
+              </span>
+            </div>
             <p class="font-hanzi text-lg md:text-xl font-bold text-stone-900 tracking-wide leading-relaxed">${d.hanzi}</p>
             <p class="text-xs font-semibold text-[#8B1E1E] tracking-wide font-sans">${d.pinyin}</p>
             <p class="text-xs text-stone-600 font-sans italic pt-0.5">${d.vi}</p>
           </div>
         </div>
-        <button 
-          onclick="playChineseTTS('${safeText}')" 
-          class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all shrink-0 cursor-pointer"
-          title="Nghe phát âm chuẩn câu này">
-          <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
-        </button>
+        <div class="flex items-center gap-2 self-end md:self-start shrink-0">
+          <button 
+            onclick="playChineseTTS('${safeText}', '${d.gender || (isFemale ? 'female' : 'male')}')" 
+            class="px-3 py-1.5 rounded-xl ${isFemale ? 'bg-rose-50 hover:bg-rose-100 text-rose-900 border-rose-200' : 'bg-blue-50 hover:bg-blue-100 text-blue-900 border-blue-200'} border transition-all text-xs font-bold flex items-center gap-1.5 cursor-pointer"
+            title="Nghe câu này với đúng giọng của ${d.speaker}">
+            <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            <span>Nghe câu</span>
+          </button>
+        </div>
       </div>
     `;
   }).join('');
 }
 
+// ---------------- VOCABULARY MODULE ----------------
 function renderLessonVocabulary(vocabList) {
   const container = document.getElementById('lessonVocabularyContainer');
   if (!container) return;
@@ -4605,6 +4716,7 @@ function renderLessonVocabulary(vocabList) {
   }).join('');
 }
 
+// ---------------- GRAMMAR MODULE ----------------
 function renderLessonGrammar(grammarList) {
   const container = document.getElementById('lessonGrammarContainer');
   if (!container) return;
@@ -4694,119 +4806,305 @@ function renderLessonGrammar(grammarList) {
   `).join('');
 }
 
-function renderLessonQuiz(quizList) {
-  const container = document.getElementById('lessonQuizContainer');
-  const tracker = document.getElementById('lessonQuizScoreTracker');
+// ---------------- COMPREHENSION Q&A MODULE (HỎI - ĐÁP BÀI KHÓA) ----------------
+function renderLessonQA(qaList) {
+  const container = document.getElementById('lessonQAContainer');
   if (!container) return;
 
-  if (!quizList || quizList.length === 0) {
-    container.innerHTML = `<p class="text-xs text-stone-400 py-4 text-center">Chưa có bài tập trắc nghiệm cho bài này.</p>`;
-    if (tracker) tracker.innerText = 'Không có câu hỏi';
+  if (!qaList || qaList.length === 0) {
+    container.innerHTML = `<p class="text-xs text-stone-400 py-4 text-center">Chưa có câu hỏi đọc hiểu cho bài này.</p>`;
     return;
   }
 
-  if (tracker) tracker.innerText = `0 / ${quizList.length} Câu đúng`;
+  container.innerHTML = qaList.map((q, idx) => {
+    const safeQ = q.questionHanzi.replace(/'/g, "\\'");
+    const safeA = q.answerHanzi.replace(/'/g, "\\'");
 
-  container.innerHTML = quizList.map((q, qIdx) => `
-    <div class="p-5 md:p-6 rounded-2xl bg-white border border-amber-200/90 shadow-2xs space-y-4" id="lessonQuizCard-${qIdx}">
+    return `
+      <div class="p-5 md:p-6 rounded-2xl bg-white border border-amber-200/90 shadow-2xs space-y-3.5">
+        <!-- Question Row -->
+        <div class="flex items-start justify-between gap-3">
+          <div class="flex items-start gap-3">
+            <span class="w-7 h-7 rounded-xl bg-gradient-to-tr from-[#8B1E1E] to-[#B8860B] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+              Q${idx + 1}
+            </span>
+            <div class="space-y-1">
+              <h4 class="font-hanzi font-bold text-stone-900 text-base md:text-lg leading-snug">${q.questionHanzi}</h4>
+              <p class="text-xs text-[#8B1E1E] font-semibold">${q.questionPinyin}</p>
+              <p class="text-xs text-stone-600 italic">${q.questionVi}</p>
+            </div>
+          </div>
+          <button 
+            onclick="playChineseTTS('${safeQ}', 'male')" 
+            class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all shrink-0 cursor-pointer"
+            title="Nghe câu hỏi">
+            <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
+          </button>
+        </div>
+
+        <!-- Answer Toggle Button -->
+        <div class="pt-2 border-t border-amber-100 flex items-center justify-between">
+          <button 
+            onclick="toggleLessonQAAnswer(${idx})" 
+            id="btnToggleQA-${idx}" 
+            class="px-3.5 py-1.5 rounded-xl bg-amber-100/70 hover:bg-amber-200/80 text-amber-900 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer">
+            <i data-lucide="help-circle" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+            <span>Xem Gợi Ý Đáp Án</span>
+          </button>
+          <span class="text-[11px] text-stone-400">Trả lời chuẩn ngữ pháp bài khóa</span>
+        </div>
+
+        <!-- Answer Box (Initially Hidden) -->
+        <div id="lessonQABox-${idx}" class="hidden p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-1">
+              <span class="font-black text-emerald-900 flex items-center gap-1.5 text-[11px] uppercase tracking-wider">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
+                Câu Trả Lời Gợi Ý:
+              </span>
+              <p class="font-hanzi font-bold text-stone-900 text-sm md:text-base">${q.answerHanzi}</p>
+              <p class="text-emerald-800 font-semibold">${q.answerPinyin}</p>
+              <p class="text-stone-700 italic">${q.answerVi}</p>
+            </div>
+            <button 
+              onclick="playChineseTTS('${safeA}', 'female')" 
+              class="p-2 rounded-lg bg-white hover:bg-emerald-100 text-emerald-900 border border-emerald-300 transition-all shrink-0 cursor-pointer"
+              title="Nghe câu trả lời">
+              <i data-lucide="volume-2" class="w-4 h-4 text-emerald-700"></i>
+            </button>
+          </div>
+          ${q.explanation ? `
+            <div class="pt-2 border-t border-emerald-200/70 text-stone-600 leading-relaxed">
+              <strong>Phân tích ngữ cảnh:</strong> ${q.explanation}
+            </div>
+          ` : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function toggleLessonQAAnswer(idx) {
+  const box = document.getElementById(`lessonQABox-${idx}`);
+  const btn = document.getElementById(`btnToggleQA-${idx}`);
+  if (!box) return;
+
+  if (box.classList.contains('hidden')) {
+    box.classList.remove('hidden');
+    if (btn) btn.innerHTML = `<i data-lucide="eye-off" class="w-3.5 h-3.5 text-[#8B1E1E]"></i><span>Ẩn Đáp Án</span>`;
+  } else {
+    box.classList.add('hidden');
+    if (btn) btn.innerHTML = `<i data-lucide="help-circle" class="w-3.5 h-3.5 text-[#8B1E1E]"></i><span>Xem Gợi Ý Đáp Án</span>`;
+  }
+  refreshIcons(box.parentElement);
+}
+
+// ---------------- FILL IN THE BLANKS MODULE (LUYỆN TẬP ĐIỀN TỪ) ----------------
+function renderLessonFillInBlanks(fibList) {
+  const container = document.getElementById('lessonFillBlanksContainer');
+  const tracker = document.getElementById('lessonFIBScoreTracker');
+  if (!container) return;
+
+  if (!fibList || fibList.length === 0) {
+    container.innerHTML = `<p class="text-xs text-stone-400 py-4 text-center">Chưa có bài tập điền từ cho bài này.</p>`;
+    if (tracker) tracker.innerText = 'Không có bài tập';
+    return;
+  }
+
+  if (tracker) tracker.innerText = `0 / ${fibList.length} Bài hoàn thành`;
+
+  container.innerHTML = fibList.map((fib, fibIdx) => `
+    <div class="p-5 md:p-6 rounded-2xl bg-white border border-amber-200/90 shadow-2xs space-y-4" id="fibExerciseCard-${fibIdx}">
+      <!-- Exercise Header -->
       <div class="flex items-start gap-3">
-        <span class="w-6 h-6 rounded-full bg-gradient-to-tr from-[#8B1E1E] to-[#B8860B] text-white flex items-center justify-center font-bold text-xs shrink-0">
-          ${qIdx + 1}
+        <span class="w-7 h-7 rounded-xl bg-gradient-to-tr from-[#8B1E1E] to-[#B8860B] text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+          ${fibIdx + 1}
         </span>
-        <h4 class="text-sm md:text-base font-bold text-stone-900 leading-snug">${q.question}</h4>
+        <div>
+          <h4 class="text-sm md:text-base font-bold text-stone-900">${fib.instruction}</h4>
+          <p class="text-xs text-stone-500 mt-0.5">Dựa vào ngữ cảnh đoạn đối thoại để chọn từ ngữ phù hợp nhất</p>
+        </div>
       </div>
 
-      <!-- Multiple Options -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-2.5 pt-1">
-        ${q.options.map((opt, optIdx) => `
-          <button 
-            id="lessonQuizOptBtn-${qIdx}-${optIdx}" 
-            onclick="handleLessonQuizChoice(${qIdx}, ${optIdx}, ${q.answer}, '${q.explanation.replace(/'/g, "\\'")}')"
-            class="p-3 rounded-xl border border-stone-200 hover:border-amber-400 hover:bg-amber-50/60 transition-all text-xs text-left font-medium text-stone-800 flex items-center gap-2 cursor-pointer">
-            <span class="w-5 h-5 rounded-md bg-stone-100 text-stone-700 font-bold flex items-center justify-center text-[10px] shrink-0">
-              ${['A', 'B', 'C', 'D'][optIdx] || optIdx}
+      <!-- Word Bank Box -->
+      ${fib.wordBank && fib.wordBank.length ? `
+        <div class="p-3 rounded-xl bg-amber-50/60 border border-amber-200/80 space-y-1.5 text-xs">
+          <span class="text-[10px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1">
+            <i data-lucide="layers" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+            Ngân hàng từ vựng gợi ý (Word Bank):
+          </span>
+          <div class="flex flex-wrap gap-2 pt-0.5">
+            ${fib.wordBank.map(w => `
+              <span class="px-2.5 py-1 rounded-lg bg-white border border-amber-200 text-stone-900 font-hanzi font-bold text-xs shadow-2xs">
+                ${w}
+              </span>
+            `).join('')}
+          </div>
+        </div>
+      ` : ''}
+
+      <!-- Context Dialogue with Blanks -->
+      <div class="p-4 rounded-xl bg-stone-50 border border-stone-200 font-sans text-xs md:text-sm text-stone-800 leading-loose whitespace-pre-line font-medium">
+        ${fib.dialogueText}
+      </div>
+
+      <!-- Blanks Selection Interface -->
+      <div class="space-y-3 pt-2">
+        ${fib.blanks.map((b, bIdx) => `
+          <div class="p-3.5 rounded-xl border border-stone-200 bg-white space-y-2">
+            <span class="text-xs font-bold text-stone-800 flex items-center gap-1.5">
+              <span class="w-5 h-5 rounded-md bg-[#8B1E1E] text-white text-[11px] font-bold flex items-center justify-center">(${b.blankNum})</span>
+              Chọn từ điền vào vị trí [ (${b.blankNum}) ]:
             </span>
-            <span class="flex-1">${opt}</span>
-          </button>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+              ${b.options.map(opt => `
+                <button 
+                  id="fibBtn-${fibIdx}-${b.blankNum}-${opt}"
+                  onclick="selectFIBOption(${fibIdx}, ${b.blankNum}, '${opt}')"
+                  class="fib-opt-btn p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 hover:bg-amber-50 text-xs font-bold font-hanzi text-stone-800 transition-all text-center cursor-pointer">
+                  ${opt}
+                </button>
+              `).join('')}
+            </div>
+            <div id="fibExplanation-${fibIdx}-${b.blankNum}" class="hidden p-3 rounded-lg text-xs leading-relaxed mt-2 border"></div>
+          </div>
         `).join('')}
       </div>
 
-      <!-- Explanation Box (Initially Hidden) -->
-      <div id="lessonQuizExplain-${qIdx}" class="hidden p-3.5 rounded-xl border text-xs leading-relaxed space-y-1"></div>
+      <!-- Submit & Reset Actions -->
+      <div class="pt-2 flex items-center justify-between">
+        <button 
+          onclick="checkFIBAnswers(${fibIdx})" 
+          class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="check" class="w-4 h-4"></i>
+          <span>Kiểm Tra Đáp Án</span>
+        </button>
+        <button 
+          onclick="resetFIBExercise(${fibIdx})" 
+          class="px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-medium transition-all cursor-pointer">
+          Làm lại
+        </button>
+      </div>
     </div>
   `).join('');
 }
 
-function handleLessonQuizChoice(qIdx, optIdx, correctIdx, explanation) {
-  if (lessonQuizResponses[qIdx] !== undefined) return; // Prevent multiple clicks
-  lessonQuizResponses[qIdx] = optIdx;
-
-  const isCorrect = (optIdx === correctIdx);
-  const selectedBtn = document.getElementById(`lessonQuizOptBtn-${qIdx}-${optIdx}`);
-  const correctBtn = document.getElementById(`lessonQuizOptBtn-${qIdx}-${correctIdx}`);
-  const explainBox = document.getElementById(`lessonQuizExplain-${qIdx}`);
-
-  if (isCorrect) {
-    if (selectedBtn) {
-      selectedBtn.className = 'p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold text-xs text-left flex items-center gap-2';
-    }
-  } else {
-    if (selectedBtn) {
-      selectedBtn.className = 'p-3 rounded-xl border-2 border-rose-500 bg-rose-50 text-rose-950 font-medium text-xs text-left flex items-center gap-2';
-    }
-    if (correctBtn) {
-      correctBtn.className = 'p-3 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-emerald-950 font-bold text-xs text-left flex items-center gap-2';
-    }
+function selectFIBOption(fibIdx, blankNum, optText) {
+  if (!currentLessonFIBSelections[fibIdx]) {
+    currentLessonFIBSelections[fibIdx] = {};
   }
+  currentLessonFIBSelections[fibIdx][blankNum] = optText;
 
-  if (explainBox) {
-    explainBox.classList.remove('hidden');
-    if (isCorrect) {
-      explainBox.className = 'p-3.5 rounded-xl border border-emerald-300 bg-emerald-50/80 text-emerald-950 text-xs leading-relaxed space-y-1';
-      explainBox.innerHTML = `
-        <span class="font-bold flex items-center gap-1.5 text-emerald-900">
-          <i data-lucide="check-circle" class="w-4 h-4 text-emerald-600"></i>
-          Chính xác!
-        </span>
-        <p>${explanation}</p>
-      `;
-    } else {
-      explainBox.className = 'p-3.5 rounded-xl border border-rose-300 bg-rose-50/80 text-rose-950 text-xs leading-relaxed space-y-1';
-      explainBox.innerHTML = `
-        <span class="font-bold flex items-center gap-1.5 text-rose-900">
-          <i data-lucide="alert-circle" class="w-4 h-4 text-rose-600"></i>
-          Chưa chính xác! Đáp án đúng là: ${['A', 'B', 'C', 'D'][correctIdx]}
-        </span>
-        <p>${explanation}</p>
-      `;
-    }
-    refreshIcons(explainBox);
+  // Clear active styling on sibling option buttons for this blank
+  const exercise = currentActiveLesson.fillInBlanks[fibIdx];
+  const blank = exercise.blanks.find(b => b.blankNum === blankNum);
+  if (blank) {
+    blank.options.forEach(opt => {
+      const btn = document.getElementById(`fibBtn-${fibIdx}-${blankNum}-${opt}`);
+      if (btn) {
+        if (opt === optText) {
+          btn.className = 'fib-opt-btn p-2.5 rounded-xl border-2 border-[#8B1E1E] bg-amber-50 text-xs font-bold font-hanzi text-[#8B1E1E] transition-all text-center shadow-2xs';
+        } else {
+          btn.className = 'fib-opt-btn p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 hover:bg-amber-50 text-xs font-bold font-hanzi text-stone-800 transition-all text-center cursor-pointer';
+        }
+      }
+    });
   }
+}
 
-  // Update Score Tracker
-  const totalQuestions = currentActiveLesson.practiceQuiz ? currentActiveLesson.practiceQuiz.length : 0;
+function checkFIBAnswers(fibIdx) {
+  if (!currentActiveLesson || !currentActiveLesson.fillInBlanks) return;
+  const fib = currentActiveLesson.fillInBlanks[fibIdx];
+  if (!fib) return;
+
+  const userSelections = currentLessonFIBSelections[fibIdx] || {};
   let correctCount = 0;
-  Object.keys(lessonQuizResponses).forEach(k => {
-    const qIndex = parseInt(k, 10);
-    const q = currentActiveLesson.practiceQuiz[qIndex];
-    if (q && lessonQuizResponses[qIndex] === q.answer) {
-      correctCount++;
+
+  fib.blanks.forEach(b => {
+    const userVal = userSelections[b.blankNum];
+    const isCorrect = (userVal === b.correct);
+    const explainBox = document.getElementById(`fibExplanation-${fibIdx}-${b.blankNum}`);
+
+    b.options.forEach(opt => {
+      const btn = document.getElementById(`fibBtn-${fibIdx}-${b.blankNum}-${opt}`);
+      if (!btn) return;
+
+      if (opt === b.correct) {
+        btn.className = 'fib-opt-btn p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 text-xs font-bold font-hanzi text-emerald-950 transition-all text-center';
+      } else if (opt === userVal && !isCorrect) {
+        btn.className = 'fib-opt-btn p-2.5 rounded-xl border-2 border-rose-500 bg-rose-50 text-xs font-bold font-hanzi text-rose-950 transition-all text-center';
+      } else {
+        btn.className = 'fib-opt-btn p-2.5 rounded-xl border border-stone-200 text-xs font-bold font-hanzi text-stone-400 transition-all text-center opacity-60';
+      }
+    });
+
+    if (explainBox) {
+      explainBox.classList.remove('hidden');
+      if (isCorrect) {
+        correctCount++;
+        explainBox.className = 'p-3 rounded-lg text-xs leading-relaxed mt-2 border border-emerald-300 bg-emerald-50/80 text-emerald-950 space-y-1';
+        explainBox.innerHTML = `
+          <span class="font-bold text-emerald-900 flex items-center gap-1.5">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600"></i>
+            Vị trí (${b.blankNum}) chính xác!
+          </span>
+          <p>${b.explanation}</p>
+        `;
+      } else {
+        explainBox.className = 'p-3 rounded-lg text-xs leading-relaxed mt-2 border border-rose-300 bg-rose-50/80 text-rose-950 space-y-1';
+        explainBox.innerHTML = `
+          <span class="font-bold text-rose-900 flex items-center gap-1.5">
+            <i data-lucide="alert-circle" class="w-3.5 h-3.5 text-rose-600"></i>
+            Vị trí (${b.blankNum}) chưa đúng! Từ chính xác là: <strong>${b.correct}</strong>
+          </span>
+          <p>${b.explanation}</p>
+        `;
+      }
+      refreshIcons(explainBox);
     }
   });
 
-  const tracker = document.getElementById('lessonQuizScoreTracker');
+  const tracker = document.getElementById('lessonFIBScoreTracker');
   if (tracker) {
-    tracker.innerText = `${correctCount} / ${totalQuestions} Câu đúng`;
-    if (Object.keys(lessonQuizResponses).length === totalQuestions) {
-      if (correctCount === totalQuestions) {
-        tracker.className = 'text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full';
-      } else {
-        tracker.className = 'text-xs font-bold text-amber-800 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full';
-      }
+    if (correctCount === fib.blanks.length) {
+      tracker.className = 'text-xs font-bold text-emerald-800 bg-emerald-100 border border-emerald-300 px-3 py-1 rounded-full';
+      tracker.innerText = `Đạt điểm tối đa: ${correctCount}/${fib.blanks.length} chỗ đúng`;
+    } else {
+      tracker.className = 'text-xs font-bold text-amber-800 bg-amber-100 border border-amber-300 px-3 py-1 rounded-full';
+      tracker.innerText = `Đúng ${correctCount}/${fib.blanks.length} chỗ`;
     }
   }
 }
 
+function resetFIBExercise(fibIdx) {
+  if (currentLessonFIBSelections[fibIdx]) {
+    delete currentLessonFIBSelections[fibIdx];
+  }
+  const fib = currentActiveLesson.fillInBlanks[fibIdx];
+  if (!fib) return;
+
+  fib.blanks.forEach(b => {
+    b.options.forEach(opt => {
+      const btn = document.getElementById(`fibBtn-${fibIdx}-${b.blankNum}-${opt}`);
+      if (btn) {
+        btn.className = 'fib-opt-btn p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 hover:bg-amber-50 text-xs font-bold font-hanzi text-stone-800 transition-all text-center cursor-pointer';
+      }
+    });
+    const explainBox = document.getElementById(`fibExplanation-${fibIdx}-${b.blankNum}`);
+    if (explainBox) {
+      explainBox.classList.add('hidden');
+      explainBox.innerHTML = '';
+    }
+  });
+
+  const tracker = document.getElementById('lessonFIBScoreTracker');
+  if (tracker) {
+    tracker.className = 'text-xs font-bold text-[#8B1E1E] bg-red-50 border border-red-200 px-3 py-1 rounded-full';
+    tracker.innerText = 'Chưa làm bài';
+  }
+}
+
+// ---------------- CULTURE & TIPS MODULE ----------------
 function renderLessonCulture(lesson) {
   const container = document.getElementById('lessonCultureContainer');
   if (!container) return;

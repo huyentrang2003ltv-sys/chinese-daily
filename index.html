@@ -1640,38 +1640,52 @@
         <!-- Sub-Tabs Switcher -->
         <div class="flex items-center gap-2 mt-4 pt-3 border-t border-amber-200/60 overflow-x-auto no-scrollbar">
           <button onclick="switchLessonSubTab('dialogues')" id="btn-lesson-subtab-dialogues" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs whitespace-nowrap cursor-pointer">
-            📖 1. Bài Khóa & Audio
+            🎙️ 1. Hội Thoại Phân Vai
           </button>
           <button onclick="switchLessonSubTab('vocabulary')" id="btn-lesson-subtab-vocabulary" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            📝 2. Bảng Từ Vựng (<span id="lessonModalVocabCount">0</span>)
+            📝 2. Bảng Từ Mới (<span id="lessonModalVocabCount">0</span>)
           </button>
           <button onclick="switchLessonSubTab('grammar')" id="btn-lesson-subtab-grammar" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            📐 3. Ngữ Pháp & Công Thức
+            📐 3. Ngữ Pháp & Mẫu Câu
           </button>
-          <button onclick="switchLessonSubTab('quiz')" id="btn-lesson-subtab-quiz" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            ✍️ 4. Trắc Nghiệm Củng Cố
+          <button onclick="switchLessonSubTab('qa')" id="btn-lesson-subtab-qa" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
+            ❓ 4. Hỏi - Đáp Bài Khóa (<span id="lessonModalQACount">0</span>)
+          </button>
+          <button onclick="switchLessonSubTab('fillblanks')" id="btn-lesson-subtab-fillblanks" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
+            ✍️ 5. Luyện Điền Từ Chỗ Trống (<span id="lessonModalFIBCount">0</span>)
           </button>
           <button onclick="switchLessonSubTab('culture')" id="btn-lesson-subtab-culture" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            🏮 5. Ghi Chú Văn Hóa & Mẹo Học
+            🏮 6. Ghi Chú Văn Hóa & Mẹo Học
           </button>
         </div>
       </div>
 
       <!-- Modal Body (Scrollable Content) -->
       <div class="p-5 md:p-8 overflow-y-auto space-y-6 flex-1 bg-[#FAF7F2]/40" id="lessonModalContentArea">
-        <!-- Sub-panel 1: Dialogues -->
+        <!-- Sub-panel 1: Dialogues with Character Roles & Voice Synthesis -->
         <div id="lessonSubPanel-dialogues" class="space-y-4">
-          <div class="flex items-center justify-between">
-            <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
-              <i data-lucide="message-square" class="w-4 h-4 text-[#8B1E1E]"></i>
-              <span>Bài Khóa Đối Thoại Chuẩn Giọng Bắc Kinh</span>
-            </h4>
-            <button onclick="playAllLessonDialogues()" class="px-3 py-1.5 rounded-lg bg-amber-100 hover:bg-amber-200/80 text-amber-900 text-xs font-semibold flex items-center gap-1.5 transition-colors cursor-pointer">
-              <i data-lucide="play" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-              <span>Nghe Toàn Bộ Bài Khóa</span>
-            </button>
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-white border border-amber-200/90 shadow-2xs">
+            <div class="flex items-center gap-2.5">
+              <span class="p-2 rounded-xl bg-purple-50 text-purple-900 border border-purple-200/70">
+                <i data-lucide="mic" class="w-4 h-4 text-purple-700"></i>
+              </span>
+              <div>
+                <h4 class="text-xs md:text-sm font-bold text-stone-900">Đối Thoại Phân Vai Nam - Nữ (Bắc Kinh Neural Voice)</h4>
+                <p class="text-[11px] text-stone-500">👩 Giọng Nữ (Xiaoxiao) • 👨 Giọng Nam (Yunxi) • Tự động chuyển vai</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+              <button id="btnPlayDialogueSequence" onclick="playDialogueSequence()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                <span>Nghe Hội Thoại Phân Vai</span>
+              </button>
+              <button id="btnStopDialogueSequence" onclick="stopDialogueSequence()" class="hidden px-4 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer animate-pulse">
+                <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                <span>Dừng Phát</span>
+              </button>
+            </div>
           </div>
-          <div id="lessonDialoguesContainer" class="space-y-3"></div>
+          <div id="lessonDialoguesContainer" class="space-y-3.5"></div>
         </div>
 
         <!-- Sub-panel 2: Vocabulary -->
@@ -1691,27 +1705,39 @@
           <div class="flex items-center justify-between">
             <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
               <i data-lucide="compass" class="w-4 h-4 text-[#8B1E1E]"></i>
-              <span>Ngữ Pháp Cốt Lõi, Công Thức & Đối Chiếu Việt - Trung</span>
+              <span>Ngữ Pháp Cốt Lõi, Công Thức Toán Học Hóa & Đối Chiếu Việt - Trung</span>
             </h4>
           </div>
           <div id="lessonGrammarContainer" class="space-y-4"></div>
         </div>
 
-        <!-- Sub-panel 4: Quiz -->
-        <div id="lessonSubPanel-quiz" class="hidden space-y-4">
+        <!-- Sub-panel 4: Comprehension Q&A (Hỏi - Đáp bài khóa) -->
+        <div id="lessonSubPanel-qa" class="hidden space-y-4">
           <div class="flex items-center justify-between">
             <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
-              <i data-lucide="check-circle-2" class="w-4 h-4 text-[#8B1E1E]"></i>
-              <span>Luyện Tập Trắc Nghiệm Tức Thì</span>
+              <i data-lucide="help-circle" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>Hỏi - Đáp Thấu Hiểu Bài Khóa (课文理解与问答)</span>
             </h4>
-            <span id="lessonQuizScoreTracker" class="text-xs font-bold text-[#8B1E1E] bg-red-50 border border-red-200 px-3 py-1 rounded-full">
-              Chưa trả lời
-            </span>
+            <span class="text-xs text-stone-500">Bấm nút bóng đèn để lật mở câu trả lời mẫu chuẩn ngữ pháp</span>
           </div>
-          <div id="lessonQuizContainer" class="space-y-4"></div>
+          <div id="lessonQAContainer" class="space-y-3.5"></div>
         </div>
 
-        <!-- Sub-panel 5: Culture & Tips -->
+        <!-- Sub-panel 5: Fill in the Blanks (Luyện tập điền từ vào chỗ trống) -->
+        <div id="lessonSubPanel-fillblanks" class="hidden space-y-4">
+          <div class="flex items-center justify-between">
+            <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">
+              <i data-lucide="edit-3" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>Bài Tập Điền Từ Vào Chỗ Trống Liên Quan Đến Hội Thoại (选词填空)</span>
+            </h4>
+            <span id="lessonFIBScoreTracker" class="text-xs font-bold text-[#8B1E1E] bg-red-50 border border-red-200 px-3 py-1 rounded-full">
+              Chưa làm bài
+            </span>
+          </div>
+          <div id="lessonFillBlanksContainer" class="space-y-4"></div>
+        </div>
+
+        <!-- Sub-panel 6: Culture & Tips -->
         <div id="lessonSubPanel-culture" class="hidden space-y-4">
           <div id="lessonCultureContainer" class="space-y-4"></div>
         </div>
