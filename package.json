@@ -15,5 +15,8 @@
     "hanzii"
   ],
   "author": "Antigravity",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-edge-tts": "^1.2.12"
+  }
 }

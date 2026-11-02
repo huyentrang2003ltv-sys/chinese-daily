@@ -140,44 +140,88 @@ if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
   };
 }
 
+let currentTtsAudio = null;
+
 function playChineseTTS(text, forceGender = null) {
-  if (typeof window === 'undefined' || !('speechSynthesis' in window)) {
-    alert('Trình duyệt của bạn không hỗ trợ phát âm trực tiếp.');
-    return;
-  }
-  window.speechSynthesis.cancel();
-
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'zh-CN';
-  utterance.rate = currentTtsSpeed || 0.85;
-
+  if (!text || !text.toString().trim()) return;
+  const cleanText = text.toString().trim();
   const targetGender = forceGender || currentTtsGender || 'female';
+  const targetSpeed = currentTtsSpeed || 0.85;
 
-  if (!voicesLoaded) {
-    initTtsVoices();
-  }
-
-  if (targetGender === 'male') {
-    if (beijingMaleVoice) {
-      utterance.voice = beijingMaleVoice;
-      utterance.pitch = 0.92; // Chuẩn âm vực nam Bắc Kinh
-    } else if (beijingFemaleVoice) {
-      utterance.voice = beijingFemaleVoice;
-      utterance.pitch = 0.80; // Giọng nam trầm nếu hệ thống chỉ có 1 giọng zh
-    } else {
-      utterance.pitch = 0.80;
+  // 1. Try High-Fidelity Studio Neural Beijing Audio (EdgeTTS Server API)
+  try {
+    if (currentTtsAudio) {
+      try {
+        currentTtsAudio.pause();
+        currentTtsAudio.currentTime = 0;
+      } catch (e) {}
     }
-  } else {
-    // Female
-    if (beijingFemaleVoice) {
-      utterance.voice = beijingFemaleVoice;
-      utterance.pitch = 1.05; // Chuẩn giọng nữ Bắc Kinh trong trẻo
-    } else {
-      utterance.pitch = 1.05;
-    }
-  }
 
-  window.speechSynthesis.speak(utterance);
+    const ttsUrl = `/api/tts?text=${encodeURIComponent(cleanText)}&gender=${targetGender}&speed=${targetSpeed}`;
+    const audio = new Audio(ttsUrl);
+    currentTtsAudio = audio;
+
+    let hasStarted = false;
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+      playPromise.then(() => {
+        hasStarted = true;
+      }).catch(err => {
+        console.warn('Audio playback error, falling back to WebSpeech:', err);
+        if (!hasStarted) {
+          playWebSpeechFallback(cleanText, targetGender, targetSpeed);
+        }
+      });
+    }
+
+    audio.onerror = () => {
+      if (!hasStarted) {
+        playWebSpeechFallback(cleanText, targetGender, targetSpeed);
+      }
+    };
+    return;
+  } catch (err) {
+    console.warn('Neural audio init error:', err);
+    playWebSpeechFallback(cleanText, targetGender, targetSpeed);
+  }
+}
+
+function playWebSpeechFallback(text, targetGender, targetSpeed) {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
+  try {
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(text);
+    utterance.lang = 'zh-CN';
+    utterance.rate = targetSpeed || 0.85;
+
+    if (!voicesLoaded) {
+      initTtsVoices();
+    }
+
+    if (targetGender === 'male') {
+      if (beijingMaleVoice) {
+        utterance.voice = beijingMaleVoice;
+        utterance.pitch = 0.92;
+      } else if (beijingFemaleVoice) {
+        utterance.voice = beijingFemaleVoice;
+        utterance.pitch = 0.80;
+      } else {
+        utterance.pitch = 0.80;
+      }
+    } else {
+      if (beijingFemaleVoice) {
+        utterance.voice = beijingFemaleVoice;
+        utterance.pitch = 1.05;
+      } else {
+        utterance.pitch = 1.05;
+      }
+    }
+
+    window.speechSynthesis.speak(utterance);
+  } catch (e) {
+    console.error('SpeechSynthesis error:', e);
+  }
 }
 
 function setTtsGender(gender) {

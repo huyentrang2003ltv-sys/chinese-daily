@@ -3,9 +3,16 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const zlib = require('zlib');
+let EdgeTTS = null;
+try {
+  EdgeTTS = require('node-edge-tts').EdgeTTS;
+} catch (e) {
+  console.warn('node-edge-tts not loaded:', e.message);
+}
 
 const PORT = process.env.PORT || 3005;
 const PUBLIC_DIR = __dirname;
+const audioCache = new Map();
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -60,7 +67,7 @@ function getCachedFile(filePath, contentType) {
   }
 }
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   // Enable CORS
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -69,6 +76,77 @@ const server = http.createServer((req, res) => {
   if (req.method === 'OPTIONS') {
     res.writeHead(204);
     res.end();
+    return;
+  }
+
+  // API: Studio Neural Beijing TTS (Microsoft Natural Voices: Xiaoxiao Female & Yunxi Male)
+  if (req.url.startsWith('/api/tts')) {
+    try {
+      const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+      const text = urlObj.searchParams.get('text');
+      const gender = urlObj.searchParams.get('gender') || 'female';
+      const speed = parseFloat(urlObj.searchParams.get('speed')) || 0.85;
+
+      if (!text || !text.trim()) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ error: 'Thiếu nội dung cần phát âm (text)' }));
+        return;
+      }
+
+      const voice = gender === 'male' ? 'zh-CN-YunxiNeural' : 'zh-CN-XiaoxiaoNeural';
+      let rateStr = '+0%';
+      if (speed <= 0.75) rateStr = '-20%';
+      else if (speed <= 0.85) rateStr = '-10%';
+      else if (speed >= 1.1) rateStr = '+15%';
+
+      const cleanText = text.trim();
+      const cacheKey = `${voice}:${rateStr}:${cleanText}`;
+
+      if (audioCache.has(cacheKey)) {
+        const audioBuf = audioCache.get(cacheKey);
+        res.writeHead(200, {
+          'Content-Type': 'audio/mpeg',
+          'Content-Length': audioBuf.length,
+          'Cache-Control': 'public, max-age=604800, immutable'
+        });
+        res.end(audioBuf);
+        return;
+      }
+
+      if (EdgeTTS) {
+        const tts = new EdgeTTS({ voice, rate: rateStr });
+        const tempName = path.join(__dirname, `tts_${Date.now()}_${Math.random().toString(36).slice(2, 8)}.mp3`);
+        await tts.ttsPromise(cleanText, tempName);
+
+        if (fs.existsSync(tempName)) {
+          const audioBuf = fs.readFileSync(tempName);
+          try { fs.unlinkSync(tempName); } catch (e) {}
+
+          if (audioCache.size < 600) {
+            audioCache.set(cacheKey, audioBuf);
+          }
+
+          res.writeHead(200, {
+            'Content-Type': 'audio/mpeg',
+            'Content-Length': audioBuf.length,
+            'Cache-Control': 'public, max-age=604800, immutable'
+          });
+          res.end(audioBuf);
+          return;
+        }
+      }
+
+      // Fallback redirect to Youdao TTS if EdgeTTS is unavailable
+      const youdaoUrl = `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(cleanText)}&le=zh`;
+      res.writeHead(302, { 'Location': youdaoUrl });
+      res.end();
+    } catch (err) {
+      console.error('TTS Endpoint Error:', err);
+      const urlObj = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+      const text = urlObj.searchParams.get('text') || '';
+      res.writeHead(302, { 'Location': `https://dict.youdao.com/dictvoice?audio=${encodeURIComponent(text)}&le=zh` });
+      res.end();
+    }
     return;
   }
 
@@ -144,7 +222,9 @@ const server = http.createServer((req, res) => {
   if (clientEtag && clientEtag === file.etag) {
     res.writeHead(304, {
       'ETag': file.etag,
-      'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=86400, stale-while-revalidate=604800'
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
     });
     res.end();
     return;
@@ -156,7 +236,9 @@ const server = http.createServer((req, res) => {
   const headers = {
     'Content-Type': contentType,
     'ETag': file.etag,
-    'Cache-Control': ext === '.html' ? 'no-cache' : 'public, max-age=86400, stale-while-revalidate=604800'
+    'Cache-Control': 'no-cache, no-store, must-revalidate',
+    'Pragma': 'no-cache',
+    'Expires': '0'
   };
 
   if (canGzip) {
