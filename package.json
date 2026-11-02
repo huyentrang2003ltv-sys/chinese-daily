@@ -17,6 +17,7 @@
   "author": "Antigravity",
   "license": "MIT",
   "dependencies": {
-    "node-edge-tts": "^1.2.12"
+    "node-edge-tts": "^1.2.12",
+    "pdf-parse": "^2.4.5"
   }
 }

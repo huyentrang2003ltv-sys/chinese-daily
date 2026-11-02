@@ -1,0 +1,912 @@
+{
+  "books": [
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "volumeSubtitle": "Nhập môn Ngữ âm, 21 Thanh mẫu, 36 Vận mẫu, 4 Thanh điệu & Giao tiếp Cơ bản",
+      "description": "Tập trung nền tảng phát âm chuẩn Bắc Kinh, chữ Hán cơ bản, chào hỏi, số đếm, gia đình, mua sắm và đổi tiền tệ."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "volumeSubtitle": "Ngữ pháp Nền tảng: Câu Liên Động, Bổ Ngữ Trạng Thái, Bổ Ngữ Kết Quả & Trợ Từ Động Thái",
+      "description": "Mở rộng vốn từ vựng sinh hoạt thường ngày, chỉ đường, thời gian, sinh nhật, khám bệnh, thể tiến hành và bổ ngữ."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "volumeSubtitle": "Ngữ pháp Cốt lõi: Câu So Sánh 比, Câu Chữ 把 & Câu Bị Động 被",
+      "description": "Chuyển giao từ sơ cấp sang trung cấp với 3 cấu trúc ngữ pháp quan trọng nhất: so sánh hơn/kém/bằng, câu xử lý chữ 把 và câu bị động."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "volumeSubtitle": "Bổ Ngữ Xu Hướng Phức Hợp, Bổ Ngữ Khả Năng & Cấu Trúc Liên Từ Phức",
+      "description": "Nắm vững các loại bổ ngữ xu hướng đa chiều (起来, 下去, 出来, 过去), bổ ngữ khả năng (得/不) và các cặp liên từ điều kiện, nhượng bộ, tăng tiến."
+    },
+    {
+      "volume": "3-1",
+      "volumeName": "Hán Ngữ 5 (Quyển 3 Thượng)",
+      "volumeSubtitle": "Thành Ngữ Điển Cố, Ngữ Pháp Văn Viết & Văn Hóa Truyền Thống",
+      "description": "Bắt đầu tiếp cận Hán ngữ cao cấp (HSK 5), đọc hiểu các câu chuyện ngụ ngôn thành ngữ kinh điển, phong tục tập quán và ngữ pháp trang trọng."
+    },
+    {
+      "volume": "3-2",
+      "volumeName": "Hán Ngữ 6 (Quyển 3 Hạ)",
+      "volumeSubtitle": "Văn Luận Xã Hội, Kỹ Năng Tư Duy & Tinh Hoa Ngôn Ngữ HSK 6",
+      "description": "Đỉnh cao của bộ giáo trình với các chủ đề triết lý nhân sinh, văn hóa trà đạo, bảo vệ môi trường, công nghệ và phân tích các cặp từ đồng nghĩa tinh vi."
+    }
+  ],
+  "lessons": [
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 1,
+      "titleHanzi": "你好",
+      "titlePinyin": "Nǐ hǎo",
+      "titleMeaning": "Xin chào",
+      "category": "Ngữ âm",
+      "grammarPoints": "4 thanh điệu chuẩn mực Bắc Kinh; Quy tắc biến điệu hai thanh 3 đi liền nhau (Nǐ hǎo -> Ní hǎo).",
+      "sampleDialogue": {
+        "hanzi": "你好！您好！",
+        "vietnamese": "Xin chào! Chào ngài!"
+      },
+      "keyWords": "你 (nǐ: bạn), 好 (hǎo: tốt/chào), 您 (nín: ngài), 一 (yī: số 1), 五 (wǔ: số 5), 八 (bā: số 8), 大 (dà: to), 不 (bù: không)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 2,
+      "titleHanzi": "汉语不太难",
+      "titlePinyin": "Hànyǔ bú tài nán",
+      "titleMeaning": "Tiếng Hán không khó lắm",
+      "category": "Ngữ âm & Biến điệu",
+      "grammarPoints": "Biến điệu của chữ 不 (bù -> bú trước thanh 4); Trợ từ nghi vấn 吗 đặt cuối câu hỏi.",
+      "sampleDialogue": {
+        "hanzi": "你忙吗？很忙。汉语难吗？不太难。",
+        "vietnamese": "Bạn bận không? Rất bận. Tiếng Hán khó không? Không khó lắm."
+      },
+      "keyWords": "忙 (máng: bận), 吗 (ma: không?), 很 (hěn: rất), 汉语 (Hànyǔ: tiếng Hán), 难 (nán: khó), 太 (tài: quá), 爸爸 (bàba: bố), 妈妈 (māma: mẹ)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 3,
+      "titleHanzi": "明天见",
+      "titlePinyin": "Míngtiān jiàn",
+      "titleMeaning": "Ngày mai gặp lại",
+      "category": "Thời gian",
+      "grammarPoints": "Biến điệu chữ 一 (yī -> yí trước thanh 4, yì trước thanh 1,2,3); Trạng ngữ chỉ thời gian đứng trước động từ.",
+      "sampleDialogue": {
+        "hanzi": "你学汉语吗？学。明天去北京吗？去。明天见！",
+        "vietnamese": "Bạn học tiếng Hán không? Có. Ngày mai đi Bắc Kinh không? Đi. Mai gặp lại!"
+      },
+      "keyWords": "学 (xué: học), 明天 (míngtiān: ngày mai), 见 (jiàn: gặp), 去 (qù: đi), 北京 (Běijīng: Bắc Kinh), 今天 (jīntiān: hôm nay), 星期 (xīngqī: tuần/thứ)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 4,
+      "titleHanzi": "你去哪儿",
+      "titlePinyin": "Nǐ qù nǎr",
+      "titleMeaning": "Bạn đi đâu đấy",
+      "category": "Địa điểm",
+      "grammarPoints": "Âm cuốn lưỡi 儿 (Erhua); Phân biệt 哪儿 (ở đâu) vs 那儿 (nơi kia) vs 这儿 (nơi này); Câu xin lỗi 对不起 - 没关系.",
+      "sampleDialogue": {
+        "hanzi": "你去哪儿？我去天安门。对不起！没关系！",
+        "vietnamese": "Bạn đi đâu đấy? Tôi đi Thiên An Môn. Xin lỗi! Không sao đâu!"
+      },
+      "keyWords": "哪儿 (nǎr: ở đâu), 那儿 (nàr: đằng kia), 这儿 (zhèr: ở đây), 回 (huí: về), 学校 (xuéxiào: trường học), 再见 (zàijiàn: tạm biệt), 对不起 (duìbuqǐ: xin lỗi)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 5,
+      "titleHanzi": "这是王老师",
+      "titlePinyin": "Zhè shì Wáng lǎoshī",
+      "titleMeaning": "Đây là thầy giáo Vương",
+      "category": "Giới thiệu",
+      "grammarPoints": "Câu phán đoán chữ 是; Phó từ 也 (cũng), 都 (đều); Thứ tự 也都; Lễ nghi mời khách: 请进，请坐，请喝茶.",
+      "sampleDialogue": {
+        "hanzi": "这是王老师。王老师，您好！请进，请坐，请喝茶！谢谢！",
+        "vietnamese": "Đây là thầy Vương. Thầy Vương, em chào thầy! Mời vào, mời ngồi, mời uống trà!"
+      },
+      "keyWords": "这 (zhè: đây), 是 (shì: là), 老师 (lǎoshī: thầy cô), 请 (qǐng: mời), 进 (jìn: vào), 坐 (zuò: ngồi), 喝 (hē: uống), 茶 (chá: trà), 谢谢 (xièxie: cảm ơn)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 6,
+      "titleHanzi": "我学习汉语",
+      "titlePinyin": "Wǒ xuéxí Hànyǔ",
+      "titleMeaning": "Tôi học tiếng Hán",
+      "category": "Thân phận",
+      "grammarPoints": "Đại từ nghi vấn 什么 (cái gì); Cách hỏi họ tên lịch sự: 您贵姓; Cấu trúc định ngữ + 的 + Trung tâm ngữ.",
+      "sampleDialogue": {
+        "hanzi": "请问，您贵姓？我姓张。你叫什么名字？我叫大卫。",
+        "vietnamese": "Xin hỏi, ngài mang quý họ gì? Tôi họ Trương. Bạn tên là gì? Tôi tên là David."
+      },
+      "keyWords": "请问 (qǐngwèn: xin hỏi), 贵姓 (guìxìng: quý họ), 姓 (xìng: họ), 叫 (jiào: gọi là), 名字 (míngzi: tên), 哪 (nǎ: nào), 国 (guó: nước), 人 (rén: người)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 7,
+      "titleHanzi": "你吃什么",
+      "titlePinyin": "Nǐ chī shénme",
+      "titleMeaning": "Bạn ăn cái gì",
+      "category": "Ẩm thực",
+      "grammarPoints": "Cấu trúc Số từ + Lượng từ + Danh từ; Lượng từ đồ ăn: 个, 碗, 杯; Phân biệt Màn thầu (chay) vs Bao tử (nhân).",
+      "sampleDialogue": {
+        "hanzi": "中午你去哪儿吃饭？我去食堂。你吃什么？我吃馒头，喝鸡蛋汤。",
+        "vietnamese": "Trưa nay bạn đi đâu ăn cơm? Tôi đi căng tin. Bạn ăn gì? Tôi ăn màn thầu, uống canh trứng."
+      },
+      "keyWords": "吃 (chī: ăn), 饭 (fàn: cơm), 食堂 (shítáng: nhà ăn), 馒头 (mántou: màn thầu), 包子 (bāozi: bánh bao), 鸡蛋 (jīdàn: trứng gà), 汤 (tāng: canh), 要 (yào: muốn/cần)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 8,
+      "titleHanzi": "苹果一斤多少钱",
+      "titlePinyin": "Píngguǒ yì jīn duōshao qián",
+      "titleMeaning": "Táo bao nhiêu tiền một cân",
+      "category": "Mua sắm",
+      "grammarPoints": "Hỏi giá tiền với 多少钱; Đơn vị tiền: 块 > 毛 > 分; Đơn vị cân TQ 1 斤 = 500g; Mẫu câu trả giá: 太贵了，便宜一点儿吧.",
+      "sampleDialogue": {
+        "hanzi": "苹果一斤多少钱？三块。太贵了，两块五吧！",
+        "vietnamese": "Táo bao nhiêu tiền một cân? 3 tệ. Đắt quá, 2 tệ rưỡi nhé!"
+      },
+      "keyWords": "买 (mǎi: mua), 斤 (jīn: cân = 500g), 多少 (duōshao: bao nhiêu), 钱 (qián: tiền), 块 (kuài: đồng/tệ), 毛 (máo: hào), 贵 (guì: đắt), 便宜 (piányi: rẻ)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 9,
+      "titleHanzi": "我换人民币",
+      "titlePinyin": "Wǒ huàn rénmínbì",
+      "titleMeaning": "Tôi đổi tiền Nhân dân tệ",
+      "category": "Ngân hàng",
+      "grammarPoints": "Đếm số theo đơn vị 万 (Vạn = 10.000); Đơn vị tiền tệ: 百, 千, 万; Cách hỏi và đổi tiền tại ngân hàng.",
+      "sampleDialogue": {
+        "hanzi": "先生，您换什么钱？我换人民币。换五百美元。请等一会儿。",
+        "vietnamese": "Thưa ông, ông muốn đổi tiền gì? Tôi đổi Nhân dân tệ. Đổi 500 USD. Xin đợi một lát."
+      },
+      "keyWords": "换 (huàn: đổi), 人民币 (rénmínbì: tiền RMB), 百 (bǎi: trăm), 千 (qiān: nghìn), 万 (wàn: vạn = 10.000), 美元 (Měiyuán: USD), 等 (děng: đợi), 数 (shǔ: đếm)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 10,
+      "titleHanzi": "他住哪儿",
+      "titlePinyin": "Tā zhù nǎr",
+      "titleMeaning": "Anh ấy sống ở đâu",
+      "category": "Chỗ ở",
+      "grammarPoints": "Cách đọc số 1 là 'yāo' trong số phòng và số điện thoại; Trật tự địa chỉ tiếng Hán từ LỚN đến BÉ.",
+      "sampleDialogue": {
+        "hanzi": "王老师住哪儿？他住留学生宿舍18楼1门9号。他的电话是62310884。",
+        "vietnamese": "Thầy Vương sống ở đâu? Thầy sống ở KTX, tòa 18, cổng 1, phòng 9. SĐT là 62310884."
+      },
+      "keyWords": "住 (zhù: ở/cư trú), 宿舍 (sùshè: KTX), 楼 (lóu: tòa nhà/tầng), 门 (mén: cổng), 号 (hào: số), 房间 (fángjiān: phòng), 电话 (diànhuà: điện thoại), 号码 (hàomǎ: mã số)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 11,
+      "titleHanzi": "我们都是留学生",
+      "titlePinyin": "Wǒmen dōu shì liúxuéshēng",
+      "titleMeaning": "Chúng tôi đều là lưu học sinh",
+      "category": "Phó từ",
+      "grammarPoints": "Phân biệt 都 (đều) và 也 (cũng); Phủ định toàn bộ 都不 (tất cả đều không) vs Phủ định bộ phận 不都 (không phải tất cả đều).",
+      "sampleDialogue": {
+        "hanzi": "我们都是留学生，也都学习汉语。他们不都是中国人。",
+        "vietnamese": "Chúng tôi đều là lưu học sinh, cũng đều học tiếng Hán. Họ không phải tất cả đều là người TQ."
+      },
+      "keyWords": "都 (dōu: đều), 留学生 (liúxuéshēng: du học sinh), 俩 (liǎ: hai người), 学生 (xuésheng: học sinh), 朋友 (péngyou: bạn bè), 一起 (yìqǐ: cùng nhau)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 12,
+      "titleHanzi": "你在哪儿学习",
+      "titlePinyin": "Nǐ zài nǎr xuéxí",
+      "titleMeaning": "Bạn học ở đâu",
+      "category": "Giới từ chỉ địa điểm",
+      "grammarPoints": "Trật tự câu giới từ chỉ địa điểm: Chủ ngữ + 在 + Nơi chốn + Động từ (ngược hoàn toàn với tiếng Việt).",
+      "sampleDialogue": {
+        "hanzi": "你在哪儿学习？我在北京语言大学学习。觉得汉语难不难？",
+        "vietnamese": "Bạn học ở đâu? Tôi học ở ĐH Ngôn ngữ Bắc Kinh. Cảm thấy tiếng Hán khó không?"
+      },
+      "keyWords": "在 (zài: ở/tại), 学习 (xuéxí: học tập), 语言 (yǔyán: ngôn ngữ), 大学 (dàxué: đại học), 觉得 (juéde: cảm thấy), 语法 (yǔfǎ: ngữ pháp), 听 (tīng: nghe), 说 (shuō: nói)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 13,
+      "titleHanzi": "这是不是中药",
+      "titlePinyin": "Zhè shì bu shì zhōngyào",
+      "titleMeaning": "Đây có phải thuốc bắc không",
+      "category": "Câu hỏi chính phản",
+      "grammarPoints": "Câu hỏi chính phản (V + 不 + V / Adj + 不 + Adj); Lượng từ đồ vật thông dụng: 本 (sách), 张 (giấy/thẻ), 支 (bút), 瓶 (chai), 盒 (hộp).",
+      "sampleDialogue": {
+        "hanzi": "这个箱子是不是你的？这不是我的，那是我的。这是不是中药？",
+        "vietnamese": "Chiếc vali này có phải của bạn không? Đây không phải, kia mới là của tôi. Đây có phải thuốc bắc không?"
+      },
+      "keyWords": "是不是 (shì bu shì: có phải không), 中药 (zhōngyào: thuốc bắc), 西药 (xīyào: thuốc tây), 箱子 (xiāngzi: vali/thùng), 重 (zhòng: nặng), 轻 (qīng: nhẹ), 衣服 (yīfu: quần áo)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 14,
+      "titleHanzi": "你的车是新的还是旧的",
+      "titlePinyin": "Nǐ de chē shì xīn de háishì jiù de",
+      "titleMeaning": "Xe của bạn là mới hay cũ",
+      "category": "Câu hỏi lựa chọn",
+      "grammarPoints": "Câu hỏi lựa chọn với 还是 (A 还是 B？); Kết cấu chữ 的 thay thế danh từ đã biết (新的 = xe mới).",
+      "sampleDialogue": {
+        "hanzi": "你喝咖啡还是喝茶？喝茶吧。你的自行车是新的还是旧的？新的。",
+        "vietnamese": "Bạn uống cà phê hay uống trà? Uống trà đi. Xe đạp của bạn là mới hay cũ? Mới."
+      },
+      "keyWords": "还是 (háishì: hay là), 新 (xīn: mới), 旧 (jiù: cũ), 自行车 (zìxíngchē: xe đạp), 颜色 (yánsè: màu sắc), 红 (hóng: đỏ), 蓝 (lán: xanh dương), 黑色 (hēisè: màu đen)."
+    },
+    {
+      "volume": "1-1",
+      "volumeName": "Hán Ngữ 1 (Quyển 1 Thượng)",
+      "lessonNum": 15,
+      "titleHanzi": "你们公司有多少职员",
+      "titlePinyin": "Nǐmen gōngsī yǒu duōshao zhíyuán",
+      "titleMeaning": "Công ty của các bạn có bao nhiêu nhân viên",
+      "category": "Số lượng & Gia đình",
+      "grammarPoints": "Phân biệt 几 (dưới 10) và 多少 (trên 10 hoặc bất kỳ); Lượng từ 口 (chỉ nhân khẩu gia đình ruột thịt) vs 个.",
+      "sampleDialogue": {
+        "hanzi": "你家有几口人？我家有四口人。你们公司有多少职员？有一百个职员。",
+        "vietnamese": "Nhà bạn có mấy người? Nhà tôi có 4 người. Công ty các bạn có bao nhiêu nhân viên? Có 100 nhân viên."
+      },
+      "keyWords": "全 (quán: toàn bộ), 公司 (gōngsī: công ty), 职员 (zhíyuán: nhân viên), 家 (jiā: nhà/gia đình), 口 (kǒu: lượng từ người gia đình), 照片 (zhàopiàn: bức ảnh), 做 (zuò: làm)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 16,
+      "titleHanzi": "你常去图书馆吗",
+      "titlePinyin": "Nǐ cháng qù túshūguǎn ma",
+      "titleMeaning": "Bạn thường đi thư viện không",
+      "category": "Phó từ tần suất",
+      "grammarPoints": "Hệ thống phó từ tần suất: 总是 > 常常 > 平常 > 有时候 > 很少 > 不常; Cấu trúc giới từ '跟/和 + Người + Động từ'.",
+      "sampleDialogue": {
+        "hanzi": "你常去图书馆吗？常去。我常借书，也常在那儿上网查资料。",
+        "vietnamese": "Bạn thường đến thư viện không? Thường đi. Tôi hay mượn sách, cũng hay lên mạng tra cứu tài liệu."
+      },
+      "keyWords": "现在 (xiànzài: bây giờ), 跟 (gēn: cùng/với), 一起 (yìqǐ: cùng nhau), 图书馆 (túshūguǎn: thư viện), 借 (jiè: mượn), 有时候 (yǒushíhou: thỉnh thoảng), 上网 (shàngwǎng: lướt web)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 17,
+      "titleHanzi": "他在做什么呢",
+      "titlePinyin": "Tā zài zuò shénme ne",
+      "titleMeaning": "Anh ấy đang làm gì thế",
+      "category": "Thể tiến hành (đang làm)",
+      "grammarPoints": "Thể tiến hành: 在 / 正 / 正在 + Động từ + (呢); Phủ định dùng 没(在) + Động từ; Cấu trúc '...的时候' (khi/lúc).",
+      "sampleDialogue": {
+        "hanzi": "麦克在做什么呢？他正在听音乐呢。我去找他的时候，他在做练习。",
+        "vietnamese": "Mike đang làm gì thế? Cậu ấy đang nghe nhạc. Lúc tôi đến tìm, cậu ấy đang làm bài tập."
+      },
+      "keyWords": "正在 (zhèngzài: đang), 音乐 (yīnyuè: âm nhạc), 录音 (lùyīn: ghi âm), 事儿 (shìr: việc), 书店 (shūdiàn: hiệu sách), 挤 (jǐ: đông đúc), 骑 (qí: đi xe/cưỡi)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 18,
+      "titleHanzi": "我去邮局寄包裹",
+      "titlePinyin": "Wǒ qù yóujú jì bāoguǒ",
+      "titleMeaning": "Tôi đi bưu điện gửi bưu kiện",
+      "category": "Câu liên động",
+      "grammarPoints": "Câu liên động (连动句): Chủ ngữ + 去/来 + Địa điểm + Làm gì; Phương tiện đi lại: 坐车, 骑车, 走路.",
+      "sampleDialogue": {
+        "hanzi": "你顺便帮我买几张邮票，好吗？没问题，我正好顺路。",
+        "vietnamese": "Bạn tiện thể giúp tôi mua mấy con tem được không? Không vấn đề gì, tôi vừa khéo tiện đường."
+      },
+      "keyWords": "顺便 (shùnbiàn: tiện thể), 替/帮 (tì/bāng: giúp/thay), 邮局 (yóujú: bưu điện), 寄 (jì: gửi), 包裹 (bāoguǒ: bưu kiện), 顺路 (shùnlù: tiện đường)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 19,
+      "titleHanzi": "可以试试吗",
+      "titlePinyin": "Kěyǐ shìshi ma",
+      "titleMeaning": "Có thể thử một chút không",
+      "category": "Trùng điệp động từ",
+      "grammarPoints": "Trùng điệp động từ đơn âm (AA / A一A: 看看, 看一看), song âm (ABAB: 学习学习); Biểu thị hành động diễn ra nhanh, nhẹ nhàng, thử nghiệm.",
+      "sampleDialogue": {
+        "hanzi": "这件毛衣可以试试吗？可以，你试试吧。穿起来很合适。",
+        "vietnamese": "Chiếc áo len này có thể thử một chút không? Được chứ, bạn thử xem. Mặc lên rất vừa vặn."
+      },
+      "keyWords": "试试 (shìshi: thử xem), 羽绒服 (yǔróngfú: áo phao lông vũ), 便宜 (piányi: rẻ), 长 (cháng: dài), 短 (duǎn: ngắn), 深 (shēn: đậm/sâu), 浅 (qiǎn: nhạt/nông)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 20,
+      "titleHanzi": "祝你生日快乐",
+      "titlePinyin": "Zhù nǐ shēngrì kuàilè",
+      "titleMeaning": "Chúc bạn sinh nhật vui vẻ",
+      "category": "Ngày tháng & Tuổi",
+      "grammarPoints": "Thứ tự ngày tháng: Năm + Tháng + Ngày + Thứ; Câu vị ngữ danh từ biểu thị ngày tháng, tuổi tác; Hỏi tuổi người lớn và trẻ nhỏ.",
+      "sampleDialogue": {
+        "hanzi": "你的生日是几月几号？十月十八号。祝你生日快乐！",
+        "vietnamese": "Sinh nhật bạn ngày mấy tháng mấy? 18 tháng 10. Chúc bạn sinh nhật vui vẻ!"
+      },
+      "keyWords": "生日 (shēngrì: sinh nhật), 快乐 (kuàilè: vui vẻ), 岁 (suì: tuổi), 属 (shǔ: cầm tinh con giáp), 打算 (dǎsuan: dự định), 晚会 (wǎnhuì: dạ tiệc/tiệc tối)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 21,
+      "titleHanzi": "明天我们早上七点一刻出发",
+      "titlePinyin": "Míngtiān wǒmen zǎoshang qī diǎn yí kè chūfā",
+      "titleMeaning": "Sáng mai 7h15 chúng ta xuất phát",
+      "category": "Giờ giấc",
+      "grammarPoints": "Cách nói giờ giấc: 点 (giờ), 分 (phút), 刻 (15 phút), 半 (30 phút), 差 (kém); Trạng ngữ thời gian đứng trước động từ.",
+      "sampleDialogue": {
+        "hanzi": "明天早上几点集合？七点一刻出发，大家千万别迟到！",
+        "vietnamese": "Sáng mai mấy giờ tập trung? 7 giờ 15 phút xuất phát, mọi người tuyệt đối đừng đến muộn nhé!"
+      },
+      "keyWords": "点 (diǎn: giờ), 分 (fēn: phút), 刻 (kè: 15 phút), 差 (chà: kém), 集合 (jíhé: tập trung), 出发 (chūfā: xuất phát), 迟到 (chídào: đến muộn)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 22,
+      "titleHanzi": "我打算请老师教我京剧",
+      "titlePinyin": "Wǒ dǎsuan qǐng lǎoshī jiāo wǒ jīngjù",
+      "titleMeaning": "Tôi dự định mời thầy dạy tôi Kinh kịch",
+      "category": "Câu kiêm ngữ",
+      "grammarPoints": "Câu kiêm ngữ (兼语句): S + V1 (请/让/叫) + O1/S2 + V2; Tân ngữ của động từ thứ nhất đồng thời là chủ ngữ của động từ thứ hai.",
+      "sampleDialogue": {
+        "hanzi": "我打算请王老师教我京剧。老师让我明天去找他。",
+        "vietnamese": "Tôi dự định mời thầy Vương dạy tôi Kinh kịch. Thầy bảo tôi ngày mai đến tìm thầy."
+      },
+      "keyWords": "打算 (dǎsuan: dự định), 请 (qǐng: mời), 让 (ràng: để/bảo), 叫 (jiào: gọi/khiến), 京剧 (jīngjù: Kinh kịch), 告诉 (gàosu: bảo/nói cho biết)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 23,
+      "titleHanzi": "学校里边有邮局吗",
+      "titlePinyin": "Xuéxiào lǐbiān yǒu yóujú ma",
+      "titleMeaning": "Trong trường học có bưu điện không",
+      "category": "Phương vị từ & Vị trí",
+      "grammarPoints": "Phương vị từ: 上边, 下边, 前边, 后边, 里边, 外边, 旁边; Câu tồn hiện biểu thị vị trí (Nơi chốn + 有 / 是 / 在 + Danh từ).",
+      "sampleDialogue": {
+        "hanzi": "学校里边有银行吗？有，在图书馆旁边。离这儿远不远？不远。",
+        "vietnamese": "Trong trường có ngân hàng không? Có, ở bên cạnh thư viện. Cách đây xa không? Không xa."
+      },
+      "keyWords": "里边 (lǐbian: bên trong), 外边 (wàibian: bên ngoài), 旁边 (pángbiān: bên cạnh), 离 (lí: cách), 远 (yuǎn: xa), 近 (jìn: gần), 往前走 (wǎng qián zǒu: đi về phía trước)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 24,
+      "titleHanzi": "我想学太极拳",
+      "titlePinyin": "Wǒ xiǎng xué tàijíquán",
+      "titleMeaning": "Tôi muốn học Thái Cực Quyền",
+      "category": "Động từ năng nguyện",
+      "grammarPoints": "Phân biệt Hội (会: biết qua học tập rèn luyện) vs Năng (能: có năng lực thực hiện) vs Khả dĩ (可以: được phép về mặt quy định).",
+      "sampleDialogue": {
+        "hanzi": "你会打太极拳吗？我不会，但是我很想学。你能教我吗？",
+        "vietnamese": "Bạn biết đánh Thái Cực Quyền không? Tôi không biết, nhưng tôi rất muốn học. Bạn có thể dạy tôi không?"
+      },
+      "keyWords": "想 (xiǎng: muốn/nhớ/nghĩ), 会 (huì: biết), 能 (néng: có thể), 可以 (kěyǐ: có thể/được phép), 太极拳 (tàijíquán: Thái Cực Quyền), 报名 (bàomíng: ghi danh/báo danh)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 25,
+      "titleHanzi": "她学得很好",
+      "titlePinyin": "Tā xué de hěn hǎo",
+      "titleMeaning": "Cô ấy học rất giỏi",
+      "category": "Bổ ngữ trạng thái",
+      "grammarPoints": "Bổ ngữ trạng thái với 得: S + V + 得 + Adj; Khi có tân ngữ phải lặp lại động từ: S + V + O + V + 得 + Adj (他说汉语说得好).",
+      "sampleDialogue": {
+        "hanzi": "她说汉语说得很流利。他起得早，睡得晚，非常努力。",
+        "vietnamese": "Cô ấy nói tiếng Hán nói rất lưu loát. Anh ấy dậy sớm, ngủ muộn, cực kỳ chăm chỉ."
+      },
+      "keyWords": "得 (de: trợ từ kết cấu), 早 (zǎo: sớm), 晚 (wǎn: muộn), 快 (kuài: nhanh), 慢 (màn: chậm), 流利 (liúlì: lưu loát), 努力 (nǔlì: nỗ lực/chăm chỉ)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 26,
+      "titleHanzi": "田芳去哪儿了",
+      "titlePinyin": "Tián Fāng qù nǎr le",
+      "titleMeaning": "Điền Phương đi đâu rồi",
+      "category": "Trợ từ ngữ khí 了",
+      "grammarPoints": "Phân biệt trợ từ động thái 了 (đã hoàn thành động tác) vs Trợ từ ngữ khí 了 ở cuối câu (biểu thị tình huống mới xuất hiện).",
+      "sampleDialogue": {
+        "hanzi": "田芳去哪儿了？她去图书馆借书了。你买什么了？我买了一本书。",
+        "vietnamese": "Điền Phương đi đâu rồi? Cô ấy đi thư viện mượn sách rồi. Bạn mua cái gì thế? Tôi mua một quyển sách."
+      },
+      "keyWords": "了 (le: rồi), 以前 (yǐqián: trước đây), 以后 (yǐhòu: sau này), 遇到 (yùdào: gặp phải), 聊天 (liáotiān: nói chuyện/tán gẫu)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 27,
+      "titleHanzi": "我看懂了",
+      "titlePinyin": "Wǒ kàn dǒng le",
+      "titleMeaning": "Tôi xem hiểu rồi",
+      "category": "Bổ ngữ kết quả",
+      "grammarPoints": "Bổ ngữ kết quả: V + 懂 (hiểu), 完 (xong), 好 (tốt đẹp), 见 (thấy), 到 (đạt được); Phủ định dùng 没 + V + Bổ ngữ kết quả.",
+      "sampleDialogue": {
+        "hanzi": "今天的练习我都做完了，课文也看懂了。你听见了吗？没听见。",
+        "vietnamese": "Bài tập hôm nay tôi đều làm xong rồi, bài khóa cũng xem hiểu rồi. Bạn nghe thấy chưa? Chưa nghe thấy."
+      },
+      "keyWords": "懂 (dǒng: hiểu), 完 (wán: xong), 好 (hǎo: xong/hoàn hảo), 错 (cuò: sai), 对 (duì: đúng), 清楚 (qīngchu: rõ ràng), 翻译 (fānyì: phiên dịch)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 28,
+      "titleHanzi": "我去过故宫",
+      "titlePinyin": "Wǒ qù guo Gùgōng",
+      "titleMeaning": "Tôi từng đi Cố Cung",
+      "category": "Trợ từ động thái 过",
+      "grammarPoints": "Trợ từ động thái 过: biểu thị trải nghiệm từng xảy ra trong quá khứ; Phủ định bắt buộc dùng '没(有) + Động từ + 过'.",
+      "sampleDialogue": {
+        "hanzi": "你去过故宫吗？我去过一次。吃过北京烤鸭没有？没吃过。",
+        "vietnamese": "Bạn từng đi Cố Cung chưa? Tôi đi qua một lần rồi. Ăn vịt quay Bắc Kinh chưa? Chưa từng ăn."
+      },
+      "keyWords": "过 (guo: từng/qua), 故宫 (Gùgōng: Tử Cấm Thành Cố Cung), 烤鸭 (kǎoyā: vịt quay), 次 (cì: lần), 遍 (biàn: lượt/lần từ đầu đến cuối)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 29,
+      "titleHanzi": "这里的冬天跟北京一样冷",
+      "titlePinyin": "Zhèlǐ de dōngtiān gēn Běijīng yíyàng lěng",
+      "titleMeaning": "Mùa đông ở đây lạnh giống như Bắc Kinh",
+      "category": "Câu so sánh ngang bằng",
+      "grammarPoints": "Cấu trúc so sánh bằng: A 跟 / 和 B 一样 + (Tính từ); Phủ định: A 跟 / 和 B 不一样.",
+      "sampleDialogue": {
+        "hanzi": "这里的冬天跟北京一样冷。我买的词典跟你的一样。",
+        "vietnamese": "Mùa đông ở đây lạnh giống hệt như Bắc Kinh. Từ điển tôi mua giống hệt cuốn của bạn."
+      },
+      "keyWords": "一样 (yíyàng: giống nhau), 冬天 (dōngtiān: mùa đông), 夏天 (xiàtiān: mùa hè), 冷 (lěng: lạnh), 热 (rè: nóng), 气候 (qìhòu: khí hậu)."
+    },
+    {
+      "volume": "1-2",
+      "volumeName": "Hán Ngữ 2 (Quyển 1 Hạ)",
+      "lessonNum": 30,
+      "titleHanzi": "快要下雨了",
+      "titlePinyin": "Kuàiyào xiàyǔ le",
+      "titleMeaning": "Trời sắp mưa rồi",
+      "category": "Thời tương lai gần",
+      "grammarPoints": "Biểu thị hành động sắp xảy ra: 快要/就要/要...了; Chú ý: Khi có thời gian cụ thể (như 明天, 下周) chỉ được dùng 就要...了, không dùng 快要.",
+      "sampleDialogue": {
+        "hanzi": "快要下雨了，我们快回宿舍吧！新的一年就要开始了。",
+        "vietnamese": "Trời sắp đổ mưa rồi, chúng mình mau về ký túc xá thôi! Năm mới sắp sửa bắt đầu rồi."
+      },
+      "keyWords": "快要...了 (kuàiyào...le: sắp... rồi), 下雨 (xiàyǔ: mưa), 阴天 (yīntiān: trời âm u), 出发 (chūfā: xuất phát), 寒假 (hánjià: kỳ nghỉ đông)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 31,
+      "titleHanzi": "我骑车骑得比较慢",
+      "titlePinyin": "Wǒ qí chē qí de bǐjiào màn",
+      "titleMeaning": "Tôi đi xe tương đối chậm",
+      "category": "Bổ ngữ trạng thái nâng cao",
+      "grammarPoints": "Bổ ngữ trạng thái khi động từ mang tân ngữ tách rời: V + O + V + 得 + Adj (我骑车骑得慢).",
+      "sampleDialogue": {
+        "hanzi": "你骑车骑得真快！我不行，我骑车骑得比较慢。",
+        "vietnamese": "Bạn đạp xe nhanh thật đấy! Tôi thì chịu, tôi đi xe tương đối chậm chạp."
+      },
+      "keyWords": "骑 (qí: đi xe/cưỡi), 慢 (màn: chậm), 比较 (bǐjiào: tương đối/so sánh), 严格 (yángé: nghiêm khắc), 准时 (zhǔnshí: đúng giờ)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 32,
+      "titleHanzi": "玛丽比我跑得快",
+      "titlePinyin": "Mǎlì bǐ wǒ pǎo de kuài",
+      "titleMeaning": "Mary chạy nhanh hơn tôi",
+      "category": "Câu so sánh chữ 比",
+      "grammarPoints": "Cấu trúc chữ 比: A 比 B + Tính từ / Bổ ngữ; Chênh lệch số lượng đặt sau tính từ (A 比 B + Adj + 一点儿 / 得多 / 多了).",
+      "sampleDialogue": {
+        "hanzi": "今天比昨天冷得多。玛丽比我跑得快多了。",
+        "vietnamese": "Hôm nay lạnh hơn hôm qua nhiều lắm. Mary chạy nhanh hơn tôi rất nhiều."
+      },
+      "keyWords": "比 (bǐ: so với), 更 (gèng: càng), 多了 (duō le: nhiều), 一点儿 (yìdiǎnr: một chút), 跑 (pǎo: chạy), 速度 (sùdù: tốc độ)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 33,
+      "titleHanzi": "飞机比火车快多了",
+      "titlePinyin": "Fēijī bǐ huǒchē kuài duō le",
+      "titleMeaning": "Máy bay nhanh hơn xe lửa nhiều",
+      "category": "So sánh chữ 比 & 没有",
+      "grammarPoints": "Phân biệt phủ định: A 不比 B (không hơn, xấp xỉ ngang ngửa) vs A 没有 B (kém hơn hẳn).",
+      "sampleDialogue": {
+        "hanzi": "坐飞机比坐火车快多了。我不比他聪明，但他比我努力。",
+        "vietnamese": "Đi máy bay nhanh hơn đi tàu hỏa nhiều lắm. Tôi không thông minh hơn cậu ấy, nhưng cậu ấy chăm hơn tôi."
+      },
+      "keyWords": "飞机 (fēijī: máy bay), 火车 (huǒchē: tàu hỏa), 聪明 (cōngming: thông minh), 勤奋 (qínfèn: cần cù), 舒服 (shūfu: thoải mái)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 34,
+      "titleHanzi": "我跟你一样",
+      "titlePinyin": "Wǒ gēn nǐ yíyàng",
+      "titleMeaning": "Tôi giống như bạn",
+      "category": "So sánh nâng cao",
+      "grammarPoints": "So sánh ngang bằng nâng cao: A 没有 B 那么 / 这么 + Tính từ (Tôi không chăm chỉ bằng bạn).",
+      "sampleDialogue": {
+        "hanzi": "我没有你那么爱运动。我的爱好跟你的一样。",
+        "vietnamese": "Tôi không yêu thích vận động được như bạn. Sở thích của tôi cũng giống hệt như của bạn."
+      },
+      "keyWords": "那么 (nàme: đến mức ấy), 运动 (yùndòng: thể thao/vận động), 爱好 (àihào: sở thích), 弹钢琴 (tán gāngqín: chơi piano)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 35,
+      "titleHanzi": "我把这本书看完了",
+      "titlePinyin": "Wǒ bǎ zhè běn shū kàn wán le",
+      "titleMeaning": "Tôi đọc xong quyển sách này rồi",
+      "category": "Câu chữ 把 (Bắt buộc)",
+      "grammarPoints": "CÂU CHỮ 把: Chủ ngữ + 把 + Tân ngữ xác định + Động từ + Kết quả/Thành phần xử lý.",
+      "sampleDialogue": {
+        "hanzi": "请大家把作业本交上来。我已经把书看完了。",
+        "vietnamese": "Xin mọi người nộp vở bài tập lên đây. Tôi đã đọc xong quyển sách này rồi."
+      },
+      "keyWords": "把 (bǎ: giới từ chữ 把), 交 (jiāo: nộp/giao), 还 (huán: trả lại), 忘 (wàng: quên), 干净 (gānjìng: sạch sẽ), 放 (fàng: đặt/để)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 36,
+      "titleHanzi": "我把护照放在包里了",
+      "titlePinyin": "Wǒ bǎ hùzhào fàng zài bāo lǐ le",
+      "titleMeaning": "Tôi để hộ chiếu trong túi rồi",
+      "category": "Câu chữ 把 với phương vị",
+      "grammarPoints": "Câu chữ 把 kết hợp bổ ngữ kết quả chỉ vị trí / đối tượng tiếp nhận: 把 + O + V + 在 / 到 / 给 + Nơi chốn / Người.",
+      "sampleDialogue": {
+        "hanzi": "你把车停在哪儿了？我把车停在楼下了。请把护照拿出来。",
+        "vietnamese": "Bạn đỗ xe ở đâu thế? Tôi đỗ xe ở dưới tầng rồi. Xin hãy lấy hộ chiếu ra đây."
+      },
+      "keyWords": "护照 (hùzhào: hộ chiếu), 包 (bāo: túi xách), 停 (tíng: dừng/đỗ xe), 拿 (ná: cầm/lấy), 寄 (jì: gửi), 送 (sòng: tặng/tiễn)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 37,
+      "titleHanzi": "房间被打扫干净了",
+      "titlePinyin": "Fángjiān bèi dǎsǎo gānjìng le",
+      "titleMeaning": "Căn phòng đã được dọn sạch sẽ",
+      "category": "Câu bị động chữ 被",
+      "grammarPoints": "CÂU BỊ ĐỘNG CHỮ 被: Chủ thể chịu tác động + 被 / 叫 / 让 + (Tác nhân) + Động từ + Kết quả.",
+      "sampleDialogue": {
+        "hanzi": "房间已经被服务员打扫干净了。我的自行车被人骑走了。",
+        "vietnamese": "Căn phòng đã được nhân viên dọn dẹp sạch sẽ rồi. Xe đạp của tôi bị người ta đi mất rồi."
+      },
+      "keyWords": "被 (bèi: bị/được), 打扫 (dǎsǎo: dọn dẹp), 偷 (tōu: trộm cắp), 弄 (nòng: làm/gây ra), 摔坏 (shuāihuài: rơi vỡ hỏng)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 38,
+      "titleHanzi": "钥匙被风吹走了",
+      "titlePinyin": "Yàoshi bèi fēng chuī zǒu le",
+      "titleMeaning": "Chìa khóa bị gió thổi bay rồi",
+      "category": "Bị động hoàn thành",
+      "grammarPoints": "Bị động biểu thị tình huống bất ngờ không mong muốn; Sử dụng giới từ 给 trong câu bị động khẩu ngữ.",
+      "sampleDialogue": {
+        "hanzi": "桌上的图纸被风吹走了。小偷被警察抓住了。",
+        "vietnamese": "Bản vẽ trên bàn bị gió thổi bay mất rồi. Kẻ trộm đã bị cảnh sát tóm gọn rồi."
+      },
+      "keyWords": "钥匙 (yàoshi: chìa khóa), 吹 (chuī: thổi), 警察 (jǐngchá: cảnh sát), 抓 (zhuā: tóm/bắt), 淋湿 (línshī: dầm ướt)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 39,
+      "titleHanzi": "动脑筋",
+      "titlePinyin": "Dòng nǎojīn",
+      "titleMeaning": "Động não",
+      "category": "Bổ ngữ khả năng cơ bản",
+      "grammarPoints": "Bổ ngữ chỉ khả năng: V + 得 / 不 + Kết quả (看得懂, 听得见, 做不完, 进得去).",
+      "sampleDialogue": {
+        "hanzi": "遇到难题时一定要多动脑筋。字太小了，我看不清楚。",
+        "vietnamese": "Khi gặp bài toán khó nhất định phải chịu khó động não. Chữ bé quá, tôi nhìn không rõ."
+      },
+      "keyWords": "动脑筋 (dòng nǎojīn: động não suy nghĩ), 困难 (kùnnan: khó khăn), 解决 (jiějué: giải quyết), 办法 (bànfǎ: biện pháp)."
+    },
+    {
+      "volume": "2-1",
+      "volumeName": "Hán Ngữ 3 (Quyển 2 Thượng)",
+      "lessonNum": 40,
+      "titleHanzi": "咱们聊聊天吧",
+      "titlePinyin": "Zánmen liáoliao tiān ba",
+      "titleMeaning": "Chúng ta trò chuyện chút đi",
+      "category": "Động từ ly hợp",
+      "grammarPoints": "Quy tắc trùng điệp động từ ly hợp (Động từ + Tân ngữ): Trùng điệp theo dạng AAB (聊聊天, 游游泳, 跳跳舞, 散散步).",
+      "sampleDialogue": {
+        "hanzi": "今天周末，咱们坐下来喝杯咖啡、聊聊天吧！",
+        "vietnamese": "Hôm nay cuối tuần, chúng mình ngồi xuống uống ly cà phê, trò chuyện tâm tình chút đi!"
+      },
+      "keyWords": "咱们 (zánmen: chúng ta/chúng mình), 聊天 (liáotiān: tán gẫu), 散步 (sànbù: đi dạo), 游泳 (yóuyǒng: bơi lội), 轻松 (qīngsōng: thư thái)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 41,
+      "titleHanzi": "这件旗袍穿起来真合适",
+      "titlePinyin": "Zhè jiàn qípáo chuān qǐlái zhēn héshì",
+      "titleMeaning": "Bộ sườn xám này mặc lên thật vừa",
+      "category": "Bổ ngữ xu hướng phức",
+      "grammarPoints": "Nghĩa mở rộng của 起来: 1. Đánh giá giác quan (看起来, 听起来, 尝起来); 2. Bắt đầu và tiếp diễn (笑了起来).",
+      "sampleDialogue": {
+        "hanzi": "这个主意听起来不错。她穿上旗袍真漂亮！",
+        "vietnamese": "Ý kiến này nghe qua có vẻ rất hay. Cô ấy mặc sườn xám vào đẹp thật đấy!"
+      },
+      "keyWords": "旗袍 (qípáo: sườn xám), 穿 (chuān: mặc), 合适 (héshì: thích hợp/vừa vặn), 赞成 (zànchéng: tán thành), 印象 (yìnxiàng: ấn tượng)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 42,
+      "titleHanzi": "他跑进教室来了",
+      "titlePinyin": "Tā pǎo jìn jiàoshì lái le",
+      "titleMeaning": "Anh ấy chạy vào trong lớp rồi",
+      "category": "Vị trí tân ngữ xu hướng",
+      "grammarPoints": "Tân ngữ nơi chốn trong bổ ngữ xu hướng phức hợp BẮT BUỘC đặt TRƯỚC 来/去 (跑进教室来, KHÔNG nói 跑进来教室).",
+      "sampleDialogue": {
+        "hanzi": "上课铃响了，同学们都跑进教室来了。",
+        "vietnamese": "Chuông vào lớp reo rồi, các bạn học sinh đều chạy ùa vào trong lớp học rồi."
+      },
+      "keyWords": "教室 (jiàoshì: phòng học), 跑 (pǎo: chạy), 进 (jìn: vào), 搬 (bān: khiêng/chuyển nhà), 带 (dài: đem theo)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 43,
+      "titleHanzi": "你吃得惯吗",
+      "titlePinyin": "Nǐ chī de guàn ma",
+      "titleMeaning": "Bạn ăn có quen không",
+      "category": "Bổ ngữ khả năng nâng cao",
+      "grammarPoints": "Các cặp bổ ngữ khả năng cố định: 吃得惯/吃不惯, 睡得着/睡不着, 买得起/买不起, 受得了/受不了.",
+      "sampleDialogue": {
+        "hanzi": "这么辣的菜你吃得惯吗？吃得惯，我很喜欢川菜。",
+        "vietnamese": "Món ăn cay thế này bạn ăn quen không? Ăn quen chứ, tôi rất thích món Tứ Xuyên."
+      },
+      "keyWords": "吃得惯 (chī de guàn: ăn quen), 睡得着 (shuì de zháo: ngủ được), 买得起 (mǎi de qǐ: mua nổi), 受得了 (shòu de liǎo: chịu đựng nổi)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 44,
+      "titleHanzi": "他学得不仅好，而且很快",
+      "titlePinyin": "Tā xué de bùjǐn hǎo, érqiě hěn kuài",
+      "titleMeaning": "Anh ấy học không những giỏi mà còn rất nhanh",
+      "category": "Liên từ tăng tiến",
+      "grammarPoints": "Cấu trúc liên từ tăng tiến: 不仅...而且... (không những... mà còn...), 不但...并且...",
+      "sampleDialogue": {
+        "hanzi": "他不仅会说汉语，而且还会写毛笔字。",
+        "vietnamese": "Anh ấy không những biết nói tiếng Hán mà còn biết viết cả thư pháp chữ Hán."
+      },
+      "keyWords": "不仅 (bùjǐn: không những), 而且 (érqiě: mà còn), 并且 (bìngqiě: đồng thời/và), 优点 (yōudiǎn: ưu điểm), 丰富 (fēngfù: phong phú)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 45,
+      "titleHanzi": "只要坚持，就能成功",
+      "titlePinyin": "Zhǐyào jiānchí, jiù néng chénggōng",
+      "titleMeaning": "Chỉ cần kiên trì thì sẽ thành công",
+      "category": "Liên từ điều kiện",
+      "grammarPoints": "Phân biệt điều kiện đủ: 只要...就... (chỉ cần... thì...) vs Điều kiện cần duy nhất: 只有...才... (chỉ có... mới...).",
+      "sampleDialogue": {
+        "hanzi": "只要功夫深，铁杵磨成针。只有努力学习，才能通过HSK 6级。",
+        "vietnamese": "Có công mài sắt có ngày nên kim. Chỉ có chăm chỉ học tập mới có thể thi đỗ HSK 6."
+      },
+      "keyWords": "只要 (zhǐyào: chỉ cần), 只有 (zhǐyǒu: chỉ có), 坚持 (jiānchí: kiên trì), 成功 (chénggōng: thành công), 磨 (mó: mài), 铁杵 (tiěchǔ: chày sắt)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 46,
+      "titleHanzi": "无论刮风下雨他都来",
+      "titlePinyin": "Wúlùn guāfēng xiàyǔ tā dōu lái",
+      "titleMeaning": "Dù gió mưa anh ấy đều đến",
+      "category": "Điều kiện vô điều kiện",
+      "grammarPoints": "Cấu trúc: 无论 / 不管 + Nghi vấn / Phương án A hay B + 都 / 也 + Kết quả (bất kể điều gì thì kết quả vẫn thế).",
+      "sampleDialogue": {
+        "hanzi": "无论遇到多大的困难，我们都不能轻言放弃。",
+        "vietnamese": "Dù gặp phải khó khăn lớn đến nhường nào, chúng ta đều không được buông lời từ bỏ."
+      },
+      "keyWords": "无论 (wúlùn: bất luận/dù), 不管 (bùguǎn: bất kể), 刮风 (guāfēng: nổi gió), 放弃 (fàngqì: từ bỏ), 毅力 (yìlì: nghị lực)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 47,
+      "titleHanzi": "越学越有意思",
+      "titlePinyin": "Yuè xué yuè yǒu yìsi",
+      "titleMeaning": "Càng học càng thấy thú vị",
+      "category": "Cấu trúc tăng tiến",
+      "grammarPoints": "Cấu trúc tỷ lệ tăng tiến: 越 A 越 B (càng A càng B) và 越来越 + Tính từ (ngày càng...).",
+      "sampleDialogue": {
+        "hanzi": "汉字越学越有意思，学得越深越觉得中华文化博大精深。",
+        "vietnamese": "Chữ Hán càng học càng thấy hay, học càng sâu càng cảm nhận văn hóa Trung Hoa uyên bác thâm sâu."
+      },
+      "keyWords": "越...越... (yuè...yuè: càng... càng...), 越来越 (yuè lái yuè: ngày càng), 博大精深 (bódà jīngshēn: uyên bác sâu sắc), 兴趣 (xìngqù: hứng thú)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 48,
+      "titleHanzi": "他一边听音乐一边看书",
+      "titlePinyin": "Tā yìbiān tīng yīnyuè yìbiān kàn shū",
+      "titleMeaning": "Anh ấy vừa nghe nhạc vừa đọc sách",
+      "category": "Hành động song hành",
+      "grammarPoints": "Cấu trúc đồng thời: 一边...一边... (vừa làm việc này vừa làm việc kia); Tính chất song song: 又...又... (vừa ngon vừa rẻ).",
+      "sampleDialogue": {
+        "hanzi": "老人们在公园里一边散步一边聊天。这里的饭菜又便宜又好吃。",
+        "vietnamese": "Các cụ già ở trong công viên vừa đi dạo vừa hàn huyên. Cơm ở đây vừa rẻ lại vừa ngon miệng."
+      },
+      "keyWords": "一边...一边... (yìbiān...yìbiān: vừa... vừa), 又...又... (yòu...yòu: vừa... lại vừa), 既...又... (jì...yòu: đã... lại còn)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 49,
+      "titleHanzi": "连小孩子都知道",
+      "titlePinyin": "Lián xiǎoháizi dōu zhīdào",
+      "titleMeaning": "Đến trẻ con cũng biết",
+      "category": "Cấu trúc nhấn mạnh 连",
+      "grammarPoints": "Cấu trúc nhấn mạnh trường hợp cùng cực: 连 + Danh từ nhấn mạnh + 都 / 也 + Vị ngữ (Đến cả... cũng...).",
+      "sampleDialogue": {
+        "hanzi": "这个问题太简单了，连小学生都懂。",
+        "vietnamese": "Câu hỏi này đơn giản quá chừng, đến cả học sinh tiểu học cũng hiểu được."
+      },
+      "keyWords": "连...都/也 (lián...dōu/yě: ngay cả/đến cả... cũng), 甚至 (shènzhì: thậm chí), 基础 (jīchǔ: nền tảng), 显然 (xiǎnrán: rõ ràng)."
+    },
+    {
+      "volume": "2-2",
+      "volumeName": "Hán Ngữ 4 (Quyển 2 Hạ)",
+      "lessonNum": 50,
+      "titleHanzi": "难忘的旅行",
+      "titlePinyin": "Nánwàng de lǚxíng",
+      "titleMeaning": "Chuyến du lịch khó quên",
+      "category": "Tổng kết trung cấp",
+      "grammarPoints": "Tổng kết ngữ pháp Hán ngữ trung cấp; Kỹ năng viết bài văn tự sự, miêu tả phong cảnh và biểu đạt cảm xúc sâu sắc.",
+      "sampleDialogue": {
+        "hanzi": "万里长城气势磅礴，这次中国之行令我终生难忘。",
+        "vietnamese": "Vạn Lý Trường Thành khí thế hùng vĩ ngút trời, chuyến đi Trung Quốc lần này khiến tôi trọn đời khó quên."
+      },
+      "keyWords": "难忘 (nánwàng: khó quên), 旅行 (lǚxíng: du lịch), 万里长城 (Wànlǐ Chángchéng: Vạn Lý Trường Thành), 壮观 (zhuàngguān: tráng lệ)."
+    },
+    {
+      "volume": "3-1",
+      "volumeName": "Hán Ngữ 5 (Quyển 3 Thượng)",
+      "lessonNum": 51,
+      "titleHanzi": "掩耳盗铃",
+      "titlePinyin": "Yǎn ěr dào líng",
+      "titleMeaning": "Bịt tai trộm chuông",
+      "category": "Thành ngữ ngụ ngôn",
+      "grammarPoints": "Đặc trưng thành ngữ 4 chữ (四字成语); Tự lừa mình dối người (自欺欺人); Cổ văn nhập môn.",
+      "sampleDialogue": {
+        "hanzi": "想在考试中作弊蒙混过关，完全是掩耳盗铃。",
+        "vietnamese": "Muốn gian lận trong kỳ thi để qua mắt giám thị hoàn toàn là hành động bịt tai trộm chuông."
+      },
+      "keyWords": "掩 (yǎn: bịt/che), 耳 (ěr: tai), 盗 (dào: trộm), 铃 (líng: chuông), 愚蠢 (yúchǔn: ngu xuẩn), 自欺欺人 (zì qī qī rén: tự dối mình dối người)."
+    },
+    {
+      "volume": "3-1",
+      "volumeName": "Hán Ngữ 5 (Quyển 3 Thượng)",
+      "lessonNum": 52,
+      "titleHanzi": "拔苗助长",
+      "titlePinyin": "Bá miáo zhù zhǎng",
+      "titleMeaning": "Kéo mạ giúp lớn",
+      "category": "Thành ngữ ngụ ngôn",
+      "grammarPoints": "Thành ngữ chỉ sự nóng vội nôn nóng vi phạm quy luật tự nhiên; Cấu trúc văn ngôn: 急于求成 (dục tốc bất đạt).",
+      "sampleDialogue": {
+        "hanzi": "教育孩子必须遵循成长规律，绝不能拔苗助长。",
+        "vietnamese": "Giáo dục con cái bắt buộc phải tuân theo quy luật trưởng thành, tuyệt đối không được đốt cháy giai đoạn kéo mạ giúp lớn."
+      },
+      "keyWords": "拔 (bá: nhổ/kéo), 苗 (miáo: mạ non), 助 (zhù: giúp), 长 (zhǎng: lớn lên), 枯死 (kūsǐ: héo chết), 规律 (guīlǜ: quy luật)."
+    },
+    {
+      "volume": "3-1",
+      "volumeName": "Hán Ngữ 5 (Quyển 3 Thượng)",
+      "lessonNum": 53,
+      "titleHanzi": "塞翁失马",
+      "titlePinyin": "Sài wēng shī mǎ",
+      "titleMeaning": "Tái ông mất ngựa",
+      "category": "Triết lý nhân sinh",
+      "grammarPoints": "Thành ngữ: 塞翁失马，焉知非福 (Tái ông mất ngựa, họa phúc khôn lường); Triết học biện chứng phương Đông.",
+      "sampleDialogue": {
+        "hanzi": "塞翁失马，焉知非福。眼前暂时的挫折说不定是未来的契机。",
+        "vietnamese": "Tái ông mất ngựa họa phúc khó lường. Khó khăn tạm thời trước mắt chưa biết chừng lại là cơ hội vàng trong tương lai."
+      },
+      "keyWords": "塞翁 (sài wēng: ông lão biên ải), 祸福 (huòfú: họa phúc), 辩证 (biànzhèng: biện chứng), 契机 (qìjī: bước ngoặt/cơ hội)."
+    },
+    {
+      "volume": "3-1",
+      "volumeName": "Hán Ngữ 5 (Quyển 3 Thượng)",
+      "lessonNum": 54,
+      "titleHanzi": "守株待兔",
+      "titlePinyin": "Shǒu zhū dài tù",
+      "titleMeaning": "Ôm cây đợi thỏ",
+      "category": "Thành ngữ phê phán",
+      "grammarPoints": "Phê phán tư tưởng lười biếng trông chờ vào may rủi ngẫu nhiên mà không chịu lao động chân chính.",
+      "sampleDialogue": {
+        "hanzi": "不靠脚踏实地工作而指望天上掉馅饼，无异于守株待兔。",
+        "vietnamese": "Không dựa vào làm việc chắc chắn mà trông chờ sung rụng từ trên trời xuống thì chẳng khác gì ôm cây đợi thỏ."
+      },
+      "keyWords": "守 (shǒu: trông giữ), 株 (zhū: gốc cây), 待 (dài: đợi chờ), 兔子 (tùzi: con thỏ), 偶然 (ǒurán: ngẫu nhiên), 侥幸 (jiǎoxìng: ăn may)."
+    },
+    {
+      "volume": "3-1",
+      "volumeName": "Hán Ngữ 5 (Quyển 3 Thượng)",
+      "lessonNum": 55,
+      "titleHanzi": "画蛇添足",
+      "titlePinyin": "Huà shé tiān zú",
+      "titleMeaning": "Vẽ rắn thêm chân",
+      "category": "Hành văn hàm súc",
+      "grammarPoints": "Phê phán làm những việc thừa thãi làm hỏng việc; Nguyên tắc viết văn ngắn gọn súc tích (简练).",
+      "sampleDialogue": {
+        "hanzi": "这篇文章结尾已经很完美，你再加这两句话简直是画蛇添足。",
+        "vietnamese": "Đoạn kết của bài văn này đã rất hoàn mỹ rồi, bạn thêm hai câu này vào quả thực là vẽ rắn thêm chân."
+      },
+      "keyWords": "蛇 (shé: con rắn), 添 (tiān: thêm vào), 足 (zú: chân), 多余 (duōyú: dư thừa), 适得其反 (shì dé qí fǎn: phản tác dụng)."
+    },
+    {
+      "volume": "3-2",
+      "volumeName": "Hán Ngữ 6 (Quyển 3 Hạ)",
+      "lessonNum": 60,
+      "titleHanzi": "中国茶文化与人际交往",
+      "titlePinyin": "Zhōngguó chá wénhuà yǔ rénjì jiāowǎng",
+      "titleMeaning": "Văn hóa Trà và giao lưu nhân tế",
+      "category": "Văn hóa cao cấp",
+      "grammarPoints": "Ngữ pháp văn viết trang trọng: 之 (của), 于 (ở/đối với), 其 (của nó); Cụm từ cố định: 以茶会友.",
+      "sampleDialogue": {
+        "hanzi": "茶文化之精髓在于其宁静致远的哲学意境。",
+        "vietnamese": "Tinh hoa của văn hóa trà nằm ở cảnh giới triết học tĩnh lặng để vươn xa."
+      },
+      "keyWords": "品茶 (pǐn chá: thưởng trà), 精髓 (jīngsuǐ: tinh hoa), 宁静 (níngjìng: yên tĩnh), 悠久 (yōujiǔ: lâu đời), 儒雅 (rúyǎ: nho nhã)."
+    },
+    {
+      "volume": "3-2",
+      "volumeName": "Hán Ngữ 6 (Quyển 3 Hạ)",
+      "lessonNum": 65,
+      "titleHanzi": "中国传统节日与民俗",
+      "titlePinyin": "Zhōngguó chuántǒng jiérì yǔ mínsú",
+      "titleMeaning": "Các ngày lễ truyền thống và phong tục",
+      "category": "Dân tộc học",
+      "grammarPoints": "Văn phong nghị luận văn hóa; Các ngày Tết cổ truyền: 春节, 清明节, 端午节, 中秋节, 重阳节.",
+      "sampleDialogue": {
+        "hanzi": "中秋佳节阖家团聚，寄托了中华民族对美好生活的向往。",
+        "vietnamese": "Tết Trung Thu gia đình đoàn tụ sum vầy, gửi gắm niềm ước vọng của dân tộc Trung Hoa về một cuộc sống tốt đẹp."
+      },
+      "keyWords": "团聚 (tuánjù: đoàn tụ), 寄托 (jìtuō: gửi gắm), 习俗 (xísú: tập tục), 月饼 (yuèbǐng: bánh trung thu), 祈福 (qífú: cầu phúc)."
+    },
+    {
+      "volume": "3-2",
+      "volumeName": "Hán Ngữ 6 (Quyển 3 Hạ)",
+      "lessonNum": 70,
+      "titleHanzi": "书面语语法精粹与修辞",
+      "titlePinyin": "Shūmiànyǔ yǔfǎ jīngcuì yǔ xiūcí",
+      "titleMeaning": "Tinh hoa ngữ pháp văn viết & Tu từ",
+      "category": "Ngữ pháp cao cấp HSK 6",
+      "grammarPoints": "Các cặp phó từ văn viết: 究竟 vs 毕竟, 难免 vs 未免, 反映 vs 反应, 偶尔 vs 偶然; Hư từ: 鉴于, 毋庸置疑.",
+      "sampleDialogue": {
+        "hanzi": "毋庸置疑，科技的迅猛发展正在全方位重构人类社会的生活范式。",
+        "vietnamese": "Không còn nghi ngờ gì nữa, sự phát triển vũ bão của công nghệ đang tái cấu trúc toàn diện chuẩn mực đời sống xã hội nhân loại."
+      },
+      "keyWords": "毋庸置疑 (wú yōng zhì yí: không còn nghi ngờ gì nữa), 鉴于 (jiànyú: xét thấy), 毕竟 (bìjìng: rốt cuộc), 迅猛 (xùnměng: vũ bão)."
+    }
+  ]
+}

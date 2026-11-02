@@ -238,6 +238,12 @@
         <span>Chiết Tự & Gốc Từ</span>
       </button>
 
+      <button onclick="switchTab('jiaocheng')" id="tab-btn-jiaocheng" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
+        <i data-lucide="book-marked" class="w-4 h-4 text-[#8B1E1E]"></i>
+        <span>Giáo Trình Hán Ngữ 6 Quyển</span>
+        <span class="px-1.5 py-0.5 text-[10px] rounded-full bg-red-100 text-[#8B1E1E] font-bold">58 Bài PDF</span>
+      </button>
+
       <button onclick="switchTab('radicals')" id="tab-btn-radicals" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
         <i data-lucide="grid" class="w-4 h-4 text-amber-700"></i>
         <span>214 Bộ Thủ</span>
@@ -347,6 +353,80 @@
 
       <!-- Active Etymology Detail View -->
       <div id="activeEtymologyContainer" class="space-y-6"></div>
+    </section>
+
+    <!-- TAB: GIÁO TRÌNH HÁN NGỮ 6 QUYỂN (BÁCH KHOA TOÀN THƯ) -->
+    <section id="tab-jiaocheng" class="hidden space-y-6">
+      <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-red-50/80 via-[#FFFDF9] to-amber-50/50 border border-amber-300/80 shadow-xs">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-100 text-[#8B1E1E] border border-red-300 text-xs font-bold mb-3">
+              <i data-lucide="book-marked" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+              <span>Trích Xuất Trọn Bộ 6 Tập PDF Giáo Trình Hán Ngữ (ĐH Ngôn Ngữ Bắc Kinh)</span>
+            </div>
+            <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
+              Giáo Trình Hán Ngữ 6 Quyển Toàn Tập (汉语教程 1-6 全套)
+            </h2>
+            <p class="text-sm text-stone-600 max-w-3xl leading-relaxed">
+              Hệ thống hóa toàn bộ tri thức từ 6 cuốn giáo trình chuẩn mực (Quyển 1-1 đến 3-2): 76 bài học, 21 thanh mẫu, 36 vận mẫu, câu so sánh chữ 比, câu chữ 把, câu bị động chữ 被, bổ ngữ xu hướng phức hợp và tinh hoa thành ngữ văn hóa HSK 1 - HSK 6. Tích hợp âm thanh Studio Neural Bắc Kinh.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3 bg-white/90 p-3.5 rounded-2xl border border-amber-200/90 shadow-2xs shrink-0">
+            <div class="text-center px-2">
+              <span class="block text-2xl font-black text-[#8B1E1E] font-serif-luxury" id="jiaochengLessonCount">58</span>
+              <span class="text-[11px] text-stone-500 font-bold uppercase tracking-wider">Bài Trọng Tâm</span>
+            </div>
+            <div class="w-px h-10 bg-amber-200"></div>
+            <div class="text-center px-2">
+              <span class="block text-2xl font-black text-amber-700 font-serif-luxury">6</span>
+              <span class="text-[11px] text-stone-500 font-bold uppercase tracking-wider">Tập Sách PDF</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Volume Filter Toolbar -->
+        <div class="pt-6 border-t border-amber-200/60 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+            <span class="text-xs font-bold text-stone-500 whitespace-nowrap">Tập sách:</span>
+            <button onclick="filterJiaochengVolume('all')" id="btn-jc-all" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap">
+              🌟 Tất cả 6 Quyển
+            </button>
+            <button onclick="filterJiaochengVolume('1-1')" id="btn-jc-1-1" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              📘 Hán Ngữ 1 (1-1)
+            </button>
+            <button onclick="filterJiaochengVolume('1-2')" id="btn-jc-1-2" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              📗 Hán Ngữ 2 (1-2)
+            </button>
+            <button onclick="filterJiaochengVolume('2-1')" id="btn-jc-2-1" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              📙 Hán Ngữ 3 (2-1)
+            </button>
+            <button onclick="filterJiaochengVolume('2-2')" id="btn-jc-2-2" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              📕 Hán Ngữ 4 (2-2)
+            </button>
+            <button onclick="filterJiaochengVolume('3-1')" id="btn-jc-3-1" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              🏛️ Hán Ngữ 5 (3-1)
+            </button>
+            <button onclick="filterJiaochengVolume('3-2')" id="btn-jc-3-2" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              👑 Hán Ngữ 6 (3-2)
+            </button>
+          </div>
+
+          <!-- Lesson Search Bar -->
+          <div class="relative w-full md:w-72">
+            <i data-lucide="search" class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400"></i>
+            <input
+              id="jiaochengSearchInput"
+              type="text"
+              placeholder="Tìm bài học, chữ Hán, ngữ pháp..."
+              class="w-full pl-10 pr-4 py-2 text-xs rounded-xl bg-white border border-amber-200 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] shadow-2xs"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Lessons Grid Container -->
+      <div id="jiaochengGridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     </section>
 
     <!-- TAB: 214 BỘ THỦ KHANG HY TOÀN DIỆN -->

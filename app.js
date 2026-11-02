@@ -13,6 +13,9 @@ let radicalsData = [];
 let chengyuData = [];
 let readingsData = [];
 let grammarData = [];
+let jiaochengData = null;
+let activeJiaochengVolume = 'all';
+let jiaochengSearchQuery = '';
 
 // Gamification & Profile State
 let userProfile = {
@@ -467,6 +470,10 @@ function ensureTabRendered(tabId) {
         renderEtymologyDetail(activeEtymologyIndex || 0);
       }
       break;
+    case 'jiaocheng':
+      renderJiaocheng();
+      setupJiaochengSearch();
+      break;
     case 'radicals':
       if (radicalsData && radicalsData.length > 0) {
         renderRadicals();
@@ -563,8 +570,9 @@ async function initApp() {
       fetch('data/radicals.json').then(r => r.json()).catch(() => []),
       fetch('data/chengyu.json').then(r => r.json()).catch(() => []),
       fetch('data/readings.json').then(r => r.json()).catch(() => []),
-      fetch('data/grammar_compendium.json').then(r => r.json()).catch(() => [])
-    ]).then(([dictRes, mindmapRes, confRes, practRes, cultRes, examRes, aiRes, radRes, chengRes, readRes, gramRes]) => {
+      fetch('data/grammar_compendium.json').then(r => r.json()).catch(() => []),
+      fetch('data/hanyu_jiaocheng.json').then(r => r.json()).catch(() => null)
+    ]).then(([dictRes, mindmapRes, confRes, practRes, cultRes, examRes, aiRes, radRes, chengRes, readRes, gramRes, jcRes]) => {
       dictionaryData = dictRes;
       mindmapData = mindmapRes;
       confusionsData = confRes;
@@ -576,6 +584,7 @@ async function initApp() {
       chengyuData = chengRes;
       readingsData = readRes;
       grammarData = gramRes;
+      jiaochengData = jcRes;
 
       setupGlobalSearch();
 
@@ -595,7 +604,7 @@ async function initApp() {
 function switchTab(tabId) {
   activeTab = tabId;
   const tabs = [
-    'etymology', 'radicals', 'writing', 'chengyu', 'readings', 'grammar',
+    'etymology', 'jiaocheng', 'radicals', 'writing', 'chengyu', 'readings', 'grammar',
     'culture', 'mindmap', 'confusions', 'translation', 'aichat', 'mockexam',
     'pathway', 'practice', 'flashcards', 'dictionary'
   ];
@@ -609,6 +618,8 @@ function switchTab(tabId) {
     if (t === tabId) {
       section.classList.remove('hidden');
       if (t === 'etymology') {
+        btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40';
+      } else if (t === 'jiaocheng') {
         btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40';
       } else if (t === 'radicals') {
         btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#1E4D43] via-[#2A6559] to-[#C59A3F] text-[#FFFDF9] shadow-md shadow-emerald-950/20 border border-amber-300/40';
@@ -4158,6 +4169,182 @@ function renderGrammarCompendium() {
   `).join('');
 
   refreshIcons();
+}
+
+// ==========================================
+// MODULE: GIÁO TRÌNH HÁN NGỮ 6 QUYỂN (BÁCH KHOA TOÀN THƯ)
+// Trích xuất toàn diện tri thức từ 6 tập PDF (ĐH Ngôn ngữ Bắc Kinh)
+// ==========================================
+function filterJiaochengVolume(volume) {
+  activeJiaochengVolume = volume;
+  
+  const buttons = ['all', '1-1', '1-2', '2-1', '2-2', '3-1', '3-2'];
+  buttons.forEach(v => {
+    const btn = document.getElementById(`btn-jc-${v}`);
+    if (!btn) return;
+    if (v === volume) {
+      btn.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap';
+    } else {
+      btn.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap';
+    }
+  });
+
+  renderJiaocheng();
+}
+
+function setupJiaochengSearch() {
+  const input = document.getElementById('jiaochengSearchInput');
+  if (!input) return;
+  input.addEventListener('input', debounce((e) => {
+    jiaochengSearchQuery = e.target.value.trim().toLowerCase();
+    renderJiaocheng();
+  }, 120));
+}
+
+function renderJiaocheng() {
+  const container = document.getElementById('jiaochengGridContainer');
+  if (!container) return;
+
+  if (!jiaochengData || !jiaochengData.lessons) {
+    container.innerHTML = `
+      <div class="col-span-full py-12 text-center text-stone-400">
+        <i data-lucide="loader-2" class="w-8 h-8 animate-spin mx-auto mb-2 text-[#8B1E1E]"></i>
+        <p class="text-xs">Đang tải toàn bộ tri thức 6 tập Giáo trình Hán ngữ...</p>
+      </div>
+    `;
+    refreshIcons(container);
+    return;
+  }
+
+  let lessons = jiaochengData.lessons;
+
+  if (activeJiaochengVolume !== 'all') {
+    lessons = lessons.filter(l => l.volume === activeJiaochengVolume);
+  }
+
+  if (jiaochengSearchQuery) {
+    lessons = lessons.filter(l => {
+      const dialogueText = l.sampleDialogue ? `${l.sampleDialogue.hanzi} ${l.sampleDialogue.vietnamese}` : '';
+      const target = `${l.titleHanzi} ${l.titlePinyin} ${l.titleMeaning} ${l.category} ${l.grammarPoints} ${dialogueText} ${l.keyWords}`.toLowerCase();
+      return target.includes(jiaochengSearchQuery);
+    });
+  }
+
+  const countBadge = document.getElementById('jiaochengLessonCount');
+  if (countBadge) {
+    countBadge.innerText = lessons.length;
+  }
+
+  if (lessons.length === 0) {
+    container.innerHTML = `
+      <div class="col-span-full py-12 text-center text-stone-400">
+        <i data-lucide="book-open" class="w-12 h-12 mx-auto mb-3 opacity-40 text-stone-400"></i>
+        <p class="font-bold text-stone-600">Không tìm thấy bài học nào phù hợp với từ khóa</p>
+        <p class="text-xs text-stone-400 mt-1">Hãy thử tìm theo chữ Hán, Pinyin hoặc tên ngữ pháp (VD: 把, 比, 旗袍, sườn xám)...</p>
+      </div>
+    `;
+    refreshIcons(container);
+    return;
+  }
+
+  const volumeColorMap = {
+    '1-1': { bg: 'bg-red-50 text-[#8B1E1E] border-red-200', tag: 'Hán Ngữ 1 (1-1)' },
+    '1-2': { bg: 'bg-emerald-50 text-emerald-800 border-emerald-200', tag: 'Hán Ngữ 2 (1-2)' },
+    '2-1': { bg: 'bg-amber-50 text-amber-900 border-amber-200', tag: 'Hán Ngữ 3 (2-1)' },
+    '2-2': { bg: 'bg-purple-50 text-purple-900 border-purple-200', tag: 'Hán Ngữ 4 (2-2)' },
+    '3-1': { bg: 'bg-blue-50 text-blue-900 border-blue-200', tag: 'Hán Ngữ 5 (3-1)' },
+    '3-2': { bg: 'bg-rose-50 text-rose-900 border-rose-200', tag: 'Hán Ngữ 6 (3-2)' }
+  };
+
+  container.innerHTML = lessons.map(lesson => {
+    const vMeta = volumeColorMap[lesson.volume] || { bg: 'bg-stone-100 text-stone-800 border-stone-200', tag: `Quyển ${lesson.volume}` };
+    const safeDialogue = lesson.sampleDialogue ? lesson.sampleDialogue.hanzi.replace(/'/g, "\\'") : '';
+    const safeTitle = lesson.titleHanzi.replace(/'/g, "\\'");
+
+    return `
+      <div class="glass-card rounded-2xl p-5 border border-amber-200/90 hover:border-[#8B1E1E]/50 transition-all space-y-3.5 bg-[#FFFDF9]/95 shadow-xs hover:shadow-md flex flex-col justify-between">
+        <div class="space-y-3">
+          <!-- Top Tag Bar -->
+          <div class="flex items-center justify-between gap-2">
+            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black border ${vMeta.bg}">
+              ${vMeta.tag} • Bài ${lesson.lessonNum}
+            </span>
+            <span class="text-[11px] font-medium text-stone-500 bg-stone-100/80 px-2 py-0.5 rounded-md">
+              ${lesson.category}
+            </span>
+          </div>
+
+          <!-- Title & Audio -->
+          <div class="flex items-start justify-between gap-3 border-b border-amber-100 pb-2.5">
+            <div>
+              <div class="flex items-baseline gap-2">
+                <h3 class="text-xl font-bold font-hanzi text-stone-900 tracking-wide">${lesson.titleHanzi}</h3>
+                <span class="text-xs font-semibold text-[#8B1E1E]">${lesson.titlePinyin}</span>
+              </div>
+              <p class="text-xs font-medium text-stone-600 mt-0.5">"${lesson.titleMeaning}"</p>
+            </div>
+            <button 
+              onclick="playChineseTTS('${safeTitle}')" 
+              class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all shrink-0 cursor-pointer" 
+              title="Phát âm tên bài học">
+              <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
+            </button>
+          </div>
+
+          <!-- Grammar Focus -->
+          <div class="p-3 rounded-xl bg-amber-50/50 border border-amber-200/70 text-xs space-y-1">
+            <span class="text-[10px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1">
+              <i data-lucide="compass" class="w-3 h-3 text-[#8B1E1E]"></i>
+              Ngữ pháp cốt lõi:
+            </span>
+            <p class="text-stone-700 leading-relaxed font-sans">${lesson.grammarPoints}</p>
+          </div>
+
+          <!-- Sample Dialogue -->
+          ${lesson.sampleDialogue ? `
+            <div class="p-3 rounded-xl bg-stone-50/80 border border-stone-200/80 text-xs space-y-1.5">
+              <div class="flex items-center justify-between">
+                <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Mẫu câu thực tế:</span>
+                <button onclick="playChineseTTS('${safeDialogue}')" class="text-stone-400 hover:text-[#8B1E1E] transition-colors" title="Nghe mẫu câu này">
+                  <i data-lucide="play-circle" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+                </button>
+              </div>
+              <p class="font-hanzi font-bold text-stone-900 text-[13px]">${lesson.sampleDialogue.hanzi}</p>
+              <p class="text-stone-600 italic text-[11px]">${lesson.sampleDialogue.vietnamese}</p>
+            </div>
+          ` : ''}
+
+          <!-- Vocabulary -->
+          <div class="space-y-1 pt-1">
+            <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block">Từ mới then chốt:</span>
+            <p class="text-xs text-stone-700 leading-relaxed font-sans bg-amber-50/30 p-2 rounded-lg border border-amber-100/60">${lesson.keyWords}</p>
+          </div>
+        </div>
+
+        <!-- Footer Action -->
+        <div class="pt-2 border-t border-amber-100 flex items-center justify-between text-xs">
+          <button 
+            onclick="quickSearchFromLesson('${lesson.titleHanzi}')" 
+            class="text-[#8B1E1E] hover:underline font-semibold flex items-center gap-1 text-[11px] cursor-pointer">
+            <i data-lucide="search" class="w-3 h-3"></i>
+            Tra cứu trong Từ Điển
+          </button>
+          <span class="text-[10px] text-stone-400">ĐH Ngôn Ngữ Bắc Kinh</span>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  refreshIcons(container);
+}
+
+function quickSearchFromLesson(text) {
+  const searchInput = document.getElementById('globalSearchInput');
+  if (searchInput) {
+    searchInput.value = text;
+    handleGlobalSearch(text);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
 
 // Run on page load
