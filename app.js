@@ -82,6 +82,8 @@ let pathwayLessonsRendered = 0;
 let pathwayLessonsBatch = 10;
 let dictRendered = 0;
 let dictBatch = 24;
+let currentDictHsk = 'all';
+let currentDictSearch = '';
 
 // Flashcard State
 let flashcardQueue = [];
@@ -2674,53 +2676,153 @@ function markFlashcard(mastered) {
   updateFlashcardUI();
 }
 
-// ---------------- TAB 6: KHO TỪ ĐIỂN ----------------
+// ---------------- TAB 6: KHO TỪ ĐIỂN CHUẨN HSK 1 - HSK 6 ----------------
+function filterDictHsk(lvl) {
+  currentDictHsk = lvl;
+
+  // Update "All" button
+  const allBtn = document.getElementById('btn-dict-hsk-all');
+  if (allBtn) {
+    allBtn.className = lvl === 'all'
+      ? 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm transition-all whitespace-nowrap'
+      : 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap';
+  }
+
+  // Update HSK 1-6 buttons
+  for (let i = 1; i <= 6; i++) {
+    const btn = document.getElementById(`btn-dict-hsk-${i}`);
+    if (!btn) continue;
+    btn.className = lvl === i
+      ? 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm transition-all whitespace-nowrap'
+      : 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap';
+  }
+
+  renderDictionary(true);
+}
+
+function onDictSearchInput(val) {
+  currentDictSearch = val || '';
+  const clearBtn = document.getElementById('dictClearSearchBtn');
+  if (clearBtn) {
+    if (currentDictSearch.trim()) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+  }
+  renderDictionary(true);
+}
+
+function clearDictSearch() {
+  const input = document.getElementById('dictSearchInput');
+  if (input) input.value = '';
+  onDictSearchInput('');
+}
+
+function getFilteredDictionaryList() {
+  if (!dictionaryData || !Array.isArray(dictionaryData)) return [];
+  let list = dictionaryData;
+  if (currentDictHsk !== 'all') {
+    list = list.filter(item => item.level === currentDictHsk);
+  }
+  if (currentDictSearch && currentDictSearch.trim()) {
+    const q = currentDictSearch.toLowerCase().trim();
+    list = list.filter(item => 
+      (item.title && item.title.toLowerCase().includes(q)) ||
+      (item.pinyin && item.pinyin.toLowerCase().includes(q)) ||
+      (item.meaning && item.meaning.toLowerCase().includes(q)) ||
+      (item.exampleSentence && item.exampleSentence.toLowerCase().includes(q))
+    );
+  }
+  return list;
+}
+
 function renderDictionary(reset = false) {
   const container = document.getElementById('dictGridContainer');
+  if (!container) return;
+
   const totalLabel = document.getElementById('dictTotalCountLabel');
-  if (totalLabel) {
-    totalLabel.innerText = `${dictionaryData.length.toLocaleString()} mục`;
-  }
+  const filteredLabel = document.getElementById('dictFilteredCount');
+  const filteredList = getFilteredDictionaryList();
+
+  if (totalLabel) totalLabel.innerText = `${dictionaryData.length.toLocaleString()}`;
+  if (filteredLabel) filteredLabel.innerText = `${filteredList.length.toLocaleString()}`;
+
   if (reset) {
     dictRendered = 0;
     container.innerHTML = '';
   }
 
-  const nextBatch = dictionaryData.slice(dictRendered, dictRendered + dictBatch);
+  if (filteredList.length === 0) {
+    container.innerHTML = `
+      <div class="col-span-full glass-card rounded-2xl p-10 text-center text-stone-500 border border-amber-200 bg-white shadow-xs space-y-2">
+        <div class="w-12 h-12 rounded-full bg-amber-50 text-amber-800 flex items-center justify-center mx-auto text-xl">🔍</div>
+        <p class="font-bold text-stone-800">Không tìm thấy từ vựng nào phù hợp.</p>
+        <p class="text-xs text-stone-500">Hãy thử nhập từ khóa khác hoặc chọn "Tất Cả Cấp Độ".</p>
+      </div>
+    `;
+    const loadMoreBtn = document.getElementById('loadMoreDictBtn');
+    if (loadMoreBtn) loadMoreBtn.classList.add('hidden');
+    return;
+  }
+
+  const nextBatch = filteredList.slice(dictRendered, dictRendered + dictBatch);
+
+  // Level badge styling map
+  const levelBadgeStyles = {
+    1: 'bg-amber-100 text-amber-900 border-amber-300',
+    2: 'bg-orange-100 text-orange-900 border-orange-300',
+    3: 'bg-sky-100 text-sky-900 border-sky-300',
+    4: 'bg-rose-100 text-rose-900 border-rose-300',
+    5: 'bg-purple-100 text-purple-900 border-purple-300',
+    6: 'bg-indigo-100 text-indigo-900 border-indigo-300'
+  };
 
   nextBatch.forEach(item => {
     const card = document.createElement('div');
-    card.className = 'glass-card rounded-2xl p-4 border-teal-100 bg-white flex flex-col justify-between hover:border-teal-400 transition-all shadow-xs';
+    const badgeStyle = levelBadgeStyles[item.level] || 'bg-amber-100 text-amber-900 border-amber-200';
+
+    card.className = 'glass-card rounded-2xl p-5 border border-amber-200/80 bg-white flex flex-col justify-between hover:border-[#8B1E1E] transition-all shadow-xs hover:shadow-md';
     card.innerHTML = `
       <div>
-        <div class="flex items-center justify-between text-xs text-slate-500 mb-2">
-          <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-teal-50 text-teal-700 border border-teal-200">
+        <div class="flex items-center justify-between text-xs text-stone-500 mb-2.5">
+          <span class="px-2.5 py-0.5 rounded-lg text-xs font-bold border ${badgeStyle}">
             HSK ${item.level}
           </span>
-          <span class="text-[11px] text-slate-500 font-medium">${item.pos || 'từ'}</span>
+          <span class="text-[11px] text-stone-500 font-medium px-2 py-0.5 rounded bg-stone-100 border border-stone-200">
+            ${item.pos || 'từ vựng'}
+          </span>
         </div>
-        <div class="flex items-center justify-between">
-          <h4 class="font-hanzi text-3xl font-black text-teal-950 tracking-wide">${item.title}</h4>
+
+        <div class="flex items-center justify-between gap-2">
+          <h4 class="font-hanzi text-3xl font-black text-stone-900 tracking-wide">${item.title}</h4>
           <div class="flex items-center gap-1">
-            <button onclick="toggleSaveWord('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}', ${item.level})" title="Lưu vào Sổ tay" class="p-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-700 border border-amber-200">
+            <button onclick="toggleSaveWord('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}', ${item.level})" title="Lưu vào Sổ tay Flashcard" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition-colors cursor-pointer">
               <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
             </button>
-            <button onclick="switchTab('writing'); loadWritingChar('${item.title[0]}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}');" title="Tập viết nét chữ này" class="p-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200">
+            <button onclick="switchTab('writing'); loadWritingChar('${item.title[0]}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}');" title="Tập viết nét chữ này" class="p-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 transition-colors cursor-pointer">
               <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
             </button>
-            <button onclick="playChineseTTS('${item.title}')" title="Nghe phát âm" class="p-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-700 border border-teal-200">
-              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-teal-600"></i>
+            <button onclick="playChineseTTS('${item.title}')" title="Nghe phát âm chuẩn Bắc Kinh" class="p-2 rounded-xl bg-amber-100/70 hover:bg-amber-200 text-[#8B1E1E] border border-amber-300 transition-colors cursor-pointer">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
             </button>
           </div>
         </div>
-        <p class="text-xs font-bold text-teal-600 mt-1">${item.pinyin}</p>
-        <p class="text-xs text-slate-800 font-medium mt-1 leading-snug">${item.meaning}</p>
+
+        <p class="text-xs font-bold text-[#8B1E1E] mt-1.5 tracking-wide">${item.pinyin}</p>
+        <p class="text-xs font-medium text-stone-800 mt-1 leading-snug">${item.meaning}</p>
       </div>
 
       ${item.exampleSentence ? `
-        <div class="mt-3 pt-2.5 border-t border-teal-100 text-[11px] text-slate-500">
-          <p class="font-hanzi text-slate-800 font-medium">${item.exampleSentence}</p>
-          <p class="text-slate-500 truncate">${item.exampleMeaning || ''}</p>
+        <div class="mt-4 pt-3 border-t border-amber-200/60 text-xs space-y-1 bg-[#FAF7F2]/60 p-2.5 rounded-xl">
+          <div class="flex items-start justify-between gap-1.5">
+            <p class="font-hanzi text-stone-900 font-bold text-xs leading-relaxed">${item.exampleSentence}</p>
+            <button onclick="playChineseTTS('${item.exampleSentence.replace(/'/g, "\\'").replace(/\n/g, ' ')}')" class="shrink-0 p-1 text-stone-400 hover:text-[#8B1E1E] transition-colors" title="Nghe câu ví dụ">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+          ${item.examplePinyin ? `<p class="text-[11px] font-bold text-[#8B1E1E]">${item.examplePinyin}</p>` : ''}
+          ${item.exampleMeaning ? `<p class="text-[11px] text-stone-600 italic leading-snug">${item.exampleMeaning}</p>` : ''}
         </div>
       ` : ''}
     `;
@@ -2729,10 +2831,12 @@ function renderDictionary(reset = false) {
 
   dictRendered += nextBatch.length;
   const loadMoreBtn = document.getElementById('loadMoreDictBtn');
-  if (dictRendered >= dictionaryData.length) {
-    loadMoreBtn.classList.add('hidden');
-  } else {
-    loadMoreBtn.classList.remove('hidden');
+  if (loadMoreBtn) {
+    if (dictRendered >= filteredList.length) {
+      loadMoreBtn.classList.add('hidden');
+    } else {
+      loadMoreBtn.classList.remove('hidden');
+    }
   }
 
   refreshIcons();

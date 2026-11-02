@@ -311,7 +311,7 @@
 
       <button onclick="switchTab('dictionary')" id="tab-btn-dictionary" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
         <i data-lucide="book-open" class="w-4 h-4 text-amber-800"></i>
-        <span>Kho Từ Điển (1,380+)</span>
+        <span>Kho Từ Điển HSK 1-6</span>
       </button>
     </div>
   </nav>
@@ -1433,28 +1433,79 @@
       </div>
     </section>
 
-    <!-- TAB 6: KHO TỪ ĐIỂN TOÀN DIỆN -->
+    <!-- TAB 6: KHO TỪ ĐIỂN CHUẨN HSK 1 - HSK 6 -->
     <section id="tab-dictionary" class="hidden space-y-6">
       <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-amber-50/80 via-[#FAF7F2] to-white border border-amber-300/40">
         <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div>
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/70 text-amber-900 border border-amber-200 text-xs font-bold mb-3">
               <i data-lucide="book-marked" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-              <span>Cơ Sở Dữ Liệu 1,300+ Từ Vựng</span>
+              <span>Cơ Sở Dữ Liệu 1,600+ Từ Vựng Chuẩn HSK 1 - HSK 6</span>
             </div>
             <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
-              Tra Cứu Từ Điển Chi Tiết
+              Kho Từ Điển & Từ Vựng Chuẩn HSK 1 – HSK 6
             </h2>
-            <p class="text-sm text-stone-600">
-              Bao quát từ vựng, phiên âm pinyin chuẩn, giải nghĩa tiếng Việt, phân loại từ và câu ví dụ ngữ cảnh.
+            <p class="text-sm text-stone-600 max-w-2xl">
+              Phân tầng chuẩn hóa từ HSK 1 đến HSK 6 theo bảng từ vựng tiêu chuẩn. Đầy đủ chữ Hán, phiên âm Pinyin, giải nghĩa tiếng Việt, phân loại từ và câu ví dụ ngữ cảnh kèm audio phát âm Bắc Kinh.
             </p>
           </div>
 
-          <div class="flex items-center gap-2">
-            <span class="text-xs text-stone-500 font-medium">Tổng số:</span>
-            <span id="dictTotalCountLabel" class="text-xs font-bold text-amber-900 px-3 py-1 rounded-lg bg-amber-50 border border-amber-200">
-              1,335 mục
-            </span>
+          <div class="flex items-center gap-3">
+            <div class="px-4 py-2 rounded-xl bg-amber-50/80 border border-amber-200 text-right shadow-xs">
+              <p class="text-[11px] text-stone-500 font-medium">Đang hiển thị:</p>
+              <p class="text-sm font-bold text-amber-950">
+                <span id="dictFilteredCount">0</span> / <span id="dictTotalCountLabel">0</span> từ
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Controls -->
+        <div class="space-y-4 pt-6 border-t border-amber-200/60 mt-6">
+          <!-- HSK Level Filter Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1">
+            <span class="text-xs text-stone-500 font-bold whitespace-nowrap min-w-[70px]">Cấp độ:</span>
+            <button onclick="filterDictHsk('all')" id="btn-dict-hsk-all" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm transition-all whitespace-nowrap">
+              🌟 Tất Cả Cấp Độ
+            </button>
+            <button onclick="filterDictHsk(1)" id="btn-dict-hsk-1" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 1 (Nền tảng)
+            </button>
+            <button onclick="filterDictHsk(2)" id="btn-dict-hsk-2" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 2 (Sơ cấp)
+            </button>
+            <button onclick="filterDictHsk(3)" id="btn-dict-hsk-3" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 3 (Trung cấp)
+            </button>
+            <button onclick="filterDictHsk(4)" id="btn-dict-hsk-4" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 4 (Nâng cao)
+            </button>
+            <button onclick="filterDictHsk(5)" id="btn-dict-hsk-5" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 5 (Thành thạo)
+            </button>
+            <button onclick="filterDictHsk(6)" id="btn-dict-hsk-6" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
+              HSK 6 (Đỉnh cao C2)
+            </button>
+          </div>
+
+          <!-- Instant Search Bar -->
+          <div class="relative max-w-xl">
+            <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
+              <i data-lucide="search" class="w-4 h-4"></i>
+            </div>
+            <input 
+              id="dictSearchInput" 
+              type="text" 
+              oninput="onDictSearchInput(this.value)" 
+              placeholder="🔍 Tìm nhanh từ vựng theo chữ Hán, Pinyin hoặc nghĩa Tiếng Việt..." 
+              class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-800 placeholder-stone-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]/20 focus:border-[#8B1E1E] transition-all shadow-2xs"
+            />
+            <button 
+              id="dictClearSearchBtn" 
+              onclick="clearDictSearch()" 
+              class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600 transition-colors">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -1464,12 +1515,9 @@
 
       <!-- Load more dictionary items -->
       <div class="flex justify-center pt-4">
-        <button id="loadMoreDictBtn" onclick="loadMoreDict()" class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white hover:bg-amber-50 text-stone-800 border border-stone-200 shadow-sm transition-all flex items-center gap-2">
+        <button id="loadMoreDictBtn" onclick="loadMoreDict()" class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white hover:bg-amber-50 text-stone-800 border border-stone-200 shadow-sm transition-all flex items-center gap-2 cursor-pointer">
           <span>Tải thêm từ vựng</span>
           <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
-      </div>
-    </section>
         </button>
       </div>
     </section>
