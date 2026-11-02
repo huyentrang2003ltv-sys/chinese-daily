@@ -17,9 +17,21 @@
         "pinyin": "Tā zài hē shuǐ.",
         "translation": "Anh ấy đang uống nước.",
         "options": [
-          { "key": "A", "text": "Anh ấy đang uống nước 💧", "isCorrect": true },
-          { "key": "B", "text": "Anh ấy đang ăn cơm 🍚", "isCorrect": false },
-          { "key": "C", "text": "Anh ấy đang đọc sách 📖", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "Anh ấy đang uống nước 💧",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "Anh ấy đang ăn cơm 🍚",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "Anh ấy đang đọc sách 📖",
+            "isCorrect": false
+          }
         ],
         "explanation": "Từ khóa then chốt: '喝水' (hē shuǐ) nghĩa là uống nước. Đáp án đúng là A."
       },
@@ -32,8 +44,16 @@
         "pinyin": "Zhuōzi shang yǒu sān gè píngguǒ.",
         "statement": "Trên bàn có 3 quả táo.",
         "options": [
-          { "key": "T", "text": "Đúng (对)", "isCorrect": true },
-          { "key": "F", "text": "Sai (错)", "isCorrect": false }
+          {
+            "key": "T",
+            "text": "Đúng (对)",
+            "isCorrect": true
+          },
+          {
+            "key": "F",
+            "text": "Sai (错)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Câu nói: '桌子上有三个苹果' có nghĩa 'Trên bàn có 3 quả táo'. Nhận định hoàn toàn chính xác."
       },
@@ -43,9 +63,21 @@
         "section": "Phần 2: Đọc hiểu từ vựng (阅读)",
         "prompt": "Chọn từ thích hợp điền vào chỗ trống: 明天天气很冷，你要多穿点儿______。",
         "options": [
-          { "key": "A", "text": "衣服 (yīfu - quần áo)", "isCorrect": true },
-          { "key": "B", "text": "米饭 (mǐfàn - cơm)", "isCorrect": false },
-          { "key": "C", "text": "飞机 (fēijī - máy bay)", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "衣服 (yīfu - quần áo)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "米饭 (mǐfàn - cơm)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "飞机 (fēijī - máy bay)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Vế trước nói về thời tiết lạnh (天气很冷), nên vế sau khuyên mặc thêm nhiều 'quần áo' (多穿点儿衣服)."
       },
@@ -55,9 +87,21 @@
         "section": "Phần 2: Đọc hiểu từ vựng (阅读)",
         "prompt": "Xem câu hỏi và chọn câu đáp lại hợp lý: 你认识李老师吗？",
         "options": [
-          { "key": "A", "text": "我认识，她是我的汉语老师。(Tôi quen, cô ấy là giáo viên tiếng Trung của tôi.)", "isCorrect": true },
-          { "key": "B", "text": "太贵了，我不买。(Đắt quá, tôi không mua.)", "isCorrect": false },
-          { "key": "C", "text": "今天星期三。(Hôm nay là thứ Tư.)", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "我认识，她是我的汉语老师。(Tôi quen, cô ấy là giáo viên tiếng Trung của tôi.)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "太贵了，我不买。(Đắt quá, tôi không mua.)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "今天星期三。(Hôm nay là thứ Tư.)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Câu hỏi hỏi về việc quen biết một người (认识...吗?), câu trả lời phải đáp lại về việc quen hay không quen (我认识...)."
       },
@@ -66,8 +110,18 @@
         "type": "reorder",
         "section": "Phần 3: Sắp xếp trật tự câu (连词成句)",
         "prompt": "Sắp xếp các cụm từ sau thành câu hoàn chỉnh:",
-        "words": ["喜欢", "听音乐", "我", "很"],
-        "correctOrder": ["我", "很", "喜欢", "听音乐"],
+        "words": [
+          "喜欢",
+          "听音乐",
+          "我",
+          "很"
+        ],
+        "correctOrder": [
+          "我",
+          "很",
+          "喜欢",
+          "听音乐"
+        ],
         "fullSentence": "我很喜欢听音乐。",
         "pinyin": "Wǒ hěn xǐhuan tīng yīnyuè.",
         "translation": "Tôi rất thích nghe nhạc.",
@@ -92,9 +146,21 @@
         "audioText": "男：你生病了吗？女：对，今天有点儿发烧，想去医院看看。问：女的怎么了？",
         "pinyin": "Nán: Nǐ shēngbìng le ma? Nǚ: Duì, jīntiān yǒudiǎnr fāshāo, xiǎng qù yīyuàn kànkan. Wèn: Nǚ de zěnme le?",
         "options": [
-          { "key": "A", "text": "生病发烧了 (Bị ốm sốt)", "isCorrect": true },
-          { "key": "B", "text": "去买药 (Đi mua thuốc)", "isCorrect": false },
-          { "key": "C", "text": "在运动 (Đang tập thể dục)", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "生病发烧了 (Bị ốm sốt)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去买药 (Đi mua thuốc)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "在运动 (Đang tập thể dục)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Người nữ trả lời: '今天有点儿发烧' (Hôm nay hơi sốt) và muốn đi bệnh viện, nên đáp án đúng là A."
       },
@@ -104,9 +170,21 @@
         "section": "Phần 2: Đọc hiểu ngữ pháp (阅读)",
         "prompt": "Điền từ thích hợp vào chỗ trống: 从我家到公司，坐地铁______需要二十分钟。",
         "options": [
-          { "key": "A", "text": "大概 (dàgài - khoảng chừng)", "isCorrect": true },
-          { "key": "B", "text": "因为 (yīnwèi - bởi vì)", "isCorrect": false },
-          { "key": "C", "text": "虽然 (suīrán - tuy rằng)", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "大概 (dàgài - khoảng chừng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Trước khoảng thời gian '二十分钟' (20 phút) cần một phó từ chỉ sự ước lượng '大概' (khoảng/ước chừng)."
       },
@@ -116,9 +194,21 @@
         "section": "Phần 2: Đọc hiểu ngữ pháp (阅读)",
         "prompt": "Chọn cặp liên từ thích hợp: ______今天下大雨，______我们还是去跑步了。",
         "options": [
-          { "key": "A", "text": "虽然...但是... (Tuy... nhưng...)", "isCorrect": true },
-          { "key": "B", "text": "因为...所以... (Bởi vì... cho nên...)", "isCorrect": false },
-          { "key": "C", "text": "一边...一边... (Vừa... vừa...)", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "虽然...但是... (Tuy... nhưng...)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为...所以... (Bởi vì... cho nên...)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "一边...一边... (Vừa... vừa...)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Vế trước 'mưa to' và vế sau 'vẫn đi chạy bộ' có quan hệ chuyển ngoặt tương phản, nên dùng cặp '虽然...但是/还是...'."
       },
@@ -127,8 +217,20 @@
         "type": "reorder",
         "section": "Phần 3: Sắp xếp trật tự câu (连词成句)",
         "prompt": "Sắp xếp các cụm từ sau thành câu hoàn chỉnh:",
-        "words": ["比", "妹妹", "跳得", "姐姐", "高"],
-        "correctOrder": ["姐姐", "比", "妹妹", "跳得", "高"],
+        "words": [
+          "比",
+          "妹妹",
+          "跳得",
+          "姐姐",
+          "高"
+        ],
+        "correctOrder": [
+          "姐姐",
+          "比",
+          "妹妹",
+          "跳得",
+          "高"
+        ],
         "fullSentence": "姐姐比妹妹跳得高。",
         "pinyin": "Jiějie bǐ mèimei tiào de gāo.",
         "translation": "Chị gái nhảy cao hơn em gái.",
@@ -151,9 +253,21 @@
         "section": "Phần 1: Ngữ pháp câu chữ 把 (把字句)",
         "prompt": "Chọn câu sử dụng đúng cấu trúc câu chữ 把:",
         "options": [
-          { "key": "A", "text": "请你把桌子上的苹果洗干净。(Làm ơn rửa sạch táo trên bàn.)", "isCorrect": true },
-          { "key": "B", "text": "请你把苹果在桌子上。(Sai ngữ pháp)", "isCorrect": false },
-          { "key": "C", "text": "我把这本书看。(Thiếu thành phần bổ ngữ phía sau động từ)", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "请你把桌子上的苹果洗干净。(Làm ơn rửa sạch táo trên bàn.)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "请你把苹果在桌子上。(Sai ngữ pháp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "我把这本书看。(Thiếu thành phần bổ ngữ phía sau động từ)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Câu chữ 把 bắt buộc động từ phải có thành phần khác đi kèm (kết quả, phương hướng, trợ từ). '洗干净' có bổ ngữ kết quả '干净'."
       },
@@ -163,9 +277,21 @@
         "section": "Phần 2: Phân biệt trợ từ 的 - 得 - 地",
         "prompt": "Điền trợ từ chính xác: 听到这个好消息，他高兴______跳了起来。",
         "options": [
-          { "key": "A", "text": "得 (nối tính từ 高兴 và bổ ngữ trạng thái 跳了起来)", "isCorrect": true },
-          { "key": "B", "text": "地 (dùng trước động từ)", "isCorrect": false },
-          { "key": "C", "text": "的 (dùng trước danh từ)", "isCorrect": false }
+          {
+            "key": "A",
+            "text": "得 (nối tính từ 高兴 và bổ ngữ trạng thái 跳了起来)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "地 (dùng trước động từ)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "的 (dùng trước danh từ)",
+            "isCorrect": false
+          }
         ],
         "explanation": "Đứng sau tính từ '高兴' biểu thị mức độ, kết quả của hành động cần dùng trợ từ '得'."
       },
@@ -174,12 +300,295 @@
         "type": "reorder",
         "section": "Phần 3: Sắp xếp trật tự câu (连词成句)",
         "prompt": "Sắp xếp các cụm từ sau thành câu chữ 被 hoàn chỉnh:",
-        "words": ["吃掉了", "被", "我的蛋糕", "小狗"],
-        "correctOrder": ["我的蛋糕", "被", "小狗", "吃掉了"],
+        "words": [
+          "吃掉了",
+          "被",
+          "我的蛋糕",
+          "小狗"
+        ],
+        "correctOrder": [
+          "我的蛋糕",
+          "被",
+          "小狗",
+          "吃掉了"
+        ],
         "fullSentence": "我的蛋糕被小狗吃掉了。",
         "pinyin": "Wǒ de dàngāo bèi xiǎogǒu chīdiào le.",
         "translation": "Bánh gato của tôi bị chú cún con ăn mất rồi.",
         "explanation": "Cấu trúc câu bị động chữ 被: Chủ thể chịu tác động (我的蛋糕) + 被 + Tác nhân (小狗) + Động từ + Thành phần khác (吃掉了)."
+      }
+    ]
+  },
+  {
+    "id": "hsk4_mock_1",
+    "level": 4,
+    "title": "Đề Thi Thử HSK 4 Chuẩn Mới - Đề Số 01",
+    "durationMinutes": 35,
+    "passScore": 180,
+    "totalScore": 300,
+    "description": "Bộ đề khảo thí HSK 4 toàn diện: Kiểm tra khả năng nghe hiểu đàm thoại đời sống, đọc hiểu phân tích ngữ nghĩa và sắp xếp trật tự câu văn học.",
+    "questions": [
+      {
+        "id": "hsk4_q1",
+        "type": "reading_choice",
+        "section": "Phần 1: Điền từ vào chỗ trống (选词填空)",
+        "prompt": "Chọn từ thích hợp nhất điền vào câu: 随着现代科学技术的飞速发展，人们的生活节奏也变得越来越______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "紧迫 (jǐnpò - cấp bách)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "紧张 (jǐnzhāng - căng thẳng, bận rộn)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "严格 (yángé - nghiêm ngặt)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "坚强 (jiānqiáng - kiên cường)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cụm cố định: '生活节奏紧张' (nhịp sống căng thẳng, gấp gáp). Đáp án đúng là B."
+      },
+      {
+        "id": "hsk4_q2",
+        "type": "reading_choice",
+        "section": "Phần 1: Điền từ vào chỗ trống (选词填空)",
+        "prompt": "Chọn liên từ thích hợp: ______今天外面风很大，天气很冷，他______坚持去操场跑步锻炼。",
+        "options": [
+          {
+            "key": "A",
+            "text": "虽然...但是... (Tuy... nhưng...)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "尽管...还是... (Mặc dù... vẫn cứ...)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "因为...所以... (Vì... nên...)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "只有...才... (Chỉ có... mới...)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cấu trúc nhượng bộ nhấn mạnh ý chí bền bỉ: '尽管...还是...' (Mặc dù... vẫn cứ...). Đáp án đúng là B."
+      },
+      {
+        "id": "hsk4_q3",
+        "type": "reading_choice",
+        "section": "Phần 2: Đọc hiểu phân tích (阅读理解)",
+        "prompt": "Đọc đoạn văn sau: '微笑是世界上最通用的语言。遇到困难时，微笑给你勇气；面对误会时，微笑化解冰霜。' —— Đoạn văn chủ yếu nhấn mạnh điều gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Học nhiều ngoại ngữ rất quan trọng",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Sức mạnh to lớn và tác dụng tích cực của nụ cười trong cuộc sống",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "Cách giải quyết tranh chấp trong thương mại",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "Mùa đông thời tiết rất lạnh giá",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn ca ngợi sức mạnh của nụ cười (微笑给你勇气, 微笑化解冰霜). Đáp án đúng là B."
+      },
+      {
+        "id": "hsk4_q4",
+        "type": "reorder",
+        "section": "Phần 3: Sắp xếp trật tự câu (连词成句)",
+        "prompt": "Sắp xếp các cụm từ sau thành câu chuẩn ngữ pháp HSK 4:",
+        "words": [
+          "把",
+          "洗干净的",
+          "挂在阳台上",
+          "衣服",
+          "妈妈"
+        ],
+        "correctOrder": [
+          "妈妈",
+          "把",
+          "洗干净的",
+          "衣服",
+          "挂在阳台上"
+        ],
+        "fullSentence": "妈妈把洗干净的衣服挂在阳台上。",
+        "pinyin": "Māma bǎ xǐ gānjìng de yīfu guà zài yángtái shàng.",
+        "translation": "Mẹ đem quần áo đã giặt sạch phơi ở ban công.",
+        "explanation": "Cấu trúc câu chữ 把: Chủ ngữ (妈妈) + 把 + Tân ngữ (洗干净的衣服) + Động từ (挂) + Bổ ngữ giới từ nơi chốn (在阳台上)."
+      },
+      {
+        "id": "hsk4_q5",
+        "type": "reorder",
+        "section": "Phần 3: Sắp xếp trật tự câu (连词成句)",
+        "prompt": "Sắp xếp các cụm từ sau thành câu chuẩn ngữ pháp HSK 4:",
+        "words": [
+          "已经",
+          "中国高铁的",
+          "超过了",
+          "四万公里",
+          "运营里程"
+        ],
+        "correctOrder": [
+          "中国高铁的",
+          "运营里程",
+          "已经",
+          "超过了",
+          "四万公里"
+        ],
+        "fullSentence": "中国高铁的运营里程已经超过了四万公里。",
+        "pinyin": "Zhōngguó gāotiě de yùnyíng lǐchéng yǐjīng chāoguò le sì wàn gōnglǐ.",
+        "translation": "Chiều dài vận hành của tàu cao tốc Trung Quốc đã vượt qua 40.000 km.",
+        "explanation": "Cụm chủ ngữ: 中国高铁的运营里程 + Phó từ: 已经 + Động từ: 超过了 + Cụm tân ngữ số lượng: 四万公里."
+      }
+    ]
+  },
+  {
+    "id": "hsk5_mock_1",
+    "level": 5,
+    "title": "Đề Thi Thử HSK 5 Cao Cấp - Đề Số 01",
+    "durationMinutes": 45,
+    "passScore": 180,
+    "totalScore": 300,
+    "description": "Bộ đề khảo thí HSK 5 nâng cao: Kiểm tra từ vựng trừu tượng, thành ngữ điển cố, phân biệt bệnh cú và đọc hiểu chính luận thời sự.",
+    "questions": [
+      {
+        "id": "hsk5_q1",
+        "type": "reading_choice",
+        "section": "Phần 1: Thành ngữ & Từ vựng cao cấp (成语与高级词汇)",
+        "prompt": "Chọn thành ngữ thích hợp: 他在画画之前早已经做到了______，所以一下笔就能画出栩栩如生的竹子。",
+        "options": [
+          {
+            "key": "A",
+            "text": "胸有成竹 (xiōng yǒu chéng zhú - tự tin nắm chắc)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "画蛇添足 (huà shé tiān zú - làm chuyện thừa thãi)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "守株待兔 (shǒu zhū dài tù - há miệng chờ sung)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "半途而废 (bàn tú ér fèi - bỏ dở giữa chừng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Thành ngữ '胸有成竹' (trong ngực có sẵn hình bóng cây tre) ca ngợi sự chuẩn bị chu đáo và tự tin nắm chắc phần thắng. Đáp án đúng là A."
+      },
+      {
+        "id": "hsk5_q2",
+        "type": "reading_choice",
+        "section": "Phần 1: Thành ngữ & Từ vựng cao cấp (成语与高级词汇)",
+        "prompt": "Điền từ thích hợp: 科学技术是第一生产力，我们要不断激发全社会的科技______潜能。",
+        "options": [
+          {
+            "key": "A",
+            "text": "创造 (chuàngzào - sáng tạo cụ thể)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "创新 (chuàngxīn - đổi mới sáng tạo)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "创作 (chuàngzuò - sáng tác tác phẩm)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "制作 (zhìzuò - chế tạo đồ vật)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cụm từ chuyên môn trong văn bản chính luận: '科技创新' (đổi mới sáng tạo khoa học công nghệ). Đáp án đúng là B."
+      },
+      {
+        "id": "hsk5_q3",
+        "type": "reading_choice",
+        "section": "Phần 2: Phân tích bệnh cú (病句辨析)",
+        "prompt": "Câu nào dưới đây là câu SAI NGỮ PHÁP (Có lỗi cú pháp)?",
+        "options": [
+          {
+            "key": "A",
+            "text": "通过这次社会实践，使我学到了很多书本上学不到的知识。",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "经过长期的刻苦训练，他的汉语听说水平有了显著的提高。",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "只有坚持不懈地努力，我们才能够实现自己的人生理想。",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "绿水青山就是金山银山，生态文明建设至关重要。",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Câu A là lỗi thiếu chủ ngữ kinh điển trong đề thi HSK 5: Dùng cả '通过...' và '使...' ở đầu vế khiến câu bị khuyết chủ ngữ. Cần bỏ chữ '使'."
+      },
+      {
+        "id": "hsk5_q4",
+        "type": "reading_choice",
+        "section": "Phần 3: Đọc hiểu văn hóa triết học (哲学文化阅读)",
+        "prompt": "Đọc đoạn văn trích từ Lão Tử: '合抱之木，生于毫末；九层之台，起于累土；千里之行，始于足下。' —— Tư tưởng cốt lõi của câu nói này là gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "Cần xây nhà thật cao và trồng thật nhiều cây xanh",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Mọi thành công vĩ đại đều phải bắt đầu từ những việc nhỏ bé và từng bước chân kiên trì",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "Đi lại nghìn dặm bằng đôi chân rất mệt mỏi",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "Nên bỏ qua các chi tiết nhỏ để làm việc lớn",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Triết lý của Lão Tử: Cây to ôm cả vòng tay mọc từ mầm non bé tí; đài cao chín tầng đắp từ từng nắm đất; hành trình ngàn dặm bắt đầu từ một bước chân. Đáp án đúng là B."
       }
     ]
   }

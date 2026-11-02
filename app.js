@@ -2846,14 +2846,14 @@ function initMockExamModule() {
 
 function switchMockExamLevel(level) {
   currentExamLevel = level;
-  const buttons = [1, 2, 3];
+  const buttons = [1, 2, 3, 4, 5];
   buttons.forEach(lvl => {
     const btn = document.getElementById(`btn-exam-lvl-${lvl}`);
     if (!btn) return;
     if (lvl === level) {
-      btn.className = 'px-4 py-1.5 text-xs font-bold rounded-xl bg-amber-600 text-white shadow-xs transition-all';
+      btn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap';
     } else {
-      btn.className = 'px-4 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-slate-700 border border-slate-200 transition-all';
+      btn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap';
     }
   });
 
