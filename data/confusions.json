@@ -1,0 +1,386 @@
+[
+  {
+    "id": "er_liang",
+    "pair": "二 (èr) vs 两 (liǎng)",
+    "meaning": "Đều có nghĩa là số 2",
+    "difference": "二 dùng để đếm số thứ tự, đọc số điện thoại, số nhà, phân số, chữ số đơn lẻ. 两 bắt buộc dùng trước LƯỢNG TỪ và danh từ (hai người = 两个人, tuyệt đối không nói 二个人).",
+    "comparisonTable": [
+      {
+        "aspect": "Đếm số thứ tự (1, 2, 3)",
+        "wordA": "一, 二, 三 (Chuẩn xác)",
+        "wordB": "一, 两, 三 (Sai ngữ pháp)"
+      },
+      {
+        "aspect": "Đứng trước lượng từ",
+        "wordA": "二个人 / 二本书 (Sai)",
+        "wordB": "两个人 / 两本书 (Đúng chuẩn)"
+      },
+      {
+        "aspect": "Thứ hạng / Tầng lầu",
+        "wordA": "第二名 / 二楼 (Đúng)",
+        "wordB": "第两名 / 两楼 (Sai)"
+      },
+      {
+        "aspect": "Đứng trước 百 / 千 / 万",
+        "wordA": "二百 (200) / 二千 (2000)",
+        "wordB": "两百 (200) / 两千 (2000) - Đều dùng được"
+      }
+    ],
+    "mnemonic": "Đếm số hoặc thứ bậc dùng 二; Trước lượng từ kèm người/vật thì dùng 两.",
+    "quiz": {
+      "question": "Điền từ thích hợp: 我有____个弟弟。(Tôi có hai đứa em trai.)",
+      "options": [
+        "二 (èr)",
+        "两 (liǎng)"
+      ],
+      "correct": 1,
+      "explanation": "Phía sau có lượng từ '个' nên bắt buộc phải dùng '两'."
+    }
+  },
+  {
+    "id": "gang_gangcai",
+    "pair": "刚 (gāng) vs 刚才 (gāngcái)",
+    "meaning": "Đều dịch là 'vừa mới / vừa nãy'",
+    "difference": "刚 là phó từ, bắt buộc đứng TRƯỚC động từ, chỉ thời gian ngắn theo cảm nhận chủ quan (có thể là vừa mới tuần trước). 刚才 là danh từ chỉ thời gian khách quan (vài phút vừa qua), có thể đứng đầu câu hoặc trước động từ.",
+    "comparisonTable": [
+      {
+        "aspect": "Từ loại",
+        "wordA": "Phó từ (Adverb)",
+        "wordB": "Danh từ thời gian (Noun)"
+      },
+      {
+        "aspect": "Vị trí trong câu",
+        "wordA": "Bắt buộc đứng TRƯỚC động từ (我刚来)",
+        "wordB": "Đầu câu hoặc trước động từ (刚才我 / 我刚才)"
+      },
+      {
+        "aspect": "Khoảng thời gian",
+        "wordA": "Chủ quan: có thể vài ngày trước (我刚毕业)",
+        "wordB": "Khách quan: chỉ vài phút ngắn ngủi vừa trôi qua"
+      },
+      {
+        "aspect": "Đi với từ chỉ lượng",
+        "wordA": "Đi được (我刚来五分钟)",
+        "wordB": "Không đi trực tiếp với lượng từ thời gian"
+      }
+    ],
+    "mnemonic": "刚才 là mốc thời gian vài phút trước; 刚 là phó từ bám chặt lấy động từ.",
+    "quiz": {
+      "question": "____你去哪儿了？(Vừa nãy bạn đã đi đâu thế?)",
+      "options": [
+        "刚",
+        "刚才"
+      ],
+      "correct": 1,
+      "explanation": "Đứng ở đầu câu làm trạng ngữ chỉ thời gian thì chỉ có thể dùng danh từ '刚才'."
+    }
+  },
+  {
+    "id": "changchang_wangwang",
+    "pair": "常常 (chángcháng) vs 往往 (wǎngwǎng)",
+    "meaning": "Đều dịch là 'thường / hay'",
+    "difference": "常常 chỉ tần suất diễn ra đơn thuần theo thói quen cá nhân. 往往 chỉ quy luật thường thấy trong một điều kiện, hoàn cảnh cụ thể nào đó (phải có vế điều kiện đi kèm).",
+    "comparisonTable": [
+      {
+        "aspect": "Bản chất",
+        "wordA": "Tần suất cao, thói quen chủ quan",
+        "wordB": "Tính quy luật lặp lại theo hoàn cảnh"
+      },
+      {
+        "aspect": "Vế điều kiện",
+        "wordA": "Không cần điều kiện (我常常去跑步)",
+        "wordB": "Thường có điều kiện (周末他往往不在家)"
+      },
+      {
+        "aspect": "Dạng phủ định",
+        "wordA": "不常 (không thường xuyên)",
+        "wordB": "Không dùng 不往往"
+      }
+    ],
+    "mnemonic": "Thói quen đơn thuần cứ dùng 常常; Nếu có điều kiện 'mỗi khi... thì thường...' dùng 往往.",
+    "quiz": {
+      "question": "他周末____一个人去图书馆。(Cuối tuần anh ấy thường một mình đi thư viện - có điều kiện hoàn cảnh).",
+      "options": [
+        "往往",
+        "刚刚"
+      ],
+      "correct": 0,
+      "explanation": "'周末' là điều kiện hoàn cảnh lặp đi lặp lại mang tính quy luật, phù hợp dùng '往往'."
+    }
+  },
+  {
+    "id": "chabuduo_jihu",
+    "pair": "差不多 (chàbuduō) vs 几乎 (jīhū)",
+    "meaning": "Đều mang nghĩa 'gần như / xấp xỉ'",
+    "difference": "差不多 có thể làm vị ngữ độc lập mang nghĩa 'tương đương nhau' (两个差不多), và có thể đứng trước số lượng từ. 几乎 là phó từ thuần túy, thường biểu thị sự suýt soát (sém chút nữa là xảy ra).",
+    "comparisonTable": [
+      {
+        "aspect": "Làm vị ngữ độc lập",
+        "wordA": "Được (他们的水平差不多)",
+        "wordB": "Không được làm vị ngữ"
+      },
+      {
+        "aspect": "Đứng trước số lượng",
+        "wordA": "Được (差不多十年)",
+        "wordB": "Hiếm khi, thường dùng 几乎所有"
+      },
+      {
+        "aspect": "Ý nghĩa suýt nữa",
+        "wordA": "Không mang nghĩa suýt bị",
+        "wordB": "Có nghĩa suýt xảy ra (我几乎忘了)"
+      }
+    ],
+    "mnemonic": "So kè tương đương nhau là 差不多; Suýt sém chút nữa là 几乎.",
+    "quiz": {
+      "question": "这两个手机的质量____。(Chất lượng của hai chiếc điện thoại này tương đương nhau.)",
+      "options": [
+        "几乎",
+        "差不多"
+      ],
+      "correct": 1,
+      "explanation": "Ở cuối câu làm vị ngữ thì chỉ có '差不多' mới dùng được."
+    }
+  },
+  {
+    "id": "yiwei_renwei",
+    "pair": "以为 (yǐwéi) vs 认为 (rènwéi)",
+    "meaning": "Đều dịch là 'cho rằng / nghĩ rằng'",
+    "difference": "以为 ngầm biểu thị suy nghĩ ban đầu ĐÃ SAI so với thực tế (Tưởng rằng... nhưng sự thật không phải vậy). 认为 là nhận định, quan điểm nghiêm túc, khách quan và không ngụ ý sai lầm.",
+    "comparisonTable": [
+      {
+        "aspect": "Tính xác thực",
+        "wordA": "Thực tế TRÁI NGƯỢC với suy nghĩ (nghĩ sai)",
+        "wordB": "Quan điểm cá nhân nghiêm túc, logic"
+      },
+      {
+        "aspect": "Sắc thái",
+        "wordA": "Thất vọng, bất ngờ: 'Tưởng thế nào...'",
+        "wordB": "Trịnh trọng, nghị luận: 'Tôi nhận định rằng...'"
+      }
+    ],
+    "mnemonic": "以为 là 'tưởng bở' (thực tế sai); 认为 là 'nhận định' (chính kiến logic).",
+    "quiz": {
+      "question": "我____他是中国人，其实他是越南人。(Tôi tưởng anh ta là người Trung Quốc, thực ra anh ta là người Việt.)",
+      "options": [
+        "以为",
+        "认为"
+      ],
+      "correct": 0,
+      "explanation": "Phía sau có '其实' (thực ra) chỉ thực tế trái ngược, nên bắt buộc dùng '以为' (tưởng rằng)."
+    }
+  },
+  {
+    "id": "hui_neng_keyi",
+    "pair": "会 (huì) vs 能 (néng) vs 可以 (kěyǐ)",
+    "meaning": "Đều dịch là 'có thể / biết'",
+    "difference": "会: Biết làm nhờ học tập, rèn luyện (biết bơi, biết tiếng Trung) hoặc khả năng sẽ xảy ra. 能: Năng lực bản thân hoặc điều kiện khách quan cho phép (hôm nay khỏe nên bơi được 1000m). 可以: Được phép về mặt quy tắc, đạo lý hoặc gợi ý nhẹ nhàng.",
+    "comparisonTable": [
+      {
+        "aspect": "Qua rèn luyện học tập",
+        "wordA": "我会说汉语 (Đúng)",
+        "wordB": "我能说汉语 (Đúng khi nhấn mạnh năng lực)",
+        "wordC": "我可以说汉语 (Cho phép)"
+      },
+      {
+        "aspect": "Điều kiện phục hồi/năng lực",
+        "wordA": "会 (Không biểu thị)",
+        "wordB": "他的病好了，能上班了 (Đúng)",
+        "wordC": "可以 (Được phép)"
+      },
+      {
+        "aspect": "Xin phép / Quy định",
+        "wordA": "会 (Sai)",
+        "wordB": "能 (Có thể dùng)",
+        "wordC": "这里可以抽烟吗？(Chuẩn nhất)"
+      }
+    ],
+    "mnemonic": "Học mới biết thì dùng 会; Có năng lực/điều kiện thì dùng 能; Được phép/xin phép thì dùng 可以.",
+    "quiz": {
+      "question": "请问，这里____拍照吗？(Xin hỏi, ở đây có được phép chụp ảnh không?)",
+      "options": [
+        "会",
+        "可以"
+      ],
+      "correct": 1,
+      "explanation": "Hỏi xin phép quy định nơi công cộng thì dùng '可以' là chuẩn xác nhất."
+    }
+  },
+  {
+    "id": "zhidao_renshi",
+    "pair": "知道 (zhīdào) vs 认识 (rènshi)",
+    "meaning": "Đều dịch là 'biết'",
+    "difference": "知道 là biết thông tin, tin tức, sự thật, đạo lý (biết giờ, biết đáp án). 认识 là quen biết người, nhận biết mặt chữ, thông thuộc đường sá qua tiếp xúc trực tiếp.",
+    "comparisonTable": [
+      {
+        "aspect": "Biết thông tin sự việc",
+        "wordA": "我知道这件事情 (Đúng)",
+        "wordB": "我认识这件事情 (Sai)"
+      },
+      {
+        "aspect": "Quen biết con người",
+        "wordA": "我知道他 (Chỉ nghe tên, chưa gặp)",
+        "wordB": "我认识他 (Đã gặp gỡ, quen biết nhau)"
+      },
+      {
+        "aspect": "Mặt chữ / Con đường",
+        "wordA": "知道 (Biết có chữ này)",
+        "wordB": "认识这个汉字 / 认识路 (Đọc được, nhận diện được)"
+      }
+    ],
+    "mnemonic": "Biết tin tức, chuyện gì dùng 知道; Nhận mặt người, mặt chữ dùng 认识.",
+    "quiz": {
+      "question": "你____去机场的路怎么走吗？(Bạn có biết đường đi ra sân bay như thế nào không?)",
+      "options": [
+        "认识",
+        "知道"
+      ],
+      "correct": 1,
+      "explanation": "Hỏi về cách thức, thông tin ('怎么走') thì dùng '知道'."
+    }
+  },
+  {
+    "id": "yidianr_youdianr",
+    "pair": "一点儿 (yìdiǎnr) vs 有点儿 (yǒudiǎnr)",
+    "meaning": "Đều dịch là 'một chút / hơi'",
+    "difference": "一点儿 là số lượng từ, đứng SAU tính từ (biểu thị so sánh: to hơn một chút) hoặc TRƯỚC danh từ (uống một chút nước). 有点儿 là phó từ, đứng TRƯỚC tính từ và thường mang sắc thái TIÊU CỰC, không vừa ý (hơi mệt, hơi đắt).",
+    "comparisonTable": [
+      {
+        "aspect": "Vị trí với tính từ",
+        "wordA": "Tính từ + 一点儿 (大一点儿 - to hơn một chút)",
+        "wordB": "有点儿 + Tính từ (有点儿累 - hơi mệt mỏi)"
+      },
+      {
+        "aspect": "Sắc thái tình cảm",
+        "wordA": "Trung tính hoặc tích cực",
+        "wordB": "Thường là tiêu cực, phàn nàn, không hài lòng"
+      },
+      {
+        "aspect": "Đi với danh từ",
+        "wordA": "一点儿 + Danh từ (喝一点儿茶)",
+        "wordB": "Không đi trực tiếp với danh từ"
+      }
+    ],
+    "mnemonic": "Đứng TRƯỚC tính từ mang vẻ phàn nàn dùng 有点儿; Đứng SAU tính từ biểu thị so sánh hoặc trước danh từ dùng 一点儿.",
+    "quiz": {
+      "question": "这件衣服____贵，便宜一点儿吧。(Bộ quần áo này hơi đắt, rẻ hơn chút đi.)",
+      "options": [
+        "一点儿",
+        "有点儿"
+      ],
+      "correct": 1,
+      "explanation": "Đứng trước tính từ '贵' mang ý chê đắt (tiêu cực) nên dùng '有点儿'."
+    }
+  },
+  {
+    "id": "zai_you",
+    "pair": "再 (zài) vs 又 (yòu)",
+    "meaning": "Đều dịch là 'lại / lần nữa'",
+    "difference": "再 dùng cho hành động sẽ lặp lại trong TƯƠNG LAI (chưa xảy ra). 又 dùng cho hành động ĐÃ LẶP LẠI trong quá khứ hoặc việc xảy ra ngoài ý muốn.",
+    "comparisonTable": [
+      {
+        "aspect": "Thời điểm hành động",
+        "wordA": "Tương lai, chưa xảy ra (明天再来 - mai lại đến)",
+        "wordB": "Quá khứ, đã xảy ra (他又迟到了 - anh ta lại đi trễ)"
+      },
+      {
+        "aspect": "Cảm xúc người nói",
+        "wordA": "Chủ động, mong muốn tiếp tục",
+        "wordB": "Bất đắc dĩ, phàn nàn sự lặp đi lặp lại"
+      }
+    ],
+    "mnemonic": "Lặp lại mai sau dùng 再 (Hẹn gặp lại - 再见); Đã lặp lại rồi dùng 又.",
+    "quiz": {
+      "question": "你怎么____忘了带钥匙？(Sao bạn lại quên mang chìa khóa rồi?)",
+      "options": [
+        "再",
+        "又"
+      ],
+      "correct": 1,
+      "explanation": "Hành động quên đã xảy ra trong thực tế mang ý trách móc, dùng '又'."
+    }
+  },
+  {
+    "id": "turán_huran",
+    "pair": "突然 (tūrán) vs 忽然 (hūrán)",
+    "meaning": "Đều dịch là 'đột nhiên / bỗng nhiên'",
+    "difference": "突然 là TÍNH TỪ kiêm phó từ, có thể làm vị ngữ, định ngữ (这件事太突然了 - việc này đột ngột quá). 忽然 thuần túy là PHÓ TỪ, chỉ có thể đứng trước động từ làm trạng ngữ.",
+    "comparisonTable": [
+      {
+        "aspect": "Làm vị ngữ sau 很 / 太",
+        "wordA": "Được (这消息太突然了)",
+        "wordB": "Không được (Không nói 太忽然了)"
+      },
+      {
+        "aspect": "Làm định ngữ trước danh từ",
+        "wordA": "Được (突然的变化 - biến đổi đột ngột)",
+        "wordB": "Không được làm định ngữ"
+      }
+    ],
+    "mnemonic": "Có thể đứng sau 很/太 thì chỉ có 突然; Trước động từ thì cả 2 đều dùng được.",
+    "quiz": {
+      "question": "这件事情发生得太____了。(Sự việc này xảy ra quá đột ngột.)",
+      "options": [
+        "忽然",
+        "突然"
+      ],
+      "correct": 1,
+      "explanation": "Đứng sau phó từ mức độ '太' làm bổ ngữ chỉ có tính từ '突然' mới dùng được."
+    }
+  },
+  {
+    "id": "lianmang_jimang",
+    "pair": "连忙 (liánmáng) vs 急忙 (jímáng)",
+    "meaning": "Đều dịch là 'vội vàng / mau lẹ'",
+    "difference": "连忙 nhấn mạnh TỐC ĐỘ phản ứng nhanh chóng trước một tình huống bất ngờ. 急忙 nhấn mạnh TÂM TRẠNG hoảng hốt, vội vã, cuống cuồng.",
+    "comparisonTable": [
+      {
+        "aspect": "Trọng tâm",
+        "wordA": "Hành động tức thời, mau lẹ (thấy cụ già liền vội đỡ)",
+        "wordB": "Tâm trạng nôn nóng, hấp tấp (sợ trễ tàu)"
+      },
+      {
+        "aspect": "Làm định ngữ",
+        "wordA": "Không được làm định ngữ",
+        "wordB": "Được (急忙的脚步 - bước chân vội vã)"
+      }
+    ],
+    "mnemonic": "Phản xạ nhanh theo phản xạ dùng 连忙; Tâm trạng cuống cuồng dùng 急忙.",
+    "quiz": {
+      "question": "看到老人上车，他____站起来让座。(Thấy cụ già lên xe, anh ấy liền vội đứng dậy nhường chỗ.)",
+      "options": [
+        "急忙",
+        "连忙"
+      ],
+      "correct": 1,
+      "explanation": "Phản ứng lịch sự mau lẹ trước một tình huống thì dùng '连忙' là chuẩn xác nhất."
+    }
+  },
+  {
+    "id": "bixu1_bixu2",
+    "pair": "必须 (bìxū) vs 必需 (bìxū)",
+    "meaning": "Đều phát âm là bìxū",
+    "difference": "必须 là phó từ, nghĩa là 'nhất định phải', đứng TRƯỚC động từ. 必需 là động từ/tính từ, nghĩa là 'cần thiết, thiết yếu', thường đi kèm danh từ (nhu yếu phẩm = 必需品).",
+    "comparisonTable": [
+      {
+        "aspect": "Từ loại",
+        "wordA": "Phó từ chỉ mệnh lệnh (Must)",
+        "wordB": "Động từ/Tính từ thiết yếu (Essential)"
+      },
+      {
+        "aspect": "Vị trí trong câu",
+        "wordA": "Đứng trước động từ (你必须去 - bạn bắt buộc phải đi)",
+        "wordB": "Làm định ngữ trước danh từ (生活必需品)"
+      }
+    ],
+    "mnemonic": "Nhất định phải làm gì dùng 必须; Nhu yếu phẩm cần thiết dùng 必需.",
+    "quiz": {
+      "question": "水是人类生活所____的东西。(Nước là thứ thiết yếu trong đời sống con người.)",
+      "options": [
+        "必需",
+        "必须"
+      ],
+      "correct": 0,
+      "explanation": "Nghĩa là thứ 'thiết yếu, cần có' bổ nghĩa cho danh từ, dùng '必需'."
+    }
+  }
+]

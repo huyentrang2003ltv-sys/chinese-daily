@@ -1,0 +1,19 @@
+{
+  "name": "yuhan-hsk",
+  "version": "1.0.0",
+  "description": "YUHAN HSK - Cổng học & tra cứu tiếng Trung logic hóa chuẩn HSK 3.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "tunnel": "ssh -o StrictHostKeyChecking=no -R 80:localhost:3000 nokey@localhost.run"
+  },
+  "keywords": [
+    "chinese",
+    "hsk",
+    "etymology",
+    "grammar-mindmap",
+    "hanzii"
+  ],
+  "author": "Antigravity",
+  "license": "MIT"
+}

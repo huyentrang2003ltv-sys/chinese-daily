@@ -1,0 +1,226 @@
+{
+  "title": "Bản Đồ Tư Duy Ngữ Pháp Tiếng Trung Toàn Diện",
+  "description": "Tổng hợp toàn bộ cấu trúc câu, trật tự từ, bổ ngữ và liên từ theo sơ đồ tư duy logic chuẩn mực HSK 3.0",
+  "nodes": [
+    {
+      "id": "word_order",
+      "title": "1. Trục Ngữ Pháp Cốt Lõi (Trật Tự Câu Chuẩn)",
+      "color": "teal",
+      "summary": "Quy tắc cốt lõi: 'Việc gì xảy ra trước thì nói trước'. Không gian và Thời gian luôn là bối cảnh nền tảng, phải xuất hiện TRƯỚC khi hành động diễn ra.",
+      "formula": "Chủ ngữ (S) + [Thời gian] + [Địa điểm] + [Phương thức/Công cụ] + Động từ (V) + [Bổ ngữ] + Tân ngữ (O)",
+      "contrastVi": "Tiếng Việt nói: 'Tôi ăn cơm ở nhà lúc 7 giờ tối bằng đũa' (Hành động -> Nơi chốn -> Thời gian -> Công cụ). Tiếng Trung ngược lại hoàn toàn: 'Tôi tối 7 giờ ở nhà dùng đũa ăn cơm' (Thời gian -> Nơi chốn -> Công cụ -> Hành động).",
+      "rules": [
+        "Quy tắc thời gian: Từ đơn vị lớn đến đơn vị nhỏ: Năm -> Tháng -> Ngày -> Buổi -> Giờ.",
+        "Quy tắc địa chỉ: Từ diện tích rộng đến hẹp: Quốc gia -> Tỉnh/Thành -> Quận/Huyện -> Tên đường -> Số nhà.",
+        "Cụm giới từ chỉ phương thức (跟/用/坐/向...) luôn phải đứng TRƯỚC động từ chính."
+      ],
+      "subtypes": [
+        {
+          "name": "Nhánh 1.1: Trục Thời Gian (时间顺序) - Từ Lớn đến Nhỏ",
+          "formula": "Năm -> Tháng -> Ngày -> Buổi -> Giờ (Đứng trước V)",
+          "usage": "Quy tắc cốt lõi: Đơn vị lớn đứng trước, đơn vị bé đứng sau. Thời gian là bối cảnh xảy ra sự việc nên phải nói trước khi hành động diễn ra.",
+          "example": "我今天晚上七点在家做作业。(Tối nay 7 giờ tôi ở nhà làm bài tập.)"
+        },
+        {
+          "name": "Nhánh 1.2: Trục Không Gian / Địa Điểm (空间地点) - Từ Rộng đến Hẹp",
+          "formula": "在 + [Quốc gia -> Tỉnh/Thành -> Quận/Huyện -> Nơi chốn]",
+          "usage": "Nơi chốn là sân khấu xảy ra hành động. Cụm '在 + Địa điểm' bắt buộc phải đứng TRƯỚC động từ chính.",
+          "example": "他在北京大学图书馆看书。(Anh ấy đọc sách ở thư viện trường Đại học Bắc Kinh.)"
+        },
+        {
+          "name": "Nhánh 1.3: Trục Phương Thức & Đối Tượng (方式介词)",
+          "formula": "跟 (Cùng) / 用 (Dùng) / 坐 (Đi bằng) / 向 (Hướng về) + Tân ngữ + Động từ",
+          "usage": "Công cụ hoặc đối tượng phối hợp phải chuẩn bị sẵn sàng trước khi thực hiện hành động.",
+          "example": "他用毛笔写中国字。(Anh ấy dùng bút lông để viết chữ Hán.)"
+        },
+        {
+          "name": "Nhánh 1.4: Hành Động & Tân Ngữ Cốt Lõi (动词与宾语)",
+          "formula": "Động từ (V) + [Bổ ngữ] + Tân ngữ (O)",
+          "usage": "Sau khi định hình bối cảnh Thời gian, Nơi chốn và Phương thức, hành động chính và đối tượng tác động mới xuất hiện.",
+          "example": "我终于看完了这本小说。(Cuối cùng tôi đã đọc xong quyển tiểu thuyết này.)"
+        }
+      ],
+      "examples": [
+        {
+          "hanzi": "我昨天下午在学校跟朋友一起打篮球。",
+          "pinyin": "Wǒ zuótiān xiàwǔ zài xuéxiào gēn péngyou yìqǐ dǎ lánqiú.",
+          "vi": "Chiều hôm qua tôi cùng bạn bè chơi bóng rổ ở trường học."
+        },
+        {
+          "hanzi": "他常常坐高铁从北京去上海。",
+          "pinyin": "Tā chángcháng zuò gāotiě cóng Běijīng qù Shànghǎi.",
+          "vi": "Anh ấy thường đi tàu cao tốc từ Bắc Kinh đến Thượng Hải."
+        }
+      ]
+    },
+    {
+      "id": "complements",
+      "title": "2. Hệ Thống 7 Bổ Ngữ Then Chốt (Complements)",
+      "color": "emerald",
+      "summary": "Bổ ngữ là thành phần quan trọng nhất sau động từ để xác định rõ: Kết quả, Xu hướng di chuyển, Năng lực khả năng, Trạng thái cảm nhận, Thời lượng hoặc Tần suất.",
+      "formula": "Động từ + [Bổ ngữ]",
+      "subtypes": [
+        {
+          "name": "Bổ ngữ Kết quả (结果补语)",
+          "formula": "Động từ + 完 / 到 / 见 / 懂 / 错 / 对 / 好 / 清楚...",
+          "usage": "Biểu thị hành động đã kết thúc và mang lại kết quả cụ thể. Không dùng trợ từ '着' hay '过', phủ định dùng '没/没有'.",
+          "example": "我终于听懂了老师的解释。(Cuối cùng tôi đã nghe hiểu lời giải thích của thầy.)"
+        },
+        {
+          "name": "Bổ ngữ Xu hướng (趋向补语)",
+          "formula": "Đơn (V + 来/去) | Kép (V + 起来 / 出来 / 进去 / 过去 / 回来 / 上来...)",
+          "usage": "来: Tiến về phía người nói. 去: Đi xa khỏi người nói. '起来' biểu thị bắt đầu và tiếp diễn hoặc hướng lên; '出来' biểu thị từ ẩn sang hiện rõ.",
+          "example": "大家看到他走进来，都高兴地笑了起来。(Mọi người thấy anh ấy bước vào đều vui vẻ cười ồ lên.)"
+        },
+        {
+          "name": "Bổ ngữ Khả năng (可能补语)",
+          "formula": "Khẳng định: V + 得 + Bổ ngữ | Phủ định: V + 不 + Bổ ngữ",
+          "usage": "Chỉ năng lực hoặc điều kiện khách quan có cho phép đạt được kết quả hay không.",
+          "example": "这个箱子太重了，我一个人搬不动。(Cái vali này nặng quá, một mình tôi không bê nổi.)"
+        },
+        {
+          "name": "Bổ ngữ Trạng thái / Trình độ (状态补语)",
+          "formula": "Động từ + 得 + (Rất / Cực kỳ) + Tính từ / Cụm từ",
+          "usage": "Đưa ra đánh giá, nhận xét chi tiết về trình độ hoặc trạng thái biểu hiện của hành động.",
+          "example": "他汉字写得非常漂亮，像书法一样。(Anh ấy viết chữ Hán cực kỳ đẹp, tựa như thư pháp vậy.)"
+        },
+        {
+          "name": "Bổ ngữ Thời lượng (时量补语)",
+          "formula": "S + V + 了 + Khoảng thời gian + (Tân ngữ)",
+          "usage": "Chỉ thời lượng hành động kéo dài trong bao lâu (3 tiếng, 2 tuần, nửa năm).",
+          "example": "我们在这座城市生活了五年。(Chúng tôi đã sinh sống ở thành phố này được năm năm rồi.)"
+        },
+        {
+          "name": "Bổ ngữ Động lượng (动量补语)",
+          "formula": "Động từ + 次 / 遍 / 趟 / 顿 + Tân ngữ",
+          "usage": "'次' là lần thông thường; '遍' là toàn bộ quá trình từ đầu đến đuôi; '趟' là chuyến đi lại; '顿' là bữa ăn hoặc trận mắng.",
+          "example": "这部电影太感人了，我看了三遍。(Bộ phim này cảm động quá, tôi đã xem 3 lần từ đầu đến cuối.)"
+        },
+        {
+          "name": "Bổ ngữ Giới từ (介词补语)",
+          "formula": "Động từ + 在 / 到 / 给 / 向 + Địa điểm / Đối tượng",
+          "usage": "Xác định nơi lưu lại, đích đến hoặc người nhận của kết quả hành động.",
+          "example": "请把作业交到办公室。(Xin hãy nộp bài tập về văn phòng.)"
+        }
+      ]
+    },
+    {
+      "id": "special_sentences",
+      "title": "3. Các Mẫu Câu Đặc Biệt Cốt Lõi",
+      "color": "teal",
+      "summary": "Những cấu trúc đặc thù thể hiện lối tư duy độc đáo của người Hán, giúp diễn đạt tự nhiên và chuẩn văn phong bản xứ.",
+      "subtypes": [
+        {
+          "name": "Câu chữ 把 (Bǎ) - Câu Xử Lý Đối Tượng",
+          "formula": "Chủ ngữ + 把 + Tân ngữ + Động từ + Thành phần khác",
+          "conditions": "1. Tân ngữ phải là vật/người đã xác định rõ. 2. Động từ phải có tác động xử lý mạnh mẽ. 3. Phía sau động từ BẮT BUỘC có thành phần khác (Bổ ngữ, 了, lặp lại...).",
+          "example": "请把窗户关上，外面刮大风了。(Xin hãy đóng cửa sổ lại, bên ngoài đang gió to rồi.)"
+        },
+        {
+          "name": "Câu chữ 被 (Bèi) - Câu Bị Động",
+          "formula": "Chủ ngữ (bị hại/tác động) + 被 + (Tác nhân) + Động từ + Thành phần khác",
+          "conditions": "Thường mang sắc thái tiêu cực, không mong muốn, hoặc kết quả thay đổi trạng thái.",
+          "example": "我的钥匙被弟弟不小心弄丢了。(Chìa khóa của tôi đã bị em trai vô ý làm rơi mất rồi.)"
+        },
+        {
+          "name": "Cấu trúc nhấn mạnh 是...的 (Shì...de)",
+          "formula": "Chủ ngữ + 是 + [Thời gian / Địa điểm / Phương thức / Mục đích] + Động từ + 的",
+          "conditions": "Dùng để nhấn mạnh chi tiết của một hành động ĐÃ XẢY RA TRONG QUÁ KHỨ.",
+          "example": "我们是坐飞机去北京的，不是坐火车。(Chúng tôi đi Bắc Kinh là bằng máy bay, chứ không phải đi tàu hỏa.)"
+        },
+        {
+          "name": "Cấu trúc câu so sánh 比 (Bǐ)",
+          "formula": "A + 比 + B + Tính từ + (得多 / 多了 / 一点儿)",
+          "conditions": "Tuyệt đối KHÔNG dùng '很, 非常, 真' trước tính từ trong câu so sánh chữ 比. Muốn nhấn mạnh dùng '更 / 还要'.",
+          "example": "今年的冬天比去年冷得多。(Mùa đông năm nay lạnh hơn năm ngoái rất nhiều.)"
+        }
+      ]
+    },
+    {
+      "id": "three_de",
+      "title": "4. Bộ Ba Trợ Từ Kinh Điển: 的 - 得 - 地",
+      "color": "emerald",
+      "summary": "Cả 3 từ đều đọc là 'de' nhưng chức năng ngữ pháp phân định cực kỳ rạch ròi. Dùng sai là lỗi phổ biến nhất trong các kỳ thi HSK.",
+      "subtypes": [
+        {
+          "name": "Trợ từ kết cấu 的 (Định ngữ)",
+          "formula": "Định ngữ (Tính từ / Danh từ / Cụm từ) + 的 + Danh từ trung tâm",
+          "tip": "Quy tắc vàng: Phía SAU chữ '的' LUÔN LUÔN LÀ DANH TỪ.",
+          "example": "这是我最喜欢的一本书。(Đây là cuốn sách mà tôi yêu thích nhất.)"
+        },
+        {
+          "name": "Trợ từ kết cấu 得 (Bổ ngữ)",
+          "formula": "Động từ / Tính từ + 得 + Bổ ngữ (Đánh giá mức độ, trạng thái)",
+          "tip": "Quy tắc vàng: Phía TRƯỚC chữ '得' LUÔN LUÔN LÀ ĐỘNG TỪ hoặc TÍNH TỪ.",
+          "example": "他跑得满头大汗。(Anh ấy chạy đến mức mồ hôi nhễ nhại khắp đầu.)"
+        },
+        {
+          "name": "Trợ từ kết cấu 地 (Trạng ngữ)",
+          "formula": "Tính từ / Phó từ + 地 + Động từ chính",
+          "tip": "Quy tắc vàng: Phía SAU chữ '地' LUÔN LUÔN LÀ ĐỘNG TỪ (chỉ thái độ thực hiện).",
+          "example": "同学们认真地听老师讲课。(Các bạn học sinh chăm chú lắng nghe thầy giảng bài.)"
+        }
+      ]
+    },
+    {
+      "id": "aspect_particles",
+      "title": "5. Trợ Từ Thời Thái & Ngữ Khí: 了 - 过 - 着",
+      "color": "teal",
+      "summary": "Tiếng Trung không biến đổi thì động từ theo quá khứ/hiện tại như tiếng Anh, mà dùng các trợ từ động thái để chỉ tình trạng diễn tiến của sự việc.",
+      "subtypes": [
+        {
+          "name": "Trợ từ 了1 (Động thái sau động từ)",
+          "formula": "Động từ + 了",
+          "usage": "Biểu thị động tác đã hoàn tất (không đồng nghĩa với quá khứ; hành động tương lai xong trước việc khác vẫn dùng 了).",
+          "example": "我买了一张去北京的机票。(Tôi đã mua một tấm vé máy bay đi Bắc Kinh.)"
+        },
+        {
+          "name": "Trợ từ 了2 (Ngữ khí cuối câu)",
+          "formula": "Vế câu + 了",
+          "usage": "Biểu thị có sự xuất hiện của tình huống mới hoặc biến chuyển trạng thái ('rồi').",
+          "example": "春天来了，天气变暖和了。(Mùa xuân đã đến rồi, thời tiết ấm áp dần lên rồi.)"
+        },
+        {
+          "name": "Trợ từ 过 (Trải nghiệm quá khứ)",
+          "formula": "Động từ + 过",
+          "usage": "Biểu thị đã từng trải qua kinh nghiệm đó trong đời và hiện tại sự việc đã chấm dứt hoàn toàn.",
+          "example": "我以前去过一次长城。(Trước đây tôi từng đi Vạn Lý Trường Thành một lần.)"
+        },
+        {
+          "name": "Trợ từ 着 (Duy trì trạng thái)",
+          "formula": "Động từ + 着",
+          "usage": "Biểu thị trạng thái đang được duy trì liên tục hoặc làm nền cho hành động thứ hai.",
+          "example": "他笑着对我说：'没关系。' (Anh ấy mỉm cười nói với tôi: 'Không sao đâu.')"
+        }
+      ]
+    },
+    {
+      "id": "connectors",
+      "title": "6. Hệ Thống Liên Từ & Mạch Logic Câu Phức",
+      "color": "emerald",
+      "summary": "Nắm vững các cặp liên từ là chìa khóa để nâng cao trình độ hành văn từ HSK 3 lên HSK 5-6, tạo sự mạch lạc tự nhiên.",
+      "subtypes": [
+        {
+          "name": "Cặp liên từ Nguyên nhân - Kết quả",
+          "formula": "因为...所以... (Bởi vì... cho nên...)",
+          "example": "因为下暴雨，所以运动会推迟了。(Vì trời mưa to nên đại hội thể thao bị hoãn lại.)"
+        },
+        {
+          "name": "Cặp liên từ Chuyển ngoặt tương phản",
+          "formula": "虽然...但是/可是... (Tuy rằng... nhưng mà...)",
+          "example": "虽然汉语很难，但是非常有趣。(Tuy tiếng Trung khó nhưng cực kỳ thú vị.)"
+        },
+        {
+          "name": "Cặp liên từ Giả thiết điều kiện",
+          "formula": "如果/要是...就... (Nếu như... thì sẽ...)",
+          "example": "如果有时间，我就和你一起去。(Nếu có thời gian, tôi sẽ đi cùng bạn.)"
+        },
+        {
+          "name": "Cặp liên từ Tăng tiến quan hệ",
+          "formula": "不但...而且... (Không những... mà còn...)",
+          "example": "他不但会说英语，而且汉语说得很流利。(Anh ấy không những biết nói tiếng Anh mà tiếng Trung còn nói rất lưu loát.)"
+        }
+      ]
+    }
+  ]
+}

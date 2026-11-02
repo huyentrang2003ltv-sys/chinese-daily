@@ -1,0 +1,244 @@
+[
+  {
+    "id": "hsk1_1",
+    "level": 1,
+    "type": "choice",
+    "category": "Lượng từ căn bản",
+    "question": "选词填空 (Chọn từ điền vào chỗ trống):\n我买了三____书。",
+    "pinyin": "Wǒ mǎi le sān ____ shū.",
+    "vietnamese": "Tôi đã mua ba cuốn sách.",
+    "options": [
+      { "text": "个 (gè)", "isCorrect": false },
+      { "text": "本 (běn)", "isCorrect": true },
+      { "text": "只 (zhī)", "isCorrect": false },
+      { "text": "张 (zhāng)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「本」(běn).\n• Giải thích: Lượng từ của sách báo, tạp chí là 「本」(Ví dụ: 一本书 = một cuốn sách). 「个」là lượng từ phổ thông; 「只」dùng cho động vật nhỏ; 「张」dùng cho vật có mặt phẳng (bàn, vé, giấy)."
+  },
+  {
+    "id": "hsk1_2",
+    "level": 1,
+    "type": "reorder",
+    "category": "Trật tự từ chỉ nơi chốn",
+    "question": "连词成句 (Sắp xếp các từ thành câu đúng trật tự):",
+    "vietnamese": "Chúng tôi đọc sách ở thư viện.",
+    "words": ["看书", "我们", "在图书馆"],
+    "correctOrder": ["我们", "在图书馆", "看书"],
+    "hanzi": "我们在图书馆看书。",
+    "pinyin": "Wǒmen zài túshūguǎn kànshū.",
+    "explanation": "• Quy tắc vàng: Cụm giới từ chỉ địa điểm 「在 + Nơi chốn」luôn đứng TRƯỚC động từ chính: 「Chủ ngữ + 在 + Địa điểm + Động từ」. Tiếng Việt nói 'đọc sách ở thư viện' nhưng tiếng Trung bắt buộc: 'ở thư viện đọc sách'."
+  },
+  {
+    "id": "hsk1_3",
+    "level": 1,
+    "type": "choice",
+    "category": "Số từ vs Lượng từ",
+    "question": "选词填空:\n我想买____个苹果。",
+    "pinyin": "Wǒ xiǎng mǎi ____ gè píngguǒ.",
+    "vietnamese": "Tôi muốn mua hai quả táo.",
+    "options": [
+      { "text": "二 (èr)", "isCorrect": false },
+      { "text": "两 (liǎng)", "isCorrect": true },
+      { "text": "双 (shuāng)", "isCorrect": false },
+      { "text": "俩 (liǎ)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「两」(liǎng).\n• Giải thích: Khi đứng trước lượng từ (ở đây là 「个」), số 2 bắt buộc phải dùng 「两」, không dùng 「二」. (Lưu ý: 「俩」= 两 + 个 nên không đi với 个 nữa)."
+  },
+  {
+    "id": "hsk1_4",
+    "level": 1,
+    "type": "reorder",
+    "category": "Trật tự thời gian và hành động",
+    "question": "连词成句 (Sắp xếp câu chuẩn trật tự):",
+    "vietnamese": "Sáng mai tôi đi làm.",
+    "words": ["去上班", "明天早上", "我"],
+    "correctOrder": ["我", "明天早上", "去上班"],
+    "hanzi": "我明天早上去上班。",
+    "pinyin": "Wǒ míngtiān zǎoshang qù shàngbān.",
+    "explanation": "• Quy tắc: Trạng ngữ chỉ thời gian 「明天早上」phải đứng trước động từ chính 「去上班」(có thể đứng trước hoặc sau chủ ngữ 「我」, nhưng tuyệt đối không đứng cuối câu như tiếng Việt)."
+  },
+
+  {
+    "id": "hsk2_1",
+    "level": 2,
+    "type": "choice",
+    "category": "Câu so sánh chữ 比 (Bǐ)",
+    "question": "选词填空:\n今天比昨天____。",
+    "pinyin": "Jīntiān bǐ zuótiān ____.",
+    "vietnamese": "Hôm nay lạnh hơn hôm qua nhiều.",
+    "options": [
+      { "text": "很冷 (hěn lěng)", "isCorrect": false },
+      { "text": "冷得多 (lěng de duō)", "isCorrect": true },
+      { "text": "非常冷 (fēicháng lěng)", "isCorrect": false },
+      { "text": "真冷 (zhēn lěng)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「冷得多」(lěng de duō).\n• Quy tắc: Trong câu so sánh chữ 「比」, TUYỆT ĐỐI KHÔNG dùng các phó từ chỉ mức độ như 「很, 非常, 真」trước tính từ. Muốn biểu thị sự chênh lệch lớn phải dùng bổ ngữ sau tính từ như 「得多 / 多了」."
+  },
+  {
+    "id": "hsk2_2",
+    "level": 2,
+    "type": "reorder",
+    "category": "Cụm giới từ phương thức",
+    "question": "连词成句 (Sắp xếp trật tự câu):",
+    "vietnamese": "Tôi đi Trung Quốc bằng máy bay.",
+    "words": ["去中国", "坐飞机", "他"],
+    "correctOrder": ["他", "坐飞机", "去中国"],
+    "hanzi": "他坐飞机去中国。",
+    "pinyin": "Tā zuò fēijī qù Zhōngguó.",
+    "explanation": "• Cấu trúc câu liên động phương thức: Hành động làm phương thức/công cụ đi trước (「坐飞机」), hành động mục đích theo sau (「去中国」)."
+  },
+  {
+    "id": "hsk2_3",
+    "level": 2,
+    "type": "choice",
+    "category": "Phân biệt 刚 vs 刚才",
+    "question": "选词填空:\n____我去洗手间了，没听到电话响。",
+    "pinyin": "____ wǒ qù xǐshǒujiān le, méi tīng dào diànhuà xiǎng.",
+    "vietnamese": "Vừa nãy tôi đi vệ sinh nên không nghe thấy chuông điện thoại.",
+    "options": [
+      { "text": "刚才 (gāngcái)", "isCorrect": true },
+      { "text": "刚 (gāng)", "isCorrect": false },
+      { "text": "刚刚 (gānggāng)", "isCorrect": false },
+      { "text": "正 (zhèng)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「刚才」(gāngcái).\n• Giải thích: Đứng ở ĐẦU CÂU (trước chủ ngữ 「我」) làm danh từ chỉ thời gian thì chỉ có 「刚才」mới dùng được. Phó từ 「刚」bắt buộc phải đứng sau chủ ngữ và trước động từ (我刚去)."
+  },
+
+  {
+    "id": "hsk3_1",
+    "level": 3,
+    "type": "choice",
+    "category": "Câu chữ 把 (Bǎ) - Xử lý",
+    "question": "选词填空:\n请把空调____。",
+    "pinyin": "Qǐng bǎ kōngtiáo ____.",
+    "vietnamese": "Xin hãy bật điều hòa lên.",
+    "options": [
+      { "text": "开 (kāi)", "isCorrect": false },
+      { "text": "打开 (dǎkāi)", "isCorrect": true },
+      { "text": "在开 (zài kāi)", "isCorrect": false },
+      { "text": "不打开 (bù dǎkāi)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「打开」(dǎkāi).\n• Quy tắc chữ 把: Động từ trong câu chữ 把 KHÔNG ĐƯỢC đứng trơ trọi một mình, phía sau phải có thành phần khác như bổ ngữ kết quả/xu hướng (ở đây 「打」kèm bổ ngữ 「开」)."
+  },
+  {
+    "id": "hsk3_2",
+    "level": 3,
+    "type": "reorder",
+    "category": "Bộ ba trợ từ 的 / 得 / 地",
+    "question": "连词成句 (Sắp xếp trật tự trợ từ 地):",
+    "vietnamese": "Các bạn học sinh chăm chú làm bài tập.",
+    "words": ["同学们", "做作业", "认真地"],
+    "correctOrder": ["同学们", "认真地", "做作业"],
+    "hanzi": "同学们认真地做作业。",
+    "pinyin": "Tóngxuémen rènzhēn de zuò zuòyè.",
+    "explanation": "• Quy tắc trợ từ 「地」: Tính từ / Trạng ngữ + 「地」+ Động từ chính. 「认真地」chỉ thái độ khi thực hiện hành động 「做作业」."
+  },
+  {
+    "id": "hsk3_3",
+    "level": 3,
+    "type": "choice",
+    "category": "Bổ ngữ khả năng",
+    "question": "选词填空:\n字写得太小了，我____。",
+    "pinyin": "Zì xiě de tài xiǎo le, wǒ ____.",
+    "vietnamese": "Chữ viết nhỏ quá, tôi nhìn không rõ.",
+    "options": [
+      { "text": "看不清楚 (kàn bu qīngchu)", "isCorrect": true },
+      { "text": "没看清楚 (méi kàn qīngchu)", "isCorrect": false },
+      { "text": "看没清楚 (kàn méi qīngchu)", "isCorrect": false },
+      { "text": "不看清楚 (bù kàn qīngchu)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「看不清楚」(kàn bu qīngchu).\n• Giải thích: Cấu trúc phủ định của bổ ngữ khả năng là 「Động từ + 不 + Bổ ngữ」(ở đây là 看 + 不 + 清楚). Không dùng '没' hay '不' đứng trước động từ trong cấu trúc khả năng."
+  },
+
+  {
+    "id": "hsk4_1",
+    "level": 4,
+    "type": "choice",
+    "category": "Phân biệt 以为 vs 认为",
+    "question": "选词填空:\n我____他是北方人，其实他是广东人。",
+    "pinyin": "Wǒ ____ tā shì běifāngrén, qíshí tā shì Guǎngdōngrén.",
+    "vietnamese": "Tôi tưởng anh ấy là người miền Bắc, thực ra anh ấy là người Quảng Đông.",
+    "options": [
+      { "text": "认为 (rènwéi)", "isCorrect": false },
+      { "text": "以为 (yǐwéi)", "isCorrect": true },
+      { "text": "赞成 (zànchéng)", "isCorrect": false },
+      { "text": "考虑 (kǎolǜ)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「以为」(yǐwéi).\n• Giải thích: Phía sau có liên từ 「其实」(thực ra) chỉ sự thật trái ngược với nhận định ban đầu. 「以为」chỉ nhận định ban đầu bị SAI so với thực tế ('tưởng rằng'). Còn 「认为」là đưa ra quan điểm chính kiến khách quan."
+  },
+  {
+    "id": "hsk4_2",
+    "level": 4,
+    "type": "reorder",
+    "category": "Cấu trúc tăng tiến 不但...而且...",
+    "question": "连词成句 (Sắp xếp trật tự câu phức):",
+    "vietnamese": "Cô ấy không những biết hát mà còn biết nhảy múa.",
+    "words": ["而且会跳舞", "她不但会唱歌"],
+    "correctOrder": ["她不但会唱歌", "而且会跳舞"],
+    "hanzi": "她不但会唱歌，而且会跳舞。",
+    "pinyin": "Tā búdàn huì chànggē, érqiě huì tiàowǔ.",
+    "explanation": "• Cặp liên từ tăng tiến 「不但...而且...」(không những... mà còn...). Khi cùng một chủ ngữ 「她」, chủ ngữ đứng trước 「不但」."
+  },
+  {
+    "id": "hsk4_3",
+    "level": 4,
+    "type": "choice",
+    "category": "Phân biệt 差不多 vs 几乎",
+    "question": "选词填空:\n他们两个人的汉语水平____。",
+    "pinyin": "Tāmen liǎng ge rén de Hànyǔ shuǐpíng ____.",
+    "vietnamese": "Trình độ tiếng Trung của hai người họ tương đương nhau.",
+    "options": [
+      { "text": "几乎 (jīhū)", "isCorrect": false },
+      { "text": "差不多 (chàbuduō)", "isCorrect": true },
+      { "text": "大体 (dàtǐ)", "isCorrect": false },
+      { "text": "格外 (géwài)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「差不多」(chàbuduō).\n• Giải thích: Ở vị trí cuối câu làm vị ngữ độc lập mang nghĩa 'tương đương, xấp xỉ nhau', chỉ có tính từ 「差不多」mới dùng được. Phó từ 「几乎」không bao giờ được đứng một mình làm vị ngữ."
+  },
+
+  {
+    "id": "hsk5_1",
+    "level": 5,
+    "type": "choice",
+    "category": "Cặp liên từ nhượng bộ 即使...也...",
+    "question": "选词填空:\n____遇到再大的困难，我们____不能放弃。",
+    "pinyin": "____ yù dào zài dà de kùnnan, wǒmen ____ bù néng fàngqì.",
+    "vietnamese": "Cho dù gặp phải khó khăn lớn đến đâu, chúng ta cũng không thể bỏ cuộc.",
+    "options": [
+      { "text": "如果...就... (rúguǒ...jiù...)", "isCorrect": false },
+      { "text": "即使...也... (jíshǐ...yě...)", "isCorrect": true },
+      { "text": "只要...就... (zhǐyào...jiù...)", "isCorrect": false },
+      { "text": "既然...也... (jìrán...yě...)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「即使...也...」(jíshǐ...yě...).\n• Giải thích: Biểu thị quan hệ nhượng bộ giả thiết: 'Cho dù / Dẫu rằng... thì cũng...'. Cụm '再大的困难' (khó khăn to lớn đến thế nào đi nữa) là dấu hiệu kinh điển kết hợp với 「即使...也...」."
+  },
+  {
+    "id": "hsk5_2",
+    "level": 5,
+    "type": "choice",
+    "category": "Thành ngữ HSK 5 (成语)",
+    "question": "选词填空 (Chọn thành ngữ chuẩn xác):\n做事情一定要有始有终，绝不能____。",
+    "pinyin": "Zuò shìqing yídìng yào yǒu shǐ yǒu zhōng, jué bù néng ____.",
+    "vietnamese": "Làm việc nhất định phải có đầu có cuối, tuyệt đối không được bỏ dở giữa chừng.",
+    "options": [
+      { "text": "半途而废 (bàntú'érfèi)", "isCorrect": true },
+      { "text": "胸有成竹 (xiōngyǒuchéngzhú)", "isCorrect": false },
+      { "text": "拔苗助长 (bámiáozhùzhǎng)", "isCorrect": false },
+      { "text": "一举两得 (yìjǔliǎngdé)", "isCorrect": false }
+    ],
+    "explanation": "• Đáp án đúng: 「半途而废」(bàntú'érfèi - Bán đồ nhi phế: Bỏ dở giữa đường).\n• Giải thích: Thành ngữ đối lập trực tiếp với 「有始有终」(có đầu có cuối). 「胸有成竹」= tự tin nắm chắc trong lòng; 「拔苗助长」= đốt cháy giai đoạn; 「一举两得」= một mũi tên trúng hai đích."
+  },
+  {
+    "id": "hsk5_3",
+    "level": 5,
+    "type": "reorder",
+    "category": "Cấu trúc văn viết trang trọng",
+    "question": "连词成句 (Sắp xếp câu chuẩn văn phong HSK 5):",
+    "vietnamese": "Cùng với sự phát triển của công nghệ, đời sống người dân ngày càng tiện lợi.",
+    "words": ["人们的生活越来越便利", "科技的发展", "随着"],
+    "correctOrder": ["随着", "科技的发展", "人们的生活越来越便利"],
+    "hanzi": "随着科技的发展，人们的生活越来越便利。",
+    "pinyin": "Suízhe kējì de fāzhǎn, rénmen de shēnghuó yuè lái yuè biànlì.",
+    "explanation": "• Cấu trúc văn viết kinh điển: 「随着 + Sự vật + 的 + Phát triển / Tiến bộ, Vế kết quả」 biểu thị 'Cùng với sự phát triển của... kéo theo sự thay đổi của...'."
+  }
+]

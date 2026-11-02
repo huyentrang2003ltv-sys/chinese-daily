@@ -1,0 +1,66 @@
+[
+  {
+    "id": "scenario_greeting",
+    "title": "Chào Hỏi & Làm Quen Lần Đầu (初次见面)",
+    "level": "HSK 1 - 2",
+    "icon": "hand-metal",
+    "role": "Lý Hoa (Giáo viên bản xứ Bắc Kinh)",
+    "initialMessage": {
+      "hanzi": "你好！很高兴认识你。我是李华，你叫什么名字？",
+      "pinyin": "Nǐ hǎo! Hěn gāoxìng rènshi nǐ. Wǒ shì Lǐ Huá, nǐ jiào shénme míngzi?",
+      "vi": "Chào bạn! Rất vui được làm quen với bạn. Tôi là Lý Hoa, bạn tên là gì?"
+    },
+    "suggestedReplies": [
+      { "hanzi": "你好！我叫阮文南，我是越南人。", "pinyin": "Nǐ hǎo! Wǒ jiào Ruǎn Wénnán, wǒ shì Yuènán rén.", "vi": "Chào bạn! Tôi tên là Nguyễn Văn Nam, tôi là người Việt Nam." },
+      { "hanzi": "我也很高兴认识你！你在哪儿工作？", "pinyin": "Wǒ yě hěn gāoxìng rènshi nǐ! Nǐ zài nǎr gōngzuò?", "vi": "Tôi cũng rất vui được làm quen với bạn! Bạn làm việc ở đâu?" }
+    ]
+  },
+  {
+    "id": "scenario_restaurant",
+    "title": "Gọi Món Tại Nhà Hàng Trung Hoa (餐厅点餐)",
+    "level": "HSK 2 - 3",
+    "icon": "utensils",
+    "role": "Phục vụ bàn nhà hàng Tứ Xuyên",
+    "initialMessage": {
+      "hanzi": "您好！欢迎光临！请问您一共几位？想吃点儿什么？",
+      "pinyin": "Nín hǎo! Huānyíng guānglín! Qǐngwèn nín yígòng jǐ wèi? Xiǎng chī diǎnr shénme?",
+      "vi": "Xin chào quý khách! Hoan nghênh ghé quán! Xin hỏi quý khách đi mấy người ạ? Quý khách muốn dùng món gì?"
+    },
+    "suggestedReplies": [
+      { "hanzi": "我们两个人。请给我一份宫保鸡丁和两碗米饭。", "pinyin": "Wǒmen liǎng gè rén. Qǐng gěi wǒ yí fèn Gōngbǎo Jīdīng hé liǎng wǎn mǐfàn.", "vi": "Chúng tôi có hai người. Cho tôi một phần gà Cung Bảo và hai bát cơm trắng." },
+      { "hanzi": "你们有什么特色菜？请不要放太多辣椒。", "pinyin": "Nǐmen yǒu shénme tèsè cài? Qǐng bú yào fàng tài duō làjiāo.", "vi": "Quán có món gì đặc sản? Xin đừng bỏ quá nhiều ớt cay nhé." }
+    ]
+  },
+  {
+    "id": "scenario_shopping",
+    "title": "Mua Sắm & Mặc Cả Giá (商店购物与砍价)",
+    "level": "HSK 2 - 3",
+    "icon": "shopping-bag",
+    "role": "Chủ tiệm đồ lưu niệm Thượng Hải",
+    "initialMessage": {
+      "hanzi": "帅哥/美女，来看一看！这件丝绸衣服质量非常好，今天打折！",
+      "pinyin": "Shuàigē/Měinǚ, lái kàn yí kàn! Zhè jiàn sīchóu yīfu zhìliàng fēicháng hǎo, jīntiān dǎzhé!",
+      "vi": "Soái ca/Mỹ nữ ơi, ghé xem nào! Chiếc áo lụa này chất lượng cực kỳ tốt, hôm nay có giảm giá đấy!"
+    },
+    "suggestedReplies": [
+      { "hanzi": "这件衣服多少钱一件？可以便宜一点儿吗？", "pinyin": "Zhè jiàn yīfu duōshao qián yí jiàn? Kěyǐ piányi yìdiǎnr ma?", "vi": "Chiếc áo này bao nhiêu tiền một chiếc? Có thể bớt chút được không?" },
+      { "hanzi": "太贵了，一百块钱卖不卖？", "pinyin": "Tài guì le, yìbǎi kuài qián mài bu mài?", "vi": "Đắt quá, một trăm tệ có bán không ạ?" }
+    ]
+  },
+  {
+    "id": "scenario_interview",
+    "title": "Phỏng Vấn Xin Việc Tiếng Trung (中文求职面试)",
+    "level": "HSK 3 - 4",
+    "icon": "briefcase",
+    "role": "Trưởng phòng nhân sự công ty đa quốc gia",
+    "initialMessage": {
+      "hanzi": "请坐。首先请你用中文简单介绍一下你自己和你的工作经历。",
+      "pinyin": "Qǐng zuò. Shǒuxiān qǐng nǐ yòng zhōngwén jiǎndān jièshào yíxià nǐ zìjǐ hé nǐ de gōngzuò jīnglì.",
+      "vi": "Mời bạn ngồi. Trước tiên xin mời bạn dùng tiếng Trung giới thiệu ngắn gọn về bản thân và kinh nghiệm làm việc của bạn."
+    },
+    "suggestedReplies": [
+      { "hanzi": "面试官好！我毕业于河内大学，有两年的中文翻译工作经验。", "pinyin": "Miànshìguān hǎo! Wǒ bìyè yú Hénèi Dàxué, yǒu liǎng nián de zhōngwén fānyì gōngzuò jīnglì.", "vi": "Kính chào người phỏng vấn! Tôi tốt nghiệp Đại học Hà Nội, đã có 2 năm kinh nghiệm làm biên dịch tiếng Trung." },
+      { "hanzi": "我性格开朗，善于沟通，希望能为贵公司贡献力量。", "pinyin": "Wǒ xìnggé kāilǎng, shànyú gōutōng, xīwàng néng wèi guì gōngsī gòngxiàn lìliang.", "vi": "Tôi là người cởi mở, có khả năng giao tiếp tốt, rất hy vọng được cống hiến cho quý công ty." }
+    ]
+  }
+]

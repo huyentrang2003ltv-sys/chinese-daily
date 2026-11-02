@@ -1,0 +1,305 @@
+[
+  {
+    "id": "dynasty_qin",
+    "category": "dynasties",
+    "categoryName": "Triều Đại Lịch Sử",
+    "categoryColor": "rose",
+    "title": "Nhà Tần (秦朝) - Thống Nhất Trung Hoa & Chữ Viết",
+    "pinyin": "Qín Cháo (221 TCN – 206 TCN)",
+    "period": "221 TCN – 206 TCN",
+    "badge": "Bước Ngoặt Lịch Sử",
+    "summary": "Tần Thủy Hoàng (秦始皇) đánh bại 6 nước, lần đầu tiên thống nhất toàn cõi Trung Hoa, mở ra kỷ nguyên đế chế phong kiến tập quyền kéo dài hơn hai ngàn năm.",
+    "highlights": [
+      "Thống nhất văn tự: Chuẩn hóa toàn bộ chữ viết thành chữ Tiểu Triện (小篆), đặt nền tảng thống nhất ngôn ngữ cho cả dân tộc.",
+      "Thống nhất đo lường & tiền tệ: Xóa bỏ sự hỗn loạn giữa các nước chư hầu, thúc đẩy giao thương phát triển.",
+      "Vạn Lý Trường Thành (万里长城): Kết nối và xây đắp hệ thống trường thành khổng lồ ở phương Bắc để phòng thủ giặc ngoại xâm.",
+      "Đội quân Đất Nung (兵马俑): Kỳ quan khảo cổ học thế giới tại Tây An, bảo vệ lăng mộ hoàng đế."
+    ],
+    "keywords": [
+      { "hanzi": "秦始皇", "pinyin": "Qín Shǐhuáng", "meaning": "Tần Thủy Hoàng" },
+      { "hanzi": "万里长城", "pinyin": "Wànlǐ Chángchéng", "meaning": "Vạn Lý Trường Thành" },
+      { "hanzi": "小篆", "pinyin": "Xiǎozhuàn", "meaning": "Chữ Tiểu Triện (chữ Hán chuẩn hóa)" },
+      { "hanzi": "兵马俑", "pinyin": "Bīngmǎyǒng", "meaning": "Tượng Binh Mã Dũng (quân đất nung)" }
+    ],
+    "quote": {
+      "hanzi": "书同文，车同轨，统一度量衡。",
+      "pinyin": "Shū tóng wén, chē tóng guǐ, tǒngyī dùliànghéng.",
+      "meaning": "Cùng một thứ chữ viết, xe cùng một khổ trục, đo lường thống nhất chuẩn mực."
+    }
+  },
+  {
+    "id": "dynasty_han",
+    "category": "dynasties",
+    "categoryName": "Triều Đại Lịch Sử",
+    "categoryColor": "amber",
+    "title": "Nhà Hán (汉朝) - Khởi Nguồn Tên Gọi 'Hán Tộc'",
+    "pinyin": "Hàn Cháo (202 TCN – 220 SCN)",
+    "period": "202 TCN – 220 SCN",
+    "badge": "Thời Đại Bản Sắc",
+    "summary": "Do Hán Cao Tổ Lưu Bang sáng lập, đây là triều đại định hình bản sắc dân tộc lớn nhất thế giới: Người Hán (汉族), Chữ Hán (汉字), và Tiếng Hán (汉语).",
+    "highlights": [
+      "Khai mở Con Đường Tơ Lụa (丝绸之路): Trương Khiêm đi sứ Tây Vực, mở tuyến giao thương kết nối Trung Hoa với La Mã và Trung Á.",
+      "Độc tôn Nho thuật: Hán Vũ Đế chọn Nho giáo làm hệ tư tưởng chính thống của triều đình.",
+      "Bộ 'Sử Ký' bất hủ: Tư Mã Thiên biên soạn bộ thông sử vĩ đại đầu tiên trong lịch sử nhân loại.",
+      "Phát minh giấy viết: Thái Luân cải tiến kỹ thuật làm giấy, thay thế thẻ tre cồng kềnh."
+    ],
+    "keywords": [
+      { "hanzi": "汉字", "pinyin": "Hànzì", "meaning": "Chữ Hán" },
+      { "hanzi": "丝绸之路", "pinyin": "Sīchóu zhī Lù", "meaning": "Con Đường Tơ Lụa" },
+      { "hanzi": "史记", "pinyin": "Shǐjì", "meaning": "Bộ Sử Ký (Tư Mã Thiên)" },
+      { "hanzi": "儒家", "pinyin": "Rújiā", "meaning": "Nho gia / Nho giáo" }
+    ],
+    "quote": {
+      "hanzi": "明犯强汉者，虽远必诛。",
+      "pinyin": "Míng fàn qiáng Hàn zhě, suī yuǎn bì zhū.",
+      "meaning": "Kẻ nào dám xâm phạm Đại Hán cường thịnh, dù ở xa tít tắp ắt cũng bị tiêu diệt."
+    }
+  },
+  {
+    "id": "dynasty_tang",
+    "category": "dynasties",
+    "categoryName": "Triều Đại Lịch Sử",
+    "categoryColor": "purple",
+    "title": "Nhà Đường (唐朝) - Đỉnh Cao Phồn Hoa & Đường Thi",
+    "pinyin": "Táng Cháo (618 – 907)",
+    "period": "618 – 907 SCN",
+    "badge": "Thời Hoàng Kim",
+    "summary": "Thời đại thịnh vượng rực rỡ nhất về kinh tế, ngoại giao cởi mở và đỉnh cao của văn học thi ca thế giới. Thủ đô Trường An là đô thị quốc tế sầm uất bậc nhất đương thời.",
+    "highlights": [
+      "Đường thi bất hủ (唐诗): Hơn 50,000 bài thơ của các đại thi hào như Thi Tiên Lý Bạch (李白), Thi Thánh Đỗ Phủ (杜甫), Bạch Cư Dị (白居易).",
+      "Kinh đô Trường An (长安): Thành phố triệu dân đa sắc tộc, trung tâm văn hóa và giao thương toàn cầu.",
+      "Nữ hoàng duy nhất: Võ Tắc Thiên (武则天) xưng đế, thúc đẩy khoa cử tuyển chọn nhân tài.",
+      "Huyền Trang thỉnh kinh: Đại sư Huyền Trang sang Ấn Độ học Phật pháp, khởi nguồn cho Tây Du Ký."
+    ],
+    "keywords": [
+      { "hanzi": "唐诗", "pinyin": "Tángshī", "meaning": "Thơ Đường" },
+      { "hanzi": "李白", "pinyin": "Lǐ Bái", "meaning": "Thi Tiên Lý Bạch" },
+      { "hanzi": "长安", "pinyin": "Cháng'ān", "meaning": "Trường An (kinh đô cổ)" },
+      { "hanzi": "开元盛世", "pinyin": "Kāiyuán Shèngshì", "meaning": "Khai Nguyên Thịnh Thế" }
+    ],
+    "quote": {
+      "hanzi": "海内存知己，天涯若比邻。",
+      "pinyin": "Hǎi nèi cún zhījǐ, tiānyá ruò bǐlín.",
+      "meaning": "Trong bốn bể có tri kỷ, thì chân trời góc bể cũng tựa như láng giềng sát vách."
+    }
+  },
+  {
+    "id": "dynasty_song_ming_qing",
+    "category": "dynasties",
+    "categoryName": "Triều Đại Lịch Sử",
+    "categoryColor": "emerald",
+    "title": "Tống - Minh - Thanh: Di Sản Văn Minh & Cố Cung",
+    "pinyin": "Sòng - Míng - Qīng (960 – 1912)",
+    "period": "960 – 1912 SCN",
+    "badge": "Văn Minh Đỉnh Cao",
+    "summary": "Thời kỳ hoàn thiện Tứ đại phát minh, xây dựng Tử Cấm Thành nguy nga và hoàn thiện những kiệt tác văn học tiểu thuyết chương hồi đồ sộ.",
+    "highlights": [
+      "Nhà Tống: Ra đời tiền giấy đầu tiên (Giao tử), đỉnh cao nghề gốm sứ tinh xảo và kỹ thuật in ấn chữ rời.",
+      "Nhà Minh: Xây dựng Tử Cấm Thành (故宫) tại Bắc Kinh, đô đốc Trịnh Hòa chỉ huy hạm đội 7 lần thám hiểm đại dương.",
+      "Nhà Thanh: Thời kỳ Khang - Càn thịnh thế, biên soạn bộ bách khoa toàn thư 'Tứ Khố Toàn Thư' đồ sộ nhất lịch sử."
+    ],
+    "keywords": [
+      { "hanzi": "故宫", "pinyin": "Gùgōng", "meaning": "Cố Cung / Tử Cấm Thành" },
+      { "hanzi": "青花瓷", "pinyin": "Qīnghuācí", "meaning": "Gốm hoa lam thời Minh" },
+      { "hanzi": "郑和下西洋", "pinyin": "Zhèng Hé xià Xīyáng", "meaning": "Trịnh Hòa hạ Tây Dương" }
+    ],
+    "quote": {
+      "hanzi": "天下兴亡，匹夫有责。",
+      "pinyin": "Tiānxià xīngwáng, pǐfū yǒu zé.",
+      "meaning": "Đất nước hưng thịnh hay suy vong, mỗi thường dân đều gánh một phần trách nhiệm."
+    }
+  },
+
+  {
+    "id": "fest_spring",
+    "category": "festivals",
+    "categoryName": "Lễ Hội & Phong Tục",
+    "categoryColor": "rose",
+    "title": "Tết Nguyên Đán (春节) - Đỉnh Cao Sum Họp Đoàn Viên",
+    "pinyin": "Chūn Jié (Mùng 1 tháng Giêng Âm lịch)",
+    "period": "Lễ hội lớn nhất trong năm",
+    "badge": "Lễ Hội Đoàn Viên",
+    "summary": "Tết Nguyên Đán là ngày tết cổ truyền thiêng liêng nhất của người Trung Hoa, mang biểu tượng tống cựu nghênh tân, rước lộc trừ tà và gia đình đoàn tụ.",
+    "highlights": [
+      "Phong bao Lì xì đỏ (红包): Người lớn trao lì xì may mắn cho trẻ nhỏ và người già để cầu chúc bình an.",
+      "Ăn Sủi cảo (吃饺子): Hình dáng sủi cảo tựa như nén vàng (元宝), ăn sủi cảo đêm giao thừa biểu thị chiêu tài tiến bảo.",
+      "Dán câu đối đỏ (贴春联) & Chữ Phúc ngược (福倒了): Chữ Phúc dán lộn ngược mang ý nghĩa 'Phúc đã ĐẾN' (倒 đồng âm với 到).",
+      "Đêm Tất niên (除夕): Cả gia đình cùng ăn bữa cơm đoàn viên (年夜饭) và thức thâu đêm đón giao thừa (守岁)."
+    ],
+    "keywords": [
+      { "hanzi": "春节", "pinyin": "Chūnjié", "meaning": "Tết Nguyên Đán" },
+      { "hanzi": "红包", "pinyin": "Hóngbāo", "meaning": "Bao lì xì đỏ" },
+      { "hanzi": "除夕", "pinyin": "Chúxī", "meaning": "Đêm Giao Thừa" },
+      { "hanzi": "年年有余", "pinyin": "Niánnián yǒuyú", "meaning": "Năm năm no đủ, có dư dả (chơi chữ Ngư 鱼 - Cá)" }
+    ],
+    "quote": {
+      "hanzi": "爆竹声中一岁除，春风送暖入屠苏。",
+      "pinyin": "Bàozhú shēng zhōng yí suì chú, chūnfēng sòng nuǎn rù túsū.",
+      "meaning": "Trong tiếng pháo nổ giã từ năm cũ, gió xuân mang hơi ấm thổi vào ly rượu đầu năm."
+    }
+  },
+  {
+    "id": "fest_lantern",
+    "category": "festivals",
+    "categoryName": "Lễ Hội & Phong Tục",
+    "categoryColor": "amber",
+    "title": "Tết Nguyên Tiêu (元宵节) - Rằm Tháng Giêng & Hoa Đăng",
+    "pinyin": "Yuánxiāo Jié (Rằm tháng Giêng)",
+    "period": "Đêm trăng rằm đầu tiên của năm",
+    "badge": "Hội Hoa Đăng",
+    "summary": "Đánh dấu sự kết thúc của kỳ nghỉ Tết Nguyên Đán, đây là đêm hội hoa đăng rực rỡ nhất trong năm với ánh sáng đèn lồng chiếu rọi khắp phố phường.",
+    "highlights": [
+      "Ăn Bánh trôi Nguyên Tiêu (吃元宵 / 汤圆): Bánh gạo nếp tròn biểu trưng cho sự viên mãn, gia đình hòa thuận gắn kết trọn vẹn.",
+      "Ngắm đèn lồng (赏花灯): Đủ loại đèn lồng rực rỡ hình rồng, phượng, hoa sen lung linh huyền ảo.",
+      "Đố câu đố đèn lồng (猜灯谜): Viết những câu đố chữ dí dỏm dán dưới đáy đèn lồng để mọi người cùng thử trí thông minh."
+    ],
+    "keywords": [
+      { "hanzi": "元宵", "pinyin": "Yuánxiāo", "meaning": "Bánh trôi tết Nguyên Tiêu" },
+      { "hanzi": "猜灯谜", "pinyin": "Cāi dēngmí", "meaning": "Đoán câu đố đèn hoa" },
+      { "hanzi": "团团圆圆", "pinyin": "Tuántuán yuányuán", "meaning": "Đoàn viên viên mãn" }
+    ],
+    "quote": {
+      "hanzi": "众里寻他千百度，蓦然回首，那人却在，灯火阑珊处。",
+      "pinyin": "Zhòng lǐ xún tā qiān bǎi dù, mòrán huíshǒu, nà rén què zài, dēnghuǒ lánshān chù.",
+      "meaning": "Trăm ngàn lần tìm người trong biển người nhộn nhịp, chợt ngoảnh đầu lại, người ấy lại đứng nơi ánh đèn thưa thớt."
+    }
+  },
+  {
+    "id": "fest_dragonboat_midautumn",
+    "category": "festivals",
+    "categoryName": "Lễ Hội & Phong Tục",
+    "categoryColor": "teal",
+    "title": "Tết Đoan Ngọ & Tết Trung Thu: Hồn Dân Tộc",
+    "pinyin": "Duānwǔ Jié & Zhōngqiū Jié",
+    "period": "Tháng 5 & Tháng 8 Âm lịch",
+    "badge": "Văn Hóa Dân Gian",
+    "summary": "Hai tiết lễ quan trọng bậc nhất mang đậm tính nhân văn: Tưởng nhớ tấm lòng trung liệt ái quốc và tôn vinh ánh trăng đoàn viên.",
+    "highlights": [
+      "Tết Đoan Ngọ (mùng 5 tháng 5): Đua thuyền rồng (赛龙舟) sôi động, ăn bánh ú lá tre (吃粽子) để tưởng nhớ đại thi hào Khuất Nguyên.",
+      "Tết Trung Thu (rằm tháng 8): Cùng ngắm trăng tròn mùa thu trong veo, thưởng thức bánh Trung Thu nướng ngọt ngào (吃月饼) và kể chuyện Hằng Nga bôn nguyệt (嫦娥奔月)."
+    ],
+    "keywords": [
+      { "hanzi": "端午节", "pinyin": "Duānwǔjié", "meaning": "Tết Đoan Ngọ" },
+      { "hanzi": "赛龙舟", "pinyin": "Sài lóngzhōu", "meaning": "Đua thuyền rồng" },
+      { "hanzi": "中秋节", "pinyin": "Zhōngqiūjié", "meaning": "Tết Trung Thu" },
+      { "hanzi": "月饼", "pinyin": "Yuèbǐng", "meaning": "Bánh Trung Thu" }
+    ],
+    "quote": {
+      "hanzi": "但愿人长久，千里共婵娟。",
+      "pinyin": "Dàn yuàn rén chángjiǔ, qiānlǐ gòng chánjuān.",
+      "meaning": "Chỉ mong người bình an trường thọ, dẫu cách nghìn trùng vẫn cùng chung ngắm bóng trăng thanh."
+    }
+  },
+
+  {
+    "id": "classics_four_novels",
+    "category": "classics",
+    "categoryName": "Danh Tác & Phát Minh",
+    "categoryColor": "purple",
+    "title": "Tứ Đại Danh Tác Văn Học Trung Hoa (四大名著)",
+    "pinyin": "Sì Dà Míngzhù",
+    "period": "Thời Minh - Thanh",
+    "badge": "Kiệt Tác Văn Chương",
+    "summary": "Bốn tác phẩm tiểu thuyết trường thiên đỉnh cao, định hình tư duy thẩm mỹ, triết lý nhân sinh và văn hóa dân gian phương Đông suốt hàng trăm năm.",
+    "highlights": [
+      "Tam Quốc Diễn Nghĩa (三国演义 - La Quán Trung): Đỉnh cao mưu lược quân sự, tài thao lược Gia Cát Lượng và chữ Nghĩa Quan Vũ.",
+      "Tây Du Ký (西游记 - Ngô Thừa Ân): Hành trình 4 thầy trò Tôn Ngộ Không vượt 81 kiếp nạn, ẩn dụ cho hành trình tu luyện chiến thắng dục vọng tâm can.",
+      "Thủy Hử (水浒传 - Thi Nại Am): Bức tranh hào hùng của 108 vị anh hùng Lương Sơn Bạc vì nghĩa hiệp chống lại áp bức.",
+      "Hồng Lâu Mộng (红楼梦 - Tào Tuyết Cần): Đỉnh cao tiểu thuyết hiện thực tâm lý, khúc ca bi tráng về sự thịnh suy của đại gia tộc phong kiến qua mối tình Bảo - Đại."
+    ],
+    "keywords": [
+      { "hanzi": "三国演义", "pinyin": "Sānguó Yǎnyì", "meaning": "Tam Quốc Diễn Nghĩa" },
+      { "hanzi": "西游记", "pinyin": "Xīyóujì", "meaning": "Tây Du Ký" },
+      { "hanzi": "水浒传", "pinyin": "Shuǐhǔzhuàn", "meaning": "Thủy Hử" },
+      { "hanzi": "红楼梦", "pinyin": "Hónglóumèng", "meaning": "Hồng Lâu Mộng" }
+    ],
+    "quote": {
+      "hanzi": "天下大势，分久必合，合久必分。",
+      "pinyin": "Tiānxià dàshì, fēn jiǔ bì hé, hé jiǔ bì fēn.",
+      "meaning": "Đại thế thiên hạ, chia lâu ngày ắt sẽ hợp, hợp lâu ngày ắt sẽ chia."
+    }
+  },
+  {
+    "id": "classics_inventions",
+    "category": "classics",
+    "categoryName": "Danh Tác & Phát Minh",
+    "categoryColor": "teal",
+    "title": "Tứ Đại Phát Minh Cổ Đại (四大发明)",
+    "pinyin": "Sì Dà Fāmíng",
+    "period": "Thay đổi dòng chảy nhân loại",
+    "badge": "Đóng Góp Nhân Loại",
+    "summary": "Bốn thành tựu khoa học công nghệ vượt bậc của người Trung Quốc cổ đại đã làm thay đổi hoàn toàn cục diện và tiến trình văn minh thế giới.",
+    "highlights": [
+      "Kỹ thuật làm giấy (造纸术): Thái Luân hoàn thiện năm 105 SCN, giúp tri thức được lưu truyền rộng rãi và bình dân hóa.",
+      "Kỹ thuật in ấn chữ rời (印刷术): Tất Thăng phát minh vào thời Tống, thúc đẩy văn minh phục hưng và giáo dục bùng nổ.",
+      "Thuốc súng (火药): Được phát hiện bởi các đạo sĩ luyện đan, cách mạng hóa công nghệ quân sự và kỹ thuật đào hầm mỏ.",
+      "La bàn (指南针): Đưa ngành hàng hải viễn dương bước vào kỷ nguyên định hướng chính xác không cần nhìn sao trời."
+    ],
+    "keywords": [
+      { "hanzi": "造纸术", "pinyin": "Zàozhǐshù", "meaning": "Kỹ thuật làm giấy" },
+      { "hanzi": "印刷术", "pinyin": "Yìnshuāshù", "meaning": "Kỹ thuật in ấn" },
+      { "hanzi": "火药", "pinyin": "Huǒyào", "meaning": "Thuốc súng" },
+      { "hanzi": "指南针", "pinyin": "Zhǐnánzhēn", "meaning": "La bàn chỉ nam" }
+    ],
+    "quote": {
+      "hanzi": "工欲善其事，必先利其器。",
+      "pinyin": "Gōng yù shàn qí shì, bì xiān lì qí qì.",
+      "meaning": "Người thợ muốn làm tốt công việc, trước hết phải mài thật bén công cụ trong tay."
+    }
+  },
+
+  {
+    "id": "arts_tea_culture",
+    "category": "arts",
+    "categoryName": "Tinh Hoa Nghệ Thuật",
+    "categoryColor": "emerald",
+    "title": "Trà Đạo Trung Hoa (茶文化) - Hương Vị Thiên Nhiên",
+    "pinyin": "Chá Wénhuà - Trà Đạo",
+    "period": "Hơn 4000 năm lịch sử",
+    "badge": "Nghệ Thuật Tĩnh Tâm",
+    "summary": "Trung Quốc là quê hương của cây chè. Văn hóa thưởng trà không đơn thuần là giải khát, mà là một đạo lý tu thân dưỡng tính, hòa hợp với đất trời.",
+    "highlights": [
+      "Lục Đại Danh Trà: Trà Xanh (Long Tỉnh Tây Hồ), Trà Đen (Kỳ Môn Hồng Trà), Trà Ô Long (Thiết Quan Âm), Trà Phổ Nhĩ lên men cổ thụ, Trà Trắng và Trà Vàng.",
+      "Trà Kinh (茶经): Tác phẩm nghiên cứu trà đầu tiên trên thế giới của 'Trà Thánh' Lục Vũ (陆羽).",
+      "Triết lý Trà Đạo: Tinh (chất trà tinh khiết), Khí (khí chất thanh cao), Thần (tinh thần an nhiên) và Hòa (hòa ái nhân gian)."
+    ],
+    "keywords": [
+      { "hanzi": "茶道", "pinyin": "Chádào", "meaning": "Trà đạo" },
+      { "hanzi": "龙井茶", "pinyin": "Lóngjǐng chá", "meaning": "Trà Long Tỉnh" },
+      { "hanzi": "品茶", "pinyin": "Pǐn chá", "meaning": "Thưởng trà, nếm trà" },
+      { "hanzi": "以茶会友", "pinyin": "Yǐ chá huì yǒu", "meaning": "Mượn chén trà thơm kết giao tri kỷ" }
+    ],
+    "quote": {
+      "hanzi": "茶禅一味，心静自明。",
+      "pinyin": "Chá chán yí wèi, xīn jìng zì míng.",
+      "meaning": "Vị trà hòa cùng vị thiền, tâm tĩnh lặng thì lòng tự khắc sáng tỏ."
+    }
+  },
+  {
+    "id": "arts_opera_calligraphy",
+    "category": "arts",
+    "categoryName": "Tinh Hoa Nghệ Thuật",
+    "categoryColor": "rose",
+    "title": "Kinh Kịch & Thư Pháp: Quốc Bảo Thị Giác",
+    "pinyin": "Jīngjù & Shūfǎ",
+    "period": "Tinh hoa di sản thế giới",
+    "badge": "Quốc Bảo Nghệ Thuật",
+    "summary": "Sự kết hợp hoàn hảo giữa vũ điệu, ca từ kịch nghệ Kinh Kịch và nét bút mềm mại mà rắn rỏi của nghệ thuật Thư Pháp nghìn năm.",
+    "highlights": [
+      "Kinh Kịch Bắc Kinh (京剧): Nghệ thuật biểu diễn tổng hợp ca, vũ, thoại, đả; phân 4 loại nhân vật chính: Sinh (生), Đán (旦), Tịnh (净), Sửu (丑).",
+      "Mặt nạ Liên Phổ (脸谱): Màu sắc mặt nạ thể hiện tính cách nhân vật: Màu đỏ (trung nghĩa, Quan Công), màu trắng (gian xảo, Tào Tháo), màu đen (chính trực, Bao Chửng).",
+      "Thư Pháp (书法) & Văn Phòng Tứ Bảo: Bút lông (笔), Mực tàu (墨), Giấy xuyến (纸), Nghiên đá (砚); các thể chữ: Triện, Lệ, Khải, Hành, Thảo."
+    ],
+    "keywords": [
+      { "hanzi": "京剧", "pinyin": "Jīngjù", "meaning": "Kinh Kịch Bắc Kinh" },
+      { "hanzi": "脸谱", "pinyin": "Liǎnpǔ", "meaning": "Mặt nạ Liên Phổ" },
+      { "hanzi": "文房四宝", "pinyin": "Wénfáng Sìbǎo", "meaning": "Văn Phòng Tứ Bảo (Bút, mực, giấy, nghiên)" },
+      { "hanzi": "书法家", "pinyin": "Shūfǎjiā", "meaning": "Nhà thư pháp đại tài" }
+    ],
+    "quote": {
+      "hanzi": "字如其人，立品为先。",
+      "pinyin": "Zì rú qí rén, lì pǐn wéi xiān.",
+      "meaning": "Nét chữ phản chiếu cốt cách con người, muốn viết chữ đẹp trước hết phải rèn phẩm hạnh."
+    }
+  }
+]

@@ -1,0 +1,762 @@
+[
+  {
+    "hanzi": "想",
+    "pinyin": "xiǎng",
+    "hanviet": "Tưởng",
+    "meaning": "Nghĩ, nhớ, muốn, tưởng tượng",
+    "level": 1,
+    "strokeCount": 13,
+    "radicals": [
+      {
+        "char": "木",
+        "name": "Mộc",
+        "meaning": "Cây cối"
+      },
+      {
+        "char": "目",
+        "name": "Mục",
+        "meaning": "Mắt"
+      },
+      {
+        "char": "心",
+        "name": "Tâm",
+        "meaning": "Trái tim, lòng dạ"
+      }
+    ],
+    "etymologyStory": "Chữ 想 cấu tạo gồm phần trên là 相 (Tương: mắt 目 chăm chú nhìn lên cây 木 để quan sát kỹ lưỡng) và phần dưới là Tâm 心 (trái tim). Ý nghĩa chiết tự: Dùng mắt quan sát sự vật rồi ghi nhớ sâu đậm vào tận đáy lòng để ngày đêm trăn trở, suy ngẫm và nhớ nhung.",
+    "memoryTip": "Mắt (目) nhìn cây (木) thành Tương (相), khắc Tương vào tim (心) thành nỗi nhớ và suy tưởng (想).",
+    "family": [
+      {
+        "char": "木",
+        "pinyin": "mù",
+        "meaning": "Cây cối (gốc tượng hình nguyên thủy)"
+      },
+      {
+        "char": "相",
+        "pinyin": "xiāng / xiàng",
+        "meaning": "Tương hỗ, quan sát, diện mạo (gốc âm & ý)"
+      },
+      {
+        "char": "箱",
+        "pinyin": "xiāng",
+        "meaning": "Cái hòm, vali (thêm bộ Trúc 竹 trên 相)"
+      },
+      {
+        "char": "霜",
+        "pinyin": "shuāng",
+        "meaning": "Sương mù, sương muối (thêm bộ Vũ 雨 trên 相)"
+      },
+      {
+        "char": "湘",
+        "pinyin": "xiāng",
+        "meaning": "Sông Tương (thêm bộ Thủy 氵bên 相)"
+      }
+    ],
+    "commonWords": [
+      "想法 (ý nghĩ, quan điểm)",
+      "想念 (nhớ nhung)",
+      "理想 (lý tưởng)",
+      "感想 (cảm tưởng)",
+      "意想不到 (không ngờ tới)"
+    ],
+    "example": {
+      "hanzi": "我想去中国旅游。",
+      "pinyin": "Wǒ xiǎng qù Zhōngguó lǚyóu.",
+      "vi": "Tôi muốn đi du lịch Trung Quốc."
+    }
+  },
+  {
+    "hanzi": "休",
+    "pinyin": "xiū",
+    "hanviet": "Hưu",
+    "meaning": "Nghỉ ngơi, ngừng lại, hưu trí",
+    "level": 1,
+    "strokeCount": 6,
+    "radicals": [
+      {
+        "char": "亻",
+        "name": "Nhân đứng",
+        "meaning": "Con người"
+      },
+      {
+        "char": "木",
+        "name": "Mộc",
+        "meaning": "Gốc cây"
+      }
+    ],
+    "etymologyStory": "Chữ hội ý kinh điển bậc nhất trong Hán tự: Một người (亻) đang tựa lưng vào bóng mát của một gốc cây (木) sau những giờ lao động vất vả trên đồng ruộng để lấy lại sinh lực.",
+    "memoryTip": "Người tựa lưng vào thân cây là đang nghỉ ngơi dưỡng sức (Hưu tức).",
+    "family": [
+      {
+        "char": "体",
+        "pinyin": "tǐ",
+        "meaning": "Thân thể (Người 亻 đứng cạnh rễ cây 本)"
+      },
+      {
+        "char": "保",
+        "pinyin": "bǎo",
+        "meaning": "Bảo bọc (Người cõng đứa trẻ trên lưng)"
+      },
+      {
+        "char": "本",
+        "pinyin": "běn",
+        "meaning": "Gốc rễ (Gốc cây thêm nét gạch ngang)"
+      }
+    ],
+    "commonWords": [
+      "休息 (nghỉ ngơi)",
+      "退休 (nghỉ hưu)",
+      "休假 (nghỉ phép)",
+      "无休 (không ngừng nghỉ)"
+    ],
+    "example": {
+      "hanzi": "太累了，我们休息一下吧。",
+      "pinyin": "Tài lèi le, wǒmen xiūxi yíxià ba.",
+      "vi": "Mệt quá rồi, chúng ta nghỉ ngơi một lát đi."
+    }
+  },
+  {
+    "hanzi": "明",
+    "pinyin": "míng",
+    "hanviet": "Minh",
+    "meaning": "Sáng sủa, thông minh, ngày mai, hiểu rõ",
+    "level": 1,
+    "strokeCount": 8,
+    "radicals": [
+      {
+        "char": "日",
+        "name": "Nhật",
+        "meaning": "Mặt trời (nguồn sáng dương)"
+      },
+      {
+        "char": "月",
+        "name": "Nguyệt",
+        "meaning": "Mặt trăng (nguồn sáng âm)"
+      }
+    ],
+    "etymologyStory": "Hai thực thể chiếu sáng vĩ đại nhất của bầu trời hội tụ: Nhật (日 - Mặt trời ban ngày) kết hợp cùng Nguyệt (月 - Mặt trăng ban đêm) tạo nên nguồn quang minh vĩnh cửu, soi tỏ mọi sự việc rõ ràng không còn mờ mịt.",
+    "memoryTip": "Có cả ánh dương và ánh trăng thì đất trời sáng rực, lòng người sáng suốt (Minh bạch).",
+    "family": [
+      {
+        "char": "盟",
+        "pinyin": "méng",
+        "meaning": "Đồng minh (Minh 明 thề nguyện trên bát máu 皿)"
+      },
+      {
+        "char": "萌",
+        "pinyin": "méng",
+        "meaning": "Nảy mầm (Cỏ non 艹 đón ánh sáng 明)"
+      },
+      {
+        "char": "曌",
+        "pinyin": "zhào",
+        "meaning": "Chiếu sáng (Nhật Nguyệt trên không Không)"
+      }
+    ],
+    "commonWords": [
+      "明天 (ngày mai)",
+      "明白 (hiểu rõ)",
+      "聪明 (thông minh)",
+      "光明 (quang minh, tương lai tươi sáng)"
+    ],
+    "example": {
+      "hanzi": "你明白我的意思了吗？",
+      "pinyin": "Nǐ míngbai wǒ de yìsi le ma?",
+      "vi": "Bạn đã hiểu rõ ý tôi chưa?"
+    }
+  },
+  {
+    "hanzi": "森",
+    "pinyin": "sēn",
+    "hanviet": "Sâm",
+    "meaning": "Rừng rậm rạp, um tùm, âm u",
+    "level": 2,
+    "strokeCount": 12,
+    "radicals": [
+      {
+        "char": "木",
+        "name": "Mộc",
+        "meaning": "Một cái cây"
+      },
+      {
+        "char": "林",
+        "name": "Lâm",
+        "meaning": "Hai cây = Rừng thưa"
+      },
+      {
+        "char": "森",
+        "name": "Sâm",
+        "meaning": "Ba cây = Rừng rậm bạt ngàn"
+      }
+    ],
+    "etymologyStory": "Quy luật hội ý số lượng lũy tiến: 1 cây là Mộc 木. 2 cây cạnh nhau là Lâm 林 (khu rừng nhỏ). 3 cây xếp tầng lên nhau là Sâm 森 (rừng rậm nguyên sinh rợp bóng cây cối che khuất cả bầu trời).",
+    "memoryTip": "Một cây là Mộc, hai cây thành Lâm, ba cây chụm lại thành Sâm rậm rạp.",
+    "family": [
+      {
+        "char": "木",
+        "pinyin": "mù",
+        "meaning": "Cây đơn lẻ"
+      },
+      {
+        "char": "林",
+        "pinyin": "lín",
+        "meaning": "Rừng nhỏ"
+      },
+      {
+        "char": "森",
+        "pinyin": "sēn",
+        "meaning": "Rừng già rậm rạp"
+      },
+      {
+        "char": "淼",
+        "pinyin": "miǎo",
+        "meaning": "Nước mênh mông (3 chữ Thủy 水)"
+      },
+      {
+        "char": "鑫",
+        "pinyin": "xīn",
+        "meaning": "Hưng thịnh tiền tài (3 chữ Kim 金)"
+      }
+    ],
+    "commonWords": [
+      "森林 (rừng rậm)",
+      "阴森 (u ám, lạnh lẽo)",
+      "森林公园 (công viên rừng)"
+    ],
+    "example": {
+      "hanzi": "森林里有很多珍贵的植物。",
+      "pinyin": "Sēnlín lǐ yǒu hěn duō zhēnguì de zhíwù.",
+      "vi": "Trong rừng rậm có rất nhiều loài thực vật quý hiếm."
+    }
+  },
+  {
+    "hanzi": "问",
+    "pinyin": "wèn",
+    "hanviet": "Vấn",
+    "meaning": "Hỏi, thăm hỏi, chất vấn",
+    "level": 1,
+    "strokeCount": 6,
+    "radicals": [
+      {
+        "char": "门",
+        "name": "Môn",
+        "meaning": "Cánh cổng, cửa"
+      },
+      {
+        "char": "口",
+        "name": "Khẩu",
+        "meaning": "Cái miệng"
+      }
+    ],
+    "etymologyStory": "Người đi đường đến trước cổng nhà (门), dùng miệng (口) cất tiếng chào và hỏi thăm người bên trong.",
+    "memoryTip": "Miệng (口) ghé vào cổng (门) để cất tiếng hỏi (Vấn 问). Phân biệt với Văn 闻: Ghé tai (耳) vào cửa để Lắng Nghe.",
+    "family": [
+      {
+        "char": "闻",
+        "pinyin": "wén",
+        "meaning": "Nghe thấy, ngửi (Ghép tai 耳 vào cửa 门)"
+      },
+      {
+        "char": "闷",
+        "pinyin": "mèn",
+        "meaning": "Bực bội (Trái tim 心 bị nhốt trong cửa 门)"
+      },
+      {
+        "char": "闪",
+        "pinyin": "shǎn",
+        "meaning": "Lóe sáng, né tránh (Người 人 lấp ló ở cổng 门)"
+      },
+      {
+        "char": "闭",
+        "pinyin": "bì",
+        "meaning": "Đóng cửa (Cây gậy 才 cài then cửa 门)"
+      }
+    ],
+    "commonWords": [
+      "问题 (vấn đề, câu hỏi)",
+      "请问 (xin hỏi lịch sự)",
+      "问好 (hỏi thăm)",
+      "访问 (thăm viếng)"
+    ],
+    "example": {
+      "hanzi": "请问，去高铁站怎么走？",
+      "pinyin": "Qǐngwèn, qù gāotiě zhàn zěnme zǒu?",
+      "vi": "Xin hỏi, đi đến ga tàu cao tốc đi như thế nào?"
+    }
+  },
+  {
+    "hanzi": "忍",
+    "pinyin": "rěn",
+    "hanviet": "Nhẫn",
+    "meaning": "Chịu đựng, nhẫn nại, kiềm chế",
+    "level": 3,
+    "strokeCount": 7,
+    "radicals": [
+      {
+        "char": "刃",
+        "name": "Nhận",
+        "meaning": "Lưỡi dao sắc bén"
+      },
+      {
+        "char": "心",
+        "name": "Tâm",
+        "meaning": "Trái tim"
+      }
+    ],
+    "etymologyStory": "Lưỡi dao sắc ngọt (刃) kề sát ngay trên trái tim (心). Dẫu có đau đớn đến thắt lòng cũng phải giữ cho tâm trí kiên định, không được manh động bộc phát.",
+    "memoryTip": "Dao kề trên ngực áo mà lòng vẫn an tĩnh kiên cường, đó là Nhẫn (忍).",
+    "family": [
+      {
+        "char": "刃",
+        "pinyin": "rèn",
+        "meaning": "Lưỡi dao (bộ Đao 刀 có thêm chấm chỉ vị trí lưỡi)"
+      },
+      {
+        "char": "韧",
+        "pinyin": "rèn",
+        "meaning": "Bền bỉ, dai dẳng (thêm bộ Vi 韦 da thuộc)"
+      },
+      {
+        "char": "志",
+        "pinyin": "zhì",
+        "meaning": "Ý chí (Sĩ phu 士 mang chí trong tim 心)"
+      }
+    ],
+    "commonWords": [
+      "忍耐 (nhẫn nại)",
+      "残忍 (tàn nhẫn)",
+      "容忍 (khoan dung nhẫn nại)",
+      "忍无可忍 (không thể nhẫn nhịn thêm)"
+    ],
+    "example": {
+      "hanzi": "做大事的人一定要学会忍耐。",
+      "pinyin": "Zuò dàshì de rén yídìng yào xuéhuì rěnnài.",
+      "vi": "Người làm việc lớn nhất định phải học được đức tính nhẫn nại."
+    }
+  },
+  {
+    "hanzi": "好",
+    "pinyin": "hǎo",
+    "hanviet": "Hảo",
+    "meaning": "Tốt, đẹp, xong xuôi, yêu thích",
+    "level": 1,
+    "strokeCount": 6,
+    "radicals": [
+      {
+        "char": "女",
+        "name": "Nữ",
+        "meaning": "Người phụ nữ, người mẹ"
+      },
+      {
+        "char": "子",
+        "name": "Tử",
+        "meaning": "Đứa con, con thơ"
+      }
+    ],
+    "etymologyStory": "Thời cổ đại, hình ảnh thiêng liêng và hạnh phúc nhất chính là người mẹ (女) âu yếm bế đứa con nhỏ (子) trong vòng tay. Sự gắn kết mẫu tử là khởi nguồn của mọi điều tốt lành, thiện lương nhất trên đời.",
+    "memoryTip": "Mẹ (女) có con (子) bên cạnh là cuộc đời viên mãn tốt lành (Hảo).",
+    "family": [
+      {
+        "char": "如",
+        "pinyin": "rú",
+        "meaning": "Như, giống như (Người nữ thuận theo lẽ phải 口)"
+      },
+      {
+        "char": "安",
+        "pinyin": "ān",
+        "meaning": "An toàn, bình an (Người phụ nữ dưới mái nhà 宀)"
+      },
+      {
+        "char": "妥",
+        "pinyin": "tuǒ",
+        "meaning": "Thỏa đáng (Bàn tay nâng niu người phụ nữ)"
+      }
+    ],
+    "commonWords": [
+      "你好 (xin chào)",
+      "好吃 (ngon miệng)",
+      "好看 (đẹp mắt)",
+      "好处 (lợi ích, điểm tốt)"
+    ],
+    "example": {
+      "hanzi": "汉语是一门很有魅力的语言。",
+      "pinyin": "Hànyǔ shì yì mén hěn yǒu mèilì de yǔyán.",
+      "vi": "Tiếng Trung là một ngôn ngữ rất có sức hút."
+    }
+  },
+  {
+    "hanzi": "看",
+    "pinyin": "kàn",
+    "hanviet": "Khán",
+    "meaning": "Nhìn, xem, đọc, thăm khám, chăm nom",
+    "level": 1,
+    "strokeCount": 9,
+    "radicals": [
+      {
+        "char": "手 (龵)",
+        "name": "Thủ",
+        "meaning": "Bàn tay"
+      },
+      {
+        "char": "目",
+        "name": "Mục",
+        "meaning": "Đôi mắt"
+      }
+    ],
+    "etymologyStory": "Hình ảnh một người đưa bàn tay (手) lên trán che bớt ánh nắng chói chang phía trên đôi mắt (目) để phóng tầm mắt nhìn thật xa ra phía chân trời.",
+    "memoryTip": "Đưa tay (手) che mắt (目) để phóng tầm mắt nhìn xa trông rộng (Khán).",
+    "family": [
+      {
+        "char": "着",
+        "pinyin": "zhe / zháo",
+        "meaning": "Trợ từ động thái / cháy, trúng"
+      },
+      {
+        "char": "见",
+        "pinyin": "jiàn",
+        "meaning": "Trông thấy (đôi mắt mở rộng hội ý)"
+      },
+      {
+        "char": "视",
+        "pinyin": "shì",
+        "meaning": "Thị giác, quan sát (thêm bộ Thị 礻)"
+      }
+    ],
+    "commonWords": [
+      "看书 (đọc sách)",
+      "看见 (nhìn thấy)",
+      "看法 (quan điểm)",
+      "看病 (khám bệnh)",
+      "照看 (chăm sóc)"
+    ],
+    "example": {
+      "hanzi": "他正在书房里看书呢。",
+      "pinyin": "Tā zhèngzài shūfáng lǐ kànshū ne.",
+      "vi": "Anh ấy đang đọc sách trong phòng làm việc."
+    }
+  },
+  {
+    "hanzi": "家",
+    "pinyin": "jiā",
+    "hanviet": "Gia",
+    "meaning": "Nhà, mái ấm gia đình, chuyên gia",
+    "level": 1,
+    "strokeCount": 10,
+    "radicals": [
+      {
+        "char": "宀",
+        "name": "Miên",
+        "meaning": "Mái nhà che chở"
+      },
+      {
+        "char": "豕",
+        "name": "Thỉ",
+        "meaning": "Con heo, lợn"
+      }
+    ],
+    "etymologyStory": "Thời xã hội nguyên thủy nông nghiệp, con người thuần hóa lợn (豕) và nuôi nhốt dưới mái nhà sàn (宀). Có chỗ ở vững chắc tránh mưa thú dữ và có nguồn gia súc dự trữ thực phẩm chính là định nghĩa đầu tiên về một 'Gia đình'.",
+    "memoryTip": "Dưới mái nhà (宀) có đàn heo (豕) no đủ, đó chính là Mái ấm Gia đình (家).",
+    "family": [
+      {
+        "char": "安",
+        "pinyin": "ān",
+        "meaning": "Bình an (Mái nhà có người phụ nữ)"
+      },
+      {
+        "char": "定",
+        "pinyin": "dìng",
+        "meaning": "Định vị (Dưới mái nhà bước đi chuẩn mực 正)"
+      },
+      {
+        "char": "宝",
+        "pinyin": "bǎo",
+        "meaning": "Bảo bối (Dưới mái nhà có ngọc bích 玉)"
+      }
+    ],
+    "commonWords": [
+      "大家 (mọi người)",
+      "回家 (về nhà)",
+      "国家 (quốc gia)",
+      "家人 (người nhà)",
+      "专家 (chuyên gia)"
+    ],
+    "example": {
+      "hanzi": "欢迎随时来我家喝茶！",
+      "pinyin": "Huānyíng suíshí lái wǒ jiā hēchá!",
+      "vi": "Hoan nghênh bạn bất cứ lúc nào cũng ghé nhà tôi uống trà!"
+    }
+  },
+  {
+    "hanzi": "采",
+    "pinyin": "cǎi",
+    "hanviet": "Thải",
+    "meaning": "Hái lượm, thu thập, màu sắc, phong thái",
+    "level": 2,
+    "strokeCount": 8,
+    "radicals": [
+      {
+        "char": "爫",
+        "name": "Trảo",
+        "meaning": "Bàn tay năm ngón xòe xuống"
+      },
+      {
+        "char": "木",
+        "name": "Mộc",
+        "meaning": "Cây cối, hoa quả"
+      }
+    ],
+    "etymologyStory": "Hình ảnh một bàn tay (爫) đang vươn lên tán cây (木) để hái những chùm quả mọng và lá thuốc quý trên cành.",
+    "memoryTip": "Bàn tay (爫) đưa lên cây (木) để hái quả thu lượm (Thải 采).",
+    "family": [
+      {
+        "char": "彩",
+        "pinyin": "cǎi",
+        "meaning": "Sắc màu rực rỡ (thêm 3 nét phẩy Sam 彡 dải lụa)"
+      },
+      {
+        "char": "菜",
+        "pinyin": "cài",
+        "meaning": "Rau cỏ, món ăn (thêm bộ Thảo 艹 trên 采)"
+      },
+      {
+        "char": "踩",
+        "pinyin": "cǎi",
+        "meaning": "Dẫm đạp (thêm bộ Túc ⻊bàn chân)"
+      }
+    ],
+    "commonWords": [
+      "采用 (áp dụng)",
+      "采访 (phỏng vấn)",
+      "风采 (phong thái)",
+      "光彩 (rạng rỡ)"
+    ],
+    "example": {
+      "hanzi": "蜜蜂正在花丛中采蜜。",
+      "pinyin": "Mìfēng zhèngzài huācóng zhōng cǎimì.",
+      "vi": "Ong đang chăm chỉ hút mật trong khóm hoa."
+    }
+  },
+  {
+    "hanzi": "苗",
+    "pinyin": "miáo",
+    "hanviet": "Miêu",
+    "meaning": "Mầm non, cây mạ, con cháu",
+    "level": 2,
+    "strokeCount": 8,
+    "radicals": [
+      {
+        "char": "艹",
+        "name": "Thảo",
+        "meaning": "Cỏ cây, thực vật"
+      },
+      {
+        "char": "田",
+        "name": "Điền",
+        "meaning": "Thửa ruộng"
+      }
+    ],
+    "etymologyStory": "Những nhánh mạ non (艹) vừa mới đâm chồi xanh mướt trên mặt thửa ruộng (田) màu mỡ phì nhiêu.",
+    "memoryTip": "Cỏ xanh (艹) mọc trên thửa ruộng (田) chính là mầm cây mạ non (Miêu 苗).",
+    "family": [
+      {
+        "char": "描",
+        "pinyin": "miáo",
+        "meaning": "Miêu tả, đồ nét (Bàn tay 扌 vẽ theo dáng cây mầm 苗)"
+      },
+      {
+        "char": "猫",
+        "pinyin": "māo",
+        "meaning": "Con mèo (Loài thú 犭 hay bắt chuột bảo vệ ruộng mạ 苗)"
+      }
+    ],
+    "commonWords": [
+      "树苗 (cây non)",
+      "禾苗 (cây mạ)",
+      "疫苗 (vắc-xin)",
+      "火苗 (ngọn lửa nhỏ)"
+    ],
+    "example": {
+      "hanzi": "田里的禾苗长得真好。",
+      "pinyin": "Tián lǐ de hémiáo zhǎng de zhēn hǎo.",
+      "vi": "Những khóm mạ ngoài đồng lớn lên thật tươi tốt."
+    }
+  },
+  {
+    "hanzi": "尘",
+    "pinyin": "chén",
+    "hanviet": "Trần",
+    "meaning": "Bụi bặm, trần thế, dơ bẩn",
+    "level": 2,
+    "strokeCount": 6,
+    "radicals": [
+      {
+        "char": "小",
+        "name": "Tiểu",
+        "meaning": "Nhỏ bé"
+      },
+      {
+        "char": "土",
+        "name": "Thổ",
+        "meaning": "Đất đai, hạt cát"
+      }
+    ],
+    "etymologyStory": "Quy luật hội ý tinh tế: Những hạt đất cát (土) khi vỡ vụn thành kích thước siêu nhỏ (小) sẽ bay lơ lửng trong không khí tạo thành hạt bụi.",
+    "memoryTip": "Hạt đất (土) nhỏ li ti (小) chính là hạt bụi trần gian (Trần 尘).",
+    "family": [
+      {
+        "char": "尖",
+        "pinyin": "jiān",
+        "meaning": "Đầu nhọn (Trên nhỏ 小 dưới to 大)"
+      },
+      {
+        "char": "劣",
+        "pinyin": "liè",
+        "meaning": "Yếu kém (Ít Thiếu 少 sức Lực 力)"
+      }
+    ],
+    "commonWords": [
+      "灰尘 (bụi bặm)",
+      "红尘 (hồng trần)",
+      "风尘 (bụi gió đời người)"
+    ],
+    "example": {
+      "hanzi": "桌子上落了一层灰尘。",
+      "pinyin": "Zhuōzi shàng luò le yì céng huīchén.",
+      "vi": "Trên mặt bàn đã phủ một lớp bụi mỏng."
+    }
+  },
+  {
+    "hanzi": "男",
+    "pinyin": "nán",
+    "hanviet": "Nam",
+    "meaning": "Đàn ông, nam giới, con trai",
+    "level": 1,
+    "strokeCount": 7,
+    "radicals": [
+      {
+        "char": "田",
+        "name": "Điền",
+        "meaning": "Thửa ruộng lúa"
+      },
+      {
+        "char": "力",
+        "name": "Lực",
+        "meaning": "Sức mạnh, cái cày"
+      }
+    ],
+    "etymologyStory": "Trong xã hội nông nghiệp cổ, người dùng toàn bộ sức mạnh cơ bắp (力) để cày cuốc, vỡ hoang nơi đồng ruộng (田) chính là người đàn ông trụ cột gia đình.",
+    "memoryTip": "Dùng sức lực (力) cày ruộng (田) đó chính là Đấng Nam Nhi (Nam 男).",
+    "family": [
+      {
+        "char": "勇",
+        "pinyin": "yǒng",
+        "meaning": "Dũng cảm (Người có sức lực mạnh mẽ)"
+      },
+      {
+        "char": "劳",
+        "pinyin": "láo",
+        "meaning": "Lao động (Dùng đuốc huỳnh quang lao lực)"
+      }
+    ],
+    "commonWords": [
+      "男人 (đàn ông)",
+      "男生 (nam sinh)",
+      "男女 (nam nữ)",
+      "男性 (giới nam)"
+    ],
+    "example": {
+      "hanzi": "他是一个非常有责任感的男人。",
+      "pinyin": "Tā shì yí ge fēicháng yǒu zérèngǎn de nánrén.",
+      "vi": "Anh ấy là một người đàn ông rất có tinh thần trách nhiệm."
+    }
+  },
+  {
+    "hanzi": "信",
+    "pinyin": "xìn",
+    "hanviet": "Tín",
+    "meaning": "Uy tín, tin tưởng, lá thư, thông tin",
+    "level": 1,
+    "strokeCount": 9,
+    "radicals": [
+      {
+        "char": "亻",
+        "name": "Nhân",
+        "meaning": "Con người"
+      },
+      {
+        "char": "言",
+        "name": "Ngôn",
+        "meaning": "Lời nói"
+      }
+    ],
+    "etymologyStory": "Một người (亻) đã mở lời nói ra (言) thì lời nói ấy phải luôn có trọng lượng, trước sau như một, tuyệt đối không được dối trá để giữ trọn niềm tin.",
+    "memoryTip": "Lời nói (言) của con người (亻) phải có sự chân thật, tạo nên chữ Tín (信).",
+    "family": [
+      {
+        "char": "诚",
+        "pinyin": "chéng",
+        "meaning": "Thành thật (Lời nói Ngôn 言 đã thành công 成)"
+      },
+      {
+        "char": "誓",
+        "pinyin": "shì",
+        "meaning": "Thề thốt (Ngôn ngữ thề trước chiếc rìu Chiết 折)"
+      }
+    ],
+    "commonWords": [
+      "相信 (tin tưởng)",
+      "信心 (lòng tự tin)",
+      "信号 (tín hiệu)",
+      "信用卡 (thẻ tín dụng)"
+    ],
+    "example": {
+      "hanzi": "我完全相信你的判断。",
+      "pinyin": "Wǒ wánquán xiāngxìn nǐ de pànduàn.",
+      "vi": "Tôi hoàn toàn tin tưởng vào phán đoán của bạn."
+    }
+  },
+  {
+    "hanzi": "尖",
+    "pinyin": "jiān",
+    "hanviet": "Tiêm",
+    "meaning": "Đầu nhọn, sắc nhọn, mũi nhọn",
+    "level": 2,
+    "strokeCount": 6,
+    "radicals": [
+      {
+        "char": "小",
+        "name": "Tiểu",
+        "meaning": "Nhỏ, bé"
+      },
+      {
+        "char": "大",
+        "name": "Đại",
+        "meaning": "To, lớn"
+      }
+    ],
+    "etymologyStory": "Quy luật tạo hình trực giác: Một vật thể có phần đỉnh thì nhỏ dần (小), còn phần đáy thì to bè ra (大), tự nhiên tạo thành hình chóp nhọn sắc bén.",
+    "memoryTip": "Trên nhỏ (小) dưới to (大) hợp thành Mũi Nhọn (Tiêm 尖).",
+    "family": [
+      {
+        "char": "尘",
+        "pinyin": "chén",
+        "meaning": "Hạt bụi (Đất nhỏ)"
+      },
+      {
+        "char": "卡",
+        "pinyin": "kǎ",
+        "meaning": "Kẹt, thẻ (Lên Thượng 上 không được, xuống Hạ 下 không xong)"
+      }
+    ],
+    "commonWords": [
+      "尖锐 (sắc bén, gay gắt)",
+      "笔尖 (ngòi bút)",
+      "顶尖 (hàng đầu, đỉnh cao)"
+    ],
+    "example": {
+      "hanzi": "这支铅笔削得太尖了。",
+      "pinyin": "Zhè zhī qiānbǐ xiāo de tài jiān le.",
+      "vi": "Cây bút chì này chuốt nhọn quá rồi."
+    }
+  }
+]

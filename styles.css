@@ -1,0 +1,338 @@
+/* Học Tiếng Trung Mỗi Ngày - Oriental Luxury & Heritage Elegance (Sang Trọng Phương Đông) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700;900&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap');
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Noto Serif SC', serif;
+  --font-chinese: 'Noto Serif SC', 'Noto Sans SC', serif;
+
+  /* Oriental Luxury Colors */
+  --oriental-cinnabar: #8B1E1E;
+  --oriental-cinnabar-dark: #6E1414;
+  --oriental-gold: #C59A3F;
+  --oriental-gold-light: #E0C27D;
+  --oriental-jade: #1E4D43;
+  --oriental-paper: #FAF7F2;
+  --oriental-paper-card: #FFFDF9;
+  --oriental-ink: #1C1917;
+  --oriental-border-gold: rgba(197, 154, 63, 0.35);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF7F2;
+  background-image: 
+    radial-gradient(at 15% 0%, rgba(139, 30, 30, 0.07) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, rgba(197, 154, 63, 0.09) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(30, 77, 67, 0.05) 0px, transparent 50%),
+    radial-gradient(at 95% 90%, rgba(139, 30, 30, 0.06) 0px, transparent 55%),
+    radial-gradient(at 5% 95%, rgba(197, 154, 63, 0.08) 0px, transparent 50%);
+  color: #1C1917;
+  min-height: 100vh;
+}
+
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-hanzi {
+  font-family: var(--font-chinese);
+}
+
+/* Oriental Luxury Seal Stamp (Ấn Triện Chu Sa) */
+.oriental-seal {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.625rem;
+  background: linear-gradient(135deg, #8B1E1E 0%, #A52A2A 50%, #6E1414 100%);
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(139, 30, 30, 0.3), inset 0 0 6px rgba(255, 215, 0, 0.35);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.oriental-badge-seal {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(139, 30, 30, 0.1), rgba(197, 154, 63, 0.18));
+  color: #8B1E1E;
+  border: 1px solid rgba(197, 154, 63, 0.45);
+  letter-spacing: 0.05em;
+  font-family: var(--font-chinese);
+}
+
+/* Oriental Slogan Top Bar */
+.oriental-top-bar {
+  background: linear-gradient(to right, #FAF4E8, #FFFBF4, #FAF4E8);
+  border-bottom: 1px solid rgba(197, 154, 63, 0.25);
+}
+
+/* Glassmorphism with Oriental Silk Warm Tone */
+.glass-panel {
+  background: rgba(255, 253, 249, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(230, 215, 184, 0.85);
+}
+
+.glass-card {
+  background: #FFFDF9;
+  border: 1px solid #EADBCE;
+  box-shadow: 0 4px 20px -2px rgba(90, 60, 30, 0.04), 0 2px 6px -1px rgba(90, 60, 30, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(197, 154, 63, 0.6);
+  box-shadow: 0 14px 28px -4px rgba(139, 30, 30, 0.08), 0 6px 12px -2px rgba(197, 154, 63, 0.06);
+}
+
+/* Rendering Acceleration & Virtualization */
+#tab-radicals, #tab-culture, #tab-dictionary, #tab-chengyu, #tab-grammar {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+/* 3D Flashcard Flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom Luxury Oriental Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8B1E1E, #C59A3F, #1E4D43);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #6E1414, #9E7422, #0F3A32);
+}
+
+/* Oriental Luxury Badges */
+.badge-oriental-red {
+  background: linear-gradient(135deg, rgba(139, 30, 30, 0.12), rgba(139, 30, 30, 0.05));
+  color: #8B1E1E;
+  border: 1px solid rgba(139, 30, 30, 0.3);
+}
+
+.badge-oriental-gold {
+  background: linear-gradient(135deg, rgba(197, 154, 63, 0.18), rgba(197, 154, 63, 0.06));
+  color: #8E6B1E;
+  border: 1px solid rgba(197, 154, 63, 0.4);
+}
+
+.badge-oriental-jade {
+  background: linear-gradient(135deg, rgba(30, 77, 67, 0.15), rgba(30, 77, 67, 0.05));
+  color: #1E4D43;
+  border: 1px solid rgba(30, 77, 67, 0.3);
+}
+
+/* Pulsing Lantern Glow */
+@keyframes orientalGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(197, 154, 63, 0.4)); }
+  50% { filter: drop-shadow(0 0 16px rgba(139, 30, 30, 0.5)); }
+}
+
+.glow-oriental {
+  animation: orientalGlow 3s infinite ease-in-out;
+}
+
+/* TianZiGe & MiZiGe Grid for Hanzi Writing (Chỉ Đỏ Chu Sa Hoàng Triều) */
+.tianzige-grid {
+  background-color: #FFFDF8;
+  border: 2px solid rgba(139, 30, 30, 0.4);
+  border-radius: 1rem;
+  box-shadow: inset 0 0 20px rgba(139, 30, 30, 0.04), 0 4px 14px rgba(139, 69, 19, 0.04);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tianzige-grid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1.5px dashed rgba(139, 30, 30, 0.3);
+  pointer-events: none;
+}
+
+.tianzige-grid::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 1.5px dashed rgba(139, 30, 30, 0.3);
+  pointer-events: none;
+}
+
+.mizige-diagonals {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 49.5%, rgba(197, 154, 63, 0.2) 50%, transparent 50.5%),
+    linear-gradient(-45deg, transparent 49.5%, rgba(197, 154, 63, 0.2) 50%, transparent 50.5%);
+  pointer-events: none;
+}
+
+/* Interactive Reading Tokens (Phong Cách Thư Quyển Cổ Điển) */
+.reading-token-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.2rem 0.45rem;
+  margin: 0.15rem 0.12rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+.reading-token-chip:hover {
+  background-color: #FAF2E6;
+  border-color: rgba(197, 154, 63, 0.5);
+  box-shadow: 0 4px 10px rgba(139, 30, 30, 0.08);
+  transform: translateY(-2px);
+}
+
+.reading-token-chip .token-pinyin {
+  font-size: 0.72rem;
+  line-height: 1;
+  color: #8B1E1E;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: var(--font-sans);
+}
+
+.reading-token-chip.hide-pinyin .token-pinyin {
+  display: none;
+}
+
+.reading-token-chip .token-hanzi {
+  font-family: var(--font-chinese);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1C1917;
+  line-height: 1.25;
+}
+
+.reading-token-punct {
+  display: inline-block;
+  font-family: var(--font-chinese);
+  font-size: 1.25rem;
+  color: #78716C;
+  margin: 0 0.1rem;
+}
+
+/* =========================================================================
+   GRAMMAR TREE MINDMAP (SƠ ĐỒ CÂY TƯ DUY NGỮ PHÁP TIẾNG TRUNG)
+   ========================================================================= */
+.tree-stem-vertical {
+  width: 3px;
+  background: linear-gradient(to bottom, #C59A3F, #8B1E1E);
+  margin: 0 auto;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.tree-stem-vertical::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  background: #8B1E1E;
+  border: 2px solid #C59A3F;
+  border-radius: 50%;
+}
+
+.tree-branch-container {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tree-branch-header {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.tree-branch-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -4px rgba(139, 30, 30, 0.08), 0 4px 10px -2px rgba(197, 154, 63, 0.06);
+}
+
+.tree-sub-branch-leaf {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3.5px solid #C59A3F !important;
+}
+
+.tree-sub-branch-leaf:hover {
+  transform: translateY(-2px);
+  border-left-color: #8B1E1E !important;
+}
+
+.tree-sub-branch-leaf::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 1.25rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #FFFDF9;
+  border: 2px solid #C59A3F;
+  box-shadow: 0 0 0 2px rgba(197, 154, 63, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tree-sub-branch-leaf:hover::before {
+  background: #8B1E1E;
+  border-color: #8B1E1E;
+  box-shadow: 0 0 0 3px rgba(139, 30, 30, 0.25);
+}
+
+.tree-badge-pulse {
+  animation: pulse-subtle 2.5s infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
