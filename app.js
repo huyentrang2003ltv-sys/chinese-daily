@@ -112,6 +112,11 @@ let transEvaluationResults = {};
 let showWordBank = false;
 
 let hsk30RoadmapData = null;
+let currentPathwayLessonsTab = 'standard48'; // 'standard48' or 'all1040'
+let currentExamMatrixLevel = 'HSK 1';
+let currentHsk30CourseFilter = 0; // 0: all, 1: HSK 1, 2: HSK 2, 3: HSK 3
+let currentHsk30SearchQuery = '';
+let pathwayLessonsBatchSize = 10;
 let currentPathwaySubTab = 'stages';
 let currentPathwayGrammarLevel = 'HSK 1';
 let pathwayLessonsRendered = 0;
@@ -763,7 +768,9 @@ async function handleAuthRegisterSubmit(e) {
   const emailInput = document.getElementById('registerEmailInput');
   const passwordInput = document.getElementById('registerPasswordInput');
   const confirmInput = document.getElementById('registerConfirmPasswordInput');
-  const goalSelect = document.getElementById('registerGoalSelect');
+  const languageSelect = document.getElementById('registerLanguageSelect');
+  const professionSelect = document.getElementById('registerProfessionSelect');
+  const purposeSelect = document.getElementById('registerPurposeSelect');
   const submitBtn = document.getElementById('registerSubmitBtn');
   const errorMsg = document.getElementById('registerErrorMsg');
 
@@ -771,7 +778,10 @@ async function handleAuthRegisterSubmit(e) {
   const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
   const password = passwordInput ? passwordInput.value : '';
   const confirmPassword = confirmInput ? confirmInput.value : '';
-  const goal = goalSelect ? goalSelect.value : 'Người mới bắt đầu học tiếng Trung';
+  const language = languageSelect ? languageSelect.value : 'Tiếng Trung Giản Thể (Chuẩn Phổ Thông)';
+  const profession = professionSelect ? professionSelect.value : 'Học viên tự do';
+  const purpose = purposeSelect ? purposeSelect.value : 'Thi chứng chỉ HSK 3.0 & HSKK';
+  const goal = purpose;
 
   if (!name || !email || !password) {
     if (errorMsg) {
@@ -807,7 +817,7 @@ async function handleAuthRegisterSubmit(e) {
     const res = await fetch('/api/auth/register', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password, goal })
+      body: JSON.stringify({ name, email, password, language, profession, purpose, goal })
     });
     const data = await res.json();
 
@@ -829,7 +839,10 @@ async function handleAuthRegisterSubmit(e) {
       role: isSuperAdmin(email) ? 'super_admin' : 'student',
       exp: 50,
       streak: 1,
-      goal: goal
+      language: language,
+      profession: profession,
+      purpose: purpose,
+      goal: purpose
     };
     applyLoggedInUser(localUser);
     closeAuthModal();
@@ -851,6 +864,9 @@ function applyLoggedInUser(user) {
   if (user.exp !== undefined) userProfile.exp = user.exp;
   if (user.streak !== undefined) userProfile.streak = user.streak;
   if (user.goal) userProfile.goal = user.goal;
+  if (user.language) userProfile.language = user.language;
+  if (user.profession) userProfile.profession = user.profession;
+  if (user.purpose) userProfile.purpose = user.purpose;
   if (user.savedWords) userProfile.savedWords = user.savedWords;
   if (user.lastLesson) userProfile.lastLesson = user.lastLesson;
 
@@ -1211,8 +1227,9 @@ async function initApp() {
       fetch('data/hanyu_jiaocheng.json').then(r => r.json()).catch(() => null),
       fetch('data/topics.json').then(r => r.json()).catch(() => []),
       fetch('data/thematic_vocab.json').then(r => r.json()).catch(() => []),
-      fetch('data/hsk30_roadmap.json').then(r => r.json()).catch(() => null)
-    ]).then(([dictRes, mindmapRes, confRes, practRes, cultRes, examRes, aiRes, radRes, chengRes, readRes, gramRes, jcRes, topRes, themRes, roadmapRes]) => {
+      fetch('data/hsk30_roadmap.json').then(r => r.json()).catch(() => null),
+      fetch('data/wood_block_levels.json').then(r => r.json()).catch(() => [])
+    ]).then(([dictRes, mindmapRes, confRes, practRes, cultRes, examRes, aiRes, radRes, chengRes, readRes, gramRes, jcRes, topRes, themRes, roadmapRes, woodRes]) => {
       dictionaryData = dictRes;
       mindmapData = mindmapRes;
       confusionsData = confRes;
@@ -1228,8 +1245,14 @@ async function initApp() {
       topicsData = topRes || [];
       thematicVocabData = themRes || [];
       hsk30RoadmapData = roadmapRes;
+      if (woodRes && woodRes.length > 0) {
+        woodBlockLevels = woodRes;
+        if (activeTab === 'woodblock') {
+          initWoodBlockGame();
+        }
+      }
 
-      if (activeDictSubTab === 'topics' && activeTab === 'dict') {
+      if (typeof currentDictMode !== 'undefined' && currentDictMode === 'topic' && activeTab === 'dictionary') {
         renderTopicPills();
         renderTopicDictionary(true);
       }
@@ -3089,6 +3112,56 @@ function renderPathwayStandards(container) {
   filterExamMatrixLevel(currentExamMatrixLevel);
 }
 
+function filterExamMatrixLevel(lvl) {
+  currentExamMatrixLevel = lvl;
+  const container = document.getElementById('examMatrixDetailCard');
+  const btns = document.querySelectorAll('.btn-matrix-lvl');
+  btns.forEach(btn => {
+    const isAct = btn.getAttribute('data-level') === lvl;
+    if (isAct) {
+      btn.className = 'btn-matrix-lvl px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm border border-transparent cursor-pointer whitespace-nowrap';
+    } else {
+      btn.className = 'btn-matrix-lvl px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-300 hover:bg-amber-100 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700 cursor-pointer whitespace-nowrap';
+    }
+  });
+
+  if (!container || !hsk30RoadmapData || !hsk30RoadmapData.examMatrix) return;
+  const item = (hsk30RoadmapData.examMatrix.levels || []).find(l => l.level === lvl) || hsk30RoadmapData.examMatrix.levels[0];
+  if (!item) return;
+
+  container.innerHTML = `
+    <div class="p-4 rounded-2xl bg-amber-50/70 dark:bg-stone-800/60 border border-amber-300/70 dark:border-stone-700 space-y-3 animate-fade-in">
+      <div class="flex items-center justify-between flex-wrap gap-2 border-b border-amber-200 dark:border-stone-700 pb-2">
+        <h5 class="font-bold text-sm text-[#8B1E1E] dark:text-amber-400 font-serif-luxury flex items-center gap-1.5">
+          <span>🎯 Ma Trận Cấu Trúc Đề: ${item.level}</span>
+        </h5>
+        <div class="flex items-center gap-2 text-2xs">
+          <span class="px-2 py-0.5 rounded-lg bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300 font-bold">⏱️ ${item.duration}</span>
+          <span class="px-2 py-0.5 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-800 dark:text-blue-300 font-bold">📝 ${item.totalQuestions}</span>
+        </div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800">
+          <span class="text-stone-500 text-2xs block font-bold">Từ Vựng Yêu Cầu</span>
+          <span class="font-bold text-stone-800 dark:text-stone-200">${item.vocabTarget}</span>
+        </div>
+        <div class="p-2.5 rounded-xl bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800">
+          <span class="text-stone-500 text-2xs block font-bold">Ngữ Pháp Trọng Điểm</span>
+          <span class="font-bold text-stone-800 dark:text-stone-200">${item.grammarTarget}</span>
+        </div>
+      </div>
+      ${item.changes && item.changes.length > 0 ? `
+        <div class="space-y-1">
+          <span class="text-2xs font-bold text-amber-900 dark:text-amber-300 uppercase tracking-wider">Điểm Thay Đổi Cốt Lõi HSK 3.0:</span>
+          <ul class="list-disc list-inside text-xs text-stone-700 dark:text-stone-300 space-y-1">
+            ${item.changes.map(c => `<li>${c}</li>`).join('')}
+          </ul>
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
 function filterPathwayGrammarLevel(lvl) {
   currentPathwayGrammarLevel = lvl;
   const container = document.getElementById('pathwayDynamicContent');
@@ -3300,6 +3373,90 @@ function renderPathwayTranslation(container) {
   container.innerHTML = html;
 }
 
+function checkHsk30Translation(id) {
+  if (!hsk30RoadmapData || !hsk30RoadmapData.translationModule) return;
+  const exercises = hsk30RoadmapData.translationModule.interactiveExercises || [];
+  const ex = exercises.find(e => e.id === id);
+  if (!ex) return;
+
+  const inputEl = document.getElementById(`trans-input-${id}`);
+  const resultEl = document.getElementById(`trans-result-${id}`);
+  if (!inputEl || !resultEl) return;
+
+  const userVal = inputEl.value.trim();
+  if (!userVal) {
+    showToast('Vui lòng nhập câu dịch tiếng Trung của bạn!', 'warning');
+    return;
+  }
+
+  const cleanUser = userVal.replace(/[，。！？\s.,!?]/g, '');
+  const cleanTarget = ex.targetZh.replace(/[，。！？\s.,!?]/g, '');
+  const isExact = (cleanUser === cleanTarget);
+  const matchedKeywords = (ex.keywords || []).filter(kw => userVal.includes(kw));
+
+  resultEl.classList.remove('hidden');
+  resultEl.innerHTML = `
+    <div class="mt-3 p-3.5 rounded-2xl ${isExact ? 'bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300' : 'bg-amber-50 dark:bg-amber-950/40 border border-amber-300'} space-y-2 text-xs animate-fade-in">
+      <div class="flex items-center justify-between">
+        <span class="font-bold ${isExact ? 'text-emerald-800 dark:text-emerald-300' : 'text-amber-900 dark:text-amber-300'} flex items-center gap-1.5">
+          <span>${isExact ? '🎉 Hoàn Hảo! Bản dịch rất chuẩn xác!' : '💡 Nhận Xét & Gợi Ý Đối Chiếu:'}</span>
+        </span>
+        <button onclick="playChineseTTS('${ex.targetZh.replace(/'/g, "\\'")}')" class="px-2 py-0.5 rounded-full bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 text-2xs font-bold flex items-center gap-1 hover:bg-stone-100 cursor-pointer">
+          <span>🔊 Nghe</span>
+        </button>
+      </div>
+      <div class="p-2.5 rounded-xl bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 space-y-1">
+        <p class="font-hanzi font-bold text-sm text-[#8B1E1E] dark:text-rose-400">${ex.targetZh}</p>
+        <p class="text-stone-500 dark:text-stone-400 italic text-2xs">${ex.targetPinyin}</p>
+      </div>
+      ${ex.grammarFormula ? `
+        <div class="text-2xs text-stone-600 dark:text-stone-300">
+          <strong>Cấu trúc ngữ pháp:</strong> ${ex.grammarFormula}
+        </div>
+      ` : ''}
+      ${matchedKeywords.length > 0 ? `
+        <div class="flex items-center gap-1 flex-wrap text-2xs">
+          <span class="font-bold text-stone-500">Từ khóa nhận diện được:</span>
+          ${matchedKeywords.map(kw => `<span class="px-1.5 py-0.2 rounded bg-emerald-100 dark:bg-emerald-900 text-emerald-800 dark:text-emerald-200 font-bold">${kw}</span>`).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `;
+}
+
+function revealHsk30Answer(id) {
+  if (!hsk30RoadmapData || !hsk30RoadmapData.translationModule) return;
+  const exercises = hsk30RoadmapData.translationModule.interactiveExercises || [];
+  const ex = exercises.find(e => e.id === id);
+  if (!ex) return;
+
+  const resultEl = document.getElementById(`trans-result-${id}`);
+  const inputEl = document.getElementById(`trans-input-${id}`);
+  if (inputEl) inputEl.value = ex.targetZh;
+  if (!resultEl) return;
+
+  resultEl.classList.remove('hidden');
+  resultEl.innerHTML = `
+    <div class="mt-3 p-3.5 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 space-y-2 text-xs animate-fade-in">
+      <div class="flex items-center justify-between">
+        <span class="font-bold text-amber-900 dark:text-amber-300">
+          📖 Đáp Án Tiêu Chuẩn HSK 3.0:
+        </span>
+        <button onclick="playChineseTTS('${ex.targetZh.replace(/'/g, "\\'")}')" class="px-2 py-0.5 rounded-full bg-white dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 text-2xs font-bold flex items-center gap-1 hover:bg-stone-100 cursor-pointer">
+          <span>🔊 Nghe</span>
+        </button>
+      </div>
+      <div class="p-2.5 rounded-xl bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 space-y-1">
+        <p class="font-hanzi font-bold text-sm text-[#8B1E1E] dark:text-rose-400">${ex.targetZh}</p>
+        <p class="text-stone-500 dark:text-stone-400 italic text-2xs">${ex.targetPinyin}</p>
+      </div>
+      ${ex.grammarFormula ? `<p class="text-2xs text-stone-600 dark:text-stone-300"><strong>Cấu trúc:</strong> ${ex.grammarFormula}</p>` : ''}
+      ${ex.cultureNote ? `<p class="text-2xs text-stone-500 dark:text-stone-400">💡 <em>${ex.cultureNote}</em></p>` : ''}
+    </div>
+  `;
+}
+
+
 function renderPathwayLessonsView(container) {
   let html = `
     <div class="space-y-6">
@@ -3416,6 +3573,92 @@ function renderPathwayLessonsView(container) {
   } else {
     renderPathwayLessonsList(true);
   }
+}
+
+function switchPathwayLessonsTab(tab) {
+  currentPathwayLessonsTab = tab;
+  const container = document.getElementById('pathwayTabContentContainer');
+  if (container) {
+    renderPathwayLessonsView(container);
+  }
+}
+
+function filterHsk30CourseLevel(filter) {
+  currentHsk30CourseFilter = filter;
+  const listEl = document.getElementById('hsk30LessonsListContainer');
+  if (listEl) renderHsk30StandardCourseCards(listEl);
+}
+
+function searchHsk30Lessons(query) {
+  currentHsk30SearchQuery = (query || '').trim().toLowerCase();
+  const listEl = document.getElementById('hsk30LessonsListContainer');
+  if (listEl) renderHsk30StandardCourseCards(listEl);
+}
+
+function renderHsk30StandardCourseCards(container) {
+  if (!container || !hsk30RoadmapData) return;
+  const allLessons = hsk30RoadmapData.standardCourse48Lessons || [];
+
+  const filtered = allLessons.filter(l => {
+    const matchLevel = (currentHsk30CourseFilter === 0) || (l.hskLevel === currentHsk30CourseFilter);
+    if (!matchLevel) return false;
+    if (!currentHsk30SearchQuery) return true;
+    const q = currentHsk30SearchQuery;
+    return (l.titleZh && l.titleZh.toLowerCase().includes(q)) ||
+           (l.titleVi && l.titleVi.toLowerCase().includes(q)) ||
+           (l.grammar && l.grammar.toLowerCase().includes(q)) ||
+           (l.vocabTheme && l.vocabTheme.toLowerCase().includes(q));
+  });
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="glass-card rounded-2xl p-8 text-center text-stone-500">
+        Không tìm thấy bài học nào phù hợp với bộ lọc.
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      ${filtered.map(l => `
+        <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3 hover:border-amber-400 transition-all">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${l.hskLevel === 1 ? 'bg-blue-100 text-blue-800' : (l.hskLevel === 2 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800')}">
+                HSK ${l.hskLevel} · Bài ${l.lessonNumber}
+              </span>
+              <button onclick="playChineseTTS('${l.titleZh.replace(/'/g, "\\'")}')" class="p-1 rounded-lg hover:bg-stone-100 text-stone-500 hover:text-stone-800 transition-colors" title="Nghe tiêu đề">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <div>
+              <h5 class="font-hanzi font-black text-base text-stone-900 dark:text-stone-100">${l.titleZh}</h5>
+              <p class="text-xs text-stone-500 dark:text-stone-400 italic">${l.titlePinyin}</p>
+              <p class="text-xs font-medium text-stone-700 dark:text-stone-300 mt-0.5">${l.titleVi}</p>
+            </div>
+            <div class="p-2 rounded-xl bg-amber-50/60 dark:bg-stone-800/60 border border-amber-200/60 dark:border-stone-700 text-2xs space-y-1">
+              <p><strong>Ngữ pháp:</strong> ${l.grammar || l.focus || 'Trọng điểm ngữ pháp'}</p>
+              <p><strong>Chủ đề từ:</strong> ${l.vocabTheme || l.vocabularyTheme || 'Từ vựng giao tiếp'}</p>
+            </div>
+            ${l.dialogueZh ? `
+              <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-2xs space-y-1">
+                <p class="font-hanzi font-bold text-stone-800 dark:text-stone-200 whitespace-pre-line leading-relaxed">${l.dialogueZh}</p>
+                <p class="text-stone-500 dark:text-stone-400 whitespace-pre-line">${l.dialogueVi}</p>
+              </div>
+            ` : ''}
+          </div>
+          ${l.tip ? `
+            <div class="pt-2 border-t border-stone-100 dark:border-stone-800 text-[11px] text-amber-800 dark:text-amber-400 italic leading-snug">
+              💡 ${l.tip}
+            </div>
+          ` : ''}
+        </div>
+      `).join('')}
+    </div>
+  `;
+
+  refreshIcons(container);
 }
 
 function filterPathwayLevel(level) {
@@ -10222,6 +10465,14 @@ function renderHomeDashboard() {
     streakEl.innerText = userProfile.streak || 1;
   }
 
+  // Update Personalized User Attributes Banner
+  const langEl = document.getElementById('homeUserLanguageText');
+  const profEl = document.getElementById('homeUserProfessionText');
+  const purpEl = document.getElementById('homeUserPurposeText');
+  if (langEl) langEl.innerText = userProfile.language || '🇨🇳 Tiếng Trung Giản Thể';
+  if (profEl) profEl.innerText = userProfile.profession || '💼 Nhân viên văn phòng';
+  if (purpEl) purpEl.innerText = userProfile.purpose || userProfile.goal || '🎯 Thi chứng chỉ HSK 3.0 & HSKK';
+
   // Update checkin button status
   const todayStr = new Date().toISOString().split('T')[0];
   const lastCheckin = localStorage.getItem('lastCheckinDate');
@@ -10446,6 +10697,13 @@ window.quickLoginDemo = quickLoginDemo;
 
 let woodBlockLevels = [];
 let currentWoodLevelIndex = 0;
+
+function getCurrentWoodLevel() {
+  if (!woodBlockLevels || woodBlockLevels.length === 0) return null;
+  if (currentWoodLevelIndex < 0) currentWoodLevelIndex = 0;
+  if (currentWoodLevelIndex >= woodBlockLevels.length) currentWoodLevelIndex = woodBlockLevels.length - 1;
+  return woodBlockLevels[currentWoodLevelIndex] || null;
+}
 let woodBoardState = []; // 2D array [row][col] -> null or { pieceId, char, color, isOrigin }
 let woodPlacedBlocks = new Map(); // pieceId -> { originRow, originCol, piece }
 let woodSelectedPieceId = null;
@@ -10619,8 +10877,14 @@ function renderWoodBoardGrid(rows, cols) {
       cell.dataset.row = r;
       cell.dataset.col = c;
 
-      // Event Listeners for Cell (Click to place or return)
+      // Event Listeners for Cell (Click & Touch to place or return)
       cell.addEventListener('click', () => handleWoodCellClick(r, c));
+      cell.addEventListener('touchend', (e) => {
+        if (woodSelectedPieceId || (woodBoardState[r] && woodBoardState[r][c] !== null)) {
+          e.preventDefault();
+          handleWoodCellClick(r, c);
+        }
+      });
       
       // Drag & Drop Listeners
       cell.addEventListener('dragover', (e) => handleWoodCellDragOver(e, r, c));
@@ -10647,6 +10911,23 @@ function renderWoodPiecesTray(blocks) {
   });
 }
 
+function getPieceCellText(piece, shapeIndex) {
+  if (!piece || !piece.text) return '';
+  const totalCells = (piece.shape && piece.shape.length) ? piece.shape.length : 1;
+  if (totalCells <= 1) return piece.text;
+
+  const chars = Array.from(piece.text);
+  if (chars.length === totalCells) {
+    return chars[shapeIndex] || '';
+  }
+  if (chars.length < totalCells) {
+    return chars[shapeIndex] || '';
+  }
+  const chunkSize = Math.ceil(chars.length / totalCells);
+  const start = shapeIndex * chunkSize;
+  return chars.slice(start, start + chunkSize).join('') || '';
+}
+
 function createWoodPieceElement(piece) {
   const container = document.createElement('div');
   container.id = `wood-piece-${piece.id}`;
@@ -10671,8 +10952,8 @@ function createWoodPieceElement(piece) {
       
       if (isOccupied) {
         cell.className = `w-12 h-12 sm:w-14 sm:h-14 rounded-xl ${colorClass} flex items-center justify-center font-hanzi font-black text-xs sm:text-sm wood-engraved-text text-center shadow-md p-1 leading-tight`;
-        // Split text across cells if multiple, or show label
-        cell.innerText = piece.text;
+        const shapeIndex = piece.shape.findIndex(s => s[0] === r && s[1] === c);
+        cell.innerText = getPieceCellText(piece, shapeIndex >= 0 ? shapeIndex : 0);
       } else {
         cell.className = 'w-12 h-12 sm:w-14 sm:h-14 opacity-0 pointer-events-none';
       }
@@ -10697,6 +10978,10 @@ function createWoodPieceElement(piece) {
     e.stopPropagation();
     selectWoodPiece(piece.id);
   });
+  container.addEventListener('touchend', (e) => {
+    e.stopPropagation();
+    selectWoodPiece(piece.id);
+  });
 
   // Dragstart
   container.addEventListener('dragstart', (e) => {
@@ -10715,7 +11000,8 @@ function createWoodPieceElement(piece) {
 
 function selectWoodPiece(pieceId) {
   woodSelectedPieceId = woodSelectedPieceId === pieceId ? null : pieceId;
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   if (currentLvl) renderWoodPiecesTray(currentLvl.blocks);
   
   const statusEl = document.getElementById('woodBoardStatusHint');
@@ -10738,7 +11024,8 @@ function handleWoodCellClick(row, col) {
 
   // 2. If a piece is currently selected from tray, try placing it starting at this cell
   if (woodSelectedPieceId) {
-    const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+    const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
     const piece = currentLvl.blocks.find(b => b.id === woodSelectedPieceId);
     if (!piece) return;
 
@@ -10763,7 +11050,8 @@ function handleWoodCellDragOver(e, row, col) {
   e.preventDefault();
   if (!woodSelectedPieceId) return;
 
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   const piece = currentLvl.blocks.find(b => b.id === woodSelectedPieceId);
   if (!piece) return;
 
@@ -10793,7 +11081,8 @@ function handleWoodCellDrop(e, row, col) {
   const pieceId = e.dataTransfer.getData('text/plain') || woodSelectedPieceId;
   if (!pieceId) return;
 
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   const piece = currentLvl.blocks.find(b => b.id === pieceId);
   if (!piece) return;
 
@@ -10830,13 +11119,15 @@ function canPlaceWoodPiece(shape, originR, originC, maxR, maxC) {
 function placeWoodPiece(piece, originR, originC) {
   const colorClass = `wood-tile-${piece.color || 'cherry'}`;
 
-  piece.shape.forEach(([dr, dc], idx) => {
+  piece.shape.forEach(([dr, dc], shapeIndex) => {
     const r = originR + dr;
     const c = originC + dc;
+    const charChunk = getPieceCellText(piece, shapeIndex);
 
     woodBoardState[r][c] = {
       pieceId: piece.id,
       text: piece.text,
+      chunk: charChunk,
       color: piece.color,
       isOrigin: (dr === 0 && dc === 0)
     };
@@ -10844,8 +11135,8 @@ function placeWoodPiece(piece, originR, originC) {
     const cellEl = document.getElementById(`wood-cell-${r}-${c}`);
     if (cellEl) {
       cellEl.className = `wood-slot-cell ${colorClass} flex items-center justify-center font-hanzi font-black text-xs sm:text-sm wood-engraved-text text-center p-1 leading-tight shadow-md cursor-pointer animate-fade-in`;
-      cellEl.innerText = piece.text;
-      cellEl.title = 'Bấm để trả khối gỗ về khay';
+      cellEl.innerText = charChunk;
+      cellEl.title = `Khối "${piece.text}" - Bấm để trả về khay`;
     }
   });
 
@@ -10856,7 +11147,8 @@ function returnPieceToTray(pieceId) {
   if (!woodPlacedBlocks.has(pieceId)) return;
   const { piece } = woodPlacedBlocks.get(pieceId);
 
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   const rows = currentLvl.grid.rows;
   const cols = currentLvl.grid.cols;
 
@@ -10883,7 +11175,8 @@ function returnPieceToTray(pieceId) {
 }
 
 function updateWoodRemainingCount() {
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   if (!currentLvl) return;
 
   const remaining = currentLvl.blocks.length - woodPlacedBlocks.size;
@@ -10902,7 +11195,8 @@ function updateWoodRemainingCount() {
 }
 
 function checkWoodBoardAnswer(isManualClick = true) {
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   if (!currentLvl) return;
 
   if (woodPlacedBlocks.size < currentLvl.blocks.length) {
@@ -10978,7 +11272,8 @@ function closeWoodVictoryModal() {
 }
 
 function playWoodVictorySentenceAudio() {
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   if (currentLvl) {
     playChineseTTS(currentLvl.sentence, 0.85);
   }
@@ -11001,7 +11296,8 @@ function toggleWoodMeaningHint() {
 }
 
 function woodBlockAutoHint() {
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   if (!currentLvl) return;
 
   // Find the first unplaced block
@@ -11038,7 +11334,8 @@ function woodBlockAutoHint() {
 }
 
 function resetWoodCurrentLevel() {
-  const currentLvl = woodBlockLevels[currentWoodLevelIndex];
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
   if (!currentLvl) return;
 
   // Return all pieces

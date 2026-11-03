@@ -388,7 +388,10 @@ const server = http.createServer(async (req, res) => {
       const name = (data.name || '').trim();
       const email = (data.email || '').trim().toLowerCase();
       const password = (data.password || '').trim();
-      const goal = (data.goal || 'Người mới bắt đầu học tiếng Trung').trim();
+      const language = (data.language || 'Tiếng Trung Giản Thể (Chuẩn Phổ Thông)').trim();
+      const profession = (data.profession || 'Học viên tự do').trim();
+      const purpose = (data.purpose || data.goal || 'Thi chứng chỉ HSK 3.0 & HSKK').trim();
+      const goal = purpose;
 
       if (!name) {
         res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
@@ -425,6 +428,9 @@ const server = http.createServer(async (req, res) => {
         role: isSuperAdmin ? 'super_admin' : 'student',
         exp: 50, // Tân thủ bonus +50 EXP
         streak: 1,
+        language: language,
+        profession: profession,
+        purpose: purpose,
         goal: goal,
         savedWords: [],
         createdAt: new Date().toISOString()

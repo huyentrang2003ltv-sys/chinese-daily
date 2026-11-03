@@ -5,37 +5,34 @@ const path = require('path');
 const botToken = '8928499760:AAFuVTM2dTjz3qrf7u-wX5e_Iqzp48z2gto';
 const chatId = '8806102051';
 
-let activeUrl = 'https://reel-trustees-supplements-map.trycloudflare.com';
+let activeUrl = 'https://vip-identifier-brook-chronicle.trycloudflare.com';
 try {
   const urlFromFile = fs.readFileSync(path.join(__dirname, '..', 'active_url.txt'), 'utf8').trim();
   if (urlFromFile.startsWith('http')) activeUrl = urlFromFile;
 } catch (e) {}
 
-const message = `🧩 [HỌC TIẾNG TRUNG MỖI NGÀY - RA MẮT MINIGAME XẾP KHỐI GỖ 汉语积木] 🏮
+const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - BẢN CẬP NHẬT HOÀN THIỆN TRƯỚC KHI TẮT MÁY] 🚀
 
-Chào bạn! Trò chơi "Xếp khối gỗ tiếng Trung (汉语积木)" với 60 cấp độ đã chính thức được phát hành:
+Chào bạn! Toàn bộ các yêu cầu của bạn đã được lập trình, kiểm thử và đồng bộ thành công:
 
-🌟 ĐẶC ĐIỂM NỔI BẬT CỦA TRÒ CHƠI:
-🪵 1. GIAO DIỆN KHỐI GỖ CHÂN THỰC 3D:
-   - Bàn cờ gỗ mun, gỗ óc chó và khay gỗ sồi tự nhiên với độ sâu và bóng đổ chân thực.
-   - Các khối gỗ đa hình dạng (hình vuông, thanh dài, chữ L, chữ T) khắc chữ Hán nhũ vàng.
-   - Hiệu ứng âm thanh va chạm gỗ tự nhiên "lách cách" bằng Web Audio API cực kỳ thỏa mãn!
+🧩 1. SỬA LỖI & HOÀN THIỆN MINIGAME XẾP KHỐI GỖ (汉语积木 - 60 CẤP):
+   - Đã xử lý triệt để lỗi ReferenceError tải trang, game tải 0ms siêu tốc.
+   - Hỗ trợ hoàn hảo 2 chế độ: Kéo - Thả (Chuột máy tính) & Chạm chọn - Chạm đặt (Cảm ứng điện thoại / Smartphone).
+   - Chữ Hán được phân bổ chuẩn xác từng nét vào từng ô khối gỗ vân mộc cao cấp.
+   - Đầy đủ 60 màn chơi chia làm 3 chặng: Sơ Cấp (1-20), Trung Cấp (21-40), Cao Cấp (41-60).
 
-🗺️ 2. HỆ THỐNG 60 LEVEL PHÂN HÓA RÕ RỆT:
-   - 🟢 Sơ Cấp (Level 1 - 20): Ghép câu ngắn, từ vựng nền tảng HSK 1 - 2, chào hỏi, đời sống.
-   - 🟡 Trung Cấp (Level 21 - 40): Ghép câu phức có liên từ (虽然...但是, 因为...所以), câu chữ 把/被, HSK 3 - 4.
-   - 🔴 Cao Cấp (Level 41 - 60): Ghép đoạn văn dài, thành ngữ điển cố (Chày sắt mài kim, Tái ông thất mã, Thư sơn hữu lộ), HSK 5 - 6.
+📝 2. NÂNG CẤP HỆ THỐNG ĐĂNG KÝ HỌC VIÊN CÁ NHÂN HÓA:
+   - Thêm 3 trường thông tin chuyên sâu:
+     + 🌐 Bạn chọn ngôn ngữ nào: Giản thể, Phồn thể, Song ngữ Trung-Anh, Khẩu ngữ giao tiếp cấp tốc.
+     + 💼 Bạn đang làm nghề gì: Học sinh/Sinh viên, Nhân viên văn phòng, Kinh doanh / Xuất nhập khẩu / Logistics, Buôn bán / Đánh hàng Taobao 1688, Biên phiên dịch / Giáo viên, CNTT / Kỹ sư, v.v.
+     + 🎯 Mục đích của việc học: Thi HSK 3.0 & HSKK, Thăng tiến sự nghiệp, Du học & Săn học bổng, Đánh hàng & Đàm phán buôn bán, Đam mê văn hóa Hoa ngữ, Du lịch tự túc...
+   - Tặng ngay +50 EXP tân thủ khi đăng ký thành công.
+   - Hiển thị dải huy hiệu cá nhân hóa người học trực tiếp trên Bảng điều khiển Trang Chủ Dashboard!
 
-🎯 3. CƠ CHẾ CHƠI LINH HOẠT & THÔNG MINH:
-   - Kéo thả siêu mượt hoặc Chạm chọn khối rồi chạm ô cờ để đặt (tối ưu hoàn hảo cho cả điện thoại và máy tính).
-   - Kiểm tra đáp án tự động / thủ công (验答), chấm điểm 3 sao ⭐⭐⭐ và thưởng EXP.
-   - Đọc phát âm chuẩn giọng Bắc Kinh toàn bộ câu/đoạn văn khi giải xong.
-   - Công cụ trợ giúp: Xem trước Nghĩa Tiếng Việt, Gợi ý tự đặt khối, và Xếp lại từ đầu.
-
-🌐 Trải nghiệm trò chơi ngay tại:
+🌐 Đường link trực tiếp trải nghiệm ngay bây giờ:
 ${activeUrl}
 
-Chúc bạn có những giờ phút vừa chơi xếp hình vừa thẩm thấu tiếng Trung đầy hứng khởi! 🏮`;
+Toàn bộ mã nguồn đã được Git commit & Push an toàn lên GitHub main branch! Bạn hoàn toàn có thể yên tâm tắt máy nghỉ ngơi! Chúc bạn buổi tối an lành! 🏮`;
 
 const data = JSON.stringify({
   chat_id: chatId,

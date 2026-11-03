@@ -489,6 +489,22 @@
                 <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 flex items-center gap-2">
                   <span>Hôm nay là một ngày tuyệt vời để bứt phá tiếng Trung! 🏮</span>
                 </p>
+
+                <!-- Personalized Student Attributes (Ngôn ngữ • Nghề nghiệp • Mục đích) -->
+                <div id="homeUserAttributesBanner" class="mt-2 flex items-center gap-2 flex-wrap text-2xs">
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-xl bg-amber-100/80 dark:bg-amber-950/40 text-amber-900 dark:text-amber-300 border border-amber-300/70 font-medium">
+                    <i data-lucide="languages" class="w-3 h-3 text-amber-700 dark:text-amber-400"></i>
+                    <span id="homeUserLanguageText">🇨🇳 Tiếng Trung Giản Thể</span>
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-xl bg-blue-100/80 dark:bg-blue-950/40 text-blue-900 dark:text-blue-300 border border-blue-300/70 font-medium">
+                    <i data-lucide="briefcase" class="w-3 h-3 text-blue-700 dark:text-blue-400"></i>
+                    <span id="homeUserProfessionText">💼 Nhân viên văn phòng</span>
+                  </span>
+                  <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-xl bg-rose-100/80 dark:bg-rose-950/40 text-rose-900 dark:text-rose-300 border border-rose-300/70 font-medium">
+                    <i data-lucide="target" class="w-3 h-3 text-rose-700 dark:text-rose-400"></i>
+                    <span id="homeUserPurposeText">🎯 Thi chứng chỉ HSK 3.0 & HSKK</span>
+                  </span>
+                </div>
               </div>
             </div>
 
@@ -3293,7 +3309,7 @@
             </div>
           </div>
 
-          <form onsubmit="handleAuthRegisterSubmit(event)" class="space-y-3">
+          <form onsubmit="handleAuthRegisterSubmit(event)" class="space-y-3 max-h-[56vh] overflow-y-auto custom-scrollbar pr-1">
             <div>
               <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1">Họ & Tên Hiển Thị</label>
               <div class="relative">
@@ -3360,17 +3376,60 @@
               </div>
             </div>
 
+            <!-- Field 1: Ngôn ngữ bạn chọn học -->
             <div>
-              <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1">Mục Tiêu Học Tập Của Bạn</label>
+              <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1 flex items-center gap-1.5">
+                <i data-lucide="languages" class="w-3.5 h-3.5 text-amber-600"></i>
+                <span>Bạn Chọn Ngôn Ngữ Nào?</span>
+              </label>
               <select 
-                id="registerGoalSelect"
+                id="registerLanguageSelect"
                 class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] cursor-pointer"
               >
-                <option value="Người mới bắt đầu (Nhập môn HSK 1 - 2)">🌱 Người mới bắt đầu (Nhập môn HSK 1 - 2)</option>
-                <option value="Ôn thi HSK 3 - 4 cấp tốc">🎯 Ôn thi HSK 3 - 4 cấp tốc</option>
-                <option value="Chinh phục HSK 5 - 6 & Cao cấp">🏆 Chinh phục HSK 5 - 6 & Cao cấp</option>
-                <option value="Giao tiếp đàm thoại & Du lịch Trung Quốc">🗣️ Giao tiếp đàm thoại & Du lịch Trung Quốc</option>
-                <option value="Biên phiên dịch & Làm việc doanh nghiệp Trung Quốc">💼 Biên phiên dịch & Công việc chuyên môn</option>
+                <option value="Tiếng Trung Giản Thể (Chuẩn Phổ Thông)">🇨🇳 Tiếng Trung Giản Thể (Chuẩn Phổ Thông - Đại Lục)</option>
+                <option value="Tiếng Trung Phồn Thể (Đài Loan / HK)">🏮 Tiếng Trung Phồn Thể (Đài Loan, Hồng Kông)</option>
+                <option value="Song Ngữ Trung - Anh (HSK Quốc Tế)">🌐 Song Ngữ Trung - Anh (HSK Chuẩn Quốc Tế)</option>
+                <option value="Khẩu Ngữ Giao Tiếp Cấp Tốc">🗣️ Tiếng Trung Khẩu Ngữ Giao Tiếp Cấp Tốc</option>
+              </select>
+            </div>
+
+            <!-- Field 2: Bạn đang làm nghề gì -->
+            <div>
+              <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1 flex items-center gap-1.5">
+                <i data-lucide="briefcase" class="w-3.5 h-3.5 text-blue-600"></i>
+                <span>Bạn Đang Làm Nghề Gì?</span>
+              </label>
+              <select 
+                id="registerProfessionSelect"
+                class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] cursor-pointer"
+              >
+                <option value="Học sinh / Sinh viên">🎓 Học sinh / Sinh viên các trường</option>
+                <option value="Nhân viên văn phòng / Doanh nghiệp">💼 Nhân viên văn phòng / Khối hành chính</option>
+                <option value="Kinh doanh / Xuất nhập khẩu / Logistics">🚢 Kinh doanh / Xuất nhập khẩu / Logistics</option>
+                <option value="Buôn bán / Đánh hàng Taobao, 1688">🛍️ Buôn bán / Đánh hàng Taobao, 1688, Quảng Châu</option>
+                <option value="Biên phiên dịch / Hướng dẫn viên du lịch">🎙️ Biên phiên dịch / Hướng dẫn viên / Giáo viên</option>
+                <option value="Công nghệ thông tin / Kỹ sư / Freelancer">💻 Công nghệ thông tin / Kỹ sư / Freelancer</option>
+                <option value="Lĩnh vực / Ngành nghề khác">✨ Lĩnh vực / Ngành nghề khác</option>
+              </select>
+            </div>
+
+            <!-- Field 3: Mục đích của việc học -->
+            <div>
+              <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1 flex items-center gap-1.5">
+                <i data-lucide="target" class="w-3.5 h-3.5 text-rose-600"></i>
+                <span>Mục Đích Của Việc Học Tiếng Trung?</span>
+              </label>
+              <select 
+                id="registerPurposeSelect"
+                class="w-full px-3 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] cursor-pointer"
+              >
+                <option value="Thi lấy chứng chỉ HSK 3.0 & HSKK">🎯 Thi lấy chứng chỉ HSK 3.0 & HSKK (Ra trường, xin việc)</option>
+                <option value="Giao tiếp công việc & Thăng tiến sự nghiệp">🚀 Giao tiếp công việc & Thăng tiến sự nghiệp</option>
+                <option value="Du học Trung Quốc & Săn học bổng CSC, CIS">✈️ Du học Trung Quốc & Săn học bổng CSC, CIS</option>
+                <option value="Đánh hàng, giao thương, đàm phán buôn bán">📦 Đánh hàng, giao thương, buôn bán với đối tác Trung Quốc</option>
+                <option value="Đam mê văn hóa, phim ảnh, âm nhạc Hoa ngữ">🎬 Đam mê văn hóa, phim ảnh, âm nhạc Hoa ngữ</option>
+                <option value="Du lịch tự túc khám phá Trung Hoa">🛫 Du lịch tự túc khám phá danh lam thắng cảnh</option>
+                <option value="Rèn luyện trí tuệ & Phát triển bản thân">🧠 Rèn luyện trí tuệ & Phát triển tư duy</option>
               </select>
             </div>
 
