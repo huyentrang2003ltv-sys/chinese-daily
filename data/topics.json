@@ -1,114 +1,1127 @@
 [
   {
-    "id": "food",
-    "name": "Ẩm Thực & Đồ Ăn",
-    "nameZh": "饮食美食",
-    "icon": "🍜",
-    "desc": "Món ăn, đồ uống, nhà hàng, trái cây, gia vị, hương vị, bữa ăn",
+    "id": "tu_vung_chu_de_truong_hoc",
+    "uuid": "f1324dd6-63e7-4e29-9f24-08dd9e8e4065",
+    "name": "Chủ đề trường học",
+    "fullName": "Từ vựng chủ đề trường học",
+    "icon": "🏫",
+    "desc": "School topic vocabulary",
+    "count": 300
+  },
+  {
+    "id": "separable_verbs",
+    "uuid": "52d14b5a-b9cd-4367-9ebb-08dd9e8e4065",
+    "name": "Động từ li hợp",
+    "fullName": "Động từ li hợp",
+    "icon": "📚",
+    "desc": "Separable verb",
+    "count": 300
+  },
+  {
+    "id": "tu_cung_chu_de_quan_su_quan_doi",
+    "uuid": "692aee95-21d7-4aa7-9f23-08dd9e8e4065",
+    "name": "Chủ đề quân sự quân đội",
+    "fullName": "Từ vựng chủ đề quân sự quân đội",
+    "icon": "🎖️",
+    "desc": "Military vocabulary subject",
+    "count": 300
+  },
+  {
+    "id": "tu_vung_chu_de_am_nhac",
+    "uuid": "c2eb047b-df82-49b9-9f07-08dd9e8e4065",
+    "name": "Chủ đề âm nhạc",
+    "fullName": "Từ vựng chủ đề âm nhạc",
+    "icon": "🎵",
+    "desc": "Music theme vocabulary",
+    "count": 300
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_ke_toan",
+    "uuid": "46e9a07e-1d74-4955-9f34-08dd9e8e4065",
+    "name": "Chuyên ngành kế toán",
+    "fullName": "Từ vựng chuyên ngành kế toán",
+    "icon": "📊",
+    "desc": "Vocabulary specialized in accounting",
+    "count": 300
+  },
+  {
+    "id": "tu_vung_thiet_bi_dien_nghanh_dien",
+    "uuid": "2e046916-6ace-493c-9eec-08dd9e8e4065",
+    "name": "Thiết bị ngành điện",
+    "fullName": "Từ vựng thiết bị ngành điện",
+    "icon": "⚡",
+    "desc": "Electrical equipment vocabulary",
+    "count": 300
+  },
+  {
+    "id": "thuat_ngu_chuyen_nganh_thuong_mai",
+    "uuid": "3e4604a9-1328-47f8-9f10-08dd9e8e4065",
+    "name": "Thuật ngữ chuyên ngành thương mại",
+    "fullName": "Thuật ngữ chuyên ngành thương mại",
+    "icon": "💼",
+    "desc": "Specialized trade terminology",
+    "count": 300
+  },
+  {
+    "id": "thanh_ngu_tuc_ngu_tieng_trung",
+    "uuid": "a2ff82d6-0e31-4bf8-9f05-08dd9e8e4065",
+    "name": "Thành ngữ tục ngữ tiếng trung",
+    "fullName": "Thành ngữ tục ngữ tiếng trung",
+    "icon": "📜",
+    "desc": "Chinese proverbs",
+    "count": 300
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_giay_da",
+    "uuid": "4734306e-e6e0-46ec-9ecb-08dd9e8e4065",
+    "name": "Chuyên ngành giày da",
+    "fullName": "Từ vựng chuyên ngành giày da",
+    "icon": "👗",
+    "desc": "Vocabulary specialized in leather shoes",
+    "count": 300
+  },
+  {
+    "id": "tu_vung_ho_ten_tieng_trung",
+    "uuid": "5f6d0509-1e03-49fc-9f01-08dd9e8e4065",
+    "name": "Họ tên tiếng trung",
+    "fullName": "Từ vựng họ tên tiếng trung",
+    "icon": "👤",
+    "desc": "Vocabulary of Chinese full name",
+    "count": 294
+  },
+  {
+    "id": "tu_vung_chu_de_may_tinh",
+    "uuid": "44ec3e45-8ca3-4b9c-9ef1-08dd9e8e4065",
+    "name": "Chủ đề máy tính",
+    "fullName": "Từ vựng chủ đề máy tính",
+    "icon": "💻",
+    "desc": "Computer topic vocabulary",
+    "count": 279
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_y_te",
+    "uuid": "e07b091c-a33f-4cf2-9f36-08dd9e8e4065",
+    "name": "Chuyên ngành y tế",
+    "fullName": "Từ vựng chuyên ngành y tế",
+    "icon": "🏥",
+    "desc": "Medical vocabulary",
+    "count": 270
+  },
+  {
+    "id": "tu_vung_chu_de_bao_hiem",
+    "uuid": "dc9cb369-0923-4d16-9f37-08dd9e8e4065",
+    "name": "Chủ đề bảo hiểm",
+    "fullName": "Từ vựng chủ đề bảo hiểm",
+    "icon": "🛡️",
+    "desc": "Covered topic vocabulary",
+    "count": 265
+  },
+  {
+    "id": "tu_vung_chu_de_quan_ao",
+    "uuid": "5884c9ea-b001-40be-9f1e-08dd9e8e4065",
+    "name": "Chủ đề quần áo",
+    "fullName": "Từ vựng chủ đề quần áo",
+    "icon": "👗",
+    "desc": "Clothing topic vocabulary",
+    "count": 257
+  },
+  {
+    "id": "measure_words",
+    "uuid": "e4e3a3c1-f461-4b12-9ebc-08dd9e8e4065",
+    "name": "Lượng từ",
+    "fullName": "Lượng từ",
+    "icon": "📚",
+    "desc": "Measure words",
+    "count": 231
+  },
+  {
+    "id": "tu_vung_chu_de_phim_anh_dien_anh",
+    "uuid": "3a70806e-10a5-40ae-9ebf-08dd9e8e4065",
+    "name": "Chủ đề phim ảnh điện ảnh",
+    "fullName": "Từ vựng chủ đề phim ảnh điện ảnh",
+    "icon": "⚡",
+    "desc": "Movie-movie vocabulary",
+    "count": 224
+  },
+  {
+    "id": "ten_cac_nuoc_tren_the_gioi",
+    "uuid": "2006ccdd-f2eb-46b3-9f35-08dd9e8e4065",
+    "name": "Tên các nước trên thế giới",
+    "fullName": "Tên các nước trên thế giới",
+    "icon": "🌍",
+    "desc": "Names of countries in the world",
+    "count": 222
+  },
+  {
+    "id": "tu_vung_cac_bo_phan_co_the_nguoi",
+    "uuid": "c65ded32-c2f8-4bbd-9f32-08dd9e8e4065",
+    "name": "Các bộ phận cơ thể người",
+    "fullName": "Từ vựng các bộ phận cơ thể người",
+    "icon": "🫀",
+    "desc": "Vocabulary of human body parts",
+    "count": 214
+  },
+  {
+    "id": "tu_vung_cac_loai_trai_cay",
+    "uuid": "3b4e3a3b-d6d6-4981-9ed3-08dd9e8e4065",
+    "name": "Các loại trái cây",
+    "fullName": "Từ vựng các loại trái cây",
+    "icon": "🍎",
+    "desc": "Vocabulary of fruits",
+    "count": 201
+  },
+  {
+    "id": "tu_vung_chu_de_ngoai_thuong",
+    "uuid": "0854087d-808d-4fe8-9f31-08dd9e8e4065",
+    "name": "Chủ đề ngoại thương",
+    "fullName": "Từ vựng chủ đề ngoại thương",
+    "icon": "💼",
+    "desc": "Vocabulary of foreign trade topic",
+    "count": 198
+  },
+  {
+    "id": "tu_vung_thuc_pham_pham",
+    "uuid": "1b114ba3-e79b-4a90-9f0c-08dd9e8e4065",
+    "name": "Về thực phẩm",
+    "fullName": "Từ vựng về thực phẩm",
+    "icon": "🏷️",
+    "desc": "Vocabulary about food",
+    "count": 195
+  },
+  {
+    "id": "tu_vung_chu_de_con_vat_dong_vat",
+    "uuid": "879d3549-7ca8-4d7c-9efb-08dd9e8e4065",
+    "name": "Chủ đề con vật động vật",
+    "fullName": "Từ vựng chủ đề con vật động vật",
+    "icon": "🏷️",
+    "desc": "Animal theme vocabulary",
+    "count": 194
+  },
+  {
+    "id": "tu_vung_chu_de_dau_mo_dau_khi",
+    "uuid": "f20bb0f0-70a1-4fb5-9ec6-08dd9e8e4065",
+    "name": "Chủ đề dầu mỏ dầu khí",
+    "fullName": "Từ vựng chủ đề dầu mỏ dầu khí",
+    "icon": "🏷️",
+    "desc": "Vocabulary subject to oil and gas",
+    "count": 190
+  },
+  {
+    "id": "tu_vung_chu_de_om_dau",
+    "uuid": "8fbc8999-4d6d-4fcf-9efa-08dd9e8e4065",
+    "name": "Chủ đề ốm đau",
+    "fullName": "Từ vựng chủ đề ốm đau",
+    "icon": "🏷️",
+    "desc": "Sickness subject vocabulary",
+    "count": 188
+  },
+  {
+    "id": "tu_vung_chu_de_cac_loai_chim",
+    "uuid": "c4459906-4a2d-4eac-9efe-08dd9e8e4065",
+    "name": "Chủ đề các loài chim",
+    "fullName": "Từ vựng chủ đề các loài chim",
+    "icon": "🏷️",
+    "desc": "Vocabulary for birds",
+    "count": 186
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_xuat_nhap_khau",
+    "uuid": "d221062a-a58e-4f29-9f2f-08dd9e8e4065",
+    "name": "Chuyên ngành xuất nhập khẩu",
+    "fullName": "Từ vựng chuyên ngành xuất nhập khẩu",
+    "icon": "🏷️",
+    "desc": "Import and export specialized vocabulary",
+    "count": 185
+  },
+  {
+    "id": "tu_vung_khi_hau_khi_tuong_thuy_van",
+    "uuid": "535cee41-bffd-4cc4-9f33-08dd9e8e4065",
+    "name": "Khí hậu khí tượng thuỷ văn",
+    "fullName": "Từ vựng khí hậu khí tượng thuỷ văn",
+    "icon": "🏷️",
+    "desc": "Climatology, hydro-meteorological vocabulary",
+    "count": 184
+  },
+  {
+    "id": "tu_vung_vui_choi_giai_tri",
+    "uuid": "53f1549c-6a8c-4114-9ec7-08dd9e8e4065",
+    "name": "Vui chơi giải trí",
+    "fullName": "Từ vựng vui chơi giải trí",
+    "icon": "🏷️",
+    "desc": "Entertainment vocabulary",
+    "count": 179
+  },
+  {
+    "id": "tu_vung_nha_ga_tau_hoa",
+    "uuid": "76767468-4f60-4d34-9ec5-08dd9e8e4065",
+    "name": "Nhà ga tàu hoả",
+    "fullName": "Từ vựng nhà ga tàu hoả",
+    "icon": "🏷️",
+    "desc": "Train station vocabulary",
+    "count": 176
+  },
+  {
+    "id": "tu_vung_ve_tet_nguyen_dan",
+    "uuid": "3844aea8-7feb-4f26-9f21-08dd9e8e4065",
+    "name": "Về tết nguyên đán",
+    "fullName": "Từ vựng về tết nguyên đán",
+    "icon": "🏷️",
+    "desc": "Vocabulary about Lunar New Year",
+    "count": 175
+  },
+  {
+    "id": "tu_vung_ve_tinh_cach_cam_xuc",
+    "uuid": "7540dc6a-d3db-43e5-9eed-08dd9e8e4065",
+    "name": "Về tính cách cảm xúc",
+    "fullName": "Từ vựng về tính cách cảm xúc",
+    "icon": "🏷️",
+    "desc": "Vocabulary of emotional personality",
+    "count": 172
+  },
+  {
+    "id": "tu_vung_nganh_nong_nghiep",
+    "uuid": "41a351b1-1445-4d56-9ed6-08dd9e8e4065",
+    "name": "Ngành nông nghiệp",
+    "fullName": "Từ vựng ngành nông nghiệp",
+    "icon": "🏷️",
+    "desc": "Agricultural vocabulary",
+    "count": 168
+  },
+  {
+    "id": "tu_vung_chu_de_nau_an",
+    "uuid": "673cf5d9-d680-440f-9f2c-08dd9e8e4065",
+    "name": "Chủ đề nấu ăn",
+    "fullName": "Từ vựng chủ đề nấu ăn",
+    "icon": "🏷️",
+    "desc": "Cooking topic vocabulary",
+    "count": 165
+  },
+  {
+    "id": "tu_vung_ve_mon_an",
+    "uuid": "e1056159-b450-4e81-9f0f-08dd9e8e4065",
+    "name": "Về món ăn",
+    "fullName": "Từ vựng về món ăn",
+    "icon": "🏷️",
+    "desc": "Vocabulary of dishes",
+    "count": 165
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_kinh_te",
+    "uuid": "8c3b1f5a-ce32-4ea7-9f03-08dd9e8e4065",
+    "name": "Chuyên ngành kinh tế",
+    "fullName": "Từ vựng chuyên ngành kinh tế",
+    "icon": "🏷️",
+    "desc": "Vocabulary specialized in economics",
+    "count": 151
+  },
+  {
+    "id": "tu_vung_ve_moi_truong",
+    "uuid": "4f218b4b-daa3-4cf7-9edd-08dd9e8e4065",
+    "name": "V�� môi trường",
+    "fullName": "Từ vựng v�� môi trường",
+    "icon": "🏷️",
+    "desc": "Vocabulary about the environment",
+    "count": 149
+  },
+  {
+    "id": "tu_vung_van_phong_pham",
+    "uuid": "e0177dde-1462-47f5-9ecd-08dd9e8e4065",
+    "name": "Văn phòng phẩm",
+    "fullName": "Từ vựng văn phòng phẩm",
+    "icon": "📁",
+    "desc": "Stationery vocabulary",
+    "count": 145
+  },
+  {
+    "id": "tu_vung_chu_de_may_bay_san_bay",
+    "uuid": "89dbe61e-b9d4-477c-9ec3-08dd9e8e4065",
+    "name": "Chủ để máy bay sân bay",
+    "fullName": "Từ vựng chủ để máy bay sân bay",
+    "icon": "✈️",
+    "desc": "Vocabulary for airport aircraft",
+    "count": 145
+  },
+  {
+    "id": "tu_vung_chu_de_bat_dong_san",
+    "uuid": "a2510030-9646-4f10-9ecc-08dd9e8e4065",
+    "name": "Chủ đề bất động sản",
+    "fullName": "Từ vựng chủ đề bất động sản",
+    "icon": "🏠",
+    "desc": "The vocabulary of real estate",
+    "count": 141
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_nhan_su",
+    "uuid": "dacf5372-45ee-4329-9ee6-08dd9e8e4065",
+    "name": "Chuyên ngành nhân sự",
+    "fullName": "Từ vựng chuyên ngành nhân sự",
+    "icon": "📁",
+    "desc": "Human resources specialized vocabulary",
+    "count": 141
+  },
+  {
+    "id": "tu_vung_chu_de_du_tiec",
+    "uuid": "0e46443c-029e-4d27-9f0e-08dd9e8e4065",
+    "name": "Chủ đề dự tiệc",
+    "fullName": "Từ vựng chủ đề dự tiệc",
+    "icon": "🏨",
+    "desc": "Party topic vocabulary",
+    "count": 134
+  },
+  {
+    "id": "tu_vung_chu_de_du_lich",
+    "uuid": "748a12cc-028c-4c22-9eca-08dd9e8e4065",
+    "name": "Chủ đề du lịch",
+    "fullName": "Từ vựng chủ đề du lịch",
+    "icon": "🏨",
+    "desc": "Travel topic vocabulary",
+    "count": 133
+  },
+  {
+    "id": "tu_vung_chu_de_ben_xe_khach",
+    "uuid": "1798d64f-b024-469a-9ef6-08dd9e8e4065",
+    "name": "Chủ đề bến xe khách",
+    "fullName": "Từ vựng chủ đề bến xe khách",
+    "icon": "🚗",
+    "desc": "Vocabulary topic of bus station",
+    "count": 128
+  },
+  {
+    "id": "tu_vung_ve_dien_thoai",
+    "uuid": "97f238c3-31e8-4a96-9f17-08dd9e8e4065",
+    "name": "Về điện thoại",
+    "fullName": "Từ vựng về điện thoại",
+    "icon": "⚡",
+    "desc": "Phone vocabulary",
+    "count": 128
+  },
+  {
+    "id": "tu_vung_cong_viec_nghe_nghiep",
+    "uuid": "ea6c9d9a-d1a8-4c10-9ed1-08dd9e8e4065",
+    "name": "Công việc nghề nghiệp",
+    "fullName": "Từ vựng công việc nghề nghiệp",
+    "icon": "🏷️",
+    "desc": "Job career vocabulary",
+    "count": 123
+  },
+  {
+    "id": "tu_vung_thue_va_hai_quan",
+    "uuid": "4413b3d5-9769-4e56-9f22-08dd9e8e4065",
+    "name": "Về thuế và hải quan",
+    "fullName": "Từ vựng về thuế và hải quan",
+    "icon": "📊",
+    "desc": "Vocabulary about taxes and customs",
+    "count": 122
+  },
+  {
+    "id": "tu_vung_chu_de_co_khi",
+    "uuid": "9067a3bd-557f-4cca-9ec2-08dd9e8e4065",
+    "name": "Chủ đề cơ khí",
+    "fullName": "Từ vựng chủ đề cơ khí",
+    "icon": "⚙️",
+    "desc": "Mechanical topic vocabulary",
+    "count": 122
+  },
+  {
+    "id": "tu_vung_chu_de_toi_pham",
+    "uuid": "a3b86789-acc5-4d4f-9ee8-08dd9e8e4065",
+    "name": "Chủ đề tội phạm",
+    "fullName": "Từ vựng chủ đề tội phạm",
+    "icon": "⚖️",
+    "desc": "Criminal topic vocabulary",
+    "count": 116
+  },
+  {
+    "id": "tu_vung_o_to_phu_tung_o_to",
+    "uuid": "98081785-b522-4441-9f2a-08dd9e8e4065",
+    "name": "Ôtô và phụ tùng",
+    "fullName": "Từ vựng ôtô và phụ tùng",
+    "icon": "🚗",
+    "desc": "Auto vocabulary and spare parts",
+    "count": 115
+  },
+  {
+    "id": "tu_vung_chu_de_mau_sac",
+    "uuid": "067d9568-a0c3-4cc7-9f1a-08dd9e8e4065",
+    "name": "Chủ đề màu sắc",
+    "fullName": "Từ vựng chủ đề màu sắc",
+    "icon": "🏷️",
+    "desc": "Color topic vocabulary",
+    "count": 111
+  },
+  {
+    "id": "tu_vung_chuyen_nghanh_luat",
+    "uuid": "6f7121af-8ea9-4d27-9f28-08dd9e8e4065",
+    "name": "Chuyên ngành luật",
+    "fullName": "Từ vựng chuyên ngành luật",
+    "icon": "⚖️",
+    "desc": "Law vocabulary",
     "count": 108
   },
   {
-    "id": "family",
-    "name": "Gia Đình & Xưng Hô",
-    "nameZh": "家庭亲情",
+    "id": "tu_vung_chuyen_nganh_det_soi_det_may",
+    "uuid": "3cba684b-e94b-49c3-9ef8-08dd9e8e4065",
+    "name": "Chuyên ngành dệt sợi dệt may",
+    "fullName": "Từ vựng chuyên ngành dệt sợi dệt may",
+    "icon": "👗",
+    "desc": "Specialized vocabulary of textile and apparel",
+    "count": 105
+  },
+  {
+    "id": "tu_vung_phim_co_trang",
+    "uuid": "09f0520a-3a08-4e54-9eea-08dd9e8e4065",
+    "name": "Phim cổ trang",
+    "fullName": "Từ vựng phim cổ trang",
+    "icon": "🏷️",
+    "desc": "Historical movie vocabulary",
+    "count": 104
+  },
+  {
+    "id": "tu_vung_chu_de_cat_toc",
+    "uuid": "f8591aa4-a9fe-4f99-9ef5-08dd9e8e4065",
+    "name": "Chủ đề cắt tóc",
+    "fullName": "Từ vựng chủ đề cắt tóc",
+    "icon": "💄",
+    "desc": "Haircutting topic vocabulary",
+    "count": 102
+  },
+  {
+    "id": "tu_vung_ten_cac_loai_hoa",
+    "uuid": "7b68bd70-94b8-47cd-9f26-08dd9e8e4065",
+    "name": "Tên các loại hoa",
+    "fullName": "Từ vựng tên các loại hoa",
+    "icon": "🌸",
+    "desc": "Vocabulary of names of flowers",
+    "count": 101
+  },
+  {
+    "id": "tu_vung_hop_dong_mua_ban",
+    "uuid": "07b5d301-ce6c-4531-9f0d-08dd9e8e4065",
+    "name": "Hợp đồng mua bán",
+    "fullName": "Từ vựng hợp đồng mua bán",
+    "icon": "💼",
+    "desc": "Purchase contract vocabulary",
+    "count": 100
+  },
+  {
+    "id": "tu_vung_cuoi_hoi",
+    "uuid": "616ffff9-4c1f-4ee3-9ed8-08dd9e8e4065",
+    "name": "Cưới hỏi",
+    "fullName": "Từ vựng cưới hỏi",
     "icon": "👨‍👩‍👧‍👦",
-    "desc": "Bố mẹ, vợ chồng, con cái, họ hàng, hôn nhân, xưng hô thân tộc",
+    "desc": "Wedding vocabulary",
+    "count": 98
+  },
+  {
+    "id": "tu_vung_so_yeu_ly_lich",
+    "uuid": "0020c0da-a16c-4001-9f11-08dd9e8e4065",
+    "name": "Sơ yếu lý lịch",
+    "fullName": "Từ vựng sơ yếu lý lịch",
+    "icon": "📁",
+    "desc": "Vocabulary resume",
+    "count": 97
+  },
+  {
+    "id": "tu_vung_dien_tu_dien_lanh",
+    "uuid": "3ed106d8-73f4-4654-9f08-08dd9e8e4065",
+    "name": "Điện tử điện lạnh",
+    "fullName": "Từ vựng điện tử điện lạnh",
+    "icon": "⚡",
+    "desc": "Electronic refrigeration vocabulary",
+    "count": 97
+  },
+  {
+    "id": "tu_vung_phong_van_xin_viec",
+    "uuid": "556c9420-2a76-48c4-9eda-08dd9e8e4065",
+    "name": "Phỏng vấn xin việc",
+    "fullName": "Từ vựng phỏng vấn xin việc",
+    "icon": "📁",
+    "desc": "Job interview vocabulary",
+    "count": 96
+  },
+  {
+    "id": "tu_vung_thuong_hieu_noi_tieng",
+    "uuid": "129fcb9b-bebd-4e6c-9ee5-08dd9e8e4065",
+    "name": "Thương hiệu nổi tiếng",
+    "fullName": "Từ vựng thương hiệu nổi tiếng",
+    "icon": "🏷️",
+    "desc": "Famous brand vocabulary",
+    "count": 95
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_cac_loai_vai",
+    "uuid": "e89560aa-fac2-4057-9f04-08dd9e8e4065",
+    "name": "Chuyên ngành các loại vải",
+    "fullName": "Từ vựng chuyên ngành các loại vải",
+    "icon": "👗",
+    "desc": "Specialized vocabulary of fabrics",
+    "count": 95
+  },
+  {
+    "id": "tu_vung_noi_that_ngoai_that",
+    "uuid": "4f3229c4-3c93-4260-9eeb-08dd9e8e4065",
+    "name": "Nội thất ngoại thất",
+    "fullName": "Từ vựng nội thất ngoại thất",
+    "icon": "🏛️",
+    "desc": "Vocabulary of interior and exterior",
+    "count": 95
+  },
+  {
+    "id": "tu_vung_quang_cao_marketing",
+    "uuid": "e5b6d1d2-7de0-4c44-9f20-08dd9e8e4065",
+    "name": "Quảng cáo marketing",
+    "fullName": "Từ vựng quảng cáo marketing",
+    "icon": "🏷️",
+    "desc": "Marketing advertising vocabulary",
+    "count": 95
+  },
+  {
+    "id": "tu_vung_chu_de_bong_ro",
+    "uuid": "02b37937-422e-45a8-9eef-08dd9e8e4065",
+    "name": "Chủ đề bóng rổ",
+    "fullName": "TỪ vựng chủ đề bóng rổ",
+    "icon": "⚽",
+    "desc": "Vocabulary subject to basketball",
+    "count": 94
+  },
+  {
+    "id": "tu_vung_chu_de_to_tung_hinh_su",
+    "uuid": "fda185c3-71f5-4658-9eff-08dd9e8e4065",
+    "name": "Chủ đề tố tụng hình sự",
+    "fullName": "Từ vựng chủ đề tố tụng hình sự",
+    "icon": "⚖️",
+    "desc": "Vocabulary subject to criminal proceedings",
+    "count": 93
+  },
+  {
+    "id": "tu_vung_phong_chay_chua_chay",
+    "uuid": "8ab8474c-9d77-4952-9ed5-08dd9e8e4065",
+    "name": "Phòng cháy chữa cháy",
+    "fullName": "Từ vựng phòng cháy chữa cháy",
+    "icon": "🚒",
+    "desc": "Fire protection vocabulary",
+    "count": 91
+  },
+  {
+    "id": "tu_vung_chu_de_giao_thong",
+    "uuid": "dc0691ac-67da-4f91-9f18-08dd9e8e4065",
+    "name": "Chủ đề giao thông",
+    "fullName": "Từ vựng chủ đề giao thông",
+    "icon": "🚗",
+    "desc": "Traffic topic vocabulary",
+    "count": 86
+  },
+  {
+    "id": "tu_vung_to_chuc_chinh_tri_nha_nuoc",
+    "uuid": "6d5111f5-639b-42c6-9f25-08dd9e8e4065",
+    "name": "Tổ chức chính trị nhà nước",
+    "fullName": "Từ vựng tổ chức chính trị nhà nước",
+    "icon": "⚖️",
+    "desc": "Vocabulary of state political organizations",
+    "count": 86
+  },
+  {
+    "id": "tu_vung_bo_phan_chuc_vu_phong_ban",
+    "uuid": "53ef3749-0232-4ede-9f06-08dd9e8e4065",
+    "name": "Bộ phận chức vự phòng ban",
+    "fullName": "Từ vựng bộ phận chức vự phòng ban",
+    "icon": "🫀",
+    "desc": "Vocabulary of departmental departments",
+    "count": 85
+  },
+  {
+    "id": "tu_vung_chu_de_banh_keo",
+    "uuid": "1109764b-1c19-4e39-9ec4-08dd9e8e4065",
+    "name": "Chủ để bánh kẹo",
+    "fullName": "Từ vựng chủ để bánh kẹo",
+    "icon": "🍜",
+    "desc": "Theme vocabulary for confectionery",
+    "count": 84
+  },
+  {
+    "id": "tu_vung_de_buu_dien_buu_chinh",
+    "uuid": "9db7d168-dd7c-4da8-9ebd-08dd9e8e4065",
+    "name": "Về bưu điện bưu chính",
+    "fullName": "Từ vựng về bưu điện bưu chính",
+    "icon": "⚡",
+    "desc": "Vocabulary about postal post offices",
+    "count": 84
+  },
+  {
+    "id": "tu_vung_rau_cu_qua",
+    "uuid": "67730b04-de52-4bbf-9edb-08dd9e8e4065",
+    "name": "Rau củ quả",
+    "fullName": "Từ vựng rau củ quả",
+    "icon": "🍎",
+    "desc": "Vegetable vocabulary",
+    "count": 83
+  },
+  {
+    "id": "tu_vung_the_thao_duoi_nuoc",
+    "uuid": "ae581f99-c2b7-4a7f-9ed9-08dd9e8e4065",
+    "name": "Thể thao dưới nước",
+    "fullName": "Từ vựng thể thao dưới nước",
+    "icon": "⚽",
+    "desc": "Vocabulary of water sports",
+    "count": 83
+  },
+  {
+    "id": "tu_vung_chu_de_chup_anh",
+    "uuid": "e5f56382-0142-4cf5-9ebe-08dd9e8e4065",
+    "name": "Chủ đề chụp ảnh",
+    "fullName": "Từ vựng chủ đề chụp ảnh",
+    "icon": "📷",
+    "desc": "Vocabulary subject to photography",
+    "count": 81
+  },
+  {
+    "id": "tu_vung_nhua_cao_su",
+    "uuid": "1d99d6a7-25f7-43d9-9ec0-08dd9e8e4065",
+    "name": "Nhựa cao su",
+    "fullName": "Từ vựng nhựa cao su",
+    "icon": "🏷️",
+    "desc": "Rubber plastic vocabulary",
+    "count": 78
+  },
+  {
+    "id": "tu_vung_chu_de_tennis",
+    "uuid": "451ea2fc-64d3-456f-9f29-08dd9e8e4065",
+    "name": "Chủ đề tennis",
+    "fullName": "Từ vựng chủ đề tennis",
+    "icon": "⚽",
+    "desc": "Tennis topic vocabulary",
+    "count": 78
+  },
+  {
+    "id": "tu_vung_chu_de_danh_golf",
+    "uuid": "fe598e78-54cd-4d62-9f27-08dd9e8e4065",
+    "name": "Chủ đề đánh golf",
+    "fullName": "Từ vựng chủ đề đánh golf",
+    "icon": "⚽",
+    "desc": "Vocabulary topic for golf",
+    "count": 78
+  },
+  {
+    "id": "tu_vung_chu_de_tang_le",
+    "uuid": "2e81e74d-d293-494e-9f02-08dd9e8e4065",
+    "name": "Chủ đề tang lễ",
+    "fullName": "Từ vựng chủ đề tang lễ",
+    "icon": "👨‍👩‍👧‍👦",
+    "desc": "Funeral-themed vocabulary",
+    "count": 76
+  },
+  {
+    "id": "tu_vung_chu_de_cat_may_quan_ao",
+    "uuid": "eebbd447-db98-4bbd-9ec8-08dd9e8e4065",
+    "name": "Chủ đề cắt may quần áo",
+    "fullName": "Từ vựng chủ đề cắt may quần áo",
+    "icon": "👗",
+    "desc": "Topic vocabulary of clothing cutting",
+    "count": 76
+  },
+  {
+    "id": "tu_vung_chu_de_thoi_gian_va_thoi_tiet",
+    "uuid": "f460b9cb-d704-48b3-9ee0-08dd9e8e4065",
+    "name": "Chủ đề thời gian và thời tiết",
+    "fullName": "Từ vựng chủ đề thời gian và thời tiết",
+    "icon": "🌦️",
+    "desc": "The topic vocabulary of time and weather",
+    "count": 75
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_go",
+    "uuid": "1c5fcd03-06c7-4ed7-9ee7-08dd9e8e4065",
+    "name": "Chuyên ngành gỗ",
+    "fullName": "Từ vựng chuyên ngành gỗ",
+    "icon": "🏷️",
+    "desc": "Specialized vocabulary in wood",
+    "count": 73
+  },
+  {
+    "id": "tu_vung_chu_de_gia_dinh",
+    "uuid": "f5387c1a-e496-403b-9f30-08dd9e8e4065",
+    "name": "Chủ đề gia đình",
+    "fullName": "Từ vựng chủ đề gia đình",
+    "icon": "👨‍👩‍👧‍👦",
+    "desc": "Family topic vocabulary",
+    "count": 72
+  },
+  {
+    "id": "tu_vung_cac_nganh_cong_nghiep",
+    "uuid": "bdcd1547-6dcf-4789-9edc-08dd9e8e4065",
+    "name": "Các ngành công nghiệp",
+    "fullName": "Từ vựng các ngành công nghiệp",
+    "icon": "🏷️",
+    "desc": "Vocabulary industries",
+    "count": 68
+  },
+  {
+    "id": "tu_vung_chu_de_phong_tam",
+    "uuid": "9b0ff49c-4503-4d87-9ee1-08dd9e8e4065",
+    "name": "Chủ đề phòng tắm",
+    "fullName": "Từ vựng chủ đề phòng tắm",
+    "icon": "🏠",
+    "desc": "Bathroom theme vocabulary",
     "count": 64
   },
   {
-    "id": "travel",
-    "name": "Du Lịch & Khách Sạn",
-    "nameZh": "旅游住宿",
-    "icon": "✈️",
-    "desc": "Máy bay, sân bay, hành lý, khách sạn, danh lam thắng cảnh, vé tham quan",
-    "count": 20
+    "id": "tu_vung_chu_de_thue_nha",
+    "uuid": "365f7be2-c7a6-466a-9f16-08dd9e8e4065",
+    "name": "Chủ đề thuê nhà",
+    "fullName": "Từ vựng chủ đề thuê nhà",
+    "icon": "🏠",
+    "desc": "Topic vocabulary for rent",
+    "count": 63
   },
   {
-    "id": "work",
-    "name": "Công Sở & Kinh Doanh",
-    "nameZh": "职场商务",
-    "icon": "💼",
-    "desc": "Công ty, văn phòng, hội họp, phỏng vấn, lương bổng, đàm phán, chức vụ",
-    "count": 25
+    "id": "tu_vung_mua_ban_hang_online",
+    "uuid": "6607f9f9-7464-40ea-9ee3-08dd9e8e4065",
+    "name": "Mua bán hàng online",
+    "fullName": "Từ vựng mua bán hàng online",
+    "icon": "🏷️",
+    "desc": "Online shopping vocabulary",
+    "count": 61
   },
   {
-    "id": "education",
-    "name": "Giáo Dục & Trường Học",
-    "nameZh": "教育学术",
-    "icon": "🎓",
-    "desc": "Học tập, thi cử, đại học, sinh viên, giáo viên, sách vở, bài tập, HSK",
-    "count": 56
+    "id": "tu_vung_chu_de_bong_chuyen",
+    "uuid": "14001e9b-4476-4af5-9ef9-08dd9e8e4065",
+    "name": "Chủ đề bóng chuyền",
+    "fullName": "Từ vựng chủ đề bóng chuyền",
+    "icon": "⚽",
+    "desc": "Volleyball topic vocabulary",
+    "count": 61
   },
   {
-    "id": "shopping",
-    "name": "Mua Sắm & Thời Trang",
-    "nameZh": "购物时装",
-    "icon": "🛍️",
-    "desc": "Cửa hàng, siêu thị, giá cả, mặc cả, quần áo, giày dép, túi xách, giảm giá",
-    "count": 34
+    "id": "tu_vung_ve_mon_dien",
+    "uuid": "7ae1f2ee-7541-492e-9f0b-08dd9e8e4065",
+    "name": "Về môn điền kinh",
+    "fullName": "Từ vựng về môn điền kinh",
+    "icon": "⚽",
+    "desc": "Vocabulary of athletics",
+    "count": 61
   },
   {
-    "id": "health",
-    "name": "Sức Khỏe & Y Tế",
-    "nameZh": "医疗健康",
+    "id": "tu_vung_chu_de_hai_san",
+    "uuid": "881bfd08-7b03-4602-9ecf-08dd9e8e4065",
+    "name": "Chủ đề hải sản",
+    "fullName": "Từ vựng chủ đề hải sản",
+    "icon": "🥩",
+    "desc": "Seafood topic vocabulary",
+    "count": 59
+  },
+  {
+    "id": "tu_vung_vat_lieu_xay_dung",
+    "uuid": "3dde61b5-2e76-431d-9ef7-08dd9e8e4065",
+    "name": "Vật liệu xây dựng",
+    "fullName": "Từ vựng vật liệu xây dựng",
+    "icon": "🏛️",
+    "desc": "Building materials vocabulary",
+    "count": 59
+  },
+  {
+    "id": "tu_vung_chu_de_goi_do_uong",
+    "uuid": "16e18220-ccc2-44d1-9f15-08dd9e8e4065",
+    "name": "Chủ đề gọi đồ uống",
+    "fullName": "Từ vựng chủ đề gọi đồ uống",
+    "icon": "🍜",
+    "desc": "Theme vocabulary to order drinks",
+    "count": 57
+  },
+  {
+    "id": "tu_vung_cach_doc_tien_te_trong_tieng_trung",
+    "uuid": "b2f230af-4335-4ade-9f1f-08dd9e8e4065",
+    "name": "Cách đọc tiền tệ trong tiếng Trung",
+    "fullName": "Cách đọc tiền tệ trong tiếng Trung",
+    "icon": "📊",
+    "desc": "How to read currency in Chinese",
+    "count": 54
+  },
+  {
+    "id": "tu_vung_chuyen_nghanh_spa",
+    "uuid": "ac7e36fb-89e3-44b3-9f1c-08dd9e8e4065",
+    "name": "Chuyên ngành spa",
+    "fullName": "Từ vựng chuyên ngành spa",
     "icon": "🏥",
-    "desc": "Bệnh viện, bác sĩ, thuốc men, khám chữa, triệu chứng, thể thao rèn luyện",
+    "desc": "Specialized spa vocabulary",
+    "count": 54
+  },
+  {
+    "id": "tu_vung_chuyen_nghanh_sat_thep",
+    "uuid": "63c05529-abe9-4f66-9ed4-08dd9e8e4065",
+    "name": "Chuyên ngành sắt thép",
+    "fullName": "Từ vựng chuyên ngành sắt thép",
+    "icon": "⚙️",
+    "desc": "Specialized vocabulary of iron and steel",
+    "count": 54
+  },
+  {
+    "id": "tu_vung_chu_de_bong_chay",
+    "uuid": "bef0298a-3d78-4fa8-9ef3-08dd9e8e4065",
+    "name": "Chủ đề bóng chày",
+    "fullName": "Từ vựng chủ đề bóng chày",
+    "icon": "⚽",
+    "desc": "Vocabulary subject to baseball",
+    "count": 53
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_may_mac",
+    "uuid": "a1051ef9-9755-4a91-9ede-08dd9e8e4065",
+    "name": "Chuyên ngành may mặc",
+    "fullName": "Từ vựng chuyên ngành may mặc",
+    "icon": "👗",
+    "desc": "Vocabulary specialized in apparel",
+    "count": 53
+  },
+  {
+    "id": "tu_vung_ve_tu_ngoai_lai",
+    "uuid": "663a72e8-2a61-435a-9eee-08dd9e8e4065",
+    "name": "Về từ ngoại lai",
+    "fullName": "Từ vựng về từ ngoại lai",
+    "icon": "🏷️",
+    "desc": "Vocabulary of foreign words",
+    "count": 52
+  },
+  {
+    "id": "tu_vung_chu_de_bong_da",
+    "uuid": "a5427bb9-3a08-4a66-9ed0-08dd9e8e4065",
+    "name": "Chủ đề bóng đá",
+    "fullName": "Từ vựng chủ đề bóng đá",
+    "icon": "⚽",
+    "desc": "Vocabulary theme soccer",
+    "count": 50
+  },
+  {
+    "id": "tu_vung_khai_thac_khoang_san",
+    "uuid": "f4434b06-30e2-4633-9ed2-08dd9e8e4065",
+    "name": "Khai thác khoáng sản",
+    "fullName": "Từ vựng khai thác khoáng sản",
+    "icon": "⚙️",
+    "desc": "Mining vocabulary",
+    "count": 49
+  },
+  {
+    "id": "tu_vung_cac_loai_than_trong_tieng_trung",
+    "uuid": "6d8813f3-9a01-4943-9f2e-08dd9e8e4065",
+    "name": "Các loại than",
+    "fullName": "Từ vựng các loại than",
+    "icon": "⚙️",
+    "desc": "Vocabulary of coals",
+    "count": 48
+  },
+  {
+    "id": "tu_vung_nganh_dien_nuoc_may_bom",
+    "uuid": "66faa73c-b101-4deb-9ec9-08dd9e8e4065",
+    "name": "Ngành điện nước máy bơm",
+    "fullName": "Từ vựng ngành điện nước máy bơm",
+    "icon": "⚡",
+    "desc": "Vocabulary of electricity and water pumps",
+    "count": 48
+  },
+  {
+    "id": "tu_vung_chu_de_my_pham",
+    "uuid": "97746602-a5ff-4fb8-9f1d-08dd9e8e4065",
+    "name": "Chủ đề mỹ phẩm",
+    "fullName": "Từ vựng chủ đề mỹ phẩm",
+    "icon": "💄",
+    "desc": "Cosmetic topic vocabulary",
+    "count": 47
+  },
+  {
+    "id": "tu_vung_xuat_nhap_canh",
+    "uuid": "93e8cfac-4f75-471f-9f12-08dd9e8e4065",
+    "name": "Xuất nhập cảnh",
+    "fullName": "Từ vựng xuất nhập cảnh",
+    "icon": "✈️",
+    "desc": "Immigration vocabulary",
+    "count": 44
+  },
+  {
+    "id": "tu_vung_tinh_yeu_ngon_tinh",
+    "uuid": "2f607541-435b-487a-9f19-08dd9e8e4065",
+    "name": "Tình yêu ngôn tình",
+    "fullName": "Từ vựng tình yêu ngôn tình",
+    "icon": "💖",
+    "desc": "Words love language",
+    "count": 42
+  },
+  {
+    "id": "tu_vung_linh_kien_phu_tung_xe_may",
+    "uuid": "a66ea6e8-8cb3-4f24-9f09-08dd9e8e4065",
+    "name": "Linh kiện phụ tùng xe máy",
+    "fullName": "Từ vựng linh kiện phụ tùng xe máy",
+    "icon": "🚗",
+    "desc": "Vocabulary of motorcycle spare parts",
+    "count": 38
+  },
+  {
+    "id": "tu_vung_ve_cac_loai_thit",
+    "uuid": "b8983216-eecc-4ce9-9ef2-08dd9e8e4065",
+    "name": "Chủ để các loại thịt",
+    "fullName": "Từ vựng chủ để các loại thịt",
+    "icon": "🥩",
+    "desc": "Vocabulary for all types of meat",
+    "count": 35
+  },
+  {
+    "id": "tu_vung_chu_de_cac_loai_gia_vi",
+    "uuid": "1f6ac11b-4860-47e0-9ee9-08dd9e8e4065",
+    "name": "Chủ để các loại gia vị",
+    "fullName": "Từ vựng chủ để các loại gia vị",
+    "icon": "🍜",
+    "desc": "Topic vocabulary for spices",
+    "count": 32
+  },
+  {
+    "id": "tu_vung_chu_de_cong_xuong",
+    "uuid": "d0b92f18-2de3-4ef3-9f14-08dd9e8e4065",
+    "name": "Chủ đề công xưởng",
+    "fullName": "Từ vựng chủ đề công xưởng",
+    "icon": "⚙️",
+    "desc": "Factory topic vocabulary",
+    "count": 32
+  },
+  {
+    "id": "tu_vung_video_cassette_mau",
+    "uuid": "15348325-f462-416a-9f2d-08dd9e8e4065",
+    "name": "Video cassette màu",
+    "fullName": "Từ vựng video cassette màu",
+    "icon": "🎬",
+    "desc": "Video cassette vocabulary in color",
+    "count": 30
+  },
+  {
+    "id": "tu_vung_ve_gioi_showbiz",
+    "uuid": "f7a06030-1574-4810-9edf-08dd9e8e4065",
+    "name": "Về giới showbiz",
+    "fullName": "Từ vựng về giới showbiz",
+    "icon": "🎬",
+    "desc": "Vocabulary about showbiz world",
+    "count": 30
+  },
+  {
+    "id": "tu_vung_chuyen_nghanh_kien_truc",
+    "uuid": "71241677-916b-4359-9efc-08dd9e8e4065",
+    "name": "Chuyên ngành kiến trúc",
+    "fullName": "Từ vựng chuyên ngành kiến trúc",
+    "icon": "🏛️",
+    "desc": "Architecture vocabulary",
+    "count": 29
+  },
+  {
+    "id": "tu_vung_nha_hang_khach_san",
+    "uuid": "871ca54c-48fb-445c-9f1b-08dd9e8e4065",
+    "name": "Nhà hàng khách sạn",
+    "fullName": "Từ vựng nhà hàng khách sạn",
+    "icon": "🍜",
+    "desc": "Hotel restaurant vocabulary",
+    "count": 27
+  },
+  {
+    "id": "tu_vung_chu_de_the_thao",
+    "uuid": "9f474c5e-6a5c-4fc3-9ef4-08dd9e8e4065",
+    "name": "Chủ đề thể thao",
+    "fullName": "Từ vựng chủ đề thể thao",
+    "icon": "⚽",
+    "desc": "Sports subject vocabulary",
     "count": 26
   },
   {
-    "id": "daily",
-    "name": "Đời Sống & Nhà Cửa",
-    "nameZh": "居家生活",
-    "icon": "🏠",
-    "desc": "Nhà ở, đồ gia dụng, phòng ốc, thói quen sinh hoạt thường nhật, thời gian",
-    "count": 39
-  },
-  {
-    "id": "traffic",
-    "name": "Giao Thông & Đi Lại",
-    "nameZh": "交通出行",
-    "icon": "🚗",
-    "desc": "Phương tiện giao thông, tàu điện ngầm, xe buýt, taxi, đường sá, chuyển bánh",
-    "count": 37
-  },
-  {
-    "id": "tech",
-    "name": "Công Nghệ & Kỹ Thuật Số",
-    "nameZh": "科技数码",
-    "icon": "📱",
-    "desc": "Điện thoại, máy tính, mạng internet, mạng xã hội, tin nhắn, phần mềm",
-    "count": 20
-  },
-  {
-    "id": "weather",
-    "name": "Thời Tiết & Thiên Nhiên",
-    "nameZh": "天气自然",
-    "icon": "🌦️",
-    "desc": "Mưa nắng, nhiệt độ, bốn mùa, phong cảnh tự nhiên, hoa cỏ, động vật",
+    "id": "tu_vung_word_excel_va_powerpoint",
+    "uuid": "85be1a7e-65c1-4ad6-9ece-08dd9e8e4065",
+    "name": "Word excel powerpoint",
+    "fullName": "Từ vựng word excel powerpoint",
+    "icon": "💻",
+    "desc": "Word excel powerpoint words",
     "count": 23
   },
   {
-    "id": "emotions",
-    "name": "Cảm Xúc & Tâm Lý",
-    "nameZh": "情感心理",
-    "icon": "💬",
-    "desc": "Vui buồn, cảm xúc, tâm trạng, thái độ, kỳ vọng, hy vọng, lo lắng",
+    "id": "tu_vung_chu_de_giang_sinh",
+    "uuid": "a011f8ae-005d-4a7e-9f13-08dd9e8e4065",
+    "name": "Chủ đề giáng sinh",
+    "fullName": "Từ vựng chủ đề giáng sinh",
+    "icon": "🏷️",
+    "desc": "Christmas theme vocabulary",
+    "count": 22
+  },
+  {
+    "id": "tu_vung_picnic_da_ngoai",
+    "uuid": "67dc6181-562c-44e6-9ec1-08dd9e8e4065",
+    "name": "Picnic dã ngoại",
+    "fullName": "Từ vựng picnic dã ngoại",
+    "icon": "🏨",
+    "desc": "Picnic vocabulary",
+    "count": 21
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_ve_oc_vit",
+    "uuid": "f235b43f-71d5-4aca-9ee2-08dd9e8e4065",
+    "name": "Chuyên ngành về ốc vít",
+    "fullName": "Từ vựng chuyên ngành về ốc vít",
+    "icon": "⚙️",
+    "desc": "Specialized vocabulary about screws",
+    "count": 21
+  },
+  {
+    "id": "tu_vung_ten_cac_loai_nam",
+    "uuid": "cedcd5cc-7815-4a07-9efd-08dd9e8e4065",
+    "name": "Tên các loại nấm",
+    "fullName": "Từ vựng tên các loại nấm",
+    "icon": "🍎",
+    "desc": "Vocabulary names of mushrooms",
+    "count": 21
+  },
+  {
+    "id": "tu_vung_cac_loai_bot",
+    "uuid": "6061c227-5f75-44f8-9f0a-08dd9e8e4065",
+    "name": "Các loại bột",
+    "fullName": "Từ vựng các loại bột",
+    "icon": "🍎",
+    "desc": "Vocabulary of powders",
     "count": 20
   },
   {
-    "id": "appearance",
-    "name": "Tính Cách & Ngoại Hình",
-    "nameZh": "外表品格",
-    "icon": "🎨",
-    "desc": "Ngoại hình, vóc dáng, tính cách, phẩm chất đạo đức, phong cách người",
-    "count": 156
+    "id": "tu_vung_ve_gia_cam_va_trung",
+    "uuid": "aea674b9-5970-48f0-9f2b-08dd9e8e4065",
+    "name": "Gia cầm và trứng",
+    "fullName": "Từ vựng gia cầm và trứng",
+    "icon": "🥩",
+    "desc": "Poultry and egg vocabulary",
+    "count": 20
   },
   {
-    "id": "society",
-    "name": "Giao Tiếp & Xã Hội",
-    "nameZh": "社会文化",
-    "icon": "🌐",
-    "desc": "Giao tiếp hàng ngày, lễ nghi, chào hỏi, từ nối ngữ pháp, thời gian & địa điểm",
-    "count": 1044
+    "id": "tu_vung_ten_cac_loai_gao",
+    "uuid": "314f7d39-a2a6-484e-9ee4-08dd9e8e4065",
+    "name": "Tên các loại gạo",
+    "fullName": "Từ vựng tên các loại gạo",
+    "icon": "🍎",
+    "desc": "Vocabulary names of rice types",
+    "count": 17
+  },
+  {
+    "id": "tu_vung_chu_de_doc_than",
+    "uuid": "7e776e49-8b7c-44b2-9ef0-08dd9e8e4065",
+    "name": "Chủ đề độc thân",
+    "fullName": "Từ vựng chủ đề độc thân",
+    "icon": "👨‍👩‍👧‍👦",
+    "desc": "Single topic vocabulary",
+    "count": 16
+  },
+  {
+    "id": "tu_vung_chuyen_nganh_han_xi",
+    "uuid": "b317f6dd-603f-405b-9f00-08dd9e8e4065",
+    "name": "Chuyên ngành hàn xì",
+    "fullName": "Từ vựng chuyên ngành hàn xì",
+    "icon": "⚙️",
+    "desc": "Specialized vocabulary welding",
+    "count": 15
+  },
+  {
+    "id": "hoi_thoai_tieng_hoa_hang_ngay",
+    "uuid": "e1129780-5be0-43d4-9ed7-08dd9e8e4065",
+    "name": "Hội thoại tiếng hoa hàng ngày",
+    "fullName": "Hội thoại tiếng hoa hàng ngày",
+    "icon": "🌸",
+    "desc": "Daily Chinese conversation",
+    "count": 4
   }
 ]
