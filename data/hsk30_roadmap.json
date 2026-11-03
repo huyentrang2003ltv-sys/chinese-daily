@@ -98,7 +98,9 @@
           "task": "Luyện viết theo quy tắc bút thuận trên ô Điền Tự Cách và làm bài tập sách HSK Standard Course."
         }
       ],
-      "milestone": "Giao tiếp thành thạo các tình huống cơ bản: Giới thiệu bản thân, Gia đình, Mua sắm, Đặt món ăn và Hỏi đường."
+      "milestone": "Giao tiếp thành thạo các tình huống cơ bản: Giới thiệu bản thân, Gia đình, Mua sắm, Đặt món ăn và Hỏi đường.",
+      "lessonsCount": "30 bài (15 bài HSK 1 + 15 bài HSK 2)",
+      "coreBook": "Giáo trình Chuẩn HSK 3.0 Standard Course Quyển 1 & 2"
     },
     {
       "id": "stage_2",
@@ -123,7 +125,9 @@
           "task": "Luyện nghe Shadowing và nhắc lại các đoạn hội thoại thực tế, luyện phát âm theo giọng AI."
         }
       ],
-      "milestone": "Đọc hiểu các văn bản ngắn không cần Pinyin, tự tin du lịch tự túc tại Trung Quốc, đủ năng lực thi đỗ HSKK Sơ cấp."
+      "milestone": "Đọc hiểu các văn bản ngắn không cần Pinyin, tự tin du lịch tự túc tại Trung Quốc, đủ năng lực thi đỗ HSKK Sơ cấp.",
+      "lessonsCount": "18 bài HSK 3",
+      "coreBook": "Giáo trình Chuẩn HSK 3.0 Standard Course Quyển 3"
     },
     {
       "id": "stage_3",
@@ -148,7 +152,9 @@
           "task": "Luyện viết đoạn văn 80–100 chữ theo tranh và bắt đầu làm quen kỹ năng Dịch thuật sơ cấp."
         }
       ],
-      "milestone": "Làm việc tại doanh nghiệp Trung Quốc, phỏng vấn xin việc, đủ năng lực thi đỗ chứng chỉ HSK 4 & HSKK Trung cấp."
+      "milestone": "Làm việc tại doanh nghiệp Trung Quốc, phỏng vấn xin việc, đủ năng lực thi đỗ chứng chỉ HSK 4 & HSKK Trung cấp.",
+      "lessonsCount": "20 bài HSK 4 (Thượng + Hạ)",
+      "coreBook": "Giáo trình Chuẩn HSK 4 + Luyện đề mô phỏng"
     },
     {
       "id": "stage_4",
@@ -173,7 +179,9 @@
           "task": "Luyện viết văn nghị luận 150–200 chữ và luyện dịch song ngữ Việt - Trung chuẩn xác."
         }
       ],
-      "milestone": "Đủ điều kiện xin học bổng Thạc sĩ chính phủ Trung Quốc (CSC), đàm phán hợp đồng thương mại độc lập."
+      "milestone": "Đủ điều kiện xin học bổng Thạc sĩ chính phủ Trung Quốc (CSC), đàm phán hợp đồng thương mại độc lập.",
+      "lessonsCount": "36 bài HSK 5 (Thượng + Hạ)",
+      "coreBook": "Giáo trình Chuẩn HSK 5 + Đọc hiểu chuyên đề kinh tế xã hội"
     },
     {
       "id": "stage_5",
@@ -198,7 +206,9 @@
           "task": "Tranh luận, thuyết trình các đề tài triết học, kinh tế, biến đổi khí hậu và AI."
         }
       ],
-      "milestone": "Sử dụng tiếng Trung như tiếng mẹ đẻ, đủ điều kiện học Tiến sĩ hoặc làm chuyên viên đối ngoại cao cấp."
+      "milestone": "Sử dụng tiếng Trung như tiếng mẹ đẻ, đủ điều kiện học Tiến sĩ hoặc làm chuyên viên đối ngoại cao cấp.",
+      "lessonsCount": "40 bài HSK 6 (Thượng + Hạ)",
+      "coreBook": "Giáo trình Chuẩn HSK 6 + Rèn luyện tóm tắt văn bản 400 chữ"
     },
     {
       "id": "stage_6",
@@ -223,7 +233,9 @@
           "task": "Nghiên cứu văn ngôn, Hán học cổ đại và thuật ngữ dịch thuật chuyên ngành."
         }
       ],
-      "milestone": "Trở thành Biên dịch viên / Phiên dịch viên cabin chuyên nghiệp, chuyên gia ngôn ngữ học hàng đầu."
+      "milestone": "Trở thành Biên dịch viên / Phiên dịch viên cabin chuyên nghiệp, chuyên gia ngôn ngữ học hàng đầu.",
+      "lessonsCount": "Chuyên đề Biên - Phiên Dịch HSK 7-9",
+      "coreBook": "Bộ giáo trình cao cấp HSK 7-9 & Đề thi mẫu CTI"
     }
   ],
   "grammarSections": [
@@ -588,6 +600,96 @@
         "topics": "Người cao tuổi nghiện video ngắn, Xu hướng robot hình người và AI, Lối sống xanh & Tiêu dùng tối giản, Phỏng vấn trực tiếp.",
         "criteria": "Tốc độ phản xạ tức thì (<3 giây), phát âm chuẩn giọng Bắc Kinh, diễn đạt trôi chảy không ngập ngừng."
       }
+    ],
+    "interactiveExercises": [
+      {
+        "id": 1,
+        "title": "Bài 1: Công nghệ 4.0 - Trợ lý AI",
+        "sourceVi": "Chào bạn! Tôi là AI Xiaoyu, trợ lý học tiếng Trung của bạn.",
+        "targetZh": "你好！我是你的中文学习助手AI小语。",
+        "targetPinyin": "Nǐ hǎo! Wǒ shì nǐ de Zhōngwén xuéxí zhùshǒu AI Xiǎoyǔ.",
+        "keywords": [
+          "AI小语",
+          "中文学习助手",
+          "我是"
+        ],
+        "grammarFormula": "Chủ ngữ (我) + 是 + Định ngữ có \"的\" (你的中文学习助手) + Danh từ trung tâm (AI小语)",
+        "cultureNote": "HSK 3.0 đưa ngay AI vào bài 1, nhấn mạnh ứng dụng công nghệ trong học tập thời đại mới."
+      },
+      {
+        "id": 2,
+        "title": "Bài 2: Giao thông & Đưa ra phương án tối ưu",
+        "sourceVi": "Hay là chúng mình đi taxi đến Đại học Bắc Kinh đi.",
+        "targetZh": "还是打车去北大吧。",
+        "targetPinyin": "Háishi dǎchē qù Běidà ba.",
+        "keywords": [
+          "还是",
+          "打车",
+          "北大",
+          "吧"
+        ],
+        "grammarFormula": "Phó từ lựa chọn tối ưu \"还是\" + Động từ (打车) + Điểm đến (去北大) + Trợ từ ngữ khí \"吧\"",
+        "cultureNote": "\"打车\" (gọi xe/đi taxi) và \"北大\" (viết tắt của Đại học Bắc Kinh) là cách diễn đạt cực kỳ phổ biến của người bản xứ."
+      },
+      {
+        "id": 3,
+        "title": "Bài 3: Tiện ích số - Tàu cao tốc & Đặt đồ ăn ngoài",
+        "sourceVi": "Trên tàu cao tốc còn có thể quét mã QR đặt đồ ăn ngoài.",
+        "targetZh": "高铁上还可以扫二维码点外卖。",
+        "targetPinyin": "Gāotiě shang hái kěyǐ sǎo èrwéimǎ diǎn wàimài.",
+        "keywords": [
+          "高铁上",
+          "还可以",
+          "扫二维码",
+          "点外卖"
+        ],
+        "grammarFormula": "Trạng ngữ địa điểm (高铁上) + Phó từ (还) + Động từ năng nguyện (可以) + Câu liên động (扫二维码 + 点外卖)",
+        "cultureNote": "Tàu cao tốc Trung Quốc (高铁) tích hợp mã QR tại từng ghế ngồi để hành khách đặt bữa ăn nóng sốt giao tận nơi."
+      },
+      {
+        "id": 4,
+        "title": "Bài 4: Văn hóa ẩm thực & Câu kiêm ngữ",
+        "sourceVi": "Hôm qua cô ấy đã mời chúng tôi ăn vịt quay Bắc Kinh.",
+        "targetZh": "昨天她请我们吃了北京烤鸭。",
+        "targetPinyin": "Zuótiān tā qǐng wǒmen chī le Běijīng kǎoyā.",
+        "keywords": [
+          "昨天",
+          "请我们",
+          "吃了",
+          "北京烤鸭"
+        ],
+        "grammarFormula": "Thời gian (昨天) + Câu kiêm ngữ (Chủ ngữ 她 + Động từ cầu khiến 请 + Tân ngữ kiêm Chủ ngữ 2 我们 + Động từ 2 吃了 + Tân ngữ 2 北京烤鸭)",
+        "cultureNote": "Vịt quay Bắc Kinh (北京烤鸭) là nét ẩm thực tiếp đãi truyền thống của người Trung Quốc khi đón bạn bè quốc tế."
+      },
+      {
+        "id": 5,
+        "title": "Bài 5: Xử lý đồ vật - Câu chữ 把 kinh điển",
+        "sourceVi": "Mai bạn hãy đem cuốn sách này trả lại cho tôi nhé.",
+        "targetZh": "你明天再把这本书还给我吧。",
+        "targetPinyin": "Nǐ míngtiān zài bǎ zhè běn shū huán gěi wǒ ba.",
+        "keywords": [
+          "明天",
+          "把这本书",
+          "还给我",
+          "吧"
+        ],
+        "grammarFormula": "Chủ ngữ (你) + Thời gian (明天) + Phó từ (再) + 把 + Tân ngữ bị tác động (这本书) + Động từ (还给) + Đối tượng nhận (我) + 吧",
+        "cultureNote": "Câu chữ 把 là trọng điểm ngữ pháp số 1 của HSK 3.0, dùng khi hành động tác động làm thay đổi vị trí hoặc chủ sở hữu của vật."
+      },
+      {
+        "id": 6,
+        "title": "Bài 6: Thể bị động - Câu chữ 被",
+        "sourceVi": "Cuốn tiểu thuyết này đã bị người khác mượn đi rồi.",
+        "targetZh": "这本小说被别人借走了。",
+        "targetPinyin": "Zhè běn xiǎoshuō bèi biérén jiè zǒu le.",
+        "keywords": [
+          "这本小说",
+          "被别人",
+          "借走了"
+        ],
+        "grammarFormula": "Chủ ngữ bị tác động (这本小说) + 被 + Tác nhân (别人) + Động từ (借) + Bổ ngữ xu hướng (走了)",
+        "cultureNote": "Câu chữ 被 trong tiếng Trung thường mang ý việc ngoài ý muốn hoặc nuối tiếc, khác với câu bị động trung tính trong tiếng Việt."
+      }
     ]
   },
   "modernVocabCategories": [
@@ -753,5 +855,855 @@
       "badge": "Kỹ Năng Mới",
       "linkUrl": "https://tiengtrungthuonghai.vn/tuhoctiengtrung/cau-truc-phan-dich-trong-hsk-3-0/"
     }
-  ]
+  ],
+  "standardCourse48Lessons": [
+    {
+      "hskLevel": 1,
+      "lessonNumber": 1,
+      "titleZh": "AI小语，你好！",
+      "titleVi": "AI Xiaoyu, chào bạn!",
+      "grammar": "Chào hỏi cơ bản",
+      "vocabTheme": "Lời chào, Danh từ riêng",
+      "titlePinyin": "AI Xiǎoyǔ, nǐ hǎo!",
+      "tag": "HSK 1 · Bài 1",
+      "focus": "Chào hỏi cơ bản",
+      "vocabularyTheme": "Lời chào, Danh từ riêng",
+      "dialogueZh": "A: AI小语，你好！很高兴认识你。\nB: 你好！我是你的中文学习助手AI小语。",
+      "dialogueVi": "A: Chào AI Xiaoyu! Rất vui được làm quen với bạn.\nB: Chào bạn! Tôi là AI Xiaoyu, trợ lý học tiếng Trung của bạn.",
+      "tip": "HSK 3.0 đưa yếu tố công nghệ 4.0 & trí tuệ nhân tạo vào ngay bài học đầu tiên, làm quen với danh xưng và lời chào thời đại số."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 2,
+      "titleZh": "我叫李文",
+      "titleVi": "Tôi tên là Lý Văn",
+      "grammar": "Trật tự câu cơ bản",
+      "vocabTheme": "Tên gọi, Giới thiệu bản thân",
+      "titlePinyin": "Wǒ jiào Lǐ Wén",
+      "tag": "HSK 1 · Bài 2",
+      "focus": "Trật tự câu cơ bản",
+      "vocabularyTheme": "Tên gọi, Giới thiệu bản thân",
+      "dialogueZh": "A: 你叫什么名字？\nB: 我叫李文，你呢？\nA: 我叫王明。",
+      "dialogueVi": "A: Bạn tên là gì?\nB: Tôi tên là Lý Văn, còn bạn?\nA: Tôi tên là Vương Minh.",
+      "tip": "Trật tự câu cơ bản trong tiếng Trung là S + V + O. Đại từ nghi vấn \"什么\" đặt ngay vị trí của tân ngữ cần hỏi."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 3,
+      "titleZh": "我是中国人",
+      "titleVi": "Tôi là người Trung Quốc",
+      "grammar": "Câu chữ &#8220;是&#8221;; Trợ từ &#8220;的&#8221;; Câu hỏi &#8220;吗&#8221;",
+      "vocabTheme": "Quốc tịch, Nghề nghiệp",
+      "titlePinyin": "Wǒ shì Zhōngguó rén",
+      "tag": "HSK 1 · Bài 3",
+      "focus": "Câu chữ &#8220;是&#8221;; Trợ từ &#8220;的&#8221;; Câu hỏi &#8220;吗&#8221;",
+      "vocabularyTheme": "Quốc tịch, Nghề nghiệp",
+      "dialogueZh": "A: 你是中国人吗？\nB: 不是，我是越南人。你呢？\nA: 我是中国人，我是老师。",
+      "dialogueVi": "A: Bạn có phải là người Trung Quốc không?\nB: Không phải, tôi là người Việt Nam. Còn bạn?\nA: Tôi là người Trung Quốc, tôi là giáo viên.",
+      "tip": "Câu chữ 是 biểu đạt phán đoán quan hệ đẳng lập hoặc xác nhận danh tính, nghề nghiệp, quốc tịch."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 4,
+      "titleZh": "我有两个孩子",
+      "titleVi": "Tôi có hai đứa con",
+      "grammar": "Câu chữ &#8220;有&#8221;; Số từ + Lượng từ + Danh từ; Trợ từ &#8220;呢&#8221;",
+      "vocabTheme": "Gia đình, Số lượng",
+      "titlePinyin": "Wǒ yǒu liǎng gè háizi",
+      "tag": "HSK 1 · Bài 4",
+      "focus": "Câu chữ &#8220;有&#8221;; Số từ + Lượng từ + Danh từ; Trợ từ &#8220;呢&#8221;",
+      "vocabularyTheme": "Gia đình, Số lượng",
+      "dialogueZh": "A: 我有两个孩子\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Tôi có hai đứa con\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Gia đình, Số lượng. Trọng tâm ngữ pháp: Câu chữ &#8220;有&#8221;; Số từ + Lượng từ + Danh từ; Trợ từ &#8220;呢&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 5,
+      "titleZh": "今天我休息",
+      "titleVi": "Hôm nay tôi nghỉ ngơi",
+      "grammar": "Biểu đạt thời gian; Câu vị ngữ danh từ; Động từ năng nguyện &#8220;会&#8221;",
+      "vocabTheme": "Thứ, Ngày, Hoạt động nghỉ ngơi",
+      "titlePinyin": "Jīntiān wǒ xiūxi",
+      "tag": "HSK 1 · Bài 5",
+      "focus": "Biểu đạt thời gian; Câu vị ngữ danh từ; Động từ năng nguyện &#8220;会&#8221;",
+      "vocabularyTheme": "Thứ, Ngày, Hoạt động nghỉ ngơi",
+      "dialogueZh": "A: 今天我休息\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Hôm nay tôi nghỉ ngơi\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Thứ, Ngày, Hoạt động nghỉ ngơi. Trọng tâm ngữ pháp: Biểu đạt thời gian; Câu vị ngữ danh từ; Động từ năng nguyện &#8220;会&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 6,
+      "titleZh": "你的手机号是多少?",
+      "titleVi": "Số điện thoại của bạn là bao nhiêu?",
+      "grammar": "Động từ năng nguyện &#8220;想&#8221;; Câu liên động; Đại từ &#8220;怎么&#8221;",
+      "vocabTheme": "Số điện thoại, Phương thức",
+      "titlePinyin": "Nǐ de shǒujī hào shì duōshǎo?",
+      "tag": "HSK 1 · Bài 6",
+      "focus": "Động từ năng nguyện &#8220;想&#8221;; Câu liên động; Đại từ &#8220;怎么&#8221;",
+      "vocabularyTheme": "Số điện thoại, Phương thức",
+      "dialogueZh": "A: 你的手机号是多少？\nB: 我的手机号是13800138000。\nA: 好的，我加你的微信！",
+      "dialogueVi": "A: Số điện thoại của bạn là bao nhiêu?\nB: Số điện thoại của tôi là 13800138000.\nA: Được rồi, tôi kết bạn WeChat với bạn nhé!",
+      "tip": "Khi đọc số điện thoại hoặc số phòng, số 1 thường được phát âm là \"yāo\" để tránh nhầm lẫn với số 7 (qī)."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 7,
+      "titleZh": "我晚上六点半下班",
+      "titleVi": "Tôi tan làm lúc 6 rưỡi tối",
+      "grammar": "Vị trí trạng ngữ thời gian; Trợ từ &#8220;吧&#8221;; Trợ từ &#8220;呢&#8221;",
+      "vocabTheme": "Giờ giấc, Công việc",
+      "titlePinyin": "Wǒ wǎnshang liù diǎn bàn xiàbān",
+      "tag": "HSK 1 · Bài 7",
+      "focus": "Vị trí trạng ngữ thời gian; Trợ từ &#8220;吧&#8221;; Trợ từ &#8220;呢&#8221;",
+      "vocabularyTheme": "Giờ giấc, Công việc",
+      "dialogueZh": "A: 我晚上六点半下班\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Tôi tan làm lúc 6 rưỡi tối\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Giờ giấc, Công việc. Trọng tâm ngữ pháp: Vị trí trạng ngữ thời gian; Trợ từ &#8220;吧&#8221;; Trợ từ &#8220;呢&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 8,
+      "titleZh": "我爸爸也在医院工作",
+      "titleVi": "Bố tôi cũng làm việc ở bệnh viện",
+      "grammar": "Phương vị từ; Giới từ &#8220;在&#8221;; Động từ năng nguyện &#8220;能&#8221;",
+      "vocabTheme": "Địa điểm, Phương hướng",
+      "titlePinyin": "Wǒ bàba yě zài yīyuàn gōngzuò",
+      "tag": "HSK 1 · Bài 8",
+      "focus": "Phương vị từ; Giới từ &#8220;在&#8221;; Động từ năng nguyện &#8220;能&#8221;",
+      "vocabularyTheme": "Địa điểm, Phương hướng",
+      "dialogueZh": "A: 我爸爸也在医院工作\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Bố tôi cũng làm việc ở bệnh viện\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Địa điểm, Phương hướng. Trọng tâm ngữ pháp: Phương vị từ; Giới từ &#8220;在&#8221;; Động từ năng nguyện &#8220;能&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 9,
+      "titleZh": "我明天上午在学校学习",
+      "titleVi": "Sáng mai tôi học ở trường",
+      "grammar": "Câu tồn hiện; Thứ tự Trạng ngữ Thời gian + Địa điểm; Số thứ tự &#8220;第&#8221;",
+      "vocabTheme": "Học tập, Buổi trong ngày",
+      "titlePinyin": "Wǒ míngtiān shàngwǔ zài xuéxiào xuéxí",
+      "tag": "HSK 1 · Bài 9",
+      "focus": "Câu tồn hiện; Thứ tự Trạng ngữ Thời gian + Địa điểm; Số thứ tự &#8220;第&#8221;",
+      "vocabularyTheme": "Học tập, Buổi trong ngày",
+      "dialogueZh": "A: 我明天上午在学校学习\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Sáng mai tôi học ở trường\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Học tập, Buổi trong ngày. Trọng tâm ngữ pháp: Câu tồn hiện; Thứ tự Trạng ngữ Thời gian + Địa điểm; Số thứ tự &#8220;第&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 10,
+      "titleZh": "这儿的苹果真便宜！",
+      "titleVi": "Táo ở đây thật rẻ!",
+      "grammar": "Biểu đạt tiền tệ; Câu vị ngữ tính từ; Đại từ &#8220;怎么样&#8221;",
+      "vocabTheme": "Mua sắm, Giá cả, Tính chất",
+      "titlePinyin": "Zhèr de píngguǒ zhēn piányi!",
+      "tag": "HSK 1 · Bài 10",
+      "focus": "Biểu đạt tiền tệ; Câu vị ngữ tính từ; Đại từ &#8220;怎么样&#8221;",
+      "vocabularyTheme": "Mua sắm, Giá cả, Tính chất",
+      "dialogueZh": "A: 这儿的苹果真便宜！多少钱一斤？\nB: 五块钱一斤。你想买几斤？\nA: 给我来三斤吧。",
+      "dialogueVi": "A: Táo ở đây thật rẻ! Bao nhiêu tiền một cân?\nB: Năm tệ một cân (500g). Bạn muốn mua mấy cân?\nA: Cho tôi 3 cân nhé.",
+      "tip": "Tại Trung Quốc, 1 \"cân\" (斤 - jīn) bằng 500 gram (nửa kg), khác với 1 kg (公斤 - gōngjīn)."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 11,
+      "titleZh": "我读大学呢",
+      "titleVi": "Tôi đang học đại học",
+      "grammar": "Câu hỏi chính phản; Phó từ thời gian &#8220;在/正在&#8221;; Động từ năng nguyện &#8220;要&#8221;",
+      "vocabTheme": "Giáo dục, Hành động đang diễn ra",
+      "titlePinyin": "Wǒ dú dàxué ne",
+      "tag": "HSK 1 · Bài 11",
+      "focus": "Câu hỏi chính phản; Phó từ thời gian &#8220;在/正在&#8221;; Động từ năng nguyện &#8220;要&#8221;",
+      "vocabularyTheme": "Giáo dục, Hành động đang diễn ra",
+      "dialogueZh": "A: 我读大学呢\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Tôi đang học đại học\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Giáo dục, Hành động đang diễn ra. Trọng tâm ngữ pháp: Câu hỏi chính phản; Phó từ thời gian &#8220;在/正在&#8221;; Động từ năng nguyện &#8220;要&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 12,
+      "titleZh": "昨天下雪了",
+      "titleVi": "Hôm qua tuyết rơi rồi",
+      "grammar": "Câu phi chủ ngữ; Trợ từ &#8220;了&#8221;; Cấu trúc &#8220;太&#8230;了&#8221;",
+      "vocabTheme": "Thời tiết, Sự thay đổi",
+      "titlePinyin": "Zuótiān xiàxuě le",
+      "tag": "HSK 1 · Bài 12",
+      "focus": "Câu phi chủ ngữ; Trợ từ &#8220;了&#8221;; Cấu trúc &#8220;太&#8230;了&#8221;",
+      "vocabularyTheme": "Thời tiết, Sự thay đổi",
+      "dialogueZh": "A: 昨天下雪了\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Hôm qua tuyết rơi rồi\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Thời tiết, Sự thay đổi. Trọng tâm ngữ pháp: Câu phi chủ ngữ; Trợ từ &#8220;了&#8221;; Cấu trúc &#8220;太&#8230;了&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 13,
+      "titleZh": "请给我一杯茶",
+      "titleVi": "Làm ơn cho tôi một cốc trà",
+      "grammar": "Động từ năng nguyện &#8220;可以&#8221;; V + 一下; Câu song tân ngữ",
+      "vocabTheme": "Ăn uống, Yêu cầu lịch sự",
+      "titlePinyin": "Qǐng gěi wǒ yì bēi chá",
+      "tag": "HSK 1 · Bài 13",
+      "focus": "Động từ năng nguyện &#8220;可以&#8221;; V + 一下; Câu song tân ngữ",
+      "vocabularyTheme": "Ăn uống, Yêu cầu lịch sự",
+      "dialogueZh": "A: 请给我一杯茶\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Làm ơn cho tôi một cốc trà\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Ăn uống, Yêu cầu lịch sự. Trọng tâm ngữ pháp: Động từ năng nguyện &#8220;可以&#8221;; V + 一下; Câu song tân ngữ."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 14,
+      "titleZh": "我看了一个电影",
+      "titleVi": "Tôi đã xem một bộ phim",
+      "grammar": "Trợ từ động thái &#8220;了&#8221;; Ly hợp từ; Phó từ phạm vi &#8220;都&#8221;",
+      "vocabTheme": "Giải trí, Hoàn thành hành động",
+      "titlePinyin": "Wǒ kàn le yí gè diànyǐng",
+      "tag": "HSK 1 · Bài 14",
+      "focus": "Trợ từ động thái &#8220;了&#8221;; Ly hợp từ; Phó từ phạm vi &#8220;都&#8221;",
+      "vocabularyTheme": "Giải trí, Hoàn thành hành động",
+      "dialogueZh": "A: 我看了一个电影\nB: 对，我们一起练习吧！",
+      "dialogueVi": "A: Tôi đã xem một bộ phim\nB: Đúng vậy, chúng ta cùng nhau luyện tập nhé!",
+      "tip": "Chủ điểm: Giải trí, Hoàn thành hành động. Trọng tâm ngữ pháp: Trợ từ động thái &#8220;了&#8221;; Ly hợp từ; Phó từ phạm vi &#8220;都&#8221;."
+    },
+    {
+      "hskLevel": 1,
+      "lessonNumber": 15,
+      "titleZh": "大兴机场见！",
+      "titleVi": "Hẹn gặp ở sân bay Đại Hưng!",
+      "grammar": "Câu phức song hành “……，还/也……”",
+      "vocabTheme": "Sân bay, Chào tạm biệt",
+      "titlePinyin": "Dàxīng Jīchǎng jiàn!",
+      "tag": "HSK 1 · Bài 15",
+      "focus": "Câu phức song hành “……，还/也……”",
+      "vocabularyTheme": "Sân bay, Chào tạm biệt",
+      "dialogueZh": "A: 你明天几点的飞机？\nB: 下午两点。我们在大兴机场见！\nA: 好的，祝你一路平安！",
+      "dialogueVi": "A: Ngày mai bạn bay chuyến mấy giờ?\nB: 2 giờ chiều. Chúng mình hẹn gặp ở sân bay Đại Hưng nhé!\nA: Được rồi, chúc bạn thượng lộ bình an!",
+      "tip": "Sân bay Quốc tế Đại Hưng Bắc Kinh (PKX) là một trong những sân bay hiện đại bậc nhất thế giới, đại diện cho cơ sở hạ tầng siêu tốc thời đại mới."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 1,
+      "titleZh": "她请我们吃了北京烤鸭",
+      "titleVi": "Cô ấy mời chúng tôi ăn vịt quay",
+      "grammar": "Câu nhấn mạnh 是……的; Câu kiêm ngữ",
+      "vocabTheme": "Ẩm thực, Đãi khách",
+      "titlePinyin": "Tā qǐng wǒmen chī le Běijīng kǎoyā",
+      "tag": "HSK 2 · Bài 1",
+      "focus": "Câu nhấn mạnh 是……的; Câu kiêm ngữ",
+      "vocabularyTheme": "Ẩm thực, Đãi khách",
+      "dialogueZh": "A: 昨晚吃得怎么样？\nB: 太棒了！她请我们吃了北京烤鸭，味道好极了！",
+      "dialogueVi": "A: Tối qua ăn uống thế nào?\nB: Tuyệt lắm! Cô ấy mời chúng tôi ăn vịt quay Bắc Kinh, hương vị ngon tuyệt đỉnh!",
+      "tip": "Vịt quay Bắc Kinh là món ăn quốc hồn quốc túy khi đãi khách quý tại Trung Quốc. Câu kiêm ngữ \"请\" kết hợp vị ngữ tiếp theo."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 2,
+      "titleZh": "还是打车去北大吧",
+      "titleVi": "Hay là đi taxi đến Đại học Bắc Kinh đi",
+      "grammar": "Cấu trúc &#8220;还是……吧&#8221;; Biểu đạt số ước lượng với &#8220;多&#8221;; Cụm danh từ phức tạp",
+      "vocabTheme": "Giao thông, Lựa chọn",
+      "titlePinyin": "Háishi dǎchē qù Běidà ba",
+      "tag": "HSK 2 · Bài 2",
+      "focus": "Cấu trúc &#8220;还是……吧&#8221;; Biểu đạt số ước lượng với &#8220;多&#8221;; Cụm danh từ phức tạp",
+      "vocabularyTheme": "Giao thông, Lựa chọn",
+      "dialogueZh": "A: 现在路上堵车吗？\nB: 有点堵，还是打车去北大吧，坐地铁也挺方便。",
+      "dialogueVi": "A: Bây giờ trên đường có kẹt xe không?\nB: Có chút kẹt, hay là đi taxi đến Đại học Bắc Kinh đi, đi tàu điện ngầm cũng khá tiện.",
+      "tip": "Cấu trúc \"还是……吧\" dùng để đưa ra lời gợi ý, lựa chọn tối ưu sau khi đã cân nhắc các phương án."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 3,
+      "titleZh": "我想去西安旅游",
+      "titleVi": "Tôi muốn đi Tây An du lịch",
+      "grammar": "Bổ ngữ kết quả; Lặp lại động từ",
+      "vocabTheme": "Du lịch, Dự định",
+      "titlePinyin": "Wǒ xiǎng qù Xī'ān lǚyóu",
+      "tag": "HSK 2 · Bài 3",
+      "focus": "Bổ ngữ kết quả; Lặp lại động từ",
+      "vocabularyTheme": "Du lịch, Dự định",
+      "dialogueZh": "A: 我想去西安旅游\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Tôi muốn đi Tây An du lịch\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Du lịch, Dự định. Ngữ pháp: Bổ ngữ kết quả; Lặp lại động từ."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 4,
+      "titleZh": "你穿红色的很好看",
+      "titleVi": "Bạn mặc màu đỏ rất đẹp",
+      "grammar": "Trợ từ động thái &#8220;过&#8221;; Câu phức nguyên nhân (因为…所以…); Cụm từ chữ &#8220;的&#8221;",
+      "vocabTheme": "Quần áo, Màu sắc",
+      "titlePinyin": "Nǐ chuān hóngsè de hěn hǎokàn",
+      "tag": "HSK 2 · Bài 4",
+      "focus": "Trợ từ động thái &#8220;过&#8221;; Câu phức nguyên nhân (因为…所以…); Cụm từ chữ &#8220;的&#8221;",
+      "vocabularyTheme": "Quần áo, Màu sắc",
+      "dialogueZh": "A: 你穿红色的很好看\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Bạn mặc màu đỏ rất đẹp\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Quần áo, Màu sắc. Ngữ pháp: Trợ từ động thái &#8220;过&#8221;; Câu phức nguyên nhân (因为…所以…); Cụm từ chữ &#8220;的&#8221;."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 5,
+      "titleZh": "第一次去中国朋友家",
+      "titleVi": "Lần đầu đến nhà bạn Trung Quốc",
+      "grammar": "Bổ ngữ xu hướng đơn (1) & (2); Cấu trúc &#8220;都……了&#8221;",
+      "vocabTheme": "Khách khứa, Lễ tiết",
+      "titlePinyin": "Dì-yī cì qù Zhōngguó péngyou jiā",
+      "tag": "HSK 2 · Bài 5",
+      "focus": "Bổ ngữ xu hướng đơn (1) & (2); Cấu trúc &#8220;都……了&#8221;",
+      "vocabularyTheme": "Khách khứa, Lễ tiết",
+      "dialogueZh": "A: 第一次去中国朋友家\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Lần đầu đến nhà bạn Trung Quốc\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Khách khứa, Lễ tiết. Ngữ pháp: Bổ ngữ xu hướng đơn (1) & (2); Cấu trúc &#8220;都……了&#8221;."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 6,
+      "titleZh": "小雪，生日快乐！",
+      "titleVi": "Tiểu Tuyết, sinh nhật vui vẻ!",
+      "grammar": "Lặp lại tính từ; Cụm từ cố định &#8220;什么的&#8221;; Trợ từ kết cấu &#8220;地&#8221;",
+      "vocabTheme": "Sinh nhật, Trạng thái",
+      "titlePinyin": "Xiǎoxuě, shēngrì kuàilè!",
+      "tag": "HSK 2 · Bài 6",
+      "focus": "Lặp lại tính từ; Cụm từ cố định &#8220;什么的&#8221;; Trợ từ kết cấu &#8220;地&#8221;",
+      "vocabularyTheme": "Sinh nhật, Trạng thái",
+      "dialogueZh": "A: 小雪，生日快乐！\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Tiểu Tuyết, sinh nhật vui vẻ!\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Sinh nhật, Trạng thái. Ngữ pháp: Lặp lại tính từ; Cụm từ cố định &#8220;什么的&#8221;; Trợ từ kết cấu &#8220;地&#8221;."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 7,
+      "titleZh": "他篮球打得很好",
+      "titleVi": "Anh ấy chơi bóng rổ rất giỏi",
+      "grammar": "Câu phức thu gọn (一…就…); Bổ ngữ trạng thái",
+      "vocabTheme": "Thể thao, Đánh giá",
+      "titlePinyin": "Tā lánqiú dǎ de hěn hǎo",
+      "tag": "HSK 2 · Bài 7",
+      "focus": "Câu phức thu gọn (一…就…); Bổ ngữ trạng thái",
+      "vocabularyTheme": "Thể thao, Đánh giá",
+      "dialogueZh": "A: 他篮球打得很好\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Anh ấy chơi bóng rổ rất giỏi\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Thể thao, Đánh giá. Ngữ pháp: Câu phức thu gọn (一…就…); Bổ ngữ trạng thái."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 8,
+      "titleZh": "虽然你忘了，但是我还记得",
+      "titleVi": "Tuy bạn quên rồi nhưng tôi vẫn nhớ",
+      "grammar": "Câu so sánh (1) & (2); Câu phức chuyển ngoặt (虽然…但是…)",
+      "vocabTheme": "Trí nhớ, So sánh cơ bản",
+      "titlePinyin": "Suīrán nǐ wàng le, dànshì wǒ hái jìde",
+      "tag": "HSK 2 · Bài 8",
+      "focus": "Câu so sánh (1) & (2); Câu phức chuyển ngoặt (虽然…但是…)",
+      "vocabularyTheme": "Trí nhớ, So sánh cơ bản",
+      "dialogueZh": "A: 虽然你忘了，但是我还记得\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Tuy bạn quên rồi nhưng tôi vẫn nhớ\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Trí nhớ, So sánh cơ bản. Ngữ pháp: Câu so sánh (1) & (2); Câu phức chuyển ngoặt (虽然…但是…)."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 9,
+      "titleZh": "我去买杯奶茶",
+      "titleVi": "Tôi đi mua cốc trà sữa",
+      "grammar": "Câu so sánh (3); Động từ ly hợp &#8220;离&#8221;; Bổ ngữ thời lượng",
+      "vocabTheme": "Trà sữa, Khoảng cách",
+      "titlePinyin": "Wǒ qù mǎi bēi nǎichá",
+      "tag": "HSK 2 · Bài 9",
+      "focus": "Câu so sánh (3); Động từ ly hợp &#8220;离&#8221;; Bổ ngữ thời lượng",
+      "vocabularyTheme": "Trà sữa, Khoảng cách",
+      "dialogueZh": "A: 你去哪儿？\nB: 我去买杯奶茶。离这儿不远有一家很有名的奶茶店。",
+      "dialogueVi": "A: Bạn đi đâu đấy?\nB: Tôi đi mua cốc trà sữa. Cách đây không xa có một quán trà sữa rất nổi tiếng.",
+      "tip": "Văn hóa trà sữa (奶茶文化) là nét sống hiện đại cực kỳ phổ biến của giới trẻ Trung Quốc ngày nay."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 10,
+      "titleZh": "就要考试了",
+      "titleVi": "Sắp thi rồi",
+      "grammar": "Câu vị ngữ chủ vị; Câu hỏi lựa chọn; Cấu trúc &#8220;要/快/快要/就要……了&#8221;",
+      "vocabTheme": "Thi cử, Thời gian sắp tới",
+      "titlePinyin": "Jiù yào kǎoshì le",
+      "tag": "HSK 2 · Bài 10",
+      "focus": "Câu vị ngữ chủ vị; Câu hỏi lựa chọn; Cấu trúc &#8220;要/快/快要/就要……了&#8221;",
+      "vocabularyTheme": "Thi cử, Thời gian sắp tới",
+      "dialogueZh": "A: 就要考试了\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Sắp thi rồi\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Thi cử, Thời gian sắp tới. Ngữ pháp: Câu vị ngữ chủ vị; Câu hỏi lựa chọn; Cấu trúc &#8220;要/快/快要/就要……了&#8221;."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 11,
+      "titleZh": "我最喜欢吃中国菜",
+      "titleVi": "Tôi thích ăn món Trung Quốc nhất",
+      "grammar": "Trợ từ động thái &#8220;着&#8221;; Phó từ mức độ &#8220;最&#8221;",
+      "vocabTheme": "Sở thích, Trạng thái duy trì",
+      "titlePinyin": "Wǒ zuì xǐhuan chī Zhōngguó cài",
+      "tag": "HSK 2 · Bài 11",
+      "focus": "Trợ từ động thái &#8220;着&#8221;; Phó từ mức độ &#8220;最&#8221;",
+      "vocabularyTheme": "Sở thích, Trạng thái duy trì",
+      "dialogueZh": "A: 我最喜欢吃中国菜\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Tôi thích ăn món Trung Quốc nhất\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Sở thích, Trạng thái duy trì. Ngữ pháp: Trợ từ động thái &#8220;着&#8221;; Phó từ mức độ &#8220;最&#8221;."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 12,
+      "titleZh": "这里比北京冷多了",
+      "titleVi": "Ở đây lạnh hơn Bắc Kinh nhiều",
+      "grammar": "Câu so sánh (4), (5) & (6)",
+      "vocabTheme": "Khí hậu, So sánh chi tiết",
+      "titlePinyin": "Zhèlǐ bǐ Běijīng lěng duō le",
+      "tag": "HSK 2 · Bài 12",
+      "focus": "Câu so sánh (4), (5) & (6)",
+      "vocabularyTheme": "Khí hậu, So sánh chi tiết",
+      "dialogueZh": "A: 这里比北京冷多了\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Ở đây lạnh hơn Bắc Kinh nhiều\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Khí hậu, So sánh chi tiết. Ngữ pháp: Câu so sánh (4), (5) & (6)."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 13,
+      "titleZh": "我们爱上中文课",
+      "titleVi": "Chúng tôi yêu giờ học tiếng Trung",
+      "grammar": "Câu song tân ngữ (2); Câu so sánh (7) & (8)",
+      "vocabTheme": "Học tập, Cảm xúc",
+      "titlePinyin": "Wǒmen ài shàng Zhōngwén kè",
+      "tag": "HSK 2 · Bài 13",
+      "focus": "Câu song tân ngữ (2); Câu so sánh (7) & (8)",
+      "vocabularyTheme": "Học tập, Cảm xúc",
+      "dialogueZh": "A: 我们爱上中文课\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Chúng tôi yêu giờ học tiếng Trung\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Học tập, Cảm xúc. Ngữ pháp: Câu song tân ngữ (2); Câu so sánh (7) & (8)."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 14,
+      "titleZh": "一个人过年多没意思啊",
+      "titleVi": "Một người đón Tết thật chẳng thú vị gì",
+      "grammar": "Câu tồn hiện (2); Phó từ &#8220;多&#8221;; Bổ ngữ xu hướng phức",
+      "vocabTheme": "Lễ Tết, Cảm nhận",
+      "titlePinyin": "Yí gè rén guònián duō méi yìsi a",
+      "tag": "HSK 2 · Bài 14",
+      "focus": "Câu tồn hiện (2); Phó từ &#8220;多&#8221;; Bổ ngữ xu hướng phức",
+      "vocabularyTheme": "Lễ Tết, Cảm nhận",
+      "dialogueZh": "A: 一个人过年多没意思啊\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Một người đón Tết thật chẳng thú vị gì\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Lễ Tết, Cảm nhận. Ngữ pháp: Câu tồn hiện (2); Phó từ &#8220;多&#8221;; Bổ ngữ xu hướng phức."
+    },
+    {
+      "hskLevel": 2,
+      "lessonNumber": 15,
+      "titleZh": "我想再去一次中国",
+      "titleVi": "Tôi muốn đi Trung Quốc lần nữa",
+      "grammar": "Bổ ngữ động lượng; Câu chữ &#8220;有&#8221; (2)",
+      "vocabTheme": "Mong muốn, Tần suất",
+      "titlePinyin": "Wǒ xiǎng zài qù yí cì Zhōngguó",
+      "tag": "HSK 2 · Bài 15",
+      "focus": "Bổ ngữ động lượng; Câu chữ &#8220;有&#8221; (2)",
+      "vocabularyTheme": "Mong muốn, Tần suất",
+      "dialogueZh": "A: 我想再去一次中国\nB: 好主意，就这么办！",
+      "dialogueVi": "A: Tôi muốn đi Trung Quốc lần nữa\nB: Ý hay đấy, cứ quyết định thế đi!",
+      "tip": "Chủ điểm: Mong muốn, Tần suất. Ngữ pháp: Bổ ngữ động lượng; Câu chữ &#8220;有&#8221; (2)."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 1,
+      "titleZh": "我们去机场接你们",
+      "titleVi": "Chúng tôi đi sân bay đón các bạn",
+      "grammar": "Cấu trúc đa项 định ngữ (Thứ tự định ngữ); Cách dùng &#8220;看上去&#8221;",
+      "vocabTheme": "Đón tiếp, Gặp gỡ",
+      "titlePinyin": "Wǒmen qù jīchǎng jiē nǐmen",
+      "tag": "HSK 3 · Bài 1",
+      "focus": "Cấu trúc đa项 định ngữ (Thứ tự định ngữ); Cách dùng &#8220;看上去&#8221;",
+      "vocabularyTheme": "Đón tiếp, Gặp gỡ",
+      "dialogueZh": "A: 我们去机场接你们\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Chúng tôi đi sân bay đón các bạn\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Đón tiếp, Gặp gỡ. Ngữ pháp: Cấu trúc đa项 định ngữ (Thứ tự định ngữ); Cách dùng &#8220;看上去&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 2,
+      "titleZh": "你们想吃什么就点什么",
+      "titleVi": "Các bạn muốn ăn gì thì gọi nấy",
+      "grammar": "Đại từ nghi vấn dùng làm đại từ bất định; Câu phức &#8220;又&#8230;又&#8230;&#8221;",
+      "vocabTheme": "Ăn uống, Gọi món",
+      "titlePinyin": "Nǐmen xiǎng chī shénme jiù diǎn shénme",
+      "tag": "HSK 3 · Bài 2",
+      "focus": "Đại từ nghi vấn dùng làm đại từ bất định; Câu phức &#8220;又&#8230;又&#8230;&#8221;",
+      "vocabularyTheme": "Ăn uống, Gọi món",
+      "dialogueZh": "A: 你们想吃什么就点什么\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Các bạn muốn ăn gì thì gọi nấy\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Ăn uống, Gọi món. Ngữ pháp: Đại từ nghi vấn dùng làm đại từ bất định; Câu phức &#8220;又&#8230;又&#8230;&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 3,
+      "titleZh": "这个小区挺好的",
+      "titleVi": "Khu chung cư này khá tốt",
+      "grammar": "Phó từ mức độ &#8220;挺&#8221;; Phân biệt cách dùng &#8220;就&#8221; và &#8220;才&#8221;",
+      "vocabTheme": "Nhà ở, Môi trường sống",
+      "titlePinyin": "Zhè gè xiǎoqū tǐng hǎo de",
+      "tag": "HSK 3 · Bài 3",
+      "focus": "Phó từ mức độ &#8220;挺&#8221;; Phân biệt cách dùng &#8220;就&#8221; và &#8220;才&#8221;",
+      "vocabularyTheme": "Nhà ở, Môi trường sống",
+      "dialogueZh": "A: 这个小区挺好的\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Khu chung cư này khá tốt\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Nhà ở, Môi trường sống. Ngữ pháp: Phó từ mức độ &#8220;挺&#8221;; Phân biệt cách dùng &#8220;就&#8221; và &#8220;才&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 4,
+      "titleZh": "这家宾馆跟别的不一样",
+      "titleVi": "Khách sạn này không giống những cái khác",
+      "grammar": "Cấu trúc phủ định tuyệt đối: &#8220;一&#8230; 也/没 &#8230;&#8221;; Cấu trúc &#8220;除了&#8230;以外&#8221;",
+      "vocabTheme": "Khách sạn, So sánh",
+      "titlePinyin": "Zhè jiā bīnguǎn gēn bié de bù yíyàng",
+      "tag": "HSK 3 · Bài 4",
+      "focus": "Cấu trúc phủ định tuyệt đối: &#8220;一&#8230; 也/没 &#8230;&#8221;; Cấu trúc &#8220;除了&#8230;以外&#8221;",
+      "vocabularyTheme": "Khách sạn, So sánh",
+      "dialogueZh": "A: 这家宾馆跟别的不一样\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Khách sạn này không giống những cái khác\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Khách sạn, So sánh. Ngữ pháp: Cấu trúc phủ định tuyệt đối: &#8220;一&#8230; 也/没 &#8230;&#8221;; Cấu trúc &#8220;除了&#8230;以外&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 5,
+      "titleZh": "运动对身体好",
+      "titleVi": "Thể thao tốt cho sức khỏe",
+      "grammar": "Lặp lại lượng từ; Giới từ &#8220;对&#8221;",
+      "vocabTheme": "Sức khỏe, Thể thao",
+      "titlePinyin": "Yùndòng duì shēntǐ hǎo",
+      "tag": "HSK 3 · Bài 5",
+      "focus": "Lặp lại lượng từ; Giới từ &#8220;对&#8221;",
+      "vocabularyTheme": "Sức khỏe, Thể thao",
+      "dialogueZh": "A: 运动对身体好\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Thể thao tốt cho sức khỏe\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Sức khỏe, Thể thao. Ngữ pháp: Lặp lại lượng từ; Giới từ &#8220;对&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 6,
+      "titleZh": "高铁上还可以点外卖",
+      "titleVi": "Trên tàu cao tốc còn có thể đặt đồ ăn",
+      "grammar": "Câu phức giả thiết &#8220;如果&#8230;就&#8230;&#8221;; Cấu trúc &#8220;越来越&#8230;&#8221;",
+      "vocabTheme": "Tàu cao tốc, Tiện ích 4.0",
+      "titlePinyin": "Gāotiě shang hái kěyǐ diǎn wàimài",
+      "tag": "HSK 3 · Bài 6",
+      "focus": "Câu phức giả thiết &#8220;如果&#8230;就&#8230;&#8221;; Cấu trúc &#8220;越来越&#8230;&#8221;",
+      "vocabularyTheme": "Tàu cao tốc, Tiện ích 4.0",
+      "dialogueZh": "A: 高铁上还可以点外卖吗？\nB: 当然可以！扫二维码下单，乘务员会送到你的座位。",
+      "dialogueVi": "A: Trên tàu cao tốc mà cũng gọi đồ ăn ngoài được ư?\nB: Đương nhiên rồi! Quét mã QR đặt hàng, tiếp viên sẽ mang tận nơi đến ghế ngồi của bạn.",
+      "tip": "Dịch vụ đường sắt cao tốc Trung Quốc (CRH) tích hợp gọi đồ ăn online qua mã QR ghế ngồi, thể hiện sự tiện ích công nghệ 4.0 vượt trội."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 7,
+      "titleZh": "那条裙子比短裤更好看",
+      "titleVi": "Chiếc váy đó đẹp hơn quần đùi nhiều",
+      "grammar": "Câu phức tăng tiến &#8220;不但&#8230;而且&#8230;&#8221;; So sánh hơn với &#8220;更&#8221;",
+      "vocabTheme": "Thời trang, Mua sắm",
+      "titlePinyin": "Nà tiáo qúnzi bǐ duǎnkù gèng hǎokàn",
+      "tag": "HSK 3 · Bài 7",
+      "focus": "Câu phức tăng tiến &#8220;不但&#8230;而且&#8230;&#8221;; So sánh hơn với &#8220;更&#8221;",
+      "vocabularyTheme": "Thời trang, Mua sắm",
+      "dialogueZh": "A: 那条裙子比短裤更好看\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Chiếc váy đó đẹp hơn quần đùi nhiều\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Thời trang, Mua sắm. Ngữ pháp: Câu phức tăng tiến &#8220;不但&#8230;而且&#8230;&#8221;; So sánh hơn với &#8220;更&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 8,
+      "titleZh": "今天我出院了",
+      "titleVi": "Hôm nay tôi xuất viện rồi",
+      "grammar": "Nghĩa bóng/Mở rộng của bổ ngữ xu hướng",
+      "vocabTheme": "Bệnh viện, Phục hồi",
+      "titlePinyin": "Jīntiān wǒ chūyuàn le",
+      "tag": "HSK 3 · Bài 8",
+      "focus": "Nghĩa bóng/Mở rộng của bổ ngữ xu hướng",
+      "vocabularyTheme": "Bệnh viện, Phục hồi",
+      "dialogueZh": "A: 今天我出院了\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Hôm nay tôi xuất viện rồi\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Bệnh viện, Phục hồi. Ngữ pháp: Nghĩa bóng/Mở rộng của bổ ngữ xu hướng."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 9,
+      "titleZh": "打不好没关系",
+      "titleVi": "Đánh không tốt cũng không sao",
+      "grammar": "Bổ ngữ khả năng (V+得/不+Kết quả); Câu phức mục đích &#8220;为了&#8221;",
+      "vocabTheme": "Thể thao, Giải trí",
+      "titlePinyin": "Dǎ bù hǎo méi guānxi",
+      "tag": "HSK 3 · Bài 9",
+      "focus": "Bổ ngữ khả năng (V+得/不+Kết quả); Câu phức mục đích &#8220;为了&#8221;",
+      "vocabularyTheme": "Thể thao, Giải trí",
+      "dialogueZh": "A: 打不好没关系\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Đánh không tốt cũng không sao\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Thể thao, Giải trí. Ngữ pháp: Bổ ngữ khả năng (V+得/不+Kết quả); Câu phức mục đích &#8220;为了&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 10,
+      "titleZh": "你明天再把书还给我",
+      "titleVi": "Mai bạn hãy trả sách cho tôi",
+      "grammar": "Câu chữ 把 (1): Tác động làm thay đổi vị trí/trạng thái",
+      "vocabTheme": "Mượn trả, Xử lý đồ vật",
+      "titlePinyin": "Nǐ míngtiān zài bǎ shū huán gěi wǒ",
+      "tag": "HSK 3 · Bài 10",
+      "focus": "Câu chữ 把 (1): Tác động làm thay đổi vị trí/trạng thái",
+      "vocabularyTheme": "Mượn trả, Xử lý đồ vật",
+      "dialogueZh": "A: 那本词典你看完了吗？\nB: 看完了，你明天再把书还给我吧，今天先放你那里。",
+      "dialogueVi": "A: Cuốn từ điển đó bạn xem xong chưa?\nB: Xem xong rồi, mai bạn hãy trả sách cho tôi nhé, hôm nay cứ để ở chỗ bạn đã.",
+      "tip": "Câu chữ 把 dùng khi muốn nhấn mạnh hành động xử lý và làm thay đổi vị trí, trạng thái hoặc quyền sở hữu của tân ngữ."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 11,
+      "titleZh": "看来我没法解决这个问题",
+      "titleVi": "Xem ra tôi không có cách giải quyết vấn đề này",
+      "grammar": "Phân biệt &#8220;还是&#8221; và &#8220;或者&#8221;; Câu chữ 把 (2)",
+      "vocabTheme": "Giải quyết khó khăn",
+      "titlePinyin": "Kànlái wǒ méi fǎ jiějué zhè gè wèntí",
+      "tag": "HSK 3 · Bài 11",
+      "focus": "Phân biệt &#8220;还是&#8221; và &#8220;或者&#8221;; Câu chữ 把 (2)",
+      "vocabularyTheme": "Giải quyết khó khăn",
+      "dialogueZh": "A: 看来我没法解决这个问题\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Xem ra tôi không có cách giải quyết vấn đề này\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Giải quyết khó khăn. Ngữ pháp: Phân biệt &#8220;还是&#8221; và &#8220;或者&#8221;; Câu chữ 把 (2)."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 12,
+      "titleZh": "刚开始确实有点儿不习惯",
+      "titleVi": "Mới đầu thực sự có chút không quen",
+      "grammar": "Phó từ &#8220;刚&#8221; và &#8220;刚才&#8221;; Cách dùng &#8220;确实&#8221;",
+      "vocabTheme": "Sự thích nghi, Thói quen",
+      "titlePinyin": "Gāng kāishǐ quèshí yǒudiǎnr bù xíguàn",
+      "tag": "HSK 3 · Bài 12",
+      "focus": "Phó từ &#8220;刚&#8221; và &#8220;刚才&#8221;; Cách dùng &#8220;确实&#8221;",
+      "vocabularyTheme": "Sự thích nghi, Thói quen",
+      "dialogueZh": "A: 刚开始确实有点儿不习惯\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Mới đầu thực sự có chút không quen\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Sự thích nghi, Thói quen. Ngữ pháp: Phó từ &#8220;刚&#8221; và &#8220;刚才&#8221;; Cách dùng &#8220;确实&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 13,
+      "titleZh": "我的新邻居来自英国",
+      "titleVi": "Hàng xóm mới của tôi đến từ Anh",
+      "grammar": "Câu phức song song &#8220;一边&#8230;一边&#8230;&#8221;; Cấu trúc &#8220;&#8230;的话&#8221;",
+      "vocabTheme": "Hàng xóm, Giao lưu",
+      "titlePinyin": "Wǒ de xīn línjū láizì Yīngguó",
+      "tag": "HSK 3 · Bài 13",
+      "focus": "Câu phức song song &#8220;一边&#8230;一边&#8230;&#8221;; Cấu trúc &#8220;&#8230;的话&#8221;",
+      "vocabularyTheme": "Hàng xóm, Giao lưu",
+      "dialogueZh": "A: 我的新邻居来自英国\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Hàng xóm mới của tôi đến từ Anh\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Hàng xóm, Giao lưu. Ngữ pháp: Câu phức song song &#8220;一边&#8230;一边&#8230;&#8221;; Cấu trúc &#8220;&#8230;的话&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 14,
+      "titleZh": "这本书被别人借走了",
+      "titleVi": "Cuốn sách này bị người khác mượn rồi",
+      "grammar": "Câu bị động chữ 被; Thứ tự hành động &#8220;先&#8230;再&#8230;然后&#8221;",
+      "vocabTheme": "Thất lạc, Nhầm lẫn",
+      "titlePinyin": "Zhè běn shū bèi biérén jiè zǒu le",
+      "tag": "HSK 3 · Bài 14",
+      "focus": "Câu bị động chữ 被; Thứ tự hành động &#8220;先&#8230;再&#8230;然后&#8221;",
+      "vocabularyTheme": "Thất lạc, Nhầm lẫn",
+      "dialogueZh": "A: 怎么找不到那本小说了？\nB: 这本书被别人借走了，过两天才能还回来。",
+      "dialogueVi": "A: Sao không tìm thấy cuốn tiểu thuyết đó nữa nhỉ?\nB: Cuốn sách này bị người khác mượn rồi, hai hôm nữa mới trả lại.",
+      "tip": "Câu bị động chữ 被 thường mang sắc thái điều không mong muốn, hoặc khi chủ thể gây ra hành động không xác định rõ."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 15,
+      "titleZh": "我是半个南京人",
+      "titleVi": "Tôi là một nửa người Nam Kinh",
+      "grammar": "Lặp lại cụm Số + Lượng; Giới từ &#8220;根据&#8221; (Căn cứ vào)",
+      "vocabTheme": "Bản sắc, Quê hương",
+      "titlePinyin": "Wǒ shì bàn gè Nánjīng rén",
+      "tag": "HSK 3 · Bài 15",
+      "focus": "Lặp lại cụm Số + Lượng; Giới từ &#8220;根据&#8221; (Căn cứ vào)",
+      "vocabularyTheme": "Bản sắc, Quê hương",
+      "dialogueZh": "A: 我是半个南京人\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Tôi là một nửa người Nam Kinh\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Bản sắc, Quê hương. Ngữ pháp: Lặp lại cụm Số + Lượng; Giới từ &#8220;根据&#8221; (Căn cứ vào)."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 16,
+      "titleZh": "我听说有的熊猫出国了",
+      "titleVi": "Tôi nghe nói có vài chú gấu trúc đã ra nước ngoài",
+      "grammar": "Giới từ &#8220;关于&#8221;; Cấu trúc &#8220;一会儿&#8230;一会儿&#8230;&#8221;",
+      "vocabTheme": "Tin tức, Động vật",
+      "titlePinyin": "Wǒ tīngshuō yǒude xióngmāo chūguó le",
+      "tag": "HSK 3 · Bài 16",
+      "focus": "Giới từ &#8220;关于&#8221;; Cấu trúc &#8220;一会儿&#8230;一会儿&#8230;&#8221;",
+      "vocabularyTheme": "Tin tức, Động vật",
+      "dialogueZh": "A: 我听说有的熊猫出国了\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Tôi nghe nói có vài chú gấu trúc đã ra nước ngoài\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Tin tức, Động vật. Ngữ pháp: Giới từ &#8220;关于&#8221;; Cấu trúc &#8220;一会儿&#8230;一会儿&#8230;&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 17,
+      "titleZh": "我要多向认真的人学习",
+      "titleVi": "Tôi phải học hỏi thêm ở những người nghiêm túc",
+      "grammar": "Câu phản vấn &#8220;不是&#8230;吗?&#8221;; Câu phức điều kiện &#8220;只有&#8230;才&#8230;&#8221;",
+      "vocabTheme": "Tính cách, Học hỏi",
+      "titlePinyin": "Wǒ yào duō xiàng rènzhēn de rén xuéxí",
+      "tag": "HSK 3 · Bài 17",
+      "focus": "Câu phản vấn &#8220;不是&#8230;吗?&#8221;; Câu phức điều kiện &#8220;只有&#8230;才&#8230;&#8221;",
+      "vocabularyTheme": "Tính cách, Học hỏi",
+      "dialogueZh": "A: 我要多向认真的人学习\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Tôi phải học hỏi thêm ở những người nghiêm túc\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Tính cách, Học hỏi. Ngữ pháp: Câu phản vấn &#8220;不是&#8230;吗?&#8221;; Câu phức điều kiện &#8220;只有&#8230;才&#8230;&#8221;."
+    },
+    {
+      "hskLevel": 3,
+      "lessonNumber": 18,
+      "titleZh": "我学会了包饺子",
+      "titleVi": "Tôi đã học được cách gói sủi cảo",
+      "grammar": "Câu phức điều kiện &#8220;只要&#8230;就&#8230;&#8221;; Cấu trúc &#8220;从&#8230;起&#8221;",
+      "vocabTheme": "Kỹ năng, Thành quả",
+      "titlePinyin": "Wǒ xuéhuì le bāo jiǎozi",
+      "tag": "HSK 3 · Bài 18",
+      "focus": "Câu phức điều kiện &#8220;只要&#8230;就&#8230;&#8221;; Cấu trúc &#8220;从&#8230;起&#8221;",
+      "vocabularyTheme": "Kỹ năng, Thành quả",
+      "dialogueZh": "A: 我学会了包饺子\nB: 没问题，我们按计划进行。",
+      "dialogueVi": "A: Tôi đã học được cách gói sủi cảo\nB: Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm.",
+      "tip": "Chủ điểm: Kỹ năng, Thành quả. Ngữ pháp: Câu phức điều kiện &#8220;只要&#8230;就&#8230;&#8221;; Cấu trúc &#8220;从&#8230;起&#8221;."
+    }
+  ],
+  "examMatrix": {
+    "title": "Ma Trận Cấu Trúc Đề Thi HSK 3.0 & So Sánh Toàn Diện (Tiêu Chuẩn Mới 2026)",
+    "source": "Phân tích bản quyền từ Tiếng Trung Thượng Hải (Chinesetest.cn & CTI)",
+    "levels": [
+      {
+        "level": "HSK 1",
+        "totalQuestions": "40 câu (Nghe 20 câu, Đọc 20 câu)",
+        "duration": "40 phút",
+        "vocabTarget": "500 từ vựng",
+        "grammarTarget": "48 điểm ngữ pháp",
+        "changes": [
+          "Lượng từ tăng hơn gấp 3 lần (từ 150 lên 500 từ).",
+          "Nội dung gắn liền công nghệ số (AI, điện thoại, WeChat).",
+          "Có câu phức song hành đơn giản xuất hiện từ bài 15."
+        ]
+      },
+      {
+        "level": "HSK 2",
+        "totalQuestions": "60 câu (Nghe 35 câu, Đọc 25 câu)",
+        "duration": "55 phút",
+        "vocabTarget": "1.272 từ vựng",
+        "grammarTarget": "82 điểm ngữ pháp",
+        "changes": [
+          "Từ vựng tăng gấp 4 lần (từ 300 lên 1.272 từ).",
+          "Đưa Bổ ngữ trạng thái (得), Bổ ngữ kết quả, Câu chữ 是...的 vào sớm.",
+          "Mở rộng các tình huống biểu cảm và xã hội (lễ tết, so sánh, du lịch)."
+        ]
+      },
+      {
+        "level": "HSK 3",
+        "totalQuestions": "80 câu (Nghe 30 câu, Đọc 30 câu, Viết 20 câu)",
+        "duration": "80 phút",
+        "vocabTarget": "2.245 từ vựng",
+        "grammarTarget": "129 điểm ngữ pháp",
+        "changes": [
+          "Lược bỏ hoàn toàn Pinyin trong bài đọc và đề thi.",
+          "Đọc hiểu chuyển từ câu đơn sang câu ghép phức hợp.",
+          "Phần viết nâng cao độ khó: yêu cầu viết chữ Hán đúng thuận bút và đặt câu ngữ cảnh."
+        ]
+      },
+      {
+        "level": "HSK 4",
+        "totalQuestions": "76 câu (Nghe 35 câu, Đọc 35 câu, Viết 6 câu)",
+        "duration": "95 phút (HSK 2.0 chỉ 80 phút)",
+        "vocabTarget": "3.245 từ vựng",
+        "grammarTarget": "185 điểm ngữ pháp",
+        "changes": [
+          "Bổ sung dạng bài viết đoạn văn ngắn hơn 80 chữ.",
+          "Xuất hiện bài tập bổ trợ dịch câu song ngữ Trung - Việt.",
+          "Đọc hiểu xuất hiện các bài báo ngắn và thông báo công sở."
+        ]
+      },
+      {
+        "level": "HSK 5",
+        "totalQuestions": "75 câu (Nghe 37 câu, Đọc 36 câu, Viết 2 câu)",
+        "duration": "70 – 80 phút",
+        "vocabTarget": "4.316 từ vựng",
+        "grammarTarget": "240 điểm ngữ pháp",
+        "changes": [
+          "Phần Viết gồm: Viết đoạn theo tranh/tài liệu (100 từ) và Viết bài luận theo chủ đề (200 từ).",
+          "Thời gian làm bài rút ngắn đòi hỏi tốc độ đọc lướt (skimming & scanning) cực nhanh.",
+          "Yêu cầu tư duy biện luận logic và vốn thành ngữ thông dụng."
+        ]
+      },
+      {
+        "level": "HSK 6",
+        "totalQuestions": "Đề thi 4 kỹ năng chuyên sâu",
+        "duration": "135 phút",
+        "vocabTarget": "5.456 từ vựng",
+        "grammarTarget": "286 điểm ngữ pháp",
+        "changes": [
+          "Đọc hiểu phân tích các bài luận học thuật, kinh tế, môi trường.",
+          "Viết tóm tắt đoạn văn 1.000 chữ thành bài 400 chữ trong 35 phút (không được chép nguyên văn).",
+          "Bổ sung câu hỏi kiểm tra khả năng tư duy phản biện."
+        ]
+      },
+      {
+        "level": "HSK 7 – 9 (Cao Cấp)",
+        "totalQuestions": "Một kỳ thi duy nhất chia thành 3 đẳng cấp theo điểm số",
+        "duration": "210 phút (kèm nghỉ giải lao)",
+        "vocabTarget": "11.092 từ vựng tích lũy",
+        "grammarTarget": "572 điểm ngữ pháp toàn diện",
+        "changes": [
+          "Thi đủ 5 kỹ năng: Nghe, Đọc, Viết, Dịch và Nói (HSKK Cao cấp).",
+          "Phần DỊCH (Biên dịch 2 bài Trung-Việt & Việt-Trung + Phiên dịch nối tiếp).",
+          "Đạt 7, 8 hay 9 phụ thuộc vào tổng điểm đạt được trên thang điểm chuẩn."
+        ]
+      }
+    ]
+  },
+  "textbookComparison": {
+    "title": "Cẩm Nang So Sánh & Lựa Chọn Giáo Trình Học Tiếng Trung",
+    "source": "Tổng kết chuyên gia Tiếng Trung Thượng Hải",
+    "books": [
+      {
+        "name": "Giáo Trình Chuẩn HSK 3.0 Standard Course",
+        "publisher": "NXB ĐH Ngôn Ngữ Bắc Kinh (BLCU)",
+        "audience": "Người học với mục tiêu thi chứng chỉ HSK 3.0, du học học bổng CIS/CSC, xin việc làm.",
+        "pros": "Bám sát 100% ma trận đề thi mới, từ vựng hiện đại 4.0 (AI, livestream, đặt xe, trà sữa), cấu trúc bài tập chuẩn.",
+        "cons": "Lượng từ và ngữ pháp tiến độ nhanh, đòi hỏi người học phải nghiêm túc làm bài tập và ôn tập đều đặn.",
+        "recommendation": "Lựa chọn số 1 cho người muốn lấy bằng HSK 3.0 nhanh nhất và đúng chuẩn khảo thí quốc tế."
+      },
+      {
+        "name": "Giáo Trình Hán Ngữ 6 Quyển (Phiên Bản Mới)",
+        "publisher": "Tác giả Dương Ký Châu - NXB ĐH Ngôn Ngữ Bắc Kinh",
+        "audience": "Sinh viên chuyên ngành tiếng Trung tại các trường Đại học (ĐHQG, Ngoại thương, HANU).",
+        "pros": "Hệ thống ngữ pháp giải thích cực kỳ tỉ mỉ, bài khóa dài, nền tảng học thuật vững chắc kinh điển.",
+        "cons": "Từ vựng mang hơi hướng truyền thống, ít cập nhật các từ ngữ mạng và công nghệ số hiện đại.",
+        "recommendation": "Rất tốt để học song song làm tài liệu tra cứu ngữ pháp sâu và đọc hiểu văn bản dài."
+      },
+      {
+        "name": "Giáo Trình Boya (Boya Chinese)",
+        "publisher": "NXB Đại Học Bắc Kinh (PKU)",
+        "audience": "Người thích văn phong trau chuốt, giàu tính nhân văn, triết lý và văn hóa Trung Hoa.",
+        "pros": "Bài đọc hay, từ vựng phong phú, mở rộng tư duy diễn đạt giàu hình ảnh.",
+        "cons": "Ngữ pháp phân bổ khá dày đặc, từ vựng độ khó cao ngay từ tập Sơ cấp 2.",
+        "recommendation": "Phù hợp làm tài liệu nâng cao kỹ năng Đọc - Viết khi đã đạt nền tảng HSK 3 trở lên."
+      },
+      {
+        "name": "Giáo Trình Phát Triển Hán Ngữ (Developing Chinese)",
+        "publisher": "NXB ĐH Ngôn Ngữ Bắc Kinh",
+        "audience": "Người muốn phát triển chuyên biệt từng kỹ năng: Nghe, Nói, Đọc, Viết.",
+        "pros": "Chia thành các phân môn độc lập (Khẩu ngữ, Đọc hiểu, Tổng hợp, Viết), bài tập ứng dụng rất phong phú.",
+        "cons": "Khá đồ sộ và cồng kềnh đối với người tự học nếu không có người hướng dẫn.",
+        "recommendation": "Thích hợp dùng bổ trợ cho kỹ năng còn yếu (ví dụ yếu Nghe thì học cuốn Nghe hiểu)."
+      }
+    ]
+  }
 }

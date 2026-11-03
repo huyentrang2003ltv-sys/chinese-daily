@@ -2413,14 +2413,16 @@ function renderPathwayStages(container) {
 
   let html = `
     <div class="space-y-6">
-      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-amber-50/70 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-800/40">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-50/90 via-[#FAF7F2] to-amber-50/50 dark:from-[#1c222d] dark:via-[#161B22] dark:to-[#1c222d] border border-amber-300/80 dark:border-stone-700 shadow-xs">
         <div class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B1E1E] to-[#A52A2A] text-white flex items-center justify-center font-bold text-lg shadow-xs">
-            <i data-lucide="map" class="w-5 h-5"></i>
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#8B1E1E] to-[#A52A2A] text-white flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
+            <i data-lucide="compass" class="w-6 h-6"></i>
           </div>
           <div>
-            <h3 class="text-base font-bold text-stone-900 dark:text-stone-100 font-serif-luxury">Lộ Trình Tự Học Chuẩn HSK 3.0 (Từ Con Số 0 Đến HSK 6 & 7-9)</h3>
-            <p class="text-xs text-stone-600 dark:text-stone-400">Phân kỳ 6 giai đoạn khoa học theo phương pháp Tiếng Trung Thượng Hải: Thời lượng rõ ràng, thời gian biểu hàng ngày và chuẩn đầu ra đo lường được.</p>
+            <h3 class="text-base sm:text-lg font-bold text-stone-900 dark:text-stone-100 font-serif-luxury">Lộ Trình Tự Học 6 Giai Đoạn HSK 3.0 (Từ Con Số 0 Đến HSK 6 & 7–9)</h3>
+            <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
+              Phân kỳ khoa học theo phương pháp Tiếng Trung Thượng Hải: Thời lượng rõ ràng, giáo trình bám sát mục tiêu và quy tắc cuốn chiếu nhớ lâu.
+            </p>
           </div>
         </div>
       </div>
@@ -2430,80 +2432,125 @@ function renderPathwayStages(container) {
 
   stages.forEach(st => {
     let actionBtnHtml = '';
-    if (st.stageNumber === 1) {
-      actionBtnHtml = `<button onclick="goToPathwayLevel(1)" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all"><span>Vào học bài HSK 1 & 2</span><i data-lucide="arrow-right" class="w-4 h-4"></i></button>`;
-    } else if (st.stageNumber === 2) {
-      actionBtnHtml = `<button onclick="goToPathwayLevel(3)" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gradient-to-r from-amber-700 to-amber-800 hover:opacity-95 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all"><span>Vào học bài HSK 3</span><i data-lucide="arrow-right" class="w-4 h-4"></i></button>`;
-    } else if (st.stageNumber === 3) {
-      actionBtnHtml = `<button onclick="goToPathwayLevel(4)" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gradient-to-r from-teal-700 to-teal-800 hover:opacity-95 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all"><span>Vào học bài HSK 4</span><i data-lucide="arrow-right" class="w-4 h-4"></i></button>`;
-    } else if (st.stageNumber === 4) {
-      actionBtnHtml = `<button onclick="goToPathwayLevel(5)" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gradient-to-r from-blue-700 to-blue-800 hover:opacity-95 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all"><span>Vào học bài HSK 5</span><i data-lucide="arrow-right" class="w-4 h-4"></i></button>`;
-    } else if (st.stageNumber === 5) {
-      actionBtnHtml = `<button onclick="goToPathwayLevel(6)" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-700 to-purple-800 hover:opacity-95 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all"><span>Vào học bài HSK 6</span><i data-lucide="arrow-right" class="w-4 h-4"></i></button>`;
+    if (st.stageNumber === 1 || st.stageNumber === 2) {
+      actionBtnHtml = `
+        <button onclick="goToPathwayLevel(1)" class="w-full py-2 px-3 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white font-bold text-xs shadow-xs flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>Học Ngay Bài Học ${st.targetLevel}</span>
+        </button>
+      `;
     } else {
-      actionBtnHtml = `<button onclick="switchPathwaySubTab('translation')" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gradient-to-r from-indigo-700 to-indigo-800 hover:opacity-95 text-white shadow-sm flex items-center justify-center gap-2 cursor-pointer transition-all"><span>Khám phá kỹ năng Dịch thuật HSK 7-9</span><i data-lucide="languages" class="w-4 h-4"></i></button>`;
+      actionBtnHtml = `
+        <button onclick="switchTab('flashcards')" class="w-full py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 font-bold text-xs border border-stone-200 dark:border-stone-700 flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+          <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-600"></i>
+          <span>Luyện Từ Vựng Flashcard</span>
+        </button>
+      `;
     }
 
     html += `
-      <div class="glass-card rounded-2xl p-6 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col justify-between hover:shadow-md transition-all">
-        <div class="space-y-4">
-          <!-- Top Tag & Stage badge -->
-          <div class="flex items-center justify-between gap-2">
-            <span class="px-3 py-1 rounded-full text-xs font-black tracking-wider uppercase bg-amber-100 dark:bg-amber-950 text-[#8B1E1E] dark:text-amber-300 border border-amber-300 dark:border-amber-800">
+      <div class="glass-card rounded-2xl p-5 sm:p-6 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-xs hover:shadow-md transition-all flex flex-col justify-between space-y-4">
+        <div class="space-y-3">
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-1 rounded-lg text-xs font-black bg-gradient-to-r from-amber-500/20 to-rose-500/20 text-[#8B1E1E] dark:text-amber-400 border border-amber-300 dark:border-amber-700">
               Giai Đoạn ${st.stageNumber}
             </span>
-            <span class="px-2.5 py-1 rounded-lg text-xs font-bold bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700">
-              ${st.targetLevel}
+            <span class="text-xs font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950 px-2 py-0.5 rounded-md border border-amber-200 dark:border-amber-800">
+              ${st.duration}
             </span>
           </div>
 
           <div>
-            <h4 class="text-lg font-bold font-serif-luxury text-stone-900 dark:text-stone-100 mb-1">${st.title}</h4>
-            <div class="flex flex-wrap items-center gap-2 text-xs text-stone-500 dark:text-stone-400 mt-2">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-stone-50 dark:bg-[#21262D] border border-stone-200 dark:border-stone-700">
-                <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-600"></i> ${st.duration}
-              </span>
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-stone-50 dark:bg-[#21262D] border border-stone-200 dark:border-stone-700">
-                <i data-lucide="calendar" class="w-3.5 h-3.5 text-blue-600"></i> ${st.dailyTime}
-              </span>
+            <h4 class="text-base font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
+              ${st.title}
+            </h4>
+            <div class="flex items-center gap-2 mt-1 flex-wrap text-2xs text-stone-500 dark:text-stone-400">
+              <span class="font-bold text-[#8B1E1E] dark:text-red-400">Mục tiêu: ${st.targetLevel}</span>
+              <span>•</span>
+              <span>Từ vựng: ${st.targetWords}</span>
+              <span>•</span>
+              <span>Thời gian: ${st.dailyTime}</span>
             </div>
           </div>
 
-          <!-- Target stats -->
-          <div class="p-3 rounded-xl bg-amber-50/50 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-900/40 text-xs">
-            <strong class="text-amber-900 dark:text-amber-300">🎯 Mục tiêu chuẩn:</strong>
-            <span class="text-stone-700 dark:text-stone-300 ml-1 font-medium">${st.targetWords}</span>
-          </div>
+          ${st.coreBook ? `
+            <div class="p-2.5 rounded-xl bg-amber-50/70 dark:bg-stone-800/70 border border-amber-200/80 dark:border-stone-700 text-xs space-y-1">
+              <span class="font-bold text-amber-900 dark:text-amber-300 flex items-center gap-1 text-[11px]">
+                <i data-lucide="book" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+                <span>Giáo trình khuyến nghị:</span>
+              </span>
+              <p class="text-stone-700 dark:text-stone-300 font-medium text-[11px]">${st.coreBook}</p>
+              ${st.lessonsCount ? `<p class="text-stone-500 dark:text-stone-400 text-[10px]">Quy mô: ${st.lessonsCount}</p>` : ''}
+            </div>
+          ` : ''}
 
-          <!-- Daily Schedule Plan -->
-          <div class="space-y-2">
-            <p class="text-[11px] font-bold uppercase tracking-wider text-stone-500 dark:text-stone-400 flex items-center gap-1.5">
-              <i data-lucide="list-checks" class="w-3.5 h-3.5 text-emerald-600"></i> Thời Gian Biểu Chi Tiết Mỗi Ngày:
-            </p>
-            <div class="space-y-1.5">
-              ${st.dailyPlan.map(p => `
-                <div class="flex items-start gap-2.5 p-2 rounded-lg bg-stone-50 dark:bg-[#21262D] text-xs text-stone-700 dark:text-stone-300 border border-stone-100 dark:border-stone-800">
-                  <span class="px-2 py-0.5 rounded bg-amber-100/80 dark:bg-amber-900/40 text-amber-900 dark:text-amber-300 font-bold shrink-0 text-[11px]">${p.time}</span>
-                  <span class="leading-relaxed">${p.task}</span>
-                </div>
-              `).join('')}
+          <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-200 dark:border-stone-700/60 text-xs space-y-1.5">
+            <span class="font-bold text-stone-700 dark:text-stone-300 text-[11px] flex items-center gap-1">
+              <i data-lucide="clock" class="w-3 h-3 text-amber-600"></i>
+              <span>Lịch biểu tự học mỗi ngày:</span>
+            </span>
+            <div class="grid grid-cols-3 gap-1.5 text-center text-[10px] text-stone-600 dark:text-stone-400 pt-0.5">
+              <div class="p-1 rounded bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+                <span class="font-bold block text-stone-800 dark:text-stone-200">Sáng (30p)</span>
+                <span>Từ mới & phát âm</span>
+              </div>
+              <div class="p-1 rounded bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+                <span class="font-bold block text-stone-800 dark:text-stone-200">Trưa (15p)</span>
+                <span>Ôn thẻ Flashcard</span>
+              </div>
+              <div class="p-1 rounded bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800">
+                <span class="font-bold block text-stone-800 dark:text-stone-200">Tối (45p)</span>
+                <span>Làm bài & luyện dịch</span>
+              </div>
             </div>
           </div>
 
-          <!-- Milestone Output Ability -->
-          <div class="p-3 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200 dark:border-emerald-800 text-xs leading-relaxed text-emerald-950 dark:text-emerald-200">
-            <strong>⭐ Chuẩn năng lực đạt được:</strong> ${st.milestone}
+          <div class="text-2xs text-stone-500 dark:text-stone-400 border-l-2 border-emerald-500 pl-2 py-0.5">
+            <strong>Cột mốc kiểm tra:</strong> ${st.milestone}
           </div>
         </div>
 
-        <div class="pt-4 mt-2">
-          ${actionBtnHtml}
-        </div>
+        ${actionBtnHtml}
       </div>
     `;
   });
 
   html += `
+      </div>
+
+      <!-- Expert Strategy Box -->
+      <div class="glass-card rounded-2xl p-6 bg-gradient-to-r from-emerald-50/80 via-white to-teal-50/60 dark:from-[#16221c] dark:via-[#161B22] dark:to-[#16221c] border border-emerald-200 dark:border-emerald-800/60 shadow-xs space-y-3">
+        <div class="flex items-center gap-2 text-emerald-900 dark:text-emerald-300">
+          <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600"></i>
+          <h4 class="text-sm font-bold font-serif-luxury">Bí Kíp Tự Học "Quy Tắc Cuốn Chiếu 5 Bước" (Tiếng Trung Thượng Hải)</h4>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 text-xs text-stone-700 dark:text-stone-300">
+          <div class="p-3 rounded-xl bg-white/90 dark:bg-stone-800/80 border border-emerald-100 dark:border-emerald-900/40 space-y-1">
+            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center">1</span>
+            <p class="font-bold text-stone-900 dark:text-stone-100">Chiết Tự 214 Bộ</p>
+            <p class="text-[11px] text-stone-500 leading-relaxed">Hiểu ý nghĩa từng bộ thủ thay vì học vẹt từng nét chữ Hán.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-white/90 dark:bg-stone-800/80 border border-emerald-100 dark:border-emerald-900/40 space-y-1">
+            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center">2</span>
+            <p class="font-bold text-stone-900 dark:text-stone-100">Từ Vựng Theo Cụm</p>
+            <p class="text-[11px] text-stone-500 leading-relaxed">Học cả cụm Động-Tân (ngồi xe, đặt đồ ăn) thay vì học từ đơn lẻ.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-white/90 dark:bg-stone-800/80 border border-emerald-100 dark:border-emerald-900/40 space-y-1">
+            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center">3</span>
+            <p class="font-bold text-stone-900 dark:text-stone-100">Toán Học Ngữ Pháp</p>
+            <p class="text-[11px] text-stone-500 leading-relaxed">Ghi nhớ công thức nòng cốt S + Trạng ngữ + V + Bổ ngữ + Tân ngữ.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-white/90 dark:bg-stone-800/80 border border-emerald-100 dark:border-emerald-900/40 space-y-1">
+            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center">4</span>
+            <p class="font-bold text-stone-900 dark:text-stone-100">Luyện Dịch Hai Chiều</p>
+            <p class="text-[11px] text-stone-500 leading-relaxed">Thực hành dịch Trung-Việt và Việt-Trung ngay từ sơ cấp.</p>
+          </div>
+          <div class="p-3 rounded-xl bg-white/90 dark:bg-stone-800/80 border border-emerald-100 dark:border-emerald-900/40 space-y-1">
+            <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center">5</span>
+            <p class="font-bold text-stone-900 dark:text-stone-100">Shadowing Bản Xứ</p>
+            <p class="text-[11px] text-stone-500 leading-relaxed">Bật audio Bắc Kinh, nhắc lại ngay lập tức để rèn ngữ điệu.</p>
+          </div>
+        </div>
       </div>
     </div>
   `;
@@ -2514,125 +2561,156 @@ function renderPathwayStages(container) {
 function renderPathwayStandards(container) {
   const data = hsk30RoadmapData;
   const rows = data.standardsTable || [];
+  const matrix = data.examMatrix || { levels: [] };
+  const comparison = data.textbookComparison || { books: [] };
 
   let html = `
-    <div class="space-y-6">
+    <div class="space-y-8">
       <!-- Philosophy Banner -->
       <div class="glass-card rounded-2xl p-6 bg-gradient-to-r from-amber-50/80 to-white dark:from-[#161B22] dark:to-[#1c222d] border border-amber-300/80 dark:border-stone-700 shadow-sm">
         <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-xl bg-amber-100 dark:bg-amber-900/50 text-[#8B1E1E] dark:text-amber-400 flex items-center justify-center shrink-0">
+          <div class="w-10 h-10 rounded-2xl bg-amber-100 dark:bg-amber-900/50 text-[#8B1E1E] dark:text-amber-400 flex items-center justify-center shrink-0 shadow-2xs">
             <i data-lucide="scale" class="w-5 h-5"></i>
           </div>
-          <div class="space-y-1">
+          <div class="space-y-1.5">
             <h3 class="text-base font-bold text-stone-900 dark:text-stone-100 font-serif-luxury">Triết Lý Cải Cách HSK 3.0: Từ "Hiểu Thụ Động" Sang "Ứng Dụng Đa Chiều & Dịch Thuật"</h3>
             <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
-              HSK 3.0 chuyển từ cấu trúc 6 cấp truyền thống sang <strong>3 Cấp 9 Bậc</strong> (Sơ cấp 1–3, Trung cấp 4–6, Cao cấp 7–9). Khung chuẩn mới nâng tổng từ vựng lên <strong>11.092 từ</strong>, yêu cầu bắt buộc <strong>3.000 chữ Hán viết tay</strong> (nhận diện nét bút thuận, tránh lạm dụng gõ pinyin) và bổ sung kỹ năng <strong>Dịch thuật hai chiều</strong> từ HSK 4 trở lên.
+              HSK 3.0 chuyển từ cấu trúc 6 cấp truyền thống sang <strong>3 Cấp 9 Bậc</strong> (Sơ cấp 1–3, Trung cấp 4–6, Cao cấp 7–9). Khung chuẩn mới nâng tổng từ vựng lên <strong>11.092 từ</strong>, yêu cầu <strong>3.000 chữ Hán viết tay</strong> (nhận diện nét bút thuận, tránh lạm dụng gõ pinyin) và bổ sung kỹ năng <strong>Dịch thuật hai chiều</strong> từ HSK 4 trở lên.
             </p>
           </div>
         </div>
       </div>
 
       <!-- Standards Table -->
-      <div class="glass-card rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 shadow-sm bg-white dark:bg-[#161B22]">
-        <div class="overflow-x-auto custom-scrollbar">
-          <table class="w-full text-left border-collapse text-xs">
-            <thead>
-              <tr class="bg-amber-100/70 dark:bg-[#21262D] text-stone-900 dark:text-stone-200 border-b border-amber-200 dark:border-stone-700 font-bold">
-                <th class="p-3.5 whitespace-nowrap">Cấp Độ HSK</th>
-                <th class="p-3.5 whitespace-nowrap">Phân Hạng</th>
-                <th class="p-3.5 whitespace-nowrap text-stone-500">Từ HSK 2.0 (Cũ)</th>
-                <th class="p-3.5 whitespace-nowrap text-[#8B1E1E] dark:text-amber-400">Từ HSK 3.0 (Mới)</th>
-                <th class="p-3.5 whitespace-nowrap">Chữ Viết Tay</th>
-                <th class="p-3.5 whitespace-nowrap">Ngữ Pháp</th>
-                <th class="p-3.5 whitespace-nowrap">Khung CEFR</th>
-                <th class="p-3.5 min-w-[280px]">Năng Lực Đầu Ra Thực Chiến</th>
-              </tr>
-            </thead>
-            <tbody class="divide-y divide-stone-100 dark:divide-stone-800 text-stone-700 dark:text-stone-300">
-  `;
+      <div class="space-y-3">
+        <div class="flex items-center justify-between">
+          <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 font-serif-luxury flex items-center gap-2">
+            <i data-lucide="table-2" class="w-4 h-4 text-[#8B1E1E]"></i>
+            <span>1. Bảng Tiêu Chuẩn Định Lượng 3 Cấp 9 Bậc HSK 3.0 (Hanban / CTI)</span>
+          </h4>
+          <span class="text-2xs text-stone-500 font-medium">Đối chiếu CEFR Khung Châu Âu</span>
+        </div>
 
-  rows.forEach((r, idx) => {
-    const isSpecial = r.level.includes('7');
-    const rowBg = idx % 2 === 0 ? 'bg-white dark:bg-[#161B22]' : 'bg-stone-50/50 dark:bg-[#1a202c]';
-    html += `
-      <tr class="${rowBg} hover:bg-amber-50/40 dark:hover:bg-stone-800/60 transition-colors">
-        <td class="p-3.5 font-bold font-serif-luxury ${isSpecial ? 'text-purple-700 dark:text-purple-400' : 'text-[#8B1E1E] dark:text-amber-300'} whitespace-nowrap">
-          ${r.level}
-        </td>
-        <td class="p-3.5 whitespace-nowrap">
-          <span class="px-2 py-0.5 rounded text-[11px] font-bold bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-300 border border-amber-200 dark:border-amber-800/40">
-            ${r.tier}
-          </span>
-        </td>
-        <td class="p-3.5 font-mono text-stone-400 dark:text-stone-500 line-through">
-          ${r.wordsOld}
-        </td>
-        <td class="p-3.5 font-mono font-bold text-base text-[#8B1E1E] dark:text-amber-400">
-          ${typeof r.wordsNew === 'number' ? r.wordsNew.toLocaleString() : r.wordsNew}
-        </td>
-        <td class="p-3.5 font-mono font-medium text-emerald-700 dark:text-emerald-400">
-          ${typeof r.charsNew === 'number' ? r.charsNew.toLocaleString() : r.charsNew} chữ
-        </td>
-        <td class="p-3.5 font-mono text-blue-700 dark:text-blue-400">
-          ${r.grammarPoints} điểm
-        </td>
-        <td class="p-3.5">
-          <span class="px-2 py-0.5 rounded text-[11px] font-black bg-stone-100 dark:bg-stone-800 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-stone-700">
-            ${r.cefr}
-          </span>
-        </td>
-        <td class="p-3.5 leading-relaxed text-stone-600 dark:text-stone-300">
-          ${r.targetAbility}
-        </td>
-      </tr>
-    `;
-  });
-
-  html += `
-            </tbody>
-          </table>
+        <div class="glass-card rounded-2xl overflow-hidden border border-stone-200 dark:border-stone-800 shadow-sm bg-white dark:bg-[#161B22]">
+          <div class="overflow-x-auto custom-scrollbar">
+            <table class="w-full text-left border-collapse text-xs">
+              <thead>
+                <tr class="bg-amber-100/70 dark:bg-[#21262D] text-stone-900 dark:text-stone-100 font-bold border-b border-amber-200 dark:border-stone-700">
+                  <th class="p-3.5 whitespace-nowrap">Cấp Độ</th>
+                  <th class="p-3.5 whitespace-nowrap">Bậc Năng Lực</th>
+                  <th class="p-3.5 whitespace-nowrap text-stone-400">Từ Vựng HSK 2.0</th>
+                  <th class="p-3.5 whitespace-nowrap text-[#8B1E1E] dark:text-amber-400 font-black">Từ Vựng HSK 3.0</th>
+                  <th class="p-3.5 whitespace-nowrap">Chữ Viết Tay</th>
+                  <th class="p-3.5 whitespace-nowrap">Điểm Ngữ Pháp</th>
+                  <th class="p-3.5 whitespace-nowrap">Quy Đổi CEFR</th>
+                  <th class="p-3.5 min-w-[200px]">Năng Lực Mục Tiêu</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-stone-100 dark:divide-stone-800 text-stone-700 dark:text-stone-300">
+                ${rows.map((r, idx) => {
+                  const isSpecial = r.level.includes('7');
+                  const rowBg = idx % 2 === 0 ? 'bg-white dark:bg-[#161B22]' : 'bg-stone-50/50 dark:bg-[#1c222d]/40';
+                  return `
+                    <tr class="${rowBg} hover:bg-amber-50/50 dark:hover:bg-stone-800/50 transition-colors">
+                      <td class="p-3.5 font-bold font-serif-luxury text-stone-900 dark:text-stone-100 whitespace-nowrap">
+                        <span class="px-2 py-0.5 rounded ${isSpecial ? 'bg-purple-100 dark:bg-purple-950 text-purple-900 dark:text-purple-300 font-black' : 'bg-amber-100 dark:bg-amber-950 text-[#8B1E1E] dark:text-amber-400'}">
+                          ${r.level}
+                        </span>
+                      </td>
+                      <td class="p-3.5 font-semibold text-stone-800 dark:text-stone-200 whitespace-nowrap">${r.tier}</td>
+                      <td class="p-3.5 text-stone-400 font-mono">${r.wordsOld} từ</td>
+                      <td class="p-3.5 font-bold font-mono text-[#8B1E1E] dark:text-amber-400 whitespace-nowrap">
+                        ${r.wordsNew.toLocaleString()} từ
+                        <span class="text-[10px] font-normal text-stone-400 block">${r.wordsOld !== '/////' ? '+' + (r.wordsNew - r.wordsOld) + ' từ' : 'Bậc cao cấp'}</span>
+                      </td>
+                      <td class="p-3.5 font-mono">${r.charsNew} chữ</td>
+                      <td class="p-3.5 font-mono">${r.grammarPoints} điểm</td>
+                      <td class="p-3.5 font-bold text-amber-700 dark:text-amber-400 font-mono">${r.cefr}</td>
+                      <td class="p-3.5 text-2xs leading-relaxed text-stone-600 dark:text-stone-400">${r.targetAbility}</td>
+                    </tr>
+                  `;
+                }).join('')}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
 
-      <!-- 3 Tier Highlights -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
-        <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-700 space-y-2">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-300 text-xs font-bold">
-            <i data-lucide="sprout" class="w-3.5 h-3.5"></i>
-            <span>Sơ Cấp (Bậc 1 – 3)</span>
+      <!-- Section 2: Exam Matrix Breakdown -->
+      <div class="space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 font-serif-luxury flex items-center gap-2">
+              <i data-lucide="layout-grid" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>2. Ma Trận Đổi Mới Cấu Trúc Đề Thi HSK 3.0 & HSKK (Tiếng Trung Thượng Hải)</span>
+            </h4>
+            <p class="text-xs text-stone-500">Bấm chọn từng cấp độ để xem phân tích số câu, thời gian và dạng bài thay đổi:</p>
           </div>
-          <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100">Xây Dựng Khẩu Ngữ & Phản Xạ</h4>
-          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-            Tập trung chuẩn hóa ngữ âm Pinyin, nhận diện 214 Bộ Thủ, tích lũy 2.245 từ vựng và luyện viết tay 900 chữ cơ bản. Đủ sức giao tiếp tự tin trong đời sống du lịch và sinh hoạt.
-          </p>
         </div>
 
-        <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-teal-200/80 dark:border-stone-700 space-y-2">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-teal-100 dark:bg-teal-950 text-teal-900 dark:text-teal-300 text-xs font-bold">
-            <i data-lucide="feather" class="w-3.5 h-3.5"></i>
-            <span>Trung Cấp (Bậc 4 – 6)</span>
-          </div>
-          <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100">Kỹ Năng Dịch Thuật & Tranh Luận</h4>
-          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-            Tiếp cận văn bản báo chí, kinh tế, xã hội. Đòi hỏi kỹ năng biên dịch đoạn văn hai chiều Trung - Việt chuẩn xác và viết bài luận học thuật 400 - 600 chữ.
-          </p>
+        <!-- Level Pills -->
+        <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar p-1">
+          ${matrix.levels.map(l => {
+            const isActive = l.level === currentExamMatrixLevel;
+            const btnClass = isActive 
+              ? 'btn-matrix-lvl px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm border border-transparent cursor-pointer whitespace-nowrap'
+              : 'btn-matrix-lvl px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-300 hover:bg-amber-100 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700 cursor-pointer whitespace-nowrap';
+            return `
+              <button onclick="filterExamMatrixLevel('${l.level}')" data-level="${l.level}" class="${btnClass}">
+                ${l.level}
+              </button>
+            `;
+          }).join('')}
         </div>
 
-        <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-purple-200/80 dark:border-stone-700 space-y-2">
-          <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-purple-100 dark:bg-purple-950 text-purple-900 dark:text-purple-300 text-xs font-bold">
-            <i data-lucide="crown" class="w-3.5 h-3.5"></i>
-            <span>Cao Cấp (Bậc 7 – 9)</span>
+        <div id="examMatrixDetailCard"></div>
+      </div>
+
+      <!-- Section 3: Textbook Comparison -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 font-serif-luxury flex items-center gap-2">
+              <i data-lucide="book-marked" class="w-4 h-4 text-[#8B1E1E]"></i>
+              <span>3. Cẩm Nang So Sánh 4 Bộ Giáo Trình Học Tiếng Trung Phổ Biến Nhất</span>
+            </h4>
+            <p class="text-xs text-stone-500">Giúp người học tự chọn đúng giáo trình phù hợp nhất với năng lực và mục tiêu.</p>
           </div>
-          <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100">Biên & Phiên Dịch Chuyên Nghiệp</h4>
-          <p class="text-xs text-stone-600 dark:text-stone-400 leading-relaxed">
-            Kỳ thi hợp nhất với 11.092 từ vựng, xếp hạng từ bậc 7 đến 9 dựa trên thang điểm. Đánh giá khả năng phiên dịch nối tiếp/cabin, văn bản ngoại giao và nghiên cứu văn học cổ điển.
-          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          ${comparison.books.map(b => `
+            <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <h5 class="font-bold text-sm text-[#8B1E1E] dark:text-amber-400 font-serif-luxury">${b.name}</h5>
+                </div>
+                <p class="text-2xs text-stone-400 font-medium">${b.publisher}</p>
+                <p class="text-xs text-stone-600 dark:text-stone-300"><strong>Đối tượng:</strong> ${b.audience}</p>
+                
+                <div class="p-2.5 rounded-xl bg-emerald-50/60 dark:bg-emerald-950/20 border border-emerald-200/60 dark:border-emerald-900/40 text-2xs space-y-1">
+                  <span class="font-bold text-emerald-900 dark:text-emerald-300">Ưu điểm:</span>
+                  <p class="text-stone-700 dark:text-stone-300 leading-relaxed">${b.pros}</p>
+                </div>
+
+                <div class="p-2.5 rounded-xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200/60 dark:border-amber-900/40 text-2xs space-y-1">
+                  <span class="font-bold text-amber-900 dark:text-amber-300">Hạn chế:</span>
+                  <p class="text-stone-700 dark:text-stone-300 leading-relaxed">${b.cons}</p>
+                </div>
+              </div>
+
+              <div class="pt-2 border-t border-stone-100 dark:border-stone-800 text-2xs text-[#8B1E1E] dark:text-amber-300 font-semibold">
+                💡 Lời khuyên: ${b.recommendation}
+              </div>
+            </div>
+          `).join('')}
         </div>
       </div>
     </div>
   `;
 
   container.innerHTML = html;
+  filterExamMatrixLevel(currentExamMatrixLevel);
 }
 
 function filterPathwayGrammarLevel(lvl) {
@@ -2648,7 +2726,6 @@ function renderPathwayGrammar(container) {
 
   let html = `
     <div class="space-y-6">
-      <!-- Level Tabs Selector -->
       <div class="flex items-center justify-between flex-wrap gap-3 p-3 rounded-2xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-stone-700">
         <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar">
           ${sections.map(s => {
@@ -2665,75 +2742,48 @@ function renderPathwayGrammar(container) {
           }).join('')}
         </div>
         <div class="text-xs text-stone-500 dark:text-stone-400">
-          Tổng cộng: <strong>48 trọng tâm ngữ pháp chuẩn</strong>
+          Tổng cộng: <strong>48 trọng tâm ngữ pháp chuẩn sơ cấp</strong>
         </div>
       </div>
 
-      <!-- Section Info Banner -->
-      <div class="p-4 rounded-xl bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 text-xs text-stone-700 dark:text-stone-300 flex items-center gap-2">
-        <i data-lucide="info" class="w-4 h-4 text-amber-600 shrink-0"></i>
-        <span>${currentSection.description}</span>
-      </div>
-
-      <!-- Grammar Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-  `;
+        ${currentSection.items.map(item => `
+          <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3.5">
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-[#8B1E1E] dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+                  ${item.category || currentSection.level}
+                </span>
+                <span class="text-xs text-stone-400 font-mono">#${item.id}</span>
+              </div>
 
-  currentSection.items.forEach((item, idx) => {
-    html += `
-      <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-sm space-y-3.5 hover:border-amber-300 dark:hover:border-amber-700 transition-all">
-        <!-- Card Header -->
-        <div class="flex items-start justify-between gap-2">
-          <div class="space-y-1">
-            <span class="inline-block px-2 py-0.5 rounded text-[10px] font-black uppercase bg-amber-100 dark:bg-amber-950 text-[#8B1E1E] dark:text-amber-300 border border-amber-200 dark:border-amber-800">
-              #${idx + 1} • ${currentSection.level}
-            </span>
-            <h4 class="text-base font-bold font-serif-luxury text-stone-900 dark:text-stone-100 leading-snug">
-              ${item.title}
-            </h4>
+              <h4 class="text-sm sm:text-base font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
+                ${item.title}
+              </h4>
+              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                ${item.explanation}
+              </p>
+
+              <div class="p-3 rounded-xl bg-amber-50/70 dark:bg-stone-800/60 border border-amber-200/80 dark:border-stone-700 font-mono text-xs text-amber-950 dark:text-amber-300 font-bold space-y-1">
+                <span class="text-[10px] text-stone-400 font-normal uppercase tracking-wider block font-sans">Công thức toán học hóa:</span>
+                <span>${item.formula}</span>
+              </div>
+
+              <div class="p-3 rounded-xl bg-[#FFFDF9] dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 text-xs space-y-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] text-stone-400 uppercase tracking-wider font-bold">Ví dụ thực chiến:</span>
+                  <button onclick="playTTS('${escapeHtml(item.exampleZh)}', 'female')" class="text-amber-800 dark:text-amber-300 hover:underline text-[11px] flex items-center gap-1 cursor-pointer">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                    <span>Nghe câu</span>
+                  </button>
+                </div>
+                <p class="font-hanzi text-sm font-semibold text-[#8B1E1E] dark:text-red-400">${item.exampleZh}</p>
+                <p class="text-[11px] text-amber-900 dark:text-amber-300 font-mono">${item.examplePinyin}</p>
+                <p class="text-xs text-stone-600 dark:text-stone-400">${item.exampleVi}</p>
+              </div>
+            </div>
           </div>
-          <!-- Dual-Voice TTS Audio for Example Sentence -->
-          <div class="inline-flex items-center gap-1 bg-stone-100 dark:bg-stone-800 p-0.5 rounded-xl border border-stone-200 dark:border-stone-700 shrink-0">
-            <button onclick="playChineseTTS('${item.example.replace(/'/g, "\\'")}', 'female')" class="flex items-center gap-1 px-2 py-1 rounded-lg bg-white dark:bg-[#21262D] hover:bg-rose-50 text-rose-800 dark:text-rose-300 border border-rose-200 dark:border-rose-900/50 text-[11px] font-bold cursor-pointer transition-colors" title="Nghe câu ví dụ giọng Nữ">
-              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
-              <span>👩 Nữ</span>
-            </button>
-            <button onclick="playChineseTTS('${item.example.replace(/'/g, "\\'")}', 'male')" class="flex items-center gap-1 px-2 py-1 rounded-lg bg-white dark:bg-[#21262D] hover:bg-blue-50 text-blue-800 dark:text-blue-300 border border-blue-200 dark:border-blue-900/50 text-[11px] font-bold cursor-pointer transition-colors" title="Nghe câu ví dụ giọng Nam">
-              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
-              <span>👨 Nam</span>
-            </button>
-          </div>
-        </div>
-
-        <!-- Pattern Formula -->
-        <div class="p-2.5 rounded-xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200/80 dark:border-amber-800/40 text-xs font-mono font-bold text-[#8B1E1E] dark:text-amber-300">
-          📐 ${item.pattern}
-        </div>
-
-        <!-- Explanation -->
-        <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
-          ${item.explanation}
-        </p>
-
-        <!-- Example Block -->
-        <div class="p-3 rounded-xl bg-stone-50 dark:bg-[#21262D] border border-stone-200/70 dark:border-stone-700 space-y-1">
-          <p class="font-hanzi text-base font-bold text-stone-900 dark:text-stone-100">${item.example}</p>
-          <p class="text-xs font-bold text-amber-700 dark:text-amber-400">${item.pinyin}</p>
-          <p class="text-xs text-stone-600 dark:text-stone-300">${item.translation}</p>
-        </div>
-
-        <!-- Note if available -->
-        ${item.notes ? `
-          <div class="text-[11px] text-stone-500 dark:text-stone-400 italic flex items-start gap-1.5 pt-1">
-            <i data-lucide="lightbulb" class="w-3.5 h-3.5 text-amber-500 shrink-0 mt-0.5"></i>
-            <span>${item.notes}</span>
-          </div>
-        ` : ''}
-      </div>
-    `;
-  });
-
-  html += `
+        `).join('')}
       </div>
     </div>
   `;
@@ -2745,6 +2795,7 @@ function renderPathwayTranslation(container) {
   const data = hsk30RoadmapData;
   const transModule = data.translationModule || {};
   const vocabCats = data.modernVocabCategories || [];
+  const exercises = transModule.interactiveExercises || [];
 
   let html = `
     <div class="space-y-8">
@@ -2764,84 +2815,102 @@ function renderPathwayTranslation(container) {
                 ${transModule.description || 'Kỹ năng Dịch bắt đầu xuất hiện từ HSK 4 và trở thành môn thi bắt buộc từ HSK 7–9. Yêu cầu thí sinh vừa có khả năng biên dịch văn bản chính xác, vừa phải có phản xạ phiên dịch nói trực tiếp trôi chảy.'}
               </p>
             </div>
-            <button onclick="switchTab('translation')" class="px-5 py-3 rounded-xl bg-gradient-to-r from-purple-700 to-indigo-700 hover:opacity-95 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer shrink-0">
-              <i data-lucide="sparkles" class="w-4 h-4"></i>
-              <span>Vào Luyện Dịch HiHSK Pro Ngay</span>
-            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2: Interactive Translation Lab -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 font-serif-luxury flex items-center gap-2">
+              <i data-lucide="check-circle" class="w-4 h-4 text-purple-600"></i>
+              <span>Phòng Luyện Dịch Thực Chiến 6 Tình Huống Thời Đại Số (HSK 3.0 Lab)</span>
+            </h4>
+            <p class="text-xs text-stone-500">Thử gõ bản dịch tiếng Trung và bấm kiểm tra để hệ thống chấm điểm và giải thích công thức nòng cốt:</p>
           </div>
         </div>
 
-        <!-- 2 Format Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-          ${(transModule.formats || []).map(f => `
-            <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-sm space-y-3">
-              <div class="flex items-center gap-2">
-                <span class="p-2 rounded-xl bg-amber-100 dark:bg-amber-950 text-[#8B1E1E] dark:text-amber-300">
-                  <i data-lucide="${f.type.includes('Biên') ? 'file-text' : 'mic'}" class="w-4 h-4"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          ${exercises.map(ex => `
+            <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-purple-200/80 dark:border-stone-800 shadow-xs space-y-3.5">
+              <div class="flex items-center justify-between">
+                <span class="px-2.5 py-0.5 rounded-lg text-[10px] font-bold bg-purple-100 dark:bg-purple-950 text-purple-900 dark:text-purple-300 border border-purple-200 dark:border-purple-800">
+                  ${ex.title}
                 </span>
-                <h4 class="text-base font-bold font-serif-luxury text-stone-900 dark:text-stone-100">${f.type}</h4>
+                <span class="text-xs text-stone-400 font-mono">#0${ex.id}</span>
               </div>
 
-              <div class="text-xs space-y-2 text-stone-600 dark:text-stone-300 leading-relaxed">
-                <p><strong>Hình thức thi:</strong> ${f.format}</p>
-                <p><strong>Chủ đề cốt lõi:</strong> ${f.topics}</p>
-                <div class="p-3 rounded-xl bg-stone-50 dark:bg-[#21262D] border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-200">
-                  <strong>🎯 Tiêu chí chấm điểm:</strong> ${f.criteria}
+              <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700/80 space-y-1">
+                <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider block">Câu tiếng Việt cần dịch:</span>
+                <p class="text-xs font-bold text-stone-900 dark:text-stone-100 leading-relaxed">${ex.sourceVi}</p>
+              </div>
+
+              <!-- Input for translation -->
+              <div class="space-y-2">
+                <input 
+                  type="text" 
+                  id="trans-input-${ex.id}" 
+                  placeholder="Nhập câu dịch tiếng Trung của bạn tại đây..." 
+                  onkeydown="if(event.key==='Enter') checkHsk30Translation(${ex.id})"
+                  class="w-full px-3 py-2 text-xs rounded-xl bg-amber-50/50 dark:bg-stone-900 border border-amber-300 dark:border-stone-700 text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                />
+                <div class="flex items-center justify-between gap-2">
+                  <button 
+                    onclick="checkHsk30Translation(${ex.id})" 
+                    class="flex-1 py-1.5 px-3 rounded-xl bg-gradient-to-r from-purple-700 to-indigo-700 hover:opacity-95 text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-1 cursor-pointer"
+                  >
+                    <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                    <span>Kiểm Tra Bản Dịch</span>
+                  </button>
+                  <button 
+                    onclick="revealHsk30Answer(${ex.id})" 
+                    class="py-1.5 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 font-medium text-xs border border-stone-200 dark:border-stone-700 transition-all cursor-pointer"
+                  >
+                    Xem Đáp Án
+                  </button>
                 </div>
               </div>
+
+              <!-- Result Container -->
+              <div id="trans-result-${ex.id}" class="hidden"></div>
             </div>
           `).join('')}
         </div>
       </div>
 
-      <!-- Section 2: Modern Vocabulary Categories -->
+      <!-- Section 3: Modern Vocab in HSK 3.0 -->
       <div class="space-y-4">
-        <div class="flex items-center justify-between gap-3">
-          <div>
-            <h3 class="text-lg font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
-              4 Nhóm Chủ Đề Từ Vựng Hiện Đại Mới Nhất Trong HSK 3.0
-            </h3>
-            <p class="text-xs text-stone-600 dark:text-stone-400">
-              Cập nhật các thuật ngữ mới của Kỷ nguyên số, AI, Kinh tế nền tảng và Lối sống xanh theo chuẩn Bộ Giáo Dục Trung Quốc.
-            </p>
-          </div>
+        <div>
+          <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 font-serif-luxury flex items-center gap-2">
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+            <span>Các Nhóm Từ Vựng Mới Tiêu Biểu Trong Kỷ Nguyên Số HSK 3.0</span>
+          </h4>
+          <p class="text-xs text-stone-500">Cập nhật thuật ngữ hiện đại của mạng xã hội, livestream, công nghệ 4.0 và thương mại điện tử:</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           ${vocabCats.map(cat => `
-            <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-sm space-y-3">
-              <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-2.5">
-                <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 font-serif-luxury flex items-center gap-1.5">
-                  <span>${cat.category}</span>
-                </h4>
-                <span class="text-[11px] font-bold text-amber-700 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 px-2 py-0.5 rounded border border-amber-200 dark:border-amber-800/40">
-                  ${cat.words.length} từ tiêu biểu
-                </span>
+            <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs space-y-3">
+              <div class="flex items-center gap-2 text-stone-900 dark:text-stone-100">
+                <span class="text-lg">${cat.icon}</span>
+                <h5 class="font-bold text-sm font-serif-luxury">${cat.category}</h5>
               </div>
 
-              <div class="divide-y divide-stone-100 dark:divide-stone-800">
+              <div class="divide-y divide-stone-100 dark:divide-stone-800 text-xs">
                 ${cat.words.map(w => `
-                  <div class="py-2.5 flex items-center justify-between gap-3">
-                    <div>
+                  <div class="py-2.5 space-y-1">
+                    <div class="flex items-center justify-between">
                       <div class="flex items-center gap-2">
-                        <span class="font-hanzi text-base font-bold text-stone-900 dark:text-stone-100 cursor-pointer hover:text-amber-700 transition-colors" onclick="openWordModalByTitle('${w.hanzi}')">
-                          ${w.hanzi}
-                        </span>
-                        <span class="text-xs font-bold text-amber-700 dark:text-amber-400">
-                          ${w.pinyin}
-                        </span>
+                        <span class="font-hanzi text-base font-bold text-[#8B1E1E] dark:text-red-400">${w.hanzi}</span>
+                        <span class="text-amber-900 dark:text-amber-300 font-mono text-2xs">${w.pinyin}</span>
                       </div>
-                      <p class="text-xs text-stone-600 dark:text-stone-300 mt-0.5">${w.meaning}</p>
-                    </div>
-
-                    <div class="inline-flex items-center gap-1 bg-stone-100 dark:bg-stone-800 p-0.5 rounded-xl border border-stone-200 dark:border-stone-700 shrink-0">
-                      <button onclick="playChineseTTS('${w.hanzi}', 'female')" class="p-1.5 rounded-lg bg-white dark:bg-[#21262D] hover:bg-rose-50 text-rose-800 dark:text-rose-300 text-xs cursor-pointer transition-colors" title="Nghe giọng Nữ">
-                        <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
-                      </button>
-                      <button onclick="playChineseTTS('${w.hanzi}', 'male')" class="p-1.5 rounded-lg bg-white dark:bg-[#21262D] hover:bg-blue-50 text-blue-800 dark:text-blue-300 text-xs cursor-pointer transition-colors" title="Nghe giọng Nam">
-                        <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
+                      <button onclick="playTTS('${escapeHtml(w.hanzi)}', 'female')" class="text-stone-400 hover:text-amber-600 cursor-pointer" title="Nghe phát âm">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                       </button>
                     </div>
+                    <p class="text-stone-700 dark:text-stone-300 font-medium text-2xs">${w.meaning}</p>
+                    <p class="text-stone-500 dark:text-stone-400 text-[11px] leading-relaxed">${w.example}</p>
                   </div>
                 `).join('')}
               </div>
@@ -2858,42 +2927,119 @@ function renderPathwayTranslation(container) {
 function renderPathwayLessonsView(container) {
   let html = `
     <div class="space-y-6">
-      <!-- Level Filter Pills for HSK 1 to 6 -->
-      <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-        <div class="text-xs font-bold text-stone-600 dark:text-stone-400 flex items-center gap-1.5">
-          <i data-lucide="layers" class="w-4 h-4 text-amber-600"></i>
-          <span>Chọn cấp độ bài học (1.040 bài thực tế):</span>
+      <!-- Sub-Tab Toggle between Standard Course 48 and Expanded 1040 -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-2xl bg-amber-50/80 dark:bg-amber-950/20 border border-amber-200 dark:border-stone-700">
+        <div class="flex items-center gap-2">
+          <button 
+            onclick="switchPathwayLessonsTab('standard48')" 
+            id="btn-sublesson-standard48" 
+            class="px-4 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${currentPathwayLessonsTab === 'standard48' ? 'bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm' : 'bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-300 hover:bg-amber-100 border border-stone-200 dark:border-stone-700'}"
+          >
+            <span>📘 Giáo Trình Chuẩn HSK 3.0 (48 Bài Sơ Cấp)</span>
+          </button>
+          <button 
+            onclick="switchPathwayLessonsTab('all1040')" 
+            id="btn-sublesson-all1040" 
+            class="px-4 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${currentPathwayLessonsTab === 'all1040' ? 'bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm' : 'bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-300 hover:bg-amber-100 border border-stone-200 dark:border-stone-700'}"
+          >
+            <span>📚 Kho 1.040 Bài Học & Từ Vựng Mở Rộng</span>
+          </button>
         </div>
-        <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar p-1">
-          ${[1, 2, 3, 4, 5, 6].map(lvl => {
-            const isActive = lvl === currentHskLevel;
-            const btnClass = isActive 
-              ? 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm border border-transparent'
-              : 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-stone-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-100 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700';
-            return `
-              <button onclick="filterPathwayLevel(${lvl})" id="btn-hsk-${lvl}" class="${btnClass} cursor-pointer transition-all whitespace-nowrap">
-                HSK ${lvl}
-              </button>
-            `;
-          }).join('')}
+
+        <div class="text-2xs text-stone-500 dark:text-stone-400">
+          ${currentPathwayLessonsTab === 'standard48' ? 'Đầy đủ HSK 1 (15 bài), HSK 2 (15 bài) & HSK 3 (18 bài)' : 'Lọc từ vựng thực chiến HSK 1 – 6'}
         </div>
       </div>
 
-      <!-- Lessons Cards Container -->
-      <div id="pathwayLessonsContainer" class="space-y-4"></div>
+      <!-- View 1: Standard Course 48 Lessons -->
+      <div id="pathwayStandard48Section" class="${currentPathwayLessonsTab === 'standard48' ? 'space-y-5' : 'hidden'}">
+        <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <!-- Level Filters -->
+          <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar p-1">
+            <button 
+              onclick="filterHsk30CourseLevel(0)" 
+              class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 0 ? 'bg-[#8B1E1E] text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-100'}"
+            >
+              Tất Cả 48 Bài
+            </button>
+            <button 
+              onclick="filterHsk30CourseLevel(1)" 
+              class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 1 ? 'bg-blue-600 text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-blue-50'}"
+            >
+              HSK 1 (15 Bài)
+            </button>
+            <button 
+              onclick="filterHsk30CourseLevel(2)" 
+              class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 2 ? 'bg-emerald-600 text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-emerald-50'}"
+            >
+              HSK 2 (15 Bài)
+            </button>
+            <button 
+              onclick="filterHsk30CourseLevel(3)" 
+              class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 3 ? 'bg-[#8B1E1E] text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-rose-50'}"
+            >
+              HSK 3 (18 Bài)
+            </button>
+          </div>
 
-      <!-- Pagination / Load More -->
-      <div class="flex justify-center pt-2">
-        <button id="loadMoreLessonsBtn" onclick="loadMoreLessons()" class="px-6 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-[#161B22] hover:bg-amber-50 dark:hover:bg-stone-800 text-stone-800 dark:text-stone-200 border border-stone-300 dark:border-stone-700 shadow-sm transition-all flex items-center gap-2 cursor-pointer">
-          <span>Xem thêm bài học tiếp theo</span>
-          <i data-lucide="chevron-down" class="w-4 h-4"></i>
-        </button>
+          <!-- Search input -->
+          <div class="relative w-full md:w-72">
+            <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input 
+              type="text" 
+              placeholder="Tìm kiếm bài học, ngữ pháp..." 
+              value="${currentHsk30SearchQuery}"
+              oninput="searchHsk30Lessons(this.value)"
+              class="w-full pl-9 pr-3 py-1.5 text-xs rounded-xl bg-amber-50/50 dark:bg-stone-900 border border-amber-200 dark:border-stone-700 text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]"
+            />
+          </div>
+        </div>
+
+        <div id="hsk30LessonsListContainer"></div>
+      </div>
+
+      <!-- View 2: Expanded 1040 Lessons -->
+      <div id="pathwayAll1040Section" class="${currentPathwayLessonsTab === 'all1040' ? 'space-y-5' : 'hidden'}">
+        <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="text-xs font-bold text-stone-600 dark:text-stone-400 flex items-center gap-1.5">
+            <i data-lucide="layers" class="w-4 h-4 text-amber-600"></i>
+            <span>Chọn cấp độ bài học mở rộng:</span>
+          </div>
+          <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar p-1">
+            ${[1, 2, 3, 4, 5, 6].map(lvl => {
+              const isActive = lvl === currentHskLevel;
+              const btnClass = isActive 
+                ? 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm border border-transparent'
+                : 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-stone-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-100 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700';
+              return `
+                <button onclick="filterPathwayLevel(${lvl})" id="btn-hsk-${lvl}" class="${btnClass} cursor-pointer transition-all whitespace-nowrap">
+                  HSK ${lvl}
+                </button>
+              `;
+            }).join('')}
+          </div>
+        </div>
+
+        <div id="pathwayLessonsContainer" class="space-y-4"></div>
+
+        <div class="flex justify-center pt-2">
+          <button id="loadMoreLessonsBtn" onclick="loadMoreLessons()" class="px-6 py-2.5 rounded-xl text-xs font-bold bg-white dark:bg-[#161B22] hover:bg-amber-50 dark:hover:bg-stone-800 text-stone-800 dark:text-stone-200 border border-stone-300 dark:border-stone-700 shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+            <span>Xem thêm bài học tiếp theo</span>
+            <i data-lucide="chevron-down" class="w-4 h-4"></i>
+          </button>
+        </div>
       </div>
     </div>
   `;
 
   container.innerHTML = html;
-  renderPathwayLessonsList(true);
+
+  if (currentPathwayLessonsTab === 'standard48') {
+    const listEl = document.getElementById('hsk30LessonsListContainer');
+    if (listEl) renderHsk30StandardCourseCards(listEl);
+  } else {
+    renderPathwayLessonsList(true);
+  }
 }
 
 function filterPathwayLevel(level) {
@@ -2913,76 +3059,47 @@ function filterPathwayLevel(level) {
 
 function renderPathwayLessonsList(reset = false) {
   const container = document.getElementById('pathwayLessonsContainer');
-  if (!container) return;
+  if (!container || !lessonsData) return;
+
   if (reset) {
-    pathwayLessonsRendered = 0;
     container.innerHTML = '';
+    pathwayLessonsRendered = 0;
   }
 
   const filtered = lessonsData.filter(item => item.level === currentHskLevel);
-  const nextBatch = filtered.slice(pathwayLessonsRendered, pathwayLessonsRendered + pathwayLessonsBatch);
+  const nextBatch = filtered.slice(pathwayLessonsRendered, pathwayLessonsRendered + pathwayLessonsBatchSize);
 
-  if (filtered.length === 0) {
-    container.innerHTML = `
-      <div class="glass-card rounded-2xl p-8 text-center text-stone-500 dark:text-stone-400">
-        <i data-lucide="book-open" class="w-8 h-8 mx-auto mb-2 opacity-50"></i>
-        <p>Đang chuẩn bị thêm dữ liệu bài học cho cấp độ HSK ${currentHskLevel}...</p>
-      </div>
-    `;
+  if (nextBatch.length === 0 && pathwayLessonsRendered === 0) {
+    container.innerHTML = '<div class="glass-card rounded-2xl p-8 text-center text-stone-500">Không có bài học nào ở cấp độ này.</div>';
     const loadMoreBtn = document.getElementById('loadMoreLessonsBtn');
     if (loadMoreBtn) loadMoreBtn.classList.add('hidden');
-    refreshIcons();
     return;
   }
 
-  nextBatch.forEach(item => {
+  nextBatch.forEach(lesson => {
     const card = document.createElement('div');
-    card.className = 'glass-card rounded-2xl p-6 border-stone-200 dark:border-stone-800 bg-white dark:bg-[#161B22] shadow-sm space-y-4';
+    card.className = 'glass-card rounded-2xl p-4 sm:p-5 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs hover:shadow-md transition-all flex flex-col md:flex-row md:items-center justify-between gap-4';
     card.innerHTML = `
-      <div class="flex items-center justify-between text-xs text-slate-500">
-        <span class="px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-amber-950/40 text-amber-900 dark:text-amber-300 border border-amber-200 dark:border-amber-800/40 font-bold">
-          HSK ${item.level} • Bài ${item.lesson}
-        </span>
-        <div class="inline-flex items-center gap-1 bg-stone-100 dark:bg-stone-800 p-0.5 rounded-xl border border-stone-200 dark:border-stone-700 shadow-2xs">
-          <button onclick="playChineseTTS('${item.hanzi.replace(/'/g, "\\'")}', 'female')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#21262D] hover:bg-rose-50 text-rose-850 dark:text-rose-300 border border-rose-200 dark:border-rose-900/50 text-xs font-bold transition-colors cursor-pointer" title="Nghe câu mẫu giọng Nữ">
-            <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
-            <span>👩 Nữ</span>
-          </button>
-          <button onclick="playChineseTTS('${item.hanzi.replace(/'/g, "\\'")}', 'male')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white dark:bg-[#21262D] hover:bg-blue-50 text-blue-850 dark:text-blue-300 border border-blue-200 dark:border-blue-900/50 text-xs font-bold transition-colors cursor-pointer" title="Nghe câu mẫu giọng Nam">
-            <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
-            <span>👨 Nam</span>
-          </button>
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-amber-50 dark:bg-stone-800 text-[#8B1E1E] dark:text-amber-400 border border-amber-300 dark:border-stone-700 flex items-center justify-center font-hanzi text-2xl font-black shrink-0 shadow-2xs">
+          ${lesson.hanzi ? lesson.hanzi[0] : '字'}
         </div>
-      </div>
-
-      <div>
-        <h3 class="font-hanzi text-xl lg:text-2xl font-bold text-stone-900 dark:text-stone-100 mb-1 tracking-wide">${item.hanzi}</h3>
-        <p class="text-sm font-bold text-amber-700 dark:text-amber-400 mb-1">${item.pinyin}</p>
-        <p class="text-sm text-stone-700 dark:text-stone-300">${item.vietnamese}</p>
-      </div>
-
-      <!-- Highlighted Words in Sentence -->
-      ${item.words && item.words.length ? `
-        <div class="pt-3 border-t border-stone-100 dark:border-stone-800">
-          <p class="text-[11px] font-bold text-stone-500 dark:text-stone-400 uppercase tracking-wider mb-2">Từ vựng then chốt:</p>
-          <div class="flex flex-wrap gap-2">
-            ${item.words.map(w => `
-              <div onclick="openWordModalByTitle('${w.title}')" class="cursor-pointer px-2.5 py-1 rounded-lg bg-amber-50/70 dark:bg-amber-950/30 hover:bg-amber-100 dark:hover:bg-amber-900/50 border border-amber-200 dark:border-amber-800 text-xs transition-colors">
-                <span class="font-hanzi font-bold text-amber-950 dark:text-amber-200">${w.title}</span>
-                <span class="text-amber-700 dark:text-amber-400">(${w.pinyin})</span>:
-                <span class="text-stone-600 dark:text-stone-400">${w.meaning}</span>
-              </div>
-            `).join('')}
+        <div class="space-y-1">
+          <div class="flex items-center gap-2">
+            <h4 class="font-hanzi text-lg font-bold text-stone-900 dark:text-stone-100">${lesson.hanzi || 'Tiêu đề'}</h4>
+            <span class="text-xs text-amber-900 dark:text-amber-300 font-mono font-medium">${lesson.pinyin || ''}</span>
           </div>
+          <p class="text-xs text-stone-600 dark:text-stone-400">${lesson.meaning || lesson.vietnamese || ''}</p>
         </div>
-      ` : ''}
-
-      <!-- Grammar Explanation -->
-      ${item.explanation ? `
-        <div class="p-3.5 rounded-xl bg-stone-50 dark:bg-[#21262D] border border-stone-200/60 dark:border-stone-800 text-xs text-stone-700 dark:text-stone-300 whitespace-pre-line leading-relaxed">
-          ${item.explanation}
-        </div>
-      ` : ''}
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="playTTS('${escapeHtml(lesson.hanzi || '')}', 'female')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-[#8B1E1E] dark:text-amber-400 hover:bg-amber-100 transition-colors cursor-pointer" title="Nghe phát âm">
+          <i data-lucide="volume-2" class="w-4 h-4"></i>
+        </button>
+        <button onclick="openWritingModalChar('${lesson.hanzi ? lesson.hanzi[0] : '字'}')" class="px-3 py-1.5 rounded-xl bg-amber-100 dark:bg-amber-950 text-amber-900 dark:text-amber-200 text-xs font-bold hover:bg-amber-200 transition-colors cursor-pointer">
+          Tập viết
+        </button>
+      </div>
     `;
     container.appendChild(card);
   });
@@ -2997,12 +3114,13 @@ function renderPathwayLessonsList(reset = false) {
     }
   }
 
-  refreshIcons();
+  refreshIcons(container);
 }
 
 function loadMoreLessons() {
   renderPathwayLessonsList(false);
 }
+
 
 function renderPathwayResources(container) {
   const data = hsk30RoadmapData;
@@ -9436,6 +9554,13 @@ window.selectWritingModalChar = selectWritingModalChar;
 window.showToast = showToast;
 window.toggleSupportContactModal = toggleSupportContactModal;
 window.toggleFloatingDockVisibility = toggleFloatingDockVisibility;
+window.switchPathwayLessonsTab = switchPathwayLessonsTab;
+window.filterHsk30CourseLevel = filterHsk30CourseLevel;
+window.searchHsk30Lessons = searchHsk30Lessons;
+window.filterExamMatrixLevel = filterExamMatrixLevel;
+window.checkHsk30Translation = checkHsk30Translation;
+window.revealHsk30Answer = revealHsk30Answer;
+
 window.initFloatingDock = initFloatingDock;
 window.closeSupportContactModal = closeSupportContactModal;
 window.dismissFloatingContactTooltip = dismissFloatingContactTooltip;

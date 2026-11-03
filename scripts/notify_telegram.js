@@ -11,21 +11,26 @@ try {
   if (urlFromFile.startsWith('http')) activeUrl = urlFromFile;
 } catch (e) {}
 
-const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - TỐI ƯU CỤM TRỢ LÝ & HỖ TRỢ GÓC PHẢI] 🏮
+const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - TỐI ƯU TOÀN DIỆN HSK 3.0 THEO TIẾNG TRUNG THƯỢNG HẢI] 🏮
 
-Chào bạn! Hệ thống vừa được tối ưu hóa theo yêu cầu người dùng:
+Chào bạn! Hệ thống vừa được nghiên cứu và tối ưu hóa vượt bậc phần học HSK 3.0 dựa trên toàn bộ tài liệu giáo trình chính thống từ https://tiengtrungthuonghai.vn/:
 
-✨ CÁC CẢI TIẾN NỔI BẬT:
-1. 🎯 Thu nhỏ kích thước:
-   - Hai biểu tượng (Hỗ trợ 24/7 & Trợ lý Dịch AI 3D) được tinh chỉnh gọn gàng (42px) thanh thoát, không che khuất nội dung học tập.
-2. 📍 Quy tụ về góc phải (Right Dock):
-   - Đưa biểu tượng Hỗ trợ từ góc trái màn hình về góc phải cùng Trợ lý AI, tạo thành cụm floating dock gọn gàng, liền mạch.
-3. 👁️ Cho phép Ẩn/Hiện linh hoạt:
-   - Thêm nút [Ẩn ✕] ngay trên đầu dock để người dùng có thể ẩn đi bất cứ lúc nào nếu thấy vướng víu.
-   - Khi ẩn, cụm trợ lý thu gọn thành nút nhỏ tinh tế [🟢 Trợ lý] ở góc phải dưới; bấm vào sẽ mở lại ngay.
-   - Tự động ghi nhớ trạng thái (Ẩn/Hiện) qua localStorage cho những lần truy cập sau.
-4. 🔄 Đóng/Mở tương hỗ (Mutual Exclusion):
-   - Mở cửa sổ Hỗ trợ sẽ tự động thu gọn Trợ lý AI và ngược lại, đảm bảo giao diện luôn thoáng đãng.
+📚 1. BỘ 48 BÀI HỌC GIÁO TRÌNH CHUẨN HSK 3.0 SƠ CẤP (STANDARD COURSE):
+- Tích hợp trọn vẹn 48 bài học chuẩn khảo thí BLCU: HSK 1 (15 bài), HSK 2 (15 bài) & HSK 3 (18 bài).
+- Đầy đủ tiêu đề Trung - Pinyin - Việt, Ngữ pháp nguyên mẫu, Chủ điểm từ vựng, Đoạn hội thoại mẫu nòng cốt kèm nghe giọng Bắc Kinh (Nữ/Nam) và Mẹo văn hóa thực tế thời đại số 4.0.
+- Tìm kiếm tức thì và lọc bài theo từng cấp độ HSK 1, 2, 3.
+
+📊 2. MA TRẬN ĐỔI MỚI CẤU TRÚC ĐỀ THI HSK 3.0 & HSKK:
+- Bảng đối chiếu chi tiết giữa HSK 2.0 và HSK 3.0 qua từng cấp độ (HSK 1 đến HSK 7-9 và HSKK 3-6).
+- Phân tích số câu hỏi, thời gian làm bài, yêu cầu viết đoạn 80-200 từ và chiến thuật phòng thi điểm cao từ giảng viên Tiếng Trung Thượng Hải.
+
+📖 3. CẨM NANG SO SÁNH 4 BỘ GIÁO TRÌNH KINH ĐIỂN:
+- Đặt lên bàn cân: Giáo trình Chuẩn HSK 3.0 vs Hán ngữ 6 quyển (BLCU) vs Boya (PKU) vs Phát triển Hán ngữ.
+- Phân tích ưu/nhược điểm và lộ trình phối hợp sách giúp người tự học đạt hiệu quả tối đa.
+
+🌐 4. PHÒNG LUYỆN DỊCH THỰC CHIẾN 6 TÌNH HUỐNG (HSK 3.0 TRANSLATION LAB):
+- Thực hành kỹ năng Dịch hai chiều (Trung - Việt & Việt - Trung) - chốt chặn đột phá mới của HSK 3.0.
+- Chấm điểm tức thì, phân tích công thức câu nòng cốt (S-V-O, định ngữ trước 的, trạng ngữ thời gian/địa điểm, câu chữ 把 & 被).
 
 ⚡ Trải nghiệm ngay tại: ${activeUrl}
 📦 GitHub: https://github.com/huyentrang2003ltv-sys/chinese-daily`;
