@@ -111,7 +111,7 @@
     <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
       
       <!-- Brand Logo -->
-      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('etymology')">
+      <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('home')">
         <div class="oriental-seal flex items-center justify-center">
           <span class="font-hanzi font-bold text-2xl text-amber-100">学</span>
         </div>
@@ -361,8 +361,15 @@
   <!-- Navigation Tabs -->
   <nav class="sticky top-[69px] z-30 glass-panel border-b border-amber-900/10 py-2 px-4 shadow-xs">
     <div class="max-w-7xl mx-auto flex items-center gap-2 overflow-x-auto no-scrollbar">
-      <button onclick="switchTab('etymology')" id="tab-btn-etymology" class="nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40">
-        <i data-lucide="sparkles" class="w-4 h-4 text-amber-300"></i>
+      <!-- TAB 0: TRANG CHỦ DASHBOARD -->
+      <button onclick="switchTab('home')" id="tab-btn-home" class="nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40">
+        <i data-lucide="home" class="w-4 h-4 text-amber-300"></i>
+        <span>Trang Chủ</span>
+        <span class="px-1.5 py-0.5 text-[9px] rounded-full bg-amber-400 text-stone-900 font-black">Mới</span>
+      </button>
+
+      <button onclick="switchTab('etymology')" id="tab-btn-etymology" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 dark:text-stone-300 hover:text-[#8B1E1E] dark:hover:text-amber-300 hover:bg-[#F6EFE5] dark:hover:bg-stone-800">
+        <i data-lucide="sparkles" class="w-4 h-4 text-amber-700 dark:text-amber-400"></i>
         <span>Chiết Tự & Gốc Từ</span>
       </button>
 
@@ -437,8 +444,618 @@
   <!-- Main Content Area -->
   <main class="flex-1 max-w-7xl w-full mx-auto p-4 lg:p-8 z-10">
 
+    <!-- ==================== TAB 0: TRANG CHỦ DASHBOARD (TỔNG QUAN HỌC TẬP THÔNG MINH) ==================== -->
+    <section id="tab-home" class="space-y-8 animate-fade-in">
+
+      <!-- ==================== KHỐI 1: HERO BANNER & NHIỆM VỤ HÔM NAY ==================== -->
+      <div class="glass-card rounded-3xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-br from-amber-50/90 via-[#FFFDF9] to-red-50/40 dark:from-[#1b222d] dark:via-[#161B22] dark:to-[#1e171b] border-2 border-amber-300/80 dark:border-amber-500/30 shadow-xl">
+        
+        <!-- Decorative Oriental Seals in background -->
+        <div class="absolute -right-8 -bottom-8 w-48 h-48 rounded-full border-4 border-amber-500/10 dark:border-amber-400/5 flex items-center justify-center pointer-events-none select-none">
+          <span class="font-hanzi text-8xl text-amber-500/15 dark:text-amber-400/10 font-black">学</span>
+        </div>
+        <div class="absolute right-32 -top-12 w-32 h-32 rounded-full border-2 border-red-500/10 pointer-events-none select-none"></div>
+
+        <div class="relative z-10 space-y-6">
+          
+          <!-- Top Row: Personal Greeting & User Badge & Streak Box -->
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            
+            <!-- Left: Avatar + Greeting + Role -->
+            <div class="flex items-center gap-3.5">
+              <div class="relative">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-amber-600 text-white flex items-center justify-center font-bold text-2xl shadow-md border-2 border-amber-300">
+                  <span id="homeUserAvatarInitial">H</span>
+                </div>
+                <span class="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white ring-1 ring-emerald-400" title="Trực tuyến"></span>
+              </div>
+
+              <div>
+                <div class="flex items-center gap-2 flex-wrap">
+                  <h2 id="homeGreetingTitle" class="text-xl lg:text-2xl font-black text-stone-900 dark:text-amber-100 font-serif-luxury tracking-tight">
+                    Chào buổi sáng, Phạm Hoàng! ☀️
+                  </h2>
+                  <span id="homeUserRoleBadge" class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-amber-500/20 to-yellow-500/30 text-amber-900 dark:text-amber-300 border border-amber-400/80 shadow-2xs">
+                    👑 Super Admin
+                  </span>
+                </div>
+                <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 flex items-center gap-2">
+                  <span>Hôm nay là một ngày tuyệt vời để bứt phá tiếng Trung! 🏮</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Right: Daily Streak & Check-in Reward Button -->
+            <div class="flex items-center gap-3 bg-white/80 dark:bg-stone-800/80 p-3 rounded-2xl border border-amber-200/80 dark:border-stone-700 shadow-sm backdrop-blur-xs">
+              <div>
+                <div class="flex items-center gap-1.5 text-xs font-bold text-amber-900 dark:text-amber-300">
+                  <span class="text-base animate-bounce">🔥</span>
+                  <span>Chuỗi Học Tập:</span>
+                  <span id="homeStreakCount" class="text-sm font-black text-[#8B1E1E] dark:text-rose-400">1</span>
+                  <span>ngày</span>
+                </div>
+                <!-- 7-day indicator dots -->
+                <div class="flex items-center gap-1.5 mt-1.5 text-[9px] font-bold text-stone-400" id="homeStreakDays">
+                  <span class="w-5 h-5 rounded-md bg-emerald-500 text-white flex items-center justify-center">T2</span>
+                  <span class="w-5 h-5 rounded-md bg-stone-200 dark:bg-stone-700 text-stone-600 dark:text-stone-300 flex items-center justify-center ring-2 ring-amber-400">T3</span>
+                  <span class="w-5 h-5 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-400 flex items-center justify-center">T4</span>
+                  <span class="w-5 h-5 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-400 flex items-center justify-center">T5</span>
+                  <span class="w-5 h-5 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-400 flex items-center justify-center">T6</span>
+                  <span class="w-5 h-5 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-400 flex items-center justify-center">T7</span>
+                  <span class="w-5 h-5 rounded-md bg-stone-100 dark:bg-stone-800 text-stone-400 flex items-center justify-center">CN</span>
+                </div>
+              </div>
+
+              <button 
+                id="homeCheckinBtn"
+                onclick="claimDailyCheckin()" 
+                class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-stone-900 font-bold text-xs shadow-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer shrink-0"
+                title="Bấm điểm danh nhận ngay +20 EXP mỗi ngày"
+              >
+                <span>🎁</span>
+                <span id="homeCheckinBtnText">Điểm Danh</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- Wisdom Quote of the Day (每日金句) -->
+          <div class="p-4 rounded-2xl bg-[#FFFDF9]/90 dark:bg-stone-900/90 border border-amber-300/80 dark:border-amber-600/30 shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div class="flex items-start gap-3">
+              <div class="w-8 h-8 rounded-xl bg-red-100 dark:bg-red-950/60 text-[#8B1E1E] dark:text-rose-400 flex items-center justify-center font-bold text-sm shrink-0 mt-0.5">
+                句
+              </div>
+              <div>
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 dark:text-amber-400">
+                    Danh Ngôn Phương Đông Mỗi Ngày (每日一言)
+                  </span>
+                  <span class="px-1.5 py-0.2 rounded bg-amber-100 dark:bg-stone-800 text-[9px] text-amber-800 dark:text-amber-300 font-semibold">Lão Tử</span>
+                </div>
+                <p id="homeQuoteHanzi" class="font-hanzi font-bold text-base lg:text-lg text-stone-900 dark:text-stone-100 mt-0.5">
+                  千里之行，始于足下。
+                </p>
+                <p id="homeQuotePinyin" class="text-xs text-amber-800 dark:text-amber-400 font-serif italic">
+                  Qiān lǐ zhī xíng, shǐ yú zú xià.
+                </p>
+                <p id="homeQuoteMeaning" class="text-xs text-stone-600 dark:text-stone-300 mt-0.5">
+                  "Hành trình vạn dặm bắt đầu từ một bước chân."
+                </p>
+              </div>
+            </div>
+
+            <button 
+              onclick="playHomeQuoteAudio()" 
+              class="self-start sm:self-center px-3 py-1.5 rounded-xl bg-amber-100/70 hover:bg-amber-200/70 dark:bg-stone-800 dark:hover:bg-stone-700 text-amber-900 dark:text-amber-300 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer shadow-2xs"
+              title="Nghe phát âm chuẩn giọng phổ thông"
+            >
+              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-amber-700 dark:text-amber-400"></i>
+              <span>Nghe Phát Âm</span>
+            </button>
+          </div>
+
+          <!-- 3 Daily Quests (Nhiệm Vụ Ngày) -->
+          <div>
+            <div class="flex items-center justify-between mb-2.5">
+              <h3 class="text-xs font-bold uppercase tracking-wider text-amber-900 dark:text-amber-300 flex items-center gap-1.5">
+                <i data-lucide="target" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+                <span>Nhiệm Vụ Tu Luyện Hôm Nay (Daily Quests):</span>
+              </h3>
+              <span class="text-[11px] text-stone-500 dark:text-stone-400">Hoàn thành để nhận tới <strong>+75 EXP</strong></span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+              
+              <!-- Quest 1 -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-stone-800/90 border border-stone-200 dark:border-stone-700 shadow-2xs space-y-2 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                      <span>📖</span> Nạp 10 Từ Vựng Mới
+                    </span>
+                    <span class="px-1.5 py-0.5 rounded-md bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 text-[10px] font-black">+20 EXP</span>
+                  </div>
+                  <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">Học từ vựng theo 125 chủ đề hoặc 214 bộ thủ.</p>
+                  <div class="w-full bg-stone-100 dark:bg-stone-700 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-emerald-500 h-full rounded-full transition-all duration-500" style="width: 40%"></div>
+                  </div>
+                  <p class="text-[10px] text-stone-400 mt-1 text-right">4 / 10 từ</p>
+                </div>
+                <button onclick="switchTab('radicals')" class="w-full py-1.5 px-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 dark:hover:bg-emerald-900/60 text-emerald-800 dark:text-emerald-300 text-xs font-bold transition-all text-center cursor-pointer">
+                  Học Từ Vựng Ngay →
+                </button>
+              </div>
+
+              <!-- Quest 2 -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-stone-800/90 border border-stone-200 dark:border-stone-700 shadow-2xs space-y-2 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                      <span>🌐</span> 1 Bài Luyện Dịch HSK
+                    </span>
+                    <span class="px-1.5 py-0.5 rounded-md bg-rose-100 dark:bg-rose-950 text-[#8B1E1E] dark:text-rose-300 text-[10px] font-black">+30 EXP</span>
+                  </div>
+                  <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">Luyện dịch câu thực chiến Việt sang Trung.</p>
+                  <div class="w-full bg-stone-100 dark:bg-stone-700 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-[#8B1E1E] h-full rounded-full transition-all duration-500" style="width: 0%"></div>
+                  </div>
+                  <p class="text-[10px] text-stone-400 mt-1 text-right">0 / 1 câu</p>
+                </div>
+                <button onclick="switchTab('translation')" class="w-full py-1.5 px-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 dark:bg-rose-950/40 dark:hover:bg-rose-900/60 text-[#8B1E1E] dark:text-rose-300 text-xs font-bold transition-all text-center cursor-pointer">
+                  Vào Luyện Dịch →
+                </button>
+              </div>
+
+              <!-- Quest 3 -->
+              <div class="p-3.5 rounded-2xl bg-white dark:bg-stone-800/90 border border-stone-200 dark:border-stone-700 shadow-2xs space-y-2 flex flex-col justify-between">
+                <div>
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                      <span>✍️</span> Tập Viết 3 Chữ Hán
+                    </span>
+                    <span class="px-1.5 py-0.5 rounded-md bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 text-[10px] font-black">+25 EXP</span>
+                  </div>
+                  <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">Luyện quy tắc bút thuận trên khung viết tương tác.</p>
+                  <div class="w-full bg-stone-100 dark:bg-stone-700 h-1.5 rounded-full mt-2 overflow-hidden">
+                    <div class="bg-amber-500 h-full rounded-full transition-all duration-500" style="width: 33%"></div>
+                  </div>
+                  <p class="text-[10px] text-stone-400 mt-1 text-right">1 / 3 chữ</p>
+                </div>
+                <button onclick="focusHomeHanziWriter()" class="w-full py-1.5 px-2.5 rounded-xl bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/40 dark:hover:bg-amber-900/60 text-amber-900 dark:text-amber-300 text-xs font-bold transition-all text-center cursor-pointer">
+                  Tập Viết Ngay →
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ==================== KHỐI 2 & 3: TIẾP TỤC HỌC & CHỮ HÁN CỦA NGÀY (2 CỘT) ==================== -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- CỘT TRÁI (7 cols): TIẾP TỤC BÀI ĐANG HỌC (RESUME LEARNING) -->
+        <div class="lg:col-span-7 glass-card rounded-3xl p-6 bg-[#FFFDF9] dark:bg-[#161B22] border border-amber-300/80 dark:border-stone-800 shadow-md flex flex-col justify-between space-y-5">
+          <div>
+            <div class="flex items-center justify-between border-b border-amber-200/70 dark:border-stone-800 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-lg">📚</span>
+                <h3 class="font-serif-luxury font-bold text-base text-stone-900 dark:text-stone-100">
+                  Tiếp Tục Bài Học Gần Nhất
+                </h3>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-100 text-[#8B1E1E] dark:bg-rose-950 dark:text-rose-300">
+                Đang Dở Dang
+              </span>
+            </div>
+
+            <!-- Lesson Card Summary -->
+            <div class="mt-4 p-4 rounded-2xl bg-amber-50/60 dark:bg-stone-800/60 border border-amber-200/90 dark:border-stone-700 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex items-start gap-3.5">
+                <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#8B1E1E] to-amber-600 text-white flex items-center justify-center font-hanzi font-bold text-2xl shadow-sm shrink-0">
+                  去
+                </div>
+                <div>
+                  <span id="homeResumeVolume" class="text-[11px] font-bold text-amber-800 dark:text-amber-400">
+                    Hán Ngữ 1 (Quyển 1 Thượng) • Bài 4
+                  </span>
+                  <h4 id="homeResumeTitle" class="text-base font-bold text-stone-900 dark:text-stone-100 mt-0.5">
+                    你去哪儿？ <span class="text-xs font-normal text-stone-500 dark:text-stone-400">(Nǐ qù nǎr - Bạn đi đâu đấy?)</span>
+                  </h4>
+                  <p class="text-xs text-stone-600 dark:text-stone-400 mt-1 flex items-center gap-2">
+                    <span>📍 Nơi chốn & Ngữ âm er</span>
+                    <span>•</span>
+                    <span>28 Từ Vựng</span>
+                    <span>•</span>
+                    <span>Bài Khóa Kèm Audio</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="mt-3.5 space-y-1.5">
+              <div class="flex items-center justify-between text-xs text-stone-500 dark:text-stone-400 font-medium">
+                <span>Tiến độ hoàn thành bài:</span>
+                <span class="font-bold text-[#8B1E1E] dark:text-rose-400">65%</span>
+              </div>
+              <div class="w-full bg-stone-100 dark:bg-stone-700 h-2 rounded-full overflow-hidden">
+                <div class="bg-gradient-to-r from-amber-500 to-[#8B1E1E] h-full rounded-full transition-all duration-500" style="width: 65%"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex items-center gap-3 pt-2">
+            <button 
+              onclick="resumeLastLesson()" 
+              class="flex-1 py-3 px-4 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] hover:opacity-95 text-white font-bold text-xs shadow-md flex items-center justify-center gap-2 transition-all cursor-pointer group"
+            >
+              <span>Mở Bài Học Tiếp Tục</span>
+              <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+
+            <button 
+              onclick="switchTab('jiaocheng')" 
+              class="py-3 px-4 rounded-2xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-200 font-bold text-xs transition-all cursor-pointer"
+              title="Xem toàn bộ 76 bài giảng trong 6 quyển"
+            >
+              Đổi Bài Khác
+            </button>
+          </div>
+        </div>
+
+
+        <!-- CỘT PHẢI (5 cols): CHỮ HÁN CỦA NGÀY (今日一字 - WORD OF THE DAY) -->
+        <div id="homeWordOfTheDaySection" class="lg:col-span-5 glass-card rounded-3xl p-6 bg-[#FFFDF9] dark:bg-[#161B22] border border-amber-300/80 dark:border-stone-800 shadow-md flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between border-b border-amber-200/70 dark:border-stone-800 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-lg">✍️</span>
+                <h3 class="font-serif-luxury font-bold text-base text-stone-900 dark:text-stone-100">
+                  Chữ Hán Của Ngày (今日一字)
+                </h3>
+              </div>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300">
+                Tập Viết Chuẩn Nét
+              </span>
+            </div>
+
+            <!-- HanziWriter Canvas & Analysis -->
+            <div class="mt-4 flex flex-col sm:flex-row items-center gap-4">
+              
+              <!-- Interactive Hanzi Canvas (米字格 Mễ Tự Cách Điệu) -->
+              <div class="relative w-[150px] h-[150px] rounded-2xl bg-[#FFFDF9] dark:bg-stone-900 border-2 border-red-800/40 dark:border-amber-500/40 shadow-inner flex items-center justify-center overflow-hidden shrink-0">
+                <!-- Background 米 crosshairs -->
+                <div class="absolute inset-0 pointer-events-none opacity-20">
+                  <svg width="100%" height="100%" viewBox="0 0 150 150">
+                    <line x1="0" y1="0" x2="150" y2="150" stroke="#8B1E1E" stroke-dasharray="3,3" stroke-width="1"/>
+                    <line x1="150" y1="0" x2="0" y2="150" stroke="#8B1E1E" stroke-dasharray="3,3" stroke-width="1"/>
+                    <line x1="75" y1="0" x2="75" y2="150" stroke="#8B1E1E" stroke-dasharray="3,3" stroke-width="1"/>
+                    <line x1="0" y1="75" x2="150" y2="75" stroke="#8B1E1E" stroke-dasharray="3,3" stroke-width="1"/>
+                  </svg>
+                </div>
+                
+                <div id="homeHanziWriterCanvas" class="relative z-10 w-[140px] h-[140px]"></div>
+              </div>
+
+              <!-- Character Etymology Info -->
+              <div class="space-y-1.5 text-xs flex-1">
+                <div class="flex items-center gap-2">
+                  <span id="homeHanziChar" class="text-2xl font-black font-hanzi text-[#8B1E1E] dark:text-rose-400">福</span>
+                  <div>
+                    <p id="homeHanziPinyin" class="text-xs font-bold text-stone-900 dark:text-stone-100">fú (Phúc)</p>
+                    <p class="text-[10px] text-stone-500 dark:text-stone-400">Bộ Kỳ (礻) • 13 Nét</p>
+                  </div>
+                </div>
+
+                <p class="text-stone-600 dark:text-stone-300 text-[11px] leading-relaxed">
+                  <strong>Ý nghĩa:</strong> May mắn, ấm no, hạnh phúc trọn vẹn. Trong văn hóa Trung Hoa, chữ Phúc thường được dán ngược (福倒 - Phúc đáo) đón tài lộc.
+                </p>
+
+                <div class="pt-1 flex items-center gap-1.5 flex-wrap">
+                  <button 
+                    onclick="homeHanziAnimate()" 
+                    class="px-2.5 py-1 rounded-xl bg-amber-100 hover:bg-amber-200 dark:bg-stone-800 text-amber-900 dark:text-amber-300 text-[11px] font-bold transition-all flex items-center gap-1 cursor-pointer"
+                    title="Xem mô phỏng thứ tự viết từng nét"
+                  >
+                    <span>🎬 Xem Nét</span>
+                  </button>
+
+                  <button 
+                    onclick="homeHanziQuiz()" 
+                    class="px-2.5 py-1 rounded-xl bg-rose-100 hover:bg-rose-200 dark:bg-stone-800 text-[#8B1E1E] dark:text-rose-300 text-[11px] font-bold transition-all flex items-center gap-1 cursor-pointer"
+                    title="Tự dùng chuột hoặc chạm màn hình để viết thử"
+                  >
+                    <span>✍️ Tự Viết</span>
+                  </button>
+
+                  <button 
+                    onclick="homeHanziPronounce()" 
+                    class="px-2 py-1 rounded-xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-[11px] font-bold transition-all flex items-center gap-1 cursor-pointer"
+                    title="Nghe phát âm chuẩn"
+                  >
+                    <span>🔊 Nghe</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 text-[11px] text-stone-500 dark:text-stone-400 text-center border-t border-amber-200/50 dark:border-stone-800">
+            💡 Mỗi ngày học và viết chuẩn 1 chữ Hán để nắm vững 3.000 chữ thông dụng.
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- ==================== KHỐI 4: 4 TRỤC HỌC TẬP TRỌNG TÂM (4 CORE HUBS) ==================== -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="text-xl">🧭</span>
+            <div>
+              <h3 class="font-serif-luxury font-black text-lg text-stone-900 dark:text-stone-100">
+                4 Trụ Cột Học Tập Trọng Tâm
+              </h3>
+              <p class="text-xs text-stone-500 dark:text-stone-400">Chọn lộ trình phù hợp với mục tiêu học tập của bạn</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+
+          <!-- Hub 1: Lộ Trình HSK 3.0 -->
+          <div onclick="switchTab('pathway')" class="glass-card rounded-3xl p-5 bg-[#FFFDF9] dark:bg-[#161B22] border-2 border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition-transform">
+                  🧭
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300">
+                  HSK 1-9
+                </span>
+              </div>
+              <h4 class="font-bold text-sm text-stone-900 dark:text-stone-100 mt-3 group-hover:text-[#8B1E1E] dark:group-hover:text-amber-400 transition-colors">
+                Lộ Trình Chuẩn HSK 3.0
+              </h4>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                48 bài Standard Course Sơ cấp BLCU, ma trận 11.092 từ vựng, ngữ pháp phân cấp & phòng dịch.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-stone-100 dark:border-stone-800 text-xs font-bold text-amber-800 dark:text-amber-400">
+              <span>Khám Phá Lộ Trình</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+
+          <!-- Hub 2: Giáo Trình Hán Ngữ 6 Quyển -->
+          <div onclick="switchTab('jiaocheng')" class="glass-card rounded-3xl p-5 bg-[#FFFDF9] dark:bg-[#161B22] border-2 border-stone-200 dark:border-stone-800 hover:border-red-400 dark:hover:border-red-500 transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-[#8B1E1E] to-[#A52A2A] text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition-transform">
+                  📖
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-rose-100 text-[#8B1E1E] dark:bg-rose-950 dark:text-rose-300">
+                  76 Bài BLCU
+                </span>
+              </div>
+              <h4 class="font-bold text-sm text-stone-900 dark:text-stone-100 mt-3 group-hover:text-[#8B1E1E] dark:group-hover:text-rose-400 transition-colors">
+                Giáo Trình Hán Ngữ 6 Quyển
+              </h4>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                76 bài giảng đại học Bắc Kinh kinh điển, đầy đủ bài khóa, từ vựng trọng tâm & hội thoại audio.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-stone-100 dark:border-stone-800 text-xs font-bold text-[#8B1E1E] dark:text-rose-400">
+              <span>Vào Học Giáo Trình</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+
+          <!-- Hub 3: Luyện Dịch Thực Chiến & AI -->
+          <div onclick="switchTab('translation')" class="glass-card rounded-3xl p-5 bg-[#FFFDF9] dark:bg-[#161B22] border-2 border-stone-200 dark:border-stone-800 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-600 to-purple-700 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition-transform">
+                  🌐
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-indigo-100 text-indigo-900 dark:bg-indigo-950 dark:text-indigo-300">
+                  Song Ngữ AI
+                </span>
+              </div>
+              <h4 class="font-bold text-sm text-stone-900 dark:text-stone-100 mt-3 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                Luyện Dịch Thực Chiến & AI
+              </h4>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                Dịch song ngữ Việt - Trung chuẩn HiHSK cấp 1-5, đối chiếu câu mẫu & đàm thoại cùng AI 3D.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-stone-100 dark:border-stone-800 text-xs font-bold text-indigo-700 dark:text-indigo-400">
+              <span>Luyện Dịch Ngay</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+
+          <!-- Hub 4: Chiết Tự, 214 Bộ Thủ & 14.605 Từ Vựng -->
+          <div onclick="switchTab('etymology')" class="glass-card rounded-3xl p-5 bg-[#FFFDF9] dark:bg-[#161B22] border-2 border-stone-200 dark:border-stone-800 hover:border-emerald-400 dark:hover:border-emerald-500 transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-emerald-600 to-teal-700 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition-transform">
+                  ✍️
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-100 text-emerald-900 dark:bg-emerald-950 dark:text-emerald-300">
+                  14.605 Từ
+                </span>
+              </div>
+              <h4 class="font-bold text-sm text-stone-900 dark:text-stone-100 mt-3 group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
+                Chiết Tự, Bộ Thủ & Từ Vựng
+              </h4>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                531+ chữ Hán chiết tự tượng hình, 214 bộ thủ Khang Hy & 125 chủ đề từ vựng chuyên sâu.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-stone-100 dark:border-stone-800 text-xs font-bold text-emerald-700 dark:text-emerald-400">
+              <span>Tra Cứu Gốc Từ</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+      <!-- ==================== KHỐI 5: THI ĐUA CỘNG ĐỒNG & MINI QUIZ ==================== -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- BẢNG VÀNG TUẦN (TOP 5 HỌC VIÊN - 7 cols) -->
+        <div class="lg:col-span-7 glass-card rounded-3xl p-6 bg-[#FFFDF9] dark:bg-[#161B22] border border-amber-300/80 dark:border-stone-800 shadow-md space-y-4">
+          <div class="flex items-center justify-between border-b border-amber-200/70 dark:border-stone-800 pb-3">
+            <div class="flex items-center gap-2">
+              <span class="text-lg">🏆</span>
+              <h3 class="font-serif-luxury font-bold text-base text-stone-900 dark:text-stone-100">
+                Bảng Vàng Học Viên Tuần (Top 5 Thư Sinh)
+              </h3>
+            </div>
+            <span class="text-[11px] text-stone-500 dark:text-stone-400">Xếp hạng theo EXP</span>
+          </div>
+
+          <div class="space-y-2.5 text-xs">
+            
+            <!-- Top 1: Phạm Hoàng -->
+            <div class="p-3 rounded-2xl bg-amber-50/70 dark:bg-stone-800/80 border border-amber-300 dark:border-amber-700/50 flex items-center justify-between shadow-2xs">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-500 text-stone-950 font-black text-xs flex items-center justify-center shadow-xs">
+                  1
+                </span>
+                <div class="w-8 h-8 rounded-full bg-[#8B1E1E] text-white flex items-center justify-center font-bold text-xs">
+                  H
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <p class="font-bold text-stone-900 dark:text-stone-100">Phạm Hoàng</p>
+                    <span class="text-[9px] px-1.5 py-0.2 rounded font-black bg-amber-500/20 text-amber-900 dark:text-amber-300 border border-amber-400/80">👑 Super Admin</span>
+                  </div>
+                  <p class="text-[10px] text-stone-500 dark:text-stone-400">Chuỗi 14 ngày liên tục 🔥</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-mono font-black text-sm text-[#8B1E1E] dark:text-amber-400">1,250 EXP</p>
+                <p class="text-[9px] text-emerald-600 font-semibold">● Đang dẫn đầu</p>
+              </div>
+            </div>
+
+            <!-- Top 2: Huyền Trang -->
+            <div class="p-3 rounded-2xl bg-white dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-stone-300 dark:bg-stone-600 text-stone-800 dark:text-white font-black text-xs flex items-center justify-center">
+                  2
+                </span>
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-rose-600 to-amber-600 text-white flex items-center justify-center font-bold text-xs">
+                  T
+                </div>
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <p class="font-bold text-stone-900 dark:text-stone-100">Huyền Trang</p>
+                    <span class="text-[9px] px-1.5 py-0.2 rounded font-black bg-amber-500/20 text-amber-900 dark:text-amber-300 border border-amber-400/80">👑 Super Admin</span>
+                  </div>
+                  <p class="text-[10px] text-stone-500 dark:text-stone-400">Chuỗi 12 ngày liên tục 🔥</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-mono font-black text-sm text-stone-800 dark:text-stone-200">1,180 EXP</p>
+                <p class="text-[9px] text-stone-400 font-medium">Hạng 2</p>
+              </div>
+            </div>
+
+            <!-- Top 3: Minh Tuấn -->
+            <div class="p-3 rounded-2xl bg-white dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <span class="w-6 h-6 rounded-full bg-amber-700/30 text-amber-900 dark:text-amber-200 font-black text-xs flex items-center justify-center">
+                  3
+                </span>
+                <div class="w-8 h-8 rounded-full bg-emerald-600 text-white flex items-center justify-center font-bold text-xs">
+                  M
+                </div>
+                <div>
+                  <p class="font-bold text-stone-900 dark:text-stone-100">Minh Tuấn</p>
+                  <p class="text-[10px] text-stone-500 dark:text-stone-400">Chuỗi 9 ngày liên tục</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-mono font-black text-sm text-stone-800 dark:text-stone-200">890 EXP</p>
+                <p class="text-[9px] text-stone-400 font-medium">Hạng 3</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- MINI QUIZ HSK 60 GIÂY (5 cols) -->
+        <div class="lg:col-span-5 glass-card rounded-3xl p-6 bg-[#FFFDF9] dark:bg-[#161B22] border border-amber-300/80 dark:border-stone-800 shadow-md flex flex-col justify-between space-y-4">
+          <div>
+            <div class="flex items-center justify-between border-b border-amber-200/70 dark:border-stone-800 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="text-lg">🎯</span>
+                <h3 class="font-serif-luxury font-bold text-base text-stone-900 dark:text-stone-100">
+                  Câu Đố Nhanh Hôm Nay
+                </h3>
+              </div>
+              <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+                +15 EXP
+              </span>
+            </div>
+
+            <div class="mt-4 space-y-3">
+              <p class="text-xs font-medium text-stone-700 dark:text-stone-300">
+                <strong>Câu hỏi:</strong> Chọn từ thích hợp điền vào chỗ trống:
+              </p>
+              
+              <div class="p-3.5 rounded-2xl bg-amber-50/70 dark:bg-stone-800/80 border border-amber-200 dark:border-stone-700 text-center">
+                <p class="font-hanzi font-bold text-base text-stone-900 dark:text-stone-100">
+                  他是昨天下午 ____ 北京的。
+                </p>
+                <p class="text-[11px] text-stone-500 mt-0.5 italic">
+                  (Tā shì zuótiān xiàwǔ ____ Běijīng de.)
+                </p>
+              </div>
+
+              <!-- Quiz Options -->
+              <div class="grid grid-cols-2 gap-2 text-xs" id="homeMiniQuizOptions">
+                <button onclick="answerHomeMiniQuiz(0)" id="quiz-opt-0" class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#8B1E1E] bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-bold transition-all text-center cursor-pointer">
+                  A. 到 (dào)
+                </button>
+                <button onclick="answerHomeMiniQuiz(1)" id="quiz-opt-1" class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#8B1E1E] bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-bold transition-all text-center cursor-pointer">
+                  B. 在 (zài)
+                </button>
+                <button onclick="answerHomeMiniQuiz(2)" id="quiz-opt-2" class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#8B1E1E] bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-bold transition-all text-center cursor-pointer">
+                  C. 从 (cóng)
+                </button>
+                <button onclick="answerHomeMiniQuiz(3)" id="quiz-opt-3" class="p-2.5 rounded-xl border border-stone-200 dark:border-stone-700 hover:border-[#8B1E1E] bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 font-bold transition-all text-center cursor-pointer">
+                  D. 离 (lí)
+                </button>
+              </div>
+
+              <!-- Quiz Feedback Box -->
+              <div id="homeQuizFeedback" class="hidden p-3 rounded-xl text-xs font-medium animate-fade-in"></div>
+            </div>
+          </div>
+
+          <div class="pt-2 text-[11px] text-stone-500 dark:text-stone-400 text-center border-t border-amber-200/50 dark:border-stone-800">
+            Hoàn thành mỗi ngày để duy trì thói quen phản xạ ngữ pháp!
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
     <!-- TAB 1: CHIẾT TỰ & GỐC TỪ -->
-    <section id="tab-etymology" class="space-y-6">
+    <section id="tab-etymology" class="space-y-6 hidden">
       <!-- Section Banner (Phương Đông Quý Tộc) -->
       <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-amber-50/70 via-[#FFFDF9] to-[#FFFDF9] border border-amber-200/80">
         <div class="relative z-10 max-w-3xl">

@@ -11,29 +11,39 @@ try {
   if (urlFromFile.startsWith('http')) activeUrl = urlFromFile;
 } catch (e) {}
 
-const message = `👑 [HỌC TIẾNG TRUNG MỖI NGÀY - PHÂN QUYỀN 👑 SUPER ADMIN & BẢNG ĐIỀU KHIỂN QUẢN TRỊ] 👑
+const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - RA MẮT TRANG CHỦ DASHBOARD THÔNG MINH] 🏮
 
-Chào bạn! Quyền Quản trị Tối cao (Super Admin) đã được gán và kích hoạt thành công cho 2 tài khoản:
+Chào bạn! Giao diện Trang Chủ (Home Dashboard) theo phong cách Sang Trọng Phương Đông đã chính thức được triển khai hoàn tất:
 
-👑 DANH SÁCH SUPER ADMIN:
-1. Phạm Hoàng: hoangpham1618@gmail.com
-2. Huyền Trang: huyentrang2003ltv@gmail.com
+🌟 5 KHỐI TÍNH NĂNG ĐẶC SẮC TRÊN TRANG CHỦ MỚI:
+1. ☀️ BANNER CHÀO BUỔI & NHIỆM VỤ HÔM NAY:
+   - Lời chào cá nhân hóa theo thời gian trong ngày (Sáng, Trưa, Chiều, Tối).
+   - Danh ngôn phương Đông mỗi ngày (每日一言) kèm audio phát âm chuẩn.
+   - Chuỗi học tập (Streak 🔥) kèm nút "Điểm Danh Nhận Thưởng" (+20 EXP).
+   - 3 Nhiệm vụ ngày (Daily Quests) có thanh tiến trình nhận tới +75 EXP.
 
-🌟 CÁC ĐẶC QUYỀN & TÍNH NĂNG QUẢN TRỊ ĐƯỢC KÍCH HOẠT:
-✨ Biểu tượng Vương miện Vàng 👑 & Huy hiệu "👑 Super Admin" VIP hiển thị nổi bật trên thanh tiêu đề Header và trong Menu hồ sơ cá nhân.
-✨ Đăng nhập nhanh 1-chạm (Quick Login) dành riêng cho cả 2 Super Admin trong hộp thoại đăng nhập.
-✨ Bảng Điều Khiển Quản Trị Tối Cao (Super Admin Dashboard Modal):
-   - Chuyển đổi nhanh 1-click giữa 2 tài khoản Admin.
-   - Thống kê Realtime KPIs: Số người online, 14.605 từ vựng, 76 bài Giáo trình Hán ngữ, 48 bài HSK 3.0 Standard Course.
-   - Công cụ kiểm tra kết nối & gửi thông báo Telegram tức thì.
-   - Công cụ làm mới cache & đồng bộ lại dữ liệu.
-   - Nút tải bản sao lưu mã nguồn website (chinese-daily.zip) ngoại tuyến.
-   - Lối tắt mở Bảng Phân Tích Người Học & Lưu Lượng Truy Cập.
+2. 📚 KHỐI TIẾP TỤC BÀI ĐANG HỌC (RESUME LEARNING):
+   - Tự động ghi nhớ bài học gần nhất (ví dụ: Hán Ngữ 1 - Bài 4: 你去哪儿？).
+   - Nút 1-click "Mở Bài Học Tiếp Tục" đưa thẳng vào nội dung bài đang học dở.
 
-🌐 Trải nghiệm trực tiếp tại:
+3. ✍️ KHỐI CHỮ HÁN CỦA NGÀY (今日一字):
+   - Tích hợp HanziWriter tương tác vẽ nét chữ Phúc (福) trên ô Mễ tự (米字格).
+   - Nút xem mô phỏng nét bút thư pháp, tự tập viết chấm điểm, và phát âm pinyin chuẩn.
+
+4. 🧭 4 TRỤ CỘT HỌC TẬP TRỌNG TÂM:
+   - 🧭 Lộ trình chuẩn HSK 3.0 (48 bài Standard Course).
+   - 📖 Giáo trình Hán ngữ 6 quyển BLCU (76 bài toàn tập).
+   - 🌐 Luyện dịch thực chiến HiHSK & Trợ lý AI đàm thoại.
+   - ✍️ Chiết tự, 214 Bộ thủ & 14.605 từ vựng 125 chủ đề.
+
+5. 🏆 THI ĐUA CỘNG ĐỒNG & MINI QUIZ:
+   - Bảng Vàng Học Viên Tuần (Top 5 Thư Sinh Xuất Sắc dẫn đầu bởi Phạm Hoàng & Huyền Trang).
+   - Câu đố nhanh ngữ pháp hôm nay (+15 EXP) phản hồi đúng sai tức thì.
+
+🌐 Trải nghiệm trực tiếp ngay tại:
 ${activeUrl}
 
-Chúc bạn và bạn học có trải nghiệm quản trị và học tập tuyệt vời nhất! 🏮`;
+Chúc bạn có những giờ phút học tập và tu luyện tiếng Trung đầy cảm hứng! 🏮`;
 
 const data = JSON.stringify({
   chat_id: chatId,
@@ -56,7 +66,6 @@ const req = https.request(options, (res) => {
   res.on('data', (chunk) => body += chunk);
   res.on('end', () => {
     console.log('Telegram response status:', res.statusCode);
-    console.log('Response body:', body);
   });
 });
 

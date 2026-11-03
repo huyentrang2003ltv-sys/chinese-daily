@@ -44,7 +44,9 @@ let userProfile = {
 };
 
 // State
-let activeTab = 'etymology';
+let activeTab = 'home';
+let homeWriter = null;
+let homeQuizAnswered = false;
 let activeCultureCategory = 'all';
 let cultureSearchQuery = '';
 let activeRadicalStroke = 'all';
@@ -446,6 +448,9 @@ function updateProfileUI() {
   if (dropdownUserEmail) dropdownUserEmail.innerText = email;
   if (dropdownUserInitial) dropdownUserInitial.innerText = initialChar.toUpperCase();
   if (dropdownNotebookCount) dropdownNotebookCount.innerText = (userProfile.savedWords || []).length;
+  if (activeTab === 'home') {
+    renderHomeDashboard();
+  }
 
   // Super Admin Badge & Crown Toggle
   const isAdmin = isSuperAdmin(email);
@@ -768,6 +773,9 @@ function ensureTabRendered(tabId) {
   renderedTabs.add(tabId);
 
   switch (tabId) {
+    case 'home':
+      renderHomeDashboard();
+      break;
     case 'etymology':
       if (etymologyData && etymologyData.length) {
         renderCharacterPills();
@@ -949,7 +957,8 @@ async function initApp() {
     lessonsData = lessonsRes;
 
     // Immediately render active view (Tab 1)
-    ensureTabRendered('etymology');
+    ensureTabRendered('home');
+    renderHomeDashboard();
     initFloatingAiAssistant();
     initVisitorTracker();
     initFloatingDock();
@@ -1023,7 +1032,7 @@ function switchTab(tabId) {
   }
   activeTab = tabId;
   const tabs = [
-    'etymology', 'jiaocheng', 'radicals', 'chengyu', 'readings', 'grammar',
+    'home', 'etymology', 'jiaocheng', 'radicals', 'chengyu', 'readings', 'grammar',
     'culture', 'confusions', 'translation', 'mockexam',
     'pathway', 'practice', 'flashcards', 'dictionary'
   ];
@@ -1036,7 +1045,9 @@ function switchTab(tabId) {
     if (!section || !btn) return;
     if (t === tabId) {
       section.classList.remove('hidden');
-      if (t === 'etymology') {
+      if (t === 'home') {
+        btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40';
+      } else if (t === 'etymology') {
         btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40';
       } else if (t === 'jiaocheng') {
         btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40';
@@ -8486,6 +8497,16 @@ async function openLessonDetailModal(lessonId) {
     }
 
     currentActiveLesson = lesson;
+    if (userProfile) {
+      userProfile.lastLesson = {
+        id: lesson.id,
+        volumeName: lesson.volumeName,
+        titleHanzi: lesson.titleHanzi,
+        titlePinyin: lesson.titlePinyin,
+        titleMeaning: lesson.titleMeaning
+      };
+      saveUserProfile();
+    }
     stopDialogueSequence();
     currentLessonFIBSelections = {};
 
@@ -9894,3 +9915,262 @@ window.addEventListener('keydown', (e) => {
 
 // Run on page load
 window.addEventListener('DOMContentLoaded', initApp);
+
+
+// ==================== HOME DASHBOARD MODULE ====================
+
+function getHomeGreeting(name) {
+  const hour = new Date().getHours();
+  let timeOfDay = 'buổi sáng';
+  let emoji = '☀️';
+
+  if (hour >= 11 && hour < 14) {
+    timeOfDay = 'buổi trưa';
+    emoji = '🍵';
+  } else if (hour >= 14 && hour < 18) {
+    timeOfDay = 'buổi chiều';
+    emoji = '🏮';
+  } else if (hour >= 18 || hour < 5) {
+    timeOfDay = 'buổi tối';
+    emoji = '🌙';
+  }
+
+  const displayName = name || (userProfile && userProfile.name) || 'Học Viên';
+  return `Chào ${timeOfDay}, ${displayName}! ${emoji}`;
+}
+
+function renderHomeDashboard() {
+  const greetingEl = document.getElementById('homeGreetingTitle');
+  if (greetingEl) {
+    greetingEl.innerText = getHomeGreeting(userProfile.name);
+  }
+
+  const avatarInitialEl = document.getElementById('homeUserAvatarInitial');
+  if (avatarInitialEl) {
+    const initial = (userProfile.name && userProfile.name.length > 0) ? userProfile.name[0].toUpperCase() : 'H';
+    avatarInitialEl.innerText = initial;
+  }
+
+  const roleBadgeEl = document.getElementById('homeUserRoleBadge');
+  if (roleBadgeEl) {
+    if (isSuperAdmin(userProfile.email)) {
+      roleBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-amber-500/20 to-yellow-500/30 text-amber-900 dark:text-amber-300 border border-amber-400/80 shadow-2xs';
+      roleBadgeEl.innerHTML = '👑 Super Admin';
+    } else {
+      roleBadgeEl.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300 border border-stone-200 dark:border-stone-700';
+      roleBadgeEl.innerHTML = '⭐ Học Viên';
+    }
+  }
+
+  const streakEl = document.getElementById('homeStreakCount');
+  if (streakEl) {
+    streakEl.innerText = userProfile.streak || 1;
+  }
+
+  // Update checkin button status
+  const todayStr = new Date().toISOString().split('T')[0];
+  const lastCheckin = localStorage.getItem('lastCheckinDate');
+  const checkinBtn = document.getElementById('homeCheckinBtn');
+  const checkinBtnText = document.getElementById('homeCheckinBtnText');
+  if (checkinBtn && checkinBtnText) {
+    if (lastCheckin === todayStr) {
+      checkinBtnText.innerText = 'Đã Điểm Danh ✓';
+      checkinBtn.classList.remove('from-amber-500', 'to-yellow-500', 'hover:scale-105');
+      checkinBtn.classList.add('from-emerald-600', 'to-teal-600', 'opacity-90', 'cursor-default');
+    }
+  }
+
+  // Update Resume Lesson Info
+  if (userProfile && userProfile.lastLesson) {
+    const volEl = document.getElementById('homeResumeVolume');
+    const titleEl = document.getElementById('homeResumeTitle');
+    if (volEl) volEl.innerText = userProfile.lastLesson.volumeName || 'Hán Ngữ 1 (Quyển 1 Thượng)';
+    if (titleEl) {
+      titleEl.innerHTML = `${userProfile.lastLesson.titleHanzi || '你去哪儿？'} <span class="text-xs font-normal text-stone-500 dark:text-stone-400">(${userProfile.lastLesson.titlePinyin || 'Nǐ qù nǎr'} - ${userProfile.lastLesson.titleMeaning || 'Bạn đi đâu đấy?'})</span>`;
+    }
+  }
+
+  // Initialize HanziWriter for Word of the Day (福)
+  initHomeHanziWriter('福');
+
+  // Refresh icons in tab
+  const tabHome = document.getElementById('tab-home');
+  if (tabHome) refreshIcons(tabHome);
+}
+
+function initHomeHanziWriter(char) {
+  const target = document.getElementById('homeHanziWriterCanvas');
+  if (!target) return;
+  target.innerHTML = '';
+
+  if (typeof HanziWriter === 'undefined') {
+    target.innerHTML = `<span class="font-hanzi text-6xl font-black text-[#8B1E1E] dark:text-rose-400 flex items-center justify-center h-full">${char}</span>`;
+    return;
+  }
+
+  try {
+    homeWriter = HanziWriter.create('homeHanziWriterCanvas', char, {
+      width: 140,
+      height: 140,
+      padding: 5,
+      showOutline: true,
+      strokeAnimationSpeed: 1.2,
+      delayBetweenStrokes: 160,
+      strokeColor: '#8B1E1E', // Oriental Crimson
+      outlineColor: '#E2D9C8',
+      highlightColor: '#C59A3F', // Gold
+      drawingColor: '#B83232',
+      drawingWidth: 10,
+      showHintAfterMisses: 2
+    });
+
+    // Auto animate on first load
+    setTimeout(() => {
+      if (homeWriter) homeWriter.animateCharacter();
+    }, 600);
+  } catch (e) {
+    console.warn('HanziWriter init error:', e);
+  }
+}
+
+function homeHanziAnimate() {
+  if (homeWriter) {
+    homeWriter.animateCharacter();
+  } else {
+    initHomeHanziWriter('福');
+  }
+}
+
+function homeHanziQuiz() {
+  if (homeWriter) {
+    showToast('Hãy dùng chuột hoặc chạm màn hình để tập viết từng nét chữ Phúc (福)!');
+    homeWriter.quiz({
+      onComplete: function() {
+        showToast('🎉 Xuất sắc! Bạn đã viết hoàn hảo chữ Phúc (福)! +10 EXP 🌟');
+        addExp(10);
+      }
+    });
+  }
+}
+
+function homeHanziPronounce() {
+  playChineseTTS('福', 0.85);
+}
+
+function playHomeQuoteAudio() {
+  playChineseTTS('千里之行，始于足下。', 0.85);
+}
+
+function focusHomeHanziWriter() {
+  const section = document.getElementById('homeWordOfTheDaySection');
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+    homeHanziQuiz();
+  }
+}
+
+function claimDailyCheckin() {
+  const todayStr = new Date().toISOString().split('T')[0];
+  const lastCheckin = localStorage.getItem('lastCheckinDate');
+  
+  if (lastCheckin === todayStr) {
+    showToast('Hôm nay bạn đã điểm danh rồi! Hãy tiếp tục rèn luyện bài học nhé 🏮');
+    return;
+  }
+
+  localStorage.setItem('lastCheckinDate', todayStr);
+  userProfile.streak = (userProfile.streak || 1) + 1;
+  saveUserProfile();
+  addExp(20);
+
+  const checkinBtnText = document.getElementById('homeCheckinBtnText');
+  const checkinBtn = document.getElementById('homeCheckinBtn');
+  if (checkinBtnText) checkinBtnText.innerText = 'Đã Điểm Danh ✓';
+  if (checkinBtn) {
+    checkinBtn.classList.remove('from-amber-500', 'to-yellow-500', 'hover:scale-105');
+    checkinBtn.classList.add('from-emerald-600', 'to-teal-600', 'opacity-90');
+  }
+
+  const streakEl = document.getElementById('homeStreakCount');
+  if (streakEl) streakEl.innerText = userProfile.streak;
+
+  showToast('🎁 Điểm danh thành công! Bạn nhận được +20 EXP & tiếp tục chuỗi streak 🔥');
+}
+
+function answerHomeMiniQuiz(chosenIndex) {
+  if (homeQuizAnswered) {
+    showToast('Bạn đã trả lời câu đố hôm nay rồi! 🎯');
+    return;
+  }
+
+  const feedbackEl = document.getElementById('homeQuizFeedback');
+  const opt0 = document.getElementById('quiz-opt-0');
+  const opt1 = document.getElementById('quiz-opt-1');
+  const opt2 = document.getElementById('quiz-opt-2');
+  const opt3 = document.getElementById('quiz-opt-3');
+
+  homeQuizAnswered = true;
+
+  if (chosenIndex === 0) {
+    // Correct answer: 到 (dào)
+    if (opt0) {
+      opt0.className = 'p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 font-bold transition-all text-center';
+    }
+    if (feedbackEl) {
+      feedbackEl.className = 'p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-400 text-emerald-900 dark:text-emerald-200 text-xs font-medium space-y-1';
+      feedbackEl.innerHTML = `
+        <div class="flex items-center gap-1.5 font-bold">
+          <span>🎉</span> <span>Chính xác tuyệt đối! Đáp án đúng là A. 到 (dào).</span>
+        </div>
+        <p class="leading-relaxed text-[11px] text-emerald-800 dark:text-emerald-300">
+          <strong>Giải thích:</strong> Cấu trúc nhấn mạnh <em>是……的</em> dùng để nhấn mạnh thời gian, địa điểm, cách thức của hành động đã xảy ra trong quá khứ. <em>他是昨天下午到北京的</em> (Anh ấy đến Bắc Kinh vào chiều hôm qua). Bạn nhận được <strong>+15 EXP</strong>! 🌟
+        </p>
+      `;
+      feedbackEl.classList.remove('hidden');
+    }
+    addExp(15);
+    showToast('🎉 Chính xác! Bạn nhận được +15 EXP');
+  } else {
+    // Incorrect answer
+    const chosenBtn = document.getElementById(`quiz-opt-${chosenIndex}`);
+    if (chosenBtn) {
+      chosenBtn.className = 'p-2.5 rounded-xl border-2 border-rose-500 bg-rose-50 dark:bg-rose-950/60 text-rose-800 dark:text-rose-300 font-bold transition-all text-center';
+    }
+    if (opt0) {
+      opt0.className = 'p-2.5 rounded-xl border-2 border-emerald-500 bg-emerald-50 dark:bg-emerald-950/60 text-emerald-800 dark:text-emerald-300 font-bold transition-all text-center';
+    }
+    if (feedbackEl) {
+      feedbackEl.className = 'p-3 rounded-xl bg-rose-50 dark:bg-rose-950/50 border border-rose-300 text-rose-900 dark:text-rose-200 text-xs font-medium space-y-1';
+      feedbackEl.innerHTML = `
+        <div class="flex items-center gap-1.5 font-bold">
+          <span>💡</span> <span>Đáp án chính xác là A. 到 (dào).</span>
+        </div>
+        <p class="leading-relaxed text-[11px] text-rose-800 dark:text-rose-300">
+          <strong>Giải thích:</strong> Cấu trúc <em>是……的</em> nhấn mạnh thời gian hành động đã hoàn tất. <em>他是昨天下午到北京的</em> (Anh ấy đến Bắc Kinh chiều hôm qua). Hãy cố gắng ở câu tiếp theo nhé!
+        </p>
+      `;
+      feedbackEl.classList.remove('hidden');
+    }
+  }
+}
+
+async function resumeLastLesson() {
+  const lessonId = (userProfile && userProfile.lastLesson && userProfile.lastLesson.id) ? userProfile.lastLesson.id : 'jc_1_1_4';
+  switchTab('jiaocheng');
+  setTimeout(() => {
+    openLessonDetailModal(lessonId);
+  }, 250);
+}
+
+// Window exports
+window.renderHomeDashboard = renderHomeDashboard;
+window.getHomeGreeting = getHomeGreeting;
+window.initHomeHanziWriter = initHomeHanziWriter;
+window.homeHanziAnimate = homeHanziAnimate;
+window.homeHanziQuiz = homeHanziQuiz;
+window.homeHanziPronounce = homeHanziPronounce;
+window.playHomeQuoteAudio = playHomeQuoteAudio;
+window.focusHomeHanziWriter = focusHomeHanziWriter;
+window.claimDailyCheckin = claimDailyCheckin;
+window.answerHomeMiniQuiz = answerHomeMiniQuiz;
+window.resumeLastLesson = resumeLastLesson;
