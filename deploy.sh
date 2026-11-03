@@ -1,73 +1,57 @@
 #!/usr/bin/env bash
 # ========================================================
-# YUHAN HSK - One-Click VPS Auto-Deploy Script
-# Hệ điều hành hỗ trợ: Ubuntu 20.04+, Debian 11+, CentOS 8+
+# YUHAN HSK - VPS deploy script (Ubuntu 20.04+ / Debian 11+)
+# Run from the root of a cloned repository:
+#   git clone <repo> /var/www/yuhan-hsk && cd /var/www/yuhan-hsk && sudo ./deploy.sh
+# The app listens on PORT (default 3000); put Caddy/nginx in front for 80/443.
 # ========================================================
+set -euo pipefail
 
-set -e
+APP_NAME="yuhan-hsk"
+APP_PORT="${PORT:-3000}"
+cd "$(dirname "$0")"
 
-echo "🚀 [YUHAN HSK] Bắt đầu triển khai ứng dụng lên VPS..."
+echo "🚀 [YUHAN HSK] Deploying from $(pwd)"
 
-# 1. Update system packages
-echo "📦 1/5 Đang cập nhật gói hệ thống..."
-if [ -x "$(command -v apt-get)" ]; then
-    apt-get update -y
-    apt-get install -y curl wget git unzip ufw
-elif [ -x "$(command -v yum)" ]; then
-    yum update -y
-    yum install -y curl wget git unzip
+if ! command -v node >/dev/null 2>&1; then
+  echo "📦 Installing Node.js 20.x..."
+  curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+  apt-get install -y nodejs
+fi
+echo "Node $(node -v) / npm $(npm -v)"
+
+if ! command -v pm2 >/dev/null 2>&1; then
+  echo "📦 Installing PM2..."
+  npm install -g pm2
 fi
 
-# 2. Install Node.js 20.x LTS if not installed
-echo "📦 2/5 Kiểm tra và cài đặt Node.js LTS..."
-if ! command -v node &> /dev/null; then
-    echo "Đang tải Node.js 20.x..."
-    curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-    apt-get install -y nodejs || yum install -y nodejs
+# One-time migration: older versions kept accounts in data/users.json inside the repo.
+# Keep a copy for the server to import, then drop the local changes so `git pull` can proceed.
+if [ -f data/users.json ] && [ ! -f storage/users.json ]; then
+  echo "🗂️  Migrating data/users.json -> storage/legacy-users.json"
+  mkdir -p storage
+  cp data/users.json storage/legacy-users.json
 fi
-echo "Node version: $(node -v)"
-echo "NPM version: $(npm -v)"
+git checkout -- data/users.json data/visitor_stats.json 2>/dev/null || true
 
-# 3. Install PM2 (Process Manager) globally
-echo "📦 3/5 Cài đặt PM2 để duy trì web chạy 24/7 vĩnh viễn..."
-npm install -g pm2
+echo "📦 Installing dependencies & building assets..."
+git pull --ff-only || true
+npm ci
+npm run build
+npm prune --omit=dev
 
-# 4. Configure Application
-APP_DIR="/var/www/yuhan-hsk"
-mkdir -p "$APP_DIR"
-cd "$APP_DIR"
-
-echo "📂 Thư mục triển khai: $APP_DIR"
-
-# 5. Open Ports in Firewall (Port 80 & 3000)
-echo "🔒 4/5 Mở cổng tường lửa Firewall (Port 80, 3000, 443)..."
-if command -v ufw &> /dev/null; then
-    ufw allow 80/tcp
-    ufw allow 3000/tcp
-    ufw allow 443/tcp
-    ufw allow 22/tcp
-    ufw --force enable || true
+echo "⚡ (Re)starting $APP_NAME on port $APP_PORT..."
+if pm2 describe "$APP_NAME" >/dev/null 2>&1; then
+  PORT="$APP_PORT" NODE_ENV=production pm2 reload "$APP_NAME" --update-env
+else
+  PORT="$APP_PORT" NODE_ENV=production pm2 start server.js --name "$APP_NAME" --time
 fi
-
-# 6. Start / Restart App with PM2
-echo "⚡ 5/5 Khởi động ứng dụng YUHAN HSK bằng PM2..."
-pm2 stop yuhan-hsk 2>/dev/null || true
-PORT=80 pm2 start server.js --name "yuhan-hsk" --time
-
-# Configure PM2 startup to auto restart on VPS reboot
-pm2 startup | tail -n 1 | bash 2>/dev/null || true
 pm2 save
-
-PUBLIC_IP=$(curl -s ifconfig.me || curl -s icanhazip.com || echo "IP_CUA_BAN")
+pm2 startup systemd -u "$(logname 2>/dev/null || echo root)" --hp "$HOME" >/dev/null 2>&1 || true
 
 echo "========================================================"
-echo "🎉 CHÚC MỪNG! Triển khai YUHAN HSK lên VPS thành công!"
-echo "🌐 Bạn có thể truy cập ngay tại:"
-echo "   👉 http://${PUBLIC_IP}"
-echo "   👉 http://${PUBLIC_IP}:3000"
-echo "========================================================"
-echo "💡 Các lệnh quản trị hữu ích trên VPS:"
-echo "   • Xem trạng thái web: pm2 status"
-echo "   • Xem log trực tiếp:  pm2 logs yuhan-hsk"
-echo "   • Khởi động lại web:  pm2 restart yuhan-hsk"
+echo "🎉 Deployed. Health check: curl http://127.0.0.1:${APP_PORT}/healthz"
+echo "   Logs: pm2 logs ${APP_NAME}"
+echo "   Expose publicly via a reverse proxy, e.g. Caddyfile:"
+echo "     your-domain.com { reverse_proxy 127.0.0.1:${APP_PORT} }"
 echo "========================================================"

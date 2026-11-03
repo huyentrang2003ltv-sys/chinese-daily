@@ -1,11 +1,22 @@
 {
   "name": "yuhan-hsk",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "private": true,
   "description": "YUHAN HSK - Cổng học & tra cứu tiếng Trung logic hóa chuẩn HSK 3.0",
   "main": "server.js",
+  "engines": {
+    "node": ">=20.6"
+  },
   "scripts": {
+    "build": "npm run build:css",
+    "build:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o public/assets/tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o public/assets/tailwind.css --watch",
     "start": "node server.js",
-    "tunnel": "ssh -o StrictHostKeyChecking=no -R 80:localhost:3000 nokey@localhost.run"
+    "admin": "node scripts/admin.js",
+    "test": "node --test test/",
+    "dev": "npm run build:css && node --watch server.js",
+    "check": "node --check server.js && node --check tunnel_manager.js && node scripts/check-frontend.js",
+    "tunnel": "node --env-file=.env tunnel_manager.js"
   },
   "keywords": [
     "chinese",
@@ -17,7 +28,9 @@
   "author": "Antigravity",
   "license": "MIT",
   "dependencies": {
-    "node-edge-tts": "^1.2.12",
-    "pdf-parse": "^2.4.5"
+    "node-edge-tts": "^1.2.12"
+  },
+  "devDependencies": {
+    "tailwindcss": "3.4.19"
   }
 }

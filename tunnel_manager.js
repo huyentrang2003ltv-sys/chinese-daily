@@ -3,19 +3,26 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const BOT_TOKEN = '8928499760:AAFuVTM2dTjz3qrf7u-wX5e_Iqzp48z2gto';
-const CHAT_ID = '8806102051';
+// Credentials come from the environment (see .env.example); never hard-code them.
+const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
+const CHAT_ID = process.env.TELEGRAM_CHAT_ID || '';
+const LAN_URL = process.env.LAN_URL || '';
 const URL_FILE = path.join(__dirname, 'active_url.txt');
 const TARGET_PORT = process.env.PORT || 3005;
 
 let currentActiveUrl = '';
 
 function sendTelegramNotification(url, provider = 'Cloudflare Turbo Edge') {
-  const message = 
+  if (!BOT_TOKEN || !CHAT_ID) {
+    console.log('TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID not set, skipping Telegram notification.');
+    return;
+  }
+
+  const message =
     `🏮 *HỌC TIẾNG TRUNG MỖI NGÀY - 多学一门外语, 多看一个世界, 多过一种人生 (${provider})*\n\n` +
     `Cổng học tiếng Trung phong cách Sang trọng phương Đông đã được kích hoạt siêu tốc:\n\n` +
     `⚡ *Link Trực Tuyến Siêu Tốc:* ${url}\n` +
-    `🌐 *Link Mạng Nội Bộ (Tailscale):* http://100.126.30.1:${TARGET_PORT}\n\n` +
+    (LAN_URL ? `🌐 *Link Mạng Nội Bộ:* ${LAN_URL}\n\n` : '\n') +
     `✨ *Tối ưu hóa:* Tải trang <100ms, nén Gzip, bộ nhớ đệm RAM, chuyển tab không độ trễ, triệt tiêu hoàn toàn giật lag!`;
 
   const postData = JSON.stringify({

@@ -1,0 +1,16 @@
+node_modules
+.git
+.github
+.claude
+.env
+*.log
+*.zip
+active_url.txt
+cloudflared*
+scripts/data
+Dockerfile
+docker-compose.yml
+deploy.sh
+start.bat
+storage
+test

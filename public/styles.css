@@ -1,0 +1,723 @@
+/* Học Tiếng Trung Mỗi Ngày - Oriental Luxury & Heritage Elegance (Sang Trọng Phương Đông) */
+
+:root {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-serif: 'Playfair Display', Georgia, 'Noto Serif SC', serif;
+  --font-chinese: 'Noto Serif SC', 'Noto Sans SC', serif;
+
+  /* Oriental Luxury Colors */
+  --oriental-cinnabar: #8B1E1E;
+  --oriental-cinnabar-dark: #6E1414;
+  --oriental-gold: #C59A3F;
+  --oriental-gold-light: #E0C27D;
+  --oriental-jade: #1E4D43;
+  --oriental-paper: #FAF7F2;
+  --oriental-paper-card: #FFFDF9;
+  --oriental-ink: #1C1917;
+  --oriental-border-gold: rgba(197, 154, 63, 0.35);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: #FAF7F2;
+  background-image: 
+    radial-gradient(at 15% 0%, rgba(139, 30, 30, 0.07) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, rgba(197, 154, 63, 0.09) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(30, 77, 67, 0.05) 0px, transparent 50%),
+    radial-gradient(at 95% 90%, rgba(139, 30, 30, 0.06) 0px, transparent 55%),
+    radial-gradient(at 5% 95%, rgba(197, 154, 63, 0.08) 0px, transparent 50%);
+  color: #1C1917;
+  min-height: 100vh;
+}
+
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+
+.font-hanzi {
+  font-family: var(--font-chinese);
+}
+
+/* Oriental Luxury Seal Stamp (Ấn Triện Chu Sa) */
+.oriental-seal {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.625rem;
+  background: linear-gradient(135deg, #8B1E1E 0%, #A52A2A 50%, #6E1414 100%);
+  border: 2px solid #D4AF37;
+  box-shadow: 0 4px 12px rgba(139, 30, 30, 0.3), inset 0 0 6px rgba(255, 215, 0, 0.35);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.oriental-badge-seal {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(139, 30, 30, 0.1), rgba(197, 154, 63, 0.18));
+  color: #8B1E1E;
+  border: 1px solid rgba(197, 154, 63, 0.45);
+  letter-spacing: 0.05em;
+  font-family: var(--font-chinese);
+}
+
+/* Oriental Slogan Top Bar */
+.oriental-top-bar {
+  background: linear-gradient(to right, #FAF4E8, #FFFBF4, #FAF4E8);
+  border-bottom: 1px solid rgba(197, 154, 63, 0.25);
+}
+
+/* Glassmorphism with Oriental Silk Warm Tone */
+.glass-panel {
+  background: rgba(255, 253, 249, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-color: rgba(230, 215, 184, 0.85);
+}
+
+.glass-card {
+  background: #FFFDF9;
+  border: 1px solid #EADBCE;
+  box-shadow: 0 4px 20px -2px rgba(90, 60, 30, 0.04), 0 2px 6px -1px rgba(90, 60, 30, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(197, 154, 63, 0.6);
+  box-shadow: 0 14px 28px -4px rgba(139, 30, 30, 0.08), 0 6px 12px -2px rgba(197, 154, 63, 0.06);
+}
+
+/* Rendering Acceleration & Virtualization */
+#tab-radicals, #tab-culture, #tab-dictionary, #tab-chengyu, #tab-grammar {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 800px;
+}
+
+/* 3D Flashcard Flip */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom Luxury Oriental Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F4EFE6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #8B1E1E, #C59A3F, #1E4D43);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #6E1414, #9E7422, #0F3A32);
+}
+
+/* Oriental Luxury Badges */
+.badge-oriental-red {
+  background: linear-gradient(135deg, rgba(139, 30, 30, 0.12), rgba(139, 30, 30, 0.05));
+  color: #8B1E1E;
+  border: 1px solid rgba(139, 30, 30, 0.3);
+}
+
+.badge-oriental-gold {
+  background: linear-gradient(135deg, rgba(197, 154, 63, 0.18), rgba(197, 154, 63, 0.06));
+  color: #8E6B1E;
+  border: 1px solid rgba(197, 154, 63, 0.4);
+}
+
+.badge-oriental-jade {
+  background: linear-gradient(135deg, rgba(30, 77, 67, 0.15), rgba(30, 77, 67, 0.05));
+  color: #1E4D43;
+  border: 1px solid rgba(30, 77, 67, 0.3);
+}
+
+/* Pulsing Lantern Glow */
+@keyframes orientalGlow {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(197, 154, 63, 0.4)); }
+  50% { filter: drop-shadow(0 0 16px rgba(139, 30, 30, 0.5)); }
+}
+
+.glow-oriental {
+  animation: orientalGlow 3s infinite ease-in-out;
+}
+
+/* TianZiGe & MiZiGe Grid for Hanzi Writing (Chỉ Đỏ Chu Sa Hoàng Triều) */
+.tianzige-grid {
+  background-color: #FFFDF8;
+  border: 2px solid rgba(139, 30, 30, 0.4);
+  border-radius: 1rem;
+  box-shadow: inset 0 0 20px rgba(139, 30, 30, 0.04), 0 4px 14px rgba(139, 69, 19, 0.04);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tianzige-grid::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1.5px dashed rgba(139, 30, 30, 0.3);
+  pointer-events: none;
+}
+
+.tianzige-grid::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  border-left: 1.5px dashed rgba(139, 30, 30, 0.3);
+  pointer-events: none;
+}
+
+.mizige-diagonals {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(45deg, transparent 49.5%, rgba(197, 154, 63, 0.2) 50%, transparent 50.5%),
+    linear-gradient(-45deg, transparent 49.5%, rgba(197, 154, 63, 0.2) 50%, transparent 50.5%);
+  pointer-events: none;
+}
+
+/* Interactive Reading Tokens (Phong Cách Thư Quyển Cổ Điển) */
+.reading-token-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.2rem 0.45rem;
+  margin: 0.15rem 0.12rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: transparent;
+  user-select: none;
+  border: 1px solid transparent;
+}
+
+.reading-token-chip:hover {
+  background-color: #FAF2E6;
+  border-color: rgba(197, 154, 63, 0.5);
+  box-shadow: 0 4px 10px rgba(139, 30, 30, 0.08);
+  transform: translateY(-2px);
+}
+
+.reading-token-chip .token-pinyin {
+  font-size: 0.72rem;
+  line-height: 1;
+  color: #8B1E1E;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: var(--font-sans);
+}
+
+.reading-token-chip.hide-pinyin .token-pinyin {
+  display: none;
+}
+
+.reading-token-chip .token-hanzi {
+  font-family: var(--font-chinese);
+  font-size: var(--reading-font-size, 1.25rem);
+  font-weight: 700;
+  color: #1C1917;
+  line-height: 1.25;
+  transition: font-size 0.15s ease;
+}
+
+.reading-token-punct {
+  display: inline-block;
+  font-family: var(--font-chinese);
+  font-size: var(--reading-font-size, 1.25rem);
+  color: #78716C;
+  margin: 0 0.1rem;
+  transition: font-size 0.15s ease;
+}
+
+/* =========================================================================
+   GRAMMAR TREE MINDMAP (SƠ ĐỒ CÂY TƯ DUY NGỮ PHÁP TIẾNG TRUNG)
+   ========================================================================= */
+.tree-stem-vertical {
+  width: 3px;
+  background: linear-gradient(to bottom, #C59A3F, #8B1E1E);
+  margin: 0 auto;
+  border-radius: 9999px;
+  position: relative;
+}
+
+.tree-stem-vertical::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 9px;
+  height: 9px;
+  background: #8B1E1E;
+  border: 2px solid #C59A3F;
+  border-radius: 50%;
+}
+
+.tree-branch-container {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tree-branch-header {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.tree-branch-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -4px rgba(139, 30, 30, 0.08), 0 4px 10px -2px rgba(197, 154, 63, 0.06);
+}
+
+.tree-sub-branch-leaf {
+  position: relative;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  border-left: 3.5px solid #C59A3F !important;
+}
+
+.tree-sub-branch-leaf:hover {
+  transform: translateY(-2px);
+  border-left-color: #8B1E1E !important;
+}
+
+.tree-sub-branch-leaf::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 1.25rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #FFFDF9;
+  border: 2px solid #C59A3F;
+  box-shadow: 0 0 0 2px rgba(197, 154, 63, 0.2);
+  transition: all 0.2s ease;
+}
+
+.tree-sub-branch-leaf:hover::before {
+  background: #8B1E1E;
+  border-color: #8B1E1E;
+  box-shadow: 0 0 0 3px rgba(139, 30, 30, 0.25);
+}
+
+.tree-badge-pulse {
+  animation: pulse-subtle 2.5s infinite;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.03); }
+}
+
+/* =========================================================================
+   DARK THEME (PHONG CÁCH HOÀNG GIA PHƯƠNG ĐÔNG HUYỀN BÍ - ORIENTAL MIDNIGHT)
+   ========================================================================= */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0F141C;
+  background-image: 
+    radial-gradient(at 15% 0%, rgba(180, 40, 40, 0.15) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, rgba(212, 175, 55, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(30, 95, 80, 0.1) 0px, transparent 50%),
+    radial-gradient(at 95% 90%, rgba(180, 40, 40, 0.12) 0px, transparent 55%),
+    radial-gradient(at 5% 95%, rgba(212, 175, 55, 0.1) 0px, transparent 50%);
+  color: #E6EDF3;
+}
+
+/* Dark Header & Nav */
+html.dark header {
+  background-color: rgba(22, 27, 34, 0.95);
+  border-bottom-color: rgba(48, 54, 61, 0.8);
+}
+
+html.dark nav.glass-panel {
+  background: rgba(22, 27, 34, 0.95);
+  border-bottom-color: rgba(48, 54, 61, 0.8);
+}
+
+html.dark .oriental-top-bar {
+  background: linear-gradient(to right, #161b22, #1c2128, #161b22);
+  border-bottom-color: rgba(212, 175, 55, 0.2);
+}
+
+html.dark .glass-card {
+  background: #161B22;
+  border-color: #30363D;
+  color: #E6EDF3;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.6);
+}
+
+/* Text mappings for Dark Mode */
+html.dark .text-stone-900,
+html.dark .text-slate-900,
+html.dark .text-stone-850,
+html.dark .text-slate-850 {
+  color: #F0F6FC !important;
+}
+
+html.dark .text-stone-800,
+html.dark .text-slate-800,
+html.dark .text-stone-700,
+html.dark .text-slate-700 {
+  color: #C9D1D9 !important;
+}
+
+html.dark .text-stone-600,
+html.dark .text-slate-600,
+html.dark .text-stone-500,
+html.dark .text-slate-500 {
+  color: #8B949E !important;
+}
+
+html.dark .text-stone-400,
+html.dark .text-slate-400 {
+  color: #6E7681 !important;
+}
+
+/* Background mappings */
+html.dark .bg-white,
+html.dark .bg-\[\#FFFDF9\],
+html.dark .bg-\[\#FAF7F2\],
+html.dark .bg-stone-50,
+html.dark .bg-slate-50 {
+  background-color: #161B22 !important;
+}
+
+html.dark .bg-stone-100,
+html.dark .bg-slate-100 {
+  background-color: #21262D !important;
+}
+
+html.dark .border-stone-200,
+html.dark .border-amber-200,
+html.dark .border-slate-200,
+html.dark .border-emerald-200,
+html.dark .border-rose-200 {
+  border-color: #30363D !important;
+}
+
+/* Inputs & Search Bars */
+html.dark input[type="text"],
+html.dark select,
+html.dark textarea {
+  background-color: #0D1117 !important;
+  color: #F0F6FC !important;
+  border-color: #30363D !important;
+}
+
+html.dark input::placeholder {
+  color: #6E7681 !important;
+}
+
+/* Dropdown */
+html.dark #searchDropdown,
+html.dark #themeDropdownMenu {
+  background-color: #161B22 !important;
+  border-color: #30363D !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Modals */
+html.dark #readingTocModal .glass-card,
+html.dark #writingModal .glass-card,
+html.dark #wordModal .glass-card,
+html.dark #notebookModal .glass-card,
+html.dark #telegramModal .glass-card,
+html.dark #lessonDetailModal .glass-card,
+html.dark #examResultModal .glass-card,
+html.dark #floatingAiChatWindow,
+html.dark #supportContactWindow {
+  background-color: #161B22 !important;
+  border-color: #30363D !important;
+  color: #E6EDF3 !important;
+}
+
+/* TianZiGe in Dark Mode */
+html.dark .tianzige-grid {
+  background-color: #0D1117 !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+html.dark .mizige-diagonals {
+  opacity: 0.3;
+}
+
+/* Token chips in Readings */
+html.dark .reading-token-chip .token-hanzi {
+  color: #F0F6FC;
+}
+
+html.dark .reading-token-chip:hover {
+  background-color: #21262D;
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Scrollbars in Dark Mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #A52A2A, #C59A3F, #1E4D43);
+}
+
+/* Footer in Dark Mode */
+html.dark footer {
+  background-color: #0D1117 !important;
+  border-top-color: #30363D !important;
+}
+
+/* Tooltip callouts */
+html.dark #floatingAiTooltip,
+html.dark #floatingContactTooltip {
+  background-color: rgba(22, 27, 34, 0.95) !important;
+  border-color: #30363D !important;
+  color: #E6EDF3 !important;
+}
+
+
+/* ==================== WOOD BLOCK PUZZLE (汉语积木) STYLES ==================== */
+
+.wood-board-panel {
+  background: radial-gradient(circle at 50% 50%, #4A2810 0%, #2E1505 100%);
+  border: 8px solid #5A3214;
+  border-radius: 28px;
+  box-shadow: 
+    0 16px 36px rgba(0, 0, 0, 0.5),
+    inset 0 4px 12px rgba(0, 0, 0, 0.8),
+    inset 0 -2px 6px rgba(255, 255, 255, 0.15);
+  position: relative;
+}
+
+.wood-board-panel::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(197, 154, 63, 0.4);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+.wood-slot-cell {
+  background: #1F0D03;
+  border: 1px solid rgba(139, 69, 19, 0.35);
+  border-radius: 12px;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.8), inset -1px -1px 2px rgba(255, 255, 255, 0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.wood-slot-cell.slot-hover-valid {
+  background: rgba(197, 154, 63, 0.25) !important;
+  border-color: #F59E0B !important;
+  box-shadow: inset 0 0 14px rgba(245, 158, 11, 0.6), 0 0 10px rgba(245, 158, 11, 0.4);
+}
+
+.wood-slot-cell.slot-hover-invalid {
+  background: rgba(220, 38, 38, 0.25) !important;
+  border-color: #EF4444 !important;
+  box-shadow: inset 0 0 14px rgba(239, 68, 68, 0.6);
+}
+
+/* Wood Block Pieces */
+.wood-piece {
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+}
+
+.wood-piece:active, .wood-piece.is-dragging {
+  cursor: grabbing;
+  transform: scale(1.06) translateY(-4px);
+  z-index: 50;
+  filter: brightness(1.1);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5) !important;
+}
+
+.wood-piece.is-selected {
+  outline: 3px solid #F59E0B;
+  outline-offset: 3px;
+  transform: scale(1.04) translateY(-2px);
+  filter: brightness(1.12);
+  box-shadow: 0 0 20px rgba(245, 158, 11, 0.8) !important;
+}
+
+/* Wood Color Variations */
+.wood-tile-cherry {
+  background: linear-gradient(135deg, #B22222 0%, #8B1A1A 50%, #5C1010 100%);
+  border: 2px solid #D32F2F;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.35), inset -2px -2px 3px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.35);
+  color: #FFFDF9;
+}
+
+.wood-tile-walnut {
+  background: linear-gradient(135deg, #784212 0%, #512E0C 50%, #341D07 100%);
+  border: 2px solid #8D4925;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.3), inset -2px -2px 3px rgba(0, 0, 0, 0.55), 0 6px 12px rgba(0, 0, 0, 0.35);
+  color: #FEF3C7;
+}
+
+.wood-tile-amber {
+  background: linear-gradient(135deg, #D97706 0%, #B45309 50%, #78350F 100%);
+  border: 2px solid #F59E0B;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.4), inset -2px -2px 3px rgba(0, 0, 0, 0.45), 0 6px 12px rgba(0, 0, 0, 0.35);
+  color: #FFFBEB;
+}
+
+.wood-tile-oak {
+  background: linear-gradient(135deg, #A0522D 0%, #7B3F00 50%, #4A2600 100%);
+  border: 2px solid #CD853F;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.3), inset -2px -2px 3px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.35);
+  color: #FEF9C3;
+}
+
+.wood-tile-rosewood {
+  background: linear-gradient(135deg, #881337 0%, #4C0519 50%, #2E020C 100%);
+  border: 2px solid #BE123C;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.35), inset -2px -2px 3px rgba(0, 0, 0, 0.6), 0 6px 12px rgba(0, 0, 0, 0.35);
+  color: #FFE4E6;
+}
+
+.wood-tile-ebony {
+  background: linear-gradient(135deg, #374151 0%, #1F2937 50%, #111827 100%);
+  border: 2px solid #4B5563;
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.25), inset -2px -2px 3px rgba(0, 0, 0, 0.7), 0 6px 12px rgba(0, 0, 0, 0.35);
+  color: #F9FAFB;
+}
+
+.wood-engraved-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9), -0.5px -0.5px 0 rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.05em;
+}
+
+/* Wood Rack Shelf */
+.wood-tray-shelf {
+  background: linear-gradient(to bottom, #3E200C 0%, #251205 100%);
+  border: 4px solid #5A3214;
+  border-radius: 24px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+/* ---------------- Navigation (grouped) ---------------- */
+.no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+.nav-group {
+  color: #44403C;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+.nav-group:hover { color: #8B1E1E; background: #F6EFE5; }
+.nav-group.is-active {
+  color: #FFFDF9;
+  background: linear-gradient(90deg, #8B1E1E 0%, #A52A2A 55%, #B8860B 100%);
+  border-color: rgba(252, 211, 77, 0.4);
+  box-shadow: 0 4px 10px rgba(69, 10, 10, 0.18);
+}
+
+.nav-subtab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #57534E;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.nav-subtab:hover { color: #8B1E1E; background: #FBF5EC; }
+.nav-subtab.is-active {
+  color: #8B1E1E;
+  background: #FDF3F3;
+  border-color: rgba(139, 30, 30, 0.35);
+}
+
+.nav-group-bottom { color: #78716C; }
+.nav-group-bottom.is-active { color: #8B1E1E; }
+.nav-group-bottom.is-active svg { stroke-width: 2.5; }
+
+:focus-visible { outline: 2px solid #C59A3F; outline-offset: 2px; }
+
+/* ---------------- Search ---------------- */
+.search-option.is-highlighted { background: #FEF3C7; }
+input[type="search"]::-webkit-search-cancel-button { display: none; }
+
+/* ---------------- Loading state for lazily rendered tabs ---------------- */
+section[aria-busy="true"] { position: relative; min-height: 12rem; }
+section[aria-busy="true"]::after {
+  content: 'Đang tải dữ liệu...';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 4rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #8B1E1E;
+  background: rgba(250, 247, 242, 0.7);
+  border-radius: 1rem;
+}
+
+/* ---------------- Toasts ---------------- */
+.toast-item { animation: toast-in 0.2s ease-out; transition: opacity 0.3s ease, transform 0.3s ease; }
+.toast-item.toast-leave { opacity: 0; transform: translateY(-6px); }
+@keyframes toast-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+}
+
+/* Dark mode for the grouped navigation */
+.dark .nav-group { color: #D6D3D1; }
+.dark .nav-group:hover, .dark .nav-subtab:hover { color: #FCD34D; background: #21262D; }
+.dark .nav-subtab { color: #A8A29E; }
+.dark .nav-subtab.is-active { color: #FCD34D; background: #2A1F1F; border-color: rgba(252, 211, 77, 0.35); }
+.dark .nav-group-bottom { color: #A8A29E; }
+.dark .nav-group-bottom.is-active { color: #FCD34D; }
+.dark .search-option.is-highlighted { background: #3A2E12; }
+.dark section[aria-busy="true"]::after { color: #FCD34D; background: rgba(13, 17, 23, 0.7); }

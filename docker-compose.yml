@@ -1,13 +1,17 @@
-version: '3.8'
-
 services:
   yuhan-hsk:
     build: .
     container_name: yuhan_hsk_app
-    restart: always
+    restart: unless-stopped
     ports:
-      - "80:3000"
+      # Put a reverse proxy (Caddy/nginx) in front for HTTPS on 80/443.
       - "3000:3000"
+    env_file:
+      - path: .env
+        required: false
     environment:
       - PORT=3000
       - NODE_ENV=production
+    volumes:
+      # Accounts, session key and visitor counters survive rebuilds.
+      - ./storage:/app/storage
