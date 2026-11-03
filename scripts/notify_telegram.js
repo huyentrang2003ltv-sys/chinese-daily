@@ -3,42 +3,29 @@ const https = require('https');
 const botToken = '8928499760:AAFuVTM2dTjz3qrf7u-wX5e_Iqzp48z2gto';
 const chatId = '8806102051';
 
-const message = `🎉 [HOÀN TẤT CẬP NHẬT KHO TỪ ĐIỂN 2 MỤC LỚN & ĐỒNG BỘ GIỌNG ĐỌC] 🎉
+const message = `✍️ [TÍCH HỢP LUYỆN VIẾT NÉT TRỰC TIẾP KHI NHẤP VÀO CHỮ] ✍️
 
-Chào bạn! Kho từ điển trên hệ thống Học Tiếng Trung Mỗi Ngày đã được nâng cấp hoàn thiện chia thành 2 mục lớn theo đúng yêu cầu:
+Chào bạn! Phần luyện viết nét chữ Hán đã được tối ưu hóa toàn diện theo đúng yêu cầu:
 
-📚 MỤC 1: TỪ MỚI HSK 1 - HSK 6 (1,672 từ)
-- Phân tầng chuẩn hóa cấp độ HSK 1 đến HSK 6
-- Bộ lọc linh hoạt: Tất cả cấp độ, HSK 1, 2, 3, 4, 5, 6
-- Tìm kiếm tức thì theo chữ Hán, Pinyin và nghĩa tiếng Việt
-- Thẻ từ vựng hiển thị chữ Hán lớn, Pinyin, từ loại, phân tích ý nghĩa
-- Nút tính năng: Lưu vào sổ tay, Tập viết nét chữ
-- Song giọng đọc chuẩn Bắc Kinh: 👩 Nữ (Xiaoxiao) & 👨 Nam (Yunxi) cho cả từ vựng và câu ví dụ ngữ cảnh
-
-🏷️ MỤC 2: TỪ VỰNG THEO CHỦ ĐỀ (14 Chủ đề đời sống thực tế)
-1. 🍜 Ẩm Thực & Đồ Ăn (108 từ)
-2. 👨‍👩‍👧‍👦 Gia Đình & Xưng Hô (64 từ)
-3. ✈️ Du Lịch & Khách Sạn (20 từ)
-4. 💼 Công Sở & Kinh Doanh (25 từ)
-5. 🎓 Giáo Dục & Trường Học (56 từ)
-6. 🛍️ Mua Sắm & Thời Trang (34 từ)
-7. 🏥 Sức Khỏe & Y Tế (26 từ)
-8. 🏠 Đời Sống & Nhà Cửa (39 từ)
-9. 🚗 Giao Thông & Đi Lại (37 từ)
-10. 📱 Công Nghệ & Kỹ Thuật Số (20 từ)
-11. 🌦️ Thời Tiết & Thiên Nhiên (23 từ)
-12. 💬 Cảm Xúc & Tâm Lý (20 từ)
-13. 🎨 Tính Cách & Ngoại Hình (156 từ)
-14. 🌐 Giao Tiếp & Xã Hội (1,044 từ)
-
-🎙️ ĐỒNG BỘ 100% GIỌNG ĐỌC NAM & NỮ:
-- Bất cứ nơi nào có biểu tượng loa, người học đều có thể chọn ngay giữa 👩 Nữ (Xiaoxiao) và 👨 Nam (Yunxi).
-- Thanh chọn giọng đọc trên header đã được lược bỏ tinh gọn.
+✨ CÁC CẢI TIẾN NỔI BẬT:
+1. 🚫 Lược bỏ nút "Luyện Viết Nét" riêng lẻ trên thanh menu chính, giúp thanh menu thoáng mắt, gọn gàng và tập trung vào các luồng học tập chính.
+2. 🎯 Tích hợp trực tiếp vào chữ Hán trên toàn hệ thống:
+   - Kho Từ Điển (HSK 1-6 & Theo Chủ Đề): Nhấp trực tiếp vào chữ Hán hoặc nút bút viết ✍️ để mở bảng luyện viết.
+   - 214 Bộ Thủ Khang Hy: Nhấp vào ô bộ thủ hoặc chữ mẫu tiêu biểu để xem thứ tự bút thuận.
+   - Giáo Trình Hán Ngữ 6 Quyển: Nhấp vào từng từ mới trong bài để xem và tập viết từng nét ngay tại chỗ mà không bị mất trang bài học đang xem.
+   - Sổ Tay Từ Vựng & Flashcard: Nhấp vào chữ Hán để mở bảng tập viết nét tức thì.
+   - Kho Thành Ngữ 4 Chữ: Hỗ trợ chuyển tab nhanh giữa 4 chữ trong câu thành ngữ để luyện viết từng chữ một.
+3. 📱 Hộp thoại Luyện Viết Nét (Writing Modal) tiện dụng:
+   - Ô kẻ điền tự cách (田字格/米字格) tương tác chuẩn bút thuận HanziWriter.
+   - Chế độ "Xem hoạt họa nét" & "Tự luyện viết (Quiz)".
+   - Tự động nhận diện nét đúng/sai, gợi ý nét và chấm điểm thưởng EXP.
+   - Tích hợp phát âm song giọng 👩 Nữ & 👨 Nam cho từng chữ.
+   - Hỗ trợ nhập chữ Hán bất kỳ hoặc chọn nhanh 25+ chữ nền tảng ngay trong modal.
 
 🌐 Trải nghiệm trực tuyến:
 https://holdem-disclaimer-cheers-meat.trycloudflare.com
 📦 Mã nguồn GitHub:
-https://github.com/huyentrang2003ltv-sys/chinese-daily.git (Commit: bf4200f)`;
+https://github.com/huyentrang2003ltv-sys/chinese-daily.git (Commit: ddbb4e4)`;
 
 const payload = JSON.stringify({
   chat_id: chatId,
@@ -59,7 +46,6 @@ const req = https.request({
   res.on('data', chunk => body += chunk);
   res.on('end', () => {
     console.log('Telegram response status:', res.statusCode);
-    console.log('Telegram response body:', body);
   });
 });
 
