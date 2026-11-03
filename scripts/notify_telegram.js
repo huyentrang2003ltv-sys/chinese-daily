@@ -11,55 +11,58 @@ try {
   if (urlFromFile.startsWith('http')) activeUrl = urlFromFile;
 } catch (e) {}
 
-const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - TỐI ƯU TOÀN DIỆN HSK 3.0 THEO TIẾNG TRUNG THƯỢNG HẢI] 🏮
+const message = `👑 [HỌC TIẾNG TRUNG MỖI NGÀY - PHÂN QUYỀN 👑 SUPER ADMIN & BẢNG ĐIỀU KHIỂN QUẢN TRỊ] 👑
 
-Chào bạn! Hệ thống vừa được nghiên cứu và tối ưu hóa vượt bậc phần học HSK 3.0 dựa trên toàn bộ tài liệu giáo trình chính thống từ https://tiengtrungthuonghai.vn/:
+Chào bạn! Quyền Quản trị Tối cao (Super Admin) đã được gán và kích hoạt thành công cho 2 tài khoản:
 
-📚 1. BỘ 48 BÀI HỌC GIÁO TRÌNH CHUẨN HSK 3.0 SƠ CẤP (STANDARD COURSE):
-- Tích hợp trọn vẹn 48 bài học chuẩn khảo thí BLCU: HSK 1 (15 bài), HSK 2 (15 bài) & HSK 3 (18 bài).
-- Đầy đủ tiêu đề Trung - Pinyin - Việt, Ngữ pháp nguyên mẫu, Chủ điểm từ vựng, Đoạn hội thoại mẫu nòng cốt kèm nghe giọng Bắc Kinh (Nữ/Nam) và Mẹo văn hóa thực tế thời đại số 4.0.
-- Tìm kiếm tức thì và lọc bài theo từng cấp độ HSK 1, 2, 3.
+👑 DANH SÁCH SUPER ADMIN:
+1. Phạm Hoàng: hoangpham1618@gmail.com
+2. Huyền Trang: huyentrang2003ltv@gmail.com
 
-📊 2. MA TRẬN ĐỔI MỚI CẤU TRÚC ĐỀ THI HSK 3.0 & HSKK:
-- Bảng đối chiếu chi tiết giữa HSK 2.0 và HSK 3.0 qua từng cấp độ (HSK 1 đến HSK 7-9 và HSKK 3-6).
-- Phân tích số câu hỏi, thời gian làm bài, yêu cầu viết đoạn 80-200 từ và chiến thuật phòng thi điểm cao từ giảng viên Tiếng Trung Thượng Hải.
+🌟 CÁC ĐẶC QUYỀN & TÍNH NĂNG QUẢN TRỊ ĐƯỢC KÍCH HOẠT:
+✨ Biểu tượng Vương miện Vàng 👑 & Huy hiệu "👑 Super Admin" VIP hiển thị nổi bật trên thanh tiêu đề Header và trong Menu hồ sơ cá nhân.
+✨ Đăng nhập nhanh 1-chạm (Quick Login) dành riêng cho cả 2 Super Admin trong hộp thoại đăng nhập.
+✨ Bảng Điều Khiển Quản Trị Tối Cao (Super Admin Dashboard Modal):
+   - Chuyển đổi nhanh 1-click giữa 2 tài khoản Admin.
+   - Thống kê Realtime KPIs: Số người online, 14.605 từ vựng, 76 bài Giáo trình Hán ngữ, 48 bài HSK 3.0 Standard Course.
+   - Công cụ kiểm tra kết nối & gửi thông báo Telegram tức thì.
+   - Công cụ làm mới cache & đồng bộ lại dữ liệu.
+   - Nút tải bản sao lưu mã nguồn website (chinese-daily.zip) ngoại tuyến.
+   - Lối tắt mở Bảng Phân Tích Người Học & Lưu Lượng Truy Cập.
 
-📖 3. CẨM NANG SO SÁNH 4 BỘ GIÁO TRÌNH KINH ĐIỂN:
-- Đặt lên bàn cân: Giáo trình Chuẩn HSK 3.0 vs Hán ngữ 6 quyển (BLCU) vs Boya (PKU) vs Phát triển Hán ngữ.
-- Phân tích ưu/nhược điểm và lộ trình phối hợp sách giúp người tự học đạt hiệu quả tối đa.
+🌐 Trải nghiệm trực tiếp tại:
+${activeUrl}
 
-🌐 4. PHÒNG LUYỆN DỊCH THỰC CHIẾN 6 TÌNH HUỐNG (HSK 3.0 TRANSLATION LAB):
-- Thực hành kỹ năng Dịch hai chiều (Trung - Việt & Việt - Trung) - chốt chặn đột phá mới của HSK 3.0.
-- Chấm điểm tức thì, phân tích công thức câu nòng cốt (S-V-O, định ngữ trước 的, trạng ngữ thời gian/địa điểm, câu chữ 把 & 被).
+Chúc bạn và bạn học có trải nghiệm quản trị và học tập tuyệt vời nhất! 🏮`;
 
-⚡ Trải nghiệm ngay tại: ${activeUrl}
-📦 GitHub: https://github.com/huyentrang2003ltv-sys/chinese-daily`;
-
-const payload = JSON.stringify({
+const data = JSON.stringify({
   chat_id: chatId,
   text: message
 });
 
-const req = https.request({
+const options = {
   hostname: 'api.telegram.org',
   port: 443,
   path: `/bot${botToken}/sendMessage`,
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
-    'Content-Length': Buffer.byteLength(payload)
+    'Content-Length': Buffer.byteLength(data)
   }
-}, res => {
+};
+
+const req = https.request(options, (res) => {
   let body = '';
-  res.on('data', chunk => body += chunk);
+  res.on('data', (chunk) => body += chunk);
   res.on('end', () => {
     console.log('Telegram response status:', res.statusCode);
+    console.log('Response body:', body);
   });
 });
 
-req.on('error', err => {
-  console.error('Telegram error:', err.message);
+req.on('error', (e) => {
+  console.error('Telegram notification error:', e.message);
 });
 
-req.write(payload);
+req.write(data);
 req.end();

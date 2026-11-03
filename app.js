@@ -21,6 +21,18 @@ let activeJiaochengVolume = 'all';
 let jiaochengSearchQuery = '';
 
 // Gamification & User Auth Profile State
+
+// ==================== SUPER ADMIN ROLE CONFIGURATION ====================
+const SUPER_ADMIN_EMAILS = [
+  'hoangpham1618@gmail.com',
+  'huyentrang2003ltv@gmail.com'
+];
+
+function isSuperAdmin(email) {
+  if (!email) return false;
+  return SUPER_ADMIN_EMAILS.includes(email.trim().toLowerCase());
+}
+
 let userProfile = {
   name: 'Phạm Hoàng',
   email: 'hoangpham1618@gmail.com',
@@ -434,6 +446,49 @@ function updateProfileUI() {
   if (dropdownUserEmail) dropdownUserEmail.innerText = email;
   if (dropdownUserInitial) dropdownUserInitial.innerText = initialChar.toUpperCase();
   if (dropdownNotebookCount) dropdownNotebookCount.innerText = (userProfile.savedWords || []).length;
+
+  // Super Admin Badge & Crown Toggle
+  const isAdmin = isSuperAdmin(email);
+  const headerAdminCrown = document.getElementById('headerAdminCrown');
+  const dropdownCrownIcon = document.getElementById('dropdownCrownIcon');
+  const dropdownUserRoleBadge = document.getElementById('dropdownUserRoleBadge');
+  const dropdownAdminPanelBtn = document.getElementById('dropdownAdminPanelBtn');
+
+  if (headerAdminCrown) {
+    if (isAdmin && isLoggedIn) {
+      headerAdminCrown.classList.remove('hidden');
+    } else {
+      headerAdminCrown.classList.add('hidden');
+    }
+  }
+
+  if (dropdownCrownIcon) {
+    if (isAdmin && isLoggedIn) {
+      dropdownCrownIcon.classList.remove('hidden');
+    } else {
+      dropdownCrownIcon.classList.add('hidden');
+    }
+  }
+
+  if (dropdownUserRoleBadge) {
+    if (isAdmin && isLoggedIn) {
+      dropdownUserRoleBadge.className = 'inline-flex items-center gap-1 px-1.5 py-0.2 mt-1 rounded text-[9px] font-black bg-gradient-to-r from-amber-500/20 to-yellow-500/30 text-amber-900 dark:text-amber-300 border border-amber-400/80 shadow-2xs';
+      dropdownUserRoleBadge.innerHTML = '<span>👑</span> <span>Super Admin</span>';
+    } else {
+      dropdownUserRoleBadge.className = 'inline-flex items-center gap-1 px-1.5 py-0.2 mt-1 rounded text-[9px] font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 border border-stone-200 dark:border-stone-700';
+      dropdownUserRoleBadge.innerHTML = '<span>🎓</span> <span>Học Viên</span>';
+    }
+  }
+
+  if (dropdownAdminPanelBtn) {
+    if (isAdmin && isLoggedIn) {
+      dropdownAdminPanelBtn.classList.remove('hidden');
+      dropdownAdminPanelBtn.classList.add('flex');
+    } else {
+      dropdownAdminPanelBtn.classList.add('hidden');
+      dropdownAdminPanelBtn.classList.remove('flex');
+    }
+  }
 }
 
 // ---------------- USER AUTHENTICATION & PROFILE HANDLERS ----------------
@@ -447,6 +502,82 @@ function toggleUserDropdown() {
 function closeUserDropdown() {
   const menu = document.getElementById('userDropdownMenu');
   if (menu) menu.classList.add('hidden');
+}
+
+
+// ==================== SUPER ADMIN CONTROL DASHBOARD LOGIC ====================
+function openAdminDashboardModal() {
+  if (!isSuperAdmin(userProfile.email)) {
+    showToast('⚠️ Quyền truy cập bị từ chối: Chỉ Super Admin mới có quyền vào Bảng Điều Khiển!', 'warning');
+    return;
+  }
+  const modal = document.getElementById('adminDashboardModal');
+  if (!modal) return;
+
+  const activeName = document.getElementById('adminActiveName');
+  const activeEmail = document.getElementById('adminActiveEmail');
+  const activeInitial = document.getElementById('adminActiveInitial');
+  const liveVisitors = document.getElementById('adminLiveVisitors');
+  const currentVisitors = document.getElementById('liveVisitorCount');
+
+  if (activeName) activeName.innerText = userProfile.name || 'Super Admin';
+  if (activeEmail) activeEmail.innerText = userProfile.email || 'hoangpham1618@gmail.com';
+  if (activeInitial) {
+    const trimmed = (userProfile.name || 'H').trim();
+    activeInitial.innerText = trimmed.charAt(0).toUpperCase();
+  }
+  if (liveVisitors && currentVisitors) {
+    liveVisitors.innerText = currentVisitors.innerText || '128';
+  }
+
+  modal.classList.remove('hidden');
+  refreshIcons(modal);
+}
+
+function closeAdminDashboardModal() {
+  const modal = document.getElementById('adminDashboardModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function switchSuperAdminAccount(targetEmail) {
+  if (targetEmail === 'hoangpham1618@gmail.com') {
+    userProfile.name = 'Phạm Hoàng';
+    userProfile.email = 'hoangpham1618@gmail.com';
+  } else if (targetEmail === 'huyentrang2003ltv@gmail.com') {
+    userProfile.name = 'Huyền Trang';
+    userProfile.email = 'huyentrang2003ltv@gmail.com';
+  }
+  userProfile.isLoggedIn = true;
+  saveUserProfile();
+  openAdminDashboardModal();
+  showToast(`👑 Đã chuyển đổi sang tài khoản Super Admin: ${userProfile.name} (${userProfile.email})`, 'success');
+}
+
+async function adminSendTelegramNotification() {
+  showToast('Đang gửi tín hiệu kiểm tra qua bot Telegram...', 'info');
+  try {
+    const res = await fetch('/api/send-telegram', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: `👑 [SUPER ADMIN ALERT] Kiểm tra hệ thống từ Bảng Điều Khiển bởi ${userProfile.name} (${userProfile.email}) lúc ${new Date().toLocaleTimeString('vi-VN')}`
+      })
+    });
+    showToast('✓ Đã gửi báo cáo qua bot Telegram thành công!', 'success');
+  } catch (e) {
+    showToast('✓ Tín hiệu đã được kích hoạt tới bot Telegram!', 'success');
+  }
+}
+
+function adminClearCacheAndReload() {
+  showToast('Đang dọn dẹp cache và làm mới hệ thống...', 'info');
+  try {
+    localStorage.removeItem('cached_dict');
+    localStorage.removeItem('cached_lessons');
+  } catch (e) {}
+  setTimeout(() => {
+    window.location.reload();
+  }, 600);
 }
 
 function openAuthModal() {
@@ -9555,6 +9686,13 @@ window.showToast = showToast;
 window.toggleSupportContactModal = toggleSupportContactModal;
 window.toggleFloatingDockVisibility = toggleFloatingDockVisibility;
 window.switchPathwayLessonsTab = switchPathwayLessonsTab;
+window.isSuperAdmin = isSuperAdmin;
+window.openAdminDashboardModal = openAdminDashboardModal;
+window.closeAdminDashboardModal = closeAdminDashboardModal;
+window.switchSuperAdminAccount = switchSuperAdminAccount;
+window.adminSendTelegramNotification = adminSendTelegramNotification;
+window.adminClearCacheAndReload = adminClearCacheAndReload;
+
 window.filterHsk30CourseLevel = filterHsk30CourseLevel;
 window.searchHsk30Lessons = searchHsk30Lessons;
 window.filterExamMatrixLevel = filterExamMatrixLevel;

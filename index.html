@@ -195,6 +195,7 @@
               <span id="headerUserInitial">H</span>
             </div>
             <span id="headerUserName" class="max-w-[120px] truncate">Phạm Hoàng</span>
+            <span id="headerAdminCrown" class="text-amber-500 font-bold text-xs" title="👑 Super Admin">👑</span>
             <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-amber-700 dark:text-amber-400 group-hover:translate-y-0.5 transition-transform"></i>
           </button>
 
@@ -220,14 +221,33 @@
                 <span id="dropdownUserInitial">H</span>
               </div>
               <div class="min-w-0 flex-1">
-                <p id="dropdownUserName" class="text-xs font-bold truncate text-[#8B1E1E] dark:text-amber-300">Phạm Hoàng</p>
+                <div class="flex items-center gap-1.5">
+                  <p id="dropdownUserName" class="text-xs font-bold truncate text-[#8B1E1E] dark:text-amber-300">Phạm Hoàng</p>
+                  <span id="dropdownCrownIcon" class="text-xs">👑</span>
+                </div>
                 <p id="dropdownUserEmail" class="text-[11px] text-stone-500 dark:text-stone-400 truncate">hoangpham1618@gmail.com</p>
+                <span id="dropdownUserRoleBadge" class="inline-flex items-center gap-1 px-1.5 py-0.2 mt-1 rounded text-[9px] font-black bg-gradient-to-r from-amber-500/20 to-yellow-500/30 text-amber-900 dark:text-amber-300 border border-amber-400/80 shadow-2xs">
+                  👑 Super Admin
+                </span>
               </div>
             </div>
 
             <!-- Các tác vụ nhanh -->
             <div class="space-y-1">
-              <button 
+              <!-- Super Admin Control Panel Shortcut -->
+            <button 
+              id="dropdownAdminPanelBtn"
+              onclick="closeUserDropdown(); openAdminDashboardModal();" 
+              class="w-full flex items-center justify-between px-2.5 py-2 rounded-xl bg-gradient-to-r from-amber-500/20 via-rose-500/15 to-amber-500/20 hover:from-amber-500/30 hover:to-rose-500/25 border border-amber-400/60 text-xs font-bold text-amber-950 dark:text-amber-200 transition-all cursor-pointer shadow-2xs group mb-1"
+            >
+              <div class="flex items-center gap-2">
+                <span class="text-sm group-hover:scale-125 transition-transform">👑</span>
+                <span>Bảng Điều Khiển Super Admin</span>
+              </div>
+              <span class="text-[9px] px-1.5 py-0.5 rounded-full font-black bg-[#8B1E1E] text-white">VIP</span>
+            </button>
+
+            <button 
                 onclick="closeUserDropdown(); openNotebookModal();" 
                 class="w-full flex items-center justify-between px-2.5 py-2 rounded-xl hover:bg-amber-100/70 dark:hover:bg-stone-800 text-xs font-medium text-stone-800 dark:text-stone-200 transition-colors cursor-pointer"
               >
@@ -2156,6 +2176,7 @@
           </span>
           <span class="text-[10px] text-emerald-700 dark:text-emerald-400 bg-emerald-100 dark:bg-emerald-950 px-2 py-0.5 rounded-full font-bold">Khuyên dùng</span>
         </div>
+        <!-- Super Admin 1: Phạm Hoàng -->
         <button 
           type="button"
           onclick="quickLoginDemo('Phạm Hoàng', 'hoangpham1618@gmail.com')"
@@ -2166,11 +2187,35 @@
               H
             </div>
             <div>
-              <p class="font-bold leading-tight">Phạm Hoàng</p>
+              <div class="flex items-center gap-1.5">
+                <p class="font-bold leading-tight">Phạm Hoàng</p>
+                <span class="text-[10px] px-1.5 py-0.2 rounded font-black bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-400/70">👑 Super Admin</span>
+              </div>
               <p class="text-[10px] font-normal text-stone-500 dark:text-stone-400">hoangpham1618@gmail.com</p>
             </div>
           </div>
           <span class="text-xs text-amber-700 dark:text-amber-400 group-hover:translate-x-1 transition-transform">Vào học →</span>
+        </button>
+
+        <!-- Super Admin 2: Huyền Trang -->
+        <button 
+          type="button"
+          onclick="quickLoginDemo('Huyền Trang', 'huyentrang2003ltv@gmail.com')"
+          class="w-full py-2 px-3 rounded-xl bg-white dark:bg-stone-700 hover:bg-rose-50 dark:hover:bg-stone-600 border border-rose-300/80 dark:border-stone-600 text-xs font-bold text-rose-900 dark:text-rose-300 flex items-center justify-between transition-all cursor-pointer shadow-2xs group"
+        >
+          <div class="flex items-center gap-2 text-left">
+            <div class="w-7 h-7 rounded-full bg-gradient-to-br from-rose-600 to-amber-600 text-white flex items-center justify-center font-bold text-xs shadow-2xs">
+              T
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5">
+                <p class="font-bold leading-tight">Huyền Trang</p>
+                <span class="text-[10px] px-1.5 py-0.2 rounded font-black bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-400/70">👑 Super Admin</span>
+              </div>
+              <p class="text-[10px] font-normal text-stone-500 dark:text-stone-400">huyentrang2003ltv@gmail.com</p>
+            </div>
+          </div>
+          <span class="text-xs text-rose-700 dark:text-rose-400 group-hover:translate-x-1 transition-transform">Vào học →</span>
         </button>
       </div>
 
@@ -3113,5 +3158,172 @@
 
   <!-- Application Logic -->
   <script src="app.js?v=20261103v1"></script>
+
+  <!-- ==================== SUPER ADMIN DASHBOARD MODAL ==================== -->
+  <div id="adminDashboardModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
+    <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-2xl max-h-[90vh] rounded-3xl border-2 border-amber-400/90 dark:border-amber-500/40 p-6 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100">
+      
+      <!-- Close Button -->
+      <button onclick="closeAdminDashboardModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors cursor-pointer">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3.5 border-b border-amber-200/80 dark:border-stone-800 pb-3 shrink-0">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-amber-600 via-yellow-500 to-amber-700 text-white flex items-center justify-center font-bold text-2xl shadow-md border border-amber-300">
+          👑
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-serif-luxury font-black text-amber-950 dark:text-amber-300">
+              Bảng Điều Khiển Quản Trị Tối Cao (Super Admin)
+            </h3>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-red-600 to-amber-600 text-white shadow-2xs">
+              ROOT ACCESS
+            </span>
+          </div>
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+            Dành riêng cho <strong>hoangpham1618@gmail.com</strong> & <strong>huyentrang2003ltv@gmail.com</strong>
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Switch Admin Account Bar -->
+      <div class="p-3 rounded-2xl bg-amber-50/70 dark:bg-stone-800/60 border border-amber-300/70 dark:border-stone-700 shrink-0">
+        <div class="flex items-center justify-between flex-wrap gap-2 text-xs">
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-amber-900 dark:text-amber-300">Chuyển Đổi Nhanh Super Admin:</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <button 
+              onclick="switchSuperAdminAccount('hoangpham1618@gmail.com')"
+              class="px-3 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 border border-amber-400 bg-white dark:bg-stone-700 text-[#8B1E1E] dark:text-amber-300 hover:shadow-xs"
+            >
+              <span>👑 Phạm Hoàng</span>
+            </button>
+            <button 
+              onclick="switchSuperAdminAccount('huyentrang2003ltv@gmail.com')"
+              class="px-3 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer flex items-center gap-1.5 border border-rose-400 bg-white dark:bg-stone-700 text-rose-800 dark:text-rose-300 hover:shadow-xs"
+            >
+              <span>👑 Huyền Trang</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scrollable Stats & System Controls -->
+      <div class="flex-1 overflow-y-auto space-y-4 pr-1 custom-scrollbar text-xs">
+        <!-- KPI Cards Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+          <div class="p-3 rounded-2xl bg-emerald-50/80 dark:bg-emerald-950/30 border border-emerald-300 dark:border-emerald-800 text-center">
+            <p class="text-[10px] text-emerald-700 dark:text-emerald-400 font-bold uppercase tracking-wider">Đang Trực Tuyến</p>
+            <p id="adminKpiOnline" class="text-xl font-black text-emerald-800 dark:text-emerald-300 font-mono mt-1">128</p>
+            <p class="text-[9px] text-emerald-600 dark:text-emerald-400 mt-0.5">● Realtime Sync</p>
+          </div>
+
+          <div class="p-3 rounded-2xl bg-amber-50/80 dark:bg-amber-950/30 border border-amber-300 dark:border-amber-800 text-center">
+            <p class="text-[10px] text-amber-700 dark:text-amber-400 font-bold uppercase tracking-wider">Từ Vựng Chủ Đề</p>
+            <p class="text-xl font-black text-amber-800 dark:text-amber-300 font-mono mt-1">14,605</p>
+            <p class="text-[9px] text-amber-600 dark:text-amber-400 mt-0.5">125 chủ đề chuẩn</p>
+          </div>
+
+          <div class="p-3 rounded-2xl bg-rose-50/80 dark:bg-rose-950/30 border border-rose-300 dark:border-rose-800 text-center">
+            <p class="text-[10px] text-rose-700 dark:text-rose-400 font-bold uppercase tracking-wider">Giáo Trình Hán Ngữ</p>
+            <p class="text-xl font-black text-rose-800 dark:text-rose-300 font-mono mt-1">76</p>
+            <p class="text-[9px] text-rose-600 dark:text-rose-400 mt-0.5">6 Quyển BLCU</p>
+          </div>
+
+          <div class="p-3 rounded-2xl bg-indigo-50/80 dark:bg-indigo-950/30 border border-indigo-300 dark:border-indigo-800 text-center">
+            <p class="text-[10px] text-indigo-700 dark:text-indigo-400 font-bold uppercase tracking-wider">Lộ Trình HSK 3.0</p>
+            <p class="text-xl font-black text-indigo-800 dark:text-indigo-300 font-mono mt-1">48</p>
+            <p class="text-[9px] text-indigo-600 dark:text-indigo-400 mt-0.5">Cấp 1-9 Chuẩn</p>
+          </div>
+        </div>
+
+        <!-- Quick Admin Action Cards -->
+        <h4 class="font-bold text-xs text-amber-950 dark:text-amber-300 flex items-center gap-1.5 pt-1">
+          <i data-lucide="wrench" class="w-3.5 h-3.5 text-amber-700"></i>
+          <span>Công Cụ Tác Vụ Super Admin:</span>
+        </h4>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+          <!-- Tool 1: Telegram Alert Test -->
+          <div class="p-3.5 rounded-2xl bg-[#FFFDF9] dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="send" class="w-4 h-4 text-blue-500"></i>
+                <h5 class="font-bold text-stone-900 dark:text-stone-100">Gửi Báo Cáo Telegram</h5>
+              </div>
+              <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                Kích hoạt bot Telegram gửi tin nhắn xác nhận kiểm tra trạng thái máy chủ và kết nối.
+              </p>
+            </div>
+            <button onclick="adminSendTelegramNotification()" class="w-full py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+              <span>Gửi Ping Telegram Ngay</span>
+            </button>
+          </div>
+
+          <!-- Tool 2: Clear Cache & Reload -->
+          <div class="p-3.5 rounded-2xl bg-[#FFFDF9] dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="refresh-cw" class="w-4 h-4 text-emerald-600"></i>
+                <h5 class="font-bold text-stone-900 dark:text-stone-100">Xóa Cache & Làm Mới Dữ Liệu</h5>
+              </div>
+              <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                Làm mới toàn bộ bộ nhớ tạm (localStorage) và tải lại dữ liệu mới nhất từ máy chủ.
+              </p>
+            </div>
+            <button onclick="adminClearCacheAndReload()" class="w-full py-2 px-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+              <span>Dọn Cache & Tải Lại</span>
+            </button>
+          </div>
+
+          <!-- Tool 3: Tải Source Code Gốc (Backup) -->
+          <div class="p-3.5 rounded-2xl bg-[#FFFDF9] dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="download" class="w-4 h-4 text-amber-600"></i>
+                <h5 class="font-bold text-stone-900 dark:text-stone-100">Tải Bản Sao Lưu chinese-daily.zip</h5>
+              </div>
+              <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                Tải về tệp nén toàn bộ mã nguồn website để lưu trữ dự phòng ngoại tuyến.
+              </p>
+            </div>
+            <a href="chinese-daily.zip" download class="w-full py-2 px-3 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer text-center">
+              <i data-lucide="archive" class="w-3.5 h-3.5"></i>
+              <span>Tải chinese-daily.zip</span>
+            </a>
+          </div>
+
+          <!-- Tool 4: Xem Phân Tích Người Dùng -->
+          <div class="p-3.5 rounded-2xl bg-[#FFFDF9] dark:bg-stone-900 border border-stone-200 dark:border-stone-800 space-y-2 flex flex-col justify-between">
+            <div>
+              <div class="flex items-center gap-2">
+                <i data-lucide="activity" class="w-4 h-4 text-rose-600"></i>
+                <h5 class="font-bold text-stone-900 dark:text-stone-100">Bảng Thống Kê Người Học</h5>
+              </div>
+              <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                Mở trung tâm phân tích lưu lượng, thiết bị truy cập và biểu đồ học tập thời gian thực.
+              </p>
+            </div>
+            <button onclick="closeAdminDashboardModal(); toggleVisitorStatsModal();" class="w-full py-2 px-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+              <i data-lucide="bar-chart-2" class="w-3.5 h-3.5"></i>
+              <span>Xem Thống Kê Chi Tiết</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Security Notice Footer -->
+      <div class="p-3 rounded-xl bg-stone-100 dark:bg-stone-800/80 text-[11px] text-stone-500 dark:text-stone-400 text-center flex items-center justify-center gap-1.5 shrink-0">
+        <i data-lucide="shield" class="w-3.5 h-3.5 text-amber-600"></i>
+        <span>Quyền Quản Trị Tối Cao (Super Admin) được cấp cố định cho <strong>hoangpham1618@gmail.com</strong> và <strong>huyentrang2003ltv@gmail.com</strong>.</span>
+      </div>
+
+    </div>
+  </div>
 </body>
 </html>
