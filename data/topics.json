@@ -1,0 +1,114 @@
+[
+  {
+    "id": "food",
+    "name": "Ẩm Thực & Đồ Ăn",
+    "nameZh": "饮食美食",
+    "icon": "🍜",
+    "desc": "Món ăn, đồ uống, nhà hàng, trái cây, gia vị, hương vị, bữa ăn",
+    "count": 108
+  },
+  {
+    "id": "family",
+    "name": "Gia Đình & Xưng Hô",
+    "nameZh": "家庭亲情",
+    "icon": "👨‍👩‍👧‍👦",
+    "desc": "Bố mẹ, vợ chồng, con cái, họ hàng, hôn nhân, xưng hô thân tộc",
+    "count": 64
+  },
+  {
+    "id": "travel",
+    "name": "Du Lịch & Khách Sạn",
+    "nameZh": "旅游住宿",
+    "icon": "✈️",
+    "desc": "Máy bay, sân bay, hành lý, khách sạn, danh lam thắng cảnh, vé tham quan",
+    "count": 20
+  },
+  {
+    "id": "work",
+    "name": "Công Sở & Kinh Doanh",
+    "nameZh": "职场商务",
+    "icon": "💼",
+    "desc": "Công ty, văn phòng, hội họp, phỏng vấn, lương bổng, đàm phán, chức vụ",
+    "count": 25
+  },
+  {
+    "id": "education",
+    "name": "Giáo Dục & Trường Học",
+    "nameZh": "教育学术",
+    "icon": "🎓",
+    "desc": "Học tập, thi cử, đại học, sinh viên, giáo viên, sách vở, bài tập, HSK",
+    "count": 56
+  },
+  {
+    "id": "shopping",
+    "name": "Mua Sắm & Thời Trang",
+    "nameZh": "购物时装",
+    "icon": "🛍️",
+    "desc": "Cửa hàng, siêu thị, giá cả, mặc cả, quần áo, giày dép, túi xách, giảm giá",
+    "count": 34
+  },
+  {
+    "id": "health",
+    "name": "Sức Khỏe & Y Tế",
+    "nameZh": "医疗健康",
+    "icon": "🏥",
+    "desc": "Bệnh viện, bác sĩ, thuốc men, khám chữa, triệu chứng, thể thao rèn luyện",
+    "count": 26
+  },
+  {
+    "id": "daily",
+    "name": "Đời Sống & Nhà Cửa",
+    "nameZh": "居家生活",
+    "icon": "🏠",
+    "desc": "Nhà ở, đồ gia dụng, phòng ốc, thói quen sinh hoạt thường nhật, thời gian",
+    "count": 39
+  },
+  {
+    "id": "traffic",
+    "name": "Giao Thông & Đi Lại",
+    "nameZh": "交通出行",
+    "icon": "🚗",
+    "desc": "Phương tiện giao thông, tàu điện ngầm, xe buýt, taxi, đường sá, chuyển bánh",
+    "count": 37
+  },
+  {
+    "id": "tech",
+    "name": "Công Nghệ & Kỹ Thuật Số",
+    "nameZh": "科技数码",
+    "icon": "📱",
+    "desc": "Điện thoại, máy tính, mạng internet, mạng xã hội, tin nhắn, phần mềm",
+    "count": 20
+  },
+  {
+    "id": "weather",
+    "name": "Thời Tiết & Thiên Nhiên",
+    "nameZh": "天气自然",
+    "icon": "🌦️",
+    "desc": "Mưa nắng, nhiệt độ, bốn mùa, phong cảnh tự nhiên, hoa cỏ, động vật",
+    "count": 23
+  },
+  {
+    "id": "emotions",
+    "name": "Cảm Xúc & Tâm Lý",
+    "nameZh": "情感心理",
+    "icon": "💬",
+    "desc": "Vui buồn, cảm xúc, tâm trạng, thái độ, kỳ vọng, hy vọng, lo lắng",
+    "count": 20
+  },
+  {
+    "id": "appearance",
+    "name": "Tính Cách & Ngoại Hình",
+    "nameZh": "外表品格",
+    "icon": "🎨",
+    "desc": "Ngoại hình, vóc dáng, tính cách, phẩm chất đạo đức, phong cách người",
+    "count": 156
+  },
+  {
+    "id": "society",
+    "name": "Giao Tiếp & Xã Hội",
+    "nameZh": "社会文化",
+    "icon": "🌐",
+    "desc": "Giao tiếp hàng ngày, lễ nghi, chào hỏi, từ nối ngữ pháp, thời gian & địa điểm",
+    "count": 1044
+  }
+]

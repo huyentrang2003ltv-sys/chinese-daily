@@ -14,6 +14,7 @@ let chengyuData = [];
 let readingsData = [];
 let grammarData = [];
 let jiaochengData = null;
+let topicsData = [];
 let activeJiaochengVolume = 'all';
 let jiaochengSearchQuery = '';
 
@@ -88,6 +89,11 @@ let dictRendered = 0;
 let dictBatch = 24;
 let currentDictHsk = 'all';
 let currentDictSearch = '';
+let currentDictMode = 'hsk'; // 'hsk' or 'topic'
+let currentDictTopic = 'all';
+let currentTopicSearch = '';
+let topicDictRendered = 0;
+let topicDictBatch = 24;
 
 // Flashcard State
 let flashcardQueue = [];
@@ -568,7 +574,12 @@ function ensureTabRendered(tabId) {
       initFlashcards();
       break;
     case 'dictionary':
-      renderDictionary(true);
+      if (currentDictMode === 'hsk') {
+        renderDictionary(true);
+      } else {
+        renderTopicPills();
+        renderTopicDictionary(true);
+      }
       break;
   }
 
@@ -611,8 +622,9 @@ async function initApp() {
       fetch('data/chengyu.json').then(r => r.json()).catch(() => []),
       fetch('data/readings.json').then(r => r.json()).catch(() => []),
       fetch('data/grammar_compendium.json').then(r => r.json()).catch(() => []),
-      fetch('data/hanyu_jiaocheng.json').then(r => r.json()).catch(() => null)
-    ]).then(([dictRes, mindmapRes, confRes, practRes, cultRes, examRes, aiRes, radRes, chengRes, readRes, gramRes, jcRes]) => {
+      fetch('data/hanyu_jiaocheng.json').then(r => r.json()).catch(() => null),
+      fetch('data/topics.json').then(r => r.json()).catch(() => [])
+    ]).then(([dictRes, mindmapRes, confRes, practRes, cultRes, examRes, aiRes, radRes, chengRes, readRes, gramRes, jcRes, topRes]) => {
       dictionaryData = dictRes;
       mindmapData = mindmapRes;
       confusionsData = confRes;
@@ -625,6 +637,7 @@ async function initApp() {
       readingsData = readRes;
       grammarData = gramRes;
       jiaochengData = jcRes;
+      topicsData = topRes || [];
 
       setupGlobalSearch();
 
@@ -3052,6 +3065,275 @@ function renderDictionary(reset = false) {
 
 function loadMoreDict() {
   renderDictionary(false);
+}
+
+// ---------------- TAB 6 (MỤC 2): TỪ VỰNG THEO CHỦ ĐỀ ----------------
+function switchDictMode(mode) {
+  currentDictMode = mode;
+  const hskSection = document.getElementById('dictSectionHsk');
+  const topicSection = document.getElementById('dictSectionTopic');
+  const hskBtn = document.getElementById('btn-dict-mode-hsk');
+  const topicBtn = document.getElementById('btn-dict-mode-topic');
+
+  if (mode === 'hsk') {
+    if (hskSection) hskSection.classList.remove('hidden');
+    if (topicSection) topicSection.classList.add('hidden');
+    if (hskBtn) {
+      hskBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-md cursor-pointer border border-[#8B1E1E]';
+    }
+    if (topicBtn) {
+      topicBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer';
+    }
+    if (dictRendered === 0) {
+      renderDictionary(true);
+    }
+  } else {
+    if (hskSection) hskSection.classList.add('hidden');
+    if (topicSection) topicSection.classList.remove('hidden');
+    if (topicBtn) {
+      topicBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-700 to-[#1E4D43] text-white shadow-md cursor-pointer border border-emerald-800';
+    }
+    if (hskBtn) {
+      hskBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer';
+    }
+    renderTopicPills();
+    if (topicDictRendered === 0) {
+      renderTopicDictionary(true);
+    }
+  }
+  refreshIcons();
+}
+
+function renderTopicPills() {
+  const container = document.getElementById('topicFilterPills');
+  if (!container) return;
+
+  const totalWords = dictionaryData ? dictionaryData.length : 0;
+  
+  let html = `
+    <button onclick="filterDictTopic('all')" id="btn-topic-all" class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${currentDictTopic === 'all' ? 'bg-gradient-to-r from-emerald-700 to-[#1E4D43] text-white shadow-sm border border-emerald-800' : 'bg-white hover:bg-emerald-50 text-stone-700 border border-stone-200'}">
+      <span>🌟 Tất Cả 14 Chủ Đề</span>
+      <span class="text-[10px] px-1.5 py-0.2 rounded-full ${currentDictTopic === 'all' ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600 font-semibold'}">${totalWords}</span>
+    </button>
+  `;
+
+  const fallbackTopics = [
+    { id: 'food', name: 'Ẩm Thực & Đồ Ăn', icon: '🍜' },
+    { id: 'family', name: 'Gia Đình & Xưng Hô', icon: '👨‍👩‍👧‍👦' },
+    { id: 'travel', name: 'Du Lịch & Khách Sạn', icon: '✈️' },
+    { id: 'work', name: 'Công Sở & Kinh Doanh', icon: '💼' },
+    { id: 'education', name: 'Giáo Dục & Trường Học', icon: '🎓' },
+    { id: 'shopping', name: 'Mua Sắm & Thời Trang', icon: '🛍️' },
+    { id: 'health', name: 'Sức Khỏe & Y Tế', icon: '🏥' },
+    { id: 'daily', name: 'Đời Sống & Nhà Cửa', icon: '🏠' },
+    { id: 'traffic', name: 'Giao Thông & Đi Lại', icon: '🚗' },
+    { id: 'tech', name: 'Công Nghệ & Kỹ Thuật Số', icon: '📱' },
+    { id: 'weather', name: 'Thời Tiết & Thiên Nhiên', icon: '🌦️' },
+    { id: 'emotions', name: 'Cảm Xúc & Tâm Lý', icon: '💬' },
+    { id: 'appearance', name: 'Tính Cách & Ngoại Hình', icon: '🎨' },
+    { id: 'society', name: 'Giao Tiếp & Xã Hội', icon: '🌐' }
+  ];
+
+  const topicsList = (topicsData && topicsData.length > 0) ? topicsData : fallbackTopics;
+
+  topicsList.forEach(t => {
+    const isSelected = currentDictTopic === t.id;
+    const count = t.count || (dictionaryData ? dictionaryData.filter(w => w.topicId === t.id).length : 0);
+    html += `
+      <button onclick="filterDictTopic('${t.id}')" id="btn-topic-${t.id}" class="px-3 py-1.5 text-xs font-bold rounded-xl transition-all whitespace-nowrap cursor-pointer flex items-center gap-1.5 ${isSelected ? 'bg-gradient-to-r from-emerald-700 to-[#1E4D43] text-white shadow-sm border border-emerald-800' : 'bg-white hover:bg-emerald-50 text-stone-700 border border-stone-200'}">
+        <span>${t.icon || '🏷️'}</span>
+        <span>${t.name}</span>
+        <span class="text-[10px] px-1.5 py-0.2 rounded-full ${isSelected ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600 font-semibold'}">${count}</span>
+      </button>
+    `;
+  });
+
+  container.innerHTML = html;
+}
+
+function filterDictTopic(topicId) {
+  currentDictTopic = topicId;
+  renderTopicPills();
+
+  const label = document.getElementById('activeTopicLabel');
+  if (label) {
+    if (topicId === 'all') {
+      label.innerText = '🌟 Tất Cả 14 Chủ Đề';
+      label.className = 'text-xs font-bold text-emerald-900 bg-emerald-100/80 px-2.5 py-0.5 rounded-lg border border-emerald-200';
+    } else {
+      const found = (topicsData || []).find(t => t.id === topicId);
+      const name = found ? `${found.icon} ${found.name}` : `Chủ đề: ${topicId}`;
+      label.innerText = name;
+      label.className = 'text-xs font-bold text-emerald-950 bg-emerald-200/90 px-2.5 py-0.5 rounded-lg border border-emerald-300';
+    }
+  }
+
+  renderTopicDictionary(true);
+}
+
+function onTopicSearchInput(val) {
+  currentTopicSearch = val || '';
+  const clearBtn = document.getElementById('topicClearSearchBtn');
+  if (clearBtn) {
+    if (currentTopicSearch.trim()) {
+      clearBtn.classList.remove('hidden');
+    } else {
+      clearBtn.classList.add('hidden');
+    }
+  }
+  renderTopicDictionary(true);
+}
+
+function clearTopicSearch() {
+  const input = document.getElementById('topicSearchInput');
+  if (input) input.value = '';
+  onTopicSearchInput('');
+}
+
+function getFilteredTopicDictionaryList() {
+  if (!dictionaryData || !Array.isArray(dictionaryData)) return [];
+  let list = dictionaryData;
+
+  if (currentDictTopic !== 'all') {
+    list = list.filter(item => item.topicId === currentDictTopic);
+  }
+
+  if (currentTopicSearch && currentTopicSearch.trim()) {
+    const q = currentTopicSearch.toLowerCase().trim();
+    list = list.filter(item => 
+      (item.title && item.title.toLowerCase().includes(q)) ||
+      (item.pinyin && item.pinyin.toLowerCase().includes(q)) ||
+      (item.meaning && item.meaning.toLowerCase().includes(q)) ||
+      (item.topicName && item.topicName.toLowerCase().includes(q)) ||
+      (item.exampleSentence && item.exampleSentence.toLowerCase().includes(q))
+    );
+  }
+  return list;
+}
+
+function renderTopicDictionary(reset = false) {
+  const container = document.getElementById('topicGridContainer');
+  if (!container) return;
+
+  const totalLabel = document.getElementById('topicTotalCountLabel');
+  const filteredLabel = document.getElementById('topicFilteredCount');
+  const filteredList = getFilteredTopicDictionaryList();
+
+  if (totalLabel) totalLabel.innerText = `${dictionaryData.length.toLocaleString()}`;
+  if (filteredLabel) filteredLabel.innerText = `${filteredList.length.toLocaleString()}`;
+
+  if (reset) {
+    topicDictRendered = 0;
+    container.innerHTML = '';
+  }
+
+  if (filteredList.length === 0) {
+    container.innerHTML = `
+      <div class="col-span-full glass-card rounded-2xl p-10 text-center text-stone-500 border border-emerald-200 bg-white shadow-xs space-y-2">
+        <div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-800 flex items-center justify-center mx-auto text-xl">🔍</div>
+        <p class="font-bold text-stone-800">Không tìm thấy từ vựng nào trong chủ đề này.</p>
+        <p class="text-xs text-stone-500">Hãy thử nhập từ khóa khác hoặc bấm chọn "🌟 Tất Cả 14 Chủ Đề".</p>
+      </div>
+    `;
+    const loadMoreBtn = document.getElementById('loadMoreTopicBtn');
+    if (loadMoreBtn) loadMoreBtn.classList.add('hidden');
+    return;
+  }
+
+  const nextBatch = filteredList.slice(topicDictRendered, topicDictRendered + topicDictBatch);
+
+  // Level badge styling map
+  const levelBadgeStyles = {
+    1: 'bg-emerald-100 text-emerald-900 border-emerald-300',
+    2: 'bg-teal-100 text-teal-900 border-teal-300',
+    3: 'bg-sky-100 text-sky-900 border-sky-300',
+    4: 'bg-indigo-100 text-indigo-900 border-indigo-300',
+    5: 'bg-purple-100 text-purple-900 border-purple-300',
+    6: 'bg-rose-100 text-rose-900 border-rose-300'
+  };
+
+  nextBatch.forEach(item => {
+    const card = document.createElement('div');
+    const badgeStyle = levelBadgeStyles[item.level] || 'bg-amber-100 text-amber-900 border-amber-200';
+
+    card.className = 'glass-card rounded-2xl p-5 border border-emerald-200/80 bg-white flex flex-col justify-between hover:border-emerald-600 transition-all shadow-xs hover:shadow-md';
+    card.innerHTML = `
+      <div>
+        <div class="flex items-center justify-between text-xs text-stone-500 mb-2.5 gap-1.5 flex-wrap">
+          <div class="flex items-center gap-1.5">
+            <span class="px-2 py-0.5 rounded-lg text-[11px] font-bold bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center gap-1">
+              <span>${item.topicIcon || '🏷️'}</span>
+              <span>${item.topicName || 'Chủ đề'}</span>
+            </span>
+            <span class="px-2 py-0.5 rounded-lg text-[11px] font-bold border ${badgeStyle}">
+              HSK ${item.level}
+            </span>
+          </div>
+          <span class="text-[11px] text-stone-500 font-medium px-2 py-0.5 rounded bg-stone-100 border border-stone-200">
+            ${item.pos || 'từ vựng'}
+          </span>
+        </div>
+
+        <div class="flex items-center justify-between gap-2">
+          <h4 class="font-hanzi text-3xl font-black text-stone-900 tracking-wide">${item.title}</h4>
+          <div class="flex items-center gap-1">
+            <button onclick="toggleSaveWord('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}', ${item.level})" title="Lưu vào Sổ tay Flashcard" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition-colors cursor-pointer">
+              <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
+            </button>
+            <button onclick="switchTab('writing'); loadWritingChar('${item.title[0]}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}');" title="Tập viết nét chữ này" class="p-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 transition-colors cursor-pointer">
+              <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
+            </button>
+            <div class="flex items-center gap-0.5 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
+              <button onclick="playChineseTTS('${item.title}', 'female')" title="Nghe phát âm giọng Nữ (Xiaoxiao)" class="px-2 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-colors cursor-pointer">
+                👩 Nữ
+              </button>
+              <button onclick="playChineseTTS('${item.title}', 'male')" title="Nghe phát âm giọng Nam (Yunxi)" class="px-2 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-colors cursor-pointer">
+                👨 Nam
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p class="text-xs font-bold text-emerald-800 mt-1.5 tracking-wide">${item.pinyin}</p>
+        <p class="text-xs font-medium text-stone-800 mt-1 leading-snug">${item.meaning}</p>
+      </div>
+
+      ${item.exampleSentence ? `
+        <div class="mt-4 pt-3 border-t border-emerald-200/60 text-xs space-y-1 bg-[#FAF7F2]/60 p-2.5 rounded-xl">
+          <div class="flex items-start justify-between gap-1.5">
+            <p class="font-hanzi text-stone-900 font-bold text-xs leading-relaxed">${item.exampleSentence}</p>
+            <div class="flex items-center gap-1 shrink-0">
+              <button onclick="playChineseTTS('${item.exampleSentence.replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'female')" class="px-1.5 py-0.5 rounded bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe ví dụ giọng Nữ">
+                👩 Nữ
+              </button>
+              <button onclick="playChineseTTS('${item.exampleSentence.replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'male')" class="px-1.5 py-0.5 rounded bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe ví dụ giọng Nam">
+                👨 Nam
+              </button>
+            </div>
+          </div>
+          ${item.examplePinyin ? `<p class="text-[11px] font-bold text-emerald-800">${item.examplePinyin}</p>` : ''}
+          ${item.exampleMeaning ? `<p class="text-[11px] text-stone-600 italic leading-snug">${item.exampleMeaning}</p>` : ''}
+        </div>
+      ` : ''}
+    `;
+    container.appendChild(card);
+  });
+
+  topicDictRendered += nextBatch.length;
+  const loadMoreBtn = document.getElementById('loadMoreTopicBtn');
+  if (loadMoreBtn) {
+    if (topicDictRendered >= filteredList.length) {
+      loadMoreBtn.classList.add('hidden');
+    } else {
+      loadMoreBtn.classList.remove('hidden');
+    }
+  }
+
+  refreshIcons();
+}
+
+function loadMoreTopicDict() {
+  renderTopicDictionary(false);
 }
 
 // ---------------- GLOBAL SEARCH ----------------
@@ -6995,6 +7277,11 @@ window.playAllReadingParagraphs = playAllReadingParagraphs;
 window.toggleNarrativeQA = toggleNarrativeQA;
 window.scrollToEra = scrollToEra;
 window.filterCultureCategory = filterCultureCategory;
+window.switchDictMode = switchDictMode;
+window.filterDictTopic = filterDictTopic;
+window.onTopicSearchInput = onTopicSearchInput;
+window.clearTopicSearch = clearTopicSearch;
+window.loadMoreTopicDict = loadMoreTopicDict;
 
 // Global Escape Key to close open modals
 window.addEventListener('keydown', (e) => {
