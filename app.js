@@ -499,6 +499,49 @@ function updateProfileUI() {
       dropdownAdminPanelBtn.classList.remove('flex');
     }
   }
+
+  // Update Header VIP Badge
+  const vipBadge = document.getElementById('headerVipBadge');
+  const vipIcon = document.getElementById('headerVipIcon');
+  const vipText = document.getElementById('headerVipText');
+  const vipPill = document.getElementById('headerVipPill');
+  const vipInfo = checkCurrentUserVip();
+
+  if (vipBadge) {
+    if (vipInfo.tier === 'lifetime') {
+      vipBadge.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/20 via-yellow-500/20 to-amber-500/20 text-amber-950 dark:text-amber-300 border border-amber-400 shadow-2xs transition-all cursor-pointer select-none group';
+      if (vipIcon) vipIcon.innerText = '👑';
+      if (vipText) vipText.innerText = 'VIP Trọn Đời';
+      if (vipPill) {
+        vipPill.innerText = 'VĨNH VIỄN';
+        vipPill.className = 'text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-amber-500 text-stone-950 font-black shadow-2xs';
+      }
+    } else if (vipInfo.isTrial) {
+      vipBadge.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-amber-500/15 text-emerald-950 dark:text-emerald-300 border border-emerald-400/80 shadow-2xs transition-all cursor-pointer select-none group';
+      if (vipIcon) vipIcon.innerText = '🎁';
+      if (vipText) vipText.innerText = `Dùng Thử (${vipInfo.daysRemaining} ngày)`;
+      if (vipPill) {
+        vipPill.innerText = 'NẠP VIP';
+        vipPill.className = 'text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-[#8B1E1E] text-white font-black group-hover:scale-105 transition-transform shadow-2xs';
+      }
+    } else if (vipInfo.isVip && !vipInfo.isExpired) {
+      vipBadge.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-yellow-500/15 to-amber-500/15 text-[#8B1E1E] dark:text-amber-300 border border-amber-300/80 shadow-2xs transition-all cursor-pointer select-none group';
+      if (vipIcon) vipIcon.innerText = '💎';
+      if (vipText) vipText.innerText = `VIP (${vipInfo.daysRemaining} ngày)`;
+      if (vipPill) {
+        vipPill.innerText = 'GIA HẠN';
+        vipPill.className = 'text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-amber-500 text-stone-950 font-black group-hover:scale-105 transition-transform shadow-2xs';
+      }
+    } else {
+      vipBadge.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-red-500/20 via-rose-500/15 to-red-500/20 text-red-700 dark:text-red-300 border border-red-500/70 shadow-2xs transition-all cursor-pointer select-none group animate-pulse';
+      if (vipIcon) vipIcon.innerText = '🔒';
+      if (vipText) vipText.innerText = 'Hết Hạn (Nạp VIP)';
+      if (vipPill) {
+        vipPill.innerText = 'MỞ KHÓA';
+        vipPill.className = 'text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-red-600 text-white font-black group-hover:scale-105 transition-transform shadow-2xs';
+      }
+    }
+  }
 }
 
 // ---------------- USER AUTHENTICATION & PROFILE HANDLERS ----------------
@@ -542,6 +585,9 @@ function openAdminDashboardModal() {
 
   modal.classList.remove('hidden');
   refreshIcons(modal);
+  if (typeof loadAdminUserVipTable === 'function') {
+    loadAdminUserVipTable();
+  }
 }
 
 function closeAdminDashboardModal() {
@@ -7207,6 +7253,13 @@ function switchMockExamLevel(level) {
     }
   });
 
+  if (level > 1 && typeof checkCurrentUserVip === 'function') {
+    const vip = checkCurrentUserVip();
+    if (vip.isExpired) {
+      if (!ensureVipAccess('Đề thi mô phỏng HSK cấp ' + level)) return;
+    }
+  }
+
   activeExam = (mockExamsData || []).find(e => e.level === level) || (mockExamsData[0] || null);
   examUserAnswers = {};
   renderMockExam();
@@ -8973,6 +9026,15 @@ async function openLessonDetailModal(lessonId) {
       return;
     }
 
+    // VIP Guard Check for Lessons: Free preview for lessons 1-5
+    if (lesson && lesson.lessonNum > 5 && typeof checkCurrentUserVip === 'function') {
+      const vip = checkCurrentUserVip();
+      if (vip.isExpired) {
+        ensureVipAccess('Bài ' + lesson.lessonNum + ': ' + lesson.titleHanzi);
+        return;
+      }
+    }
+
     currentActiveLesson = lesson;
     if (userProfile) {
       userProfile.lastLesson = {
@@ -10499,6 +10561,98 @@ function renderHomeDashboard() {
   // Initialize HanziWriter for Word of the Day (福)
   initHomeHanziWriter('福');
 
+
+  // Update VIP / 7-Day Free Trial Banner on Home Dashboard
+  const homeVipBanner = document.getElementById('homeVipTrialBanner');
+  if (homeVipBanner) {
+    const vip = checkCurrentUserVip();
+    if (vip.tier === 'lifetime') {
+      homeVipBanner.className = 'rounded-3xl p-4 lg:p-5 bg-gradient-to-r from-amber-500/10 via-yellow-500/10 to-amber-500/10 border-2 border-amber-400/70 shadow-md relative overflow-hidden transition-all text-amber-950 dark:text-amber-200 flex items-center justify-between flex-wrap gap-3';
+      homeVipBanner.innerHTML = `
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-500 to-yellow-400 text-stone-950 flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
+            👑
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-sm font-serif-luxury text-amber-950 dark:text-amber-300">Tài Khoản Đặc Quyền: VIP Trọn Đời (Lifetime)</h4>
+              <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-400/80 text-stone-950">Vĩnh Viễn</span>
+            </div>
+            <p class="text-xs text-stone-600 dark:text-stone-400 mt-0.5">Bạn có toàn quyền truy cập vĩnh viễn 60 cấp độ Xếp khối gỗ, 76 bài Hán Ngữ & toàn bộ tính năng mới!</p>
+          </div>
+        </div>
+        <button onclick="openVipModal()" class="px-3.5 py-2 rounded-xl bg-amber-400/80 hover:bg-amber-400 text-stone-950 font-bold text-xs shadow-xs transition-all flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>Chi Tiết Đặc Quyền</span>
+        </button>
+      `;
+      homeVipBanner.classList.remove('hidden');
+    } else if (vip.isTrial) {
+      homeVipBanner.className = 'rounded-3xl p-4 lg:p-5 bg-gradient-to-r from-emerald-500/10 via-teal-500/10 to-amber-500/10 border-2 border-emerald-400/70 shadow-md relative overflow-hidden transition-all text-emerald-950 dark:text-emerald-200 flex items-center justify-between flex-wrap gap-3';
+      homeVipBanner.innerHTML = `
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 text-white flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
+            🎁
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-sm font-serif-luxury text-emerald-950 dark:text-emerald-300">Thời Gian Dùng Thử 7 Ngày Miễn Phí</h4>
+              <span class="text-[10px] font-black uppercase px-2.5 py-0.5 rounded-full bg-emerald-500 text-white">Còn ${vip.daysRemaining} ngày</span>
+            </div>
+            <p class="text-xs text-stone-600 dark:text-stone-400 mt-0.5">Bạn đang được trải nghiệm toàn bộ tính năng. Nâng cấp VIP sớm để nhận ưu đãi lên đến 58%!</p>
+          </div>
+        </div>
+        <button onclick="openVipModal('yearly')" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white font-black text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
+          <span>💎 NÂNG CẤP VIP NGAY (Từ 99k)</span>
+          <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+        </button>
+      `;
+      homeVipBanner.classList.remove('hidden');
+    } else if (vip.isVip && !vip.isExpired) {
+      homeVipBanner.className = 'rounded-3xl p-4 lg:p-5 bg-gradient-to-r from-amber-500/10 via-rose-500/10 to-amber-500/10 border-2 border-amber-400/70 shadow-md relative overflow-hidden transition-all text-amber-950 dark:text-amber-200 flex items-center justify-between flex-wrap gap-3';
+      homeVipBanner.innerHTML = `
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#8B1E1E] to-amber-600 text-white flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
+            💎
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 class="font-bold text-sm font-serif-luxury text-amber-950 dark:text-amber-300">Tài Khoản Hội Viên VIP Đang Hoạt Động</h4>
+              <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded-full bg-amber-500 text-stone-950">Còn ${vip.daysRemaining} ngày</span>
+            </div>
+            <p class="text-xs text-stone-600 dark:text-stone-400 mt-0.5">Toàn quyền truy cập mọi bài học, lộ trình và đề thi mô phỏng.</p>
+          </div>
+        </div>
+        <button onclick="openVipModal()" class="px-3.5 py-2 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-950 dark:text-amber-300 font-bold text-xs border border-amber-400 shadow-2xs transition-all flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="repeat" class="w-3.5 h-3.5"></i>
+          <span>Gia Hạn Gói VIP</span>
+        </button>
+      `;
+      homeVipBanner.classList.remove('hidden');
+    } else {
+      homeVipBanner.className = 'rounded-3xl p-4 lg:p-5 bg-gradient-to-r from-red-600/15 via-rose-500/15 to-red-600/15 border-2 border-red-500 shadow-xl relative overflow-hidden transition-all text-red-950 dark:text-rose-200 flex items-center justify-between flex-wrap gap-3 animate-pulse';
+      homeVipBanner.innerHTML = `
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-red-600 to-rose-700 text-white flex items-center justify-center font-bold text-xl shadow-xs shrink-0">
+            🔒
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h4 class="font-black text-sm text-red-950 dark:text-rose-200">ĐÃ KẾT THÚC 7 NGÀY HỌC THỬ MIỄN PHÍ!</h4>
+              <span class="text-[9px] font-black uppercase px-2 py-0.5 rounded-full bg-red-600 text-white">YÊU CẦU NẠP VIP</span>
+            </div>
+            <p class="text-xs text-red-900/80 dark:text-rose-300/80 mt-0.5">Các cấp độ tiếp theo của Xếp Khối Gỗ và Bài học Hán Ngữ đang tạm khóa. Nâng cấp VIP để tiếp tục học ngay!</p>
+          </div>
+        </div>
+        <button onclick="openVipModal('yearly')" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-red-600 to-rose-700 hover:from-red-500 hover:to-rose-600 text-white font-black text-xs shadow-lg transition-all flex items-center gap-2 cursor-pointer scale-105">
+          <span>👑 NẠP VIP MỞ KHÓA NGAY (Từ 99k)</span>
+          <i data-lucide="sparkles" class="w-4 h-4"></i>
+        </button>
+      `;
+      homeVipBanner.classList.remove('hidden');
+    }
+  }
+
   // Refresh icons in tab
   const tabHome = document.getElementById('tab-home');
   if (tabHome) refreshIcons(tabHome);
@@ -10807,6 +10961,15 @@ function loadWoodLevel(index) {
   if (!woodBlockLevels || woodBlockLevels.length === 0) return;
   if (index < 0) index = 0;
   if (index >= woodBlockLevels.length) index = woodBlockLevels.length - 1;
+  // VIP Guard Check for Wood Block Levels: Free preview for levels 1-5
+  if (index >= 5 && typeof checkCurrentUserVip === 'function') {
+    const vip = checkCurrentUserVip();
+    if (vip.isExpired) {
+      ensureVipAccess('Cấp độ ' + (index + 1) + ' của Xếp Khối Gỗ');
+      return;
+    }
+  }
+
   currentWoodLevelIndex = index;
 
   const lvl = woodBlockLevels[index];
@@ -11432,3 +11595,403 @@ window.resetWoodCurrentLevel = resetWoodCurrentLevel;
 window.openWoodLevelSelectorModal = openWoodLevelSelectorModal;
 window.closeWoodLevelSelectorModal = closeWoodLevelSelectorModal;
 window.filterWoodLevelMap = filterWoodLevelMap;
+
+
+// ==================== VIP SUBSCRIPTION & 7-DAY TRIAL SYSTEM ====================
+
+let selectedVipPackageTier = 'yearly';
+
+function checkCurrentUserVip() {
+  if (!userProfile) {
+    return { isVip: false, isTrial: false, isExpired: true, daysRemaining: 0, label: 'Chưa đăng nhập', tier: 'none' };
+  }
+
+  const email = (userProfile.email || '').trim().toLowerCase();
+  const isSuper = SUPER_ADMIN_EMAILS.includes(email) || userProfile.role === 'super_admin';
+  if (isSuper || userProfile.vipTier === 'lifetime' || userProfile.vipStatus === 'lifetime') {
+    return {
+      isVip: true,
+      isTrial: false,
+      isExpired: false,
+      daysRemaining: 99999,
+      label: '👑 VIP Trọn Đời',
+      tier: 'lifetime',
+      expiresAt: null
+    };
+  }
+
+  if (userProfile.vipInfo) {
+    return userProfile.vipInfo;
+  }
+
+  const now = Date.now();
+  // Active VIP
+  if (userProfile.vipStatus === 'active') {
+    if (!userProfile.vipExpiresAt) {
+      return { isVip: true, isTrial: false, isExpired: false, daysRemaining: 99999, label: '💎 VIP Vĩnh Viễn', tier: 'lifetime', expiresAt: null };
+    }
+    const expires = new Date(userProfile.vipExpiresAt).getTime();
+    const diffDays = Math.ceil((expires - now) / (1000 * 60 * 60 * 24));
+    if (diffDays > 0) {
+      return {
+        isVip: true,
+        isTrial: false,
+        isExpired: false,
+        daysRemaining: diffDays,
+        label: `💎 VIP (${diffDays} ngày)`,
+        tier: userProfile.vipTier || 'monthly',
+        expiresAt: userProfile.vipExpiresAt
+      };
+    }
+    return {
+      isVip: false,
+      isTrial: false,
+      isExpired: true,
+      daysRemaining: 0,
+      label: '⚠️ Đã Hết Hạn VIP',
+      tier: 'expired',
+      expiresAt: userProfile.vipExpiresAt
+    };
+  }
+
+  // 7-Day Free Trial
+  const trialStart = new Date(userProfile.trialStartedAt || userProfile.createdAt || now).getTime();
+  const trialExpires = userProfile.vipExpiresAt ? new Date(userProfile.vipExpiresAt).getTime() : (trialStart + 7 * 24 * 60 * 60 * 1000);
+  const diffDays = Math.ceil((trialExpires - now) / (1000 * 60 * 60 * 24));
+
+  if (diffDays > 0) {
+    return {
+      isVip: true,
+      isTrial: true,
+      isExpired: false,
+      daysRemaining: diffDays,
+      label: `🎁 Dùng Thử (${diffDays} ngày)`,
+      tier: 'trial',
+      expiresAt: new Date(trialExpires).toISOString()
+    };
+  }
+
+  return {
+    isVip: false,
+    isTrial: false,
+    isExpired: true,
+    daysRemaining: 0,
+    label: '🔒 Hết Hạn 7 Ngày Miễn Phí',
+    tier: 'expired',
+    expiresAt: new Date(trialExpires).toISOString()
+  };
+}
+
+function ensureVipAccess(featureName = 'tính năng này') {
+  const vip = checkCurrentUserVip();
+  if (vip.isVip && !vip.isExpired) {
+    return true;
+  }
+  openVipModal('yearly');
+  showToast(`⚠️ Bạn đã hết hạn 7 ngày học thử miễn phí. Vui lòng nạp VIP để mở khóa ${featureName}!`, 'warning');
+  return false;
+}
+
+function openVipModal(tier = 'yearly') {
+  const modal = document.getElementById('vipUpgradeModal');
+  if (!modal) return;
+
+  const vip = checkCurrentUserVip();
+  const emailEl = document.getElementById('vipModalUserEmail');
+  const badgeEl = document.getElementById('vipModalStatusBadge');
+  const feedbackBox = document.getElementById('vipUpgradeFeedbackBox');
+
+  if (emailEl) emailEl.innerText = userProfile.email || 'Học viên (Chưa đăng nhập)';
+  if (badgeEl) {
+    badgeEl.innerText = vip.label;
+    if (vip.tier === 'lifetime') {
+      badgeEl.className = 'px-2.5 py-0.5 rounded-full text-xs font-black bg-amber-200/90 dark:bg-amber-900/40 text-amber-900 dark:text-amber-300 border border-amber-400/80';
+    } else if (vip.isTrial) {
+      badgeEl.className = 'px-2.5 py-0.5 rounded-full text-xs font-black bg-emerald-200/90 dark:bg-emerald-900/40 text-emerald-900 dark:text-emerald-300 border border-emerald-400/80';
+    } else if (vip.isExpired) {
+      badgeEl.className = 'px-2.5 py-0.5 rounded-full text-xs font-black bg-red-200/90 dark:bg-red-900/40 text-red-900 dark:text-red-300 border border-red-400/80 animate-pulse';
+    }
+  }
+
+  if (feedbackBox) {
+    feedbackBox.classList.add('hidden');
+    feedbackBox.innerHTML = '';
+  }
+
+  selectVipPackage(tier);
+  modal.classList.remove('hidden');
+  refreshIcons(modal);
+}
+
+function closeVipModal() {
+  const modal = document.getElementById('vipUpgradeModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function selectVipPackage(tier) {
+  selectedVipPackageTier = tier;
+  const pkgButtons = {
+    monthly: document.getElementById('vipPackageBtn-monthly'),
+    yearly: document.getElementById('vipPackageBtn-yearly'),
+    lifetime: document.getElementById('vipPackageBtn-lifetime')
+  };
+
+  Object.keys(pkgButtons).forEach(key => {
+    const btn = pkgButtons[key];
+    if (!btn) return;
+    if (key === tier) {
+      btn.className = 'vip-pkg-card p-3.5 rounded-2xl border-2 border-amber-500 bg-amber-50/60 dark:bg-stone-800 text-left transition-all cursor-pointer relative shadow-md ring-2 ring-amber-400/40 flex flex-col justify-between scale-[1.02]';
+    } else {
+      btn.className = 'vip-pkg-card p-3.5 rounded-2xl border-2 border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 text-left transition-all cursor-pointer relative hover:border-amber-400 flex flex-col justify-between opacity-80 hover:opacity-100';
+    }
+  });
+
+  const amountMap = {
+    monthly: { text: '99.000đ', num: 99000 },
+    yearly: { text: '499.000đ', num: 499000 },
+    lifetime: { text: '899.000đ', num: 899000 }
+  };
+
+  const amountInfo = amountMap[tier] || amountMap.yearly;
+  const userEmail = (userProfile.email || 'hoangpham1618@gmail.com').trim().toLowerCase();
+
+  const amountTextEl = document.getElementById('vipModalAmountText');
+  const transferNoteEl = document.getElementById('vipModalTransferNoteText');
+  const qrImg = document.getElementById('vipVietQrImage');
+
+  if (amountTextEl) amountTextEl.innerText = amountInfo.text;
+  if (transferNoteEl) transferNoteEl.innerText = `NAPVIP ${userEmail}`;
+  if (qrImg) {
+    const qrUrl = `https://api.vietqr.io/image/970422-0987654321-compact2.png?amount=${amountInfo.num}&addInfo=NAPVIP%20${encodeURIComponent(userEmail)}&accountName=HOANG%20PHAM%20-%20HUYEN%20TRANG`;
+    qrImg.src = qrUrl;
+  }
+}
+
+function copyVipField(val, successMsg) {
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(val).then(() => {
+      showToast(successMsg || `Đã sao chép: ${val}`, 'success');
+    }).catch(() => {
+      fallbackCopyText(val, successMsg);
+    });
+  } else {
+    fallbackCopyText(val, successMsg);
+  }
+}
+
+function fallbackCopyText(text, successMsg) {
+  const textArea = document.createElement('textarea');
+  textArea.value = text;
+  document.body.appendChild(textArea);
+  textArea.select();
+  try {
+    document.execCommand('copy');
+    showToast(successMsg || `Đã sao chép: ${text}`, 'success');
+  } catch (err) {
+    showToast('Không thể sao chép tự động. Vui lòng chọn và sao chép thủ công.', 'warning');
+  }
+  document.body.removeChild(textArea);
+}
+
+function copyVipAmount() {
+  const el = document.getElementById('vipModalAmountText');
+  const val = el ? el.innerText.replace(/[^0-9]/g, '') : '499000';
+  copyVipField(val, `Đã sao chép số tiền: ${val}đ`);
+}
+
+function copyVipNote() {
+  const el = document.getElementById('vipModalTransferNoteText');
+  const val = el ? el.innerText : `NAPVIP ${userProfile.email || 'hoangpham1618@gmail.com'}`;
+  copyVipField(val, `Đã sao chép cú pháp chuyển khoản: ${val}`);
+}
+
+async function confirmVipPaymentTransfer() {
+  const btn = document.getElementById('vipConfirmPaymentBtn');
+  const feedbackBox = document.getElementById('vipUpgradeFeedbackBox');
+  const email = (userProfile.email || '').trim().toLowerCase();
+
+  if (!email) {
+    showToast('Vui lòng đăng nhập trước khi xác nhận chuyển khoản!', 'warning');
+    openAuthModal();
+    return;
+  }
+
+  const amountMap = {
+    monthly: '99.000đ',
+    yearly: '499.000đ',
+    lifetime: '899.000đ'
+  };
+
+  const amount = amountMap[selectedVipPackageTier] || '499.000đ';
+
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<span>Đang gửi thông báo đến Admin...</span>';
+  }
+
+  try {
+    const res = await fetch('/api/vip/upgrade-request', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        email: email,
+        packageTier: selectedVipPackageTier,
+        amount: amount,
+        txNote: `NAPVIP ${email}`
+      })
+    });
+    const result = await res.json();
+
+    if (feedbackBox) {
+      feedbackBox.className = 'p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 text-emerald-800 dark:text-emerald-300 text-xs font-medium space-y-1 block animate-fade-in';
+      feedbackBox.innerHTML = `
+        <div class="flex items-center gap-2 font-bold text-sm">
+          <span>🎉</span>
+          <span>Đã Gửi Yêu Cầu Nạp VIP Thành Công!</span>
+        </div>
+        <p class="text-[11px] leading-relaxed">
+          Hệ thống và bot Telegram đã gửi thông báo đến Ban Quản Trị. Ngay khi ngân hàng xác nhận có giao dịch với cú pháp <strong>NAPVIP ${email}</strong>, tài khoản của bạn sẽ được kích hoạt tức thì!
+        </p>
+      `;
+    }
+
+    showToast('🎉 Đã gửi xác nhận chuyển khoản đến Admin! Vui lòng đợi 30 giây để kích hoạt VIP.', 'success');
+  } catch (err) {
+    if (feedbackBox) {
+      feedbackBox.className = 'p-3 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-300 text-amber-800 dark:text-amber-300 text-xs font-medium block';
+      feedbackBox.innerHTML = `
+        <p>Đã ghi nhận yêu cầu cục bộ. Nếu cần kích hoạt gấp, bạn có thể nhắn Zalo/Telegram Admin qua Hotline: <strong>0987.654.321</strong>.</p>
+      `;
+    }
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = '<i data-lucide="check-circle" class="w-5 h-5"></i> <span>Tôi Đã Chuyển Khoản Thành Công → Báo Admin Kích Hoạt</span>';
+      refreshIcons(btn);
+    }
+  }
+}
+
+async function loadAdminUserVipTable() {
+  const container = document.getElementById('adminUserVipTableContainer');
+  if (!container) return;
+
+  container.innerHTML = '<div class="p-4 text-center text-xs text-stone-500">Đang tải danh sách học viên...</div>';
+
+  try {
+    const res = await fetch('/api/auth/users');
+    const data = await res.json();
+
+    if (!data.ok || !data.users || data.users.length === 0) {
+      container.innerHTML = '<div class="p-4 text-center text-xs text-stone-500">Chưa có học viên nào trong hệ thống.</div>';
+      return;
+    }
+
+    let html = `
+      <table class="w-full text-left text-xs border-collapse">
+        <thead class="bg-amber-100/60 dark:bg-stone-800 text-[10px] uppercase font-bold text-stone-600 dark:text-stone-300 border-b border-stone-200 dark:border-stone-700">
+          <tr>
+            <th class="p-2.5">Học Viên</th>
+            <th class="p-2.5">Ngôn Ngữ & Nghề</th>
+            <th class="p-2.5">Trạng Thái VIP</th>
+            <th class="p-2.5 text-right">Kích Hoạt Nhanh</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-stone-200 dark:divide-stone-800">
+    `;
+
+    data.users.forEach(u => {
+      const vip = u.vipInfo || { label: 'Chưa có', tier: 'none' };
+      const isSuper = SUPER_ADMIN_EMAILS.includes(u.email);
+
+      let badgeHtml = '';
+      if (isSuper || vip.tier === 'lifetime') {
+        badgeHtml = `<span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-200/90 text-amber-900 border border-amber-400">👑 VIP Trọn Đời</span>`;
+      } else if (vip.isTrial) {
+        badgeHtml = `<span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">🎁 Dùng thử (${vip.daysRemaining} ngày)</span>`;
+      } else if (vip.isVip) {
+        badgeHtml = `<span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-800 border border-amber-300">💎 VIP (${vip.daysRemaining} ngày)</span>`;
+      } else {
+        badgeHtml = `<span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-rose-100 text-rose-800 border border-rose-300">🔒 Hết Hạn 7 Ngày</span>`;
+      }
+
+      html += `
+        <tr class="hover:bg-amber-50/50 dark:hover:bg-stone-800/50 transition-colors">
+          <td class="p-2.5">
+            <div class="font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+              <span>${u.name}</span>
+              ${isSuper ? '<span title="Super Admin">👑</span>' : ''}
+            </div>
+            <div class="text-[10px] text-stone-500 font-mono">${u.email}</div>
+          </td>
+          <td class="p-2.5 text-[11px] text-stone-600 dark:text-stone-300">
+            <div>${u.language || 'Giản Thể'}</div>
+            <div class="text-[10px] text-stone-400">${u.profession || 'Học viên'}</div>
+          </td>
+          <td class="p-2.5">
+            ${badgeHtml}
+          </td>
+          <td class="p-2.5 text-right">
+            <div class="inline-flex items-center gap-1">
+              <button onclick="adminSetUserVip('${u.email}', 'monthly')" class="px-2 py-0.5 rounded-md bg-stone-100 hover:bg-amber-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-[10px] font-bold text-stone-700 dark:text-stone-200 cursor-pointer" title="Kích hoạt 30 ngày VIP">+1 Tháng</button>
+              <button onclick="adminSetUserVip('${u.email}', 'yearly')" class="px-2 py-0.5 rounded-md bg-amber-500 hover:bg-amber-600 text-white text-[10px] font-bold shadow-2xs cursor-pointer" title="Kích hoạt 365 ngày VIP">+1 Năm</button>
+              <button onclick="adminSetUserVip('${u.email}', 'lifetime')" class="px-2 py-0.5 rounded-md bg-[#8B1E1E] hover:bg-red-800 text-white text-[10px] font-bold shadow-2xs cursor-pointer" title="Kích hoạt VIP Vĩnh Viễn">👑 Trọn Đời</button>
+              <button onclick="adminSetUserVip('${u.email}', 'trial')" class="px-2 py-0.5 rounded-md bg-emerald-100 hover:bg-emerald-200 text-emerald-800 text-[10px] font-bold cursor-pointer" title="Reset lại 7 ngày dùng thử">🎁 7 Ngày</button>
+              <button onclick="adminSetUserVip('${u.email}', 'expire')" class="px-2 py-0.5 rounded-md bg-rose-100 hover:bg-rose-200 text-rose-800 text-[10px] font-bold cursor-pointer" title="Đánh dấu hết hạn">🔒 Khóa</button>
+            </div>
+          </td>
+        </tr>
+      `;
+    });
+
+    html += `
+        </tbody>
+      </table>
+    `;
+
+    container.innerHTML = html;
+  } catch (e) {
+    container.innerHTML = `<div class="p-4 text-center text-xs text-rose-500">Lỗi khi tải danh sách: ${e.message}</div>`;
+  }
+}
+
+async function adminSetUserVip(targetEmail, tier) {
+  try {
+    const res = await fetch('/api/admin/set-vip', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ targetEmail, tier })
+    });
+    const result = await res.json();
+    if (result.ok) {
+      showToast(result.message || 'Đã cập nhật trạng thái VIP!', 'success');
+      if (userProfile && userProfile.email && userProfile.email.toLowerCase() === targetEmail.toLowerCase()) {
+        userProfile.vipStatus = result.user.vipStatus;
+        userProfile.vipTier = result.user.vipTier;
+        userProfile.vipExpiresAt = result.user.vipExpiresAt;
+        userProfile.vipInfo = result.user.vipInfo;
+        saveUserProfile();
+        updateProfileUI();
+      }
+      loadAdminUserVipTable();
+    } else {
+      showToast(result.error || 'Có lỗi xảy ra!', 'error');
+    }
+  } catch (err) {
+    showToast('Lỗi máy chủ khi thiết lập VIP!', 'error');
+  }
+}
+
+
+// Window Exports for VIP Subscription & Management
+window.checkCurrentUserVip = checkCurrentUserVip;
+window.ensureVipAccess = ensureVipAccess;
+window.openVipModal = openVipModal;
+window.closeVipModal = closeVipModal;
+window.selectVipPackage = selectVipPackage;
+window.copyVipField = copyVipField;
+window.copyVipAmount = copyVipAmount;
+window.copyVipNote = copyVipNote;
+window.confirmVipPaymentTransfer = confirmVipPaymentTransfer;
+window.loadAdminUserVipTable = loadAdminUserVipTable;
+window.adminSetUserVip = adminSetUserVip;

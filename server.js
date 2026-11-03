@@ -117,6 +117,81 @@ function getUsers() {
   return [];
 }
 
+function checkUserVipStatus(user) {
+  if (!user) return { isVip: false, isTrial: false, isExpired: true, daysRemaining: 0, label: 'Chưa đăng nhập', tier: 'none' };
+  
+  const isSuper = SUPER_ADMINS.includes(user.email) || user.role === 'super_admin';
+  if (isSuper || user.vipStatus === 'lifetime' || user.vipTier === 'lifetime') {
+    return {
+      isVip: true,
+      isTrial: false,
+      isExpired: false,
+      daysRemaining: 99999,
+      label: '👑 VIP Trọn Đời',
+      tier: 'lifetime',
+      expiresAt: null
+    };
+  }
+
+  const now = Date.now();
+
+  // If user has active VIP
+  if (user.vipStatus === 'active') {
+    if (!user.vipExpiresAt) {
+      return { isVip: true, isTrial: false, isExpired: false, daysRemaining: 99999, label: '💎 VIP Vĩnh Viễn', tier: 'lifetime', expiresAt: null };
+    }
+    const expires = new Date(user.vipExpiresAt).getTime();
+    const diffDays = Math.ceil((expires - now) / (1000 * 60 * 60 * 24));
+    if (diffDays > 0) {
+      return {
+        isVip: true,
+        isTrial: false,
+        isExpired: false,
+        daysRemaining: diffDays,
+        label: `💎 VIP (${diffDays} ngày)`,
+        tier: user.vipTier || 'monthly',
+        expiresAt: user.vipExpiresAt
+      };
+    }
+    return {
+      isVip: false,
+      isTrial: false,
+      isExpired: true,
+      daysRemaining: 0,
+      label: '⚠️ Đã Hết Hạn VIP',
+      tier: 'expired',
+      expiresAt: user.vipExpiresAt
+    };
+  }
+
+  // Trial 7 Days from createdAt or trialStartedAt
+  const trialStart = new Date(user.trialStartedAt || user.createdAt || now).getTime();
+  const trialExpires = user.vipExpiresAt ? new Date(user.vipExpiresAt).getTime() : (trialStart + 7 * 24 * 60 * 60 * 1000);
+  const diffDays = Math.ceil((trialExpires - now) / (1000 * 60 * 60 * 24));
+
+  if (diffDays > 0) {
+    return {
+      isVip: true,
+      isTrial: true,
+      isExpired: false,
+      daysRemaining: diffDays,
+      label: `🎁 Dùng Thử (${diffDays} ngày)`,
+      tier: 'trial',
+      expiresAt: new Date(trialExpires).toISOString()
+    };
+  }
+
+  return {
+    isVip: false,
+    isTrial: false,
+    isExpired: true,
+    daysRemaining: 0,
+    label: '🔒 Hết Hạn 7 Ngày Miễn Phí',
+    tier: 'expired',
+    expiresAt: new Date(trialExpires).toISOString()
+  };
+}
+
 function saveUsers(users) {
   try {
     fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
@@ -420,6 +495,9 @@ const server = http.createServer(async (req, res) => {
       }
 
       const isSuperAdmin = SUPER_ADMINS.includes(email);
+      const trialDurationMs = 7 * 24 * 60 * 60 * 1000;
+      const trialExpiresAt = new Date(Date.now() + trialDurationMs).toISOString();
+
       const newUser = {
         id: 'usr_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
         name: name,
@@ -432,6 +510,10 @@ const server = http.createServer(async (req, res) => {
         profession: profession,
         purpose: purpose,
         goal: goal,
+        vipStatus: isSuperAdmin ? 'lifetime' : 'trial',
+        vipTier: isSuperAdmin ? 'lifetime' : 'trial',
+        trialStartedAt: new Date().toISOString(),
+        vipExpiresAt: isSuperAdmin ? null : trialExpiresAt,
         savedWords: [],
         createdAt: new Date().toISOString()
       };
@@ -441,6 +523,7 @@ const server = http.createServer(async (req, res) => {
 
       const safeUser = { ...newUser };
       delete safeUser.passwordHash;
+      safeUser.vipInfo = checkUserVipStatus(newUser);
 
       res.writeHead(201, { 'Content-Type': 'application/json; charset=utf-8' });
       res.end(JSON.stringify({
@@ -515,6 +598,7 @@ const server = http.createServer(async (req, res) => {
 
       const safeUser = { ...user };
       delete safeUser.passwordHash;
+      safeUser.vipInfo = checkUserVipStatus(user);
 
       res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
       res.end(JSON.stringify({
@@ -535,6 +619,7 @@ const server = http.createServer(async (req, res) => {
       const users = getUsers().map(u => {
         const copy = { ...u };
         delete copy.passwordHash;
+        copy.vipInfo = checkUserVipStatus(u);
         return copy;
       });
 
@@ -543,6 +628,109 @@ const server = http.createServer(async (req, res) => {
         'Cache-Control': 'no-cache'
       });
       res.end(JSON.stringify({ ok: true, count: users.length, users: users }));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  // API 4: User Submit VIP Upgrade Request
+  if (req.url === '/api/vip/upgrade-request' && req.method === 'POST') {
+    try {
+      const data = await readJsonBody(req);
+      const email = (data.email || '').trim().toLowerCase();
+      const packageTier = data.packageTier || 'yearly';
+      const amount = data.amount || (packageTier === 'monthly' ? '99.000đ' : (packageTier === 'yearly' ? '499.000đ' : '899.000đ'));
+      const packageName = packageTier === 'monthly' ? 'VIP 1 Tháng' : (packageTier === 'yearly' ? 'VIP 1 Năm (Khuyên dùng)' : 'VIP Trọn Đời (Lifetime)');
+      const txNote = data.txNote || ('NAPVIP ' + email);
+
+      // Send Instant Telegram Alert to Admin
+      const tgMsg = `💰 [YÊU CẦU NẠP VIP MỚI TỪ HỌC VIÊN] 🏮\n\n👤 Email: ${email}\n📦 Gói cước: ${packageName}\n💵 Số tiền: ${amount}\n📝 Cú pháp chuyển khoản: ${txNote}\n⏰ Thời gian: ${new Date().toLocaleString('vi-VN')}\n\n👉 Quản trị viên vui lòng kiểm tra sao kê ngân hàng và kích hoạt VIP cho học viên!`;
+
+      try {
+        const botToken = '8928499760:AAFuVTM2dTjz3qrf7u-wX5e_Iqzp48z2gto';
+        const chatId = '8806102051';
+        const postData = JSON.stringify({ chat_id: chatId, text: tgMsg });
+        const tgReq = https.request({
+          hostname: 'api.telegram.org',
+          port: 443,
+          path: `/bot${botToken}/sendMessage`,
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Content-Length': Buffer.byteLength(postData)
+          }
+        });
+        tgReq.write(postData);
+        tgReq.end();
+      } catch (tgErr) {
+        console.warn('Telegram notify error:', tgErr.message);
+      }
+
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        ok: true,
+        message: 'Đã gửi yêu cầu nạp VIP! Sau khi hoàn tất chuyển khoản, Admin sẽ kích hoạt VIP cho bạn trong 30 giây.'
+      }));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  // API 5: Admin Set VIP Status for User
+  if (req.url === '/api/admin/set-vip' && req.method === 'POST') {
+    try {
+      const data = await readJsonBody(req);
+      const targetEmail = (data.targetEmail || '').trim().toLowerCase();
+      const tier = data.tier || 'yearly'; // 'monthly', 'yearly', 'lifetime', 'trial', 'expire'
+      
+      const users = getUsers();
+      const user = users.find(u => u.email.toLowerCase() === targetEmail);
+      if (!user) {
+        res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Không tìm thấy học viên với email này!' }));
+        return;
+      }
+
+      const now = Date.now();
+      if (tier === 'lifetime') {
+        user.vipStatus = 'lifetime';
+        user.vipTier = 'lifetime';
+        user.vipExpiresAt = null;
+      } else if (tier === 'monthly') {
+        user.vipStatus = 'active';
+        user.vipTier = 'monthly';
+        user.vipExpiresAt = new Date(now + 30 * 24 * 60 * 60 * 1000).toISOString();
+      } else if (tier === 'yearly') {
+        user.vipStatus = 'active';
+        user.vipTier = 'yearly';
+        user.vipExpiresAt = new Date(now + 365 * 24 * 60 * 60 * 1000).toISOString();
+      } else if (tier === 'trial') {
+        user.vipStatus = 'trial';
+        user.vipTier = 'trial';
+        user.trialStartedAt = new Date().toISOString();
+        user.vipExpiresAt = new Date(now + 7 * 24 * 60 * 60 * 1000).toISOString();
+      } else if (tier === 'expire') {
+        user.vipStatus = 'expired';
+        user.vipTier = 'expired';
+        user.vipExpiresAt = new Date(now - 10000).toISOString();
+      }
+
+      saveUsers(users);
+
+      const safeUser = { ...user };
+      delete safeUser.passwordHash;
+      safeUser.vipInfo = checkUserVipStatus(user);
+
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        ok: true,
+        message: `Đã cập nhật trạng thái VIP thành công cho ${user.name} (${safeUser.vipInfo.label})!`,
+        user: safeUser
+      }));
     } catch (e) {
       res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
       res.end(JSON.stringify({ ok: false, error: e.message }));

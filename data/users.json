@@ -30,21 +30,6 @@
     "createdAt": "2026-11-01T00:00:00.000Z"
   },
   {
-    "id": "usr_1793696931022_gwuu1",
-    "name": "Nguyễn Văn A",
-    "email": "nguyenvana_test_1793696931022@gmail.com",
-    "passwordHash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
-    "role": "student",
-    "exp": 50,
-    "streak": 1,
-    "language": "🇨🇳 Tiếng Trung Giản Thể (Chuẩn Phổ Thông)",
-    "profession": "💼 Nhân viên văn phòng / Khối hành chính",
-    "purpose": "🎯 Thi lấy chứng chỉ HSK 3.0 & HSKK (Ra trường, xin việc)",
-    "goal": "Ôn thi HSK 3 cấp tốc",
-    "savedWords": [],
-    "createdAt": "2026-11-03T09:08:51.023Z"
-  },
-  {
     "id": "usr_1793697334199_k78uk",
     "name": "trang",
     "email": "217220204338@hpu2.edu.vn",
@@ -57,6 +42,10 @@
     "purpose": "🎯 Thi lấy chứng chỉ HSK 3.0 & HSKK (Ra trường, xin việc)",
     "goal": "Người mới bắt đầu (Nhập môn HSK 1 - 2)",
     "savedWords": [],
-    "createdAt": "2026-11-03T09:15:34.201Z"
+    "createdAt": "2026-11-03T09:15:34.201Z",
+    "vipStatus": "trial",
+    "vipTier": "trial",
+    "vipExpiresAt": "2026-11-10T13:48:58.869Z",
+    "trialStartedAt": "2026-11-03T13:48:58.869Z"
   }
 ]

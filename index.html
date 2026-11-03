@@ -183,6 +183,18 @@
         </button>
 
         <!-- User Auth & Profile Component (Thay thế cụm nút bằng Tên Người Dùng khi Đăng Nhập) -->
+                <!-- VIP Status Badge / Nút Nâng Cấp VIP -->
+        <button 
+          id="headerVipBadge"
+          onclick="openVipModal()"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-red-500/10 to-amber-500/15 hover:from-amber-500/25 hover:to-red-500/25 text-[#8B1E1E] dark:text-amber-300 border border-amber-300/80 dark:border-amber-600/60 text-xs font-bold transition-all shadow-2xs cursor-pointer select-none group"
+          title="Thời hạn tài khoản & Nâng cấp VIP"
+        >
+          <span id="headerVipIcon" class="text-xs">👑</span>
+          <span id="headerVipText" class="font-bold">VIP Trọn Đời</span>
+          <span id="headerVipPill" class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded-md bg-[#8B1E1E] text-white font-black group-hover:scale-105 transition-transform shadow-2xs">NẠP VIP</span>
+        </button>
+
         <div class="relative" id="userAuthContainer">
           <!-- Khi ĐÃ Đăng Nhập: Hiển thị Tên Người Dùng & Avatar -->
           <button 
@@ -453,6 +465,11 @@
 
     <!-- ==================== TAB 0: TRANG CHỦ DASHBOARD (TỔNG QUAN HỌC TẬP THÔNG MINH) ==================== -->
     <section id="tab-home" class="space-y-8 animate-fade-in">
+
+      <!-- ==================== CẢNH BÁO / THÔNG BÁO DÙNG THỬ 7 NGÀY & NÂNG CẤP VIP ==================== -->
+      <div id="homeVipTrialBanner" class="hidden rounded-3xl p-5 border shadow-md relative overflow-hidden transition-all animate-fade-in">
+        <!-- Injected dynamically by app.js -->
+      </div>
 
       <!-- ==================== KHỐI 1: HERO BANNER & NHIỆM VỤ HÔM NAY ==================== -->
       <div class="glass-card rounded-3xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-br from-amber-50/90 via-[#FFFDF9] to-red-50/40 dark:from-[#1b222d] dark:via-[#161B22] dark:to-[#1e171b] border-2 border-amber-300/80 dark:border-amber-500/30 shadow-xl">
@@ -3460,6 +3477,225 @@
     </div>
   </div>
 
+  <!-- ==================== VIP UPGRADE MODAL (NÂNG CẤP TÀI KHOẢN VIP) ==================== -->
+  <div id="vipUpgradeModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm animate-fade-in">
+    <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-2xl max-h-[92vh] rounded-3xl border-2 border-amber-400/90 dark:border-amber-500/40 p-5 sm:p-6 shadow-2xl relative flex flex-col space-y-4 overflow-hidden text-stone-900 dark:text-stone-100">
+      
+      <!-- Close Button -->
+      <button onclick="closeVipModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors cursor-pointer z-10">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3.5 border-b border-amber-200/80 dark:border-stone-800 pb-3 shrink-0">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#8B1E1E] via-amber-600 to-yellow-500 text-white flex items-center justify-center font-bold text-2xl shadow-md border border-amber-300">
+          💎
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h3 class="text-lg font-serif-luxury font-black text-amber-950 dark:text-amber-300">
+              Nâng Cấp Gói VIP Học Tiếng Trung Chuyên Sâu
+            </h3>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-red-600 to-amber-600 text-white shadow-2xs">
+              7 NGÀY TRIAL
+            </span>
+          </div>
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+            Mở khóa toàn bộ <strong>60 cấp độ Xếp khối gỗ</strong>, <strong>76 bài Hán Ngữ</strong> & <strong>Thi thử HSK 3.0</strong> không giới hạn.
+          </p>
+        </div>
+      </div>
+
+      <!-- Current VIP / Trial Status Strip -->
+      <div class="p-3 rounded-2xl bg-amber-50/80 dark:bg-stone-800/80 border border-amber-300/80 dark:border-stone-700 flex items-center justify-between flex-wrap gap-2 text-xs shrink-0">
+        <div class="flex items-center gap-2">
+          <span class="text-stone-500 dark:text-stone-400">Tài khoản:</span>
+          <span id="vipModalUserEmail" class="font-bold text-stone-900 dark:text-stone-100">hoangpham1618@gmail.com</span>
+        </div>
+        <div class="flex items-center gap-1.5 font-bold">
+          <span class="text-stone-500 dark:text-stone-400">Trạng thái:</span>
+          <span id="vipModalStatusBadge" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-amber-200/90 dark:bg-amber-900/40 text-amber-900 dark:text-amber-300 border border-amber-400/80">
+            👑 VIP Trọn Đời
+          </span>
+        </div>
+      </div>
+
+      <!-- Scrollable Packages & Payment Body -->
+      <div class="flex-1 overflow-y-auto space-y-4 pr-1 custom-scrollbar text-xs">
+        
+        <!-- Pricing Packages Selection -->
+        <div>
+          <p class="font-bold text-xs text-amber-950 dark:text-amber-300 mb-2 flex items-center gap-1.5">
+            <span>🎁</span>
+            <span>Chọn Gói Hội Viên Phù Hợp Với Bạn:</span>
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <!-- Package 1: Monthly -->
+            <button 
+              type="button"
+              id="vipPackageBtn-monthly"
+              onclick="selectVipPackage('monthly')"
+              class="vip-pkg-card p-3.5 rounded-2xl border-2 border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 text-left transition-all cursor-pointer relative hover:border-amber-400 flex flex-col justify-between"
+            >
+              <div>
+                <span class="text-[10px] font-bold text-stone-500 dark:text-stone-400 uppercase tracking-wider">Trải Nghiệm</span>
+                <h4 class="font-black text-sm text-stone-900 dark:text-stone-100 mt-0.5">VIP 1 Tháng</h4>
+                <div class="my-2">
+                  <span class="text-lg font-black text-[#8B1E1E] dark:text-rose-400 font-serif-luxury">99.000đ</span>
+                  <span class="text-[10px] text-stone-400">/ 30 ngày</span>
+                </div>
+                <ul class="space-y-1 text-[11px] text-stone-600 dark:text-stone-300">
+                  <li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Mở khóa toàn bộ bài học</li>
+                  <li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> 60 Level Xếp Khối Gỗ</li>
+                </ul>
+              </div>
+            </button>
+
+            <!-- Package 2: Yearly (Best Value) -->
+            <button 
+              type="button"
+              id="vipPackageBtn-yearly"
+              onclick="selectVipPackage('yearly')"
+              class="vip-pkg-card p-3.5 rounded-2xl border-2 border-amber-500 bg-amber-50/50 dark:bg-stone-800 text-left transition-all cursor-pointer relative shadow-md ring-2 ring-amber-400/30 flex flex-col justify-between"
+            >
+              <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-gradient-to-r from-red-600 to-amber-600 text-white font-black text-[9px] uppercase tracking-wider shadow-xs">
+                🔥 BÁN CHẠY NHẤT
+              </div>
+              <div>
+                <span class="text-[10px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider">Tiết kiệm 58%</span>
+                <h4 class="font-black text-sm text-amber-950 dark:text-amber-200 mt-0.5">VIP 1 Năm (365 Ngày)</h4>
+                <div class="my-2">
+                  <span class="text-lg font-black text-[#8B1E1E] dark:text-rose-400 font-serif-luxury">499.000đ</span>
+                  <span class="text-[10px] text-stone-400">/ năm (~41k/tháng)</span>
+                </div>
+                <ul class="space-y-1 text-[11px] text-stone-700 dark:text-stone-200">
+                  <li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Toàn quyền mọi tính năng</li>
+                  <li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Tặng kho đề HSK 3.0</li>
+                  <li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Hỗ trợ học tập 24/7</li>
+                </ul>
+              </div>
+            </button>
+
+            <!-- Package 3: Lifetime -->
+            <button 
+              type="button"
+              id="vipPackageBtn-lifetime"
+              onclick="selectVipPackage('lifetime')"
+              class="vip-pkg-card p-3.5 rounded-2xl border-2 border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900 text-left transition-all cursor-pointer relative hover:border-amber-400 flex flex-col justify-between"
+            >
+              <div class="absolute -top-2.5 right-3 px-2 py-0.5 rounded-full bg-gradient-to-r from-amber-600 to-yellow-500 text-stone-900 font-black text-[9px] uppercase tracking-wider shadow-xs">
+                👑 TRỌN ĐỜI
+              </div>
+              <div>
+                <span class="text-[10px] font-bold text-amber-700 dark:text-amber-400 uppercase tracking-wider">Mua 1 lần dùng mãi mãi</span>
+                <h4 class="font-black text-sm text-stone-900 dark:text-stone-100 mt-0.5">VIP Vĩnh Viễn</h4>
+                <div class="my-2">
+                  <span class="text-lg font-black text-[#8B1E1E] dark:text-rose-400 font-serif-luxury">899.000đ</span>
+                  <span class="text-[10px] text-stone-400">/ trọn đời</span>
+                </div>
+                <ul class="space-y-1 text-[11px] text-stone-600 dark:text-stone-300">
+                  <li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Không giới hạn thời gian</li>
+                  <li class="flex items-center gap-1"><i data-lucide="check" class="w-3 h-3 text-emerald-600"></i> Tự động mở bài học mới</li>
+                </ul>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Automated VietQR Payment Box -->
+        <div class="p-4 rounded-2xl bg-amber-50/70 dark:bg-stone-900/90 border border-amber-300 dark:border-amber-700/60 space-y-3">
+          <div class="flex items-center justify-between border-b border-amber-200/80 dark:border-stone-800 pb-2">
+            <span class="font-bold text-xs text-amber-950 dark:text-amber-300 flex items-center gap-1.5">
+              <i data-lucide="qr-code" class="w-4 h-4 text-[#8B1E1E] dark:text-amber-400"></i>
+              <span>Quét Mã VietQR Chuyển Khoản Tự Động:</span>
+            </span>
+            <span class="text-[10px] text-emerald-700 dark:text-emerald-400 font-bold bg-emerald-100 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full border border-emerald-300">
+              ● Kích hoạt tự động qua sao kê
+            </span>
+          </div>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <!-- QR Code Image -->
+            <div class="relative shrink-0 text-center">
+              <div class="p-1.5 bg-white rounded-2xl border-2 border-amber-400 shadow-sm inline-block">
+                <img 
+                  id="vipVietQrImage" 
+                  src="https://api.vietqr.io/image/970422-0987654321-compact2.png?amount=499000&addInfo=NAPVIP%20hoangpham1618@gmail.com&accountName=HOANG%20PHAM%20-%20HUYEN%20TRANG" 
+                  alt="VietQR MB Bank" 
+                  class="w-44 h-44 object-contain rounded-xl"
+                />
+              </div>
+              <p class="text-[10px] text-stone-500 mt-1">Mở App Ngân hàng bất kỳ để quét</p>
+            </div>
+
+            <!-- Transfer Details Grid with 1-Click Copy Buttons -->
+            <div class="flex-1 space-y-2 w-full text-xs">
+              <div class="p-2 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-stone-400 block">Ngân hàng thụ hưởng:</span>
+                  <span class="font-black text-stone-900 dark:text-stone-100">MB Bank (Ngân hàng Quân Đội)</span>
+                </div>
+                <button type="button" onclick="copyVipField('MB Bank', 'Đã sao chép Ngân hàng!')" class="px-2 py-1 rounded-lg text-[10px] font-bold bg-stone-100 dark:bg-stone-700 hover:bg-stone-200 text-stone-700 dark:text-stone-200 cursor-pointer">Sao chép</button>
+              </div>
+
+              <div class="p-2 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-stone-400 block">Số tài khoản:</span>
+                  <span class="font-black text-[#8B1E1E] dark:text-amber-400 font-mono text-sm tracking-wider">0987654321</span>
+                </div>
+                <button type="button" onclick="copyVipField('0987654321', 'Đã sao chép Số tài khoản!')" class="px-2 py-1 rounded-lg text-[10px] font-bold bg-amber-100 dark:bg-amber-950/60 hover:bg-amber-200 text-[#8B1E1E] dark:text-amber-300 cursor-pointer">Sao chép</button>
+              </div>
+
+              <div class="p-2 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-stone-400 block">Chủ tài khoản:</span>
+                  <span class="font-bold text-stone-900 dark:text-stone-100">HOANG PHAM - HUYEN TRANG</span>
+                </div>
+              </div>
+
+              <div class="p-2 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-stone-400 block">Số tiền cần thanh toán:</span>
+                  <span id="vipModalAmountText" class="font-black text-[#8B1E1E] dark:text-rose-400 font-mono text-sm">499.000đ</span>
+                </div>
+                <button type="button" onclick="copyVipAmount()" class="px-2 py-1 rounded-lg text-[10px] font-bold bg-stone-100 dark:bg-stone-700 hover:bg-stone-200 text-stone-700 dark:text-stone-200 cursor-pointer">Sao chép</button>
+              </div>
+
+              <div class="p-2 rounded-xl bg-amber-100/70 dark:bg-amber-950/50 border border-amber-300 dark:border-amber-700 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-amber-800 dark:text-amber-400 font-bold block">Nội dung chuyển khoản (bắt buộc):</span>
+                  <span id="vipModalTransferNoteText" class="font-mono font-black text-amber-950 dark:text-amber-200 text-xs">NAPVIP hoangpham1618@gmail.com</span>
+                </div>
+                <button type="button" onclick="copyVipNote()" class="px-2 py-1 rounded-lg text-[10px] font-black bg-[#8B1E1E] text-white hover:bg-red-800 cursor-pointer shadow-xs">Sao chép</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success/Info Alert Container -->
+        <div id="vipUpgradeFeedbackBox" class="hidden p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-300 text-emerald-800 dark:text-emerald-300 text-xs font-medium"></div>
+
+        <!-- 1-Click Confirm Button -->
+        <button 
+          id="vipConfirmPaymentBtn"
+          type="button" 
+          onclick="confirmVipPaymentTransfer()" 
+          class="w-full py-3 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:opacity-95 text-white font-black text-sm shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer"
+        >
+          <i data-lucide="check-circle" class="w-5 h-5"></i>
+          <span>Tôi Đã Chuyển Khoản Thành Công → Báo Admin Kích Hoạt</span>
+        </button>
+
+        <p class="text-[10px] text-center text-stone-400">
+          Hệ thống sẽ đồng bộ và kích hoạt trong vòng 30 giây sau khi nhận được thông báo chuyển khoản. Cần hỗ trợ gấp? Gọi/Zalo Hotline: <strong>0987.654.321</strong>.
+        </p>
+
+      </div>
+
+    </div>
+  </div>
+
   <!-- Telegram Send Modal -->
   <div id="telegramModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm">
     <div class="bg-[#FFFDF9] w-full max-w-md rounded-2xl border border-amber-300/80 p-6 shadow-2xl relative space-y-4">
@@ -4437,6 +4673,25 @@
             <p class="text-[10px] text-indigo-700 dark:text-indigo-400 font-bold uppercase tracking-wider">Lộ Trình HSK 3.0</p>
             <p class="text-xl font-black text-indigo-800 dark:text-indigo-300 font-mono mt-1">48</p>
             <p class="text-[9px] text-indigo-600 dark:text-indigo-400 mt-0.5">Cấp 1-9 Chuẩn</p>
+          </div>
+        </div>
+
+        <!-- VIP Subscription & User Account Management Section -->
+        <div class="p-3.5 rounded-2xl bg-amber-50/70 dark:bg-stone-850 border border-amber-300/80 dark:border-stone-700 space-y-3">
+          <div class="flex items-center justify-between flex-wrap gap-2">
+            <h4 class="font-bold text-xs text-amber-950 dark:text-amber-300 flex items-center gap-1.5">
+              <span class="text-sm">💎</span>
+              <span>Quản Lý Học Viên & Kích Hoạt VIP (Dùng Thử 7 Ngày / Nạp VIP):</span>
+            </h4>
+            <button onclick="loadAdminUserVipTable()" class="px-2.5 py-1 rounded-lg bg-amber-200/80 dark:bg-stone-700 hover:bg-amber-300 text-stone-800 dark:text-stone-200 font-bold text-[10px] transition-all flex items-center gap-1 cursor-pointer">
+              <i data-lucide="refresh-cw" class="w-3 h-3"></i>
+              <span>Làm Mới Danh Sách</span>
+            </button>
+          </div>
+
+          <!-- User VIP Table Container -->
+          <div id="adminUserVipTableContainer" class="overflow-x-auto max-h-56 custom-scrollbar rounded-xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-900">
+            <!-- Rendered by loadAdminUserVipTable() -->
           </div>
         </div>
 
