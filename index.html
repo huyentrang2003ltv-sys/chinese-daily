@@ -498,10 +498,16 @@
                 <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
                 <span>Làm lại</span>
               </button>
-              <button onclick="playWritingCharTTS()" class="flex items-center justify-center gap-1 py-2 px-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 font-semibold text-xs transition-all">
-                <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
-                <span>Phát âm</span>
-              </button>
+              <div class="flex items-center justify-center gap-1 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200">
+                <button onclick="playWritingCharTTS('female')" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white hover:bg-rose-50 text-rose-800 text-xs font-bold transition-all cursor-pointer" title="Phát âm chữ này giọng Nữ">
+                  <i data-lucide="volume-2" class="w-3 h-3 text-rose-600"></i>
+                  <span>👩 Nữ</span>
+                </button>
+                <button onclick="playWritingCharTTS('male')" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white hover:bg-blue-50 text-blue-800 text-xs font-bold transition-all cursor-pointer" title="Phát âm chữ này giọng Nam">
+                  <i data-lucide="volume-2" class="w-3 h-3 text-blue-600"></i>
+                  <span>👨 Nam</span>
+                </button>
+              </div>
             </div>
           </div>
 
@@ -1421,10 +1427,16 @@
                 <h3 id="fcFrontHanzi" class="font-hanzi text-7xl lg:text-8xl font-black text-[#8B1E1E] tracking-wider mb-4 hover:scale-105 transition-transform">
                   学
                 </h3>
-                <button onclick="event.stopPropagation(); playChineseTTS(currentFlashcard.title)" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-amber-50 hover:bg-amber-100 text-xs font-semibold text-amber-900 border border-amber-200 transition-colors">
-                  <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
-                  <span>Nghe phát âm chuẩn</span>
-                </button>
+                <div class="inline-flex items-center gap-1 bg-amber-50/90 p-0.5 rounded-full border border-amber-200 shadow-2xs">
+                  <button onclick="event.stopPropagation(); playChineseTTS(currentFlashcard.title, 'female')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white hover:bg-rose-50 text-xs font-bold text-rose-850 border border-rose-200 transition-colors cursor-pointer">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+                    <span>👩 Nữ</span>
+                  </button>
+                  <button onclick="event.stopPropagation(); playChineseTTS(currentFlashcard.title, 'male')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white hover:bg-blue-50 text-xs font-bold text-blue-850 border border-blue-200 transition-colors cursor-pointer">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
+                    <span>👨 Nam</span>
+                  </button>
+                </div>
               </div>
 
               <p class="text-xs text-stone-400">Mặt trước: Nhìn chữ Hán và liên tưởng nghĩa</p>
@@ -1441,10 +1453,20 @@
                 <h4 id="fcBackHanzi" class="font-hanzi text-5xl font-black text-stone-900">学</h4>
                 <div class="flex items-center justify-center gap-3">
                   <span id="fcBackPinyin" class="text-2xl font-bold text-[#8B1E1E] tracking-wide">xué</span>
+                  <div class="inline-flex items-center gap-0.5 bg-white/90 p-0.5 rounded-lg border border-amber-200">
+                    <button onclick="event.stopPropagation(); playChineseTTS(currentFlashcard.title, 'female')" class="p-1 rounded hover:bg-rose-50 text-rose-800 text-xs font-bold cursor-pointer" title="Giọng Nữ">👩</button>
+                    <button onclick="event.stopPropagation(); playChineseTTS(currentFlashcard.title, 'male')" class="p-1 rounded hover:bg-blue-50 text-blue-800 text-xs font-bold cursor-pointer" title="Giọng Nam">👨</button>
+                  </div>
                 </div>
                 <p id="fcBackMeaning" class="text-lg font-serif-luxury font-bold text-stone-800">Học, học tập</p>
-                <div id="fcBackExampleBox" class="p-3.5 rounded-xl bg-white border border-amber-200/60 text-left text-xs text-stone-700 max-w-sm shadow-xs">
-                  <p id="fcBackExampleHanzi" class="font-hanzi font-semibold text-[#8B1E1E] mb-1">我在学汉语。</p>
+                <div id="fcBackExampleBox" class="p-3.5 rounded-xl bg-white border border-amber-200/60 text-left text-xs text-stone-700 max-w-sm shadow-xs space-y-1">
+                  <div class="flex items-center justify-between gap-2">
+                    <p id="fcBackExampleHanzi" class="font-hanzi font-semibold text-[#8B1E1E]">我在学汉语。</p>
+                    <div class="inline-flex items-center gap-0.5 shrink-0">
+                      <button onclick="event.stopPropagation(); playChineseTTS(document.getElementById('fcBackExampleHanzi').innerText, 'female')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Nghe ví dụ giọng Nữ">👩</button>
+                      <button onclick="event.stopPropagation(); playChineseTTS(document.getElementById('fcBackExampleHanzi').innerText, 'male')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Nghe ví dụ giọng Nam">👨</button>
+                    </div>
+                  </div>
                   <p id="fcBackExampleVi" class="text-stone-600">Tôi đang học tiếng Trung.</p>
                 </div>
               </div>
@@ -1822,10 +1844,16 @@
               <span class="hidden sm:inline">Bài sau</span>
               <i data-lucide="chevron-right" class="w-4 h-4"></i>
             </button>
-            <button id="lessonModalHeaderAudioBtn" onclick="playLessonTitleAudio()" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white text-xs font-bold shadow-sm hover:opacity-95 transition-all flex items-center gap-1.5 cursor-pointer">
-              <i data-lucide="volume-2" class="w-4 h-4"></i>
-              <span>Phát Âm Tiêu Đề</span>
-            </button>
+            <div class="inline-flex items-center gap-1 bg-white/90 p-0.5 rounded-xl border border-amber-200 shadow-2xs">
+              <button onclick="playLessonTitleAudio('female')" class="px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-900 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer" title="Phát âm tiêu đề bài học (Giọng Nữ)">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+                <span>👩 Nữ</span>
+              </button>
+              <button onclick="playLessonTitleAudio('male')" class="px-3 py-1.5 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-900 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer" title="Phát âm tiêu đề bài học (Giọng Nam)">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
+                <span>👨 Nam</span>
+              </button>
+            </div>
           </div>
         </div>
 

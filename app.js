@@ -455,10 +455,15 @@ function renderNotebookList() {
           <p class="text-xs text-slate-600 font-medium">${w.meaning}</p>
         </div>
       </div>
-      <div class="flex items-center gap-1.5">
-        <button onclick="playChineseTTS('${w.hanzi}')" title="Nghe phát âm" class="p-2 rounded-xl bg-white hover:bg-teal-100 text-teal-700 border border-slate-200 transition-all">
-          <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-        </button>
+      <div class="flex items-center gap-1.5 flex-wrap">
+        <div class="inline-flex items-center gap-0.5 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
+          <button onclick="playChineseTTS('${w.hanzi}', 'female')" title="Phát âm giọng Nữ" class="px-2 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer">
+            👩 Nữ
+          </button>
+          <button onclick="playChineseTTS('${w.hanzi}', 'male')" title="Phát âm giọng Nam" class="px-2 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-all cursor-pointer">
+            👨 Nam
+          </button>
+        </div>
         <button onclick="switchTab('writing'); loadWritingChar('${w.hanzi}', '${w.pinyin}', '${w.meaning}'); closeNotebookModal();" title="Luyện viết chữ này" class="p-2 rounded-xl bg-white hover:bg-rose-100 text-rose-700 border border-slate-200 transition-all">
           <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
         </button>
@@ -1014,13 +1019,14 @@ function renderCultureCards() {
 
     // 4. Keywords HTML
     const keywordsHtml = (item.keywords || []).map(k => `
-      <div onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(k.hanzi)}'))" class="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-amber-200 shadow-2xs hover:border-[#8B1E1E] hover:bg-amber-50/60 transition-all">
+      <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-amber-200 shadow-2xs hover:border-[#8B1E1E] transition-all">
         <span class="font-hanzi font-bold text-stone-900 text-xs md:text-sm">${k.hanzi}</span>
         <span class="text-[11px] text-[#8B1E1E] font-medium font-sans">${k.pinyin}</span>
         <span class="text-[11px] text-stone-600 font-medium">(${k.meaning})</span>
-        <button title="Nghe phát âm" class="text-stone-400 hover:text-[#8B1E1E] p-0.5 rounded transition-colors ml-0.5">
-          <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-        </button>
+        <div class="inline-flex items-center gap-0.5 ml-1">
+          <button type="button" onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(k.hanzi)}'), 'female')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Phát âm Nữ">👩</button>
+          <button type="button" onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(k.hanzi)}'), 'male')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Phát âm Nam">👨</button>
+        </div>
       </div>
     `).join('');
 
@@ -1036,9 +1042,14 @@ function renderCultureCards() {
             <p class="text-xs text-[#8B1E1E] italic font-sans">${item.quote.pinyin}</p>
             <p class="text-xs md:text-sm text-stone-700 font-medium pt-1">➔ "${item.quote.meaning}"</p>
           </div>
-          <button onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(item.quote.hanzi)}'))" title="Nghe câu danh ngôn / thi từ" class="shrink-0 p-2.5 rounded-xl bg-white hover:bg-amber-100 text-[#8B1E1E] border border-amber-300 shadow-2xs transition-all cursor-pointer">
-            <i data-lucide="volume-2" class="w-4 h-4"></i>
-          </button>
+          <div class="inline-flex items-center gap-1 bg-white/90 p-1 rounded-xl border border-amber-300 shadow-2xs shrink-0">
+            <button onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(item.quote.hanzi)}'), 'female')" title="Nghe câu danh ngôn giọng Nữ" class="px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer">
+              👩 Nữ
+            </button>
+            <button onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(item.quote.hanzi)}'), 'male')" title="Nghe câu danh ngôn giọng Nam" class="px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-850 border border-blue-200 text-xs font-bold transition-all cursor-pointer">
+              👨 Nam
+            </button>
+          </div>
         </div>
       </div>
     ` : '';
@@ -1489,14 +1500,24 @@ function renderMindmap() {
                           <div class="text-xs font-hanzi font-medium text-stone-800 leading-relaxed">
                             ${sub.example}
                           </div>
-                          <button 
-                            type="button"
-                            onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(sub.example.split('(')[0].trim())}'))" 
-                            title="Nghe phát âm câu ví dụ"
-                            class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-[#8B1E1E] border border-amber-200 transition-all shrink-0 shadow-2xs"
-                          >
-                            <i data-lucide="volume-2" class="w-4 h-4"></i>
-                          </button>
+                          <div class="inline-flex items-center gap-1 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shrink-0 shadow-2xs">
+                            <button 
+                              type="button"
+                              onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(sub.example.split('(')[0].trim())}'), 'female')" 
+                              title="Nghe giọng Nữ"
+                              class="px-2 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer"
+                            >
+                              👩 Nữ
+                            </button>
+                            <button 
+                              type="button"
+                              onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(sub.example.split('(')[0].trim())}'), 'male')" 
+                              title="Nghe giọng Nam"
+                              class="px-2 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-all cursor-pointer"
+                            >
+                              👨 Nam
+                            </button>
+                          </div>
                         </div>
                       ` : ''}
                     </div>
@@ -1538,14 +1559,24 @@ function renderMindmap() {
                         <p class="text-xs font-semibold text-[#8B1E1E] mt-0.5">${ex.pinyin}</p>
                         <p class="text-xs text-stone-600 mt-0.5">${ex.vi}</p>
                       </div>
-                      <button 
-                        type="button"
-                        onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(ex.hanzi)}'))" 
-                        title="Nghe phát âm câu ví dụ"
-                        class="p-2.5 rounded-xl bg-white hover:bg-amber-100 text-[#8B1E1E] border border-amber-200 transition-all shrink-0 shadow-2xs"
-                      >
-                        <i data-lucide="volume-2" class="w-4 h-4"></i>
-                      </button>
+                      <div class="inline-flex items-center gap-1 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shrink-0 shadow-2xs">
+                        <button 
+                          type="button"
+                          onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(ex.hanzi)}'), 'female')" 
+                          title="Nghe câu ví dụ giọng Nữ"
+                          class="px-2.5 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer"
+                        >
+                          👩 Nữ
+                        </button>
+                        <button 
+                          type="button"
+                          onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(ex.hanzi)}'), 'male')" 
+                          title="Nghe câu ví dụ giọng Nam"
+                          class="px-2.5 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-all cursor-pointer"
+                        >
+                          👨 Nam
+                        </button>
+                      </div>
                     </div>
                   `).join('')}
                 </div>
@@ -1719,10 +1750,16 @@ function renderPathwayLessons(reset = false) {
         <span class="px-2.5 py-1 rounded-lg bg-teal-50 text-teal-700 border border-teal-200 font-bold">
           HSK ${item.level} • Bài ${item.lesson}
         </span>
-        <button onclick="playChineseTTS('${item.hanzi}')" class="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-700 border border-teal-200 transition-colors">
-          <i data-lucide="volume-2" class="w-3.5 h-3.5 text-teal-600"></i>
-          <span>Nghe câu mẫu</span>
-        </button>
+        <div class="inline-flex items-center gap-1 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
+          <button onclick="playChineseTTS('${item.hanzi}', 'female')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-colors cursor-pointer" title="Nghe câu mẫu giọng Nữ">
+            <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+            <span>👩 Nữ</span>
+          </button>
+          <button onclick="playChineseTTS('${item.hanzi}', 'male')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-colors cursor-pointer" title="Nghe câu mẫu giọng Nam">
+            <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
+            <span>👨 Nam</span>
+          </button>
+        </div>
       </div>
 
       <div>
@@ -2104,10 +2141,16 @@ function renderTranslationStage() {
                 <i data-lucide="award" class="w-4 h-4 text-teal-600"></i>
                 <span>Câu Dịch Chuẩn HSK 3.0:</span>
               </span>
-              <button onclick="playChineseTTS('${q.hanzi}')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-bold shadow-xs transition-colors">
-                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-                <span>Nghe giọng chuẩn</span>
-              </button>
+              <div class="inline-flex items-center gap-1 bg-white/90 p-0.5 rounded-xl border border-teal-200 shadow-2xs">
+                <button onclick="playChineseTTS('${q.hanzi}', 'female')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-850 border border-rose-200 text-xs font-bold transition-colors cursor-pointer" title="Nghe giọng Nữ">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>👩 Nữ</span>
+                </button>
+                <button onclick="playChineseTTS('${q.hanzi}', 'male')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-850 border border-teal-200 text-xs font-bold transition-colors cursor-pointer" title="Nghe giọng Nam">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5 text-teal-600"></i>
+                  <span>👨 Nam</span>
+                </button>
+              </div>
             </div>
             <div>
               <h4 class="font-hanzi text-2xl lg:text-3xl font-black text-teal-950 tracking-wide mb-1">
@@ -2149,9 +2192,10 @@ function renderTranslationStage() {
                           </span>
                         </td>
                         <td class="py-3 px-4 text-center">
-                          <button onclick="playChineseTTS('${w.title}')" class="p-1.5 rounded-lg bg-teal-50 hover:bg-teal-100 text-teal-700 border border-teal-200">
-                            <i data-lucide="volume-2" class="w-3.5 h-3.5 text-teal-600"></i>
-                          </button>
+                          <div class="inline-flex items-center gap-0.5">
+                            <button onclick="playChineseTTS('${w.title}', 'female')" class="p-1 rounded-md bg-rose-50 hover:bg-rose-100 text-rose-800 text-[10px] font-bold border border-rose-200 cursor-pointer" title="Giọng Nữ">👩</button>
+                            <button onclick="playChineseTTS('${w.title}', 'male')" class="p-1 rounded-md bg-teal-50 hover:bg-teal-100 text-teal-800 text-[10px] font-bold border border-teal-200 cursor-pointer" title="Giọng Nam">👨</button>
+                          </div>
                         </td>
                       </tr>
                     `).join('')}
@@ -2496,10 +2540,16 @@ function renderPractice() {
           </span>
         </div>
         ${q.audioText ? `
-          <button onclick="playChineseTTS('${q.audioText.replace(/'/g, "\\'").replace(/\n/g, ' ')}')" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-100/70 hover:bg-amber-200/80 text-amber-900 border border-amber-300/60 text-xs font-bold transition-all shadow-xs cursor-pointer" title="Phát âm thanh chuẩn Bắc Kinh">
-            <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
-            <span>Nghe audio mẫu</span>
-          </button>
+          <div class="inline-flex items-center gap-1 bg-amber-100/70 p-0.5 rounded-xl border border-amber-300/60 shadow-xs">
+            <button onclick="playChineseTTS('${q.audioText.replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'female')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer" title="Nghe audio mẫu giọng Nữ">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+              <span>👩 Nữ</span>
+            </button>
+            <button onclick="playChineseTTS('${q.audioText.replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'male')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-all cursor-pointer" title="Nghe audio mẫu giọng Nam">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
+              <span>👨 Nam</span>
+            </button>
+          </div>
         ` : ''}
       </div>
     `;
@@ -2522,10 +2572,16 @@ function renderPractice() {
           <div class="space-y-3">
             <p class="text-xs font-semibold text-stone-700">${q.question || 'Hãy nghe câu mẫu rồi nhấn micro và phát âm thật chuẩn xác:'}</p>
             <div class="flex flex-wrap items-center gap-3">
-              <button onclick="playChineseTTS('${(q.audioText || q.targetText).replace(/'/g, "\\'").replace(/\n/g, ' ')}')" class="px-4 py-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs flex items-center gap-2 border border-stone-200 transition-all shadow-xs cursor-pointer">
-                <i data-lucide="volume-2" class="w-4 h-4 text-stone-700"></i>
-                <span>1. Nghe phát âm mẫu</span>
-              </button>
+              <div class="inline-flex items-center gap-1 bg-stone-100 p-0.5 rounded-xl border border-stone-200">
+                <button onclick="playChineseTTS('${(q.audioText || q.targetText).replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'female')" class="px-3 py-2 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer" title="Nghe mẫu giọng Nữ">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>1. 👩 Mẫu Nữ</span>
+                </button>
+                <button onclick="playChineseTTS('${(q.audioText || q.targetText).replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'male')" class="px-3 py-2 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 font-bold text-xs flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer" title="Nghe mẫu giọng Nam">
+                  <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
+                  <span>1. 👨 Mẫu Nam</span>
+                </button>
+              </div>
               <button id="speech-btn-${q.id}" onclick="startPracticeSpeechRecognition('${q.id}', '${(q.targetText || q.audioText).replace(/'/g, "\\'")}')" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-90 text-white font-bold text-xs flex items-center gap-2 shadow-sm transition-all cursor-pointer">
                 <i data-lucide="mic" class="w-4 h-4"></i>
                 <span>2. Ghi âm & Chấm điểm phát âm</span>
@@ -2625,10 +2681,16 @@ function renderPractice() {
                   <i data-lucide="${answer.isCorrect ? 'check-circle' : 'alert-circle'}" class="w-4 h-4"></i>
                   <span>${answer.isCorrect ? 'Xuất sắc! Cấu trúc câu hoàn toàn chuẩn xác.' : 'Trật tự câu chưa chuẩn xác!'}</span>
                 </span>
-                <button onclick="playChineseTTS('${q.hanzi.replace(/'/g, "\\'")}')" class="flex items-center gap-1 px-2.5 py-1 rounded-lg bg-white border border-stone-200 text-stone-700 text-xs font-bold hover:bg-amber-50 transition-colors cursor-pointer">
-                  <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-                  <span>Nghe câu chuẩn</span>
-                </button>
+                <div class="inline-flex items-center gap-1 bg-white/90 p-0.5 rounded-lg border border-stone-200">
+                  <button onclick="playChineseTTS('${q.hanzi.replace(/'/g, "\\'")}', 'female')" class="flex items-center gap-1 px-2 py-1 rounded-md text-xs font-bold text-rose-800 hover:bg-rose-50 transition-colors cursor-pointer" title="Nghe câu chuẩn giọng Nữ">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+                    <span>👩 Nữ</span>
+                  </button>
+                  <button onclick="playChineseTTS('${q.hanzi.replace(/'/g, "\\'")}', 'male')" class="flex items-center gap-1 px-2 py-1 rounded-md text-xs font-bold text-blue-800 hover:bg-blue-50 transition-colors cursor-pointer" title="Nghe câu chuẩn giọng Nam">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
+                    <span>👨 Nam</span>
+                  </button>
+                </div>
               </div>
               <p class="font-hanzi text-base font-bold text-stone-900 mb-0.5">Câu chuẩn: ${q.hanzi}</p>
               ${q.pinyin ? `<p class="text-xs font-bold text-[#8B1E1E] mb-1">${q.pinyin}</p>` : ''}
@@ -2658,10 +2720,16 @@ function renderPractice() {
               <p class="text-xs text-stone-600">Hãy nhấn nút nghe audio và chọn phương án trả lời chính xác nhất.</p>
             </div>
             <div class="flex items-center gap-2">
-              <button onclick="playChineseTTS('${(q.audioText || q.passageText).replace(/'/g, "\\'").replace(/\n/g, ' ')}')" class="px-4 py-2 rounded-xl bg-gradient-to-r from-sky-600 to-sky-700 hover:opacity-90 text-white text-xs font-bold flex items-center gap-1.5 shadow-xs transition-all cursor-pointer">
-                <i data-lucide="play" class="w-3.5 h-3.5 fill-current"></i>
-                <span>Phát bài nghe</span>
-              </button>
+              <div class="inline-flex items-center gap-1 bg-white/90 p-0.5 rounded-xl border border-sky-300/80 shadow-2xs">
+                <button onclick="playChineseTTS('${(q.audioText || q.passageText).replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'female')" class="px-3 py-2 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-900 text-xs font-bold flex items-center gap-1 transition-all cursor-pointer" title="Phát bài nghe giọng Nữ">
+                  <i data-lucide="play" class="w-3.5 h-3.5 fill-current text-rose-600"></i>
+                  <span>👩 Nghe Nữ</span>
+                </button>
+                <button onclick="playChineseTTS('${(q.audioText || q.passageText).replace(/'/g, "\\'").replace(/\n/g, ' ')}', 'male')" class="px-3 py-2 rounded-lg bg-sky-50 hover:bg-sky-100 text-sky-900 text-xs font-bold flex items-center gap-1 transition-all cursor-pointer" title="Phát bài nghe giọng Nam">
+                  <i data-lucide="play" class="w-3.5 h-3.5 fill-current text-sky-600"></i>
+                  <span>👨 Nghe Nam</span>
+                </button>
+              </div>
               <button onclick="togglePracticeListeningReveal('${q.id}')" class="px-3 py-2 rounded-xl bg-white hover:bg-stone-50 text-stone-700 text-xs font-semibold border border-stone-200 transition-all cursor-pointer">
                 <i data-lucide="${isRevealed ? 'eye-off' : 'eye'}" class="w-3.5 h-3.5 inline mr-1"></i>
                 <span>${isRevealed ? 'Ẩn văn bản' : 'Xem văn bản'}</span>
@@ -3309,8 +3377,8 @@ function resetWritingChar() {
   }
 }
 
-function playWritingCharTTS() {
-  playChineseTTS(currentWritingChar);
+function playWritingCharTTS(gender = 'female') {
+  playChineseTTS(currentWritingChar, gender);
 }
 
 function loadCustomWritingChar() {
@@ -3396,9 +3464,10 @@ function renderAiChatMessages() {
           <div class="p-3.5 rounded-2xl rounded-tl-xs bg-white border border-violet-100 shadow-2xs space-y-1">
             <div class="flex items-center justify-between gap-3">
               <span class="font-hanzi text-base font-bold text-slate-900 leading-snug">${msg.hanzi}</span>
-              <button onclick="playChineseTTS('${msg.hanzi}')" title="Nghe câu này" class="p-1 rounded text-violet-600 hover:bg-violet-50">
-                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-              </button>
+              <div class="inline-flex items-center gap-0.5 shrink-0">
+                <button onclick="playChineseTTS('${msg.hanzi}', 'female')" title="Nghe giọng Nữ" class="p-1 rounded text-rose-600 hover:bg-rose-50 text-xs font-bold cursor-pointer">👩</button>
+                <button onclick="playChineseTTS('${msg.hanzi}', 'male')" title="Nghe giọng Nam" class="p-1 rounded text-indigo-600 hover:bg-indigo-50 text-xs font-bold cursor-pointer">👨</button>
+              </div>
             </div>
             ${msg.pinyin ? `<p class="text-xs text-violet-700 font-medium">${msg.pinyin}</p>` : ''}
             ${msg.vi ? `<p class="text-xs text-slate-500 pt-1 border-t border-slate-100">➔ ${msg.vi}</p>` : ''}
@@ -3747,14 +3816,24 @@ function renderFloatingAiMessages() {
                     ${msg.hanzi}
                   </span>
                   ${hasChinese ? `
-                    <button 
-                      type="button"
-                      onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(msg.hanzi)}'))" 
-                      title="Nghe phát âm" 
-                      class="p-1 rounded-lg hover:bg-amber-100 text-[#8B1E1E] transition-colors shrink-0 cursor-pointer"
-                    >
-                      <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-                    </button>
+                    <div class="inline-flex items-center gap-0.5 shrink-0 bg-stone-100/90 p-0.5 rounded-lg border border-stone-200">
+                      <button 
+                        type="button"
+                        onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(msg.hanzi)}'), 'female')" 
+                        title="Nghe giọng Nữ" 
+                        class="p-1 rounded hover:bg-rose-50 text-rose-800 transition-colors cursor-pointer text-2xs font-bold"
+                      >
+                        👩
+                      </button>
+                      <button 
+                        type="button"
+                        onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(msg.hanzi)}'), 'male')" 
+                        title="Nghe giọng Nam" 
+                        class="p-1 rounded hover:bg-blue-50 text-blue-800 transition-colors cursor-pointer text-2xs font-bold"
+                      >
+                        👨
+                      </button>
+                    </div>
                   ` : ''}
                 </div>
               ` : ''}
@@ -4022,10 +4101,16 @@ function renderMockExam() {
     if (q.audioText) {
       contentHtml += `
         <div class="flex items-center gap-2 mb-3 p-3 rounded-xl bg-amber-50/70 border border-amber-200/80">
-          <button onclick="playChineseTTS('${q.audioText}')" class="px-3.5 py-1.5 rounded-lg bg-amber-600 text-white font-bold text-xs flex items-center gap-1.5 hover:bg-amber-700 transition-all shadow-xs">
-            <i data-lucide="volume-2" class="w-4 h-4"></i>
-            <span>Nghe Phát Âm Câu Hỏi</span>
-          </button>
+          <div class="inline-flex items-center gap-1 bg-white/90 p-0.5 rounded-xl border border-amber-300 shadow-2xs">
+            <button onclick="playChineseTTS('${q.audioText}', 'female')" class="px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-850 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer" title="Nghe câu hỏi giọng Nữ">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
+              <span>👩 Nghe Nữ</span>
+            </button>
+            <button onclick="playChineseTTS('${q.audioText}', 'male')" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer" title="Nghe câu hỏi giọng Nam">
+              <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+              <span>👨 Nghe Nam</span>
+            </button>
+          </div>
           <span class="text-xs text-amber-800 font-medium">Bấm để nghe audio bản ngữ</span>
         </div>
       `;
@@ -4366,11 +4451,16 @@ function renderRadicals() {
               <span class="font-hanzi text-3xl font-black text-[#8B1E1E]">${char}</span>
             </div>
             <div>
-              <div class="flex items-center gap-1.5">
+              <div class="flex items-center gap-1.5 flex-wrap">
                 <span class="text-sm font-bold text-amber-900">${pinyin}</span>
-                <button onclick="playChineseTTS('${char}')" class="p-1 rounded-lg text-stone-400 hover:text-[#8B1E1E] hover:bg-amber-50 transition-colors" title="Nghe phát âm">
-                  <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-                </button>
+                <div class="inline-flex items-center gap-0.5 bg-stone-100/90 p-0.5 rounded-lg border border-stone-200 shadow-2xs">
+                  <button onclick="playChineseTTS('${char}', 'female')" class="px-1.5 py-0.5 rounded bg-white hover:bg-rose-50 text-rose-800 text-[10px] font-bold cursor-pointer transition-colors" title="Phát âm giọng Nữ (Xiaoxiao)">
+                    👩 Nữ
+                  </button>
+                  <button onclick="playChineseTTS('${char}', 'male')" class="px-1.5 py-0.5 rounded bg-white hover:bg-blue-50 text-blue-800 text-[10px] font-bold cursor-pointer transition-colors" title="Phát âm giọng Nam (Yunxi)">
+                    👨 Nam
+                  </button>
+                </div>
               </div>
               <p class="text-xs font-bold text-stone-800">Bộ ${hanviet} ${varStr ? `<span class="text-[11px] text-stone-400 font-normal">(${varStr})</span>` : ''}</p>
             </div>
@@ -4393,9 +4483,13 @@ function renderRadicals() {
             <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block mb-1.5">Chữ tiêu biểu:</span>
             <div class="flex flex-wrap gap-1.5">
               ${examples.map(ex => `
-                <span onclick="playChineseTTS('${ex}')" class="cursor-pointer px-2 py-0.5 rounded-lg bg-amber-50/80 hover:bg-amber-100 text-[#8B1E1E] font-hanzi font-bold text-xs border border-amber-200/70 transition-colors" title="Bấm để nghe: ${ex}">
-                  ${ex}
-                </span>
+                <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-50/80 border border-amber-200/70 shadow-2xs">
+                  <span class="font-hanzi font-bold text-[#8B1E1E] text-xs">${ex}</span>
+                  <div class="flex items-center gap-0.5">
+                    <button type="button" onclick="playChineseTTS('${ex}', 'female')" class="text-[9px] hover:scale-125 transition-transform cursor-pointer" title="Phát âm ${ex} giọng Nữ">👩</button>
+                    <button type="button" onclick="playChineseTTS('${ex}', 'male')" class="text-[9px] hover:scale-125 transition-transform cursor-pointer" title="Phát âm ${ex} giọng Nam">👨</button>
+                  </div>
+                </div>
               `).join('')}
             </div>
           </div>
@@ -4479,11 +4573,16 @@ function renderChengyu() {
       <!-- Top Title Bar -->
       <div class="flex items-start justify-between gap-4">
         <div>
-          <div class="flex items-center gap-3">
+          <div class="flex items-center gap-3 flex-wrap">
             <h3 class="font-hanzi text-3xl font-black text-slate-900 tracking-wide">${item.chengyu}</h3>
-            <button onclick="playChineseTTS('${item.chengyu}')" class="p-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-700 transition-colors" title="Nghe phát âm">
-              <i data-lucide="volume-2" class="w-4 h-4 text-amber-600"></i>
-            </button>
+            <div class="inline-flex items-center gap-0.5 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
+              <button onclick="playChineseTTS('${item.chengyu}', 'female')" class="px-2 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-colors cursor-pointer" title="Phát âm thành ngữ giọng Nữ">
+                👩 Nữ
+              </button>
+              <button onclick="playChineseTTS('${item.chengyu}', 'male')" class="px-2 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-colors cursor-pointer" title="Phát âm thành ngữ giọng Nam">
+                👨 Nam
+              </button>
+            </div>
           </div>
           <div class="flex items-center gap-2 mt-1">
             <span class="text-sm font-bold text-amber-800">${item.pinyin}</span>
@@ -4533,10 +4632,16 @@ function renderChengyu() {
         <div class="p-3.5 rounded-xl bg-teal-50/40 border border-teal-200/70 space-y-1.5 text-xs">
           <div class="flex items-center justify-between">
             <span class="font-bold text-teal-900 text-[11px] uppercase">Ví dụ câu thực tế:</span>
-            <button onclick="playChineseTTS('${item.example.hanzi.replace(/'/g, "\\'")}')" class="text-teal-700 hover:text-teal-900 flex items-center gap-1 font-semibold text-[11px]">
-              <i data-lucide="volume-2" class="w-3 h-3"></i>
-              <span>Phát âm câu</span>
-            </button>
+            <div class="inline-flex items-center gap-1">
+              <button onclick="playChineseTTS('${item.example.hanzi.replace(/'/g, "\\'")}', 'female')" class="text-rose-700 hover:text-rose-900 flex items-center gap-1 font-bold text-[11px] px-1.5 py-0.5 rounded bg-white border border-rose-200 cursor-pointer" title="Nghe ví dụ giọng Nữ">
+                <i data-lucide="volume-2" class="w-3 h-3 text-rose-600"></i>
+                <span>👩 Nữ</span>
+              </button>
+              <button onclick="playChineseTTS('${item.example.hanzi.replace(/'/g, "\\'")}', 'male')" class="text-teal-700 hover:text-teal-900 flex items-center gap-1 font-bold text-[11px] px-1.5 py-0.5 rounded bg-white border border-teal-200 cursor-pointer" title="Nghe ví dụ giọng Nam">
+                <i data-lucide="volume-2" class="w-3 h-3 text-teal-600"></i>
+                <span>👨 Nam</span>
+              </button>
+            </div>
           </div>
           <p class="font-hanzi font-bold text-slate-800 text-sm">${item.example.hanzi}</p>
           <p class="text-teal-700 font-sans">${item.example.pinyin}</p>
@@ -5460,9 +5565,10 @@ function renderGrammarCompendium() {
             <div class="p-3 rounded-xl bg-indigo-50/40 border border-indigo-100 space-y-1 text-xs">
               <div class="flex items-center justify-between">
                 <span class="font-hanzi font-bold text-slate-900 text-sm">${ex.hanzi}</span>
-                <button onclick="playChineseTTS('${ex.hanzi.replace(/'/g, "\\'")}')" class="p-1 rounded-md text-slate-400 hover:text-indigo-700 transition-colors" title="Nghe câu này">
-                  <i data-lucide="volume-2" class="w-3.5 h-3.5 text-indigo-600"></i>
-                </button>
+                <div class="inline-flex items-center gap-0.5">
+                  <button onclick="playChineseTTS('${ex.hanzi.replace(/'/g, "\\'")}', 'female')" class="px-1.5 py-0.5 rounded bg-white hover:bg-rose-50 text-rose-800 border border-rose-200 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe giọng Nữ">👩 Nữ</button>
+                  <button onclick="playChineseTTS('${ex.hanzi.replace(/'/g, "\\'")}', 'male')" class="px-1.5 py-0.5 rounded bg-white hover:bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe giọng Nam">👨 Nam</button>
+                </div>
               </div>
               <p class="text-indigo-700 font-sans text-[11px]">${ex.pinyin}</p>
               <p class="text-slate-600">${ex.vi}</p>
@@ -5597,12 +5703,20 @@ function renderJiaocheng() {
               </div>
               <p class="text-xs font-medium text-stone-600 mt-0.5 group-hover/title:text-stone-900 transition-colors">"${lesson.titleMeaning}"</p>
             </div>
-            <button 
-              onclick="playChineseTTS('${safeTitle}')" 
-              class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all shrink-0 cursor-pointer" 
-              title="Phát âm tên bài học">
-              <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
-            </button>
+            <div class="inline-flex items-center gap-0.5 bg-amber-50/80 p-0.5 rounded-xl border border-amber-200 shrink-0 shadow-2xs">
+              <button 
+                onclick="playChineseTTS('${safeTitle}', 'female')" 
+                class="px-2 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer" 
+                title="Phát âm tên bài học (Giọng Nữ)">
+                👩 Nữ
+              </button>
+              <button 
+                onclick="playChineseTTS('${safeTitle}', 'male')" 
+                class="px-2 py-1 rounded-lg bg-white hover:bg-blue-50 text-blue-850 border border-blue-200 text-xs font-bold transition-all cursor-pointer" 
+                title="Phát âm tên bài học (Giọng Nam)">
+                👨 Nam
+              </button>
+            </div>
           </div>
 
           <!-- Grammar Focus -->
@@ -5619,9 +5733,10 @@ function renderJiaocheng() {
             <div class="p-3 rounded-xl bg-stone-50/80 border border-stone-200/80 text-xs space-y-1.5">
               <div class="flex items-center justify-between">
                 <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider">Hội thoại (${firstDialogue.displayName || firstDialogue.speaker}):</span>
-                <button onclick="playChineseTTS('${safeDialogue}', '${firstDialogue.gender || 'female'}')" class="text-stone-400 hover:text-[#8B1E1E] transition-colors" title="Nghe câu này">
-                  <i data-lucide="play-circle" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-                </button>
+                <div class="inline-flex items-center gap-0.5">
+                  <button onclick="playChineseTTS('${safeDialogue}', 'female')" class="text-rose-700 hover:text-rose-900 font-bold text-[10px] px-1 py-0.5 rounded bg-white border border-rose-200 cursor-pointer" title="Nghe giọng Nữ">👩</button>
+                  <button onclick="playChineseTTS('${safeDialogue}', 'male')" class="text-blue-700 hover:text-blue-900 font-bold text-[10px] px-1 py-0.5 rounded bg-white border border-blue-200 cursor-pointer" title="Nghe giọng Nam">👨</button>
+                </div>
               </div>
               <p class="font-hanzi font-bold text-stone-900 text-[13px]">${firstDialogue.hanzi}</p>
               <p class="text-stone-600 italic text-[11px]">${firstDialogue.vi}</p>
@@ -5829,9 +5944,9 @@ function switchLessonSubTab(tabName) {
   if (modal) refreshIcons(modal);
 }
 
-function playLessonTitleAudio() {
+function playLessonTitleAudio(gender = 'female') {
   if (!currentActiveLesson) return;
-  playChineseTTS(currentActiveLesson.titleHanzi, 'female');
+  playChineseTTS(currentActiveLesson.titleHanzi, gender);
 }
 
 // ---------------- DIALOGUES WITH CHARACTER VOICE PLAYBACK ----------------
@@ -6173,10 +6288,20 @@ function renderLessonNarrative(narrative) {
         </span>
         <span class="text-2xs font-semibold text-stone-500">Giáo Trình Hán Ngữ Chuẩn BLCU</span>
       </div>
-      <div>
-        <h3 class="text-xl md:text-2xl font-hanzi font-black text-stone-900 tracking-wide">${narrative.titleHanzi}</h3>
-        <p class="text-sm font-bold text-[#8B1E1E] font-sans">${narrative.titlePinyin}</p>
-        <p class="text-xs font-semibold text-stone-600 font-sans italic">"${narrative.titleVi}"</p>
+      <div class="flex items-center justify-between gap-3 flex-wrap">
+        <div>
+          <h3 class="text-xl md:text-2xl font-hanzi font-black text-stone-900 tracking-wide">${narrative.titleHanzi}</h3>
+          <p class="text-sm font-bold text-[#8B1E1E] font-sans">${narrative.titlePinyin}</p>
+          <p class="text-xs font-semibold text-stone-600 font-sans italic">"${narrative.titleVi}"</p>
+        </div>
+        <div class="inline-flex items-center gap-1 bg-white/90 p-0.5 rounded-xl border border-amber-300 shadow-2xs">
+          <button onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(narrative.titleHanzi)}'), 'female')" class="px-2.5 py-1 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer" title="Phát âm tiêu đề giọng Nữ">
+            👩 Nữ
+          </button>
+          <button onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(narrative.titleHanzi)}'), 'male')" class="px-2.5 py-1 rounded-lg bg-blue-50 hover:bg-blue-100 text-blue-850 border border-blue-200 text-xs font-bold transition-all cursor-pointer" title="Phát âm tiêu đề giọng Nam">
+            👨 Nam
+          </button>
+        </div>
       </div>
       ${narrative.summary ? `
         <div class="p-3 rounded-2xl bg-white/80 border border-amber-200/70 text-xs text-stone-700 leading-relaxed flex items-start gap-2.5">
@@ -6269,7 +6394,13 @@ function renderLessonNarrative(narrative) {
         <div class="p-4 rounded-2xl bg-amber-50/40 border border-amber-200/70 space-y-2">
           <div class="flex items-start justify-between gap-3">
             <div class="space-y-1 flex-1">
-              <p class="font-hanzi font-bold text-stone-900 text-sm md:text-base">${qIdx + 1}. ${qa.qHanzi}</p>
+              <div class="flex items-center gap-2 flex-wrap">
+                <p class="font-hanzi font-bold text-stone-900 text-sm md:text-base">${qIdx + 1}. ${qa.qHanzi}</p>
+                <div class="inline-flex items-center gap-0.5">
+                  <button type="button" onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(qa.qHanzi)}'), 'female')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Nghe câu hỏi giọng Nữ">👩</button>
+                  <button type="button" onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(qa.qHanzi)}'), 'male')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Nghe câu hỏi giọng Nam">👨</button>
+                </div>
+              </div>
               <p class="text-xs font-medium text-[#8B1E1E]">${qa.qPinyin}</p>
               <p class="text-xs text-stone-600 italic font-sans">${qa.qVi}</p>
             </div>
@@ -6281,7 +6412,13 @@ function renderLessonNarrative(narrative) {
             </button>
           </div>
           <div id="narrativeQAAnswer-${qIdx}" class="hidden pt-2.5 mt-2 border-t border-amber-200/60 text-xs text-stone-800 space-y-1">
-            <p class="font-hanzi font-bold text-emerald-800"><span class="text-stone-500 font-sans font-normal">Đáp án: </span>${qa.aHanzi}</p>
+            <div class="flex items-center justify-between gap-2">
+              <p class="font-hanzi font-bold text-emerald-800"><span class="text-stone-500 font-sans font-normal">Đáp án: </span>${qa.aHanzi}</p>
+              <div class="inline-flex items-center gap-0.5">
+                <button type="button" onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(qa.aHanzi)}'), 'female')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Nghe đáp án giọng Nữ">👩</button>
+                <button type="button" onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(qa.aHanzi)}'), 'male')" class="text-[10px] hover:scale-125 transition-transform cursor-pointer" title="Nghe đáp án giọng Nam">👨</button>
+              </div>
+            </div>
             <p class="text-stone-600 font-sans italic">${qa.aVi}</p>
           </div>
         </div>
@@ -6460,9 +6597,10 @@ function renderLessonGrammar(grammarList) {
                     <p class="text-stone-500 font-semibold">${ex.pinyin}</p>
                     <p class="text-stone-700 italic">${ex.vi}</p>
                   </div>
-                  <button onclick="playChineseTTS('${safeHanzi}')" class="p-2 rounded-xl bg-white hover:bg-purple-100 text-purple-900 border border-purple-200 shrink-0 cursor-pointer" title="Nghe câu này">
-                    <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#4A306D]"></i>
-                  </button>
+                  <div class="inline-flex items-center gap-0.5 shrink-0 bg-white p-0.5 rounded-lg border border-purple-200">
+                    <button onclick="playChineseTTS('${safeHanzi}', 'female')" class="px-1.5 py-0.5 rounded hover:bg-rose-50 text-rose-800 text-[10px] font-bold cursor-pointer" title="Nghe giọng Nữ">👩</button>
+                    <button onclick="playChineseTTS('${safeHanzi}', 'male')" class="px-1.5 py-0.5 rounded hover:bg-purple-50 text-purple-800 text-[10px] font-bold cursor-pointer" title="Nghe giọng Nam">👨</button>
+                  </div>
                 </div>
               `;
             }).join('')}
@@ -6501,12 +6639,20 @@ function renderLessonQA(qaList) {
               <p class="text-xs text-stone-600 italic">${q.questionVi}</p>
             </div>
           </div>
-          <button 
-            onclick="playChineseTTS('${safeQ}', 'male')" 
-            class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 transition-all shrink-0 cursor-pointer"
-            title="Nghe câu hỏi">
-            <i data-lucide="volume-2" class="w-4 h-4 text-[#8B1E1E]"></i>
-          </button>
+          <div class="inline-flex items-center gap-1 bg-amber-50/80 p-0.5 rounded-xl border border-amber-200 shrink-0 shadow-2xs">
+            <button 
+              onclick="playChineseTTS('${safeQ}', 'female')" 
+              class="px-2.5 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-all cursor-pointer"
+              title="Nghe câu hỏi giọng Nữ">
+              👩 Nữ
+            </button>
+            <button 
+              onclick="playChineseTTS('${safeQ}', 'male')" 
+              class="px-2.5 py-1 rounded-lg bg-white hover:bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold transition-all cursor-pointer"
+              title="Nghe câu hỏi giọng Nam">
+              👨 Nam
+            </button>
+          </div>
         </div>
 
         <!-- Answer Toggle Button -->
@@ -6533,12 +6679,20 @@ function renderLessonQA(qaList) {
               <p class="text-emerald-800 font-semibold">${q.answerPinyin}</p>
               <p class="text-stone-700 italic">${q.answerVi}</p>
             </div>
-            <button 
-              onclick="playChineseTTS('${safeA}', 'female')" 
-              class="p-2 rounded-lg bg-white hover:bg-emerald-100 text-emerald-900 border border-emerald-300 transition-all shrink-0 cursor-pointer"
-              title="Nghe câu trả lời">
-              <i data-lucide="volume-2" class="w-4 h-4 text-emerald-700"></i>
-            </button>
+            <div class="inline-flex items-center gap-1 bg-white/90 p-0.5 rounded-xl border border-emerald-300 shrink-0 shadow-2xs">
+              <button 
+                onclick="playChineseTTS('${safeA}', 'female')" 
+                class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-rose-50 text-emerald-900 border border-emerald-200 text-xs font-bold transition-all cursor-pointer"
+                title="Nghe câu trả lời giọng Nữ">
+                👩 Nữ
+              </button>
+              <button 
+                onclick="playChineseTTS('${safeA}', 'male')" 
+                class="px-2.5 py-1 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 text-xs font-bold transition-all cursor-pointer"
+                title="Nghe câu trả lời giọng Nam">
+                👨 Nam
+              </button>
+            </div>
           </div>
           ${q.explanation ? `
             <div class="pt-2 border-t border-emerald-200/70 text-stone-600 leading-relaxed">
@@ -6825,6 +6979,7 @@ window.selectFIBOption = selectFIBOption;
 window.checkFIBAnswers = checkFIBAnswers;
 window.resetFIBExercise = resetFIBExercise;
 window.playLessonTitleAudio = playLessonTitleAudio;
+window.playWritingCharTTS = playWritingCharTTS;
 window.playDialogueSequence = playDialogueSequence;
 window.stopDialogueSequence = stopDialogueSequence;
 window.toggleSaveWordFromLesson = toggleSaveWordFromLesson;
