@@ -193,11 +193,6 @@
         <span>214 Bộ Thủ</span>
       </button>
 
-      <button onclick="switchTab('writing')" id="tab-btn-writing" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
-        <i data-lucide="pen-tool" class="w-4 h-4 text-rose-700"></i>
-        <span>Luyện Viết Nét</span>
-      </button>
-
       <button onclick="switchTab('chengyu')" id="tab-btn-chengyu" class="nav-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold transition-all whitespace-nowrap text-stone-700 hover:text-[#8B1E1E] hover:bg-[#F6EFE5]">
         <i data-lucide="scroll" class="w-4 h-4 text-amber-700"></i>
         <span>Kho Thành Ngữ</span>
@@ -434,154 +429,6 @@
 
       <!-- Radicals Grid Container -->
       <div id="radicalsGridContainer" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
-    </section>
-
-    <!-- TAB: TẬP VIẾT NÉT CHỮ HÁN TƯƠNG TÁC (HANZIWRITER) -->
-    <section id="tab-writing" class="hidden space-y-6">
-      <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-rose-50/70 via-white to-amber-50/60 border border-rose-200/80 shadow-xs">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-300 text-xs font-bold mb-3">
-            <i data-lucide="pen-tool" class="w-3.5 h-3.5 text-rose-600"></i>
-            <span>Tập Viết Nét Tương Tác Chuẩn Bút Thuận</span>
-          </div>
-          <h2 class="text-2xl lg:text-3xl font-black text-slate-900 tracking-tight mb-2">
-            Luyện Viết Chữ Hán Trực Tiếp Trên Ô Điền (田字格)
-          </h2>
-          <p class="text-sm lg:text-base text-slate-700 leading-relaxed">
-            Quan sát hoạt họa từng nét chữ theo quy tắc bút thuận kinh điển, sau đó tự tay vẽ từng nét trên bảng cảm ứng. Hệ thống sẽ phát hiện nét vẽ đúng/sai tức thì và hướng dẫn bạn viết đúng!
-          </p>
-        </div>
-      </div>
-
-      <!-- Writing Interactive Stage -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        
-        <!-- Left Column: Canvas & Controls (5 Cols) -->
-        <div class="lg:col-span-5 glass-card rounded-2xl p-6 border-rose-200/80 bg-white flex flex-col items-center shadow-xs">
-          
-          <!-- Character Header & Status -->
-          <div class="w-full flex items-center justify-between mb-4">
-            <div>
-              <span id="writingCharPinyin" class="text-sm font-bold text-rose-600">nǐ</span>
-              <h3 id="writingCharMeaning" class="text-xs font-medium text-slate-500">Bạn, anh, chị (ngôi thứ hai)</h3>
-            </div>
-            <div id="writingStatusBadge" class="px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
-              Chế độ: Xem nét
-            </div>
-          </div>
-
-          <!-- TianZiGe Grid Container -->
-          <div class="relative w-[260px] h-[260px] tianzige-grid flex items-center justify-center mb-6">
-            <div class="mizige-diagonals"></div>
-            <div id="hanziWriterTarget" class="relative z-10 w-[240px] h-[240px]"></div>
-          </div>
-
-          <!-- Action Controls -->
-          <div class="w-full space-y-3">
-            <div class="grid grid-cols-2 gap-2">
-              <button onclick="animateWritingChar()" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-bold text-xs shadow-sm transition-all">
-                <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                <span>Xem Hoạt Họa Nét</span>
-              </button>
-              <button onclick="startWritingQuiz()" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-bold text-xs shadow-sm transition-all">
-                <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
-                <span>Tự Luyện Viết (Quiz)</span>
-              </button>
-            </div>
-
-            <div class="grid grid-cols-3 gap-2">
-              <button onclick="giveWritingHint()" class="flex items-center justify-center gap-1 py-2 px-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-semibold text-xs transition-all">
-                <i data-lucide="help-circle" class="w-3.5 h-3.5 text-amber-600"></i>
-                <span>Gợi ý nét</span>
-              </button>
-              <button onclick="resetWritingChar()" class="flex items-center justify-center gap-1 py-2 px-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs transition-all">
-                <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
-                <span>Làm lại</span>
-              </button>
-              <div class="flex items-center justify-center gap-1 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200">
-                <button onclick="playWritingCharTTS('female')" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white hover:bg-rose-50 text-rose-800 text-xs font-bold transition-all cursor-pointer" title="Phát âm chữ này giọng Nữ">
-                  <i data-lucide="volume-2" class="w-3 h-3 text-rose-600"></i>
-                  <span>👩 Nữ</span>
-                </button>
-                <button onclick="playWritingCharTTS('male')" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white hover:bg-blue-50 text-blue-800 text-xs font-bold transition-all cursor-pointer" title="Phát âm chữ này giọng Nam">
-                  <i data-lucide="volume-2" class="w-3 h-3 text-blue-600"></i>
-                  <span>👨 Nam</span>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Interactive Stroke Feedback Message -->
-          <div id="writingFeedbackMsg" class="w-full mt-4 p-3 rounded-xl bg-slate-50 text-slate-700 border border-slate-200 text-xs text-center font-medium">
-            💡 Nhấn <strong>"Tự Luyện Viết"</strong> rồi dùng chuột hoặc ngón tay để vẽ từng nét vào ô!
-          </div>
-
-        </div>
-
-        <!-- Right Column: Quick Picker & Radical Decomposition (7 Cols) -->
-        <div class="lg:col-span-7 space-y-6">
-          
-          <!-- Custom Character Search Box -->
-          <div class="glass-card rounded-2xl p-5 border-rose-200/80 bg-white shadow-xs">
-            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-2 flex items-center gap-2">
-              <i data-lucide="search" class="w-4 h-4 text-rose-500"></i>
-              <span>Nhập Chữ Hán Bất Kỳ Để Tập Viết</span>
-            </h4>
-            <div class="flex items-center gap-2">
-              <input 
-                id="customWritingInput" 
-                type="text" 
-                placeholder="Nhập 1 chữ Hán bất kỳ (vd: 爱, 龙, 福, 家, 学)..." 
-                maxlength="2" 
-                class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-hanzi font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500"
-              />
-              <button onclick="loadCustomWritingChar()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 text-white text-xs font-bold hover:opacity-90 transition-all shadow-xs">
-                Tập Viết Ngay
-              </button>
-            </div>
-          </div>
-
-          <!-- Quick Select Characters -->
-          <div class="glass-card rounded-2xl p-6 border-slate-200 bg-white shadow-xs">
-            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider mb-3 flex items-center justify-between">
-              <span class="flex items-center gap-2">
-                <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
-                <span>Chọn Nhanh 25+ Chữ Hán Gốc Nền Tảng</span>
-              </span>
-              <span class="text-[11px] font-normal text-slate-400">Nhấp để nạp chữ vào ô luyện viết</span>
-            </h4>
-            <div id="writingQuickPickContainer" class="flex flex-wrap gap-2"></div>
-          </div>
-
-          <!-- Character Stroke Rules & Details Card -->
-          <div class="glass-card rounded-2xl p-6 border-slate-200 bg-white shadow-xs space-y-4">
-            <h4 class="text-xs font-bold text-slate-800 uppercase tracking-wider flex items-center gap-2">
-              <i data-lucide="book-open" class="w-4 h-4 text-teal-600"></i>
-              <span>Quy Tắc Bút Thuận Cần Nhớ</span>
-            </h4>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-600">
-              <div class="p-3 rounded-xl bg-teal-50/50 border border-teal-100 space-y-1">
-                <span class="font-bold text-teal-900">1. Ngang trước, sổ sau:</span>
-                <p>Ví dụ: 十 (viết nét ngang 一 trước, sổ 丨 sau).</p>
-              </div>
-              <div class="p-3 rounded-xl bg-teal-50/50 border border-teal-100 space-y-1">
-                <span class="font-bold text-teal-900">2. Phẩy trước, mác sau:</span>
-                <p>Ví dụ: 人, 八 (viết nét phẩy 丿 trước, mác ㇏ sau).</p>
-              </div>
-              <div class="p-3 rounded-xl bg-amber-50/50 border border-amber-100 space-y-1">
-                <span class="font-bold text-amber-900">3. Trên trước, dưới sau:</span>
-                <p>Ví dụ: 三, 言 (viết các nét bên trên xuống dưới).</p>
-              </div>
-              <div class="p-3 rounded-xl bg-rose-50/50 border border-rose-100 space-y-1">
-                <span class="font-bold text-rose-900">4. Vào trước, đóng sau:</span>
-                <p>Ví dụ: 回, 国 (mở khung ngoài, vào trong rồi đóng đáy).</p>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
     </section>
 
     <!-- TAB: KHO ĐIỂN TÍCH THÀNH NGỮ 4 CHỮ (CHENGYU) -->
@@ -1424,7 +1271,7 @@
               </div>
 
               <div class="my-auto py-4">
-                <h3 id="fcFrontHanzi" class="font-hanzi text-7xl lg:text-8xl font-black text-[#8B1E1E] tracking-wider mb-4 hover:scale-105 transition-transform">
+                <h3 id="fcFrontHanzi" onclick="event.stopPropagation(); openWritingModal(currentFlashcard.title, currentFlashcard.pinyin, currentFlashcard.meaning)" class="font-hanzi text-7xl lg:text-8xl font-black text-[#8B1E1E] tracking-wider mb-4 hover:scale-105 transition-transform cursor-pointer" title="Nhấp vào chữ để xem và tập viết nét">
                   学
                 </h3>
                 <div class="inline-flex items-center gap-1 bg-amber-50/90 p-0.5 rounded-full border border-amber-200 shadow-2xs">
@@ -1435,6 +1282,10 @@
                   <button onclick="event.stopPropagation(); playChineseTTS(currentFlashcard.title, 'male')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white hover:bg-blue-50 text-xs font-bold text-blue-850 border border-blue-200 transition-colors cursor-pointer">
                     <i data-lucide="volume-2" class="w-3.5 h-3.5 text-blue-600"></i>
                     <span>👨 Nam</span>
+                  </button>
+                  <button onclick="event.stopPropagation(); openWritingModal(currentFlashcard.title, currentFlashcard.pinyin, currentFlashcard.meaning)" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-white hover:bg-rose-50 text-xs font-bold text-rose-850 border border-rose-200 transition-colors cursor-pointer" title="Tập viết nét chữ này">
+                    <i data-lucide="pen-tool" class="w-3.5 h-3.5 text-rose-600"></i>
+                    <span>Tập viết</span>
                   </button>
                 </div>
               </div>
@@ -1450,7 +1301,7 @@
               </div>
 
               <div class="my-auto py-2 space-y-3">
-                <h4 id="fcBackHanzi" class="font-hanzi text-5xl font-black text-stone-900">学</h4>
+                <h4 id="fcBackHanzi" onclick="event.stopPropagation(); openWritingModal(currentFlashcard.title, currentFlashcard.pinyin, currentFlashcard.meaning)" class="font-hanzi text-5xl font-black text-stone-900 cursor-pointer hover:text-rose-700 transition-colors" title="Nhấp vào chữ để xem và tập viết nét">学</h4>
                 <div class="flex items-center justify-center gap-3">
                   <span id="fcBackPinyin" class="text-2xl font-bold text-[#8B1E1E] tracking-wide">xué</span>
                   <div class="inline-flex items-center gap-0.5 bg-white/90 p-0.5 rounded-lg border border-amber-200">
@@ -1684,6 +1535,167 @@
     </section>
 
   </main>
+
+  <!-- MODAL: LUYỆN VIẾT NÉT CHỮ HÁN TƯƠNG TÁC (HANZIWRITER POPUP) -->
+  <div id="writingModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/75 backdrop-blur-md">
+    <div class="glass-card bg-[#FFFDF9] border border-rose-300/80 rounded-3xl w-full max-w-4xl max-h-[92vh] flex flex-col shadow-2xl overflow-hidden animate-fade-in" onclick="event.stopPropagation()">
+      <!-- Header -->
+      <div class="p-5 md:p-6 border-b border-rose-200/80 bg-gradient-to-r from-rose-50/80 via-stone-50 to-amber-50/60 flex items-center justify-between">
+        <div class="space-y-1">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-100 text-rose-800 border border-rose-300 text-xs font-bold shadow-2xs">
+            <i data-lucide="pen-tool" class="w-3.5 h-3.5 text-rose-600"></i>
+            <span>Tập Viết Nét Chữ Hán Chuẩn Bút Thuận (田字格)</span>
+          </div>
+          <div class="flex items-baseline gap-3 flex-wrap pt-1">
+            <h3 id="writingModalTitleWord" class="font-hanzi text-3xl md:text-4xl font-black text-stone-900 tracking-wide">
+              你
+            </h3>
+            <span id="writingCharPinyin" class="text-sm md:text-base font-bold text-rose-600 font-sans">
+              nǐ
+            </span>
+            <span id="writingCharMeaning" class="text-xs md:text-sm text-stone-600 font-sans">
+              Bạn, anh, chị (ngôi thứ hai)
+            </span>
+          </div>
+          <!-- Segmented Tabs for Multi-character words (e.g. 学习, 中国, 谢谢) -->
+          <div id="writingCharTabsContainer" class="flex items-center gap-1.5 pt-1 flex-wrap"></div>
+        </div>
+
+        <button onclick="closeWritingModal()" class="w-9 h-9 rounded-full bg-white hover:bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-500 hover:text-stone-900 transition-all shadow-2xs cursor-pointer shrink-0">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Modal Body (Scrollable) -->
+      <div class="p-5 md:p-6 overflow-y-auto flex-1 bg-[#FAF7F2]/40">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left Column: TianZiGe Canvas & Controls (5 Cols) -->
+          <div class="lg:col-span-5 glass-card rounded-2xl p-5 md:p-6 border border-rose-200/80 bg-white flex flex-col items-center shadow-xs">
+            <!-- Status Badge -->
+            <div class="w-full flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-stone-600 flex items-center gap-1.5">
+                <i data-lucide="edit-3" class="w-3.5 h-3.5 text-rose-600"></i>
+                Ô Kẻ Điền Tự Cách:
+              </span>
+              <div id="writingStatusBadge" class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                Chế độ: Xem nét
+              </div>
+            </div>
+
+            <!-- TianZiGe Grid Container -->
+            <div class="relative w-[250px] h-[250px] tianzige-grid flex items-center justify-center mb-4">
+              <div class="mizige-diagonals"></div>
+              <div id="hanziWriterTarget" class="relative z-10 w-[240px] h-[240px]"></div>
+            </div>
+
+            <!-- Action Controls -->
+            <div class="w-full space-y-2.5">
+              <div class="grid grid-cols-2 gap-2">
+                <button onclick="animateWritingChar()" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-rose-600 to-rose-500 hover:from-rose-700 hover:to-rose-600 text-white font-bold text-xs shadow-sm transition-all cursor-pointer">
+                  <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                  <span>Xem Hoạt Họa Nét</span>
+                </button>
+                <button onclick="startWritingQuiz()" class="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-bold text-xs shadow-sm transition-all cursor-pointer">
+                  <i data-lucide="edit-3" class="w-3.5 h-3.5"></i>
+                  <span>Tự Luyện Viết</span>
+                </button>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2">
+                <button onclick="giveWritingHint()" class="flex items-center justify-center gap-1 py-2 px-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-semibold text-xs transition-all cursor-pointer">
+                  <i data-lucide="help-circle" class="w-3.5 h-3.5 text-amber-600"></i>
+                  <span>Gợi ý nét</span>
+                </button>
+                <button onclick="resetWritingChar()" class="flex items-center justify-center gap-1 py-2 px-2 rounded-xl bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 font-semibold text-xs transition-all cursor-pointer">
+                  <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                  <span>Làm lại</span>
+                </button>
+                <div class="flex items-center justify-center gap-1 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200">
+                  <button onclick="playWritingCharTTS('female')" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white hover:bg-rose-50 text-rose-800 text-xs font-bold transition-all cursor-pointer" title="Phát âm chữ này giọng Nữ">
+                    <span>👩 Nữ</span>
+                  </button>
+                  <button onclick="playWritingCharTTS('male')" class="flex items-center justify-center gap-1 py-1.5 px-2 rounded-lg bg-white hover:bg-blue-50 text-blue-800 text-xs font-bold transition-all cursor-pointer" title="Phát âm chữ này giọng Nam">
+                    <span>👨 Nam</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feedback Msg -->
+            <div id="writingFeedbackMsg" class="w-full mt-3 p-2.5 rounded-xl bg-slate-50 text-slate-700 border border-slate-200 text-xs text-center font-medium">
+              💡 Nhấn <strong>"Tự Luyện Viết"</strong> rồi dùng chuột hoặc ngón tay để vẽ từng nét vào ô!
+            </div>
+          </div>
+
+          <!-- Right Column: Search, Quick Pick & Rules (7 Cols) -->
+          <div class="lg:col-span-7 space-y-4">
+            
+            <!-- Custom Character Search Box -->
+            <div class="glass-card rounded-2xl p-4 md:p-5 border border-rose-200/80 bg-white shadow-xs">
+              <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider mb-2 flex items-center gap-2">
+                <i data-lucide="search" class="w-3.5 h-3.5 text-rose-600"></i>
+                <span>Nhập Chữ Hán Hoặc Từ Bất Kỳ Để Tập Viết</span>
+              </h4>
+              <div class="flex items-center gap-2">
+                <input 
+                  id="customWritingInput" 
+                  type="text" 
+                  placeholder="Nhập chữ Hán bất kỳ (vd: 爱, 龙, 福, 学习, 朋友)..." 
+                  maxlength="6" 
+                  onkeydown="if(event.key==='Enter') loadCustomWritingChar()"
+                  class="flex-1 px-3.5 py-2 rounded-xl border border-stone-200 text-sm font-hanzi font-bold text-stone-900 focus:outline-none focus:ring-2 focus:ring-rose-500 bg-stone-50/50 focus:bg-white"
+                />
+                <button onclick="loadCustomWritingChar()" class="px-4 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 hover:opacity-95 text-white text-xs font-bold transition-all shadow-xs cursor-pointer">
+                  Tập Viết
+                </button>
+              </div>
+            </div>
+
+            <!-- Quick Select Common Characters -->
+            <div class="glass-card rounded-2xl p-4 md:p-5 border border-stone-200 bg-white shadow-xs">
+              <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider mb-2.5 flex items-center justify-between">
+                <span class="flex items-center gap-1.5">
+                  <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i>
+                  <span>25+ Chữ Hán Gốc Nền Tảng Thông Dụng</span>
+                </span>
+                <span class="text-[11px] font-normal text-stone-400">Chạm để tập viết</span>
+              </h4>
+              <div id="writingQuickPickContainer" class="flex flex-wrap gap-1.5"></div>
+            </div>
+
+            <!-- Stroke Order Rules Summary -->
+            <div class="glass-card rounded-2xl p-4 md:p-5 border border-stone-200 bg-white shadow-xs space-y-2.5">
+              <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="book-open" class="w-3.5 h-3.5 text-teal-700"></i>
+                <span>Quy Tắc Bút Thuận Cần Nhớ</span>
+              </h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-600">
+                <div class="p-2.5 rounded-xl bg-teal-50/50 border border-teal-100 space-y-0.5">
+                  <span class="font-bold text-teal-900">1. Ngang trước, sổ sau:</span>
+                  <p class="text-[11px]">Ví dụ: 十 (ngang 一 trước, sổ 丨 sau).</p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-teal-50/50 border border-teal-100 space-y-0.5">
+                  <span class="font-bold text-teal-900">2. Phẩy trước, mác sau:</span>
+                  <p class="text-[11px]">Ví dụ: 人, 八 (phẩy 丿 trước, mác ㇏ sau).</p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-amber-50/50 border border-amber-100 space-y-0.5">
+                  <span class="font-bold text-amber-900">3. Trên trước, dưới sau:</span>
+                  <p class="text-[11px]">Ví dụ: 三, 言 (viết nét trên xuống dưới).</p>
+                </div>
+                <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-100 space-y-0.5">
+                  <span class="font-bold text-rose-900">4. Vào trước, đóng sau:</span>
+                  <p class="text-[11px]">Ví dụ: 回, 国 (mở khung, vào trong rồi đóng đáy).</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- MODAL: MỤC LỤC 50 BÀI ĐỌC HIỂU SONG NGỮ -->
   <div id="readingTocModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-slate-950/70 backdrop-blur-md">

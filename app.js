@@ -452,7 +452,7 @@ function renderNotebookList() {
   container.innerHTML = words.map(w => `
     <div class="p-3.5 rounded-2xl bg-slate-50 hover:bg-teal-50/50 border border-slate-200/80 transition-all flex items-center justify-between gap-3 shadow-2xs">
       <div class="flex items-center gap-3">
-        <span class="font-hanzi text-2xl font-bold text-slate-900 w-10 text-center">${w.hanzi}</span>
+        <span onclick="openWritingModal('${w.hanzi}', '${w.pinyin}', '${w.meaning}'); closeNotebookModal();" class="font-hanzi text-2xl font-bold text-slate-900 w-10 text-center cursor-pointer hover:text-rose-700 transition-colors" title="Nhấn vào chữ để xem và tập viết nét">${w.hanzi}</span>
         <div>
           <div class="flex items-center gap-2">
             <span class="text-xs font-bold text-teal-700 font-sans">${w.pinyin}</span>
@@ -470,7 +470,7 @@ function renderNotebookList() {
             👨 Nam
           </button>
         </div>
-        <button onclick="switchTab('writing'); loadWritingChar('${w.hanzi}', '${w.pinyin}', '${w.meaning}'); closeNotebookModal();" title="Luyện viết chữ này" class="p-2 rounded-xl bg-white hover:bg-rose-100 text-rose-700 border border-slate-200 transition-all">
+        <button onclick="openWritingModal('${w.hanzi}', '${w.pinyin}', '${w.meaning}'); closeNotebookModal();" title="Luyện viết chữ này" class="p-2 rounded-xl bg-white hover:bg-rose-100 text-rose-700 border border-slate-200 transition-all cursor-pointer">
           <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
         </button>
         <button onclick="toggleSaveWord('${w.hanzi}', '', '')" title="Xóa khỏi sổ tay" class="p-2 rounded-xl bg-white hover:bg-rose-50 text-rose-500 border border-slate-200 transition-all">
@@ -528,9 +528,6 @@ function ensureTabRendered(tabId) {
         renderRadicals();
       }
       setupRadicalSearch();
-      break;
-    case 'writing':
-      initWritingModule();
       break;
     case 'chengyu':
       renderChengyu();
@@ -663,9 +660,13 @@ function switchTab(tabId) {
     openFloatingAiChat();
     return;
   }
+  if (tabId === 'writing') {
+    openWritingModal();
+    return;
+  }
   activeTab = tabId;
   const tabs = [
-    'etymology', 'jiaocheng', 'radicals', 'writing', 'chengyu', 'readings', 'grammar',
+    'etymology', 'jiaocheng', 'radicals', 'chengyu', 'readings', 'grammar',
     'culture', 'confusions', 'translation', 'mockexam',
     'pathway', 'practice', 'flashcards', 'dictionary'
   ];
@@ -684,8 +685,6 @@ function switchTab(tabId) {
         btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40';
       } else if (t === 'radicals') {
         btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#1E4D43] via-[#2A6559] to-[#C59A3F] text-[#FFFDF9] shadow-md shadow-emerald-950/20 border border-amber-300/40';
-      } else if (t === 'writing') {
-        btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] via-[#A82828] to-[#C59A3F] text-[#FFFDF9] shadow-md shadow-red-950/20 border border-amber-300/40';
       } else if (t === 'chengyu') {
         btn.className = 'nav-tab active-tab flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-bold transition-all whitespace-nowrap bg-gradient-to-r from-[#9B6D28] via-[#B8860B] to-[#8B1E1E] text-[#FFFDF9] shadow-md shadow-amber-950/20 border border-amber-300/40';
       } else if (t === 'readings') {
@@ -711,11 +710,6 @@ function switchTab(tabId) {
   const activeSection = document.getElementById(`tab-${tabId}`);
   if (activeSection) {
     refreshIcons(activeSection);
-  }
-
-  // If switched to writing tab, re-initialize or redraw writer
-  if (tabId === 'writing' && !currentWriter) {
-    loadWritingChar('你', 'nǐ', 'Bạn, anh, chị (ngôi thứ hai)');
   }
 }
 
@@ -756,7 +750,7 @@ function renderEtymologyDetail(index) {
           </div>
 
           <div class="text-center py-6">
-            <h1 class="font-hanzi text-8xl font-black text-teal-950 tracking-wider mb-2">${data.hanzi}</h1>
+            <h1 onclick="openWritingModal('${data.hanzi}', '${data.pinyin}', '${(data.meaning || '').replace(/'/g, "\\'")}'); closeWordModal();" class="font-hanzi text-8xl font-black text-teal-950 tracking-wider mb-2 cursor-pointer hover:text-rose-700 transition-colors" title="Nhấn vào chữ để xem và tập viết nét">${data.hanzi}</h1>
             <div class="flex items-center justify-center gap-3">
               <span class="text-2xl font-bold text-teal-600">${data.pinyin}</span>
               <div class="flex items-center gap-1 bg-stone-100/80 p-0.5 rounded-xl border border-stone-200">
@@ -771,7 +765,7 @@ function renderEtymologyDetail(index) {
             <p class="text-sm font-bold text-emerald-700 mt-2">Hán Việt: [ ${data.hanviet} ]</p>
             <p class="text-base text-slate-800 mt-2 font-medium">${data.meaning}</p>
             <div class="flex items-center justify-center gap-2 mt-4">
-              <button onclick="switchTab('writing'); loadWritingChar('${data.hanzi}', '${data.pinyin}', '${(data.meaning || '').replace(/'/g, "\\'")}');" class="px-4 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-700 hover:to-amber-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all">
+              <button onclick="openWritingModal('${data.hanzi}', '${data.pinyin}', '${(data.meaning || '').replace(/'/g, "\\'")}'); closeWordModal();" class="px-4 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 hover:from-rose-700 hover:to-amber-600 text-white font-bold text-xs flex items-center gap-1.5 shadow-sm transition-all cursor-pointer">
                 <i data-lucide="pen-tool" class="w-4 h-4"></i>
                 <span>Tập Viết Nét</span>
               </button>
@@ -3006,12 +3000,12 @@ function renderDictionary(reset = false) {
         </div>
 
         <div class="flex items-center justify-between gap-2">
-          <h4 class="font-hanzi text-3xl font-black text-stone-900 tracking-wide">${item.title}</h4>
+          <h4 onclick="openWritingModal('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}')" class="font-hanzi text-3xl font-black text-stone-900 tracking-wide cursor-pointer hover:text-[#8B1E1E] transition-colors" title="Nhấn vào chữ để xem và tập viết nét">${item.title}</h4>
           <div class="flex items-center gap-1">
             <button onclick="toggleSaveWord('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}', ${item.level})" title="Lưu vào Sổ tay Flashcard" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition-colors cursor-pointer">
               <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
             </button>
-            <button onclick="switchTab('writing'); loadWritingChar('${item.title[0]}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}');" title="Tập viết nét chữ này" class="p-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 transition-colors cursor-pointer">
+            <button onclick="openWritingModal('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}')" title="Tập viết nét chữ này" class="p-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 transition-colors cursor-pointer">
               <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
             </button>
             <div class="flex items-center gap-0.5 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
@@ -3275,12 +3269,12 @@ function renderTopicDictionary(reset = false) {
         </div>
 
         <div class="flex items-center justify-between gap-2">
-          <h4 class="font-hanzi text-3xl font-black text-stone-900 tracking-wide">${item.title}</h4>
+          <h4 onclick="openWritingModal('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}')" class="font-hanzi text-3xl font-black text-stone-900 tracking-wide cursor-pointer hover:text-[#8B1E1E] transition-colors" title="Nhấn vào chữ để xem và tập viết nét">${item.title}</h4>
           <div class="flex items-center gap-1">
             <button onclick="toggleSaveWord('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}', ${item.level})" title="Lưu vào Sổ tay Flashcard" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 transition-colors cursor-pointer">
               <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
             </button>
-            <button onclick="switchTab('writing'); loadWritingChar('${item.title[0]}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}');" title="Tập viết nét chữ này" class="p-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 transition-colors cursor-pointer">
+            <button onclick="openWritingModal('${item.title}', '${item.pinyin}', '${(item.meaning || '').replace(/'/g, "\\'")}')" title="Tập viết nét chữ này" class="p-2 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 transition-colors cursor-pointer">
               <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
             </button>
             <div class="flex items-center gap-0.5 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
@@ -3497,11 +3491,73 @@ async function submitTelegramLink() {
 }
 
 // ==========================================
-// MODULE: LUYỆN VIẾT NÉT CHỮ HÁN TƯƠNG TÁC (HANZIWRITER)
+// MODULE: LUYỆN VIẾT NÉT CHỮ HÁN TƯƠNG TÁC (HANZIWRITER POPUP MODAL)
 // ==========================================
+let currentWritingWord = '你';
+
+function openWritingModal(wordOrChar = '你', pinyin = '', meaning = '') {
+  const modal = document.getElementById('writingModal');
+  if (!modal) return;
+
+  if (!wordOrChar || !wordOrChar.trim()) wordOrChar = '你';
+  currentWritingWord = wordOrChar;
+
+  const titleWordEl = document.getElementById('writingModalTitleWord');
+  const pinyinEl = document.getElementById('writingCharPinyin');
+  const meaningEl = document.getElementById('writingCharMeaning');
+  const tabsContainer = document.getElementById('writingCharTabsContainer');
+
+  if (titleWordEl) titleWordEl.innerText = wordOrChar;
+  if (pinyinEl) pinyinEl.innerText = pinyin || '';
+  if (meaningEl) meaningEl.innerText = meaning || '';
+
+  // Extract all Chinese characters from the word/sentence
+  const hanziChars = (wordOrChar.match(/[\u4e00-\u9fa5]/g) || [wordOrChar[0]]);
+
+  if (tabsContainer) {
+    if (hanziChars.length > 1) {
+      tabsContainer.innerHTML = hanziChars.map((ch, idx) => `
+        <button 
+          onclick="selectWritingModalChar('${ch}')" 
+          id="btn-char-tab-${ch}" 
+          class="px-2.5 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer ${idx === 0 ? 'bg-[#8B1E1E] text-white shadow-2xs' : 'bg-white hover:bg-stone-100 text-stone-700 border border-stone-200'}">
+          <span class="font-hanzi font-black text-sm">${ch}</span> (Nét chữ ${idx + 1})
+        </button>
+      `).join('');
+    } else {
+      tabsContainer.innerHTML = '';
+    }
+  }
+
+  renderWritingQuickPick();
+  modal.classList.remove('hidden');
+  loadWritingChar(hanziChars[0], pinyin, meaning);
+  refreshIcons(modal);
+}
+
+function selectWritingModalChar(ch) {
+  const tabsContainer = document.getElementById('writingCharTabsContainer');
+  if (tabsContainer) {
+    const btns = tabsContainer.querySelectorAll('button');
+    btns.forEach(b => {
+      if (b.id === `btn-char-tab-${ch}`) {
+        b.className = 'px-2.5 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer bg-[#8B1E1E] text-white shadow-2xs';
+      } else {
+        b.className = 'px-2.5 py-1 rounded-xl text-xs font-bold transition-all cursor-pointer bg-white hover:bg-stone-100 text-stone-700 border border-stone-200';
+      }
+    });
+  }
+  loadWritingChar(ch, '', '');
+}
+
+function closeWritingModal() {
+  const modal = document.getElementById('writingModal');
+  if (modal) modal.classList.add('hidden');
+  isWritingQuizActive = false;
+}
+
 function initWritingModule() {
   renderWritingQuickPick();
-  loadWritingChar('你', 'nǐ', 'Bạn, anh, chị (ngôi thứ hai)');
 }
 
 function renderWritingQuickPick() {
@@ -3509,28 +3565,36 @@ function renderWritingQuickPick() {
   if (!container) return;
 
   const quickChars = [
-    { char: '你', pinyin: 'nǐ', meaning: 'Bạn, anh, chị' },
-    { char: '好', pinyin: 'hǎo', meaning: 'Tốt, đẹp, hay' },
-    { char: '我', pinyin: 'wǒ', meaning: 'Tôi, bản thân' },
+    { char: '你', pinyin: 'nǐ', meaning: 'Bạn, anh' },
+    { char: '好', pinyin: 'hǎo', meaning: 'Tốt, đẹp' },
+    { char: '我', pinyin: 'wǒ', meaning: 'Tôi' },
     { char: '爱', pinyin: 'ài', meaning: 'Yêu thương' },
     { char: '学', pinyin: 'xué', meaning: 'Học tập' },
     { char: '国', pinyin: 'guó', meaning: 'Đất nước' },
-    { char: '中', pinyin: 'zhōng', meaning: 'Ở giữa, trung tâm' },
-    { char: '龙', pinyin: 'lóng', meaning: 'Rồng, Long' },
-    { char: '福', pinyin: 'fú', meaning: 'Phúc lành, may mắn' },
-    { char: '家', pinyin: 'jiā', meaning: 'Gia đình, nhà' },
-    { char: '水', pinyin: 'shuǐ', meaning: 'Nước, thủy' },
-    { char: '火', pinyin: 'huǒ', meaning: 'Lửa, hỏa' },
-    { char: '山', pinyin: 'shān', meaning: 'Núi, sơn' },
-    { char: '木', pinyin: 'mù', meaning: 'Cây, mộc' },
-    { char: '月', pinyin: 'yuè', meaning: 'Trăng, nguyệt' },
-    { char: '日', pinyin: 'rì', meaning: 'Mặt trời, nhật' }
+    { char: '中', pinyin: 'zhōng', meaning: 'Trung tâm' },
+    { char: '家', pinyin: 'jiā', meaning: 'Gia đình' },
+    { char: '人', pinyin: 'rén', meaning: 'Con người' },
+    { char: '大', pinyin: 'dà', meaning: 'To, lớn' },
+    { char: '天', pinyin: 'tiān', meaning: 'Trời, ngày' },
+    { char: '生', pinyin: 'shēng', meaning: 'Sinh sống' },
+    { char: '日', pinyin: 'rì', meaning: 'Mặt trời' },
+    { char: '月', pinyin: 'yuè', meaning: 'Mặt trăng' },
+    { char: '水', pinyin: 'shuǐ', meaning: 'Nước' },
+    { char: '火', pinyin: 'huǒ', meaning: 'Lửa' },
+    { char: '山', pinyin: 'shān', meaning: 'Núi' },
+    { char: '木', pinyin: 'mù', meaning: 'Cây cối' },
+    { char: '福', pinyin: 'fú', meaning: 'Phúc lành' },
+    { char: '龙', pinyin: 'lóng', meaning: 'Con rồng' },
+    { char: '说', pinyin: 'shuō', meaning: 'Nói' },
+    { char: '看', pinyin: 'kàn', meaning: 'Xem, nhìn' },
+    { char: '听', pinyin: 'tīng', meaning: 'Nghe' },
+    { char: '会', pinyin: 'huì', meaning: 'Biết, hội' }
   ];
 
   container.innerHTML = quickChars.map(item => `
     <button 
-      onclick="loadWritingChar('${item.char}', '${item.pinyin}', '${item.meaning}')"
-      class="px-3 py-1.5 rounded-xl font-hanzi font-bold text-base transition-all bg-slate-50 hover:bg-rose-50 hover:text-rose-600 border border-slate-200 hover:border-rose-300">
+      onclick="openWritingModal('${item.char}', '${item.pinyin}', '${item.meaning}')"
+      class="px-2.5 py-1 rounded-xl font-hanzi font-bold text-sm transition-all bg-stone-50 hover:bg-rose-50 hover:text-rose-700 border border-stone-200 hover:border-rose-300 cursor-pointer shadow-2xs">
       ${item.char}
     </button>
   `).join('');
@@ -3540,20 +3604,25 @@ function loadWritingChar(char, pinyin, meaning) {
   currentWritingChar = char;
   isWritingQuizActive = false;
 
+  const modal = document.getElementById('writingModal');
+  if (modal && modal.classList.contains('hidden')) {
+    modal.classList.remove('hidden');
+  }
+
   const pinyinEl = document.getElementById('writingCharPinyin');
   const meaningEl = document.getElementById('writingCharMeaning');
   const badgeEl = document.getElementById('writingStatusBadge');
   const feedbackEl = document.getElementById('writingFeedbackMsg');
 
-  if (pinyinEl) pinyinEl.innerText = pinyin || '';
-  if (meaningEl) meaningEl.innerText = meaning || '';
+  if (pinyinEl && pinyin) pinyinEl.innerText = pinyin;
+  if (meaningEl && meaning) meaningEl.innerText = meaning;
   if (badgeEl) {
-    badgeEl.className = 'px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200';
+    badgeEl.className = 'px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-200';
     badgeEl.innerText = 'Chế độ: Xem nét';
   }
   if (feedbackEl) {
-    feedbackEl.className = 'w-full mt-4 p-3 rounded-xl bg-slate-50 text-slate-700 border border-slate-200 text-xs text-center font-medium';
-    feedbackEl.innerHTML = `💡 Đang tải chữ <strong>${char}</strong>. Bấm <strong>"Xem Hoạt Họa Nét"</strong> hoặc <strong>"Tự Luyện Viết"</strong>!`;
+    feedbackEl.className = 'w-full mt-3 p-2.5 rounded-xl bg-slate-50 text-slate-700 border border-slate-200 text-xs text-center font-medium';
+    feedbackEl.innerHTML = `💡 Đang nạp chữ <strong>${char}</strong>. Bấm <strong>"Xem Hoạt Họa Nét"</strong> hoặc <strong>"Tự Luyện Viết"</strong>!`;
   }
 
   const target = document.getElementById('hanziWriterTarget');
@@ -3585,7 +3654,7 @@ function loadWritingChar(char, pinyin, meaning) {
     if (currentWriter && !isWritingQuizActive) {
       currentWriter.animateCharacter();
     }
-  }, 300);
+  }, 250);
 }
 
 function animateWritingChar() {
@@ -3668,11 +3737,10 @@ function loadCustomWritingChar() {
   if (!input) return;
   const val = input.value.trim();
   if (!val) {
-    alert('Vui lòng nhập 1 chữ Hán để luyện viết!');
+    alert('Vui lòng nhập chữ Hán để luyện viết!');
     return;
   }
-  const char = val[0];
-  loadWritingChar(char, '', 'Chữ tự chọn');
+  openWritingModal(val, '', 'Chữ tự chọn');
 }
 
 // ==========================================
@@ -4729,7 +4797,7 @@ function renderRadicals() {
       <div class="glass-card rounded-2xl p-4 border border-amber-200/80 hover:border-amber-400 transition-all space-y-3 relative overflow-hidden bg-[#FFFDF9] shadow-xs">
         <div class="flex items-start justify-between">
           <div class="flex items-center gap-3">
-            <div class="w-14 h-14 rounded-2xl bg-amber-50/80 border border-amber-200 flex items-center justify-center shrink-0 shadow-2xs">
+            <div onclick="openWritingModal('${char}', '${pinyin}', 'Bộ thủ: ${hanviet} (${escapedMeaning})')" class="w-14 h-14 rounded-2xl bg-amber-50/80 hover:bg-rose-50 border border-amber-200 hover:border-rose-300 flex items-center justify-center shrink-0 shadow-2xs cursor-pointer transition-all" title="Nhấn vào chữ để xem và tập viết nét">
               <span class="font-hanzi text-3xl font-black text-[#8B1E1E]">${char}</span>
             </div>
             <div>
@@ -4766,7 +4834,7 @@ function renderRadicals() {
             <div class="flex flex-wrap gap-1.5">
               ${examples.map(ex => `
                 <div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-lg bg-amber-50/80 border border-amber-200/70 shadow-2xs">
-                  <span class="font-hanzi font-bold text-[#8B1E1E] text-xs">${ex}</span>
+                  <span onclick="openWritingModal('${ex}')" class="font-hanzi font-bold text-[#8B1E1E] text-xs cursor-pointer hover:underline" title="Nhấn để tập viết nét chữ này">${ex}</span>
                   <div class="flex items-center gap-0.5">
                     <button type="button" onclick="playChineseTTS('${ex}', 'female')" class="text-[9px] hover:scale-125 transition-transform cursor-pointer" title="Phát âm ${ex} giọng Nữ">👩</button>
                     <button type="button" onclick="playChineseTTS('${ex}', 'male')" class="text-[9px] hover:scale-125 transition-transform cursor-pointer" title="Phát âm ${ex} giọng Nam">👨</button>
@@ -4778,7 +4846,10 @@ function renderRadicals() {
         ` : ''}
 
         <div class="pt-2 border-t border-stone-200/60 flex items-center justify-between text-[11px]">
-          <button onclick="loadWritingChar('${char}', '${pinyin}', 'Bộ thủ: ${hanviet} (${escapedMeaning})'); switchTab('writing');" class="text-[#8B1E1E] hover:text-[#A52A2A] font-bold flex items-center gap-1 transition-colors">
+          <button onclick="openWritingModal('${char}', '${pinyin}', 'Bộ thủ: ${hanviet} (${escapedMeaning})');" class="text-[#8B1E1E] hover:text-[#A52A2A] font-bold flex items-center gap-1 transition-colors cursor-pointer">
+            <i data-lucide="pen-tool" class="w-3 h-3 text-[#8B1E1E]"></i>
+            <span>Luyện viết bộ này</span>
+          </button>
             <i data-lucide="pen-tool" class="w-3 h-3 text-[#8B1E1E]"></i>
             <span>Luyện viết bộ này</span>
           </button>
@@ -4856,7 +4927,7 @@ function renderChengyu() {
       <div class="flex items-start justify-between gap-4">
         <div>
           <div class="flex items-center gap-3 flex-wrap">
-            <h3 class="font-hanzi text-3xl font-black text-slate-900 tracking-wide">${item.chengyu}</h3>
+            <h3 onclick="openWritingModal('${item.chengyu}', '${item.pinyin}', 'Thành ngữ: ${item.chengyu} - ${(item.figurative || '').replace(/'/g, "\\'")}')" class="font-hanzi text-3xl font-black text-slate-900 tracking-wide cursor-pointer hover:text-[#8B1E1E] transition-colors" title="Nhấn vào chữ để xem và tập viết nét">${item.chengyu}</h3>
             <div class="inline-flex items-center gap-0.5 bg-stone-100/90 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
               <button onclick="playChineseTTS('${item.chengyu}', 'female')" class="px-2 py-1 rounded-lg bg-white hover:bg-rose-50 text-rose-850 border border-rose-200 text-xs font-bold transition-colors cursor-pointer" title="Phát âm thành ngữ giọng Nữ">
                 👩 Nữ
@@ -4937,9 +5008,9 @@ function renderChengyu() {
           <i data-lucide="bookmark" class="w-3.5 h-3.5 text-amber-600"></i>
           <span>Lưu Thành Ngữ</span>
         </button>
-        <button onclick="loadWritingChar('${item.chengyu[0]}', '', 'Thành ngữ: ${item.chengyu}'); switchTab('writing');" class="text-xs font-bold text-rose-600 hover:text-rose-800 flex items-center gap-1 transition-colors">
+        <button onclick="openWritingModal('${item.chengyu}', '${item.pinyin}', 'Thành ngữ: ${item.chengyu} - ${(item.figurative || '').replace(/'/g, "\\'")}');" class="text-xs font-bold text-rose-600 hover:text-rose-800 flex items-center gap-1 transition-colors cursor-pointer">
           <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
-          <span>Tập viết chữ đầu (${item.chengyu[0]})</span>
+          <span>Tập viết từng nét chữ</span>
         </button>
       </div>
     </div>
@@ -6739,7 +6810,7 @@ function renderLessonVocabulary(vocabList) {
         <div class="space-y-2">
           <div class="flex items-start justify-between gap-2">
             <div class="flex items-baseline gap-2 flex-wrap">
-              <span class="font-hanzi text-2xl font-black text-stone-900 tracking-wide">${v.hanzi}</span>
+              <span onclick="openWritingModal('${safeHanzi}', '${v.pinyin}', '${safeMeaning}')" class="font-hanzi text-2xl font-black text-stone-900 tracking-wide cursor-pointer hover:text-[#8B1E1E] transition-colors" title="Nhấn vào chữ để xem và tập viết nét">${v.hanzi}</span>
               <span class="text-xs font-bold text-[#8B1E1E]">${v.pinyin}</span>
               ${v.sinoViet ? `<span class="text-[11px] font-semibold text-amber-900 bg-amber-100/70 px-2 py-0.5 rounded-md">Hán-Việt: ${v.sinoViet}</span>` : ''}
             </div>
@@ -6758,6 +6829,12 @@ function renderLessonVocabulary(vocabList) {
                   👨 Nam
                 </button>
               </div>
+              <button 
+                onclick="openWritingModal('${safeHanzi}', '${v.pinyin}', '${safeMeaning}')" 
+                class="p-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 text-rose-700 border border-rose-200 transition-all cursor-pointer"
+                title="Luyện viết nét chữ này">
+                <i data-lucide="pen-tool" class="w-3.5 h-3.5"></i>
+              </button>
               <button 
                 id="btnSaveVocab-${safeHanzi}"
                 onclick="toggleSaveWordFromLesson('${safeHanzi}', '${v.pinyin}', '${safeMeaning}')" 
@@ -6792,9 +6869,13 @@ function renderLessonVocabulary(vocabList) {
         </div>
 
         <div class="pt-2 border-t border-stone-100 flex items-center justify-between text-[11px]">
+          <button onclick="openWritingModal('${safeHanzi}', '${v.pinyin}', '${safeMeaning}')" class="text-rose-700 hover:text-rose-900 hover:underline flex items-center gap-1 font-bold cursor-pointer">
+            <i data-lucide="pen-tool" class="w-3 h-3"></i>
+            Tập viết nét
+          </button>
           <button onclick="quickSearchFromLesson('${safeHanzi}')" class="text-[#8B1E1E] hover:underline flex items-center gap-1 font-medium cursor-pointer">
             <i data-lucide="search" class="w-3 h-3"></i>
-            Chiết tự & Thứ tự nét
+            Chiết tự chữ
           </button>
         </div>
       </div>
@@ -7282,6 +7363,9 @@ window.filterDictTopic = filterDictTopic;
 window.onTopicSearchInput = onTopicSearchInput;
 window.clearTopicSearch = clearTopicSearch;
 window.loadMoreTopicDict = loadMoreTopicDict;
+window.openWritingModal = openWritingModal;
+window.closeWritingModal = closeWritingModal;
+window.selectWritingModalChar = selectWritingModalChar;
 
 // Global Escape Key to close open modals
 window.addEventListener('keydown', (e) => {
@@ -7291,6 +7375,7 @@ window.addEventListener('keydown', (e) => {
     closeNotebookModal();
     closeTelegramModal();
     closeReadingTocModal();
+    closeWritingModal();
   }
 });
 
