@@ -9935,11 +9935,17 @@ function getHomeGreeting(name) {
     emoji = '🌙';
   }
 
+  const isLoggedIn = userProfile && userProfile.isLoggedIn !== false;
+  if (!isLoggedIn) {
+    return `Chào bạn ghé thăm! ${emoji}`;
+  }
+
   const displayName = name || (userProfile && userProfile.name) || 'Học Viên';
   return `Chào ${timeOfDay}, ${displayName}! ${emoji}`;
 }
 
 function renderHomeDashboard() {
+  const isLoggedIn = userProfile && userProfile.isLoggedIn !== false;
   const greetingEl = document.getElementById('homeGreetingTitle');
   if (greetingEl) {
     greetingEl.innerText = getHomeGreeting(userProfile.name);
@@ -9947,18 +9953,33 @@ function renderHomeDashboard() {
 
   const avatarInitialEl = document.getElementById('homeUserAvatarInitial');
   if (avatarInitialEl) {
-    const initial = (userProfile.name && userProfile.name.length > 0) ? userProfile.name[0].toUpperCase() : 'H';
-    avatarInitialEl.innerText = initial;
+    if (isLoggedIn) {
+      const initial = (userProfile.name && userProfile.name.length > 0) ? userProfile.name[0].toUpperCase() : 'H';
+      avatarInitialEl.innerText = initial;
+    } else {
+      avatarInitialEl.innerText = '客'; // 'Khách'
+    }
   }
 
   const roleBadgeEl = document.getElementById('homeUserRoleBadge');
   if (roleBadgeEl) {
-    if (isSuperAdmin(userProfile.email)) {
-      roleBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-amber-500/20 to-yellow-500/30 text-amber-900 dark:text-amber-300 border border-amber-400/80 shadow-2xs';
-      roleBadgeEl.innerHTML = '👑 Super Admin';
+    if (isLoggedIn) {
+      if (isSuperAdmin(userProfile.email)) {
+        roleBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-amber-500/20 to-yellow-500/30 text-amber-900 dark:text-amber-300 border border-amber-400/80 shadow-2xs cursor-pointer';
+        roleBadgeEl.setAttribute('onclick', 'openAdminDashboardModal()');
+        roleBadgeEl.setAttribute('title', 'Bấm để mở Bảng Quản Trị Tối Cao');
+        roleBadgeEl.innerHTML = '👑 Super Admin';
+      } else {
+        roleBadgeEl.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300 border border-stone-200 dark:border-stone-700';
+        roleBadgeEl.removeAttribute('onclick');
+        roleBadgeEl.removeAttribute('title');
+        roleBadgeEl.innerHTML = '⭐ Học Viên';
+      }
     } else {
-      roleBadgeEl.className = 'inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300 border border-stone-200 dark:border-stone-700';
-      roleBadgeEl.innerHTML = '⭐ Học Viên';
+      roleBadgeEl.className = 'inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500 text-stone-950 hover:bg-amber-400 shadow-2xs cursor-pointer transition-all';
+      roleBadgeEl.setAttribute('onclick', 'openAuthModal()');
+      roleBadgeEl.setAttribute('title', 'Bấm để đăng nhập ngay');
+      roleBadgeEl.innerHTML = '🔑 Đăng Nhập Ngay';
     }
   }
 
