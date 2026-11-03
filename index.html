@@ -1631,6 +1631,12 @@
           Đóng Mục Lục
         </button>
       </div>
+      <div class="p-3.5 px-6 border-t border-amber-200/80 bg-amber-50/30 flex items-center justify-between text-xs text-stone-500">
+        <span>💡 Chạm vào bài đọc bất kỳ để chuyển bài ngay lập tức.</span>
+        <button onclick="closeReadingTocModal()" class="px-4 py-1.5 rounded-xl text-xs font-bold bg-white hover:bg-stone-100 text-stone-700 border border-stone-200 shadow-2xs cursor-pointer">
+          Đóng Mục Lục
+        </button>
+      </div>
     </div>
   </div>
 
@@ -1941,6 +1947,139 @@
             Đóng
           </button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING AI TRANSLATION & TUTOR ASSISTANT (TIN NHẮN TRỢ LÝ AI Ở GÓC PHẢI MÀN HÌNH) -->
+  <div id="floatingAiAssistant" class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
+    
+    <!-- Mini Bubble Tooltip (Callout Greeting) -->
+    <div id="floatingAiTooltip" class="mb-2 hidden sm:flex items-center gap-2 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-2xl shadow-xl border border-amber-300/80 text-xs text-stone-800 animate-bounce duration-1000 origin-bottom-right">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+      <span class="font-bold text-[#8B1E1E]">Trợ lý Dịch AI:</span>
+      <span>Bấm vào đây để chat & dịch nhanh!</span>
+      <button onclick="dismissFloatingAiTooltip(event)" class="text-stone-400 hover:text-stone-700 ml-1 cursor-pointer">
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+
+    <!-- Floating Trigger Button (Avatar Robot Mini 3D Đeo Tai Nghe) -->
+    <button 
+      id="floatingAiTriggerBtn" 
+      onclick="toggleFloatingAiChat()" 
+      class="group relative flex items-center justify-center p-1 rounded-full bg-gradient-to-br from-indigo-600 via-purple-600 to-[#8B1E1E] shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer ring-4 ring-amber-300/60 hover:ring-amber-400"
+      title="Trợ lý Dịch AI & Luyện Khẩu Ngữ"
+    >
+      <!-- Avatar Robot 3D đeo tai nghe -->
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-slate-900 flex items-center justify-center relative border border-white/20">
+        <img 
+          src="images/ai_robot_avatar.png" 
+          onerror="this.src='images/robot_3d_avatar.svg'" 
+          alt="Trợ lý Robot AI 3D" 
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+        />
+      </div>
+
+      <!-- Active Status Pulse Badge -->
+      <span class="absolute bottom-0.5 right-0.5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white ring-2 ring-emerald-400/60 animate-pulse"></span>
+
+      <!-- Mini Unread Badge -->
+      <span id="floatingAiBadge" class="hidden absolute -top-1 -right-1 w-5 h-5 rounded-full bg-rose-600 text-white font-black text-2xs flex items-center justify-center border-2 border-white shadow-sm">
+        1
+      </span>
+    </button>
+
+    <!-- Floating Messenger Chat Box Window -->
+    <div 
+      id="floatingAiChatWindow" 
+      class="hidden fixed bottom-24 right-4 sm:right-6 w-[94vw] sm:w-[420px] h-[580px] max-h-[82vh] bg-[#FFFDF9] rounded-3xl border border-amber-300/90 shadow-2xl flex flex-col overflow-hidden transition-all duration-300 z-50 animate-fade-in"
+    >
+      <!-- Chat Header -->
+      <div class="p-3.5 sm:p-4 bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-indigo-900 text-white flex items-center justify-between shadow-md shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden border-2 border-amber-300 shadow-sm shrink-0 bg-slate-900">
+            <img 
+              src="images/ai_robot_avatar.png" 
+              onerror="this.src='images/robot_3d_avatar.svg'" 
+              alt="Robot AI" 
+              class="w-full h-full object-cover" 
+            />
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-white"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <h4 class="text-sm font-bold tracking-wide">Trợ Lý Dịch AI (AI 助教)</h4>
+              <span class="px-1.5 py-0.2 rounded text-[10px] font-black bg-amber-400 text-amber-950">PRO</span>
+            </div>
+            <p class="text-2xs text-amber-100/90 font-medium flex items-center gap-1">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+              <span>Dịch thuật song ngữ · Ngữ pháp · Đàm thoại</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-1">
+          <button onclick="clearFloatingAiChat()" title="Xóa lịch sử chat" class="p-1.5 rounded-lg hover:bg-white/20 text-white/80 hover:text-white transition-all cursor-pointer">
+            <i data-lucide="trash-2" class="w-4 h-4"></i>
+          </button>
+          <button onclick="toggleFloatingAiChat()" title="Thu nhỏ" class="p-1.5 rounded-lg hover:bg-white/20 text-white/80 hover:text-white transition-all cursor-pointer">
+            <i data-lucide="minus" class="w-4 h-4"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mode Selector Toolbar -->
+      <div class="px-3 py-2 bg-amber-50/70 border-b border-amber-200/60 flex items-center justify-between gap-1 text-2xs font-bold overflow-x-auto shrink-0">
+        <button onclick="switchFloatingAiMode('translate')" id="btn-flmode-translate" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs whitespace-nowrap flex items-center gap-1 cursor-pointer">
+          <span>🌐 Dịch Song Ngữ</span>
+        </button>
+        <button onclick="switchFloatingAiMode('chat')" id="btn-flmode-chat" class="px-2.5 py-1 rounded-lg bg-white hover:bg-amber-100 text-stone-700 border border-stone-200 whitespace-nowrap flex items-center gap-1 cursor-pointer">
+          <span>🗣️ Luyện Khẩu Ngữ</span>
+        </button>
+        <button onclick="switchFloatingAiMode('grammar')" id="btn-flmode-grammar" class="px-2.5 py-1 rounded-lg bg-white hover:bg-amber-100 text-stone-700 border border-stone-200 whitespace-nowrap flex items-center gap-1 cursor-pointer">
+          <span>🩺 Bác Sĩ Ngữ Pháp</span>
+        </button>
+      </div>
+
+      <!-- Message Stream -->
+      <div id="floatingAiMessages" class="flex-1 p-4 overflow-y-auto space-y-3.5 bg-[#FAF7F2]/40 text-xs">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Quick Prompt Suggestions Chips -->
+      <div id="floatingAiQuickChips" class="px-3 py-1.5 bg-white border-t border-amber-200/50 flex items-center gap-1.5 overflow-x-auto whitespace-nowrap text-2xs shrink-0">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Input Footer -->
+      <div class="p-3 bg-white border-t border-amber-200/80 flex items-center gap-2 shrink-0">
+        <div class="relative flex-1">
+          <input 
+            id="floatingAiInput" 
+            type="text" 
+            placeholder="Nhập câu cần dịch (Việt ➔ Trung) hoặc hỏi bài..." 
+            class="w-full pl-3 pr-8 py-2.5 text-xs rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] bg-stone-50/50 focus:bg-white text-stone-900"
+            onkeydown="if(event.key==='Enter') sendFloatingAiMessage()"
+          />
+          <button 
+            type="button"
+            onclick="startFloatingAiSpeechInput()" 
+            title="Nhập giọng nói (Nói tiếng Trung hoặc tiếng Việt)"
+            id="btn-flspeech-mic"
+            class="absolute right-2 top-2 p-1 text-stone-400 hover:text-[#8B1E1E] cursor-pointer transition-colors"
+          >
+            <i data-lucide="mic" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <button 
+          type="button"
+          onclick="sendFloatingAiMessage()" 
+          class="px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white font-bold text-xs shadow-sm flex items-center justify-center gap-1 transition-all cursor-pointer shrink-0"
+        >
+          <i data-lucide="send" class="w-3.5 h-3.5"></i>
+        </button>
       </div>
     </div>
   </div>

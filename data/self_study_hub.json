@@ -1,0 +1,616 @@
+{
+  "textbooks": [
+    {
+      "id": "tb_hsk_standard_course",
+      "title": "Giáo Trình Chuẩn HSK 1 Đến HSK 6 (HSK Standard Course)",
+      "chineseTitle": "HSK标准教程（1-6级）",
+      "authorPublisher": "Khương Lệ Bình (姜丽萍) - NXB ĐH Ngôn Ngữ Bắc Kinh (BLCUP)",
+      "category": "Chính Thống - Chuẩn Khảo Thí",
+      "level": "HSK 1 - HSK 6",
+      "coverBadge": "⭐ Bán Chạy Nhất",
+      "description": "Bộ giáo trình chuẩn mực hàng đầu thế giới được hợp tác xuất bản bởi Hanban và BLCUP. Nội dung bám sát 100% đề thi HSK thật với định dạng bài thi, từ vựng và ngữ pháp hoàn toàn trùng khớp.",
+      "highlights": [
+        "Trọn bộ Sách bài học (Textbook) + Sách bài tập (Workbook) từ cấp 1 đến cấp 6",
+        "Kèm đầy đủ file Audio MP3 phát âm chuẩn Bắc Kinh",
+        "Có đáp án chi tiết và giải thích bài tập",
+        "Luyện đồng thời cả 4 kỹ năng Nghe - Nói - Đọc - Viết theo chuẩn thi quốc tế"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Google Drive Trọn Bộ HSK 1 - 6 (PDF + Audio)",
+          "url": "https://drive.google.com/drive/folders/1PPmCZwC6H8fjToNPJ_m_73fzuepqa20H?usp=sharing"
+        },
+        {
+          "name": "Sách & Audio HSK 3 Standard Course",
+          "url": "https://drive.google.com/file/d/1nfZtcPengBdihVCy4qQVk6_3iSjY5eBF/view"
+        }
+      ]
+    },
+    {
+      "id": "tb_30_days_hsk3",
+      "title": "30 Ngày Quyết Thắng HSK 3 Mới Nhất",
+      "chineseTitle": "胜利30天新汉语水平考试HSK3三级仿真试题集",
+      "authorPublisher": "Lý Xuân Cầm - NXB ĐH Ngôn Ngữ Bắc Kinh",
+      "category": "Luyện Thi Cấp Tốc",
+      "level": "HSK 3",
+      "coverBadge": "🔥 Luyện Đề Siêu Tốc",
+      "description": "Cuốn sách luyện thi kinh điển cho mục tiêu đỗ HSK 3 trong 1 tháng. Chia lộ trình khoa học theo từng ngày với các bộ đề thi mô phỏng sát 99% đề thi thật.",
+      "highlights": [
+        "Kế hoạch luyện đề 30 ngày từng bước rõ ràng",
+        "Phân tích bẫy đề thi và mẹo làm bài điểm cao",
+        "Tích hợp file nghe chuẩn giọng phát thanh viên Trung Quốc",
+        "Kèm đáp án và giải thích ngữ pháp trọng điểm"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Google Drive Tải Sách 30 Ngày Quyết Thắng HSK 3 (PDF + Audio)",
+          "url": "https://drive.google.com/file/d/1eiYDZ8x30ydJlByxCs68JKkaifnjLsAc/view"
+        }
+      ]
+    },
+    {
+      "id": "tb_sucheng_hsk3",
+      "title": "Bộ Đề Luyện Thi HSK 3 Cấp Tốc Tăng Cường",
+      "chineseTitle": "新 HSK 速成强化教程三级",
+      "authorPublisher": "Lưu Siêu Anh - NXB ĐH Ngôn Ngữ Bắc Kinh",
+      "category": "Luyện Thi Cấp Tốc",
+      "level": "HSK 3",
+      "coverBadge": "⚡ Tăng Cường Kỹ Năng",
+      "description": "Giáo trình 'Tốc thành cường hóa' chuyên sâu về chiến thuật làm bài thi HSK 3. Hướng dẫn chi tiết từng dạng bài Nghe hiểu, Đọc hiểu và Viết câu.",
+      "highlights": [
+        "Tổng hợp 100% dạng bài thi thực tế",
+        "Mẹo chọn đáp án nhanh phần đọc hiểu trong 10 giây",
+        "Hệ thống hóa toàn bộ từ vựng và ngữ pháp HSK 3",
+        "Tập hợp các bộ đề thi thử chất lượng cao"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Google Drive Tải Sách Tốc Thành HSK 3 (PDF)",
+          "url": "https://drive.google.com/file/d/1jCma84Ks1GGOJ3V2w1poHEUYoPvGmA99/view?usp=sharing"
+        },
+        {
+          "name": "Google Drive Thư Mục Audio Đi Kèm",
+          "url": "https://drive.google.com/drive/folders/1PPmCZwC6H8fjToNPJ_m_73fzuepqa20H?usp=sharing"
+        }
+      ]
+    },
+    {
+      "id": "tb_tinhgiang_hsk3",
+      "title": "Bộ Đề Tinh Giảng Tinh Luyện HSK 3",
+      "chineseTitle": "新汉语水平考试精讲精练HSK三级",
+      "authorPublisher": "NXB ĐH Ngôn Ngữ Bắc Kinh",
+      "category": "Luyện Đề Chuyên Sâu",
+      "level": "HSK 3",
+      "coverBadge": "🎯 Tinh Giảng Súc Tích",
+      "description": "Bộ sách nổi tiếng với phương pháp 'học ít hiểu sâu'. Mỗi bài học đều có phần giảng giải cặn kẽ và các bài tập luyện kim cương giúp củng cố kiến thức bền vững.",
+      "highlights": [
+        "Giải thích chi tiết vì sao đúng, vì sao sai cho từng câu hỏi",
+        "Phần nghe audio rõ ràng, ngữ điệu tự nhiên",
+        "Kèm bộ từ vựng bỏ túi ôn thi nhanh trước ngày thi"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Google Drive Tải Bộ Đề Tinh Giảng HSK 3 (PDF + Audio)",
+          "url": "https://drive.google.com/file/d/1cg4NKBAvHrGG7aqYwUwPZp7nm8isP79v/view"
+        }
+      ]
+    },
+    {
+      "id": "tb_30_days_hsk4",
+      "title": "30 Ngày Quyết Thắng HSK 4 Mới Nhất",
+      "chineseTitle": "胜利30天新汉语水平考试HSK4四级仿真试题集",
+      "authorPublisher": "NXB ĐH Ngôn Ngữ Bắc Kinh",
+      "category": "Luyện Thi Cấp Tốc",
+      "level": "HSK 4",
+      "coverBadge": "🏆 Chinh Phục HSK 4",
+      "description": "Cẩm nang bứt phá điểm số HSK 4 với 1.200 từ vựng cốt lõi. Chuyên trị các phần khó nhất như viết câu theo tranh, sắp xếp câu hoàn chỉnh và đọc hiểu đoạn văn dài.",
+      "highlights": [
+        "Bộ đề mô phỏng theo cấu trúc đề thi thật mới nhất",
+        "Chiến thuật viết câu miêu tả tranh HSK 4 ăn trọn điểm",
+        "Audio nghe chất lượng cao kèm lời thoại (tapescript)"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Google Drive Tải Sách 30 Ngày Quyết Thắng HSK 4 (PDF)",
+          "url": "https://drive.google.com/file/d/1PnsyxzC0ymGRP2z87YdnjvVNxAk3wQw1/view"
+        }
+      ]
+    },
+    {
+      "id": "tb_hsk30_official",
+      "title": "Đại Cương Khảo Thí HSK 3.0 Mới Nhất (Cấp 1 - 9)",
+      "chineseTitle": "新版HSK考试大纲 (1-9级官方版)",
+      "authorPublisher": "Trung Tâm Hợp Tác Giao Lưu Ngôn Ngữ Quốc Tế (CTI / Hanban)",
+      "category": "HSK 3.0 Mới",
+      "level": "HSK 1 - HSK 9",
+      "coverBadge": "🆕 Tài Liệu Chuẩn Quốc Tế",
+      "description": "Tài liệu chính thức do Bộ Giáo Dục Trung Quốc và Hanban ban hành quy định chuẩn đầu ra HSK 3.0: Danh mục âm tiết, chữ Hán, từ vựng và ngữ pháp theo hệ thống 3 giai đoạn 9 cấp bậc mới.",
+      "highlights": [
+        "Quy định từ vựng mới: HSK 1 (500 từ), HSK 2 (772 từ), HSK 3 (973 từ)...",
+        "Chuẩn hóa khung năng lực dịch thuật và kỹ năng giao tiếp ứng dụng",
+        "Tài liệu gốc chính thức dạng PDF chất lượng cao"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Tải Đại Cương HSK 3.0 Chính Thức (PDF Gốc Hanban)",
+          "url": "https://hsk.cn-bj.ufileos.com/3.0/%E6%96%B0%E7%89%88HSK%E8%80%83%E8%AF%95%E5%A4%A7%E7%BA%B21219.pdf"
+        },
+        {
+          "name": "Google Drive Thư Mục Đề Mô Phỏng HSK 3.0 (Cấp 1 - 9)",
+          "url": "https://drive.google.com/drive/folders/1T5YuG7Upblbi9eMzz2u5ml3ykXZVl7U1?fbclid=IwY2xjawQkPexleHRuA2FlbQIxMABicmlkETFyY2pRbXNFQmE3WDdaYjdCc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHoJeTxJ9jvcxbCRmOQwdgVSHx_FPWg0ydoR-fyONFYMsLX4tsB22htK22jFR_aem_k6eh1_ZMwzEOHHtru1esDA"
+        }
+      ]
+    },
+    {
+      "id": "tb_tap_viet_chu_han",
+      "title": "Vở Luyện Viết Chữ Hán Theo Quy Tắc Bút Thuận HSK 1 - 3",
+      "chineseTitle": "汉字描红字帖（HSK1-3级同步字帖）",
+      "authorPublisher": "Biên soạn chuẩn khung HSK",
+      "category": "Luyện Chữ Đẹp",
+      "level": "HSK 1 - HSK 3",
+      "coverBadge": "✍️ Luyện Nét Đẹp",
+      "description": "Tài liệu tập viết chữ Hán có kẻ ô điền tự, in mờ thứ tự từng nét theo 7 quy tắc bút thuận kinh điển (trên trước dưới sau, trái trước phải sau, ngoài trước trong sau...).",
+      "highlights": [
+        "In rõ phiên âm Pinyin, nghĩa tiếng Việt và các nét mẫu",
+        "Kèm giải thích ý nghĩa các bộ thủ cấu thành chữ Hán",
+        "Định dạng PDF sẵn sàng in ấn khổ giấy A4"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Google Drive Tải Vở Tập Viết Chữ Hán (PDF In Sẵn)",
+          "url": "https://drive.google.com/file/d/1xQ0XypwoHNCcE84mnr-_7xPs4ur6RDgi/view"
+        }
+      ]
+    },
+    {
+      "id": "tb_phieu_lam_bai_thi_hsk",
+      "title": "Phiếu Trả Lời Trắc Nghiệm Bài Thi HSK Chuẩn Quốc Tế (Answer Sheet)",
+      "chineseTitle": "HSK考试标准答题卡（1-6级完整版）",
+      "authorPublisher": "Ủy Ban Khảo Thí Hán Ngữ Quốc Tế (CTI)",
+      "category": "Mô Phỏng Phòng Thi",
+      "level": "HSK 1 - HSK 6",
+      "coverBadge": "📝 Phòng Thi Thực Tế",
+      "description": "Mẫu phiếu trả lời trắc nghiệm (tô chì 2B) chính thức trong kỳ thi HSK trên giấy. Giúp thí sinh làm quen cách điền số báo danh, mã đề và tô đáp án chuẩn xác để không bị mất điểm oan.",
+      "highlights": [
+        "Bao gồm mẫu Answer Sheet cho cả HSK 1, 2, 3, 4, 5, 6",
+        "Hướng dẫn chi tiết cách tô mã phòng thi và mã thí sinh",
+        "File PDF độ phân giải cao chuẩn quốc tế"
+      ],
+      "downloadLinks": [
+        {
+          "name": "Google Drive Tải Trọn Bộ Phiếu Trả Lời HSK 1-6 (PDF)",
+          "url": "https://drive.google.com/drive/folders/11fmUS2af93BIfBRYKy7h5HDumwdTPWGB?usp=sharing"
+        }
+      ]
+    }
+  ],
+  "textbookComparisons": [
+    {
+      "name": "Giáo Trình Hán Ngữ 6 Quyển (Bộ Mới)",
+      "chineseName": "汉语教程（修定本）",
+      "author": "Dương Ký Châu (杨寄洲) - ĐH Ngôn Ngữ Bắc Kinh",
+      "target": "Người bắt đầu từ số 0, sinh viên chuyên ngành tiếng Trung, người muốn xây dựng nền tảng bài bản vững chắc.",
+      "pros": [
+        "Lộ trình đi rất chậm rãi, từ tốn, cực kỳ phù hợp cho người tự học hoặc mất gốc.",
+        "Hệ thống ngữ âm Pinyin và thanh điệu được giải thích kỹ lưỡng nhất trong các bộ sách.",
+        "Bài khóa dạng hội thoại sinh hoạt đời thường rất gần gũi và dễ ứng dụng.",
+        "Có nhiều tài liệu bài tập, file nghe và video giảng dạy hỗ trợ phong phú nhất tại Việt Nam."
+      ],
+      "cons": [
+        "Nội dung một số bài mang nét cổ điển, chưa cập nhật nhiều từ ngữ công nghệ hiện đại.",
+        "Số lượng bài học khá dài (76 bài qua 6 tập) đòi hỏi người học phải có sự kiên trì bền bỉ."
+      ],
+      "recommendedVerdict": "Lựa chọn số 1 cho người mới bắt đầu học từ con số 0 muốn xây dựng nền tảng phát âm và ngữ pháp gốc rễ."
+    },
+    {
+      "name": "Giáo Trình Boya (Boya Chinese)",
+      "chineseName": "博雅汉语",
+      "author": "Lý Hiểu Kỳ (李晓琪) - ĐH Bắc Kinh",
+      "target": "Người muốn học nhanh, học sâu, hướng tới tư duy ngôn ngữ học thuật và thi cử nâng cao.",
+      "pros": [
+        "Hệ thống bài khóa mang tính văn hóa và tư duy chiều sâu rất cao.",
+        "Ngữ pháp được tổng hợp logic, bài tập rèn luyện tư duy ngữ pháp chuyên sâu.",
+        "Lượng từ vựng phong phú, cập nhật nhiều chủ đề văn hóa xã hội hiện đại."
+      ],
+      "cons": [
+        "Độ khó tăng rất nhanh, ngữ pháp nâng cao xuất hiện sớm khiến người tự học dễ bị ngợp.",
+        "Phần phát âm Pinyin ban đầu đi lướt nhanh hơn so với Giáo trình Hán ngữ."
+      ],
+      "recommendedVerdict": "Rất thích hợp cho người đã có nền tảng HSK 2 trở lên muốn bứt phá nhanh lên HSK 4 - 5 hoặc học sinh - sinh viên luyện thi chuyên."
+    },
+    {
+      "name": "Giáo Trình Chuẩn HSK (HSK Standard Course)",
+      "chineseName": "HSK标准教程",
+      "author": "Khương Lệ Bình - Hanban & BLCUP",
+      "target": "Người học với mục tiêu chính là thi đỗ chứng chỉ HSK để đi du học, xin học bổng hoặc xin việc.",
+      "pros": [
+        "Bám sát 100% cấu trúc đề thi HSK thật của Hanban.",
+        "Thiết kế bài giảng khoa học: mỗi bài học tương ứng với các từ vựng và chủ điểm ngữ pháp trong đề thi.",
+        "Bài tập trong sách bài tập (Workbook) có định dạng chuẩn như một đề thi HSK thu nhỏ.",
+        "Hình ảnh minh họa màu sắc trực quan, sinh động, dễ học."
+      ],
+      "cons": [
+        "Thiên về phục vụ thi cử chứng chỉ nên phần khẩu ngữ giao tiếp tự do đời sống ít phong phú bằng Giáo trình Hán ngữ."
+      ],
+      "recommendedVerdict": "Sự lựa chọn số 1 nếu mục tiêu tối thượng của bạn là thi lấy chứng chỉ HSK 3, 4, 5, 6 trong thời gian ngắn nhất."
+    }
+  ],
+  "situations36": [
+    {
+      "id": "sit_01",
+      "num": 1,
+      "title": "Học Phát Âm Chuẩn Pinyin & Thanh Điệu",
+      "chineseTitle": "汉语拼音与声调发音指南",
+      "category": "Phát Âm Cốt Lõi",
+      "summary": "Nắm vững 21 thanh mẫu, 36 vận mẫu và 4 thanh điệu. Bí quyết phân biệt các âm dễ nhầm: z-c-s, zh-ch-sh, j-q-x, và quy tắc biến điệu thanh 3 (hai thanh 3 đi liền nhau biến thành thanh 2 + thanh 3, ví dụ: Nǐ hǎo -> Ní hǎo).",
+      "keyPoints": [
+        "Quy tắc phát âm thanh 1 (cao, bằng phẳng 55: mā), thanh 2 (lên giọng 35: má), thanh 3 (xuống rồi lên 214: mǎ), thanh 4 (dứt khoát từ cao rơi xuống 51: mà)",
+        "Quy tắc biến điệu của chữ '不' (bù): đứng trước âm thanh 4 đọc thành 'bú' (bú shì, bú yào)",
+        "Quy tắc biến điệu của chữ '一' (yī): đứng trước thanh 1,2,3 đọc thành 'yì' (yì tiān, yì qǐ); đứng trước thanh 4 đọc thành 'yí' (yí gè, yí dìng)"
+      ],
+      "dialogue": [
+        {
+          "speaker": "A",
+          "hanzi": "你好！欢迎来到中文世界。",
+          "pinyin": "Nǐ hǎo! Huānyíng lái dào zhōngwén shìjiè.",
+          "vi": "Xin chào bạn! Chào mừng bạn đến với thế giới tiếng Trung."
+        },
+        {
+          "speaker": "B",
+          "hanzi": "你好！学好发音是成功的开始。",
+          "pinyin": "Nǐ hǎo! Xué hǎo fāyīn shì chénggōng de kāishǐ.",
+          "vi": "Chào bạn! Học tốt phát âm chính là khởi đầu của thành công."
+        }
+      ]
+    },
+    {
+      "id": "sit_06",
+      "num": 6,
+      "title": "214 Bộ Thủ & Quy Tắc Viết Chữ Hán Bút Thuận",
+      "chineseTitle": "214偏旁部首与汉字笔顺规则",
+      "category": "Chiết Tự & Chữ Hán",
+      "summary": "Chữ Hán không phải là những nét vẽ hỗn loạn mà được cấu tạo từ các bộ thủ mang ý nghĩa hình tượng. Nắm vững 7 quy tắc bút thuận giúp viết chữ Hán vừa nhanh vừa đẹp chuẩn thư pháp.",
+      "keyPoints": [
+        "Quy tắc 1: Ngang trước sổ sau (十: ngang trước, sổ sau)",
+        "Quy tắc 2: Phẩy trước mác sau (八: phẩy trước, mác sau)",
+        "Quy tắc 3: Trên trước dưới sau (三: nét ngang trên rồi dưới)",
+        "Quy tắc 4: Trái trước phải sau (你: bộ nhân đứng bên trái trước)",
+        "Quy tắc 5: Ngoài trước trong sau (月, 同: khung ngoài trước)",
+        "Quy tắc 6: Vào trước đóng sau (国, 日: viết các nét trong xong mới khóa nét đáy)",
+        "Quy tắc 7: Giữa trước hai bên sau (小, 水: nét giữa trước, hai bên phẩy mác sau)"
+      ],
+      "dialogue": [
+        {
+          "speaker": "老师",
+          "hanzi": "写汉字要讲究笔顺，先横后竖，先撇后捺。",
+          "pinyin": "Xiě hànzì yào jiǎngjiu bǐshùn, xiān héng hòu shù, xiān piě hòu nà.",
+          "vi": "Viết chữ Hán phải tuân thủ bút thuận: ngang trước sổ sau, phẩy trước mác sau."
+        },
+        {
+          "speaker": "学生",
+          "hanzi": "掌握了部首，记汉字就变得轻松多了！",
+          "pinyin": "Zhǎngwò le bùshǒu, jì hànzì jiù biàn de qīngsōng duō le!",
+          "vi": "Nắm vững bộ thủ rồi, việc nhớ chữ Hán trở nên nhẹ nhàng hơn rất nhiều!"
+        }
+      ]
+    },
+    {
+      "id": "sit_08",
+      "num": 8,
+      "title": "Đi Ngân Hàng Giao Dịch & Đổi Ngoại Tệ",
+      "chineseTitle": "去银行办理业务与外币兑换",
+      "category": "Đời Sống Thực Chiến",
+      "summary": "Các mẫu câu thiết yếu khi cần mở tài khoản ngân hàng Trung Quốc, rút tiền tại cây ATM, chuyển khoản và đổi tiền Nhân Dân Tệ (RMB).",
+      "keyPoints": [
+        "人民币 (rénmínbì): Nhân dân tệ | 汇率 (huìlǜ): Tỷ giá hối đoái",
+        "换钱 (huàn qián): Đổi tiền | 开户 (kāihù): Mở tài khoản",
+        "现金 (xiànjīn): Tiền mặt | 护照 (hùzhào): Hộ chiếu"
+      ],
+      "dialogue": [
+        {
+          "speaker": "顾客",
+          "hanzi": "您好，我想把这些美元换成人民币，请问今天的汇率是多少？",
+          "pinyin": "Nín hǎo, wǒ xiǎng bǎ zhèxiē měiyuán huàn chéng rénmínbì, qǐngwèn jīntiān de huìlǜ shì duōshao?",
+          "vi": "Chào anh/chị, tôi muốn đổi số đô la Mỹ này sang Nhân dân tệ, xin hỏi tỷ giá hôm nay là bao nhiêu?"
+        },
+        {
+          "speaker": "柜员",
+          "hanzi": "今天的汇率是一美元兑换七点二元人民币，请出示您的护照并填写这张单子。",
+          "pinyin": "Jīntiān de huìlǜ shì yì měiyuán duìhuàn qī diǎn èr yuán rénmínbì, qǐng chūshì nín de hùzhào bìng tiánxiě zhè zhāng dānzi.",
+          "vi": "Tỷ giá hôm nay là 1 USD đổi 7.2 NDT, xin mời quý khách xuất trình hộ chiếu và điền vào phiếu này."
+        }
+      ]
+    },
+    {
+      "id": "sit_09",
+      "num": 9,
+      "title": "Đi Ăn Nhà Hàng & Gọi Món Chính Tông",
+      "chineseTitle": "餐厅就餐、点菜与结账",
+      "category": "Ẩm Thực & Nhà Hàng",
+      "summary": "Tự tin bước vào bất kỳ quán ăn Trung Quốc nào: hỏi bàn trống, xem thực đơn gọi món, yêu cầu khẩu vị (không cay, ít ngọt) và gọi thanh toán hóa đơn.",
+      "keyPoints": [
+        "服务员 (fúwùyuán): Nhân viên phục vụ | 菜单 (càidān): Thực đơn",
+        "招牌菜 (zhāopáicài): Món đặc sản quán | 买单 (mǎidān): Tính tiền thanh toán",
+        "不要辣 (bú yào là): Không ăn cay | 微辣 (wēi là): Cay nhẹ vừa phải"
+      ],
+      "dialogue": [
+        {
+          "speaker": "顾客",
+          "hanzi": "服务员，请给我们一份菜单，你们店有什么招牌菜推荐吗？",
+          "pinyin": "Fúwùyuán, qǐng gěi wǒmen yí fèn càidān, nǐmen diàn yǒu shénme zhāopáicài tuījiàn ma?",
+          "vi": "Phục vụ ơi, cho chúng tôi xin quyển thực đơn, quán mình có món đặc sản nào giới thiệu không?"
+        },
+        {
+          "speaker": "服务员",
+          "hanzi": "我们的北京烤鸭和水煮牛肉非常受欢迎，您二位能吃辣吗？",
+          "pinyin": "Wǒmen de Běijīng kǎoyā hé shuǐzhǔ niúròu fēicháng shòu huānyíng, nín èr wèi néng chī là ma?",
+          "vi": "Món vịt quay Bắc Kinh và thịt bò chần cay của quán chúng em rất được ưa chuộng, hai bác có ăn được cay không ạ?"
+        }
+      ]
+    },
+    {
+      "id": "sit_15",
+      "num": 15,
+      "title": "Mua Bán Hoa Quả & Kỹ Năng Mặc Cả",
+      "chineseTitle": "水果摊买水果与讨价还价",
+      "category": "Mua Sắm Thường Nhật",
+      "summary": "Hỏi giá tiền theo cân Trung Quốc (1 cân = 500g), khen chê ngọt chua, mặc cả giá và thanh toán quét mã QR WeChat/Alipay.",
+      "keyPoints": [
+        "一斤 (yì jīn): Một cân Trung Quốc = nửa ký (500 gram)",
+        "多少钱一斤 (duōshao qián yì jīn): Bao nhiêu tiền một cân?",
+        "太贵了，便宜一点吧 (tài guì le, piányi yìdiǎn ba): Đắt quá, bớt chút đi!",
+        "扫码支付 (sǎomǎ zhīfù): Quét mã thanh toán"
+      ],
+      "dialogue": [
+        {
+          "speaker": "买家",
+          "hanzi": "老板，这苹果甜不甜？多少钱一斤？",
+          "pinyin": "Lǎobǎn, zhè píngguǒ tián bu tián? Duōshao qián yì jīn?",
+          "vi": "Ông chủ ơi, táo này có ngọt không? Bao nhiêu tiền một cân vậy?"
+        },
+        {
+          "speaker": "老板",
+          "hanzi": "包甜！八块钱一斤，买五斤算你三十五块！",
+          "pinyin": "Bāo tián! Bā kuài qián yì jīn, mǎi wǔ jīn suàn nǐ sānshíwǔ kuài!",
+          "vi": "Bao ngọt luôn! Tám đồng một cân, mua năm cân tính bác ba lăm đồng thôi!"
+        }
+      ]
+    },
+    {
+      "id": "sit_18",
+      "num": 18,
+      "title": "Đi Taxi, Chỉ Đường & Giao Thông",
+      "chineseTitle": "乘坐出租车与路线指引",
+      "category": "Di Chuyển & Đi Lại",
+      "summary": "Nói địa chỉ đến tài xế, yêu cầu bật đồng hồ tính cước, chỉ hướng rẽ trái rẽ phải, yêu cầu dừng xe tại điểm an toàn.",
+      "keyPoints": [
+        "师傅 (shīfu): Bác tài xế | 打表 (dǎbiǎo): Bật đồng hồ tính cước",
+        "左拐 (zuǒ guǎi): Rẽ trái | 右拐 (yòu guǎi): Rẽ phải | 直走 (zhí zǒu): Đi thẳng",
+        "就在路边停一下 (jiù zài lùbiān tíng yíxià): Cho tôi xuống ngay bên lề đường này"
+      ],
+      "dialogue": [
+        {
+          "speaker": "乘客",
+          "hanzi": "师傅，我去北京大学东门，请打表走，谢谢。",
+          "pinyin": "Shīfu, wǒ qù Běijīng Dàxué dōngmén, qǐng dǎbiǎo zǒu, xièxie.",
+          "vi": "Bác tài ơi, tôi đến cổng đông Đại học Bắc Kinh, bác bấm đồng hồ giúp tôi nhé, cảm ơn bác."
+        },
+        {
+          "speaker": "司机",
+          "hanzi": "好嘞！前面路口有点堵，我们走环城高架桥可以吗？",
+          "pinyin": "Hǎo lei! Qiánmiàn lùkǒu yǒudiǎn dǔ, wǒmen zǒu huánchéng gāojiàqiáo kěyǐ ma?",
+          "vi": "Được rồi! Ngã tư phía trước hơi tắc, chúng ta đi đường cầu vượt vành đai nhé bác?"
+        }
+      ]
+    },
+    {
+      "id": "sit_21",
+      "num": 21,
+      "title": "Đặt Phòng Khách Sạn & Nhận Phòng (Check-in)",
+      "chineseTitle": "预订酒店与办理入住手续",
+      "category": "Du Lịch & Lưu Trú",
+      "summary": "Đặt phòng trực tuyến hoặc tại quầy lễ tân: phòng đơn, phòng đôi, đặt cọc, hỏi mật khẩu Wifi và giờ phục vụ bữa sáng buffet.",
+      "keyPoints": [
+        "预订 (yùdìng): Đặt trước | 办理入住 (bànlǐ rùzhù): Làm thủ tục check-in",
+        "单人间 (dānrénjiān): Phòng đơn | 标准间 (biāozhǔnjiān): Phòng đôi tiêu chuẩn",
+        "押金 (yājīn): Tiền đặt cọc | 包含早餐 (bāohán zǎocān): Đã bao gồm bữa sáng"
+      ],
+      "dialogue": [
+        {
+          "speaker": "客人",
+          "hanzi": "您好，我在网上预订了一间大床房，名字叫张伟。",
+          "pinyin": "Nín hǎo, wǒ zài wǎngshàng yùdìng le yì jiān dàchuángfáng, míngzi jiào Zhāng Wěi.",
+          "vi": "Chào chị, tôi đã đặt trước một phòng giường đôi lớn trên mạng, tên tôi là Trương Vĩ."
+        },
+        {
+          "speaker": "前台",
+          "hanzi": "查到了，请出示您的身份证件，并交三百元押金，退房时会全额退还。",
+          "pinyin": "Chádào le, qǐng chūshì nín de shēnfèn zhèngjiàn, bìng jiāo sān bǎi yuán yājīn, tuìfáng shí huì quán'é tuìhuán.",
+          "vi": "Tìm thấy thông tin rồi ạ, xin mời anh xuất trình giấy tờ tùy thân và đặt cọc 300 tệ, khi trả phòng sẽ được hoàn lại đầy đủ."
+        }
+      ]
+    },
+    {
+      "id": "sit_34",
+      "num": 34,
+      "title": "Phỏng Vấn Xin Việc & Giao Tiếp Công Sở",
+      "chineseTitle": "求职面试、自我介绍与职场沟通",
+      "category": "Công Sở & Sự Nghiệp",
+      "summary": "Trình bày bản thân tự tin trước nhà tuyển dụng: giới thiệu học vấn, kinh nghiệm làm việc, điểm mạnh cá nhân và nguyện vọng mức lương thưởng.",
+      "keyPoints": [
+        "简历 (jiǎnlì): Sơ yếu lý lịch, CV | 面试 (miànshì): Phỏng vấn",
+        "工作经验 (gōngzuò jīngyàn): Kinh nghiệm làm việc | 优势 (yōushì): Điểm mạnh, thế mạnh",
+        "团队协作 (tuánduì xiézuò): Kỹ năng làm việc nhóm | 薪资期望 (xīnzī qīwàng): Kỳ vọng mức lương"
+      ],
+      "dialogue": [
+        {
+          "speaker": "面试官",
+          "hanzi": "请您先用中文做一个简短的自我介绍，说说您的最大优势是什么？",
+          "pinyin": "Qǐng nín xiān yòng zhōngwén zuò yí gè jiǎnduǎn de zìwǒ jièshào, shuōshuo nín de zuìdà yōushì shì shénme?",
+          "vi": "Mời bạn dùng tiếng Trung giới thiệu ngắn gọn về bản thân, và cho biết thế mạnh lớn nhất của bạn là gì?"
+        },
+        {
+          "speaker": "求职者",
+          "hanzi": "各位面试官好，我毕业于河内大学中文系，有三年跨国贸易客服经验，擅长跨文化沟通与高效解决问题。",
+          "pinyin": "Gèwèi miànshìguān hǎo, wǒ bìyè yú Hénèi Dàxué zhōngwén xì, yǒu sān nián kuàguó màoyì kèfù jīngyàn, shàncháng kuà wénhuà gōutōng yǔ gāoxiào jiějué wèntí.",
+          "vi": "Kính chào ban giám khảo, tôi tốt nghiệp khoa tiếng Trung Đại học Hà Nội, có 3 năm kinh nghiệm chăm sóc khách hàng thương mại quốc tế, sở trường giao tiếp liên văn hóa và xử lý vấn đề hiệu quả."
+        }
+      ]
+    }
+  ],
+  "grammar100Patterns": [
+    {
+      "num": 1,
+      "pattern": "Chủ ngữ + 把 + Tân ngữ + Động từ + Thành phần khác",
+      "name": "Câu chữ 把 (把字句)",
+      "level": "HSK 3 - 4",
+      "formula": "S + 把 + O + V + 在/到/给/成/ bổ ngữ / 了",
+      "explanation": "Biểu thị sự tác động của chủ ngữ làm thay đổi trạng thái, vị trí hoặc kết quả của tân ngữ. Lưu ý: Tân ngữ phải là đối tượng cụ thể xác định, động từ phải mang thành phần bổ nghĩa phía sau.",
+      "example": {
+        "hanzi": "请你把作业本交给我。",
+        "pinyin": "Qǐng nǐ bǎ zuòyèběn jiāo gěi wǒ.",
+        "vi": "Xin bạn hãy đưa quyển vở bài tập cho tôi."
+      }
+    },
+    {
+      "num": 2,
+      "pattern": "Chủ ngữ + 被 (叫 / 让) + Tân ngữ (người gây ra) + Động từ + Thành phần khác",
+      "name": "Câu chữ 被 (被字句 - Câu bị động)",
+      "level": "HSK 3 - 4",
+      "formula": "S + 被 (让/叫) + O + V + 了/ bổ ngữ",
+      "explanation": "Biểu thị chủ ngữ chịu sự tác động không mong muốn hoặc bị động từ phía đối tượng khác. Trong khẩu ngữ thường dùng 让 hoặc 叫 thay cho 被.",
+      "example": {
+        "hanzi": "我的自行车被弟弟借走了。",
+        "pinyin": "Wǒ de zìxíngchē bèi dìdi jiè zǒu le.",
+        "vi": "Chiếc xe đạp của tôi đã bị em trai mượn đi mất rồi."
+      }
+    },
+    {
+      "num": 3,
+      "pattern": "A + 比 + B + Tính từ + (Số lượng từ / 多了 / 得多)",
+      "name": "Câu so sánh hơn chữ 比 (比字句)",
+      "level": "HSK 2 - 3",
+      "formula": "A + 比 + B + Adj + 一点儿 / 得多 / 具体差额",
+      "explanation": "Biểu thị A vượt trội hơn B về một tính chất nào đó. Tuyệt đối KHÔNG dùng các phó từ chỉ mức độ như 很, 非常, 极 trước tính từ trong câu chữ 比.",
+      "example": {
+        "hanzi": "今天的天气比昨天冷得多。",
+        "pinyin": "Jīntiān de tiānqì bǐ zuótiān lěng de duō.",
+        "vi": "Thời tiết hôm nay lạnh hơn hôm qua rất nhiều."
+      }
+    },
+    {
+      "num": 4,
+      "pattern": "Động từ + 得 + Bổ ngữ trạng thái / Động từ + 不 + Bổ ngữ khả năng",
+      "name": "Bổ ngữ khả năng (可能补语: V + 得 / 不 + C)",
+      "level": "HSK 3 - 4",
+      "formula": "V + 得/不 + 完/懂/见/到/下/动/了",
+      "explanation": "Biểu thị trong điều kiện khách quan hoặc chủ quan có thể thực hiện được hay không thực hiện được kết quả nào đó. Ví dụ: 吃得完 (ăn hết được) vs 吃不完 (ăn không hết).",
+      "example": {
+        "hanzi": "这篇文章太长了，我一个小时看不完。",
+        "pinyin": "Zhè piān wénzhāng tài cháng le, wǒ yí gè xiǎoshí kàn bu wán.",
+        "vi": "Bài viết này dài quá, tôi không thể đọc hết trong một giờ đồng hồ."
+      }
+    },
+    {
+      "num": 5,
+      "pattern": "不仅...而且... / 不但...而且...",
+      "name": "Cặp liên từ tăng tiến (Không những... mà còn...)",
+      "level": "HSK 3 - 5",
+      "formula": "Chủ ngữ + 不但... 而且...",
+      "explanation": "Biểu thị vế sau có mức độ biểu cảm hoặc tính chất nâng cao hơn vế trước. Nếu hai vế cùng chung chủ ngữ, đặt chủ ngữ trước 不但; nếu hai vế khác chủ ngữ, đặt 不但 trước chủ ngữ 1.",
+      "example": {
+        "hanzi": "他不仅汉语说得非常流利，而且还会写一手漂亮的书法。",
+        "pinyin": "Tā bùjǐn hànyǔ shuō de fēicháng liúlì, érqiě hái huì xiě yì shǒu piàoliang de shūfǎ.",
+        "vi": "Anh ấy không những nói tiếng Hán rất mực lưu loát, mà còn viết được một nét thư pháp rất đẹp."
+      }
+    },
+    {
+      "num": 6,
+      "pattern": "只有...才... vs 只要...就...",
+      "name": "Phân biệt điều kiện duy nhất vs Điều kiện đủ",
+      "level": "HSK 3 - 4",
+      "formula": "只有 + Điều kiện duy nhất + 才 + Kết quả | 只要 + Điều kiện cần thiết + 就 + Kết quả",
+      "explanation": "'只有...才...' biểu thị điều kiện là duy nhất bắt buộc mới đạt kết quả (Chỉ có... mới...); '只要...就...' biểu thị chỉ cần đáp ứng điều kiện là lập tức có kết quả (Chỉ cần... là...).",
+      "example": {
+        "hanzi": "只有坚持每天练习，你的听力才能真正提高。",
+        "pinyin": "Zhǐyǒu jiānchí měitiān liànxí, nǐ de tīnglì cái néng zhēnzhèng tígāo.",
+        "vi": "Chỉ có kiên trì luyện tập mỗi ngày, năng lực nghe của bạn mới có thể thực sự nâng cao."
+      }
+    },
+    {
+      "num": 7,
+      "pattern": "越...越... / 越来越...",
+      "name": "Cấu trúc tăng tiến theo thời gian & hành động (Càng... càng...)",
+      "level": "HSK 2 - 3",
+      "formula": "越来越 + Adj | 越 + Động từ 1 + 越 + Động từ/Tính từ 2",
+      "explanation": "'越来越...' biểu thị mức độ phát triển theo thời gian; '越 A 越 B' biểu thị B biến đổi tương ứng thuận theo mức độ tăng của A.",
+      "example": {
+        "hanzi": "你学得越深入，就会发现中国文化越有魅力。",
+        "pinyin": "Nǐ xué de yuè shēnrù, jiù huì fāxiàn Zhōngguó wénhuà yuè yǒu mèilì.",
+        "vi": "Bạn học càng chuyên sâu, sẽ càng phát hiện văn hóa Trung Hoa hấp dẫn biết bao."
+      }
+    },
+    {
+      "num": 8,
+      "pattern": "Phân biệt phó từ: 刚 (gāng) vs 刚才 (gāngcái)",
+      "name": "Phó từ 刚 vs Danh từ thời gian 刚才 (Vừa mới)",
+      "level": "HSK 3 - 4",
+      "formula": "S + 刚 + V (刚 là phó từ, đứng trước động từ) | 刚才 + S / S + 刚才 (刚才 là danh từ chỉ thời gian)",
+      "explanation": "'刚' biểu thị hành động xảy ra cách đây không lâu theo cảm giác chủ quan của người nói, có thể đi kèm khoảng thời gian (刚来两天); '刚才' là danh từ chỉ khoảng thời gian ngắn vài phút trước lúc nói, có thể đứng đầu câu hoặc làm định ngữ (刚才的事).",
+      "example": {
+        "hanzi": "我刚才去图书馆借书了，刚回到宿舍。",
+        "pinyin": "Wǒ gāngcái qù túshūguǎn jiè shū le, gāng huí dào sùshè.",
+        "vi": "Hồi nãy tôi đến thư viện mượn sách, vừa mới về tới ký túc xá."
+      }
+    }
+  ],
+  "businessTranslation": {
+    "overview": "Tiếng Trung thương mại và biên phiên dịch đòi hỏi tính chính xác, văn phong trang trọng (thư diện ngữ - 书面语) và am hiểu quy ước quốc tế.",
+    "incoterms": [
+      {
+        "term": "FOB (Free on Board)",
+        "chinese": "离岸价 (Lí'àn jià)",
+        "vi": "Giá giao lên tàu tại cảng bốc hàng"
+      },
+      {
+        "term": "CIF (Cost, Insurance and Freight)",
+        "chinese": "到岸价 (Dào'àn jià)",
+        "vi": "Giá bao gồm tiền hàng, bảo hiểm và cước phí"
+      },
+      {
+        "term": "L/C (Letter of Credit)",
+        "chinese": "信用证 (Xìnyòngzhèng)",
+        "vi": "Thư tín dụng ngân hàng"
+      },
+      {
+        "term": "B/L (Bill of Lading)",
+        "chinese": "提单 (Tídān)",
+        "vi": "Vận đơn đường biển"
+      },
+      {
+        "term": "Proforma Invoice",
+        "chinese": "形式发票 (Xíngshì fāpiào)",
+        "vi": "Hóa đơn chiếu lệ"
+      },
+      {
+        "term": "Customs Clearance",
+        "chinese": "清关 / 通关 (Qīngguān / Tōngguān)",
+        "vi": "Thủ tục thông quan hải quan"
+      }
+    ],
+    "translationRules": [
+      {
+        "title": "Quy tắc Đảo Ngữ Định Ngữ - Trung Tâm Ngữ (Cấu trúc 的)",
+        "rule": "Trong tiếng Trung, mọi thành phần bổ nghĩa (định ngữ) BẮT BUỘC phải đứng TRƯỚC danh từ chính (trung tâm ngữ). Khi dịch sang tiếng Việt phải dịch ngược từ sau chữ '的' lên trước.",
+        "exampleCn": "中国著名大学北京大学编写的这套教材",
+        "exampleVi": "Bộ giáo trình này do trường Đại học Bắc Kinh - trường đại học nổi tiếng của Trung Quốc biên soạn."
+      },
+      {
+        "title": "Quy tắc Dịch Cụm Từ Thời Gian & Nơi Chốn",
+        "rule": "Tiếng Trung đặt Trạng ngữ thời gian và nơi chốn ở TRƯỚC Động từ (Tại đâu làm gì / Khi nào làm gì: 在 + Địa điểm + 做什么). Tiếng Việt thường đặt nơi chốn ở cuối câu.",
+        "exampleCn": "我们在会议室商讨关于产品价格的问题。",
+        "exampleVi": "Chúng tôi thảo luận về vấn đề giá sản phẩm tại phòng họp."
+      }
+    ]
+  }
+}

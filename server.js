@@ -14,6 +14,19 @@ const PORT = process.env.PORT || 3005;
 const PUBLIC_DIR = __dirname;
 const audioCache = new Map();
 
+// Preload Dictionary for AI Assistant
+let dictMap = new Map();
+try {
+  const dictData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'dictionary.json'), 'utf8'));
+  dictData.forEach(d => {
+    if (d.title && d.pinyin) {
+      dictMap.set(d.title, { word: d.title, pinyin: d.pinyin, vi: d.meaning || '' });
+    }
+  });
+} catch (e) {
+  console.warn('Could not preload dictionary in server:', e.message);
+}
+
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -194,6 +207,69 @@ const server = http.createServer(async (req, res) => {
 
         tgReq.write(postData);
         tgReq.end();
+      } catch (err) {
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ ok: false, error: err.message }));
+      }
+    });
+    return;
+  }
+
+  // API: AI Chat & Translation Assistant
+  if (req.url === '/api/ai-chat' && req.method === 'POST') {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', async () => {
+      try {
+        const { message, mode } = JSON.parse(body || '{}');
+        const text = (message || '').trim();
+        if (!text) {
+          res.writeHead(400, { 'Content-Type': 'application/json' });
+          res.end(JSON.stringify({ ok: false, error: 'Thiếu nội dung tin nhắn' }));
+          return;
+        }
+
+        const isChinese = /[\u4e00-\u9fa5]/.test(text);
+        const targetLang = isChinese ? 'vi' : 'zh-CN';
+        const gtUrl = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=auto&tl=${targetLang}&dt=t&dt=rm&q=${encodeURIComponent(text)}`;
+
+        let gtData = null;
+        try {
+          const resp = await fetch(gtUrl);
+          gtData = await resp.json();
+        } catch (fetchErr) {
+          console.warn('Google Translate API fetch warning:', fetchErr.message);
+        }
+
+        let translated = '';
+        let pinyin = '';
+
+        if (gtData && Array.isArray(gtData[0])) {
+          translated = gtData[0].map(item => item && item[0] ? item[0] : '').join('').trim();
+          if (gtData[0][1] && gtData[0][1][2]) {
+            pinyin = gtData[0][1][2];
+          }
+        }
+
+        // Contextual breakdown
+        const chineseStr = isChinese ? text : translated;
+        const vocabList = [];
+        dictMap.forEach((val, word) => {
+          if (word.length >= 2 && chineseStr.includes(word) && vocabList.length < 6) {
+            vocabList.push(val);
+          }
+        });
+
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({
+          ok: true,
+          mode: mode || 'translate',
+          sourceText: text,
+          translated: translated || 'Đã ghi nhận câu dịch.',
+          pinyin: pinyin || '',
+          isChineseTarget: !isChinese,
+          vocab: vocabList
+        }));
       } catch (err) {
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ ok: false, error: err.message }));
