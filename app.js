@@ -5786,7 +5786,19 @@ function renderLessonDialogues(dialogues) {
     const avatarBadgeColor = isFemale ? 'from-rose-500 to-amber-600' : 'from-blue-600 to-indigo-800';
     const cardBorderColor = isFemale ? 'border-rose-200/80 bg-rose-50/15' : 'border-blue-200/80 bg-blue-50/15';
 
+    const sectionHeader = d.sectionTitle ? `
+      <div class="pt-3 pb-1 flex items-center gap-3">
+        <span class="h-px bg-amber-300/80 flex-1"></span>
+        <span class="text-xs font-bold text-[#8B1E1E] bg-gradient-to-r from-amber-100 to-amber-50 px-3.5 py-1 rounded-full border border-amber-300 shadow-2xs flex items-center gap-1.5">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>${d.sectionTitle}</span>
+        </span>
+        <span class="h-px bg-amber-300/80 flex-1"></span>
+      </div>
+    ` : '';
+
     return `
+      ${sectionHeader}
       <div id="dialogueBubble-${idx}" class="dialogue-bubble p-4 md:p-5 rounded-2xl bg-white border ${cardBorderColor} shadow-2xs hover:border-amber-300 transition-all flex flex-col md:flex-row md:items-start justify-between gap-3 md:gap-4">
         <div class="flex items-start gap-3">
           <div class="w-10 h-10 rounded-2xl bg-gradient-to-tr ${avatarBadgeColor} text-white flex flex-col items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
