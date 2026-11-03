@@ -821,6 +821,7 @@ async function initApp() {
     ensureTabRendered('etymology');
     initFloatingAiAssistant();
     initVisitorTracker();
+    initFloatingDock();
 
     // 2. Load all secondary data asynchronously in background
     Promise.all([
@@ -5894,8 +5895,12 @@ function toggleFloatingAiChat() {
   isFloatingAiOpen = !isFloatingAiOpen;
   if (isFloatingAiOpen) {
     windowEl.classList.remove('hidden');
-    if (tooltip) tooltip.classList.add('hidden');
     if (badge) badge.classList.add('hidden');
+    // Mutual exclusion: close support contact window if open
+    const supportWin = document.getElementById('supportContactWindow');
+    if (supportWin && !supportWin.classList.contains('hidden')) {
+      supportWin.classList.add('hidden');
+    }
     
     // Focus input and scroll messages
     setTimeout(() => {
@@ -6313,15 +6318,58 @@ function showToast(message, type = 'success') {
   }, 3200);
 }
 
+
+// ==================== UNIFIED FLOATING DOCK LOGIC ====================
+function initFloatingDock() {
+  const isHidden = localStorage.getItem('chinese_daily_dock_hidden') === 'true';
+  applyFloatingDockState(isHidden);
+}
+
+function applyFloatingDockState(hidden) {
+  const dock = document.getElementById('floatingRightDock');
+  const collapsedBtn = document.getElementById('floatingDockCollapsedBtn');
+  if (!dock || !collapsedBtn) return;
+
+  if (hidden) {
+    dock.classList.add('hidden');
+    dock.classList.remove('flex');
+    collapsedBtn.classList.remove('hidden');
+    collapsedBtn.classList.add('inline-flex');
+  } else {
+    dock.classList.remove('hidden');
+    dock.classList.add('flex');
+    collapsedBtn.classList.add('hidden');
+    collapsedBtn.classList.remove('inline-flex');
+  }
+}
+
+function toggleFloatingDockVisibility(hide) {
+  localStorage.setItem('chinese_daily_dock_hidden', hide ? 'true' : 'false');
+  applyFloatingDockState(hide);
+  if (hide) {
+    const supportWin = document.getElementById('supportContactWindow');
+    const aiWin = document.getElementById('floatingAiChatWindow');
+    if (supportWin) supportWin.classList.add('hidden');
+    if (aiWin) {
+      aiWin.classList.add('hidden');
+      isFloatingAiOpen = false;
+    }
+  }
+}
+
 function toggleSupportContactModal() {
   const win = document.getElementById('supportContactWindow');
-  const tooltip = document.getElementById('floatingContactTooltip');
   if (!win) return;
 
   const isHidden = win.classList.contains('hidden');
   if (isHidden) {
     win.classList.remove('hidden');
-    if (tooltip) tooltip.classList.add('hidden');
+    // Mutual exclusion: close AI chat window if open
+    const aiWin = document.getElementById('floatingAiChatWindow');
+    if (aiWin && !aiWin.classList.contains('hidden')) {
+      aiWin.classList.add('hidden');
+      isFloatingAiOpen = false;
+    }
     refreshIcons(win);
   } else {
     win.classList.add('hidden');
@@ -9387,6 +9435,8 @@ window.closeWritingModal = closeWritingModal;
 window.selectWritingModalChar = selectWritingModalChar;
 window.showToast = showToast;
 window.toggleSupportContactModal = toggleSupportContactModal;
+window.toggleFloatingDockVisibility = toggleFloatingDockVisibility;
+window.initFloatingDock = initFloatingDock;
 window.closeSupportContactModal = closeSupportContactModal;
 window.dismissFloatingContactTooltip = dismissFloatingContactTooltip;
 window.copySupportInfo = copySupportInfo;

@@ -11,23 +11,24 @@ try {
   if (urlFromFile.startsWith('http')) activeUrl = urlFromFile;
 } catch (e) {}
 
-const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - ĐÃ NÂNG CẤP THANH TÌM KIẾM & BỘ ĐẾM TRUY CẬP] 🏮
+const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - TỐI ƯU CỤM TRỢ LÝ & HỖ TRỢ GÓC PHẢI] 🏮
 
-Chào bạn! Hệ thống vừa hoàn tất 2 nâng cấp lớn:
+Chào bạn! Hệ thống vừa được tối ưu hóa theo yêu cầu người dùng:
 
-🔍 1. TỐI ƯU TOÀN DIỆN CÔNG CỤ TÌM KIẾM (Tra cứu Hán tự, Pinyin, Hán Việt, Điển tích):
-- Phân biệt thông minh giữa tiếng Việt có dấu ("tôi", "bạn", "yêu", "học", "nhà", "ăn", "uống"...) và Pinyin/Hán Việt không dấu ("ban", "yeu", "toi").
-- So khớp định nghĩa chính xác (exact meaning term match) với trọng số ưu tiên cao nhất, đưa ngay từ chuẩn lên Top 1 (gõ "tôi" ra 我, "bạn" ra 你/朋友, "yêu" ra 爱, "học" ra 学).
-- Hỗ trợ tra cứu đa phân hệ: Từ điển HSK 1-6, Chiết tự Hán tự, 214 Bộ thủ, Thành ngữ điển cố, Triều đại lịch sử, và toàn bộ 76 bài Giáo trình Hán ngữ (gõ "bài 1" mở ngay bài 1).
-- Tích hợp nút nghe phát âm Bắc Kinh chuẩn ngay trong ô gợi ý tìm kiếm.
+✨ CÁC CẢI TIẾN NỔI BẬT:
+1. 🎯 Thu nhỏ kích thước:
+   - Hai biểu tượng (Hỗ trợ 24/7 & Trợ lý Dịch AI 3D) được tinh chỉnh gọn gàng (42px) thanh thoát, không che khuất nội dung học tập.
+2. 📍 Quy tụ về góc phải (Right Dock):
+   - Đưa biểu tượng Hỗ trợ từ góc trái màn hình về góc phải cùng Trợ lý AI, tạo thành cụm floating dock gọn gàng, liền mạch.
+3. 👁️ Cho phép Ẩn/Hiện linh hoạt:
+   - Thêm nút [Ẩn ✕] ngay trên đầu dock để người dùng có thể ẩn đi bất cứ lúc nào nếu thấy vướng víu.
+   - Khi ẩn, cụm trợ lý thu gọn thành nút nhỏ tinh tế [🟢 Trợ lý] ở góc phải dưới; bấm vào sẽ mở lại ngay.
+   - Tự động ghi nhớ trạng thái (Ẩn/Hiện) qua localStorage cho những lần truy cập sau.
+4. 🔄 Đóng/Mở tương hỗ (Mutual Exclusion):
+   - Mở cửa sổ Hỗ trợ sẽ tự động thu gọn Trợ lý AI và ngược lại, đảm bảo giao diện luôn thoáng đãng.
 
-👥 2. CHỨC NĂNG HIỂN THỊ NGƯỜI TRUY CẬP TRỰC TUYẾN:
-- Badge đếm người học trực tuyến với đèn xanh nhấp nháy ngay trên Header.
-- Thanh thống kê truy cập sang trọng ở chân trang (Footer): Trực tuyến, Hôm nay, Tích lũy.
-- Bảng chi tiết thống kê (Popup Modal): Biểu đồ phân bổ địa lý (Hà Nội, TP.HCM, Đà Nẵng, Bắc Kinh, Đài Loan) và dòng tin hoạt động học tập thời gian thực.
-
-⚡ Link trực tuyến mới nhất: ${activeUrl}
-📦 Git Repository: https://github.com/huyentrang2003ltv-sys/chinese-daily`;
+⚡ Trải nghiệm ngay tại: ${activeUrl}
+📦 GitHub: https://github.com/huyentrang2003ltv-sys/chinese-daily`;
 
 const payload = JSON.stringify({
   chat_id: chatId,
