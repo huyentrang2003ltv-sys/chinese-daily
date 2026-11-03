@@ -864,18 +864,29 @@ function renderEtymologyDetail(index) {
 function filterCultureCategory(category) {
   activeCultureCategory = category;
   
-  const catButtons = ['all', 'dynasties', 'festivals', 'classics', 'arts'];
+  const catButtons = ['all', 'dynasties', 'culture', 'customs', 'wars'];
   catButtons.forEach(c => {
     const btn = document.getElementById(`btn-culture-${c}`);
     if (!btn) return;
     if (c === category) {
-      btn.className = 'px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-rose-600 to-amber-500 text-white shadow-xs transition-all whitespace-nowrap scale-105';
+      btn.className = 'px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap scale-105 cursor-pointer';
     } else {
-      btn.className = 'px-4 py-2 text-xs font-bold rounded-xl bg-white hover:bg-rose-50 text-slate-700 border border-slate-200 transition-all whitespace-nowrap';
+      btn.className = 'px-4 py-2 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 transition-all whitespace-nowrap cursor-pointer';
     }
   });
 
   renderCultureCards();
+}
+
+function scrollToEra(order) {
+  const el = document.getElementById(`era-card-${order}`);
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    el.classList.add('ring-4', 'ring-[#8B1E1E]', 'shadow-xl');
+    setTimeout(() => {
+      el.classList.remove('ring-4', 'ring-[#8B1E1E]', 'shadow-xl');
+    }, 2500);
+  }
 }
 
 function setupCultureSearch() {
@@ -891,16 +902,30 @@ function renderCultureCards() {
   const container = document.getElementById('cultureCardsContainer');
   if (!container) return;
 
-  const filtered = (cultureData || []).filter(item => {
-    const matchCategory = (activeCultureCategory === 'all') || (item.category === activeCultureCategory);
-    if (!matchCategory) return false;
+  const sortedData = [...(cultureData || [])].sort((a, b) => (a.order || 0) - (b.order || 0));
+
+  const filtered = sortedData.filter(item => {
+    // If specific dimension filter is active, check if item has relevant content
+    if (activeCultureCategory === 'wars' && (!item.warsAndBattles || item.warsAndBattles.length === 0)) return false;
+    if (activeCultureCategory === 'culture' && (!item.cultureEmergence || item.cultureEmergence.length === 0)) return false;
+    if (activeCultureCategory === 'customs' && (!item.customsEmergence || item.customsEmergence.length === 0)) return false;
 
     if (!cultureSearchQuery) return true;
     const q = cultureSearchQuery;
     const matchTitle = item.title && item.title.toLowerCase().includes(q);
+    const matchEra = item.eraName && item.eraName.toLowerCase().includes(q);
+    const matchPeriod = item.period && item.period.toLowerCase().includes(q);
     const matchPinyin = item.pinyin && item.pinyin.toLowerCase().includes(q);
     const matchSummary = item.summary && item.summary.toLowerCase().includes(q);
-    const matchHighlights = item.highlights && item.highlights.some(h => h.toLowerCase().includes(q));
+    const matchCulture = item.cultureEmergence && item.cultureEmergence.some(c => c.toLowerCase().includes(q));
+    const matchCustoms = item.customsEmergence && item.customsEmergence.some(c => c.toLowerCase().includes(q));
+    const matchWars = item.warsAndBattles && item.warsAndBattles.some(w => 
+      w.name.toLowerCase().includes(q) || 
+      w.hanzi.includes(q) || 
+      (w.combatants && w.combatants.toLowerCase().includes(q)) || 
+      (w.description && w.description.toLowerCase().includes(q)) ||
+      (w.significance && w.significance.toLowerCase().includes(q))
+    );
     const matchKeywords = item.keywords && item.keywords.some(k => 
       k.hanzi.includes(q) || 
       (k.meaning && k.meaning.toLowerCase().includes(q)) || 
@@ -910,91 +935,97 @@ function renderCultureCards() {
       item.quote.hanzi.includes(q) || 
       (item.quote.meaning && item.quote.meaning.toLowerCase().includes(q))
     );
-    return matchTitle || matchPinyin || matchSummary || matchHighlights || matchKeywords || matchQuote;
+    return matchTitle || matchEra || matchPeriod || matchPinyin || matchSummary || matchCulture || matchCustoms || matchWars || matchKeywords || matchQuote;
   });
 
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="col-span-full text-center py-12 glass-card rounded-2xl border border-rose-100 bg-white">
+      <div class="col-span-full text-center py-12 glass-card rounded-3xl border border-amber-200 bg-white shadow-sm">
         <div class="text-4xl mb-3">🔍</div>
-        <h3 class="text-lg font-bold text-slate-800">Không tìm thấy chủ đề văn hóa phù hợp</h3>
-        <p class="text-sm text-slate-500 mt-1">Thử tìm kiếm với từ khóa khác hoặc chọn danh mục "🌟 Tất Cả".</p>
+        <h3 class="text-lg font-bold text-stone-800">Không tìm thấy giai đoạn hoặc từ khóa phù hợp</h3>
+        <p class="text-sm text-stone-500 mt-1">Thử tìm kiếm với tên triều đại, danh nhân (Tần Thủy Hoàng, Lý Bạch, Nhạc Phi...), phong tục (Đoan Ngọ, Trà Đạo) hoặc tên trận đánh (Xích Bích, Trường Bình...).</p>
       </div>
     `;
     return;
   }
 
   container.innerHTML = filtered.map(item => {
-    const catColorClass = {
-      rose: {
-        border: 'border-rose-200 hover:border-rose-400',
-        bgGradient: 'from-rose-50/50 via-white to-amber-50/30',
-        badge: 'badge-vibrant-rose',
-        dot: 'bg-rose-500'
-      },
-      amber: {
-        border: 'border-amber-200 hover:border-amber-400',
-        bgGradient: 'from-amber-50/50 via-white to-orange-50/30',
-        badge: 'badge-vibrant-amber',
-        dot: 'bg-amber-500'
-      },
-      purple: {
-        border: 'border-purple-200 hover:border-purple-400',
-        bgGradient: 'from-purple-50/50 via-white to-pink-50/30',
-        badge: 'badge-vibrant-purple',
-        dot: 'bg-purple-500'
-      },
-      emerald: {
-        border: 'border-emerald-200 hover:border-emerald-400',
-        bgGradient: 'from-emerald-50/50 via-white to-teal-50/30',
-        badge: 'badge-vibrant-emerald',
-        dot: 'bg-emerald-500'
-      },
-      teal: {
-        border: 'border-teal-200 hover:border-teal-400',
-        bgGradient: 'from-teal-50/50 via-white to-cyan-50/30',
-        badge: 'badge-vibrant-teal',
-        dot: 'bg-teal-500'
-      }
-    }[item.categoryColor] || {
-      border: 'border-rose-200 hover:border-rose-400',
-      bgGradient: 'from-rose-50/50 via-white to-amber-50/30',
-      badge: 'badge-vibrant-rose',
-      dot: 'bg-rose-500'
-    };
+    // Dynamic highlighting based on active filter
+    const highlightWars = activeCultureCategory === 'wars' || activeCultureCategory === 'all';
+    const highlightCulture = activeCultureCategory === 'culture' || activeCultureCategory === 'all';
+    const highlightCustoms = activeCultureCategory === 'customs' || activeCultureCategory === 'all';
 
-    const highlightsHtml = (item.highlights || []).map(h => `
-      <li class="flex items-start gap-2.5 text-xs text-slate-700 leading-relaxed">
-        <span class="inline-block w-1.5 h-1.5 rounded-full ${catColorClass.dot} mt-1.5 shrink-0"></span>
-        <span>${h}</span>
-      </li>
+    // 1. Culture & Philosophy HTML
+    const cultureHtml = (item.cultureEmergence || []).map(c => {
+      const parts = c.split(':');
+      const title = parts[0];
+      const desc = parts.slice(1).join(':');
+      return `
+        <li class="flex items-start gap-2 text-xs md:text-sm text-stone-700 leading-relaxed">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-600 mt-1.5 shrink-0"></span>
+          <span><strong class="text-emerald-950 font-bold">${title}${desc ? ':' : ''}</strong>${desc}</span>
+        </li>
+      `;
+    }).join('');
+
+    // 2. Customs, Traditions & Festivals HTML
+    const customsHtml = (item.customsEmergence || []).map(c => {
+      const parts = c.split(':');
+      const title = parts[0];
+      const desc = parts.slice(1).join(':');
+      return `
+        <li class="flex items-start gap-2 text-xs md:text-sm text-stone-700 leading-relaxed">
+          <span class="inline-block w-2 h-2 rounded-full bg-amber-600 mt-1.5 shrink-0"></span>
+          <span><strong class="text-amber-950 font-bold">${title}${desc ? ':' : ''}</strong>${desc}</span>
+        </li>
+      `;
+    }).join('');
+
+    // 3. Battles and Wars HTML
+    const warsHtml = (item.warsAndBattles || []).map(w => `
+      <div class="p-4 rounded-2xl bg-white/90 border border-rose-200/90 shadow-2xs space-y-2 hover:border-rose-300 transition-all">
+        <div class="flex items-start justify-between gap-2 flex-wrap border-b border-rose-100 pb-2">
+          <div class="flex items-baseline gap-2">
+            <h5 class="text-sm font-bold text-rose-950 font-hanzi">${w.name}</h5>
+            <span class="text-xs text-rose-700 font-medium">(${w.pinyin})</span>
+          </div>
+          <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-rose-100 text-rose-800 border border-rose-200">
+            Năm: ${w.year}
+          </span>
+        </div>
+        <p class="text-xs text-stone-600"><strong class="text-stone-900 font-semibold">Bên tham chiến:</strong> ${w.combatants}</p>
+        <p class="text-xs text-stone-700 leading-relaxed"><strong class="text-stone-900 font-semibold">Diễn biến & Mưu lược:</strong> ${w.description}</p>
+        <div class="p-2.5 rounded-xl bg-rose-50/50 border border-rose-100 text-xs text-rose-900 font-medium leading-relaxed">
+          <strong>Ý nghĩa lịch sử:</strong> ${w.significance}
+        </div>
+      </div>
     `).join('');
 
+    // 4. Keywords HTML
     const keywordsHtml = (item.keywords || []).map(k => `
-      <div onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(k.hanzi)}'))" class="cursor-pointer inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/90 border border-slate-200/90 shadow-2xs hover:border-rose-300 hover:bg-rose-50/40 transition-all">
-        <span class="font-hanzi font-bold text-slate-900 text-xs">${k.hanzi}</span>
-        <span class="text-[10px] text-slate-500 font-sans">${k.pinyin}</span>
-        <span class="text-[10px] text-rose-600 font-medium">(${k.meaning})</span>
-        <button title="Nghe phát âm" class="text-slate-400 hover:text-rose-600 p-0.5 rounded transition-colors ml-0.5">
-          <i data-lucide="volume-2" class="w-3 h-3"></i>
+      <div onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(k.hanzi)}'))" class="cursor-pointer inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white border border-amber-200 shadow-2xs hover:border-[#8B1E1E] hover:bg-amber-50/60 transition-all">
+        <span class="font-hanzi font-bold text-stone-900 text-xs md:text-sm">${k.hanzi}</span>
+        <span class="text-[11px] text-[#8B1E1E] font-medium font-sans">${k.pinyin}</span>
+        <span class="text-[11px] text-stone-600 font-medium">(${k.meaning})</span>
+        <button title="Nghe phát âm" class="text-stone-400 hover:text-[#8B1E1E] p-0.5 rounded transition-colors ml-0.5">
+          <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
         </button>
       </div>
     `).join('');
 
+    // 5. Quote HTML
     const quoteHtml = item.quote ? `
-      <div class="p-3.5 rounded-xl bg-gradient-to-r from-rose-900/5 to-amber-900/5 border border-rose-200/60 relative overflow-hidden mt-4">
-        <div class="flex items-start justify-between gap-2">
-          <div class="space-y-1">
-            <div class="flex items-center gap-2">
-              <span class="text-xs font-bold text-rose-700 uppercase tracking-wider flex items-center gap-1">
-                <i data-lucide="quote" class="w-3 h-3"></i> Danh ngôn / Thi từ
-              </span>
-            </div>
-            <p class="font-hanzi text-sm font-bold text-slate-900 leading-snug">${item.quote.hanzi}</p>
-            <p class="text-[11px] text-slate-500 italic">${item.quote.pinyin}</p>
-            <p class="text-xs text-slate-700 font-medium">➔ "${item.quote.meaning}"</p>
+      <div class="p-4 rounded-2xl bg-gradient-to-r from-red-950/5 via-amber-900/5 to-amber-950/5 border border-amber-200/80 relative overflow-hidden mt-2">
+        <div class="flex items-start justify-between gap-3">
+          <div class="space-y-1 flex-1">
+            <span class="text-[11px] font-bold text-[#8B1E1E] uppercase tracking-wider flex items-center gap-1">
+              <i data-lucide="quote" class="w-3.5 h-3.5"></i> Danh Ngôn & Thi Từ Bất Hủ
+            </span>
+            <p class="font-hanzi text-sm md:text-base font-bold text-stone-900 leading-snug">${item.quote.hanzi}</p>
+            <p class="text-xs text-[#8B1E1E] italic font-sans">${item.quote.pinyin}</p>
+            <p class="text-xs md:text-sm text-stone-700 font-medium pt-1">➔ "${item.quote.meaning}"</p>
           </div>
-          <button onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(item.quote.hanzi)}'))" title="Nghe câu danh ngôn" class="shrink-0 p-2 rounded-xl bg-white hover:bg-rose-50 text-rose-600 border border-rose-200 shadow-2xs transition-all">
+          <button onclick="playChineseTTS(decodeURIComponent('${encodeURIComponent(item.quote.hanzi)}'))" title="Nghe câu danh ngôn / thi từ" class="shrink-0 p-2.5 rounded-xl bg-white hover:bg-amber-100 text-[#8B1E1E] border border-amber-300 shadow-2xs transition-all cursor-pointer">
             <i data-lucide="volume-2" class="w-4 h-4"></i>
           </button>
         </div>
@@ -1002,64 +1033,119 @@ function renderCultureCards() {
     ` : '';
 
     return `
-      <div class="glass-card rounded-2xl p-6 border ${catColorClass.border} bg-gradient-to-br ${catColorClass.bgGradient} relative transition-all duration-300 flex flex-col justify-between">
-        <div>
-          <!-- Header: Category & Period -->
-          <div class="flex items-center justify-between gap-2 mb-3">
-            <div class="flex items-center gap-2">
-              <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold ${catColorClass.badge}">
-                ${item.categoryName}
-              </span>
-              <span class="text-[11px] font-semibold text-slate-500 bg-white/80 px-2 py-0.5 rounded-md border border-slate-200">
-                ${item.period}
-              </span>
-            </div>
-            <span class="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-100 text-amber-800 border border-amber-200">
-              ${item.badge}
+      <div id="era-card-${item.order}" class="glass-card rounded-3xl p-6 lg:p-8 border border-amber-300/80 bg-gradient-to-br from-[#FFFDF9] via-white to-amber-50/20 shadow-sm relative transition-all duration-300 space-y-6">
+        <!-- Era Timeline Milestone Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-200/70 pb-4">
+          <div class="flex items-center gap-3">
+            <span class="w-10 h-10 rounded-2xl bg-gradient-to-tr from-[#8B1E1E] to-[#A52A2A] text-white flex items-center justify-center font-black text-sm shadow-2xs">
+              ${item.order}
             </span>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <span class="px-2.5 py-0.5 rounded-full text-xs font-black bg-red-100 text-[#8B1E1E] border border-red-200">
+                  Kỷ Nguyên ${item.order} / 13
+                </span>
+                <span class="text-xs font-bold text-amber-900 bg-amber-100 px-2.5 py-0.5 rounded-md border border-amber-200">
+                  📅 ${item.period}
+                </span>
+              </div>
+              <span class="text-xs font-semibold text-stone-500 font-sans mt-0.5 block">${item.eraName}</span>
+            </div>
           </div>
+          <span class="self-start sm:self-auto text-xs font-black uppercase tracking-wider px-3 py-1 rounded-xl bg-amber-100/90 text-amber-950 border border-amber-300 shadow-2xs">
+            ${item.badge}
+          </span>
+        </div>
 
-          <!-- Title -->
-          <h3 class="text-lg font-black text-slate-900 tracking-tight leading-snug mb-1">
+        <!-- Title & Historical Overview -->
+        <div>
+          <h3 class="text-xl lg:text-2xl font-black text-stone-900 tracking-tight leading-snug mb-1">
             ${item.title}
           </h3>
-          <p class="text-xs text-slate-500 font-medium mb-3 italic">
+          <p class="text-xs md:text-sm text-[#8B1E1E] font-bold mb-3 italic">
             ${item.pinyin}
           </p>
-
-          <!-- Summary -->
-          <p class="text-xs lg:text-sm text-slate-700 leading-relaxed mb-4">
-            ${item.summary}
-          </p>
-
-          <!-- Key Highlights -->
-          <div class="space-y-2 mb-4">
-            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider flex items-center gap-1.5">
-              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-rose-600"></i> Dấu Ấn Nổi Bật
-            </h4>
-            <ul class="space-y-1.5 pl-1">
-              ${highlightsHtml}
-            </ul>
-          </div>
-
-          <!-- Vocabulary / Keywords -->
-          <div class="pt-3 border-t border-slate-200/60 mb-2">
-            <h4 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2 flex items-center gap-1.5">
-              <i data-lucide="languages" class="w-3.5 h-3.5 text-teal-600"></i> Từ Vựng Cốt Lõi (Nghe Audio)
-            </h4>
-            <div class="flex flex-wrap gap-1.5">
-              ${keywordsHtml}
-            </div>
+          <div class="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/70 text-xs md:text-sm text-stone-700 leading-relaxed font-sans">
+            <strong class="text-stone-900 font-bold">Khái quát lịch sử: </strong>${item.summary}
           </div>
         </div>
 
-        <!-- Quote -->
+        <!-- The 3 Core Dimensions: Culture, Customs & Wars -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <!-- 1. Văn Hóa & Tư Tưởng -->
+          ${highlightCulture && cultureHtml ? `
+            <div class="p-4 md:p-5 rounded-2xl bg-emerald-50/40 border border-emerald-200/80 space-y-3 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 border-b border-emerald-200/60 pb-2">
+                  <span class="p-1.5 rounded-lg bg-emerald-100 text-emerald-800">
+                    <i data-lucide="book-open" class="w-4 h-4"></i>
+                  </span>
+                  <h4 class="text-xs md:text-sm font-bold text-emerald-950 uppercase tracking-wide">
+                    Văn Hóa, Nghệ Thuật & Tư Tưởng
+                  </h4>
+                </div>
+                <ul class="space-y-2">
+                  ${cultureHtml}
+                </ul>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- 2. Phong Tục & Lễ Hội -->
+          ${highlightCustoms && customsHtml ? `
+            <div class="p-4 md:p-5 rounded-2xl bg-amber-50/40 border border-amber-200/80 space-y-3 flex flex-col justify-between">
+              <div class="space-y-3">
+                <div class="flex items-center gap-2 border-b border-amber-200/60 pb-2">
+                  <span class="p-1.5 rounded-lg bg-amber-100 text-amber-900">
+                    <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  </span>
+                  <h4 class="text-xs md:text-sm font-bold text-amber-950 uppercase tracking-wide">
+                    Phong Tục, Lễ Hội & Y Phục
+                  </h4>
+                </div>
+                <ul class="space-y-2">
+                  ${customsHtml}
+                </ul>
+              </div>
+            </div>
+          ` : ''}
+
+          <!-- 3. Chiến Tranh & Quân Sự -->
+          ${highlightWars && warsHtml ? `
+            <div class="p-4 md:p-5 rounded-2xl bg-rose-50/40 border border-rose-200/80 space-y-3 ${activeCultureCategory === 'wars' ? 'lg:col-span-3' : ''}">
+              <div class="flex items-center gap-2 border-b border-rose-200/60 pb-2">
+                <span class="p-1.5 rounded-lg bg-rose-100 text-rose-800">
+                  <i data-lucide="swords" class="w-4 h-4"></i>
+                </span>
+                <h4 class="text-xs md:text-sm font-bold text-rose-950 uppercase tracking-wide">
+                  Chiến Tranh & Biến Cố Quân Sự Điển Hình
+                </h4>
+              </div>
+              <div class="space-y-3 ${activeCultureCategory === 'wars' ? 'grid grid-cols-1 md:grid-cols-2 gap-3 space-y-0' : ''}">
+                ${warsHtml}
+              </div>
+            </div>
+          ` : ''}
+        </div>
+
+        <!-- 4. Từ Vựng Lịch Sử Cốt Lõi -->
+        <div class="pt-4 border-t border-amber-200/60 space-y-2">
+          <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider flex items-center gap-1.5">
+            <i data-lucide="languages" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+            <span>Từ Vựng Lịch Sử Cốt Lõi (Click để nghe phát âm giọng Bắc Kinh)</span>
+          </h4>
+          <div class="flex flex-wrap gap-2">
+            ${keywordsHtml}
+          </div>
+        </div>
+
+        <!-- 5. Danh Ngôn & Thi Từ Bất Hủ -->
         ${quoteHtml}
       </div>
     `;
   }).join('');
 
-  refreshIcons();
+  refreshIcons(container);
 }
 
 // ---------------- TAB 2: BẢN ĐỒ CÂY TƯ DUY NGỮ PHÁP TIẾNG TRUNG ----------------
@@ -6653,6 +6739,8 @@ window.playAllNarrativeText = playAllNarrativeText;
 window.stopNarrativeSpeech = stopNarrativeSpeech;
 window.playNarrativeParagraph = playNarrativeParagraph;
 window.toggleNarrativeQA = toggleNarrativeQA;
+window.scrollToEra = scrollToEra;
+window.filterCultureCategory = filterCultureCategory;
 
 // Global Escape Key to close open modals
 window.addEventListener('keydown', (e) => {
