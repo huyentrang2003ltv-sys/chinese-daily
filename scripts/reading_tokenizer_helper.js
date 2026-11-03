@@ -1,11 +1,11 @@
 const fs = require('fs');
 const path = require('path');
 
-const dict = require('./data/dictionary.json');
-const lessons = require('./data/lessons.json');
-const readings = require('./data/readings.json');
-const hanyu = require('./data/hanyu_jiaocheng.json');
-const etym = require('./data/etymology.json');
+const dict = require('../data/dictionary.json');
+const lessons = require('../data/lessons.json');
+const readings = require('../data/readings.json');
+const hanyu = require('../data/hanyu_jiaocheng.json');
+const etym = require('../data/etymology.json');
 
 const vocabMap = new Map();
 

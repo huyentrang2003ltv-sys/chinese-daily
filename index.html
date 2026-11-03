@@ -1838,20 +1838,23 @@
           <button onclick="switchLessonSubTab('dialogues')" id="btn-lesson-subtab-dialogues" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs whitespace-nowrap cursor-pointer">
             🎙️ 1. Hội Thoại Phân Vai
           </button>
+          <button onclick="switchLessonSubTab('narrative')" id="btn-lesson-subtab-narrative" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
+            📖 2. Bài Đọc Đoạn Văn (短文)
+          </button>
           <button onclick="switchLessonSubTab('vocabulary')" id="btn-lesson-subtab-vocabulary" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            📝 2. Bảng Từ Mới (<span id="lessonModalVocabCount">0</span>)
+            📝 3. Bảng Từ Mới (<span id="lessonModalVocabCount">0</span>)
           </button>
           <button onclick="switchLessonSubTab('grammar')" id="btn-lesson-subtab-grammar" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            📐 3. Ngữ Pháp & Mẫu Câu
+            📐 4. Ngữ Pháp & Mẫu Câu
           </button>
           <button onclick="switchLessonSubTab('qa')" id="btn-lesson-subtab-qa" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            ❓ 4. Hỏi - Đáp Bài Khóa (<span id="lessonModalQACount">0</span>)
+            ❓ 5. Hỏi - Đáp Bài Khóa (<span id="lessonModalQACount">0</span>)
           </button>
           <button onclick="switchLessonSubTab('fillblanks')" id="btn-lesson-subtab-fillblanks" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            ✍️ 5. Luyện Điền Từ Chỗ Trống (<span id="lessonModalFIBCount">0</span>)
+            ✍️ 6. Luyện Điền Từ Chỗ Trống (<span id="lessonModalFIBCount">0</span>)
           </button>
           <button onclick="switchLessonSubTab('culture')" id="btn-lesson-subtab-culture" class="lesson-subtab-btn px-4 py-1.5 rounded-xl text-xs font-bold transition-all bg-white hover:bg-amber-50 text-stone-700 border border-amber-200 whitespace-nowrap cursor-pointer">
-            🏮 6. Ghi Chú Văn Hóa & Mẹo Học
+            🏮 7. Ghi Chú Văn Hóa & Mẹo Học
           </button>
         </div>
       </div>
@@ -1884,7 +1887,42 @@
           <div id="lessonDialoguesContainer" class="space-y-3.5"></div>
         </div>
 
-        <!-- Sub-panel 2: Vocabulary -->
+        <!-- Sub-panel 2: Narrative Prose Reading Passage (Bài đọc đoạn văn / 短文) -->
+        <div id="lessonSubPanel-narrative" class="hidden space-y-4">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-white border border-amber-200/90 shadow-2xs">
+            <div class="flex items-center gap-2.5">
+              <span class="p-2 rounded-xl bg-amber-50 text-amber-900 border border-amber-200/70">
+                <i data-lucide="book-open" class="w-4 h-4 text-[#8B1E1E]"></i>
+              </span>
+              <div>
+                <h4 id="narrativeHeaderTitle" class="text-xs md:text-sm font-bold text-stone-900">Bài Đọc Đoạn Văn Tổng Hợp (短文 / 叙述文)</h4>
+                <p id="narrativeHeaderSubtitle" class="text-[11px] text-stone-500">Giọng chuẩn Bắc Kinh • Bật/tắt Pinyin & Nghĩa Tiếng Việt • Click từng từ để tra từ điển</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2 flex-wrap shrink-0">
+              <button id="btnToggleNarrativePinyin" onclick="toggleNarrativePinyin()" class="px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-stone-700 border border-amber-200 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer" title="Ẩn hoặc hiện Pinyin trên chữ Hán">
+                <i data-lucide="type" class="w-3.5 h-3.5"></i>
+                <span id="narrativePinyinBtnText">Ẩn Pinyin</span>
+              </button>
+              <button id="btnToggleNarrativeVi" onclick="toggleNarrativeTranslation()" class="px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-stone-700 border border-amber-200 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer" title="Ẩn hoặc hiện dịch nghĩa tiếng Việt">
+                <i data-lucide="languages" class="w-3.5 h-3.5"></i>
+                <span id="narrativeViBtnText">Ẩn Dịch Nghĩa</span>
+              </button>
+              <button id="btnPlayAllNarrative" onclick="playAllNarrativeText()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer" title="Nghe diễn đọc toàn bộ đoạn văn">
+                <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                <span>Nghe Toàn Bài</span>
+              </button>
+              <button id="btnStopNarrative" onclick="stopNarrativeSpeech()" class="hidden px-3.5 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer animate-pulse" title="Dừng đọc bài văn">
+                <i data-lucide="square" class="w-3.5 h-3.5"></i>
+                <span>Dừng Phát</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="lessonNarrativeContainer" class="space-y-4"></div>
+        </div>
+
+        <!-- Sub-panel 3: Vocabulary -->
         <div id="lessonSubPanel-vocabulary" class="hidden space-y-4">
           <div class="flex items-center justify-between">
             <h4 class="text-sm font-bold text-stone-800 flex items-center gap-2">

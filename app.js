@@ -5585,6 +5585,7 @@ async function openLessonDetailModal(lessonId) {
 
     // Render Sub-panels safely
     try { renderLessonDialogues(lesson.dialogues || []); } catch (e) { console.error('Error rendering dialogues:', e); }
+    try { renderLessonNarrative(lesson.narrative || null); } catch (e) { console.error('Error rendering narrative:', e); }
     try { renderLessonVocabulary(lesson.vocabulary || []); } catch (e) { console.error('Error rendering vocabulary:', e); }
     try { renderLessonGrammar(lesson.grammarPoints || []); } catch (e) { console.error('Error rendering grammar:', e); }
     try { renderLessonQA(lesson.comprehensionQA || []); } catch (e) { console.error('Error rendering QA:', e); }
@@ -5642,6 +5643,7 @@ function navigateToAdjacentLesson(direction) {
 
 function closeLessonDetailModal() {
   stopDialogueSequence();
+  stopNarrativeSpeech();
   const modal = document.getElementById('lessonDetailModal');
   if (modal) {
     modal.classList.add('hidden');
@@ -5651,7 +5653,13 @@ function closeLessonDetailModal() {
 
 function switchLessonSubTab(tabName) {
   currentLessonSubTab = tabName;
-  const subTabs = ['dialogues', 'vocabulary', 'grammar', 'qa', 'fillblanks', 'culture'];
+  if (tabName !== 'narrative') {
+    stopNarrativeSpeech();
+  }
+  if (tabName !== 'dialogues') {
+    stopDialogueSequence();
+  }
+  const subTabs = ['dialogues', 'narrative', 'vocabulary', 'grammar', 'qa', 'fillblanks', 'culture'];
 
   subTabs.forEach(t => {
     const btn = document.getElementById(`btn-lesson-subtab-${t}`);
@@ -5829,6 +5837,296 @@ function renderLessonDialogues(dialogues) {
       </div>
     `;
   }).join('');
+}
+
+// ---------------- NARRATIVE PROSE (短文 / 叙述文) MODULE ----------------
+let showNarrativePinyin = true;
+let showNarrativeVi = true;
+let isNarrativePlaying = false;
+let narrativePlayIndex = 0;
+let narrativePlayTimeout = null;
+
+function stopNarrativeSpeech() {
+  isNarrativePlaying = false;
+  if (narrativePlayTimeout) {
+    clearTimeout(narrativePlayTimeout);
+    narrativePlayTimeout = null;
+  }
+  if (currentTtsAudio) {
+    try {
+      currentTtsAudio.pause();
+      currentTtsAudio.currentTime = 0;
+    } catch (e) {}
+  }
+  document.querySelectorAll('.narrative-para-card').forEach(el => {
+    el.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70', 'shadow-md');
+  });
+  const playBtn = document.getElementById('btnPlayAllNarrative');
+  const stopBtn = document.getElementById('btnStopNarrative');
+  if (playBtn) playBtn.classList.remove('hidden');
+  if (stopBtn) stopBtn.classList.add('hidden');
+}
+
+function playAllNarrativeText() {
+  if (!currentActiveLesson || !currentActiveLesson.narrative || !currentActiveLesson.narrative.paragraphs || !currentActiveLesson.narrative.paragraphs.length) return;
+  stopDialogueSequence();
+  stopNarrativeSpeech();
+  isNarrativePlaying = true;
+  narrativePlayIndex = 0;
+
+  const playBtn = document.getElementById('btnPlayAllNarrative');
+  const stopBtn = document.getElementById('btnStopNarrative');
+  if (playBtn) playBtn.classList.add('hidden');
+  if (stopBtn) stopBtn.classList.remove('hidden');
+
+  playNextNarrativeParagraph();
+}
+
+function playNextNarrativeParagraph() {
+  if (!isNarrativePlaying || !currentActiveLesson || !currentActiveLesson.narrative || !currentActiveLesson.narrative.paragraphs) return;
+  const paras = currentActiveLesson.narrative.paragraphs;
+  if (narrativePlayIndex >= paras.length) {
+    stopNarrativeSpeech();
+    return;
+  }
+
+  const p = paras[narrativePlayIndex];
+  const cardEl = document.getElementById(`narrativeParaCard-${narrativePlayIndex}`);
+
+  document.querySelectorAll('.narrative-para-card').forEach(el => {
+    el.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70', 'shadow-md');
+  });
+  if (cardEl) {
+    cardEl.classList.add('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70', 'shadow-md');
+    cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  const speed = currentTtsSpeed || 0.88;
+  const ttsUrl = `/api/tts?text=${encodeURIComponent(p.hanzi)}&gender=female&speed=${speed}`;
+  const audio = new Audio(ttsUrl);
+  currentTtsAudio = audio;
+
+  audio.onended = () => {
+    if (!isNarrativePlaying) return;
+    narrativePlayIndex++;
+    narrativePlayTimeout = setTimeout(playNextNarrativeParagraph, 1200);
+  };
+
+  audio.onerror = () => {
+    if (!isNarrativePlaying) return;
+    narrativePlayIndex++;
+    narrativePlayTimeout = setTimeout(playNextNarrativeParagraph, 1000);
+  };
+
+  audio.play().catch(err => {
+    console.warn('Narrative playback failed in sequence:', err);
+    if (isNarrativePlaying) {
+      narrativePlayIndex++;
+      narrativePlayTimeout = setTimeout(playNextNarrativeParagraph, 1000);
+    }
+  });
+}
+
+function playNarrativeParagraph(idx) {
+  if (!currentActiveLesson || !currentActiveLesson.narrative || !currentActiveLesson.narrative.paragraphs) return;
+  const p = currentActiveLesson.narrative.paragraphs[idx];
+  if (!p) return;
+  stopDialogueSequence();
+  stopNarrativeSpeech();
+
+  const cardEl = document.getElementById(`narrativeParaCard-${idx}`);
+  if (cardEl) {
+    cardEl.classList.add('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70');
+    setTimeout(() => {
+      cardEl.classList.remove('ring-2', 'ring-[#8B1E1E]', 'bg-amber-100/70');
+    }, 4500);
+  }
+  playChineseTTS(p.hanzi, 'female');
+}
+
+function toggleNarrativePinyin() {
+  showNarrativePinyin = !showNarrativePinyin;
+  const container = document.getElementById('lessonNarrativeContainer');
+  if (container) {
+    container.querySelectorAll('.reading-token-chip').forEach(chip => {
+      if (showNarrativePinyin) {
+        chip.classList.remove('hide-pinyin');
+      } else {
+        chip.classList.add('hide-pinyin');
+      }
+    });
+  }
+  const btnText = document.getElementById('narrativePinyinBtnText');
+  if (btnText) btnText.innerText = showNarrativePinyin ? 'Ẩn Pinyin' : 'Hiện Pinyin';
+}
+
+function toggleNarrativeTranslation() {
+  showNarrativeVi = !showNarrativeVi;
+  const container = document.getElementById('lessonNarrativeContainer');
+  if (container) {
+    container.querySelectorAll('.narrative-vi-block').forEach(el => {
+      if (showNarrativeVi) {
+        el.classList.remove('hidden');
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+  }
+  const btnText = document.getElementById('narrativeViBtnText');
+  if (btnText) btnText.innerText = showNarrativeVi ? 'Ẩn Dịch Nghĩa' : 'Hiện Dịch Nghĩa';
+}
+
+function toggleNarrativeQA(idx) {
+  const ansEl = document.getElementById(`narrativeQAAnswer-${idx}`);
+  const btnEl = document.getElementById(`narrativeQABtn-${idx}`);
+  if (ansEl) {
+    const isHidden = ansEl.classList.contains('hidden');
+    ansEl.classList.toggle('hidden', !isHidden);
+    if (btnEl) btnEl.innerText = isHidden ? 'Ẩn đáp án' : 'Xem đáp án';
+  }
+}
+
+function renderLessonNarrative(narrative) {
+  const container = document.getElementById('lessonNarrativeContainer');
+  if (!container) return;
+
+  if (!narrative || !narrative.paragraphs || narrative.paragraphs.length === 0) {
+    container.innerHTML = `<p class="text-xs text-stone-400 py-6 text-center">Chưa có bài đọc đoạn văn cho bài học này.</p>`;
+    return;
+  }
+
+  // Update header subtitle if title available
+  const headerTitle = document.getElementById('narrativeHeaderTitle');
+  if (headerTitle && narrative.titleHanzi) {
+    headerTitle.innerText = `${narrative.titleHanzi} • ${narrative.titlePinyin} (${narrative.titleVi})`;
+  }
+
+  let html = `
+    <!-- Narrative Article Header Banner -->
+    <div class="p-5 md:p-6 rounded-3xl bg-gradient-to-br from-amber-900/5 via-amber-500/5 to-red-900/10 border border-amber-300/80 shadow-2xs space-y-3">
+      <div class="flex items-center gap-2">
+        <span class="px-2.5 py-0.5 rounded-full text-2xs font-black bg-red-100 text-[#8B1E1E] border border-red-200">
+          Bài Khóa Đoạn Văn (课文二 • 短文)
+        </span>
+        <span class="text-2xs font-semibold text-stone-500">Giáo Trình Hán Ngữ Chuẩn BLCU</span>
+      </div>
+      <div>
+        <h3 class="text-xl md:text-2xl font-hanzi font-black text-stone-900 tracking-wide">${narrative.titleHanzi}</h3>
+        <p class="text-sm font-bold text-[#8B1E1E] font-sans">${narrative.titlePinyin}</p>
+        <p class="text-xs font-semibold text-stone-600 font-sans italic">"${narrative.titleVi}"</p>
+      </div>
+      ${narrative.summary ? `
+        <div class="p-3 rounded-2xl bg-white/80 border border-amber-200/70 text-xs text-stone-700 leading-relaxed flex items-start gap-2.5">
+          <i data-lucide="info" class="w-4 h-4 text-amber-700 shrink-0 mt-0.5"></i>
+          <div><strong class="text-amber-900 font-bold">Tóm tắt nội dung:</strong> ${narrative.summary}</div>
+        </div>
+      ` : ''}
+    </div>
+
+    <!-- Paragraphs Stream with Token-level click-to-lookup -->
+    <div class="space-y-4">
+  `;
+
+  narrative.paragraphs.forEach((p, idx) => {
+    const tokens = p.tokens || [];
+    html += `
+      <div id="narrativeParaCard-${idx}" class="narrative-para-card p-4 md:p-5 rounded-2xl bg-white border border-amber-200/90 shadow-2xs hover:border-amber-300 transition-all space-y-3">
+        <div class="flex items-center justify-between gap-2 border-b border-amber-100 pb-2.5">
+          <span class="px-2.5 py-0.5 rounded-lg bg-amber-100/80 text-amber-950 font-black text-xs border border-amber-200">
+            Đoạn ${p.paraNum || idx + 1}
+          </span>
+          <button 
+            onclick="playNarrativeParagraph(${idx})" 
+            class="px-3 py-1 rounded-xl bg-amber-50 hover:bg-amber-100 text-[#8B1E1E] border border-amber-200 transition-colors text-xs font-bold flex items-center gap-1.5 cursor-pointer shadow-2xs"
+            title="Nghe riêng đoạn văn này">
+            <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+            <span>Nghe đoạn</span>
+          </button>
+        </div>
+
+        <!-- Tokens Stream -->
+        <div class="flex flex-wrap items-end leading-loose">
+    `;
+
+    tokens.forEach(tok => {
+      const isPunct = !tok.pinyin && !tok.vi;
+      if (isPunct) {
+        html += `<span class="reading-token-punct">${tok.hanzi}</span>`;
+      } else {
+        const safeH = tok.hanzi.replace(/'/g, "\\'");
+        const safeP = (tok.pinyin || '').replace(/'/g, "\\'");
+        const safeV = (tok.vi || '').replace(/'/g, "\\'");
+        html += `
+          <div 
+            onclick="openWordModalWithToken('${safeH}', '${safeP}', '${safeV}')" 
+            class="reading-token-chip ${showNarrativePinyin ? '' : 'hide-pinyin'}"
+            title="Bấm để tra cứu: ${tok.hanzi} (${tok.pinyin}): ${tok.vi}">
+            <span class="token-pinyin">${tok.pinyin}</span>
+            <span class="token-hanzi">${tok.hanzi}</span>
+          </div>
+        `;
+      }
+    });
+
+    html += `
+        </div>
+
+        <!-- Vietnamese Translation -->
+        <div class="narrative-vi-block pt-3 border-t border-amber-100 text-xs md:text-sm text-stone-700 leading-relaxed font-sans ${showNarrativeVi ? '' : 'hidden'}">
+          <strong class="text-[#8B1E1E] font-bold">Dịch nghĩa:</strong> ${p.vi}
+        </div>
+      </div>
+    `;
+  });
+
+  html += `</div>`;
+
+  // Comprehension Questions Section if present
+  if (narrative.comprehensionCheck && narrative.comprehensionCheck.length > 0) {
+    html += `
+      <div class="mt-6 p-5 md:p-6 rounded-3xl bg-white border border-amber-200/90 shadow-2xs space-y-4">
+        <div class="flex items-center gap-2 border-b border-amber-200/60 pb-3">
+          <span class="p-1.5 rounded-lg bg-red-100 text-[#8B1E1E]">
+            <i data-lucide="help-circle" class="w-4 h-4"></i>
+          </span>
+          <h4 class="text-sm font-bold text-stone-900">Câu Hỏi Đọc Hiểu & Thảo Luận Bài Khóa (阅读理解思考题)</h4>
+        </div>
+        <div class="space-y-3">
+    `;
+
+    narrative.comprehensionCheck.forEach((qa, qIdx) => {
+      html += `
+        <div class="p-4 rounded-2xl bg-amber-50/40 border border-amber-200/70 space-y-2">
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-1 flex-1">
+              <p class="font-hanzi font-bold text-stone-900 text-sm md:text-base">${qIdx + 1}. ${qa.qHanzi}</p>
+              <p class="text-xs font-medium text-[#8B1E1E]">${qa.qPinyin}</p>
+              <p class="text-xs text-stone-600 italic font-sans">${qa.qVi}</p>
+            </div>
+            <button 
+              id="narrativeQABtn-${qIdx}"
+              onclick="toggleNarrativeQA(${qIdx})" 
+              class="px-3 py-1.5 rounded-xl bg-white hover:bg-amber-100 text-stone-700 border border-amber-200 text-xs font-bold transition-all shrink-0 cursor-pointer shadow-2xs">
+              Xem đáp án
+            </button>
+          </div>
+          <div id="narrativeQAAnswer-${qIdx}" class="hidden pt-2.5 mt-2 border-t border-amber-200/60 text-xs text-stone-800 space-y-1">
+            <p class="font-hanzi font-bold text-emerald-800"><span class="text-stone-500 font-sans font-normal">Đáp án: </span>${qa.aHanzi}</p>
+            <p class="text-stone-600 font-sans italic">${qa.aVi}</p>
+          </div>
+        </div>
+      `;
+    });
+
+    html += `
+        </div>
+      </div>
+    `;
+  }
+
+  container.innerHTML = html;
+  const modal = document.getElementById('lessonDetailModal');
+  if (modal) refreshIcons(modal);
 }
 
 // ---------------- VOCABULARY MODULE ----------------
@@ -6349,6 +6647,12 @@ window.stopDialogueSequence = stopDialogueSequence;
 window.toggleSaveWordFromLesson = toggleSaveWordFromLesson;
 window.isWordSaved = isWordSaved;
 window.quickSearchFromLesson = quickSearchFromLesson;
+window.toggleNarrativePinyin = toggleNarrativePinyin;
+window.toggleNarrativeTranslation = toggleNarrativeTranslation;
+window.playAllNarrativeText = playAllNarrativeText;
+window.stopNarrativeSpeech = stopNarrativeSpeech;
+window.playNarrativeParagraph = playNarrativeParagraph;
+window.toggleNarrativeQA = toggleNarrativeQA;
 
 // Global Escape Key to close open modals
 window.addEventListener('keydown', (e) => {
