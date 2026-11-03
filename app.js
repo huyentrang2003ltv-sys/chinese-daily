@@ -682,6 +682,7 @@ async function initApp() {
     loadUserProfile();
     initTtsVoices();
     updateVoiceUi();
+    setupGlobalSearch();
 
     // 1. Fetch critical initial data first for sub-50ms instant display
     const [etymoRes, lessonsRes] = await Promise.all([
@@ -3021,13 +3022,28 @@ function getFilteredDictionaryList() {
     list = list.filter(item => item.level === currentDictHsk);
   }
   if (currentDictSearch && currentDictSearch.trim()) {
-    const q = currentDictSearch.toLowerCase().trim();
-    list = list.filter(item => 
-      (item.title && item.title.toLowerCase().includes(q)) ||
-      (item.pinyin && item.pinyin.toLowerCase().includes(q)) ||
-      (item.meaning && item.meaning.toLowerCase().includes(q)) ||
-      (item.exampleSentence && item.exampleSentence.toLowerCase().includes(q))
-    );
+    const rawQ = currentDictSearch.toLowerCase().trim();
+    const pyQ = normalizePinyin(currentDictSearch);
+    const viQ = normalizeVietnamese(currentDictSearch);
+
+    list = list.filter(item => {
+      const title = (item.title || '').toLowerCase();
+      const pinyin = (item.pinyin || '').toLowerCase();
+      const pinyinNorm = normalizePinyin(item.pinyin);
+      const hanviet = (item.hanviet || '').toLowerCase();
+      const hanvietNorm = normalizeVietnamese(item.hanviet);
+      const meaning = (item.meaning || '').toLowerCase();
+      const meaningNorm = normalizeVietnamese(item.meaning);
+      const example = (item.exampleSentence || '').toLowerCase();
+
+      return title.includes(rawQ) ||
+        (pyQ && pinyinNorm.includes(pyQ)) ||
+        pinyin.includes(rawQ) ||
+        (viQ && (hanvietNorm.includes(viQ) || meaningNorm.includes(viQ))) ||
+        hanviet.includes(rawQ) ||
+        meaning.includes(rawQ) ||
+        example.includes(rawQ);
+    });
   }
   return list;
 }
@@ -3109,7 +3125,10 @@ function renderDictionary(reset = false) {
           </div>
         </div>
 
-        <p class="text-xs font-bold text-[#8B1E1E] mt-1.5 tracking-wide">${item.pinyin}</p>
+        <div class="flex items-center gap-2 flex-wrap mt-1.5">
+          <p class="text-xs font-bold text-[#8B1E1E] tracking-wide">${item.pinyin}</p>
+          ${item.hanviet ? `<span class="text-[11px] font-bold text-amber-950 bg-amber-100/80 px-2 py-0.5 rounded-md border border-amber-300/60">[${item.hanviet}]</span>` : ''}
+        </div>
         <p class="text-xs font-medium text-stone-800 mt-1 leading-snug">${item.meaning}</p>
       </div>
 
@@ -3283,14 +3302,30 @@ function getFilteredTopicDictionaryList() {
   }
 
   if (currentTopicSearch && currentTopicSearch.trim()) {
-    const q = currentTopicSearch.toLowerCase().trim();
-    list = list.filter(item => 
-      (item.title && item.title.toLowerCase().includes(q)) ||
-      (item.pinyin && item.pinyin.toLowerCase().includes(q)) ||
-      (item.meaning && item.meaning.toLowerCase().includes(q)) ||
-      (item.topicName && item.topicName.toLowerCase().includes(q)) ||
-      (item.exampleSentence && item.exampleSentence.toLowerCase().includes(q))
-    );
+    const rawQ = currentTopicSearch.toLowerCase().trim();
+    const pyQ = normalizePinyin(currentTopicSearch);
+    const viQ = normalizeVietnamese(currentTopicSearch);
+
+    list = list.filter(item => {
+      const title = (item.title || '').toLowerCase();
+      const pinyin = (item.pinyin || '').toLowerCase();
+      const pinyinNorm = normalizePinyin(item.pinyin);
+      const hanviet = (item.hanviet || '').toLowerCase();
+      const hanvietNorm = normalizeVietnamese(item.hanviet);
+      const meaning = (item.meaning || '').toLowerCase();
+      const meaningNorm = normalizeVietnamese(item.meaning);
+      const topicName = (item.topicName || '').toLowerCase();
+      const example = (item.exampleSentence || '').toLowerCase();
+
+      return title.includes(rawQ) ||
+        (pyQ && pinyinNorm.includes(pyQ)) ||
+        pinyin.includes(rawQ) ||
+        (viQ && (hanvietNorm.includes(viQ) || meaningNorm.includes(viQ))) ||
+        hanviet.includes(rawQ) ||
+        meaning.includes(rawQ) ||
+        topicName.includes(rawQ) ||
+        example.includes(rawQ);
+    });
   }
   return list;
 }
@@ -3378,7 +3413,10 @@ function renderTopicDictionary(reset = false) {
           </div>
         </div>
 
-        <p class="text-xs font-bold text-emerald-800 mt-1.5 tracking-wide">${item.pinyin}</p>
+        <div class="flex items-center gap-2 flex-wrap mt-1.5">
+          <p class="text-xs font-bold text-emerald-800 tracking-wide">${item.pinyin}</p>
+          ${item.hanviet ? `<span class="text-[11px] font-bold text-amber-950 bg-amber-100/80 px-2 py-0.5 rounded-md border border-amber-300/60">[${item.hanviet}]</span>` : ''}
+        </div>
         <p class="text-xs font-medium text-stone-800 mt-1 leading-snug">${item.meaning}</p>
       </div>
 
@@ -3420,53 +3458,298 @@ function loadMoreTopicDict() {
   renderTopicDictionary(false);
 }
 
+// ==========================================
+// INTELLIGENT PHONETIC & LINGUISTIC NORMALIZERS
+// ==========================================
+function normalizePinyin(str) {
+  if (!str) return '';
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[āáǎà]/g, 'a')
+    .replace(/[ōóǒò]/g, 'o')
+    .replace(/[ēéěèê]/g, 'e')
+    .replace(/[īíǐì]/g, 'i')
+    .replace(/[ūúǔù]/g, 'u')
+    .replace(/[ǖǘǚǜü]/g, 'u')
+    .replace(/[1-5]/g, '')
+    .replace(/[^a-z0-9]/g, '');
+}
+
+function normalizeVietnamese(str) {
+  if (!str) return '';
+  return str
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/đ/g, 'd')
+    .replace(/[^a-z0-9\s]/g, '')
+    .trim()
+    .replace(/\s+/g, ' ');
+}
+
+// Global Search State
+let currentSearchResults = [];
+let currentSearchSelectedIndex = -1;
+let currentWordModalWord = null;
+
+// ==========================================
+// MULTI-SOURCE OMNISEARCH ENGINE
+// ==========================================
+function searchOmniDatabase(query) {
+  if (!query || !query.trim()) return [];
+
+  const rawQ = query.trim().toLowerCase();
+  const pyQ = normalizePinyin(query);
+  const viQ = normalizeVietnamese(query);
+  const viTokens = viQ ? viQ.split(/\s+/).filter(Boolean) : [];
+
+  const results = [];
+
+  // 1. Search Dictionary (HSK 1-6 & Chủ đề)
+  if (dictionaryData && Array.isArray(dictionaryData)) {
+    for (const item of dictionaryData) {
+      let score = 0;
+      const title = (item.title || '').toLowerCase();
+      const pinyin = (item.pinyin || '').toLowerCase();
+      const pinyinNorm = normalizePinyin(item.pinyin);
+      const hanviet = (item.hanviet || '').toLowerCase();
+      const hanvietNorm = normalizeVietnamese(item.hanviet);
+      const meaning = (item.meaning || '').toLowerCase();
+      const meaningNorm = normalizeVietnamese(item.meaning);
+      const example = (item.exampleSentence || '').toLowerCase();
+
+      // Hanzi match
+      if (title === rawQ) score += 300;
+      else if (title.startsWith(rawQ)) score += 180;
+      else if (title.includes(rawQ)) score += 80;
+
+      // Pinyin match (with/without tones)
+      if (pyQ && pinyinNorm === pyQ) score += 220;
+      else if (pyQ && pinyinNorm.startsWith(pyQ)) score += 120;
+      else if (pyQ && pinyinNorm.includes(pyQ)) score += 50;
+      else if (pinyin.includes(rawQ)) score += 60;
+
+      // Hán Việt match
+      if (viQ && hanvietNorm === viQ) score += 190;
+      else if (viQ && hanvietNorm.startsWith(viQ)) score += 110;
+      else if (viQ && hanvietNorm.includes(viQ)) score += 60;
+
+      // Vietnamese meaning match
+      if (viQ && meaningNorm === viQ) score += 180;
+      else if (viQ && meaningNorm.startsWith(viQ)) score += 100;
+      else if (viQ && meaningNorm.includes(viQ)) score += 55;
+      else if (meaning.includes(rawQ)) score += 40;
+
+      // Multi-term token intersection
+      if (viTokens.length > 1) {
+        const fullViText = `${hanvietNorm} ${meaningNorm}`;
+        if (viTokens.every(t => fullViText.includes(t))) {
+          score += 70;
+        }
+      }
+
+      // Example sentence match
+      if (example.includes(rawQ)) score += 25;
+
+      if (score > 0) {
+        results.push({
+          type: 'dict',
+          title: item.title,
+          pinyin: item.pinyin,
+          hanviet: item.hanviet || '',
+          meaning: item.meaning,
+          level: item.level || 1,
+          topicName: item.topicName || '',
+          score
+        });
+      }
+    }
+  }
+
+  // 2. Search 214 Radicals (Bộ Thủ Khang Hy)
+  if (radicalsData && Array.isArray(radicalsData)) {
+    for (const r of radicalsData) {
+      let score = 0;
+      const char = (r.char || '').toLowerCase();
+      const pinyinNorm = normalizePinyin(r.pinyin);
+      const hanvietNorm = normalizeVietnamese(r.hanviet);
+      const meaningNorm = normalizeVietnamese(r.meaning);
+
+      if (char === rawQ) score += 280;
+      if (pyQ && pinyinNorm === pyQ) score += 180;
+      if (viQ && (hanvietNorm === viQ || `bo ${hanvietNorm}` === viQ)) score += 190;
+      else if (viQ && (hanvietNorm.includes(viQ) || meaningNorm.includes(viQ))) score += 70;
+
+      if (score > 0) {
+        results.push({
+          type: 'radical',
+          title: r.char,
+          pinyin: r.pinyin,
+          hanviet: `Bộ ${r.hanviet}`,
+          meaning: r.meaning,
+          strokes: r.strokes,
+          score
+        });
+      }
+    }
+  }
+
+  // 3. Search Chengyu & Idioms (Thành Ngữ Điển Tích)
+  if (chengyuData && Array.isArray(chengyuData)) {
+    for (const c of chengyuData) {
+      let score = 0;
+      const title = (c.chengyu || '').toLowerCase();
+      const pinyinNorm = normalizePinyin(c.pinyin);
+      const hanvietNorm = normalizeVietnamese(c.hanviet);
+      const litNorm = normalizeVietnamese(c.literal);
+      const figNorm = normalizeVietnamese(c.figurative);
+      const storyNorm = normalizeVietnamese(c.story);
+      const combinedChengyu = `${hanvietNorm} ${litNorm} ${figNorm} ${storyNorm}`;
+
+      if (title === rawQ) score += 300;
+      else if (title.includes(rawQ)) score += 150;
+
+      if (pyQ && pinyinNorm === pyQ) score += 200;
+      else if (pyQ && pinyinNorm.includes(pyQ)) score += 90;
+
+      if (viQ && hanvietNorm === viQ) score += 190;
+      else if (viQ && hanvietNorm.includes(viQ)) score += 100;
+
+      if (viQ && (litNorm.includes(viQ) || figNorm.includes(viQ))) score += 80;
+      else if (viQ && storyNorm.includes(viQ)) score += 40;
+
+      // Multi-word token intersection
+      if (viTokens.length > 1 && viTokens.every(t => combinedChengyu.includes(t))) {
+        score += 85;
+      }
+
+      if (score > 0) {
+        results.push({
+          type: 'chengyu',
+          title: c.chengyu,
+          pinyin: c.pinyin,
+          hanviet: c.hanviet,
+          meaning: `${c.literal} — ${c.figurative}`,
+          score
+        });
+      }
+    }
+  }
+
+  // 4. Search Etymology (Chiết Tự & Gốc Từ)
+  if (etymologyData && Array.isArray(etymologyData)) {
+    for (const e of etymologyData) {
+      let score = 0;
+      const hanzi = (e.hanzi || '').toLowerCase();
+      const pinyinNorm = normalizePinyin(e.pinyin);
+      const hanvietNorm = normalizeVietnamese(e.hanviet);
+      const meaningNorm = normalizeVietnamese(e.meaning);
+      const storyNorm = normalizeVietnamese(e.etymologyStory);
+
+      if (hanzi === rawQ) score += 300;
+      if (pyQ && pinyinNorm === pyQ) score += 190;
+      if (viQ && hanvietNorm === viQ) score += 190;
+      else if (viQ && (meaningNorm.includes(viQ) || storyNorm.includes(viQ))) score += 70;
+
+      if (score > 0) {
+        results.push({
+          type: 'etymology',
+          title: e.hanzi,
+          pinyin: e.pinyin,
+          hanviet: `Chiết Tự: ${e.hanviet}`,
+          meaning: e.meaning,
+          score
+        });
+      }
+    }
+  }
+
+  // 5. Search Culture & Dynasties (Văn Hóa & Lịch Sử)
+  if (cultureData && Array.isArray(cultureData)) {
+    for (const era of cultureData) {
+      let score = 0;
+      const title = (era.title || '').toLowerCase();
+      const eraName = (era.eraName || '').toLowerCase();
+      const summary = (era.summary || '').toLowerCase();
+      const pinyin = (era.pinyin || '').toLowerCase();
+      const pyNorm = normalizePinyin(era.pinyin);
+      const combinedVi = normalizeVietnamese(`${era.eraName} ${era.title} ${era.summary} ${(era.keywords || []).join(' ')}`);
+
+      if (title.includes(rawQ) || eraName.includes(rawQ)) score += 160;
+      if (pyQ && pyNorm.includes(pyQ)) score += 90;
+      if (viQ && combinedVi.includes(viQ)) score += 120;
+      else if (viTokens.length > 1 && viTokens.every(t => combinedVi.includes(t))) score += 80;
+
+      if (score > 0) {
+        results.push({
+          type: 'culture',
+          title: era.eraName || era.title,
+          pinyin: era.period || '',
+          hanviet: 'Lịch Sử & Văn Hóa',
+          meaning: (era.summary || era.title).slice(0, 120),
+          targetId: era.id,
+          score
+        });
+      }
+    }
+  }
+
+  // Deduplicate and sort descending by score
+  results.sort((a, b) => b.score - a.score);
+
+  const seen = new Set();
+  const uniqueResults = [];
+  for (const r of results) {
+    const key = `${r.type}-${r.title}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      uniqueResults.push(r);
+    }
+  }
+
+  return uniqueResults.slice(0, 10);
+}
+
 // ---------------- GLOBAL SEARCH ----------------
 function setupGlobalSearch() {
   const searchInput = document.getElementById('globalSearchInput');
   const dropdown = document.getElementById('searchDropdown');
   const clearBtn = document.getElementById('clearSearchBtn');
+  if (!searchInput || !dropdown) return;
+
+  if (searchInput._globalSearchInitialized) return;
+  searchInput._globalSearchInitialized = true;
 
   searchInput.addEventListener('input', debounce((e) => {
-    const q = e.target.value.trim().toLowerCase();
-    if (!q) {
+    handleGlobalSearch(e.target.value);
+  }, 80));
+
+  searchInput.addEventListener('keydown', (e) => {
+    if (dropdown.classList.contains('hidden') || !currentSearchResults.length) {
+      if (e.key === 'Enter') {
+        handleGlobalSearch(searchInput.value);
+      }
+      return;
+    }
+
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      currentSearchSelectedIndex = (currentSearchSelectedIndex + 1) % currentSearchResults.length;
+      updateSearchSelectionHighlight();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      currentSearchSelectedIndex = (currentSearchSelectedIndex - 1 + currentSearchResults.length) % currentSearchResults.length;
+      updateSearchSelectionHighlight();
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      const targetIdx = currentSearchSelectedIndex >= 0 ? currentSearchSelectedIndex : 0;
+      selectSearchResult(targetIdx);
+    } else if (e.key === 'Escape') {
       dropdown.classList.add('hidden');
-      clearBtn.classList.add('hidden');
-      return;
     }
-    clearBtn.classList.remove('hidden');
-
-    const matches = (dictionaryData || []).filter(item => 
-      item.title.toLowerCase().includes(q) ||
-      item.pinyin.toLowerCase().includes(q) ||
-      item.meaning.toLowerCase().includes(q)
-    ).slice(0, 8);
-
-    if (!matches.length) {
-      dropdown.innerHTML = `
-        <div class="p-4 text-center text-xs text-slate-500">
-          Không tìm thấy từ vựng khớp với "${q}".
-        </div>
-      `;
-      dropdown.classList.remove('hidden');
-      return;
-    }
-
-    dropdown.innerHTML = matches.map(m => `
-      <div onclick="selectSearchResult('${m.title}')" class="p-2.5 rounded-lg hover:bg-teal-50 cursor-pointer flex items-center justify-between transition-colors border-b border-slate-50 last:border-none">
-        <div class="flex items-center gap-3">
-          <span class="font-hanzi text-xl font-bold text-teal-950">${m.title}</span>
-          <div>
-            <span class="text-xs font-bold text-teal-600">${m.pinyin}</span>
-            <span class="text-xs text-slate-600 block truncate max-w-[200px]">${m.meaning}</span>
-          </div>
-        </div>
-        <span class="text-[10px] px-1.5 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-200 font-semibold">
-          HSK ${m.level}
-        </span>
-      </div>
-    `).join('');
-    dropdown.classList.remove('hidden');
-  }, 100));
+  });
 
   // Close dropdown when clicking outside
   document.addEventListener('click', (e) => {
@@ -3476,38 +3759,252 @@ function setupGlobalSearch() {
   });
 }
 
-function clearSearch() {
+function handleGlobalSearch(query) {
   const searchInput = document.getElementById('globalSearchInput');
-  searchInput.value = '';
-  document.getElementById('searchDropdown').classList.add('hidden');
-  document.getElementById('clearSearchBtn').classList.add('hidden');
-  searchInput.focus();
+  const dropdown = document.getElementById('searchDropdown');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (!dropdown) return;
+
+  const q = (query || '').trim();
+  if (!q) {
+    dropdown.classList.add('hidden');
+    if (clearBtn) clearBtn.classList.add('hidden');
+    currentSearchResults = [];
+    currentSearchSelectedIndex = -1;
+    return;
+  }
+
+  if (clearBtn) clearBtn.classList.remove('hidden');
+
+  const matches = searchOmniDatabase(q);
+  currentSearchResults = matches;
+  currentSearchSelectedIndex = -1;
+
+  if (!matches.length) {
+    dropdown.innerHTML = `
+      <div class="p-6 text-center text-xs space-y-2">
+        <div class="w-10 h-10 rounded-full bg-amber-50 dark:bg-stone-800 text-amber-700 dark:text-amber-400 flex items-center justify-center mx-auto text-lg">
+          🔍
+        </div>
+        <p class="font-bold text-stone-800 dark:text-stone-200">Không tìm thấy từ vựng khớp với "${q}".</p>
+        <p class="text-stone-500 dark:text-stone-400 text-[11px] leading-relaxed">
+          Gợi ý: Bạn có thể gõ chữ Hán (<strong>你好</strong>), Pinyin không dấu (<strong>nihao, xiexie</strong>), Hán Việt (<strong>Nhĩ hảo, Tạ tạ</strong>) hoặc nghĩa tiếng Việt (<strong>xin chào, cảm ơn</strong>).
+        </p>
+      </div>
+    `;
+    dropdown.classList.remove('hidden');
+    return;
+  }
+
+  renderSearchResults(matches, q);
+  dropdown.classList.remove('hidden');
 }
 
-function selectSearchResult(title) {
-  document.getElementById('searchDropdown').classList.add('hidden');
-  openWordModalByTitle(title);
+function renderSearchResults(matches, query) {
+  const dropdown = document.getElementById('searchDropdown');
+  if (!dropdown) return;
+
+  const typeBadges = {
+    dict: (lvl) => `<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-amber-100 dark:bg-amber-950/80 text-[#8B1E1E] dark:text-amber-300 border border-amber-300 dark:border-amber-700">HSK ${lvl}</span>`,
+    radical: (st) => `<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-emerald-100 dark:bg-emerald-950/80 text-emerald-900 dark:text-emerald-300 border border-emerald-300 dark:border-emerald-700">Bộ Thủ (${st} nét)</span>`,
+    chengyu: () => `<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-purple-100 dark:bg-purple-950/80 text-purple-900 dark:text-purple-300 border border-purple-300 dark:border-purple-700">Thành Ngữ</span>`,
+    etymology: () => `<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-rose-100 dark:bg-rose-950/80 text-rose-900 dark:text-rose-300 border border-rose-300 dark:border-rose-700">Chiết Tự</span>`,
+    culture: () => `<span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-sky-100 dark:bg-sky-950/80 text-sky-900 dark:text-sky-300 border border-sky-300 dark:border-sky-700">Lịch Sử</span>`
+  };
+
+  const itemsHtml = matches.map((m, idx) => {
+    let badgeHtml = '';
+    if (m.type === 'dict') badgeHtml = typeBadges.dict(m.level);
+    else if (m.type === 'radical') badgeHtml = typeBadges.radical(m.strokes);
+    else if (m.type === 'chengyu') badgeHtml = typeBadges.chengyu();
+    else if (m.type === 'etymology') badgeHtml = typeBadges.etymology();
+    else if (m.type === 'culture') badgeHtml = typeBadges.culture();
+
+    return `
+      <div 
+        id="search-item-${idx}" 
+        onclick="selectSearchResult(${idx})" 
+        class="search-item-row p-2.5 rounded-xl hover:bg-amber-100/70 dark:hover:bg-stone-800/90 cursor-pointer flex items-center justify-between transition-all border border-transparent hover:border-amber-300/80 dark:hover:border-amber-500/40 group"
+      >
+        <div class="flex items-center gap-3 min-w-0 pr-2">
+          <div class="w-12 h-12 rounded-xl bg-amber-50/80 dark:bg-stone-800 border border-amber-200 dark:border-stone-700 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+            <span class="font-hanzi text-2xl font-black text-[#8B1E1E] dark:text-red-400">${m.title}</span>
+          </div>
+          <div class="min-w-0 space-y-0.5">
+            <div class="flex items-center gap-1.5 flex-wrap">
+              <span class="text-xs font-bold text-[#8B1E1E] dark:text-red-400 tracking-wide">${m.pinyin}</span>
+              ${m.hanviet ? `<span class="px-1.5 py-0.2 rounded text-[10px] font-bold bg-amber-100/90 dark:bg-amber-950 text-amber-950 dark:text-amber-200 border border-amber-300/70 dark:border-amber-700">[${m.hanviet}]</span>` : ''}
+            </div>
+            <p class="text-xs text-stone-700 dark:text-stone-300 truncate max-w-[280px] sm:max-w-[340px] font-medium leading-snug">${m.meaning}</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0 pl-1">
+          <button 
+            onclick="event.stopPropagation(); playChineseTTS('${m.title}', 'female');" 
+            title="Nghe phát âm chuẩn giọng Nữ" 
+            class="p-1.5 rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-rose-100 dark:hover:bg-rose-950 text-stone-600 dark:text-stone-300 hover:text-rose-800 border border-stone-200 dark:border-stone-700 transition-colors cursor-pointer"
+          >
+            <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+          </button>
+          ${badgeHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  dropdown.innerHTML = `
+    <div class="px-3 py-1.5 border-b border-amber-200/60 dark:border-amber-500/20 text-[11px] font-bold text-amber-900 dark:text-amber-300 flex items-center justify-between">
+      <span>🔍 Tìm thấy ${matches.length} kết quả phù hợp cho "${query}"</span>
+      <span class="text-[10px] text-stone-400 font-normal">Bấm hoặc nhấn Enter để xem</span>
+    </div>
+    <div class="space-y-1 py-1">
+      ${itemsHtml}
+    </div>
+    <div class="px-3 py-1.5 border-t border-amber-200/60 dark:border-amber-500/20 text-[10px] text-stone-500 dark:text-stone-400 flex items-center justify-between">
+      <span>↑ ↓ Di chuyển</span>
+      <span>Enter Mở chi tiết</span>
+      <span>Esc Đóng</span>
+    </div>
+  `;
+
+  refreshIcons(dropdown);
+}
+
+function updateSearchSelectionHighlight() {
+  const rows = document.querySelectorAll('.search-item-row');
+  rows.forEach((row, i) => {
+    if (i === currentSearchSelectedIndex) {
+      row.classList.add('bg-amber-100/90', 'dark:bg-stone-800', 'border-amber-400');
+      row.scrollIntoView({ block: 'nearest' });
+    } else {
+      row.classList.remove('bg-amber-100/90', 'dark:bg-stone-800', 'border-amber-400');
+    }
+  });
+}
+
+function selectSearchResult(index) {
+  const dropdown = document.getElementById('searchDropdown');
+  if (dropdown) dropdown.classList.add('hidden');
+
+  if (!currentSearchResults || !currentSearchResults[index]) return;
+  const item = currentSearchResults[index];
+
+  if (item.type === 'dict') {
+    openWordModalByTitle(item.title);
+  } else if (item.type === 'radical') {
+    openWritingModal(item.title, item.pinyin, item.hanviet + ' (' + item.meaning + ')');
+  } else if (item.type === 'chengyu') {
+    switchTab('chengyu');
+    showToast(`Đang mở thành ngữ: ${item.title} (${item.hanviet})`, 'info');
+  } else if (item.type === 'etymology') {
+    switchTab('etymology');
+    showToast(`Đang mở chiết tự chữ: ${item.title}`, 'info');
+  } else if (item.type === 'culture') {
+    switchTab('culture');
+    showToast(`Đang mở mục: ${item.title}`, 'info');
+  }
+}
+
+function clearSearch() {
+  const searchInput = document.getElementById('globalSearchInput');
+  if (searchInput) searchInput.value = '';
+  const dropdown = document.getElementById('searchDropdown');
+  if (dropdown) dropdown.classList.add('hidden');
+  const clearBtn = document.getElementById('clearSearchBtn');
+  if (clearBtn) clearBtn.classList.add('hidden');
+  currentSearchResults = [];
+  currentSearchSelectedIndex = -1;
+  if (searchInput) searchInput.focus();
 }
 
 // ---------------- WORD DETAIL MODAL ----------------
 function openWordModalByTitle(title) {
-  const word = dictionaryData.find(w => w.title === title);
-  if (!word) return;
+  const word = (dictionaryData || []).find(w => w.title === title);
+  if (!word) {
+    showToast(`Không tìm thấy chi tiết từ "${title}"`, 'warning');
+    return;
+  }
+  currentWordModalWord = word;
 
-  document.getElementById('modalHanzi').innerText = word.title;
-  document.getElementById('modalPinyin').innerText = word.pinyin;
-  document.getElementById('modalPos').innerText = word.pos || 'từ vựng';
-  document.getElementById('modalMeaning').innerText = word.meaning;
-  document.getElementById('modalExampleHanzi').innerText = word.exampleSentence || word.title;
-  document.getElementById('modalExamplePinyin').innerText = word.examplePinyin || word.pinyin;
-  document.getElementById('modalExampleVi').innerText = word.exampleMeaning || word.meaning;
+  const hanziEl = document.getElementById('modalHanzi');
+  const pinyinEl = document.getElementById('modalPinyin');
+  const posEl = document.getElementById('modalPos');
+  const meaningEl = document.getElementById('modalMeaning');
+  const hanvietBadge = document.getElementById('modalHanvietBadge');
+  const levelBadge = document.getElementById('modalLevelBadge');
+  const exHanzi = document.getElementById('modalExampleHanzi');
+  const exPinyin = document.getElementById('modalExamplePinyin');
+  const exVi = document.getElementById('modalExampleVi');
 
-  document.getElementById('wordModal').classList.remove('hidden');
-  refreshIcons();
+  if (hanziEl) hanziEl.innerText = word.title;
+  if (pinyinEl) pinyinEl.innerText = word.pinyin || '';
+  if (posEl) posEl.innerText = word.pos || 'từ vựng';
+  if (meaningEl) meaningEl.innerText = word.meaning || '';
+
+  if (hanvietBadge) {
+    hanvietBadge.innerText = word.hanviet ? `Hán Việt: ${word.hanviet}` : 'Hán Việt: Đang cập nhật';
+  }
+
+  if (levelBadge) {
+    levelBadge.innerText = `HSK ${word.level || 1}`;
+  }
+
+  if (exHanzi) exHanzi.innerText = word.exampleSentence || word.title;
+  if (exPinyin) exPinyin.innerText = word.examplePinyin || word.pinyin || '';
+  if (exVi) exVi.innerText = word.exampleMeaning || word.meaning || '';
+
+  updateWordModalBookmarkState();
+
+  const modal = document.getElementById('wordModal');
+  if (modal) modal.classList.remove('hidden');
+  refreshIcons(modal);
 }
 
 function closeWordModal() {
-  document.getElementById('wordModal').classList.add('hidden');
+  const modal = document.getElementById('wordModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function playWordModalTTS(gender = 'female') {
+  if (currentWordModalWord && currentWordModalWord.title) {
+    playChineseTTS(currentWordModalWord.title, gender);
+  }
+}
+
+function playWordModalExampleTTS(gender = 'female') {
+  if (currentWordModalWord && currentWordModalWord.exampleSentence) {
+    playChineseTTS(currentWordModalWord.exampleSentence, gender);
+  }
+}
+
+function openWritingModalFromWordModal() {
+  if (!currentWordModalWord) return;
+  const word = currentWordModalWord;
+  closeWordModal();
+  openWritingModal(word.title, word.pinyin, (word.hanviet ? `[${word.hanviet}] ` : '') + word.meaning);
+}
+
+function updateWordModalBookmarkState() {
+  if (!currentWordModalWord) return;
+  const isSaved = isWordSaved(currentWordModalWord.title);
+  const btn = document.getElementById('modalBookmarkBtn');
+  const label = document.getElementById('modalBookmarkLabel');
+  if (btn && label) {
+    if (isSaved) {
+      btn.className = 'flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-amber-500 text-white border border-amber-600 transition-all cursor-pointer shadow-2xs';
+      label.innerText = 'Đã Lưu Sổ Tay ⭐';
+    } else {
+      btn.className = 'flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-stone-700 transition-all cursor-pointer shadow-2xs';
+      label.innerText = 'Lưu Sổ Tay';
+    }
+  }
+}
+
+function toggleSaveWordFromModal() {
+  if (!currentWordModalWord) return;
+  const w = currentWordModalWord;
+  toggleSaveWord(w.title, w.pinyin, w.meaning, w.level || 1);
+  updateWordModalBookmarkState();
 }
 
 // ---------------- TELEGRAM INTEGRATION ----------------
@@ -7579,6 +8076,15 @@ window.initTheme = initTheme;
 window.toggleThemeDropdown = toggleThemeDropdown;
 window.setAppTheme = setAppTheme;
 window.applyAppTheme = applyAppTheme;
+window.handleGlobalSearch = handleGlobalSearch;
+window.selectSearchResult = selectSearchResult;
+window.clearSearch = clearSearch;
+window.openWordModalByTitle = openWordModalByTitle;
+window.closeWordModal = closeWordModal;
+window.playWordModalTTS = playWordModalTTS;
+window.playWordModalExampleTTS = playWordModalExampleTTS;
+window.openWritingModalFromWordModal = openWritingModalFromWordModal;
+window.toggleSaveWordFromModal = toggleSaveWordFromModal;
 
 // Global Escape Key to close open modals
 window.addEventListener('keydown', (e) => {
@@ -7590,6 +8096,10 @@ window.addEventListener('keydown', (e) => {
     closeReadingTocModal();
     closeWritingModal();
     closeSupportContactModal();
+    const searchDropdown = document.getElementById('searchDropdown');
+    if (searchDropdown && !searchDropdown.classList.contains('hidden')) {
+      searchDropdown.classList.add('hidden');
+    }
     const themeMenu = document.getElementById('themeDropdownMenu');
     if (themeMenu && !themeMenu.classList.contains('hidden')) {
       themeMenu.classList.add('hidden');
