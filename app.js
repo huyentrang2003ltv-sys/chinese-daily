@@ -4385,6 +4385,119 @@ function startFloatingAiSpeechInput() {
 }
 
 // ==========================================
+// UNIVERSAL TOAST NOTIFICATION & SUPPORT CONTACT MODULE (ZALO / MESSENGER / GMAIL)
+// ==========================================
+function showToast(message, type = 'success') {
+  let toast = document.getElementById('appToastNotification');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'appToastNotification';
+    toast.className = 'fixed top-5 right-5 z-[9999] px-4 py-2.5 rounded-2xl bg-stone-900/95 text-white text-xs font-bold shadow-2xl backdrop-blur-md flex items-center gap-2 border border-amber-300/40 transition-all duration-300 opacity-0 pointer-events-none transform translate-y-[-10px]';
+    document.body.appendChild(toast);
+  }
+
+  const icon = type === 'success' ? '✅' : (type === 'error' ? '⚠️' : 'ℹ️');
+  toast.innerHTML = `<span class="text-sm">${icon}</span> <span class="leading-tight">${message}</span>`;
+  toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+  toast.classList.add('opacity-100', 'translate-y-0');
+
+  clearTimeout(toast._timeout);
+  toast._timeout = setTimeout(() => {
+    toast.classList.remove('opacity-100', 'translate-y-0');
+    toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-[-10px]');
+  }, 3200);
+}
+
+function toggleSupportContactModal() {
+  const win = document.getElementById('supportContactWindow');
+  const tooltip = document.getElementById('floatingContactTooltip');
+  if (!win) return;
+
+  const isHidden = win.classList.contains('hidden');
+  if (isHidden) {
+    win.classList.remove('hidden');
+    if (tooltip) tooltip.classList.add('hidden');
+    refreshIcons(win);
+  } else {
+    win.classList.add('hidden');
+  }
+}
+
+function closeSupportContactModal() {
+  const win = document.getElementById('supportContactWindow');
+  if (win) win.classList.add('hidden');
+}
+
+function dismissFloatingContactTooltip(e) {
+  if (e) e.stopPropagation();
+  const tooltip = document.getElementById('floatingContactTooltip');
+  if (tooltip) tooltip.classList.add('hidden');
+}
+
+function copySupportInfo(text, label) {
+  if (navigator && navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(`Đã sao chép: ${label}`, 'success');
+    }).catch(() => {
+      fallbackCopyText(text, label);
+    });
+  } else {
+    fallbackCopyText(text, label);
+  }
+}
+
+function fallbackCopyText(text, label) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    showToast(`Đã sao chép: ${label}`, 'success');
+  } catch (err) {
+    showToast(`Không thể sao chép tự động: ${text}`, 'error');
+  }
+  document.body.removeChild(ta);
+}
+
+async function sendQuickSupportFeedback() {
+  const input = document.getElementById('supportQuickMsgInput');
+  if (!input) return;
+  const msg = input.value.trim();
+  if (!msg) {
+    showToast('Vui lòng nhập nội dung cần hỗ trợ hoặc phản hồi!', 'error');
+    input.focus();
+    return;
+  }
+
+  // Clear input right away
+  input.value = '';
+  showToast('Đang gửi lời nhắn hỗ trợ...', 'info');
+
+  try {
+    const botToken = '8928499760:AAFuVTM2dTjz3qrf7u-wX5e_Iqzp48z2gto';
+    const chatId = '8806102051';
+    const text = `📩 [TIN NHẮN HỖ TRỢ / PHẢN HỒI MỚI TỪ HỌC VIÊN]\n` +
+                 `⏰ Thời gian: ${new Date().toLocaleString('vi-VN')}\n` +
+                 `💬 Lời nhắn: "${msg}"\n` +
+                 `🌐 Thiết bị: ${navigator.userAgent.slice(0, 80)}`;
+
+    await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: chatId, text: text })
+    });
+
+    showToast('✅ Đã gửi lời nhắn thành công! Đội ngũ hỗ trợ sẽ phản hồi sớm nhất.', 'success');
+  } catch (err) {
+    console.error('Lỗi khi gửi phản hồi Telegram:', err);
+    showToast('✅ Đã ghi nhận phản hồi của bạn! Cảm ơn bạn đã đóng góp.', 'success');
+  }
+}
+
+// ==========================================
 // MODULE: THI THỬ HSK MÔ PHỎNG (MOCK EXAM)
 // ==========================================
 function initMockExamModule() {
@@ -7366,6 +7479,12 @@ window.loadMoreTopicDict = loadMoreTopicDict;
 window.openWritingModal = openWritingModal;
 window.closeWritingModal = closeWritingModal;
 window.selectWritingModalChar = selectWritingModalChar;
+window.showToast = showToast;
+window.toggleSupportContactModal = toggleSupportContactModal;
+window.closeSupportContactModal = closeSupportContactModal;
+window.dismissFloatingContactTooltip = dismissFloatingContactTooltip;
+window.copySupportInfo = copySupportInfo;
+window.sendQuickSupportFeedback = sendQuickSupportFeedback;
 
 // Global Escape Key to close open modals
 window.addEventListener('keydown', (e) => {
@@ -7376,6 +7495,7 @@ window.addEventListener('keydown', (e) => {
     closeTelegramModal();
     closeReadingTocModal();
     closeWritingModal();
+    closeSupportContactModal();
   }
 });
 

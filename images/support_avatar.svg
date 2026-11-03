@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE4D6" />
+      <stop offset="50%" stop-color="#FFD1C1" />
+      <stop offset="100%" stop-color="#FCE7D0" />
+    </linearGradient>
+    
+    <!-- Hair Gradient -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3B261D" />
+      <stop offset="100%" stop-color="#21130D" />
+    </linearGradient>
+
+    <!-- Headset Gradient -->
+    <linearGradient id="headsetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8B1E1E" />
+      <stop offset="50%" stop-color="#D94848" />
+      <stop offset="100%" stop-color="#8B1E1E" />
+    </linearGradient>
+
+    <!-- Shirt Gradient -->
+    <linearGradient id="shirtGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E4D43" />
+      <stop offset="100%" stop-color="#2E6B5E" />
+    </linearGradient>
+
+    <!-- Soft Glow -->
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Circular Base -->
+  <circle cx="80" cy="80" r="78" fill="url(#bgGrad)" stroke="#E8B595" stroke-width="2" />
+
+  <!-- Background Aura -->
+  <circle cx="80" cy="75" r="50" fill="#FFF2EB" opacity="0.8" />
+
+  <!-- Torso & Shirt -->
+  <path d="M35 155 C35 125, 55 116, 80 116 C105 116, 125 125, 125 155 Z" fill="url(#shirtGrad)" />
+  <!-- Collar -->
+  <path d="M68 116 L80 132 L92 116 Z" fill="#FFFDF9" />
+  <circle cx="80" cy="138" r="3" fill="#C59A3F" />
+
+  <!-- Neck -->
+  <rect x="71" y="100" width="18" height="20" rx="6" fill="#FAD1B6" />
+  <path d="M71 106 Q80 112 89 106 Z" fill="#EBBA9D" opacity="0.5" />
+
+  <!-- Back Hair -->
+  <path d="M42 80 C40 120, 118 120, 118 80 C118 40, 42 40, 42 80 Z" fill="url(#hairGrad)" />
+
+  <!-- Head Base -->
+  <ellipse cx="80" cy="74" rx="27" ry="32" fill="#FFE2CE" />
+  
+  <!-- Cheeks Blush -->
+  <circle cx="63" cy="83" r="6" fill="#FF8A8A" opacity="0.35" />
+  <circle cx="97" cy="83" r="6" fill="#FF8A8A" opacity="0.35" />
+
+  <!-- Eyes -->
+  <!-- Left Eye -->
+  <circle cx="68" cy="72" r="4.5" fill="#2E1C14" />
+  <circle cx="66.5" cy="70.5" r="1.6" fill="#FFFFFF" />
+  <!-- Right Eye -->
+  <circle cx="92" cy="72" r="4.5" fill="#2E1C14" />
+  <circle cx="90.5" cy="70.5" r="1.6" fill="#FFFFFF" />
+
+  <!-- Eyebrows -->
+  <path d="M62 64 Q68 61 74 64" stroke="#4A2E20" stroke-width="2" stroke-linecap="round" fill="none" />
+  <path d="M86 64 Q92 61 98 64" stroke="#4A2E20" stroke-width="2" stroke-linecap="round" fill="none" />
+
+  <!-- Gentle Smile -->
+  <path d="M72 87 Q80 95 88 87" stroke="#C44B4B" stroke-width="2.5" stroke-linecap="round" fill="#FFF" />
+
+  <!-- Front Hair (Bangs & Framing) -->
+  <path d="M53 62 C53 45, 107 45, 107 62 C97 50, 85 52, 80 57 C75 52, 63 50, 53 62 Z" fill="url(#hairGrad)" />
+  <path d="M52 64 C50 78, 55 95, 57 100 C58 92, 56 75, 58 66 Z" fill="url(#hairGrad)" />
+  <path d="M108 64 C110 78, 105 95, 103 100 C102 92, 104 75, 102 66 Z" fill="url(#hairGrad)" />
+
+  <!-- Headset -->
+  <!-- Headband -->
+  <path d="M48 68 C44 32, 116 32, 112 68" stroke="url(#headsetGrad)" stroke-width="4.5" stroke-linecap="round" fill="none" />
+  
+  <!-- Left Earpad -->
+  <rect x="44" y="66" width="8" height="18" rx="4" fill="#2B2B2B" stroke="#C59A3F" stroke-width="1.5" />
+  <!-- Right Earpad -->
+  <rect x="108" y="66" width="8" height="18" rx="4" fill="#2B2B2B" stroke="#C59A3F" stroke-width="1.5" />
+
+  <!-- Microphone Boom & Tip -->
+  <path d="M48 78 Q50 96 68 96" stroke="#5A5A5A" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <circle cx="69" cy="96" r="3.5" fill="#8B1E1E" stroke="#FFD700" stroke-width="1" />
+
+  <!-- Sparkle of Service -->
+  <path d="M125 40 L127 45 L132 47 L127 49 L125 54 L123 49 L118 47 L123 45 Z" fill="#FFC107" />
+  <path d="M30 65 L31.5 68.5 L35 70 L31.5 71.5 L30 75 L28.5 71.5 L25 70 L28.5 68.5 Z" fill="#FF9800" />
+</svg>

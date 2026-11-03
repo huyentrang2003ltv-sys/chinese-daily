@@ -169,6 +169,19 @@
           <i data-lucide="send" class="w-3.5 h-3.5 text-amber-700"></i>
           <span class="hidden sm:inline">Telegram</span>
         </button>
+
+        <!-- Nút Liên Hệ Hỗ Trợ Zalo / Messenger / Gmail -->
+        <button 
+          onclick="toggleSupportContactModal()" 
+          class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-rose-50 to-amber-50 hover:from-rose-100 hover:to-amber-100 text-rose-950 border border-rose-300 transition-all shadow-2xs cursor-pointer"
+          title="Liên hệ hỗ trợ khi có vấn đề qua Zalo, Messenger, Gmail"
+        >
+          <div class="w-4 h-4 rounded-full overflow-hidden shrink-0 border border-rose-400">
+            <img src="images/support_avatar.png" onerror="this.src='images/support_avatar.svg'" alt="Avt Hỗ Trợ" class="w-full h-full object-cover" />
+          </div>
+          <span class="hidden sm:inline">Hỗ Trợ</span>
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+        </button>
       </div>
 
     </div>
@@ -2137,6 +2150,222 @@
             Đóng
           </button>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOATING CONTACT SUPPORT WIDGET (LIÊN HỆ HỖ TRỢ QUA ZALO, MESSENGER, GMAIL KHI CÓ VẤN ĐỀ) -->
+  <div id="floatingContactWidget" class="fixed bottom-5 left-5 z-50 flex flex-col items-start">
+    
+    <!-- Tooltip Bubble (Greeting Callout) -->
+    <div id="floatingContactTooltip" class="mb-2 hidden sm:flex items-center gap-2 bg-white/95 backdrop-blur-md px-3.5 py-1.5 rounded-2xl shadow-xl border border-rose-300/80 text-xs text-stone-800 animate-bounce duration-1000 origin-bottom-left">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+      <span class="font-bold text-[#8B1E1E]">Hỗ Trợ 24/7:</span>
+      <span>Bấm để liên hệ Zalo, Messenger, Gmail!</span>
+      <button onclick="dismissFloatingContactTooltip(event)" class="text-stone-400 hover:text-stone-700 ml-1 cursor-pointer">
+        <i data-lucide="x" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+
+    <!-- Floating Trigger Avatar Button -->
+    <button 
+      id="floatingContactTriggerBtn" 
+      onclick="toggleSupportContactModal()" 
+      class="group relative flex items-center justify-center p-1 rounded-full bg-gradient-to-br from-[#8B1E1E] via-rose-600 to-amber-500 shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer ring-4 ring-rose-300/60 hover:ring-rose-400"
+      title="Liên hệ hỗ trợ khi có vấn đề qua Zalo, Messenger, Gmail"
+    >
+      <!-- Avatar Support 3D -->
+      <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden bg-rose-50 flex items-center justify-center relative border border-white/40">
+        <img 
+          src="images/support_avatar.png" 
+          onerror="this.src='images/support_avatar.svg'" 
+          alt="Avatar Hỗ Trợ Khách Hàng" 
+          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" 
+        />
+      </div>
+
+      <!-- Online Status Badge -->
+      <span class="absolute bottom-0.5 right-0.5 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white ring-2 ring-emerald-400/60 animate-pulse" title="Đang trực tuyến hỗ trợ"></span>
+
+      <!-- Helper text badge on hover -->
+      <span class="hidden group-hover:flex absolute -top-8 left-1/2 -translate-x-1/2 px-2.5 py-1 rounded-lg bg-stone-900/90 text-white text-[10px] font-bold whitespace-nowrap shadow-lg">
+        Hỗ trợ 24/7
+      </span>
+    </button>
+
+    <!-- Support Contact Popup Window -->
+    <div 
+      id="supportContactWindow" 
+      class="hidden fixed bottom-24 left-4 sm:left-6 w-[94vw] sm:w-[420px] max-h-[85vh] bg-[#FFFDF9] rounded-3xl border border-amber-300/90 shadow-2xl flex flex-col overflow-hidden transition-all duration-300 z-50 animate-fade-in"
+    >
+      <!-- Header -->
+      <div class="p-4 bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-rose-900 text-white flex items-center justify-between shadow-md shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="relative w-11 h-11 rounded-full overflow-hidden border-2 border-amber-300 shadow-sm shrink-0 bg-rose-100">
+            <img 
+              src="images/support_avatar.png" 
+              onerror="this.src='images/support_avatar.svg'" 
+              alt="Avatar Hỗ Trợ" 
+              class="w-full h-full object-cover" 
+            />
+            <span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-emerald-400 border border-white"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <h3 class="font-bold text-sm tracking-wide">Trung Tâm Hỗ Trợ & Liên Hệ</h3>
+              <span class="px-1.5 py-0.2 rounded text-[9px] font-black bg-emerald-500/90 text-white">24/7</span>
+            </div>
+            <p class="text-[11px] text-amber-200">Giải đáp thắc mắc, bài học & kỹ thuật</p>
+          </div>
+        </div>
+
+        <button 
+          onclick="toggleSupportContactModal()" 
+          class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors cursor-pointer"
+        >
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Body / Contact Channels -->
+      <div class="p-4 md:p-5 overflow-y-auto space-y-3.5 flex-1 bg-[#FAF7F2]/60">
+        
+        <p class="text-xs text-stone-600 leading-relaxed font-medium">
+          Bạn gặp khó khăn trong quá trình học tập, cần giải đáp kiến thức hoặc báo lỗi hệ thống? Hãy liên hệ ngay với chúng tôi qua các kênh sau:
+        </p>
+
+        <!-- 1. ZALO -->
+        <div class="p-3.5 rounded-2xl bg-white border border-sky-200/90 hover:border-sky-400 transition-all shadow-2xs space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-blue-500 text-white flex items-center justify-center font-black text-sm shadow-xs shrink-0">
+                Zalo
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-900">Zalo Hỗ Trợ Trực Tiếp</h4>
+                <p class="text-[11px] text-stone-500">Phản hồi siêu tốc qua Zalo</p>
+              </div>
+            </div>
+            <span class="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">
+              Khuyên dùng
+            </span>
+          </div>
+          
+          <div class="flex items-center gap-2 pt-1">
+            <a 
+              href="https://zalo.me/0988886666" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex-1 py-2 px-3 rounded-xl bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
+            >
+              <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+              <span>Nhắn Zalo Ngay</span>
+            </a>
+            <button 
+              onclick="copySupportInfo('0988886666', 'Số Zalo: 0988886666')" 
+              class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold border border-stone-200 transition-all cursor-pointer"
+              title="Sao chép số Zalo"
+            >
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. MESSENGER -->
+        <div class="p-3.5 rounded-2xl bg-white border border-purple-200/90 hover:border-purple-400 transition-all shadow-2xs space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-600 to-purple-600 text-white flex items-center justify-center shadow-xs shrink-0">
+                <i data-lucide="send" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-900">Facebook Messenger</h4>
+                <p class="text-[11px] text-stone-500">Nhắn tin Fanpage hỗ trợ 24/7</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-2 pt-1">
+            <a 
+              href="https://m.me/hoctiengtrungmoingay" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="flex-1 py-2 px-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
+            >
+              <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+              <span>Mở Messenger</span>
+            </a>
+            <button 
+              onclick="copySupportInfo('https://m.me/hoctiengtrungmoingay', 'Link Messenger')" 
+              class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold border border-stone-200 transition-all cursor-pointer"
+              title="Sao chép link Messenger"
+            >
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. GMAIL -->
+        <div class="p-3.5 rounded-2xl bg-white border border-rose-200/90 hover:border-rose-400 transition-all shadow-2xs space-y-2">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+              <div class="w-9 h-9 rounded-xl bg-rose-600 text-white flex items-center justify-center shadow-xs shrink-0">
+                <i data-lucide="mail" class="w-4 h-4"></i>
+              </div>
+              <div>
+                <h4 class="text-xs font-bold text-stone-900">Hòm Thư Gmail</h4>
+                <p class="text-[11px] text-stone-500">Gửi phản hồi, báo lỗi & tài liệu</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="flex items-center gap-2 pt-1">
+            <a 
+              href="mailto:support.hoctiengtrung@gmail.com?subject=%5BH%E1%BB%8Dc%20Ti%E1%BA%BFng%20Trung%20M%E1%BB%97i%20Ng%C3%A0y%5D%20Y%C3%AAu%20c%E1%BA%A7u%20h%E1%BB%97%20tr%E1%BB%A3&body=Xin%20ch%C3%A0o%20%C4%91%E1%BB%99i%20ng%C5%A9%20h%E1%BB%97%20tr%E1%BB%A3%2C%20t%C3%B4i%20c%E1%BA%A7n%20h%E1%BB%97%20tr%E1%BB%A3%20v%E1%BB%81%3A%0A%0A" 
+              class="flex-1 py-2 px-3 rounded-xl bg-gradient-to-r from-rose-600 to-amber-600 hover:from-rose-700 hover:to-amber-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-xs transition-all cursor-pointer"
+            >
+              <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+              <span>Gửi Gmail Hỗ Trợ</span>
+            </a>
+            <button 
+              onclick="copySupportInfo('support.hoctiengtrung@gmail.com', 'Gmail: support.hoctiengtrung@gmail.com')" 
+              class="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold border border-stone-200 transition-all cursor-pointer"
+              title="Sao chép địa chỉ Gmail"
+            >
+              <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. QUICK FEEDBACK DIRECT MESSAGE BOX -->
+        <div class="p-3.5 rounded-2xl bg-amber-50/70 border border-amber-200 space-y-2">
+          <label class="text-[11px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+            <i data-lucide="send" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+            <span>Hoặc để lại lời nhắn nhanh trực tiếp:</span>
+          </label>
+          <div class="flex items-center gap-1.5">
+            <input 
+              id="supportQuickMsgInput" 
+              type="text" 
+              placeholder="Nhập nội dung cần hỗ trợ hoặc phản hồi..." 
+              onkeydown="if(event.key==='Enter') sendQuickSupportFeedback()"
+              class="flex-1 px-3 py-2 text-xs rounded-xl bg-white border border-amber-300 text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]"
+            />
+            <button 
+              onclick="sendQuickSupportFeedback()" 
+              class="px-3.5 py-2 rounded-xl bg-[#8B1E1E] hover:bg-[#A52A2A] text-white font-bold text-xs shadow-xs transition-all cursor-pointer shrink-0 flex items-center gap-1"
+            >
+              <span>Gửi</span>
+              <i data-lucide="arrow-right" class="w-3 h-3"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Note -->
+      <div class="p-3 bg-stone-50 border-t border-amber-200/80 text-[11px] text-stone-500 text-center">
+        💡 Đội ngũ phụ trách luôn sẵn sàng hỗ trợ giải đáp 24/7!
       </div>
     </div>
   </div>
