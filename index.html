@@ -1960,10 +1960,16 @@
                 <i data-lucide="languages" class="w-3.5 h-3.5"></i>
                 <span id="narrativeViBtnText">Ẩn Dịch Nghĩa</span>
               </button>
-              <button id="btnPlayAllNarrative" onclick="playAllNarrativeText()" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer" title="Nghe diễn đọc toàn bộ đoạn văn">
-                <i data-lucide="play" class="w-3.5 h-3.5"></i>
-                <span>Nghe Toàn Bài</span>
-              </button>
+              <div id="narrativePlayBtnGroup" class="flex items-center gap-1 bg-stone-100 p-0.5 rounded-xl border border-stone-200 shadow-2xs">
+                <button id="btnPlayAllNarrativeFemale" onclick="playAllNarrativeText('female')" class="px-3 py-1.5 rounded-lg bg-white hover:bg-rose-50 text-rose-900 border border-rose-200 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer shadow-2xs" title="Nghe toàn bộ bài văn bằng giọng Nữ (Xiaoxiao)">
+                  <i data-lucide="play" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>👩 Nghe Nữ</span>
+                </button>
+                <button id="btnPlayAllNarrativeMale" onclick="playAllNarrativeText('male')" class="px-3 py-1.5 rounded-lg bg-white hover:bg-blue-50 text-blue-900 border border-blue-200 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer shadow-2xs" title="Nghe toàn bộ bài văn bằng giọng Nam (Yunxi)">
+                  <i data-lucide="play" class="w-3.5 h-3.5 text-blue-600"></i>
+                  <span>👨 Nghe Nam</span>
+                </button>
+              </div>
               <button id="btnStopNarrative" onclick="stopNarrativeSpeech()" class="hidden px-3.5 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold shadow-sm transition-all flex items-center gap-1.5 cursor-pointer animate-pulse" title="Dừng đọc bài văn">
                 <i data-lucide="square" class="w-3.5 h-3.5"></i>
                 <span>Dừng Phát</span>
