@@ -1175,48 +1175,107 @@
       </div>
     </section>
 
-    <!-- TAB 4: LỘ TRÌNH HSK 3.0 -->
+    <!-- TAB 4: LỘ TRÌNH HSK 3.0 TOÀN DIỆN (TIÊU CHUẨN 3 CẤP 9 BẬC) -->
     <section id="tab-pathway" class="hidden space-y-6">
-      <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-amber-50/80 via-[#FAF7F2] to-white border border-amber-300/40">
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/70 text-amber-900 border border-amber-200 text-xs font-bold mb-3">
-              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-              <span>Chuẩn Khung HSK 3.0 Mới</span>
+      
+      <!-- Hero Banner & KPIs -->
+      <div class="glass-card rounded-3xl p-6 lg:p-8 bg-gradient-to-r from-amber-50/90 via-[#FAF7F2] to-white dark:from-[#161B22] dark:via-[#1c222d] dark:to-[#161B22] border border-amber-300/80 dark:border-amber-500/30 shadow-lg relative overflow-hidden">
+        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="space-y-2">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/90 dark:bg-amber-950/80 text-amber-950 dark:text-amber-200 border border-amber-300 dark:border-amber-700 text-xs font-bold">
+              <i data-lucide="compass" class="w-3.5 h-3.5 text-[#8B1E1E] dark:text-red-400"></i>
+              <span>Tiêu Chuẩn Mới 2026 • Hanban & Tiếng Trung Thượng Hải</span>
             </div>
-            <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
-              Lộ Trình Bài Học Theo Cấp Độ
+            <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 dark:text-stone-100 tracking-tight">
+              Lộ Trình Chinh Phục HSK 3.0 Toàn Diện
             </h2>
-            <p class="text-sm text-stone-600">
-              Hệ thống câu mẫu ngữ cảnh thực tế, phân tách từ loại chi tiết và giải thích ngữ pháp bài bản.
+            <p class="text-xs sm:text-sm text-stone-600 dark:text-stone-300 max-w-3xl leading-relaxed">
+              Hệ thống hóa toàn bộ khung năng lực <strong>3 Cấp 9 Bậc</strong> từ Sơ cấp (HSK 1) đến Chuyên nghiệp (HSK 6) và Biên - Phiên dịch (HSK 7–9). Bao gồm <strong>Lộ trình 6 giai đoạn</strong>, <strong>Bảng chuẩn đối chiếu</strong>, <strong>48 trọng tâm ngữ pháp</strong>, <strong>Kỹ năng Dịch mới</strong>, và <strong>1.040 bài học thực chiến</strong>.
             </p>
           </div>
 
-          <!-- Level Filter Pills -->
-          <div class="flex items-center gap-2 bg-amber-50/80 p-1.5 rounded-xl border border-amber-200/80">
-            <button onclick="filterPathwayLevel(1)" id="btn-hsk-1" class="px-4 py-2 text-xs font-bold rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm transition-all">
-              HSK 1 (Nền tảng)
-            </button>
-            <button onclick="filterPathwayLevel(2)" id="btn-hsk-2" class="px-4 py-2 text-xs font-bold rounded-lg text-amber-900 hover:bg-amber-100 transition-all">
-              HSK 2 (Giao tiếp)
-            </button>
-            <button onclick="filterPathwayLevel(3)" id="btn-hsk-3" class="px-4 py-2 text-xs font-bold rounded-lg text-amber-900 hover:bg-amber-100 transition-all">
-              HSK 3 (Mở rộng)
-            </button>
+          <!-- KPI Cards -->
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 shrink-0">
+            <div class="p-3 rounded-2xl bg-[#FFFDF9] dark:bg-[#21262D] border border-amber-200 dark:border-stone-700 text-center shadow-2xs">
+              <span class="block text-base sm:text-lg font-black text-[#8B1E1E] dark:text-red-400">3 Cấp 9 Bậc</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400 font-bold">Cấu trúc chuẩn</span>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#FFFDF9] dark:bg-[#21262D] border border-amber-200 dark:border-stone-700 text-center shadow-2xs">
+              <span class="block text-base sm:text-lg font-black text-amber-700 dark:text-amber-400">11.092</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400 font-bold">Từ vựng mới</span>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#FFFDF9] dark:bg-[#21262D] border border-amber-200 dark:border-stone-700 text-center shadow-2xs">
+              <span class="block text-base sm:text-lg font-black text-emerald-700 dark:text-emerald-400">3.000</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400 font-bold">Chữ viết tay</span>
+            </div>
+            <div class="p-3 rounded-2xl bg-[#FFFDF9] dark:bg-[#21262D] border border-amber-200 dark:border-stone-700 text-center shadow-2xs">
+              <span class="block text-base sm:text-lg font-black text-purple-700 dark:text-purple-400">Dịch Thuật</span>
+              <span class="text-[10px] text-stone-500 dark:text-stone-400 font-bold">Kỹ năng mới</span>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Pathway Lessons Container -->
-      <div id="pathwayLessonsContainer" class="space-y-4"></div>
-      
-      <!-- Pagination / Load More -->
-      <div class="flex justify-center pt-4">
-        <button id="loadMoreLessonsBtn" onclick="loadMoreLessons()" class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white hover:bg-amber-50 text-stone-800 border border-stone-200 shadow-sm transition-all flex items-center gap-2">
-          <span>Xem thêm bài học</span>
-          <i data-lucide="chevron-down" class="w-4 h-4"></i>
+      <!-- Sub-Navigation Navigation Bar -->
+      <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar pb-1">
+        <button 
+          onclick="switchPathwaySubTab('stages')" 
+          id="btn-pathway-sub-stages" 
+          class="pathway-sub-btn px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm flex items-center gap-1.5 cursor-pointer"
+        >
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>🧭 Lộ Trình 6 Giai Đoạn (0 – HSK 6 & 7-9)</span>
+        </button>
+
+        <button 
+          onclick="switchPathwaySubTab('standards')" 
+          id="btn-pathway-sub-standards" 
+          class="pathway-sub-btn px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-200 hover:bg-amber-50 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center gap-1.5 cursor-pointer"
+        >
+          <i data-lucide="table-2" class="w-3.5 h-3.5"></i>
+          <span>📊 Bảng Chuẩn 3 Cấp 9 Bậc</span>
+        </button>
+
+        <button 
+          onclick="switchPathwaySubTab('grammar')" 
+          id="btn-pathway-sub-grammar" 
+          class="pathway-sub-btn px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-200 hover:bg-amber-50 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center gap-1.5 cursor-pointer"
+        >
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>📐 Trọng Tâm Ngữ Pháp (48 Cấu Trúc)</span>
+        </button>
+
+        <button 
+          onclick="switchPathwaySubTab('translation')" 
+          id="btn-pathway-sub-translation" 
+          class="pathway-sub-btn px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-200 hover:bg-amber-50 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center gap-1.5 cursor-pointer"
+        >
+          <i data-lucide="languages" class="w-3.5 h-3.5"></i>
+          <span>🌐 Kỹ Năng Dịch & Từ Vựng Mới</span>
+        </button>
+
+        <button 
+          onclick="switchPathwaySubTab('lessons')" 
+          id="btn-pathway-sub-lessons" 
+          class="pathway-sub-btn px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-200 hover:bg-amber-50 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center gap-1.5 cursor-pointer"
+        >
+          <i data-lucide="graduation-cap" class="w-3.5 h-3.5"></i>
+          <span>📚 Bài Học Từng Cấp Độ (HSK 1 – 6)</span>
+        </button>
+
+        <button 
+          onclick="switchPathwaySubTab('resources')" 
+          id="btn-pathway-sub-resources" 
+          class="pathway-sub-btn px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-200 hover:bg-amber-50 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center gap-1.5 cursor-pointer"
+        >
+          <i data-lucide="download-cloud" class="w-3.5 h-3.5"></i>
+          <span>📥 Tài Liệu & Đề Thi Miễn Phí</span>
         </button>
       </div>
+
+      <!-- Main Dynamic Content Container -->
+      <div id="pathwayDynamicContent" class="space-y-6"></div>
+
     </section>
 
     <!-- TAB: LUYỆN TẬP HSK 1 - HSK 6 (4 KỸ NĂNG NGHE - NÓI - ĐỌC - VIẾT) -->
