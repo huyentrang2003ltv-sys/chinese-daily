@@ -377,14 +377,38 @@ function updateProfileUI() {
 function toggleSaveWord(hanzi, pinyin, meaning, hsk = 1) {
   if (!userProfile.savedWords) userProfile.savedWords = [];
   const idx = userProfile.savedWords.findIndex(w => w.hanzi === hanzi);
+  let isSaved = false;
   if (idx >= 0) {
     userProfile.savedWords.splice(idx, 1);
+    isSaved = false;
   } else {
     userProfile.savedWords.push({ hanzi, pinyin, meaning, hsk, addedAt: new Date().toISOString() });
     addExp(5, 'Lưu từ mới vào sổ tay');
+    isSaved = true;
   }
   saveUserProfile();
   renderNotebookList();
+  updateHeaderStats();
+  return isSaved;
+}
+
+function isWordSaved(hanzi) {
+  if (!userProfile || !userProfile.savedWords) return false;
+  return userProfile.savedWords.some(w => w.hanzi === hanzi);
+}
+
+function toggleSaveWordFromLesson(hanzi, pinyin, meaning) {
+  const isSaved = toggleSaveWord(hanzi, pinyin, meaning);
+  const btn = document.getElementById(`btnSaveVocab-${hanzi}`);
+  if (btn) {
+    if (isSaved) {
+      btn.className = 'p-1.5 rounded-lg bg-amber-500 text-white border-amber-500 transition-all cursor-pointer';
+      btn.title = 'Đã lưu trong Sổ tay';
+    } else {
+      btn.className = 'p-1.5 rounded-lg bg-stone-50 hover:bg-stone-100 text-stone-400 hover:text-amber-600 border-stone-200 transition-all cursor-pointer';
+      btn.title = 'Lưu vào Sổ tay';
+    }
+  }
 }
 
 function openNotebookModal() {
@@ -5421,12 +5445,12 @@ function renderJiaocheng() {
 
           <!-- Title & Audio -->
           <div class="flex items-start justify-between gap-3 border-b border-amber-100 pb-2.5">
-            <div>
-              <div class="flex items-baseline gap-2">
-                <h3 class="text-xl font-bold font-hanzi text-stone-900 tracking-wide">${lesson.titleHanzi}</h3>
+            <div class="cursor-pointer group/title flex-1" onclick="openLessonDetailModal('${lesson.id}')" title="Bấm vào đây để mở chi tiết toàn bộ bài học">
+              <div class="flex items-baseline gap-2 flex-wrap">
+                <h3 class="text-xl font-bold font-hanzi text-stone-900 group-hover/title:text-[#8B1E1E] transition-colors tracking-wide">${lesson.titleHanzi}</h3>
                 <span class="text-xs font-semibold text-[#8B1E1E]">${lesson.titlePinyin}</span>
               </div>
-              <p class="text-xs font-medium text-stone-600 mt-0.5">"${lesson.titleMeaning}"</p>
+              <p class="text-xs font-medium text-stone-600 mt-0.5 group-hover/title:text-stone-900 transition-colors">"${lesson.titleMeaning}"</p>
             </div>
             <button 
               onclick="playChineseTTS('${safeTitle}')" 
@@ -5521,50 +5545,98 @@ let dialoguePlayIndex = 0;
 let dialoguePlayTimeout = null;
 let currentLessonFIBSelections = {};
 
-function openLessonDetailModal(lessonId) {
-  if (!jiaochengData || !jiaochengData.lessons) return;
-  const lesson = jiaochengData.lessons.find(l => l.id === lessonId);
-  if (!lesson) return;
+async function openLessonDetailModal(lessonId) {
+  try {
+    if (!jiaochengData || !jiaochengData.lessons) {
+      const res = await fetch('data/hanyu_jiaocheng.json');
+      jiaochengData = await res.json();
+    }
+    const lesson = jiaochengData && jiaochengData.lessons ? jiaochengData.lessons.find(l => l.id === lessonId) : null;
+    if (!lesson) {
+      console.warn('Không tìm thấy bài học:', lessonId);
+      return;
+    }
 
-  currentActiveLesson = lesson;
-  stopDialogueSequence();
-  currentLessonFIBSelections = {};
+    currentActiveLesson = lesson;
+    stopDialogueSequence();
+    currentLessonFIBSelections = {};
 
-  // Header information
-  const volumeBadge = document.getElementById('lessonModalVolumeBadge');
-  const catBadge = document.getElementById('lessonModalCategoryBadge');
-  const titleHanzi = document.getElementById('lessonModalTitleHanzi');
-  const titlePinyin = document.getElementById('lessonModalTitlePinyin');
-  const titleMeaning = document.getElementById('lessonModalTitleMeaning');
-  const vocabCountEl = document.getElementById('lessonModalVocabCount');
-  const qaCountEl = document.getElementById('lessonModalQACount');
-  const fibCountEl = document.getElementById('lessonModalFIBCount');
+    // Header information
+    const volumeBadge = document.getElementById('lessonModalVolumeBadge');
+    const catBadge = document.getElementById('lessonModalCategoryBadge');
+    const titleHanzi = document.getElementById('lessonModalTitleHanzi');
+    const titlePinyin = document.getElementById('lessonModalTitlePinyin');
+    const titleMeaning = document.getElementById('lessonModalTitleMeaning');
+    const vocabCountEl = document.getElementById('lessonModalVocabCount');
+    const qaCountEl = document.getElementById('lessonModalQACount');
+    const fibCountEl = document.getElementById('lessonModalFIBCount');
 
-  if (volumeBadge) volumeBadge.innerText = `${lesson.volumeName || lesson.volume} • Bài ${lesson.lessonNum}`;
-  if (catBadge) catBadge.innerText = lesson.category;
-  if (titleHanzi) titleHanzi.innerText = lesson.titleHanzi;
-  if (titlePinyin) titlePinyin.innerText = lesson.titlePinyin;
-  if (titleMeaning) titleMeaning.innerText = `"${lesson.titleMeaning}"`;
-  if (vocabCountEl) vocabCountEl.innerText = (lesson.vocabulary || []).length;
-  if (qaCountEl) qaCountEl.innerText = (lesson.comprehensionQA || []).length;
-  if (fibCountEl) fibCountEl.innerText = (lesson.fillInBlanks || []).length;
+    if (volumeBadge) volumeBadge.innerText = `${lesson.volumeName || lesson.volume} • Bài ${lesson.lessonNum}`;
+    if (catBadge) catBadge.innerText = lesson.category;
+    if (titleHanzi) titleHanzi.innerText = lesson.titleHanzi;
+    if (titlePinyin) titlePinyin.innerText = lesson.titlePinyin;
+    if (titleMeaning) titleMeaning.innerText = `"${lesson.titleMeaning}"`;
+    if (vocabCountEl) vocabCountEl.innerText = (lesson.vocabulary || []).length;
+    if (qaCountEl) qaCountEl.innerText = (lesson.comprehensionQA || []).length;
+    if (fibCountEl) fibCountEl.innerText = (lesson.fillInBlanks || []).length;
 
-  // Render Sub-panels
-  renderLessonDialogues(lesson.dialogues || []);
-  renderLessonVocabulary(lesson.vocabulary || []);
-  renderLessonGrammar(lesson.grammarPoints || []);
-  renderLessonQA(lesson.comprehensionQA || []);
-  renderLessonFillInBlanks(lesson.fillInBlanks || []);
-  renderLessonCulture(lesson);
+    // Update Next/Prev navigation buttons
+    updateLessonModalNavButtons();
 
-  // Default to dialogues sub-tab
-  switchLessonSubTab('dialogues');
+    // Render Sub-panels safely
+    try { renderLessonDialogues(lesson.dialogues || []); } catch (e) { console.error('Error rendering dialogues:', e); }
+    try { renderLessonVocabulary(lesson.vocabulary || []); } catch (e) { console.error('Error rendering vocabulary:', e); }
+    try { renderLessonGrammar(lesson.grammarPoints || []); } catch (e) { console.error('Error rendering grammar:', e); }
+    try { renderLessonQA(lesson.comprehensionQA || []); } catch (e) { console.error('Error rendering QA:', e); }
+    try { renderLessonFillInBlanks(lesson.fillInBlanks || []); } catch (e) { console.error('Error rendering FIB:', e); }
+    try { renderLessonCulture(lesson); } catch (e) { console.error('Error rendering culture:', e); }
 
-  // Show modal
-  const modal = document.getElementById('lessonDetailModal');
-  if (modal) {
-    modal.classList.remove('hidden');
-    refreshIcons(modal);
+    // Default to dialogues sub-tab
+    switchLessonSubTab('dialogues');
+
+    // Show modal & prevent background scrolling
+    const modal = document.getElementById('lessonDetailModal');
+    if (modal) {
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      const contentArea = document.getElementById('lessonModalContentArea');
+      if (contentArea) contentArea.scrollTop = 0;
+      refreshIcons(modal);
+    }
+  } catch (err) {
+    console.error('Lỗi khi mở chi tiết bài học:', err);
+  }
+}
+
+function updateLessonModalNavButtons() {
+  if (!currentActiveLesson || !jiaochengData || !jiaochengData.lessons) return;
+  const currentIdx = jiaochengData.lessons.findIndex(l => l.id === currentActiveLesson.id);
+  const prevBtn = document.getElementById('btnLessonModalPrev');
+  const nextBtn = document.getElementById('btnLessonModalNext');
+  if (prevBtn) {
+    if (currentIdx <= 0) {
+      prevBtn.classList.add('opacity-40', 'pointer-events-none');
+    } else {
+      prevBtn.classList.remove('opacity-40', 'pointer-events-none');
+    }
+  }
+  if (nextBtn) {
+    if (currentIdx >= jiaochengData.lessons.length - 1) {
+      nextBtn.classList.add('opacity-40', 'pointer-events-none');
+    } else {
+      nextBtn.classList.remove('opacity-40', 'pointer-events-none');
+    }
+  }
+}
+
+function navigateToAdjacentLesson(direction) {
+  if (!currentActiveLesson || !jiaochengData || !jiaochengData.lessons) return;
+  const currentIdx = jiaochengData.lessons.findIndex(l => l.id === currentActiveLesson.id);
+  if (currentIdx === -1) return;
+  const nextIdx = currentIdx + direction;
+  if (nextIdx >= 0 && nextIdx < jiaochengData.lessons.length) {
+    const nextLesson = jiaochengData.lessons[nextIdx];
+    openLessonDetailModal(nextLesson.id);
   }
 }
 
@@ -5573,6 +5645,7 @@ function closeLessonDetailModal() {
   const modal = document.getElementById('lessonDetailModal');
   if (modal) {
     modal.classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
   }
 }
 
@@ -5779,8 +5852,9 @@ function renderLessonVocabulary(vocabList) {
                 <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
               </button>
               <button 
-                onclick="toggleSaveWord('${safeHanzi}', '${v.pinyin}', '${safeMeaning}')" 
-                class="p-1.5 rounded-lg ${isSaved ? 'bg-amber-500 text-white' : 'bg-stone-50 hover:bg-stone-100 text-stone-400 hover:text-amber-600'} border border-stone-200 transition-all cursor-pointer"
+                id="btnSaveVocab-${safeHanzi}"
+                onclick="toggleSaveWordFromLesson('${safeHanzi}', '${v.pinyin}', '${safeMeaning}')" 
+                class="p-1.5 rounded-lg ${isSaved ? 'bg-amber-500 text-white border-amber-500' : 'bg-stone-50 hover:bg-stone-100 text-stone-400 hover:text-amber-600 border-stone-200'} border transition-all cursor-pointer"
                 title="${isSaved ? 'Đã lưu trong Sổ tay' : 'Lưu vào Sổ tay'}">
                 <i data-lucide="bookmark" class="w-3.5 h-3.5"></i>
               </button>
@@ -6246,6 +6320,34 @@ function quickSearchFromLesson(text) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }
+
+// Explicit Window Bindings for Dynamic Inline Handlers
+window.openLessonDetailModal = openLessonDetailModal;
+window.closeLessonDetailModal = closeLessonDetailModal;
+window.switchLessonSubTab = switchLessonSubTab;
+window.navigateToAdjacentLesson = navigateToAdjacentLesson;
+window.updateLessonModalNavButtons = updateLessonModalNavButtons;
+window.toggleLessonQAAnswer = toggleLessonQAAnswer;
+window.selectFIBOption = selectFIBOption;
+window.checkFIBAnswers = checkFIBAnswers;
+window.resetFIBExercise = resetFIBExercise;
+window.playLessonTitleAudio = playLessonTitleAudio;
+window.playDialogueSequence = playDialogueSequence;
+window.stopDialogueSequence = stopDialogueSequence;
+window.toggleSaveWordFromLesson = toggleSaveWordFromLesson;
+window.isWordSaved = isWordSaved;
+window.quickSearchFromLesson = quickSearchFromLesson;
+
+// Global Escape Key to close open modals
+window.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLessonDetailModal();
+    closeWordModal();
+    closeNotebookModal();
+    closeTelegramModal();
+    closeReadingTocModal();
+  }
+});
 
 // Run on page load
 window.addEventListener('DOMContentLoaded', initApp);
