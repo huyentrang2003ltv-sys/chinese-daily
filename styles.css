@@ -338,3 +338,177 @@ body {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.85; transform: scale(1.03); }
 }
+
+/* =========================================================================
+   DARK THEME (PHONG CÁCH HOÀNG GIA PHƯƠNG ĐÔNG HUYỀN BÍ - ORIENTAL MIDNIGHT)
+   ========================================================================= */
+html.dark {
+  color-scheme: dark;
+}
+
+html.dark body {
+  background-color: #0F141C;
+  background-image: 
+    radial-gradient(at 15% 0%, rgba(180, 40, 40, 0.15) 0px, transparent 50%),
+    radial-gradient(at 85% 10%, rgba(212, 175, 55, 0.12) 0px, transparent 50%),
+    radial-gradient(at 50% 50%, rgba(30, 95, 80, 0.1) 0px, transparent 50%),
+    radial-gradient(at 95% 90%, rgba(180, 40, 40, 0.12) 0px, transparent 55%),
+    radial-gradient(at 5% 95%, rgba(212, 175, 55, 0.1) 0px, transparent 50%);
+  color: #E6EDF3;
+}
+
+/* Dark Header & Nav */
+html.dark header {
+  background-color: rgba(22, 27, 34, 0.95);
+  border-bottom-color: rgba(48, 54, 61, 0.8);
+}
+
+html.dark nav.glass-panel {
+  background: rgba(22, 27, 34, 0.95);
+  border-bottom-color: rgba(48, 54, 61, 0.8);
+}
+
+html.dark .oriental-top-bar {
+  background: linear-gradient(to right, #161b22, #1c2128, #161b22);
+  border-bottom-color: rgba(212, 175, 55, 0.2);
+}
+
+html.dark .glass-card {
+  background: #161B22;
+  border-color: #30363D;
+  color: #E6EDF3;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+html.dark .glass-card:hover {
+  border-color: rgba(212, 175, 55, 0.5);
+  box-shadow: 0 10px 28px -4px rgba(0, 0, 0, 0.6);
+}
+
+/* Text mappings for Dark Mode */
+html.dark .text-stone-900,
+html.dark .text-slate-900,
+html.dark .text-stone-850,
+html.dark .text-slate-850 {
+  color: #F0F6FC !important;
+}
+
+html.dark .text-stone-800,
+html.dark .text-slate-800,
+html.dark .text-stone-700,
+html.dark .text-slate-700 {
+  color: #C9D1D9 !important;
+}
+
+html.dark .text-stone-600,
+html.dark .text-slate-600,
+html.dark .text-stone-500,
+html.dark .text-slate-500 {
+  color: #8B949E !important;
+}
+
+html.dark .text-stone-400,
+html.dark .text-slate-400 {
+  color: #6E7681 !important;
+}
+
+/* Background mappings */
+html.dark .bg-white,
+html.dark .bg-\[\#FFFDF9\],
+html.dark .bg-\[\#FAF7F2\],
+html.dark .bg-stone-50,
+html.dark .bg-slate-50 {
+  background-color: #161B22 !important;
+}
+
+html.dark .bg-stone-100,
+html.dark .bg-slate-100 {
+  background-color: #21262D !important;
+}
+
+html.dark .border-stone-200,
+html.dark .border-amber-200,
+html.dark .border-slate-200,
+html.dark .border-emerald-200,
+html.dark .border-rose-200 {
+  border-color: #30363D !important;
+}
+
+/* Inputs & Search Bars */
+html.dark input[type="text"],
+html.dark select,
+html.dark textarea {
+  background-color: #0D1117 !important;
+  color: #F0F6FC !important;
+  border-color: #30363D !important;
+}
+
+html.dark input::placeholder {
+  color: #6E7681 !important;
+}
+
+/* Dropdown */
+html.dark #searchDropdown,
+html.dark #themeDropdownMenu {
+  background-color: #161B22 !important;
+  border-color: #30363D !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Modals */
+html.dark #readingTocModal .glass-card,
+html.dark #writingModal .glass-card,
+html.dark #wordModal .glass-card,
+html.dark #notebookModal .glass-card,
+html.dark #telegramModal .glass-card,
+html.dark #lessonDetailModal .glass-card,
+html.dark #examResultModal .glass-card,
+html.dark #floatingAiChatWindow,
+html.dark #supportContactWindow {
+  background-color: #161B22 !important;
+  border-color: #30363D !important;
+  color: #E6EDF3 !important;
+}
+
+/* TianZiGe in Dark Mode */
+html.dark .tianzige-grid {
+  background-color: #0D1117 !important;
+  border-color: rgba(212, 175, 55, 0.4) !important;
+}
+
+html.dark .mizige-diagonals {
+  opacity: 0.3;
+}
+
+/* Token chips in Readings */
+html.dark .reading-token-chip .token-hanzi {
+  color: #F0F6FC;
+}
+
+html.dark .reading-token-chip:hover {
+  background-color: #21262D;
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+/* Scrollbars in Dark Mode */
+html.dark ::-webkit-scrollbar-track {
+  background: #0D1117;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #A52A2A, #C59A3F, #1E4D43);
+}
+
+/* Footer in Dark Mode */
+html.dark footer {
+  background-color: #0D1117 !important;
+  border-top-color: #30363D !important;
+}
+
+/* Tooltip callouts */
+html.dark #floatingAiTooltip,
+html.dark #floatingContactTooltip {
+  background-color: rgba(22, 27, 34, 0.95) !important;
+  border-color: #30363D !important;
+  color: #E6EDF3 !important;
+}
