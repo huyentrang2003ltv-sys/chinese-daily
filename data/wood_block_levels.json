@@ -1,0 +1,6844 @@
+[
+  {
+    "level": 1,
+    "tier": "easy",
+    "title": "Chào hỏi cơ bản",
+    "grid": {
+      "rows": 3,
+      "cols": 3
+    },
+    "sentence": "你好吗？我很好，谢谢你。",
+    "pinyin": "Nǐ hǎo ma? Wǒ hěn hǎo, xièxie nǐ.",
+    "meaning": "Bạn có khỏe không? Tôi rất khỏe, cảm ơn bạn.",
+    "grammar": "Mẫu câu hỏi thăm sức khỏe cơ bản nhất trong tiếng Trung: S + 很好，谢谢。",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "你好吗？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "我很好，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "谢谢你。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "amber"
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "tier": "easy",
+    "title": "Tự giới thiệu bản thân",
+    "grid": {
+      "rows": 3,
+      "cols": 3
+    },
+    "sentence": "我是越南人，在河内生活。",
+    "pinyin": "Wǒ shì Yuènán rén, zài Hénèi shēnghuó.",
+    "meaning": "Tôi là người Việt Nam, sống ở Hà Nội.",
+    "grammar": "Đại từ nhân xưng 我 + 是 (là) + quốc gia + 人. 在 (ở) + địa điểm + động từ.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "我是",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b2",
+        "text": "越南人，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "在河内",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "生活。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "tier": "easy",
+    "title": "Học tiếng Hán",
+    "grid": {
+      "rows": 3,
+      "cols": 3
+    },
+    "sentence": "汉语不太难，汉字很有趣。",
+    "pinyin": "Hànyǔ bú tài nán, hànzì hěn yǒuqù.",
+    "meaning": "Tiếng Hán không khó lắm, chữ Hán rất thú vị.",
+    "grammar": "Phó từ 不太 (không... lắm) và 很 (rất) đứng trước tính từ.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "汉语",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "不太难，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b3",
+        "text": "汉字",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "很有趣。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          1
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "tier": "easy",
+    "title": "Hôm nay ăn gì",
+    "grid": {
+      "rows": 3,
+      "cols": 3
+    },
+    "sentence": "今天中午，我们去吃米饭。",
+    "pinyin": "Jīntiān zhōngwǔ, wǒmen qù chī mǐfàn.",
+    "meaning": "Trưa hôm nay, chúng tôi đi ăn cơm.",
+    "grammar": "Trạng từ thời gian 今天中午 đứng trước chủ ngữ hoặc vị ngữ. 去 + Động từ: đi làm gì.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "今天中午，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b2",
+        "text": "我们",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "去吃",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          1
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "米饭。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          1
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "tier": "easy",
+    "title": "Sở thích uống trà",
+    "grid": {
+      "rows": 3,
+      "cols": 3
+    },
+    "sentence": "你想喝茶，还是想喝咖啡？",
+    "pinyin": "Nǐ xiǎng hē chá, háishì xiǎng hē kāfēi?",
+    "meaning": "Bạn muốn uống trà, hay là muốn uống cà phê?",
+    "grammar": "Liên từ 还是 dùng trong câu hỏi lựa chọn giữa 2 phương án A hay B.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "你想喝茶，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "还是",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "想喝",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          1
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "咖啡？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          1
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "tier": "easy",
+    "title": "Hỏi thăm gia đình",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "你家有几口人？我家有四口人。",
+    "pinyin": "Nǐ jiā yǒu jǐ kǒu rén? Wǒ jiā yǒu sì kǒu rén.",
+    "meaning": "Nhà bạn có mấy người? Nhà tôi có bốn người.",
+    "grammar": "Lượng từ 口 dùng để đếm số nhân khẩu trong gia đình. 几 dùng hỏi số lượng nhỏ dưới 10.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "你家有",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "几口人？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b3",
+        "text": "我家有",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "四口",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "人。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          2,
+          1
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "tier": "easy",
+    "title": "Hỏi giờ giấc",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "现在几点？现在是早上八点半。",
+    "pinyin": "Xiànzài jǐ diǎn? Xiànzài shì zǎoshang bā diǎn bàn.",
+    "meaning": "Bây giờ là mấy giờ? Bây giờ là tám giờ rưỡi sáng.",
+    "grammar": "Điểm giờ: 点 (giờ), 半 (rưỡi/30 phút). Thời gian lớn (早上) đứng trước thời gian nhỏ (八点).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "现在几点？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "现在是",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "早上",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "八点半。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "tier": "easy",
+    "title": "Mua hoa quả",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "老板，苹果多少钱一斤？五块钱。",
+    "pinyin": "Lǎobǎn, píngguǒ duōshao qián yì jīn? Wǔ kuài qián.",
+    "meaning": "Ông chủ, táo bao nhiêu tiền một cân? Năm đồng một cân.",
+    "grammar": "多少钱 + lượng từ: bao nhiêu tiền một đơn vị. 块 là đơn vị tiền tệ khẩu ngữ.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "老板，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b2",
+        "text": "苹果多少钱",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          1
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "一斤？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          1
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "五块钱。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "tier": "easy",
+    "title": "Đi thư viện mượn sách",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "明天下午，我想去图书馆借两本书。",
+    "pinyin": "Míngtiān xiàwǔ, wǒ xiǎng qù túshūguǎn jiè liǎng běn shū.",
+    "meaning": "Chiều mai, tôi muốn đến thư viện mượn hai cuốn sách.",
+    "grammar": "Số lượng 2 đứng trước lượng từ dùng 两 (liǎng), không dùng 二 (èr).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "明天下午，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "我想去",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "图书馆",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "借两本书。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "tier": "easy",
+    "title": "Hỏi thăm đường đi",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "请问，去银行怎么走？一直往前走。",
+    "pinyin": "Qǐngwèn, qù yínháng zěnme zǒu? Yìzhí wǎng qián zǒu.",
+    "meaning": "Xin hỏi, đến ngân hàng đi thế nào? Cứ đi thẳng về phía trước.",
+    "grammar": "怎么走: đi như thế nào (hỏi đường). 一直 (cứ, liên tục) + 往前 (về phía trước) + 走 (đi).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "请问，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b2",
+        "text": "去银行",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          1
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "怎么走？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          0,
+          3
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "一直",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          1
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "往前走。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 11,
+    "tier": "easy",
+    "title": "Khen ngợi thời tiết",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "今天天气真好，不冷也不热。",
+    "pinyin": "Jīntiān tiānqì zhēn hǎo, bù lěng yě bú rè.",
+    "meaning": "Thời tiết hôm nay thật đẹp, không lạnh cũng không nóng.",
+    "grammar": "Phó từ cảm thán 真 (thật là). Cấu trúc 不……也/又…… (không... cũng không...).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "今天天气",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "真好，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b3",
+        "text": "不冷",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "也不",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "热。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "tier": "easy",
+    "title": "Khen bạn nói tiếng Trung giỏi",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "你的汉语说得真棒，发音很标准。",
+    "pinyin": "Nǐ de Hànyǔ shuō de zhēn bàng, fāyīn hěn biāozhǔn.",
+    "meaning": "Bạn nói tiếng Hán giỏi thật đấy, phát âm rất chuẩn.",
+    "grammar": "Bổ ngữ trạng thái: Động từ + 得 + Tính từ (nói như thế nào).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "你的汉语",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "说得真棒，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "发音",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          3
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "很标准。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 13,
+    "tier": "easy",
+    "title": "Hẹn hò cuối tuần",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "这个周末，你有空跟我看电影吗？",
+    "pinyin": "Zhè ge zhōumò, nǐ yǒu kòng gēn wǒ kàn diànyǐng ma?",
+    "meaning": "Cuối tuần này, bạn có rảnh đi xem phim cùng tôi không?",
+    "grammar": "Giới từ 跟 (cùng với ai đó làm gì). 有空: rảnh rỗi.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "这个周末，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b2",
+        "text": "你有空",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          0,
+          3
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "跟我",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "看电影",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "吗？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 14,
+    "tier": "easy",
+    "title": "Hỏi ngày sinh nhật",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "你的生日是几月几号？八月十五号。",
+    "pinyin": "Nǐ de shēngrì shì jǐ yuè jǐ hào? Bā yuè shíwǔ hào.",
+    "meaning": "Sinh nhật bạn là ngày mấy tháng mấy? Ngày 15 tháng 8.",
+    "grammar": "Thứ tự ngày tháng: Năm -> Tháng (月) -> Ngày (号/日).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "你的生日",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "是几月",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "几号？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "八月",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "十五号。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 15,
+    "tier": "easy",
+    "title": "Mua sắm áo quần",
+    "grid": {
+      "rows": 3,
+      "cols": 4
+    },
+    "sentence": "这件红色的衣服真好看，我想试一下。",
+    "pinyin": "Zhè jiàn hóngsè de yīfu zhēn hǎokàn, wǒ xiǎng shì yíxià.",
+    "meaning": "Bộ quần áo màu đỏ này đẹp thật, tôi muốn mặc thử một chút.",
+    "grammar": "Lượng từ cho quần áo là 件. Động từ + 一下: làm thử việc gì đó trong chốc lát.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "这件红色的",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "衣服",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          0,
+          3
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b3",
+        "text": "真好看，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "我想",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "试一下。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 16,
+    "tier": "easy",
+    "title": "Ở tiệm trà sữa",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "一杯珍珠奶茶，少糖少冰，在这里喝。",
+    "pinyin": "Yì bēi zhēnzhū nǎichá, shǎo táng shǎo bīng, zài zhèlǐ hē.",
+    "meaning": "Một ly trà sữa trân châu, ít đường ít đá, uống ở đây.",
+    "grammar": "Lượng từ 杯 (cốc/ly). 少糖 (ít đường), 少冰 (ít đá). 在这里 (tại đây).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "一杯珍珠",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "奶茶，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "少糖",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "少冰，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "在这里",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b6",
+        "text": "喝。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          2,
+          3
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b7",
+        "text": "谢谢！",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          3,
+          0
+        ],
+        "color": "walnut"
+      }
+    ]
+  },
+  {
+    "level": 17,
+    "tier": "easy",
+    "title": "Cảm ơn và hẹn gặp lại",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "今天玩得很开心，谢谢你的热情招待！",
+    "pinyin": "Jīntiān wán de hěn kāixīn, xièxie nǐ de rèqíng zhāodài!",
+    "meaning": "Hôm nay chơi rất vui, cảm ơn sự tiếp đón nhiệt tình của bạn!",
+    "grammar": "Bổ ngữ trạng thái 玩得很开心 (chơi rất vui). 热情招待 (tiếp đãi nhiệt tình).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "今天玩得",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "很开心，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "谢谢你",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "的",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          3
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "热情",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b6",
+        "text": "招待！",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b7",
+        "text": "再见！",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          3,
+          0
+        ],
+        "color": "amber"
+      }
+    ]
+  },
+  {
+    "level": 18,
+    "tier": "easy",
+    "title": "Hỏi thăm sức khỏe bác sĩ",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "你哪里不舒服？我头疼，还有点儿发烧。",
+    "pinyin": "Nǐ nǎlǐ bù shūfu? Wǒ tóuténg, hái yǒudiǎnr fāshāo.",
+    "meaning": "Bạn thấy khó chịu ở đâu? Tôi bị đau đầu, và hơi sốt một chút.",
+    "grammar": "Phó từ 有点儿 (hơi/một chút) dùng trước tính từ biểu thị cảm giác không hài lòng.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "你哪里",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b2",
+        "text": "不舒服？",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "我头疼，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "还",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "correctPos": [
+          1,
+          3
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "有点儿",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b6",
+        "text": "发烧。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b7",
+        "text": "快吃药！",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          3,
+          0
+        ],
+        "color": "amber"
+      }
+    ]
+  },
+  {
+    "level": 19,
+    "tier": "easy",
+    "title": "Đi xe buýt hay tàu điện ngầm",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "坐地铁比坐公共汽车更快，也更方便。",
+    "pinyin": "Zuò dìtiě bǐ zuò gōnggòng qìchē gèng kuài, yě gèng fāngbiàn.",
+    "meaning": "Đi tàu điện ngầm nhanh hơn đi xe buýt, cũng tiện lợi hơn nhiều.",
+    "grammar": "Câu so sánh chữ 比: A 比 B + 更 (càng) + Tính từ.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "坐地铁",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "比坐",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b3",
+        "text": "公共汽车",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "更快，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "也更",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b6",
+        "text": "方便。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          3,
+          0
+        ],
+        "color": "amber"
+      }
+    ]
+  },
+  {
+    "level": 20,
+    "tier": "easy",
+    "title": "Đại hội nhập môn hoàn thành",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "祝贺你完成初级关卡，中文水平大大提升！",
+    "pinyin": "Zhùhè nǐ wánchéng chūjí guānqiǎ, Zhōngwén shuǐpíng dàdà tíshēng!",
+    "meaning": "Chúc mừng bạn vượt qua ải sơ cấp, trình độ tiếng Trung nâng cao vượt bậc!",
+    "grammar": "Chúc mừng: 祝贺 + tân ngữ. Trình độ nâng cao: 水平大大提升.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "祝贺你",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "完成",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b3",
+        "text": "初级关卡，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b4",
+        "text": "中文水平",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          0
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b5",
+        "text": "大大",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          2,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b6",
+        "text": "提升！",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          3,
+          0
+        ],
+        "color": "amber"
+      }
+    ]
+  },
+  {
+    "level": 21,
+    "tier": "medium",
+    "title": "Tuy mưa nhưng vẫn đi học",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "虽然今天下大雨，但是我们还是要坚持去学校上课。",
+    "pinyin": "Tuy mưa nhưng vẫn đi học",
+    "meaning": "Tuy hôm nay trời mưa to, nhưng chúng tôi vẫn kiên trì đến trường đi học.",
+    "grammar": "Cặp liên từ 虽然……但是…… (tuy... nhưng...)",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "虽然今天下大",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "雨，但是我们",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "还是要坚持去",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "学校上课。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 22,
+    "tier": "medium",
+    "title": "Câu chữ 把 dọn dẹp phòng",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "请你把桌子上的书本和水杯都收拾干净。",
+    "pinyin": "Câu chữ 把 dọn dẹp phòng",
+    "meaning": "Xin bạn hãy thu dọn sạch sẽ sách vở và cốc nước trên bàn.",
+    "grammar": "Cấu trúc câu chữ 把: Chủ ngữ + 把 + Tân ngữ + Động từ + Kết quả",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "请你把桌子上",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "的书本和水杯",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "都收拾干净。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      }
+    ]
+  },
+  {
+    "level": 23,
+    "tier": "medium",
+    "title": "Không những mà còn",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "他不光汉语说得流利，而且汉字也写得很漂亮。",
+    "pinyin": "Không những mà còn",
+    "meaning": "Anh ấy không những nói tiếng Hán lưu loát, mà viết chữ Hán cũng rất đẹp.",
+    "grammar": "Cặp liên từ 不光/不仅……而且…… (không những... mà còn...)",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "他不光汉语说",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "得流利，而且",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "汉字也写得很",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "漂亮。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 24,
+    "tier": "medium",
+    "title": "Nguyên nhân và kết quả",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "因为昨天晚上熬夜复习，所以今天早上他起得很晚。",
+    "pinyin": "Nguyên nhân và kết quả",
+    "meaning": "Bởi vì tối qua thức khuya ôn tập, nên sáng nay anh ấy dậy rất muộn.",
+    "grammar": "Cặp liên từ 因为……所以…… (bởi vì... cho nên...)",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "因为昨天晚上",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "熬夜复习，所",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "以今天早上他",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "起得很晚。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 25,
+    "tier": "medium",
+    "title": "Câu bị động chữ 被",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "我的自行车被弟弟骑出去了，下午才能还给我。",
+    "pinyin": "Câu bị động chữ 被",
+    "meaning": "Chiếc xe đạp của tôi đã bị em trai đạp ra ngoài rồi, chiều mới trả lại cho tôi.",
+    "grammar": "Câu bị động chữ 被: Đối tượng chịu tác động + 被 + Tác nhân + Động từ",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "我的自行车被",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "弟弟骑出去了，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "下午才能还给",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "我。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 26,
+    "tier": "medium",
+    "title": "Nếu như thì",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "要是明天下雨，我们的野餐活动就只能推迟了。",
+    "pinyin": "Nếu như thì",
+    "meaning": "Nếu như ngày mai trời mưa, chuyến dã ngoại của chúng ta đành phải hoãn lại.",
+    "grammar": "Cặp liên từ 要是/如果……就…… (nếu như... thì...)",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "要是明天下雨，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "我们的野餐活",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "动就只能推迟",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "了。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 27,
+    "tier": "medium",
+    "title": "Kinh nghiệm du lịch Bắc Kinh",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "去北京旅游的时候，我爬了长城，还吃了北京烤鸭。",
+    "pinyin": "Kinh nghiệm du lịch Bắc Kinh",
+    "meaning": "Khi đi du lịch Bắc Kinh, tôi đã leo Vạn Lý Trường Thành và còn ăn vịt quay Bắc Kinh.",
+    "grammar": "……的时候 (khi/lúc). 还 (còn, thêm nữa).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "去北京旅游的",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "时候，我爬了",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "长城，还吃了",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "北京烤鸭。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 28,
+    "tier": "medium",
+    "title": "Tập quán làm việc và nghỉ ngơi",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "养成良好的生活习惯，早睡早起，对身体很有好处。",
+    "pinyin": "Tập quán làm việc và nghỉ ngơi",
+    "meaning": "Hình thành thói quen sinh hoạt tốt, ngủ sớm dậy sớm, rất có lợi cho sức khỏe.",
+    "grammar": "对……很有好处 (rất có lợi đối với điều gì).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "养成良好的生",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "活习惯，早睡",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "早起，对身体",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "很有好处。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 29,
+    "tier": "medium",
+    "title": "Vừa... vừa...",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "我们一边喝着热茶，一边听老师讲中国历史故事。",
+    "pinyin": "Vừa... vừa...",
+    "meaning": "Chúng tôi vừa uống trà nóng, vừa nghe thầy giáo kể chuyện lịch sử Trung Quốc.",
+    "grammar": "Cấu trúc 一边……一边…… (vừa làm hành động A vừa làm hành động B).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "我们一边喝着",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "热茶，一边听",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "老师讲中国历",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "史故事。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 30,
+    "tier": "medium",
+    "title": "Càng... càng...",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "学中文越学越有意思，认识的中国朋友也越来越多了。",
+    "pinyin": "Càng... càng...",
+    "meaning": "Học tiếng Trung càng học càng thấy hay, bạn bè người Trung Quốc quen biết cũng ngày càng nhiều.",
+    "grammar": "Cấu trúc 越……越…… (càng... càng...)",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "学中文越学越",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "有意思，认识",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "的中国朋友也",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "越来越多了。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 31,
+    "tier": "medium",
+    "title": "Kế hoạch ôn thi HSK",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "为了通过下个月的考试，我每天坚持背三十个生词。",
+    "pinyin": "Kế hoạch ôn thi HSK",
+    "meaning": "Để vượt qua kỳ thi tháng sau, mỗi ngày tôi đều kiên trì học thuộc 30 từ mới.",
+    "grammar": "Giới từ 为了 (để/vì mục đích gì) đứng đầu câu.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "为了通过下个",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "月的考试，我",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "每天坚持背三",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "十个生词。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 32,
+    "tier": "medium",
+    "title": "Phỏng vấn xin việc",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "在面试过程中，除了专业知识，自信也是非常重要的。",
+    "pinyin": "Phỏng vấn xin việc",
+    "meaning": "Trong quá trình phỏng vấn, ngoài kiến thức chuyên môn, sự tự tin cũng vô cùng quan trọng.",
+    "grammar": "Cấu trúc 除了……以外，也/还…… (ngoài... ra, cũng...)",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "在面试过程中，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "除了专业知识，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "自信也是非常",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "重要的。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 33,
+    "tier": "medium",
+    "title": "Bốn mùa ở Việt Nam",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "北方有一年四季，而南方主要只有雨季和旱季。",
+    "pinyin": "Bốn mùa ở Việt Nam",
+    "meaning": "Miền Bắc có bốn mùa trong năm, còn miền Nam chủ yếu chỉ có mùa mưa và mùa khô.",
+    "grammar": "Liên từ 而 (mà/còn) biểu thị sự đối chiếu, tương phản.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "北方有一年四",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "季，而南方主",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "要只有雨季和",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "旱季。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 34,
+    "tier": "medium",
+    "title": "Văn hóa tặng quà",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "在中国文化中，送礼物一般避免送钟表和梨子。",
+    "pinyin": "Văn hóa tặng quà",
+    "meaning": "Trong văn hóa Trung Quốc, tặng quà thường tránh tặng đồng hồ và quả lê.",
+    "grammar": "Đồng âm văn hóa: 送钟 (tặng đồng hồ) hài âm với 送终 (tiễn đưa chung cuộc).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "在中国文化中，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "送礼物一般避",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "免送钟表和梨",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "子。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 35,
+    "tier": "medium",
+    "title": "Chữ Đáo và chữ Phúc",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "过年的时候贴倒福，意思是幸福和福气已经来到了。",
+    "pinyin": "Chữ Đáo và chữ Phúc",
+    "meaning": "Ngày Tết dán chữ Phúc ngược, ý nghĩa là hạnh phúc và phúc khí đã đến rồi.",
+    "grammar": "Hài âm nghệ thuật: 倒 (ngược) đồng âm với 到 (đến nơi).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "过年的时候贴",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "倒福，意思是",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "幸福和福气已",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "经来到了。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 36,
+    "tier": "medium",
+    "title": "Sự kiên trì học tập",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "只要坚持不懈地努力，没有什么困难是克服不了的。",
+    "pinyin": "Sự kiên trì học tập",
+    "meaning": "Chỉ cần kiên trì không ngừng nỗ lực, không có khó khăn nào là không vượt qua được.",
+    "grammar": "Cặp liên từ 只要……就…… (chỉ cần... thì...). Bổ ngữ khả năng 克服不了.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "只要坚持不懈",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "地努力，没有",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "什么困难是克",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "服不了的。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 37,
+    "tier": "medium",
+    "title": "Đọc sách mở mang trí tuệ",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "多读书能开阔眼界，让我们看到一个更广阔的世界。",
+    "pinyin": "Đọc sách mở mang trí tuệ",
+    "meaning": "Đọc nhiều sách có thể mở rộng tầm mắt, giúp chúng ta nhìn thấy một thế giới bao la hơn.",
+    "grammar": "Động từ khiến dụng 让 (khiến cho, làm cho ai đó thế nào).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "多读书能开阔",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "眼界，让我们",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "看到一个更广",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "阔的世界。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 38,
+    "tier": "medium",
+    "title": "Tình bạn xuyên biên giới",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "真正的友谊不受距离限制，天涯若比邻，心心相印。",
+    "pinyin": "Tình bạn xuyên biên giới",
+    "meaning": "Tình bạn chân chính không bị khoảng cách hạn chế, tuy cách xa chân trời nhưng gần như tri kỷ.",
+    "grammar": "Trích dẫn thi ca Vương Bột: Hải nội tồn tri kỷ, thiên nhai nhược tỉ lân.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "真正的友谊不",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "受距离限制，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "天涯若比邻，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "心心相印。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 39,
+    "tier": "medium",
+    "title": "Bảo vệ môi trường",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "节约用水和减少塑料垃圾，是每个人应尽的社会责任。",
+    "pinyin": "Bảo vệ môi trường",
+    "meaning": "Tiết kiệm nước và giảm thiểu rác thải nhựa là trách nhiệm xã hội mỗi người cần thực hiện.",
+    "grammar": "Định ngữ nhiều tầng kết hợp với trợ từ 的.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "节约用水和减",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "少塑料垃圾，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "是每个人应尽",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "的社会责任。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 40,
+    "tier": "medium",
+    "title": "Chạm mốc Trung Cấp",
+    "grid": {
+      "rows": 4,
+      "cols": 4
+    },
+    "sentence": "恭喜你突破中级关卡，你已经具备了自由交流的能力！",
+    "pinyin": "Chạm mốc Trung Cấp",
+    "meaning": "Chúc mừng bạn bứt phá cửa ải Trung cấp, bạn đã sở hữu năng lực giao tiếp tự do!",
+    "grammar": "Hoàn thành 40 cấp độ, nắm vững 1.200 từ vựng và ngữ pháp phức tạp!",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "恭喜你突破中",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b2",
+        "text": "级关卡，你已",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "walnut"
+      },
+      {
+        "id": "b3",
+        "text": "经具备了自由",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b4",
+        "text": "交流的能力！",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "oak"
+      }
+    ]
+  },
+  {
+    "level": 41,
+    "tier": "hard",
+    "title": "Chày sắt mài thành kim",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "只要功夫深，铁杵磨成针；世上无难事，只怕有心人。",
+    "pinyin": "Chày sắt mài thành kim",
+    "meaning": "Chỉ cần công phu sâu, chày sắt mài thành kim; trên đời không có việc gì khó, chỉ sợ lòng không bền.",
+    "grammar": "Thành ngữ ngụ ngôn Trung Hoa về sự bền bỉ, kiên trì theo đuổi mục tiêu.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "只要功夫深，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "铁杵磨成针；",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "世上无难事，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "只怕有心人。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      }
+    ]
+  },
+  {
+    "level": 42,
+    "tier": "hard",
+    "title": "Vạn dặm khởi đầu",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "合抱之木生于毫末，九层之台起于累土，千里之行始于足下。",
+    "pinyin": "Vạn dặm khởi đầu",
+    "meaning": "Cây ôm một vòng sinh từ mầm nhỏ, đài cao chín tầng dựng từ xẻng đất, đường vạn dặm bắt đầu từ một bước chân.",
+    "grammar": "Trích Đạo Đức Kinh của Lão Tử: bài học về tích lũy từng bước nhỏ.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "合抱之木生于",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "毫末，九层之",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "台起于累土，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "千里之行始于",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "足下。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 43,
+    "tier": "hard",
+    "title": "Tái ông thất mã",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "塞翁失马，焉知非福；面对生活中的挫折，我们应当保持豁达。",
+    "pinyin": "Tái ông thất mã",
+    "meaning": "Tái ông mất ngựa, họa phúc khôn lường; trước những trắc trở cuộc sống, ta cần giữ tâm thái khoáng đạt.",
+    "grammar": "Điển tích Thành ngữ cổ 塞翁失马 biểu thị triết lý biện chứng trong nghịch cảnh.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "塞翁失马，焉",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "知非福；面对",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "生活中的挫折，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "我们应当保持",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "豁达。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 44,
+    "tier": "hard",
+    "title": "Thư sơn hữu lộ cần vi kính",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "书山有路勤为径，学海无涯苦作舟；勤奋是通向成功的唯一阶梯。",
+    "pinyin": "Thư sơn hữu lộ cần vi kính",
+    "meaning": "Núi sách có đường siêng năng là lối, biển học vô bờ lấy khổ làm thuyền; cần cù là nấc thang duy nhất đến thành công.",
+    "grammar": "Câu đối danh ngôn kinh điển của Hàn Dũ khuyến khích tinh thần hiếu học.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "书山有路勤为",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "径，学海无涯",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "苦作舟；勤奋",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "是通向成功的",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "唯一阶梯。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 45,
+    "tier": "hard",
+    "title": "Họa xà thiêm túc",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "画蛇添足，多此一举；做事应当适可而止，切忌画蛇添足。",
+    "pinyin": "Họa xà thiêm túc",
+    "meaning": "Vẽ rắn thêm chân, làm việc thừa thãi; hành sự nên biết điểm dừng, chớ nên vẽ rắn thêm chân.",
+    "grammar": "Thành ngữ Chiến Quốc Sách châm biếm hành động làm thừa thãi phản tác dụng.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "画蛇添足，多",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "此一举；做事",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "应当适可而止，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "切忌画蛇添足。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      }
+    ]
+  },
+  {
+    "level": 46,
+    "tier": "hard",
+    "title": "Tâm thái tĩnh lặng",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "非淡泊无以明志，非宁静无以致远；唯有心静，方能洞察事物本质。",
+    "pinyin": "Tâm thái tĩnh lặng",
+    "meaning": "Không đạm bạc thì không sáng rõ chí hướng, không tĩnh lặng thì không vươn được xa; chỉ khi tâm tĩnh mới thấu tỏ bản chất.",
+    "grammar": "Trích Gia Huấn của Gia Cát Lượng gửi con trai Gia Cát Chiêm.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "非淡泊无以明",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "志，非宁静无",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "以致远；唯有",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "心静，方能洞",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "察事物本质。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 47,
+    "tier": "hard",
+    "title": "Trà đạo và nhân sinh",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "茶道即人道，一苦二甜三回味；细品香茗，宛如领悟漫漫人生旅程。",
+    "pinyin": "Trà đạo và nhân sinh",
+    "meaning": "Đạo trà cũng như đạo người, một đắng hai ngọt ba lắng đọng; thưởng thức chén trà tựa như thấu tỏ hành trình nhân sinh.",
+    "grammar": "Văn hóa trà đạo Trung Hoa và nghệ thuật thưởng trà thưởng nhân sinh.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "茶道即人道，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "一苦二甜三回",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "味；细品香茗，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "宛如领悟漫漫",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "人生旅程。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 48,
+    "tier": "hard",
+    "title": "Tri kỷ tri bỉ bách chiến bất đãi",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "知己知彼，百战不殆；深谋远虑者，必先审时度势而后动。",
+    "pinyin": "Tri kỷ tri bỉ bách chiến bất đãi",
+    "meaning": "Biết mình biết người, trăm trận không nguy; bậc nhìn xa trông rộng ắt xem xét thời thế rồi mới hành động.",
+    "grammar": "Binh pháp Tôn Tử: nguyên lý chiến lược bất hủ trong quản trị và đời sống.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "知己知彼，百",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "战不殆；深谋",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "远虑者，必先",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "审时度势而后",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "动。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 49,
+    "tier": "hard",
+    "title": "Học mà không suy nghĩ thì mờ tối",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "学而不思则罔，思而不学则殆；学思结合，方可融会贯通。",
+    "pinyin": "Học mà không suy nghĩ thì mờ tối",
+    "meaning": "Học mà không suy nghĩ thì mờ mịt, suy nghĩ mà không học thì nguy hại; học và nghĩ kết hợp mới đạt cảnh giới thấu triệt.",
+    "grammar": "Luận Ngữ của Khổng Tử: phương pháp học tập kết hợp tư duy biện chứng.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "学而不思则罔，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "思而不学则殆；",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "学思结合，方",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "可融会贯通。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      }
+    ]
+  },
+  {
+    "level": 50,
+    "tier": "hard",
+    "title": "Uống nước nhớ nguồn",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "饮水思源，知恩图报；无论走得多远，都不能忘记最初的根基。",
+    "pinyin": "Uống nước nhớ nguồn",
+    "meaning": "Uống nước nhớ nguồn, biết ơn báo đáp; bất luận đi xa đến đâu, đều không được quên cội nguồn thuở ban đầu.",
+    "grammar": "Đạo lý truyền thống Á Đông về lòng biết ơn và sự thủy chung.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "饮水思源，知",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "恩图报；无论",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "走得多远，都",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "不能忘记最初",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "的根基。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 51,
+    "tier": "hard",
+    "title": "Bốn phát minh vĩ đại",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "造纸术、印刷术、火药和指南针，是古代中国改变世界的四大发明。",
+    "pinyin": "Bốn phát minh vĩ đại",
+    "meaning": "Thuật làm giấy, kỹ thuật in ấn, thuốc súng và la bàn là bốn phát minh vĩ đại của Trung Hoa làm thay đổi thế giới.",
+    "grammar": "Tứ đại phát minh cổ đại Trung Hoa và cống hiến cho văn minh nhân loại.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "造纸术、印刷",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "术、火药和指",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "南针，是古代",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "中国改变世界",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "的四大发明。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 52,
+    "tier": "hard",
+    "title": "Kinh tế và công nghệ hiện đại",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "人工智能的高速发展，正在深刻地重塑全球经济与教育格局。",
+    "pinyin": "Kinh tế và công nghệ hiện đại",
+    "meaning": "Sự phát triển thần tốc của trí tuệ nhân tạo đang tái định hình sâu sắc cục diện kinh tế và giáo dục toàn cầu.",
+    "grammar": "Từ vựng cao cấp HSK 6 về công nghệ số và kinh tế đương đại.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "人工智能的高",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "速发展，正在",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "深刻地重塑全",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "球经济与教育",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "格局。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 53,
+    "tier": "hard",
+    "title": "Nghệ thuật thư pháp Hán tự",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "汉字书法融聚了线条的韵律与气势，体现出东方艺术的最高意境。",
+    "pinyin": "Nghệ thuật thư pháp Hán tự",
+    "meaning": "Thư pháp Hán tự hội tụ nhịp điệu và khí thế của đường nét, thể hiện cảnh giới tối cao của nghệ thuật phương Đông.",
+    "grammar": "Từ vựng thẩm mỹ văn hóa: 线条, 韵律, 气势, 意境.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "汉字书法融聚",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "了线条的韵律",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "与气势，体现",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "出东方艺术的",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "最高意境。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 54,
+    "tier": "hard",
+    "title": "Văn hóa ẩm thực Bát đại thái hệ",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "鲁川粤苏、闽浙湘徽，中国八大菜系各具风味，博大精深。",
+    "pinyin": "Văn hóa ẩm thực Bát đại thái hệ",
+    "meaning": "Lỗ, Xuyên, Việt, Tô, Mân, Chiết, Tương, Huy; tám trường phái ẩm thực lớn của Trung Quốc muôn màu muôn vẻ, uyên thâm sâu rộng.",
+    "grammar": "Văn hóa ẩm thực 8 vùng miền ẩm thực kinh điển Trung Hoa.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "鲁川粤苏、闽",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "浙湘徽，中国",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "八大菜系各具",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "风味，博大精",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "深。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 55,
+    "tier": "hard",
+    "title": "Tinh thần kiên định như tùng trúc",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "千磨万击还坚劲，任尔东西南北风；象征着君子崇高的气节与风骨。",
+    "pinyin": "Tinh thần kiên định như tùng trúc",
+    "meaning": "Trăm nghìn mài đập vẫn kiên cường, mặc cho gió thổi khắp bốn phương; tượng trưng cho khí tiết và cốt cách người quân tử.",
+    "grammar": "Trích thơ Trúc Thạch của Trịnh Bản Kiều ca ngợi bản lĩnh kiên cường.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "千磨万击还坚",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "劲，任尔东西",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "南北风；象征",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "着君子崇高的",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "气节与风骨。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 56,
+    "tier": "hard",
+    "title": "Cố hương trong thi ca",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "举头望明月，低头思故乡；李白的千古绝句唱出了无尽的游子乡愁。",
+    "pinyin": "Cố hương trong thi ca",
+    "meaning": "Ngẩng đầu nhìn trăng sáng, cúi đầu nhớ cố hương; tuyệt tác nghìn thu của Lý Bạch cất lên nỗi sầu tha hương của người viễn xứ.",
+    "grammar": "Bài thơ Tĩnh Dạ Tứ kinh điển nhất trong lịch sử thi ca Đường triều.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "举头望明月，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "低头思故乡；",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "李白的千古绝",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "句唱出了无尽",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "的游子乡愁。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 57,
+    "tier": "hard",
+    "title": "Mục tiêu học ngôn ngữ",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "多学一门外语，多看一个世界，多过一种人生；语言是通往心灵的桥梁。",
+    "pinyin": "Mục tiêu học ngôn ngữ",
+    "meaning": "Học thêm một ngoại ngữ, nhìn thấy thêm một thế giới, sống thêm một cuộc đời; ngôn ngữ là chiếc cầu nối tới tâm hồn.",
+    "grammar": "Khẩu hiệu cốt lõi của website 学中文 (Học Tiếng Trung Mỗi Ngày).",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "多学一门外语，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "多看一个世界，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "多过一种人生；",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "语言是通往心",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "灵的桥梁。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 58,
+    "tier": "hard",
+    "title": "Sự nghiệp phiên dịch chuyên nghiệp",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "高超的翻译水平要求达到信达雅的境界，兼顾语言的准确与优美。",
+    "pinyin": "Sự nghiệp phiên dịch chuyên nghiệp",
+    "meaning": "Trình độ phiên dịch đỉnh cao đòi hỏi đạt cảnh giới Tín - Đạt - Nhã, dung hòa giữa tính chuẩn xác và vẻ đẹp câu từ.",
+    "grammar": "Tiêu chuẩn dịch thuật kinh điển do học giả Nghiêm Phục đề xướng.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "高超的翻译水",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "平要求达到信",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "达雅的境界，",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "兼顾语言的准",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "确与优美。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      }
+    ]
+  },
+  {
+    "level": 59,
+    "tier": "hard",
+    "title": "Văn minh và sự giao lưu",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "文明因多样而交流，因交流而互鉴，因互鉴而繁荣发展。",
+    "pinyin": "Văn minh và sự giao lưu",
+    "meaning": "Văn minh nhờ đa dạng mà giao lưu, nhờ giao lưu mà học hỏi lẫn nhau, nhờ học hỏi mà phồn vinh phát triển.",
+    "grammar": "Triết lý giao lưu văn hóa quốc tế thời đại mới.",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "文明因多样而",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "交流，因交流",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "而互鉴，因互",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "鉴而繁荣发展。",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      }
+    ]
+  },
+  {
+    "level": 60,
+    "tier": "hard",
+    "title": "Đỉnh cao Hán học - Đại Thành Công",
+    "grid": {
+      "rows": 5,
+      "cols": 5
+    },
+    "sentence": "功不唐捐，玉汝于成；恭喜你通关六十积木大关，荣登汉语博雅大师榜！",
+    "pinyin": "Đỉnh cao Hán học - Đại Thành Công",
+    "meaning": "Công phu không uổng phí, ngọc mài dũa mới sáng rỡ; chúc mừng bạn phá giải trọn vẹn 60 khối gỗ Hán ngữ, vinh danh Đại Sư Bác Nhã!",
+    "grammar": "Hoàn thành trọn vẹn 60 màn chơi, xuất sắc làm chủ toàn bộ hệ thống ngữ pháp và kho tàng từ vựng Hán ngữ!",
+    "blocks": [
+      {
+        "id": "b1",
+        "text": "功不唐捐，玉",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          0
+        ],
+        "color": "amber"
+      },
+      {
+        "id": "b2",
+        "text": "汝于成；恭喜",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          0,
+          2
+        ],
+        "color": "oak"
+      },
+      {
+        "id": "b3",
+        "text": "你通关六十积",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          0,
+          4
+        ],
+        "color": "rosewood"
+      },
+      {
+        "id": "b4",
+        "text": "木大关，荣登",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          0
+        ],
+        "color": "ebony"
+      },
+      {
+        "id": "b5",
+        "text": "汉语博雅大师",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "correctPos": [
+          1,
+          2
+        ],
+        "color": "cherry"
+      },
+      {
+        "id": "b6",
+        "text": "榜！",
+        "shape": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "correctPos": [
+          1,
+          4
+        ],
+        "color": "walnut"
+      }
+    ]
+  }
+]

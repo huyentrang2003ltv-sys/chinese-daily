@@ -34,5 +34,17 @@
     "goal": "Ôn thi HSK 3 cấp tốc",
     "savedWords": [],
     "createdAt": "2026-11-03T09:08:51.023Z"
+  },
+  {
+    "id": "usr_1793697334199_k78uk",
+    "name": "trang",
+    "email": "217220204338@hpu2.edu.vn",
+    "passwordHash": "789e68010437a3c600f9483a9275a39f068aa08c9fdc955939886d6876a79862",
+    "role": "student",
+    "exp": 50,
+    "streak": 1,
+    "goal": "Người mới bắt đầu (Nhập môn HSK 1 - 2)",
+    "savedWords": [],
+    "createdAt": "2026-11-03T09:15:34.201Z"
   }
 ]

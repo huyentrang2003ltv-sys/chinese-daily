@@ -11,30 +11,31 @@ try {
   if (urlFromFile.startsWith('http')) activeUrl = urlFromFile;
 } catch (e) {}
 
-const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - RA MẮT HỆ THỐNG ĐĂNG KÝ & ĐĂNG NHẬP HOÀN CHỈNH] 🏮
+const message = `🧩 [HỌC TIẾNG TRUNG MỖI NGÀY - RA MẮT MINIGAME XẾP KHỐI GỖ 汉语积木] 🏮
 
-Chào bạn! Hệ thống Đăng Ký (Register) và Đăng Nhập (Login) tài khoản học viên chính thức đã được tích hợp toàn diện:
+Chào bạn! Trò chơi "Xếp khối gỗ tiếng Trung (汉语积木)" với 60 cấp độ đã chính thức được phát hành:
 
-✨ CÁC TÍNH NĂNG ĐĂNG KÝ & ĐĂNG NHẬP MỚI:
-1. 🔑 TAB ĐĂNG NHẬP (LOGIN):
-   - Đăng nhập nhanh 1-chạm (Quick Login) dành riêng cho 2 Super Admin: Phạm Hoàng & Huyền Trang.
-   - Đăng nhập bằng Email & Mật khẩu cho học viên toàn hệ thống.
-   - Nút ẩn/hiện mật khẩu trực quan.
+🌟 ĐẶC ĐIỂM NỔI BẬT CỦA TRÒ CHƠI:
+🪵 1. GIAO DIỆN KHỐI GỖ CHÂN THỰC 3D:
+   - Bàn cờ gỗ mun, gỗ óc chó và khay gỗ sồi tự nhiên với độ sâu và bóng đổ chân thực.
+   - Các khối gỗ đa hình dạng (hình vuông, thanh dài, chữ L, chữ T) khắc chữ Hán nhũ vàng.
+   - Hiệu ứng âm thanh va chạm gỗ tự nhiên "lách cách" bằng Web Audio API cực kỳ thỏa mãn!
 
-2. ✨ TAB ĐĂNG KÝ HỌC VIÊN MỚI (REGISTER):
-   - Nhập Họ & Tên hiển thị, Email, Mật khẩu (tối thiểu 6 ký tự) & Xác nhận mật khẩu.
-   - Lựa chọn Mục tiêu học tập (Nhập môn HSK 1-2, Ôn thi HSK 3-4, HSK 5-6 cao cấp, Giao tiếp công việc...).
-   - 🎁 Quà tặng tân thủ: Tự động cộng ngay +50 EXP khi đăng ký thành công!
+🗺️ 2. HỆ THỐNG 60 LEVEL PHÂN HÓA RÕ RỆT:
+   - 🟢 Sơ Cấp (Level 1 - 20): Ghép câu ngắn, từ vựng nền tảng HSK 1 - 2, chào hỏi, đời sống.
+   - 🟡 Trung Cấp (Level 21 - 40): Ghép câu phức có liên từ (虽然...但是, 因为...所以), câu chữ 把/被, HSK 3 - 4.
+   - 🔴 Cao Cấp (Level 41 - 60): Ghép đoạn văn dài, thành ngữ điển cố (Chày sắt mài kim, Tái ông thất mã, Thư sơn hữu lộ), HSK 5 - 6.
 
-3. 🛡️ BACKEND DATABASE & BẢO MẬT:
-   - Lưu trữ danh sách học viên trong cơ sở dữ liệu data/users.json trên máy chủ.
-   - Mã hóa bảo mật mật khẩu bằng SHA-256.
-   - API endpoints: /api/auth/register, /api/auth/login, /api/auth/users.
+🎯 3. CƠ CHẾ CHƠI LINH HOẠT & THÔNG MINH:
+   - Kéo thả siêu mượt hoặc Chạm chọn khối rồi chạm ô cờ để đặt (tối ưu hoàn hảo cho cả điện thoại và máy tính).
+   - Kiểm tra đáp án tự động / thủ công (验答), chấm điểm 3 sao ⭐⭐⭐ và thưởng EXP.
+   - Đọc phát âm chuẩn giọng Bắc Kinh toàn bộ câu/đoạn văn khi giải xong.
+   - Công cụ trợ giúp: Xem trước Nghĩa Tiếng Việt, Gợi ý tự đặt khối, và Xếp lại từ đầu.
 
-🌐 Trải nghiệm đăng ký & đăng nhập ngay tại:
+🌐 Trải nghiệm trò chơi ngay tại:
 ${activeUrl}
 
-Chúc bạn và các học viên có hành trình tu luyện Hán ngữ hứng khởi và thành công! 🏮`;
+Chúc bạn có những giờ phút vừa chơi xếp hình vừa thẩm thấu tiếng Trung đầy hứng khởi! 🏮`;
 
 const data = JSON.stringify({
   chat_id: chatId,
