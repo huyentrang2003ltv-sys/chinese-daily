@@ -244,18 +244,20 @@ body {
 
 .reading-token-chip .token-hanzi {
   font-family: var(--font-chinese);
-  font-size: 1.25rem;
+  font-size: var(--reading-font-size, 1.25rem);
   font-weight: 700;
   color: #1C1917;
   line-height: 1.25;
+  transition: font-size 0.15s ease;
 }
 
 .reading-token-punct {
   display: inline-block;
   font-family: var(--font-chinese);
-  font-size: 1.25rem;
+  font-size: var(--reading-font-size, 1.25rem);
   color: #78716C;
   margin: 0 0.1rem;
+  transition: font-size 0.15s ease;
 }
 
 /* =========================================================================
