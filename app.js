@@ -619,11 +619,12 @@ function switchTab(tabId) {
   }
   if (tabId === 'aichat') {
     openFloatingAiChat();
+    return;
   }
   activeTab = tabId;
   const tabs = [
     'etymology', 'jiaocheng', 'radicals', 'writing', 'chengyu', 'readings', 'grammar',
-    'culture', 'confusions', 'translation', 'aichat', 'mockexam',
+    'culture', 'confusions', 'translation', 'mockexam',
     'pathway', 'practice', 'flashcards', 'dictionary'
   ];
   
