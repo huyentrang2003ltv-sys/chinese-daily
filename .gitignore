@@ -5,3 +5,5 @@ cloudflared.exe
 active_url.txt
 .DS_Store
 Thumbs.db
+scripts/tiengtrunggioi_bundle.js
+scripts/test_*.js
