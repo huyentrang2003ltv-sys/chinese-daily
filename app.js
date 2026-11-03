@@ -18,8 +18,11 @@ let topicsData = [];
 let activeJiaochengVolume = 'all';
 let jiaochengSearchQuery = '';
 
-// Gamification & Profile State
+// Gamification & User Auth Profile State
 let userProfile = {
+  name: 'Phạm Hoàng',
+  email: 'hoangpham1618@gmail.com',
+  isLoggedIn: true,
   streak: 1,
   exp: 50,
   lastStudyDate: new Date().toISOString().split('T')[0],
@@ -390,6 +393,116 @@ function updateProfileUI() {
   if (streakEl) streakEl.innerText = userProfile.streak || 1;
   if (expEl) expEl.innerText = userProfile.exp || 0;
   if (notebookCountEl) notebookCountEl.innerText = (userProfile.savedWords || []).length;
+
+  const headerUserBtn = document.getElementById('headerUserBtn');
+  const headerLoginBtn = document.getElementById('headerLoginBtn');
+  const headerUserName = document.getElementById('headerUserName');
+  const headerUserInitial = document.getElementById('headerUserInitial');
+  const dropdownUserName = document.getElementById('dropdownUserName');
+  const dropdownUserEmail = document.getElementById('dropdownUserEmail');
+  const dropdownUserInitial = document.getElementById('dropdownUserInitial');
+  const dropdownNotebookCount = document.getElementById('dropdownNotebookCount');
+
+  const isLoggedIn = userProfile.isLoggedIn !== false;
+  const name = userProfile.name || 'Phạm Hoàng';
+  const email = userProfile.email || 'hoangpham1618@gmail.com';
+  
+  // Extract initial (last word first char, or first char)
+  const trimmed = name.trim();
+  const lastSpace = trimmed.lastIndexOf(' ');
+  const initialChar = (lastSpace >= 0 ? trimmed.charAt(lastSpace + 1) : trimmed.charAt(0)) || 'H';
+
+  if (headerUserBtn && headerLoginBtn) {
+    if (isLoggedIn) {
+      headerUserBtn.classList.remove('hidden');
+      headerUserBtn.classList.add('flex');
+      headerLoginBtn.classList.add('hidden');
+      headerLoginBtn.classList.remove('flex');
+      if (headerUserName) headerUserName.innerText = name;
+      if (headerUserInitial) headerUserInitial.innerText = initialChar.toUpperCase();
+    } else {
+      headerUserBtn.classList.add('hidden');
+      headerUserBtn.classList.remove('flex');
+      headerLoginBtn.classList.remove('hidden');
+      headerLoginBtn.classList.add('flex');
+    }
+  }
+
+  if (dropdownUserName) dropdownUserName.innerText = name;
+  if (dropdownUserEmail) dropdownUserEmail.innerText = email;
+  if (dropdownUserInitial) dropdownUserInitial.innerText = initialChar.toUpperCase();
+  if (dropdownNotebookCount) dropdownNotebookCount.innerText = (userProfile.savedWords || []).length;
+}
+
+// ---------------- USER AUTHENTICATION & PROFILE HANDLERS ----------------
+function toggleUserDropdown() {
+  const menu = document.getElementById('userDropdownMenu');
+  if (!menu) return;
+  menu.classList.toggle('hidden');
+  refreshIcons(menu);
+}
+
+function closeUserDropdown() {
+  const menu = document.getElementById('userDropdownMenu');
+  if (menu) menu.classList.add('hidden');
+}
+
+function openAuthModal() {
+  closeUserDropdown();
+  const modal = document.getElementById('authModal');
+  if (modal) {
+    modal.classList.remove('hidden');
+    const nameInput = document.getElementById('authNameInput');
+    const emailInput = document.getElementById('authEmailInput');
+    if (nameInput) nameInput.value = userProfile.name || '';
+    if (emailInput) emailInput.value = userProfile.email || '';
+    refreshIcons(modal);
+  }
+}
+
+function closeAuthModal() {
+  const modal = document.getElementById('authModal');
+  if (modal) modal.classList.add('hidden');
+}
+
+function quickLoginDemo(name, email) {
+  userProfile.name = name;
+  userProfile.email = email;
+  userProfile.isLoggedIn = true;
+  saveUserProfile();
+  closeAuthModal();
+  showToast(`Chào mừng bạn ${name} đã đăng nhập thành công!`, 'success');
+}
+
+function handleAuthFormSubmit(e) {
+  if (e) e.preventDefault();
+  const nameInput = document.getElementById('authNameInput');
+  const emailInput = document.getElementById('authEmailInput');
+  const name = nameInput ? nameInput.value.trim() : '';
+  const email = emailInput ? emailInput.value.trim() : '';
+  
+  if (!name) {
+    showToast('Vui lòng nhập tên người dùng!', 'warning');
+    return;
+  }
+
+  userProfile.name = name;
+  if (email) userProfile.email = email;
+  userProfile.isLoggedIn = true;
+  saveUserProfile();
+  closeAuthModal();
+  showToast(`Đăng nhập thành công! Chào bạn ${name}`, 'success');
+}
+
+function handleLogout() {
+  closeUserDropdown();
+  userProfile.isLoggedIn = false;
+  saveUserProfile();
+  showToast('Đã đăng xuất tài khoản. Bạn có thể đăng nhập lại bất cứ lúc nào.', 'info');
+}
+
+function openEditNameModal() {
+  openAuthModal();
 }
 
 function toggleSaveWord(hanzi, pinyin, meaning, hsk = 1) {
@@ -9434,6 +9547,9 @@ window.addEventListener('keydown', (e) => {
     closeReadingTocModal();
     closeWritingModal();
     closeSupportContactModal();
+    closeVisitorStatsModal();
+    closeAuthModal();
+    closeUserDropdown();
     const searchDropdown = document.getElementById('searchDropdown');
     if (searchDropdown && !searchDropdown.classList.contains('hidden')) {
       searchDropdown.classList.add('hidden');
