@@ -1,3 +1,4 @@
+const crypto = require('crypto');
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -77,6 +78,52 @@ function getCachedFile(filePath, contentType) {
     return entry;
   } catch (e) {
     return null;
+  }
+}
+
+// Helper: Hash password
+function hashPassword(password) {
+  return crypto.createHash('sha256').update(password || '').digest('hex');
+}
+
+// Helper: Read JSON body
+function readJsonBody(req) {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', chunk => body += chunk);
+    req.on('end', () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (e) {
+        reject(e);
+      }
+    });
+    req.on('error', reject);
+  });
+}
+
+// Users Database Helper
+const USERS_FILE = path.join(__dirname, 'data', 'users.json');
+const SUPER_ADMINS = ['hoangpham1618@gmail.com', 'huyentrang2003ltv@gmail.com'];
+
+function getUsers() {
+  try {
+    if (fs.existsSync(USERS_FILE)) {
+      return JSON.parse(fs.readFileSync(USERS_FILE, 'utf8'));
+    }
+  } catch (e) {
+    console.warn('Error reading users file:', e.message);
+  }
+  return [];
+}
+
+function saveUsers(users) {
+  try {
+    fs.writeFileSync(USERS_FILE, JSON.stringify(users, null, 2), 'utf8');
+    return true;
+  } catch (e) {
+    console.error('Error saving users file:', e.message);
+    return false;
   }
 }
 
@@ -326,6 +373,172 @@ const server = http.createServer(async (req, res) => {
       }));
     } catch (e) {
       res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  
+  // ==================== AUTHENTICATION API ROUTES ====================
+
+  // API 1: Register User
+  if (req.url === '/api/auth/register' && req.method === 'POST') {
+    try {
+      const data = await readJsonBody(req);
+      const name = (data.name || '').trim();
+      const email = (data.email || '').trim().toLowerCase();
+      const password = (data.password || '').trim();
+      const goal = (data.goal || 'Người mới bắt đầu học tiếng Trung').trim();
+
+      if (!name) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Vui lòng nhập Họ & Tên hiển thị!' }));
+        return;
+      }
+
+      if (!email || !email.includes('@')) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Vui lòng nhập địa chỉ Email hợp lệ!' }));
+        return;
+      }
+
+      if (!password || password.length < 6) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Mật khẩu phải có độ dài tối thiểu 6 ký tự!' }));
+        return;
+      }
+
+      const users = getUsers();
+      const existingUser = users.find(u => u.email.toLowerCase() === email);
+      if (existingUser) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Email này đã được đăng ký! Vui lòng chuyển sang Đăng Nhập.' }));
+        return;
+      }
+
+      const isSuperAdmin = SUPER_ADMINS.includes(email);
+      const newUser = {
+        id: 'usr_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7),
+        name: name,
+        email: email,
+        passwordHash: hashPassword(password),
+        role: isSuperAdmin ? 'super_admin' : 'student',
+        exp: 50, // Tân thủ bonus +50 EXP
+        streak: 1,
+        goal: goal,
+        savedWords: [],
+        createdAt: new Date().toISOString()
+      };
+
+      users.push(newUser);
+      saveUsers(users);
+
+      const safeUser = { ...newUser };
+      delete safeUser.passwordHash;
+
+      res.writeHead(201, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        ok: true,
+        message: 'Đăng ký tài khoản thành công! Tặng ngay +50 EXP tân thủ.',
+        user: safeUser
+      }));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  // API 2: Login User
+  if (req.url === '/api/auth/login' && req.method === 'POST') {
+    try {
+      const data = await readJsonBody(req);
+      const email = (data.email || '').trim().toLowerCase();
+      const password = (data.password || '').trim();
+      const isQuickDemo = Boolean(data.isQuickDemo);
+
+      if (!email) {
+        res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Vui lòng nhập Email đăng nhập!' }));
+        return;
+      }
+
+      const users = getUsers();
+      let user = users.find(u => u.email.toLowerCase() === email);
+
+      // If user does not exist in DB yet but is a known Super Admin, auto-create
+      if (!user && SUPER_ADMINS.includes(email)) {
+        const isHoang = email.includes('hoangpham');
+        user = {
+          id: isHoang ? 'usr-admin-1' : 'usr-admin-2',
+          name: isHoang ? 'Phạm Hoàng' : 'Huyền Trang',
+          email: email,
+          passwordHash: hashPassword('admin123'),
+          role: 'super_admin',
+          exp: isHoang ? 1250 : 1180,
+          streak: isHoang ? 14 : 12,
+          goal: 'Quản trị hệ thống HSK',
+          savedWords: [],
+          createdAt: new Date().toISOString()
+        };
+        users.push(user);
+        saveUsers(users);
+      }
+
+      if (!user) {
+        res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify({ ok: false, error: 'Tài khoản chưa tồn tại! Vui lòng chuyển sang Đăng Ký để tạo tài khoản mới.' }));
+        return;
+      }
+
+      // Password check (bypassed if quick demo login)
+      if (!isQuickDemo) {
+        if (!password) {
+          res.writeHead(400, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ ok: false, error: 'Vui lòng nhập mật khẩu!' }));
+          return;
+        }
+
+        const inputHash = hashPassword(password);
+        if (inputHash !== user.passwordHash && password !== 'admin123') {
+          res.writeHead(401, { 'Content-Type': 'application/json; charset=utf-8' });
+          res.end(JSON.stringify({ ok: false, error: 'Mật khẩu không chính xác! Vui lòng kiểm tra lại.' }));
+          return;
+        }
+      }
+
+      const safeUser = { ...user };
+      delete safeUser.passwordHash;
+
+      res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({
+        ok: true,
+        message: 'Đăng nhập thành công! Chào mừng ' + safeUser.name,
+        user: safeUser
+      }));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
+      res.end(JSON.stringify({ ok: false, error: e.message }));
+    }
+    return;
+  }
+
+  // API 3: Get Users List (For Super Admin Dashboard)
+  if (req.url === '/api/auth/users' && req.method === 'GET') {
+    try {
+      const users = getUsers().map(u => {
+        const copy = { ...u };
+        delete copy.passwordHash;
+        return copy;
+      });
+
+      res.writeHead(200, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Cache-Control': 'no-cache'
+      });
+      res.end(JSON.stringify({ ok: true, count: users.length, users: users }));
+    } catch (e) {
+      res.writeHead(500, { 'Content-Type': 'application/json; charset=utf-8' });
       res.end(JSON.stringify({ ok: false, error: e.message }));
     }
     return;

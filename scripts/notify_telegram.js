@@ -11,39 +11,30 @@ try {
   if (urlFromFile.startsWith('http')) activeUrl = urlFromFile;
 } catch (e) {}
 
-const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - RA MẮT TRANG CHỦ DASHBOARD THÔNG MINH] 🏮
+const message = `🏮 [HỌC TIẾNG TRUNG MỖI NGÀY - RA MẮT HỆ THỐNG ĐĂNG KÝ & ĐĂNG NHẬP HOÀN CHỈNH] 🏮
 
-Chào bạn! Giao diện Trang Chủ (Home Dashboard) theo phong cách Sang Trọng Phương Đông đã chính thức được triển khai hoàn tất:
+Chào bạn! Hệ thống Đăng Ký (Register) và Đăng Nhập (Login) tài khoản học viên chính thức đã được tích hợp toàn diện:
 
-🌟 5 KHỐI TÍNH NĂNG ĐẶC SẮC TRÊN TRANG CHỦ MỚI:
-1. ☀️ BANNER CHÀO BUỔI & NHIỆM VỤ HÔM NAY:
-   - Lời chào cá nhân hóa theo thời gian trong ngày (Sáng, Trưa, Chiều, Tối).
-   - Danh ngôn phương Đông mỗi ngày (每日一言) kèm audio phát âm chuẩn.
-   - Chuỗi học tập (Streak 🔥) kèm nút "Điểm Danh Nhận Thưởng" (+20 EXP).
-   - 3 Nhiệm vụ ngày (Daily Quests) có thanh tiến trình nhận tới +75 EXP.
+✨ CÁC TÍNH NĂNG ĐĂNG KÝ & ĐĂNG NHẬP MỚI:
+1. 🔑 TAB ĐĂNG NHẬP (LOGIN):
+   - Đăng nhập nhanh 1-chạm (Quick Login) dành riêng cho 2 Super Admin: Phạm Hoàng & Huyền Trang.
+   - Đăng nhập bằng Email & Mật khẩu cho học viên toàn hệ thống.
+   - Nút ẩn/hiện mật khẩu trực quan.
 
-2. 📚 KHỐI TIẾP TỤC BÀI ĐANG HỌC (RESUME LEARNING):
-   - Tự động ghi nhớ bài học gần nhất (ví dụ: Hán Ngữ 1 - Bài 4: 你去哪儿？).
-   - Nút 1-click "Mở Bài Học Tiếp Tục" đưa thẳng vào nội dung bài đang học dở.
+2. ✨ TAB ĐĂNG KÝ HỌC VIÊN MỚI (REGISTER):
+   - Nhập Họ & Tên hiển thị, Email, Mật khẩu (tối thiểu 6 ký tự) & Xác nhận mật khẩu.
+   - Lựa chọn Mục tiêu học tập (Nhập môn HSK 1-2, Ôn thi HSK 3-4, HSK 5-6 cao cấp, Giao tiếp công việc...).
+   - 🎁 Quà tặng tân thủ: Tự động cộng ngay +50 EXP khi đăng ký thành công!
 
-3. ✍️ KHỐI CHỮ HÁN CỦA NGÀY (今日一字):
-   - Tích hợp HanziWriter tương tác vẽ nét chữ Phúc (福) trên ô Mễ tự (米字格).
-   - Nút xem mô phỏng nét bút thư pháp, tự tập viết chấm điểm, và phát âm pinyin chuẩn.
+3. 🛡️ BACKEND DATABASE & BẢO MẬT:
+   - Lưu trữ danh sách học viên trong cơ sở dữ liệu data/users.json trên máy chủ.
+   - Mã hóa bảo mật mật khẩu bằng SHA-256.
+   - API endpoints: /api/auth/register, /api/auth/login, /api/auth/users.
 
-4. 🧭 4 TRỤ CỘT HỌC TẬP TRỌNG TÂM:
-   - 🧭 Lộ trình chuẩn HSK 3.0 (48 bài Standard Course).
-   - 📖 Giáo trình Hán ngữ 6 quyển BLCU (76 bài toàn tập).
-   - 🌐 Luyện dịch thực chiến HiHSK & Trợ lý AI đàm thoại.
-   - ✍️ Chiết tự, 214 Bộ thủ & 14.605 từ vựng 125 chủ đề.
-
-5. 🏆 THI ĐUA CỘNG ĐỒNG & MINI QUIZ:
-   - Bảng Vàng Học Viên Tuần (Top 5 Thư Sinh Xuất Sắc dẫn đầu bởi Phạm Hoàng & Huyền Trang).
-   - Câu đố nhanh ngữ pháp hôm nay (+15 EXP) phản hồi đúng sai tức thì.
-
-🌐 Trải nghiệm trực tiếp ngay tại:
+🌐 Trải nghiệm đăng ký & đăng nhập ngay tại:
 ${activeUrl}
 
-Chúc bạn có những giờ phút học tập và tu luyện tiếng Trung đầy cảm hứng! 🏮`;
+Chúc bạn và các học viên có hành trình tu luyện Hán ngữ hứng khởi và thành công! 🏮`;
 
 const data = JSON.stringify({
   chat_id: chatId,

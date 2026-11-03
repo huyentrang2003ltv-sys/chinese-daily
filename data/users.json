@@ -1,0 +1,38 @@
+[
+  {
+    "id": "usr-admin-1",
+    "name": "Phạm Hoàng",
+    "email": "hoangpham1618@gmail.com",
+    "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "role": "super_admin",
+    "exp": 1250,
+    "streak": 14,
+    "goal": "HSK 6 & Biên phiên dịch chuyên nghiệp",
+    "savedWords": [],
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "usr-admin-2",
+    "name": "Huyền Trang",
+    "email": "huyentrang2003ltv@gmail.com",
+    "passwordHash": "240be518fabd2724ddb6f04eeb1da5967448d7e831c08c8fa822809f74c720a9",
+    "role": "super_admin",
+    "exp": 1180,
+    "streak": 12,
+    "goal": "HSK 6 & Giảng dạy tiếng Trung",
+    "savedWords": [],
+    "createdAt": "2026-11-01T00:00:00.000Z"
+  },
+  {
+    "id": "usr_1793696931022_gwuu1",
+    "name": "Nguyễn Văn A",
+    "email": "nguyenvana_test_1793696931022@gmail.com",
+    "passwordHash": "ef92b778bafe771e89245b89ecbc08a44a4e166c06659911881f383d4473e94f",
+    "role": "student",
+    "exp": 50,
+    "streak": 1,
+    "goal": "Ôn thi HSK 3 cấp tốc",
+    "savedWords": [],
+    "createdAt": "2026-11-03T09:08:51.023Z"
+  }
+]
