@@ -1,0 +1,623 @@
+[
+  {
+    "level": 1,
+    "title": "Cặp từ Vui Vẻ & Đẹp Đẽ (Sơ Cấp)",
+    "tier": "easy",
+    "mode": "synonym",
+    "description": "Tìm các cặp từ đồng nghĩa cơ bản chỉ cảm xúc và ngoại hình",
+    "pairs": [
+      {
+        "id": "syn_1_1",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "高兴", "pinyin": "gāoxìng", "meaning": "vui vẻ" },
+        "wordB": { "hanzi": "开心", "pinyin": "kāixīn", "meaning": "hạnh phúc, tươi vui" },
+        "relationDesc": "Đều dùng để miêu tả tâm trạng phấn khởi, vui sướng.",
+        "exampleSentence": "今天见到老朋友，我很高兴，大家都很开心。"
+      },
+      {
+        "id": "syn_1_2",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "美丽", "pinyin": "měilì", "meaning": "xinh đẹp, diễm lệ" },
+        "wordB": { "hanzi": "漂亮", "pinyin": "piàoliang", "meaning": "đẹp đẽ, ưa nhìn" },
+        "relationDesc": "Đều chỉ vẻ đẹp ưa nhìn; 漂亮 thường dùng trong khẩu ngữ, 美丽 trang trọng hơn.",
+        "exampleSentence": "这件衣服很漂亮，这里的风景很美丽。"
+      },
+      {
+        "id": "syn_1_3",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "喜欢", "pinyin": "xǐhuan", "meaning": "thích, yêu thích" },
+        "wordB": { "hanzi": "喜爱", "pinyin": "xǐ'ài", "meaning": "yêu mến, chuộng" },
+        "relationDesc": "Đều thể hiện tình cảm quý mến, có hứng thú với ai đó hoặc điều gì.",
+        "exampleSentence": "他很喜欢中国茶，深受大家的喜爱。"
+      }
+    ]
+  },
+  {
+    "level": 2,
+    "title": "Kích Thước & Tốc Độ (Sơ Cấp)",
+    "tier": "easy",
+    "mode": "antonym",
+    "description": "Tìm các cặp từ trái nghĩa cơ bản đối lập về kích thước, số lượng và vận tốc",
+    "pairs": [
+      {
+        "id": "ant_2_1",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "大", "pinyin": "dà", "meaning": "to, lớn" },
+        "wordB": { "hanzi": "小", "pinyin": "xiǎo", "meaning": "nhỏ, bé" },
+        "relationDesc": "Đại (大) chỉ thể tích quy mô lớn, Tiểu (小) chỉ sự nhỏ bé.",
+        "exampleSentence": "西瓜很大，苹果很小。"
+      },
+      {
+        "id": "ant_2_2",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "多", "pinyin": "duō", "meaning": "nhiều" },
+        "wordB": { "hanzi": "少", "pinyin": "shǎo", "meaning": "ít" },
+        "relationDesc": "Đa (多) chỉ số lượng phong phú, Thiểu (少) chỉ số lượng ít ỏi.",
+        "exampleSentence": "图书馆里的书很多，看书的人也不少。"
+      },
+      {
+        "id": "ant_2_3",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "快", "pinyin": "kuài", "meaning": "nhanh" },
+        "wordB": { "hanzi": "慢", "pinyin": "màn", "meaning": "chậm" },
+        "relationDesc": "Khoái (快) là tốc độ cao, Mạn (慢) là tốc độ từ tốn chậm chạp.",
+        "exampleSentence": "高铁跑得很快，骑自行车相对较慢。"
+      }
+    ]
+  },
+  {
+    "level": 3,
+    "title": "Nhiệt Độ & Giá Cả (Sơ Cấp)",
+    "tier": "easy",
+    "mode": "antonym",
+    "description": "Cặp từ đối lập quen thuộc trong giao tiếp mua sắm và thời tiết",
+    "pairs": [
+      {
+        "id": "ant_3_1",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "冷", "pinyin": "lěng", "meaning": "lạnh" },
+        "wordB": { "hanzi": "热", "pinyin": "rè", "meaning": "nóng" },
+        "relationDesc": "Lãnh (冷) chỉ thời tiết hàn lạnh, Nhiệt (热) chỉ thời tiết nóng nực.",
+        "exampleSentence": "冬天天气很冷，夏天天气很热。"
+      },
+      {
+        "id": "ant_3_2",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "贵", "pinyin": "guì", "meaning": "đắt" },
+        "wordB": { "hanzi": "便宜", "pinyin": "piányi", "meaning": "rẻ" },
+        "relationDesc": "Quý (贵) giá trị cao đắt đỏ, Tiện nghi (便宜) giá cả phải chăng.",
+        "exampleSentence": "这双鞋太贵了，那件衬衫比较便宜。"
+      },
+      {
+        "id": "ant_3_3",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "高", "pinyin": "gāo", "meaning": "cao" },
+        "wordB": { "hanzi": "矮", "pinyin": "ǎi", "meaning": "thấp, lùn" },
+        "relationDesc": "Cao (高) chỉ tầm vóc cao lớn, Ải (矮) chỉ chiều cao khiêm tốn.",
+        "exampleSentence": "哥哥长很高，弟弟稍微有一点矮。"
+      }
+    ]
+  },
+  {
+    "level": 4,
+    "title": "Tốc Độ & Bất Ngờ (Đồng Nghĩa Sơ Cấp)",
+    "tier": "easy",
+    "mode": "synonym",
+    "description": "Các phó từ và tính từ đồng nghĩa chỉ tính chất diễn biến",
+    "pairs": [
+      {
+        "id": "syn_4_1",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "迅速", "pinyin": "xùnsù", "meaning": "nhanh chóng" },
+        "wordB": { "hanzi": "快速", "pinyin": "kuàisù", "meaning": "mau lẹ, thần tốc" },
+        "relationDesc": "Đều chỉ tốc độ diễn ra trong chớp mắt, rất mau chóng.",
+        "exampleSentence": "救援队迅速赶到现场，快速展开工作。"
+      },
+      {
+        "id": "syn_4_2",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "突然", "pinyin": "tūrán", "meaning": "đột nhiên, bất ngờ" },
+        "wordB": { "hanzi": "忽然", "pinyin": "hūrán", "meaning": "bỗng nhiên, thoắt" },
+        "relationDesc": "Đều chỉ sự việc xảy ra ngoài ý muốn và không báo trước.",
+        "exampleSentence": "外面突然下起了大雨，我忽然想起了带伞。"
+      },
+      {
+        "id": "syn_4_3",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "简单", "pinyin": "jiǎndān", "meaning": "đơn giản" },
+        "wordB": { "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ dàng" },
+        "relationDesc": "Đều chỉ vấn đề không phức tạp, dễ giải quyết.",
+        "exampleSentence": "这道汉语题很简单，回答起来很容易。"
+      },
+      {
+        "id": "syn_4_4",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "经常", "pinyin": "jīngcháng", "meaning": "thường xuyên" },
+        "wordB": { "hanzi": "常常", "pinyin": "chángcháng", "meaning": "hay, đều đặn" },
+        "relationDesc": "Đều là phó từ chỉ tần suất xuất hiện lặp đi lặp lại nhiều lần.",
+        "exampleSentence": "他经常去图书馆借书，常常在周末运动。"
+      }
+    ]
+  },
+  {
+    "level": 5,
+    "title": "Hành Vi Đối Lập (Trái Nghĩa Sơ Cấp)",
+    "tier": "easy",
+    "mode": "antonym",
+    "description": "Các động từ hành vi đối lập trực tiếp trong cuộc sống",
+    "pairs": [
+      {
+        "id": "ant_5_1",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "买", "pinyin": "mǎi", "meaning": "mua" },
+        "wordB": { "hanzi": "卖", "pinyin": "mài", "meaning": "bán" },
+        "relationDesc": "Mãi (买) là mua vào, Mại (卖) là bán ra.",
+        "exampleSentence": "他开店买进原料，卖出商品。"
+      },
+      {
+        "id": "ant_5_2",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "开", "pinyin": "kāi", "meaning": "mở" },
+        "wordB": { "hanzi": "关", "pinyin": "guān", "meaning": "đóng" },
+        "relationDesc": "Khai (开) là mở ra, Quan (关) là đóng lại.",
+        "exampleSentence": "请开门，离开时记得关灯。"
+      },
+      {
+        "id": "ant_5_3",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "进", "pinyin": "jìn", "meaning": "vào" },
+        "wordB": { "hanzi": "出", "pinyin": "chū", "meaning": "ra" },
+        "relationDesc": "Tiến (进) là đi vào, Xuất (出) là đi ra ngoài.",
+        "exampleSentence": "请进房间，不要随便出去。"
+      },
+      {
+        "id": "ant_5_4",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "问", "pinyin": "wèn", "meaning": "hỏi" },
+        "wordB": { "hanzi": "答", "pinyin": "dá", "meaning": "trả lời" },
+        "relationDesc": "Vấn (问) đặt câu hỏi, Đáp (答) đối đáp trả lời.",
+        "exampleSentence": "老师提问，学生作答。"
+      }
+    ]
+  },
+  {
+    "level": 6,
+    "title": "Phẩm Chất & Nhận Thức (Đồng Nghĩa Trung Cấp)",
+    "tier": "medium",
+    "mode": "synonym",
+    "description": "Các cặp từ đồng nghĩa HSK 3-4 về thái độ học tập và tính cách",
+    "pairs": [
+      {
+        "id": "syn_6_1",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "认真", "pinyin": "rènzhēn", "meaning": "chăm chỉ, nghiêm túc" },
+        "wordB": { "hanzi": "仔细", "pinyin": "zǐxì", "meaning": "cẩn thận, tỉ mỉ" },
+        "relationDesc": "Đều chỉ thái độ làm việc chu đáo, không cẩu thả.",
+        "exampleSentence": "他做事很认真，检查作业也很仔细。"
+      },
+      {
+        "id": "syn_6_2",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "著名", "pinyin": "zhùmíng", "meaning": "nổi tiếng" },
+        "wordB": { "hanzi": "有名", "pinyin": "yǒumíng", "meaning": "lừng danh, tiếng tăm" },
+        "relationDesc": "Đều chỉ danh tiếng được nhiều người biết đến rộng rãi.",
+        "exampleSentence": "他是著名的学者，在中国很有名。"
+      },
+      {
+        "id": "syn_6_3",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "保护", "pinyin": "bǎohù", "meaning": "bảo vệ" },
+        "wordB": { "hanzi": "爱护", "pinyin": "àihù", "meaning": "chăm sóc, yêu thương" },
+        "relationDesc": "Đều chỉ việc giữ gìn để đối tượng không bị tổn hại.",
+        "exampleSentence": "我们要保护环境，爱护公物。"
+      },
+      {
+        "id": "syn_6_4",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "明白", "pinyin": "míngbai", "meaning": "hiểu rõ, thấu tỏ" },
+        "wordB": { "hanzi": "清楚", "pinyin": "qīngchu", "meaning": "rõ ràng, tường tận" },
+        "relationDesc": "Đều chỉ trạng thái nhận thức sáng tỏ, không mơ hồ.",
+        "exampleSentence": "听了老师的解释，大家都明白了，心里很清楚。"
+      },
+      {
+        "id": "syn_6_5",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "帮助", "pinyin": "bāngzhù", "meaning": "giúp đỡ" },
+        "wordB": { "hanzi": "援助", "pinyin": "yuánzhù", "meaning": "viện trợ, hỗ trợ" },
+        "relationDesc": "Đều chỉ việc ra tay tương trợ người khác trong hoàn cảnh khó khăn.",
+        "exampleSentence": "朋友之间应该互相帮助，遇到危急提供援助。"
+      }
+    ]
+  },
+  {
+    "level": 7,
+    "title": "Thành Bại & Trí Tuệ (Trái Nghĩa Trung Cấp)",
+    "tier": "medium",
+    "mode": "antonym",
+    "description": "Các cặp từ trái nghĩa sâu sắc về sự nghiệp và tư duy",
+    "pairs": [
+      {
+        "id": "ant_7_1",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "成功", "pinyin": "chénggōng", "meaning": "thành công" },
+        "wordB": { "hanzi": "失败", "pinyin": "shībài", "meaning": "thất bại" },
+        "relationDesc": "Thành công là đạt mục tiêu, thất bại là không đạt được kết quả.",
+        "exampleSentence": "失败是成功之母，不要轻易放弃。"
+      },
+      {
+        "id": "ant_7_2",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "聪明", "pinyin": "cōngming", "meaning": "thông minh" },
+        "wordB": { "hanzi": "愚蠢", "pinyin": "yúchǔn", "meaning": "ngu ngốc, dại khờ" },
+        "relationDesc": "Thông minh chỉ trí lực nhạy bén, Ngu xuẩn chỉ sự kém hiểu biết.",
+        "exampleSentence": "聪明人善于思考，愚蠢的人盲目行动。"
+      },
+      {
+        "id": "ant_7_3",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "容易", "pinyin": "róngyì", "meaning": "dễ dàng" },
+        "wordB": { "hanzi": "困难", "pinyin": "kùnnan", "meaning": "khó khăn" },
+        "relationDesc": "Dung dịch là thuận lợi dễ làm, Khốn nan là trắc trở khó khăn.",
+        "exampleSentence": "说话容易做起来困难。"
+      },
+      {
+        "id": "ant_7_4",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "强", "pinyin": "qiáng", "meaning": "mạnh" },
+        "wordB": { "hanzi": "弱", "pinyin": "ruò", "meaning": "yếu" },
+        "relationDesc": "Cường (强) là hùng mạnh, Nhược (弱) là yếu đuối mềm mỏng.",
+        "exampleSentence": "身体强壮的人不容易生病，体弱的人要多锻炼。"
+      },
+      {
+        "id": "ant_7_5",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "始", "pinyin": "shǐ", "meaning": "bắt đầu, khởi đầu" },
+        "wordB": { "hanzi": "终", "pinyin": "zhōng", "meaning": "kết thúc, chung cuộc" },
+        "relationDesc": "Thủy (始) là điểm khởi đầu, Chung (终) là đích đến cuối cùng.",
+        "exampleSentence": "做事情必须有始有终。"
+      }
+    ]
+  },
+  {
+    "level": 8,
+    "title": "Cảm Xúc & Quyết Định (Đồng Nghĩa Trung Cấp)",
+    "tier": "medium",
+    "mode": "synonym",
+    "description": "Các cặp từ đồng nghĩa diễn tả tâm trạng nội tâm và sự do dự",
+    "pairs": [
+      {
+        "id": "syn_8_1",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "悲伤", "pinyin": "bēishāng", "meaning": "đau buồn" },
+        "wordB": { "hanzi": "难过", "pinyin": "nánguò", "meaning": "buồn lòng, xót xa" },
+        "relationDesc": "Đều thể hiện nỗi buồn bã, tổn thương trong tâm can.",
+        "exampleSentence": "听到坏消息，大家都感到十分难过和悲伤。"
+      },
+      {
+        "id": "syn_8_2",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "犹豫", "pinyin": "yóuyù", "meaning": "do dự, chần chừ" },
+        "wordB": { "hanzi": "迟疑", "pinyin": "chíyí", "meaning": "ngập ngừng, lưỡng lự" },
+        "relationDesc": "Đều chỉ sự chưa quyết định dứt khoát, còn cân nhắc kéo dài thời gian.",
+        "exampleSentence": "他面对选择十分犹豫，迟疑了很久才表态。"
+      },
+      {
+        "id": "syn_8_3",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "孤独", "pinyin": "gūdú", "meaning": "cô đơn" },
+        "wordB": { "hanzi": "孤单", "pinyin": "gūdān", "meaning": "đơn độc, lẻ bóng" },
+        "relationDesc": "Đều chỉ trạng thái chỉ có một mình, thiếu vắng bè bạn chia sẻ.",
+        "exampleSentence": "独自一人在外生活，难免会有孤单孤独的时刻。"
+      },
+      {
+        "id": "syn_8_4",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "珍贵", "pinyin": "zhēnguì", "meaning": "quý giá" },
+        "wordB": { "hanzi": "宝贵", "pinyin": "bǎoguì", "meaning": "quý báu, vô giá" },
+        "relationDesc": "Đều chỉ giá trị to lớn đáng trân trọng gìn giữ.",
+        "exampleSentence": "时间非常宝贵，青春是最珍贵的财富。"
+      },
+      {
+        "id": "syn_8_5",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "节约", "pinyin": "jiéyuē", "meaning": "tiết kiệm" },
+        "wordB": { "hanzi": "节省", "pinyin": "jiéshěng", "meaning": "dành dụm, bớt xén" },
+        "relationDesc": "Đều chỉ việc chi tiêu có chừng mực, tránh lãng phí.",
+        "exampleSentence": "我们要节约用水，节省生活开支。"
+      },
+      {
+        "id": "syn_8_6",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "骄傲", "pinyin": "jiāo'ào", "meaning": "tự hào" },
+        "wordB": { "hanzi": "自豪", "pinyin": "zìháo", "meaning": "hãnh diện" },
+        "relationDesc": "Đều mang nghĩa tích cực là cảm thấy vinh hạnh vì thành tựu đạt được.",
+        "exampleSentence": "为祖国的繁荣富强感到无比自豪与骄傲。"
+      }
+    ]
+  },
+  {
+    "level": 9,
+    "title": "Tâm Tính & Đạo Đức (Trái Nghĩa Trung Cấp)",
+    "tier": "medium",
+    "mode": "antonym",
+    "description": "Các cặp từ đối lập về tính cách, thái độ sống và phẩm hạnh",
+    "pairs": [
+      {
+        "id": "ant_9_1",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "谦虚", "pinyin": "qiānxū", "meaning": "khiêm tốn" },
+        "wordB": { "hanzi": "骄傲", "pinyin": "jiāo'ào", "meaning": "kiêu ngạo" },
+        "relationDesc": "Khiêm tốn biết mình biết người, Kiêu ngạo tự phụ tự cao.",
+        "exampleSentence": "谦虚使人进步，骄傲使人落后。"
+      },
+      {
+        "id": "ant_9_2",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "诚实", "pinyin": "chéngshí", "meaning": "thành thật" },
+        "wordB": { "hanzi": "虚伪", "pinyin": "xūwěi", "meaning": "giả dối, xảo quyệt" },
+        "relationDesc": "Thành thật nói lời ngay thẳng, Hư ngụy giả tạo che giấu sự thật.",
+        "exampleSentence": "做一个诚实守信的人，远离虚伪的面具。"
+      },
+      {
+        "id": "ant_9_3",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "勇敢", "pinyin": "yǒnggǎn", "meaning": "dũng cảm" },
+        "wordB": { "hanzi": "懦弱", "pinyin": "nuòruò", "meaning": "nhút nhát, hèn yếu" },
+        "relationDesc": "Dũng cảm dám đương đầu hiểm nguy, Nhu nhược sợ sệt trốn tránh.",
+        "exampleSentence": "面对困难要勇敢克服，不能懦弱退缩。"
+      },
+      {
+        "id": "ant_9_4",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "积极", "pinyin": "jījí", "meaning": "tích cực" },
+        "wordB": { "hanzi": "消极", "pinyin": "xiāojí", "meaning": "tiêu cực" },
+        "relationDesc": "Tích cực chủ động cầu tiến, Tiêu cực bi quan chán nản.",
+        "exampleSentence": "保持积极乐观的心态，消除消极情绪。"
+      },
+      {
+        "id": "ant_9_5",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "紧张", "pinyin": "jǐnzhāng", "meaning": "căng thẳng" },
+        "wordB": { "hanzi": "放松", "pinyin": "fàngsōng", "meaning": "thư giãn, thả lỏng" },
+        "relationDesc": "Căng thẳng hồi hộp lo âu, Phóng tùng nhẹ nhõm thảnh thơi.",
+        "exampleSentence": "考试前别太紧张，听听音乐放松一下。"
+      },
+      {
+        "id": "ant_9_6",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "丰富", "pinyin": "fēngfù", "meaning": "phong phú" },
+        "wordB": { "hanzi": "贫乏", "pinyin": "pínfá", "meaning": "nghèo nàn, ít ỏi" },
+        "relationDesc": "Phong phú dồi dào đa dạng, Bần phạp đơn điệu cạn kiệt.",
+        "exampleSentence": "他的经验很丰富，知识并不贫乏。"
+      }
+    ]
+  },
+  {
+    "level": 10,
+    "title": "Thử Thách Hỗn Hợp Song Hành (Đồng & Trái Nghĩa)",
+    "tier": "hard",
+    "mode": "mixed",
+    "description": "Màn chơi kết hợp cả cặp từ đồng nghĩa lẫn trái nghĩa đan xen nhau",
+    "pairs": [
+      {
+        "id": "mix_10_1",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "准备", "pinyin": "zhǔnbèi", "meaning": "chuẩn bị" },
+        "wordB": { "hanzi": "预备", "pinyin": "yùbèi", "meaning": "sửa soạn, trù bị" },
+        "relationDesc": "Đều chỉ việc sắp xếp, chuẩn bị trước cho một kế hoạch.",
+        "exampleSentence": "运动员们做好了起跑的准备与预备。"
+      },
+      {
+        "id": "mix_10_2",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "远", "pinyin": "yuǎn", "meaning": "xa" },
+        "wordB": { "hanzi": "近", "pinyin": "jìn", "meaning": "gần" },
+        "relationDesc": "Viễn (远) khoảng cách dài, Cận (近) khoảng cách sát cạnh.",
+        "exampleSentence": "学校离我家很近，离他家很远。"
+      },
+      {
+        "id": "mix_10_3",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "温暖", "pinyin": "wēnnuǎn", "meaning": "ấm áp" },
+        "wordB": { "hanzi": "暖和", "pinyin": "nuǎnhuo", "meaning": "ấm lòng, ấm êm" },
+        "relationDesc": "Đều diễn tả cảm giác ấm cúng, dễ chịu về thời tiết lẫn lòng người.",
+        "exampleSentence": "春天的阳光很温暖，屋里很暖和。"
+      },
+      {
+        "id": "mix_10_4",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "深刻", "pinyin": "shēnkè", "meaning": "sâu sắc" },
+        "wordB": { "hanzi": "肤浅", "pinyin": "fūqiǎn", "meaning": "nông cạn, hời hợt" },
+        "relationDesc": "Thâm khắc nhìn thấu bản chất, Phu thiển chỉ thấy bề mặt nông nổi.",
+        "exampleSentence": "这篇文章见解深刻，绝非肤浅之作。"
+      },
+      {
+        "id": "mix_10_5",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "寻找", "pinyin": "xúnzhǎo", "meaning": "tìm kiếm" },
+        "wordB": { "hanzi": "寻觅", "pinyin": "xúnmì", "meaning": "kiếm tìm, lùng sục" },
+        "relationDesc": "Đều chỉ hành động cố gắng tìm cho ra người hoặc vật.",
+        "exampleSentence": "他在书海中寻找答案，四处寻觅良师益友。"
+      },
+      {
+        "id": "mix_10_6",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "团结", "pinyin": "tuánjié", "meaning": "đoàn kết" },
+        "wordB": { "hanzi": "分裂", "pinyin": "fēnliè", "meaning": "chia rẽ, phân ly" },
+        "relationDesc": "Đoàn kết gắn bó keo sơn, Phân liệt chia cắt rạn nứt.",
+        "exampleSentence": "团结就是力量，坚决反对内部的分裂。"
+      }
+    ]
+  },
+  {
+    "level": 11,
+    "title": "Cao Cấp: Ngữ Cảnh & Thành Ngữ Đồng Nghĩa",
+    "tier": "hard",
+    "mode": "synonym",
+    "description": "Các cặp từ đồng nghĩa cao cấp HSK 5-6 và văn viết phong phú",
+    "pairs": [
+      {
+        "id": "syn_11_1",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "宽阔", "pinyin": "kuānkuò", "meaning": "rộng lớn, thênh thang" },
+        "wordB": { "hanzi": "辽阔", "pinyin": "liáokuò", "meaning": "bao la, bát ngát" },
+        "relationDesc": "Đều chỉ không gian mênh mông, rộng rãi trải dài.",
+        "exampleSentence": "宽阔的大马路通往辽阔的草原。"
+      },
+      {
+        "id": "syn_11_2",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "允许", "pinyin": "yǔnxǔ", "meaning": "cho phép, chấp thuận" },
+        "wordB": { "hanzi": "答应", "pinyin": "dāying", "meaning": "đồng ý, ưng thuận" },
+        "relationDesc": "Đều là sự chấp thuận cho ai đó thực hiện việc gì.",
+        "exampleSentence": "妈妈允许我去旅行，并且答应给我买新书包。"
+      },
+      {
+        "id": "syn_11_3",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "停止", "pinyin": "tíngzhǐ", "meaning": "ngừng, dừng lại" },
+        "wordB": { "hanzi": "中止", "pinyin": "zhōngzhǐ", "meaning": "đình chỉ, gián đoạn" },
+        "relationDesc": "Đều chỉ việc không tiếp tục diễn ra hành động nào đó.",
+        "exampleSentence": "大雨停止了，比赛并未中止。"
+      },
+      {
+        "id": "syn_11_4",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "特殊", "pinyin": "tèshū", "meaning": "đặc thù, đặc biệt" },
+        "wordB": { "hanzi": "特别", "pinyin": "tèbié", "meaning": "khác biệt, phi thường" },
+        "relationDesc": "Đều chỉ tính chất cá biệt, khác biệt với thông thường.",
+        "exampleSentence": "在特殊的环境下，他表现得特别出色。"
+      },
+      {
+        "id": "syn_11_5",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "顽强", "pinyin": "wánqiáng", "meaning": "kiên cường, ngoan cường" },
+        "wordB": { "hanzi": "坚强", "pinyin": "jiānqiáng", "meaning": "vững vàng, bất khuất" },
+        "relationDesc": "Đều chỉ ý chí kiên định không chịu khuất phục trước gian khổ.",
+        "exampleSentence": "他具有坚强的意志和顽强的拼搏精神。"
+      },
+      {
+        "id": "syn_11_6",
+        "type": "synonym",
+        "typeLabel": "Đồng nghĩa",
+        "wordA": { "hanzi": "期望", "pinyin": "qīwàng", "meaning": "kỳ vọng" },
+        "wordB": { "hanzi": "希望", "pinyin": "xīwàng", "meaning": "hy vọng, mong mỏi" },
+        "relationDesc": "Đều là lòng khao khát chờ đợi những điều tốt đẹp xảy ra.",
+        "exampleSentence": "老师期望我们成才，我们对未来充满希望。"
+      }
+    ]
+  },
+  {
+    "level": 12,
+    "title": "Cao Cấp: Triết Lý & Nhân Sinh (Trái Nghĩa)",
+    "tier": "hard",
+    "mode": "antonym",
+    "description": "Các cặp từ trái nghĩa mang tính triết lý, văn chương HSK 5-6",
+    "pairs": [
+      {
+        "id": "ant_12_1",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "永久", "pinyin": "yǒngjiǔ", "meaning": "vĩnh cửu, lâu bền" },
+        "wordB": { "hanzi": "短暂", "pinyin": "duǎnzàn", "meaning": "ngắn ngủi, thoáng chốc" },
+        "relationDesc": "Vĩnh cửu kéo dài mãi mãi, Đoản tạm chỉ là khoảnh khắc thoáng qua.",
+        "exampleSentence": "流星的绚烂十分短暂，真理的光芒永久长存。"
+      },
+      {
+        "id": "ant_12_2",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "清晰", "pinyin": "qīngxī", "meaning": "rõ nét, minh bạch" },
+        "wordB": { "hanzi": "模糊", "pinyin": "móhu", "meaning": "mờ nhạt, mơ hồ" },
+        "relationDesc": "Thanh tích nhìn thấu rành mạch, Mô hồ không thấy tỏ tường.",
+        "exampleSentence": "记忆依然清晰，往事并不模糊。"
+      },
+      {
+        "id": "ant_12_3",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "繁荣", "pinyin": "fánróng", "meaning": "phồn vinh, hưng thịnh" },
+        "wordB": { "hanzi": "萧条", "pinyin": "xiāotiáo", "meaning": "tiêu điều, ảm đạm" },
+        "relationDesc": "Phồn vinh kinh tế rực rỡ, Tiêu điều vắng lặng suy thoái.",
+        "exampleSentence": "商业街一片繁荣，丝毫没有萧条景象。"
+      },
+      {
+        "id": "ant_12_4",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "深奥", "pinyin": "shēn'ào", "meaning": "thâm sâu, uyên thâm" },
+        "wordB": { "hanzi": "浅显", "pinyin": "qiǎnxiǎn", "meaning": "nông cạn, dễ hiểu" },
+        "relationDesc": "Thâm áo khó hiểu uyên bác, Thiển hiển sáng tỏ dễ nắm bắt.",
+        "exampleSentence": "他用浅显的语言阐述深奥的哲理。"
+      },
+      {
+        "id": "ant_12_5",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "赞同", "pinyin": "zàntóng", "meaning": "tán đồng, ủng hộ" },
+        "wordB": { "hanzi": "反对", "pinyin": "fǎnduì", "meaning": "phản đối, bài xích" },
+        "relationDesc": "Tán đồng nhất trí ý kiến, Phản đối cự tuyệt bất đồng quan điểm.",
+        "exampleSentence": "大部分人表示赞同，极少数人持有反对意见。"
+      },
+      {
+        "id": "ant_12_6",
+        "type": "antonym",
+        "typeLabel": "Trái nghĩa",
+        "wordA": { "hanzi": "宏伟", "pinyin": "hóngwěi", "meaning": "hùng vĩ, hoành tráng" },
+        "wordB": { "hanzi": "微小", "pinyin": "wēixiǎo", "meaning": "nhỏ nhoi, li ti" },
+        "relationDesc": "Hoành vĩ nguy nga tráng lệ, Vi tiểu bé nhỏ vụn vặt.",
+        "exampleSentence": "宏伟的工程是由无数微小的细节汇聚而成。"
+      }
+    ]
+  }
+]

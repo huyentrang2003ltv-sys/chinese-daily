@@ -39,6 +39,7 @@ const TABS = {
   aichat: { label: 'Hội thoại tình huống', icon: 'bot', data: ['aiScenarios'], init: () => initAiChatModule() },
   mockexam: { label: 'Thi thử HSK', icon: 'file-check-2', data: ['mockExam'], init: () => initMockExamModule() },
   woodblock: { label: 'Xếp khối gỗ', icon: 'puzzle', data: ['woodBlock'], init: () => initWoodBlockGame() },
+  flipcard: { label: 'Lật thẻ tìm từ', icon: 'layers', data: ['flipCard'], init: () => initFlipCardGame() },
   classroom: { label: 'Lớp học', icon: 'school', data: ['dictionary'], init: () => initClassroom() }
 };
 
@@ -49,7 +50,7 @@ const NAV_GROUPS = [
   { id: 'hanzi', label: 'Chữ Hán', short: 'Chữ Hán', icon: 'type', tabs: ['etymology', 'radicals'] },
   { id: 'vocab', label: 'Từ vựng', short: 'Từ vựng', icon: 'book-a', tabs: ['dictionary', 'flashcards', 'confusions', 'chengyu'] },
   { id: 'read', label: 'Ngữ pháp & Đọc', short: 'Ngữ pháp', icon: 'library', tabs: ['grammar', 'readings', 'culture'] },
-  { id: 'train', label: 'Luyện tập & Thi', short: 'Luyện thi', icon: 'target', tabs: ['practice', 'translation', 'aichat', 'mockexam', 'woodblock', 'classroom'] }
+  { id: 'train', label: 'Luyện tập & Thi', short: 'Luyện thi', icon: 'target', tabs: ['practice', 'translation', 'aichat', 'mockexam', 'woodblock', 'flipcard', 'classroom'] }
 ];
 
 const DEFAULT_TAB = 'home';

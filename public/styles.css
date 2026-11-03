@@ -515,14 +515,16 @@ html.dark #floatingContactTooltip {
 
 /* ==================== WOOD BLOCK PUZZLE (汉语积木) STYLES ==================== */
 
+/* Warm Radiant Maple & Honey Teak Board Panel */
 .wood-board-panel {
-  background: radial-gradient(circle at 50% 50%, #4A2810 0%, #2E1505 100%);
-  border: 8px solid #5A3214;
+  background: radial-gradient(circle at 50% 25%, #FFF2DE 0%, #FAD9A6 35%, #E6AC6E 70%, #C97D36 100%);
+  border: 7px solid #9C5823;
   border-radius: 28px;
   box-shadow: 
-    0 16px 36px rgba(0, 0, 0, 0.5),
-    inset 0 4px 12px rgba(0, 0, 0, 0.8),
-    inset 0 -2px 6px rgba(255, 255, 255, 0.15);
+    0 20px 45px rgba(180, 95, 30, 0.22),
+    0 8px 18px rgba(0, 0, 0, 0.12),
+    inset 0 3px 6px rgba(255, 255, 255, 0.8),
+    inset 0 -4px 10px rgba(139, 69, 19, 0.3);
   position: relative;
 }
 
@@ -530,110 +532,310 @@ html.dark #floatingContactTooltip {
   content: '';
   position: absolute;
   inset: 4px;
-  border: 1px dashed rgba(197, 154, 63, 0.4);
+  border: 2px dashed rgba(180, 100, 30, 0.35);
   border-radius: 20px;
   pointer-events: none;
 }
 
+/* Bright Ivory & Birch Board Grid */
+#woodBoardGrid {
+  background: linear-gradient(135deg, #FFFDF8 0%, #FFF8EA 45%, #FBF0D8 100%) !important;
+  border: 3px solid #D4A373 !important;
+  border-radius: 20px !important;
+  box-shadow: inset 0 2px 8px rgba(180, 115, 50, 0.12), 0 4px 14px rgba(180, 115, 50, 0.08) !important;
+}
+
+/* Crisp, Bright Parchment Wood Cells */
 .wood-slot-cell {
-  background: #1F0D03;
-  border: 1px solid rgba(139, 69, 19, 0.35);
-  border-radius: 12px;
-  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.8), inset -1px -1px 2px rgba(255, 255, 255, 0.05);
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  background: #FFFFFF;
+  border: 2px dashed rgba(212, 163, 115, 0.65);
+  border-radius: 14px;
+  box-shadow: inset 1px 1px 4px rgba(180, 115, 50, 0.1), 0 1px 3px rgba(255, 255, 255, 0.9);
+  transition: all 0.18s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
 }
 
+.wood-slot-cell:hover {
+  border-color: #F59E0B;
+  background: #FFFBEB;
+  transform: scale(1.02);
+}
+
+/* Highlight Cells where the Selected Piece can be Placed (Tap-to-Place Guide) */
+.wood-slot-cell.slot-placeable-hint {
+  background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%) !important;
+  border: 2px solid #10B981 !important;
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.45), inset 0 0 8px rgba(16, 185, 129, 0.2) !important;
+  transform: scale(1.03);
+  animation: pulse-placeable 1.6s infinite ease-in-out;
+}
+
+.wood-slot-cell.slot-placeable-hint::after {
+  content: '▼';
+  position: absolute;
+  top: 1px;
+  font-size: 8px;
+  font-weight: 900;
+  color: #059669;
+}
+
+@keyframes pulse-placeable {
+  0% { transform: scale(1.01); box-shadow: 0 0 8px rgba(16, 185, 129, 0.3); }
+  50% { transform: scale(1.04); box-shadow: 0 0 16px rgba(16, 185, 129, 0.65), inset 0 0 10px rgba(16, 185, 129, 0.25); }
+  100% { transform: scale(1.01); box-shadow: 0 0 8px rgba(16, 185, 129, 0.3); }
+}
+
+/* Hover Valid: Glowing Emerald Ghost */
 .wood-slot-cell.slot-hover-valid {
-  background: rgba(197, 154, 63, 0.25) !important;
-  border-color: #F59E0B !important;
-  box-shadow: inset 0 0 14px rgba(245, 158, 11, 0.6), 0 0 10px rgba(245, 158, 11, 0.4);
+  background: rgba(16, 185, 129, 0.4) !important;
+  border: 2px solid #059669 !important;
+  box-shadow: 0 0 16px rgba(16, 185, 129, 0.75), inset 0 0 12px rgba(16, 185, 129, 0.35) !important;
+  transform: scale(1.04);
+  color: #064E3B !important;
 }
 
+/* Hover Invalid: Soft Rose Ghost */
 .wood-slot-cell.slot-hover-invalid {
-  background: rgba(220, 38, 38, 0.25) !important;
-  border-color: #EF4444 !important;
-  box-shadow: inset 0 0 14px rgba(239, 68, 68, 0.6);
+  background: rgba(239, 68, 68, 0.3) !important;
+  border: 2px solid #DC2626 !important;
+  box-shadow: 0 0 14px rgba(239, 68, 68, 0.55), inset 0 0 10px rgba(239, 68, 68, 0.25) !important;
 }
 
-/* Wood Block Pieces */
+/* Wood Block Pieces in Tray */
 .wood-piece {
   cursor: grab;
   user-select: none;
   touch-action: none;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  transition: transform 0.18s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.18s ease, filter 0.18s ease;
 }
 
 .wood-piece:active, .wood-piece.is-dragging {
   cursor: grabbing;
-  transform: scale(1.06) translateY(-4px);
+  transform: scale(1.08) translateY(-4px);
   z-index: 50;
-  filter: brightness(1.1);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5) !important;
+  filter: brightness(1.08);
+  box-shadow: 0 20px 30px rgba(180, 100, 30, 0.35) !important;
 }
 
 .wood-piece.is-selected {
   outline: 3px solid #F59E0B;
-  outline-offset: 3px;
-  transform: scale(1.04) translateY(-2px);
-  filter: brightness(1.12);
-  box-shadow: 0 0 20px rgba(245, 158, 11, 0.8) !important;
+  outline-offset: 4px;
+  transform: scale(1.06) translateY(-3px);
+  filter: brightness(1.1);
+  box-shadow: 0 0 22px rgba(245, 158, 11, 0.85) !important;
+  animation: pulse-selected 1.5s infinite alternate ease-in-out;
 }
 
-/* Wood Color Variations */
+@keyframes pulse-selected {
+  0% { transform: scale(1.04) translateY(-2px); box-shadow: 0 0 16px rgba(245, 158, 11, 0.6); }
+  100% { transform: scale(1.08) translateY(-4px); box-shadow: 0 0 26px rgba(245, 158, 11, 0.95); }
+}
+
+/* Floating Drag Ghost Following Finger/Mouse */
+.wood-floating-ghost {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1.1);
+  opacity: 0.92;
+  filter: drop-shadow(0 15px 25px rgba(180, 80, 20, 0.45));
+  transition: transform 0.04s ease-out;
+}
+
+/* ==================== VIBRANT, LUXURIOUS WOOD COLOR PALETTES ==================== */
+
+/* 1. Cinnabar Red Wood (Đỏ Son Cung Đình) */
 .wood-tile-cherry {
-  background: linear-gradient(135deg, #B22222 0%, #8B1A1A 50%, #5C1010 100%);
-  border: 2px solid #D32F2F;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.35), inset -2px -2px 3px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.35);
-  color: #FFFDF9;
+  background: linear-gradient(135deg, #FF6B6B 0%, #EE5253 45%, #C0392B 100%);
+  border: 2px solid #FFA8A8;
+  box-shadow: inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.75), inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(192, 57, 43, 0.35);
+  color: #FFFFFF !important;
 }
 
-.wood-tile-walnut {
-  background: linear-gradient(135deg, #784212 0%, #512E0C 50%, #341D07 100%);
-  border: 2px solid #8D4925;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.3), inset -2px -2px 3px rgba(0, 0, 0, 0.55), 0 6px 12px rgba(0, 0, 0, 0.35);
-  color: #FEF3C7;
-}
-
+/* 2. Imperial Amber Gold (Vàng Hổ Phách Hoàng Kim) */
 .wood-tile-amber {
-  background: linear-gradient(135deg, #D97706 0%, #B45309 50%, #78350F 100%);
-  border: 2px solid #F59E0B;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.4), inset -2px -2px 3px rgba(0, 0, 0, 0.45), 0 6px 12px rgba(0, 0, 0, 0.35);
-  color: #FFFBEB;
+  background: linear-gradient(135deg, #FFF3BF 0%, #FDD835 40%, #FB8C00 100%);
+  border: 2px solid #FFF9DB;
+  box-shadow: inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.85), inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.15), 0 5px 12px rgba(251, 140, 0, 0.35);
+  color: #4E2100 !important;
 }
 
+/* 3. Golden Honey Oak (Gỗ Sồi Mật Ong) */
 .wood-tile-oak {
-  background: linear-gradient(135deg, #A0522D 0%, #7B3F00 50%, #4A2600 100%);
-  border: 2px solid #CD853F;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.3), inset -2px -2px 3px rgba(0, 0, 0, 0.5), 0 6px 12px rgba(0, 0, 0, 0.35);
-  color: #FEF9C3;
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+  border: 2px solid #FEF3C7;
+  box-shadow: inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.8), inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(217, 119, 6, 0.35);
+  color: #451A03 !important;
 }
 
+/* 4. Emerald Jade Bamboo (Ngọc Bích Trúc Xanh) */
+.wood-tile-walnut {
+  background: linear-gradient(135deg, #6EE7B7 0%, #10B981 50%, #047857 100%);
+  border: 2px solid #A7F3D0;
+  box-shadow: inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.8), inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(4, 120, 87, 0.35);
+  color: #FFFFFF !important;
+}
+
+/* 5. Lotus Pink Sandalwood (Gỗ Hồng Đào Liên Hoa) */
 .wood-tile-rosewood {
-  background: linear-gradient(135deg, #881337 0%, #4C0519 50%, #2E020C 100%);
-  border: 2px solid #BE123C;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.35), inset -2px -2px 3px rgba(0, 0, 0, 0.6), 0 6px 12px rgba(0, 0, 0, 0.35);
-  color: #FFE4E6;
+  background: linear-gradient(135deg, #F472B6 0%, #E11D48 50%, #9F1239 100%);
+  border: 2px solid #FECDD3;
+  box-shadow: inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.8), inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(159, 18, 57, 0.35);
+  color: #FFFFFF !important;
 }
 
+/* 6. Azure Lapis Wood (Gỗ Lam Ngọc Lưu Ly) */
 .wood-tile-ebony {
-  background: linear-gradient(135deg, #374151 0%, #1F2937 50%, #111827 100%);
-  border: 2px solid #4B5563;
-  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.25), inset -2px -2px 3px rgba(0, 0, 0, 0.7), 0 6px 12px rgba(0, 0, 0, 0.35);
-  color: #F9FAFB;
+  background: linear-gradient(135deg, #38BDF8 0%, #0284C7 50%, #0369A1 100%);
+  border: 2px solid #BAE6FD;
+  box-shadow: inset 1.5px 1.5px 3px rgba(255, 255, 255, 0.8), inset -1.5px -1.5px 3px rgba(0, 0, 0, 0.2), 0 5px 12px rgba(3, 105, 161, 0.35);
+  color: #FFFFFF !important;
 }
 
+/* 3D Laser-Carved Text Typography */
 .wood-engraved-text {
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9), -0.5px -0.5px 0 rgba(255, 255, 255, 0.3);
-  letter-spacing: 0.05em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 0 1px rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.04em;
+  font-weight: 900;
 }
 
-/* Wood Rack Shelf */
+/* Polished Bamboo & Cedar Tray Shelf */
 .wood-tray-shelf {
-  background: linear-gradient(to bottom, #3E200C 0%, #251205 100%);
-  border: 4px solid #5A3214;
+  background: linear-gradient(180deg, #FFFDF8 0%, #FEF8ED 50%, #F6E6CE 100%);
+  border: 3px solid #D4A373;
   border-radius: 24px;
-  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.6), 0 8px 24px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 28px rgba(180, 115, 50, 0.14), inset 0 2px 6px rgba(255, 255, 255, 0.9);
+}
+
+/* ==================== CHINESE MEMORY FLIP CARDS (汉语翻翻卡) STYLES ==================== */
+
+.flip-card {
+  perspective: 1000px;
+  user-select: none;
+  cursor: pointer;
+  aspect-ratio: 3 / 4;
+  min-height: 145px;
+  max-width: 170px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+.flip-card.is-flipped .flip-card-inner,
+.flip-card.is-matched .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s ease;
+}
+
+/* Mặt Úp (Facedown - Card Front) - Oriental Imperial Red & Gold Lacquer */
+.flip-card-front {
+  background: radial-gradient(circle at 50% 30%, #991B1B 0%, #7F1D1D 50%, #450A0A 100%);
+  border: 3px solid #F59E0B;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.35), 0 8px 22px rgba(127, 29, 29, 0.35);
+  color: #FEF3C7;
+  position: relative;
+  overflow: hidden;
+}
+
+.flip-card-front::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px dashed rgba(245, 158, 11, 0.45);
+  border-radius: 14px;
+  pointer-events: none;
+}
+
+.flip-card-front:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: #FBBF24;
+  box-shadow: 0 14px 28px rgba(127, 29, 29, 0.45), 0 0 16px rgba(245, 158, 11, 0.4);
+}
+
+/* Mặt Ngửa (Revealed - Card Back) - Ivory Pearl & Silk Inlay */
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF9 50%, #FEF9EE 100%);
+  border: 3px solid #D4A373;
+  box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.9), 0 8px 20px rgba(180, 100, 30, 0.14);
+  color: #1C1917;
+  position: relative;
+  justify-content: space-between;
+}
+
+/* Matched State */
+.flip-card.is-matched .flip-card-back {
+  border-color: #10B981 !important;
+  background: linear-gradient(135deg, #F0FDF4 0%, #ECFDF5 100%) !important;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.55), inset 0 0 12px rgba(16, 185, 129, 0.2) !important;
+  cursor: default;
+  animation: flip-card-match 0.5s ease-out;
+}
+
+.flip-card.is-matched .card-match-badge {
+  display: inline-flex !important;
+}
+
+/* Wrong Shake State */
+.flip-card.is-wrong {
+  animation: flip-card-shake 0.45s ease-in-out;
+}
+
+.flip-card.is-wrong .flip-card-back {
+  border-color: #EF4444 !important;
+  background: #FEF2F2 !important;
+  box-shadow: 0 0 18px rgba(239, 68, 68, 0.4) !important;
+}
+
+@keyframes flip-card-match {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.09); }
+  100% { transform: scale(1); }
+}
+
+@keyframes flip-card-shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-7px); }
+  40%, 80% { transform: translateX(7px); }
+}
+
+/* Floating Combo Pill */
+.flip-combo-badge {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+  box-shadow: 0 0 15px rgba(245, 158, 11, 0.6);
+  animation: combo-pulse 1s infinite alternate;
+}
+
+@keyframes combo-pulse {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
 }
 
 /* ---------------- Navigation (grouped) ---------------- */

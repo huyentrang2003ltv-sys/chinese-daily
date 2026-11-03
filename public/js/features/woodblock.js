@@ -286,10 +286,9 @@ function createWoodPieceElement(piece) {
     e.stopPropagation();
     selectWoodPiece(piece.id);
   });
-  container.addEventListener('touchend', (e) => {
-    e.stopPropagation();
-    selectWoodPiece(piece.id);
-  });
+
+  // Setup Smooth Pointer & Touch Dragging
+  setupWoodPiecePointerInteraction(container, piece);
 
   // Dragstart
   container.addEventListener('dragstart', (e) => {
@@ -306,20 +305,182 @@ function createWoodPieceElement(piece) {
   return container;
 }
 
-function selectWoodPiece(pieceId) {
-  woodSelectedPieceId = woodSelectedPieceId === pieceId ? null : pieceId;
-  const currentLvl = getCurrentWoodLevel();
-  if (!currentLvl) return;
-  if (currentLvl) renderWoodPiecesTray(currentLvl.blocks);
-  
-  const statusEl = document.getElementById('woodBoardStatusHint');
-  if (statusEl) {
-    if (woodSelectedPieceId) {
-      statusEl.innerText = '👉 Đã chọn khối gỗ! Hãy chạm vào một ô trống trên bàn cờ để đặt.';
-    } else {
-      statusEl.innerText = 'Kéo thả khối gỗ hoặc chạm chọn khối rồi chạm ô cờ để đặt!';
+let pointerDragState = null;
+let activeFloatingGhost = null;
+
+function setupWoodPiecePointerInteraction(container, piece) {
+  container.addEventListener('pointerdown', (e) => {
+    if (e.target.closest('button')) return;
+
+    selectWoodPiece(piece.id);
+
+    pointerDragState = {
+      pieceId: piece.id,
+      startX: e.clientX,
+      startY: e.clientY,
+      isDragging: false
+    };
+
+    try {
+      container.setPointerCapture(e.pointerId);
+    } catch (err) {}
+  });
+
+  container.addEventListener('pointermove', (e) => {
+    if (!pointerDragState || pointerDragState.pieceId !== piece.id) return;
+
+    const dx = e.clientX - pointerDragState.startX;
+    const dy = e.clientY - pointerDragState.startY;
+    const dist = Math.hypot(dx, dy);
+
+    if (dist > 8 && !pointerDragState.isDragging) {
+      pointerDragState.isDragging = true;
+      container.classList.add('is-dragging');
+
+      if (!activeFloatingGhost) {
+        activeFloatingGhost = createFloatingGhostElement(piece);
+        document.body.appendChild(activeFloatingGhost);
+      }
+    }
+
+    if (pointerDragState.isDragging && activeFloatingGhost) {
+      activeFloatingGhost.style.left = `${e.clientX}px`;
+      activeFloatingGhost.style.top = `${e.clientY}px`;
+
+      const elBeneath = document.elementFromPoint(e.clientX, e.clientY);
+      const cellEl = elBeneath ? elBeneath.closest('.wood-slot-cell') : null;
+      if (cellEl && cellEl.dataset.row !== undefined) {
+        const r = parseInt(cellEl.dataset.row, 10);
+        const c = parseInt(cellEl.dataset.col, 10);
+        previewWoodCellHover(r, c);
+      } else {
+        const cells = document.querySelectorAll('.wood-slot-cell');
+        cells.forEach(c => c.classList.remove('slot-hover-valid', 'slot-hover-invalid'));
+      }
+    }
+  });
+
+  const handlePointerEnd = (e) => {
+    if (!pointerDragState || pointerDragState.pieceId !== piece.id) return;
+
+    try {
+      if (container.hasPointerCapture(e.pointerId)) {
+        container.releasePointerCapture(e.pointerId);
+      }
+    } catch (err) {}
+    container.classList.remove('is-dragging');
+
+    if (activeFloatingGhost) {
+      activeFloatingGhost.remove();
+      activeFloatingGhost = null;
+    }
+
+    if (pointerDragState.isDragging) {
+      const elBeneath = document.elementFromPoint(e.clientX, e.clientY);
+      const cellEl = elBeneath ? elBeneath.closest('.wood-slot-cell') : null;
+      if (cellEl && cellEl.dataset.row !== undefined) {
+        const r = parseInt(cellEl.dataset.row, 10);
+        const c = parseInt(cellEl.dataset.col, 10);
+        handleWoodCellDrop({ preventDefault() {}, dataTransfer: { getData: () => piece.id } }, r, c);
+      }
+    }
+    clearBoardHoverHighlights();
+    pointerDragState = null;
+  };
+
+  container.addEventListener('pointerup', handlePointerEnd);
+  container.addEventListener('pointercancel', handlePointerEnd);
+}
+
+function createFloatingGhostElement(piece) {
+  const ghost = document.createElement('div');
+  ghost.className = 'wood-floating-ghost';
+
+  const maxR = Math.max(...piece.shape.map(s => s[0])) + 1;
+  const maxC = Math.max(...piece.shape.map(s => s[1])) + 1;
+
+  const shapeGrid = document.createElement('div');
+  shapeGrid.className = 'grid gap-1.5 items-center justify-center';
+  shapeGrid.style.gridTemplateColumns = `repeat(${maxC}, minmax(0, 1fr))`;
+  const colorClass = `wood-tile-${piece.color || 'cherry'}`;
+
+  for (let r = 0; r < maxR; r++) {
+    for (let c = 0; c < maxC; c++) {
+      const isOccupied = piece.shape.some(s => s[0] === r && s[1] === c);
+      const cell = document.createElement('div');
+      if (isOccupied) {
+        cell.className = `w-12 h-12 rounded-xl ${colorClass} flex items-center justify-center font-hanzi font-black text-xs wood-engraved-text text-center p-1 leading-tight shadow-md`;
+        const shapeIndex = piece.shape.findIndex(s => s[0] === r && s[1] === c);
+        cell.innerText = getPieceCellText(piece, shapeIndex >= 0 ? shapeIndex : 0);
+      } else {
+        cell.className = 'w-12 h-12 opacity-0 pointer-events-none';
+      }
+      shapeGrid.appendChild(cell);
     }
   }
+
+  ghost.appendChild(shapeGrid);
+  return ghost;
+}
+
+function selectWoodPiece(pieceId) {
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return;
+
+  if (woodSelectedPieceId === pieceId) {
+    woodSelectedPieceId = null;
+    clearPlaceableHints();
+    clearBoardHoverHighlights();
+    renderWoodPiecesTray(currentLvl.blocks);
+    const statusEl = document.getElementById('woodBoardStatusHint');
+    if (statusEl) statusEl.innerText = 'Kéo thả khối gỗ hoặc chạm chọn khối rồi chạm ô cờ để đặt!';
+    return;
+  }
+
+  woodSelectedPieceId = pieceId;
+  renderWoodPiecesTray(currentLvl.blocks);
+
+  const piece = currentLvl.blocks.find(b => b.id === pieceId);
+  if (piece) {
+    const placeableCount = highlightPlaceableCellsForPiece(piece);
+    const statusEl = document.getElementById('woodBoardStatusHint');
+    if (statusEl) {
+      if (placeableCount > 0) {
+        statusEl.innerHTML = `<span>👉</span><span>Đã chọn khối <strong>"${escapeHtml(piece.text)}"</strong>! Hãy chạm vào các ô <strong>xanh lá</strong> trên bàn cờ để đặt!</span>`;
+      } else {
+        statusEl.innerHTML = `<span>⚠️</span><span>Khối <strong>"${escapeHtml(piece.text)}"</strong> chưa có vị trí vừa vặn! Hãy di chuyển hoặc chạm khối trên bàn cờ để thu hồi bớt.</span>`;
+      }
+    }
+  }
+}
+
+function highlightPlaceableCellsForPiece(piece) {
+  clearPlaceableHints();
+  if (!piece) return 0;
+  const currentLvl = getCurrentWoodLevel();
+  if (!currentLvl) return 0;
+
+  const rows = currentLvl.grid.rows;
+  const cols = currentLvl.grid.cols;
+  let count = 0;
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      if (canPlaceWoodPiece(piece.shape, r, c, rows, cols)) {
+        const cell = document.getElementById(`wood-cell-${r}-${c}`);
+        if (cell) {
+          cell.classList.add('slot-placeable-hint');
+          count++;
+        }
+      }
+    }
+  }
+  return count;
+}
+
+function clearPlaceableHints() {
+  const cells = document.querySelectorAll('.slot-placeable-hint');
+  cells.forEach(c => c.classList.remove('slot-placeable-hint'));
 }
 
 function handleWoodCellClick(row, col) {
@@ -327,22 +488,28 @@ function handleWoodCellClick(row, col) {
   if (woodBoardState[row] && woodBoardState[row][col] !== null) {
     const placedItem = woodBoardState[row][col];
     returnPieceToTray(placedItem.pieceId);
+    showToast(`Đã thu hồi khối "${placedItem.text}" về khay!`, 'info');
     return;
   }
 
   // 2. If a piece is currently selected from tray, try placing it starting at this cell
   if (woodSelectedPieceId) {
     const currentLvl = getCurrentWoodLevel();
-  if (!currentLvl) return;
+    if (!currentLvl) return;
     const piece = currentLvl.blocks.find(b => b.id === woodSelectedPieceId);
     if (!piece) return;
 
     if (canPlaceWoodPiece(piece.shape, row, col, currentLvl.grid.rows, currentLvl.grid.cols)) {
       placeWoodPiece(piece, row, col);
       woodSelectedPieceId = null;
+      clearPlaceableHints();
+      clearBoardHoverHighlights();
       renderWoodPiecesTray(currentLvl.blocks);
       playWoodDropSound();
       updateWoodRemainingCount();
+
+      const statusEl = document.getElementById('woodBoardStatusHint');
+      if (statusEl) statusEl.innerText = 'Đã đặt khối gỗ thành công!';
 
       // Check if all pieces placed
       if (woodPlacedBlocks.size === currentLvl.blocks.length) {
@@ -354,29 +521,35 @@ function handleWoodCellClick(row, col) {
   }
 }
 
-function handleWoodCellDragOver(e, row, col) {
-  e.preventDefault();
+function previewWoodCellHover(row, col) {
   if (!woodSelectedPieceId) return;
-
   const currentLvl = getCurrentWoodLevel();
   if (!currentLvl) return;
   const piece = currentLvl.blocks.find(b => b.id === woodSelectedPieceId);
   if (!piece) return;
 
-  clearBoardHoverHighlights();
+  const rows = currentLvl.grid.rows;
+  const cols = currentLvl.grid.cols;
+  const isValid = canPlaceWoodPiece(piece.shape, row, col, rows, cols);
 
-  const isValid = canPlaceWoodPiece(piece.shape, row, col, currentLvl.grid.rows, currentLvl.grid.cols);
-  
+  const cells = document.querySelectorAll('.wood-slot-cell');
+  cells.forEach(c => c.classList.remove('slot-hover-valid', 'slot-hover-invalid'));
+
   piece.shape.forEach(([dr, dc]) => {
     const r = row + dr;
     const c = col + dc;
-    if (r >= 0 && r < currentLvl.grid.rows && c >= 0 && c < currentLvl.grid.cols) {
-      const cellEl = document.getElementById(`wood-cell-${r}-${c}`);
-      if (cellEl) {
-        cellEl.classList.add(isValid ? 'slot-hover-valid' : 'slot-hover-invalid');
+    if (r >= 0 && r < rows && c >= 0 && c < cols) {
+      const cell = document.getElementById(`wood-cell-${r}-${c}`);
+      if (cell) {
+        cell.classList.add(isValid ? 'slot-hover-valid' : 'slot-hover-invalid');
       }
     }
   });
+}
+
+function handleWoodCellDragOver(e, row, col) {
+  e.preventDefault();
+  previewWoodCellHover(row, col);
 }
 
 function handleWoodCellDragLeave(row, col) {
@@ -384,14 +557,16 @@ function handleWoodCellDragLeave(row, col) {
 }
 
 function handleWoodCellDrop(e, row, col) {
-  e.preventDefault();
+  if (e.preventDefault) e.preventDefault();
   clearBoardHoverHighlights();
-  const pieceId = e.dataTransfer.getData('text/plain') || woodSelectedPieceId;
-  if (!pieceId) return;
+  clearPlaceableHints();
+  const pieceId = (e.dataTransfer && e.dataTransfer.getData) ? e.dataTransfer.getData('text/plain') : woodSelectedPieceId;
+  const targetId = pieceId || woodSelectedPieceId;
+  if (!targetId) return;
 
   const currentLvl = getCurrentWoodLevel();
   if (!currentLvl) return;
-  const piece = currentLvl.blocks.find(b => b.id === pieceId);
+  const piece = currentLvl.blocks.find(b => b.id === targetId);
   if (!piece) return;
 
   if (canPlaceWoodPiece(piece.shape, row, col, currentLvl.grid.rows, currentLvl.grid.cols)) {
@@ -412,6 +587,14 @@ function handleWoodCellDrop(e, row, col) {
 function clearBoardHoverHighlights() {
   const cells = document.querySelectorAll('.wood-slot-cell');
   cells.forEach(c => c.classList.remove('slot-hover-valid', 'slot-hover-invalid'));
+
+  if (woodSelectedPieceId) {
+    const currentLvl = getCurrentWoodLevel();
+    if (currentLvl) {
+      const piece = currentLvl.blocks.find(b => b.id === woodSelectedPieceId);
+      if (piece) highlightPlaceableCellsForPiece(piece);
+    }
+  }
 }
 
 function canPlaceWoodPiece(shape, originR, originC, maxR, maxC) {
@@ -721,3 +904,19 @@ function renderWoodLevelGrid() {
     container.appendChild(card);
   });
 }
+
+// Window Exports for Wood Block Game
+window.initWoodBlockGame = initWoodBlockGame;
+window.loadWoodLevel = loadWoodLevel;
+window.selectWoodPiece = selectWoodPiece;
+window.handleWoodCellClick = handleWoodCellClick;
+window.woodBlockAutoHint = woodBlockAutoHint;
+window.resetWoodCurrentLevel = resetWoodCurrentLevel;
+window.nextWoodLevel = nextWoodLevel;
+window.openWoodLevelSelectorModal = openWoodLevelSelectorModal;
+window.closeWoodLevelSelectorModal = closeWoodLevelSelectorModal;
+window.filterWoodLevelMap = filterWoodLevelMap;
+window.getWoodPlacedBlocks = () => woodPlacedBlocks;
+window.getWoodBoardState = () => woodBoardState;
+window.getWoodSelectedPieceId = () => woodSelectedPieceId;
+window.getCurrentWoodLevelIndex = () => currentWoodLevelIndex;
