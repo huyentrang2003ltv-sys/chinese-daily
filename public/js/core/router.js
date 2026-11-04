@@ -114,7 +114,7 @@ function renderNav() {
     // On mobile the group row lives in the bottom bar, so the top bar would be empty.
     document.getElementById('mainNav').classList.toggle('max-md:hidden', group.tabs.length < 2);
     const closeTabAction = activeTab !== 'home'
-      ? `<button type="button" onclick="switchTab('home')" class="nav-subtab-close ml-auto flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold text-stone-500 hover:text-[#8B1E1E] hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-stone-200/90 hover:border-rose-300 dark:border-stone-700 transition-all cursor-pointer shadow-2xs" title="Đóng tác vụ hiện tại, trở về Trang Chủ">
+      ? `<button type="button" onclick="requestExitActiveTask(activeTab)" class="nav-subtab-close ml-auto flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold text-stone-500 hover:text-[#8B1E1E] hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-stone-200/90 hover:border-rose-300 dark:border-stone-700 transition-all cursor-pointer shadow-2xs" title="Đóng tác vụ hiện tại, trở về Trang Chủ">
           <i data-lucide="x" class="w-3.5 h-3.5 text-rose-600"></i>
           <span>Đóng tác vụ</span>
         </button>`
@@ -220,7 +220,7 @@ function switchTab(tabId, options = {}) {
   return job;
 }
 
-/** Tự động gắn nút '✕' đóng tác vụ phong cách Oriental Luxury ở góc trên mỗi tab màn hình */
+/** Tự động gắn nút tròn '✕' phong cách Oriental Luxury sang trọng ở góc trên mỗi tab màn hình */
 function attachTabCloseButtons() {
   Object.keys(TABS).forEach(tabId => {
     if (tabId === 'home') return;
@@ -233,18 +233,160 @@ function attachTabCloseButtons() {
       }
       const closeBtn = document.createElement('button');
       closeBtn.type = 'button';
-      closeBtn.className = 'tab-corner-close-btn absolute top-3.5 right-3.5 sm:top-4 sm:right-5 z-20 inline-flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-white/95 dark:bg-stone-800/95 hover:bg-rose-50 dark:hover:bg-rose-950/60 text-stone-500 hover:text-[#8B1E1E] dark:text-stone-300 dark:hover:text-rose-400 text-xs font-bold shadow-xs hover:shadow-md border border-stone-200/90 dark:border-stone-700 hover:border-rose-300 transition-all cursor-pointer group';
-      closeBtn.title = 'Đóng tác vụ, quay về Trang Chủ';
-      closeBtn.innerHTML = '<i data-lucide="x" class="w-4 h-4 text-stone-400 group-hover:text-rose-600 transition-transform group-hover:scale-110"></i><span class="hidden sm:inline">Đóng</span>';
+      closeBtn.className = 'tab-corner-close-btn absolute top-3.5 right-3.5 sm:top-4 sm:right-5 z-20 group flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-[#8B1E1E] shadow-md hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer ring-2 ring-amber-300/60';
+      closeBtn.title = 'Đóng tác vụ, quay về Trang Chủ (Hỏi xác nhận nếu đang làm dở)';
+      closeBtn.innerHTML = `
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-rose-950 flex items-center justify-center text-amber-200 border border-amber-300/80">
+          <i data-lucide="x" class="w-4 h-4 text-amber-200 group-hover:rotate-90 transition-transform duration-300"></i>
+        </div>
+      `;
       closeBtn.onclick = (e) => {
         e.preventDefault();
         e.stopPropagation();
-        switchTab('home');
+        requestExitActiveTask(tabId);
       };
       headerCard.appendChild(closeBtn);
       if (typeof refreshIcons === 'function') refreshIcons(headerCard);
     }
   });
+}
+
+// ---------------- TASK EXIT CONFIRMATION ENGINE (ORIENTAL LUXURY) ----------------
+let pendingExitTaskCallback = null;
+
+function isTaskInProgress(tabId) {
+  // 1. Kiểm tra làm bài thi HSK dở dang
+  if (tabId === 'mockexam') {
+    if (typeof activeExam !== 'undefined' && activeExam && typeof examUserAnswers !== 'undefined') {
+      const answeredKeys = Object.keys(examUserAnswers).filter(k => {
+        const v = examUserAnswers[k];
+        return v && (Array.isArray(v) ? v.length > 0 : String(v).trim() !== '');
+      });
+      const answeredCount = answeredKeys.length;
+      const total = (activeExam.questions || []).length;
+      
+      // Nếu đã trả lời ít nhất 1 câu và chưa hoàn thành nộp bài
+      if (answeredCount > 0 && answeredCount < total) {
+        const m = typeof examTimeRemaining !== 'undefined' ? Math.floor(examTimeRemaining / 60) : 0;
+        const s = typeof examTimeRemaining !== 'undefined' ? examTimeRemaining % 60 : 0;
+        const timeStr = `${m} phút ${s < 10 ? '0' + s : s}s`;
+
+        return {
+          inProgress: true,
+          title: 'Xác Nhận Rời Phòng Thi HSK?',
+          subtitle: 'Bài thi thử HSK đang diễn ra chưa hoàn thành',
+          message: `Bạn đang làm dở bài thi <strong>${escapeHtml(activeExam.title || 'HSK')}</strong>.<br><br>
+            📊 Tiến độ: <strong>Đã làm ${answeredCount} / ${total} câu</strong><br>
+            ⏱️ Thời gian còn lại: <strong>${timeStr}</strong><br><br>
+            ⚠️ <em>Lưu ý: Nếu bạn thoát phòng thi lúc này, kết quả của lượt làm bài hiện tại sẽ không được lưu và không được chấm điểm.</em><br><br>
+            Bạn có chắc chắn muốn hủy và quay về Trang Chủ không?`,
+          onConfirm: () => {
+            if (typeof examTimerInterval !== 'undefined' && examTimerInterval) {
+              clearInterval(examTimerInterval);
+            }
+            if (typeof examUserAnswers !== 'undefined') {
+              examUserAnswers = {};
+            }
+          }
+        };
+      }
+    }
+  }
+
+  // 2. Kiểm tra màn chơi lật thẻ tìm từ
+  if (tabId === 'flipcard') {
+    if (typeof flipMatchedPairsCount !== 'undefined' && typeof flipTotalPairs !== 'undefined') {
+      if (flipMatchedPairsCount > 0 && flipMatchedPairsCount < flipTotalPairs) {
+        return {
+          inProgress: true,
+          title: 'Xác Nhận Thoát Màn Chơi Lật Thẻ?',
+          subtitle: 'Ván chơi lật thẻ tìm từ đang diễn ra',
+          message: `Bạn đang ghép dở ván lật thẻ (đã hoàn thành <strong>${flipMatchedPairsCount}/${flipTotalPairs} cặp</strong>).<br><br>Nếu thoát bây giờ, điểm số và tiến trình của màn chơi này sẽ bị hủy. Bạn có chắc chắn muốn quay về Trang Chủ không?`,
+          onConfirm: () => {}
+        };
+      }
+    }
+  }
+
+  // 3. Kiểm tra màn chơi xếp khối gỗ
+  if (tabId === 'woodblock') {
+    if (typeof woodPlacedCount !== 'undefined' && woodPlacedCount > 0) {
+      return {
+        inProgress: true,
+        title: 'Xác Nhận Thoát Xếp Khối Gỗ?',
+        subtitle: 'Ván chơi xếp khối gỗ đang diễn ra',
+        message: 'Bạn đang ghép dở màn chơi khối gỗ. Nếu thoát bây giờ, tiến trình ván chơi sẽ bị hủy. Bạn có chắc chắn muốn quay về Trang Chủ không?',
+        onConfirm: () => {}
+      };
+    }
+  }
+
+  return { inProgress: false };
+}
+
+function requestExitActiveTask(tabId) {
+  if (!tabId || tabId === 'home') {
+    switchTab('home');
+    return;
+  }
+
+  const check = isTaskInProgress(tabId);
+  if (check && check.inProgress) {
+    pendingExitTaskCallback = () => {
+      if (typeof check.onConfirm === 'function') check.onConfirm();
+      switchTab('home');
+    };
+    showConfirmExitModal(check.title, check.subtitle, check.message);
+  } else {
+    // Không có tác vụ dở dang: Thoát mượt mà ngay lập tức
+    switchTab('home');
+  }
+}
+
+function showConfirmExitModal(title, subtitle, message) {
+  const modal = document.getElementById('confirmExitTaskModal');
+  const titleEl = document.getElementById('confirmExitTitle');
+  const subEl = document.getElementById('confirmExitSubtitle');
+  const msgEl = document.getElementById('confirmExitMessage');
+
+  if (!modal) {
+    if (confirm('Nhiệm vụ đang diễn ra chưa hoàn thành. Bạn có chắc chắn muốn hủy và quay về Trang Chủ không?')) {
+      if (typeof pendingExitTaskCallback === 'function') pendingExitTaskCallback();
+      else switchTab('home');
+    }
+    return;
+  }
+
+  if (titleEl) titleEl.innerText = title;
+  if (subEl) subEl.innerText = subtitle;
+  if (msgEl) msgEl.innerHTML = message;
+
+  modal.classList.remove('hidden');
+  if (typeof refreshIcons === 'function') refreshIcons(modal);
+}
+
+function cancelExitTask() {
+  const modal = document.getElementById('confirmExitTaskModal');
+  if (modal) modal.classList.add('hidden');
+  pendingExitTaskCallback = null;
+  if (typeof showToast === 'function') {
+    showToast('Đã tiếp tục làm bài!', 'info');
+  }
+}
+
+function proceedExitTask() {
+  const modal = document.getElementById('confirmExitTaskModal');
+  if (modal) modal.classList.add('hidden');
+  if (typeof pendingExitTaskCallback === 'function') {
+    const cb = pendingExitTaskCallback;
+    pendingExitTaskCallback = null;
+    cb();
+  } else {
+    switchTab('home');
+  }
+  if (typeof showToast === 'function') {
+    showToast('Đã hủy tác vụ dở dang và quay về Trang Chủ.', 'info');
+  }
 }
 
 window.addEventListener('popstate', () => {
