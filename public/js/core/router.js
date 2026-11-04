@@ -113,6 +113,12 @@ function renderNav() {
     subEl.classList.toggle('hidden', group.tabs.length < 2);
     // On mobile the group row lives in the bottom bar, so the top bar would be empty.
     document.getElementById('mainNav').classList.toggle('max-md:hidden', group.tabs.length < 2);
+    const closeTabAction = activeTab !== 'home'
+      ? `<button type="button" onclick="switchTab('home')" class="nav-subtab-close ml-auto flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold text-stone-500 hover:text-[#8B1E1E] hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-stone-200/90 hover:border-rose-300 dark:border-stone-700 transition-all cursor-pointer shadow-2xs" title="Đóng tác vụ hiện tại, trở về Trang Chủ">
+          <i data-lucide="x" class="w-3.5 h-3.5 text-rose-600"></i>
+          <span>Đóng tác vụ</span>
+        </button>`
+      : '';
     subEl.innerHTML = group.tabs.map(tabId => {
       const tab = TABS[tabId];
       const isActive = tabId === activeTab;
@@ -121,7 +127,7 @@ function renderNav() {
           <i data-lucide="${tab.icon}" class="w-4 h-4"></i>
           <span>${escapeHtml(tab.label)}</span>
         </a>`;
-    }).join('');
+    }).join('') + closeTabAction;
   }
   refreshIcons(document.getElementById('mainNav'));
   refreshIcons(bottomEl);
@@ -203,13 +209,42 @@ function switchTab(tabId, options = {}) {
   }
   document.title = `${TABS[tabId].label} · Học Tiếng Trung Mỗi Ngày`;
   renderNav();
+  attachTabCloseButtons();
 
   if (changed && !options.keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
   // The dashboard summarises other tabs, so refresh it every time it is shown.
   const alreadyRendered = renderedTabs.has(tabId);
   const job = ensureTabRendered(tabId);
   if (alreadyRendered && changed && tabId === 'home') renderHomeDashboard();
+  setTimeout(attachTabCloseButtons, 120);
   return job;
+}
+
+/** Tự động gắn nút '✕' đóng tác vụ phong cách Oriental Luxury ở góc trên mỗi tab màn hình */
+function attachTabCloseButtons() {
+  Object.keys(TABS).forEach(tabId => {
+    if (tabId === 'home') return;
+    const section = document.getElementById(`tab-${tabId}`);
+    if (!section) return;
+    const headerCard = section.querySelector('.glass-card') || section.firstElementChild;
+    if (headerCard && !headerCard.querySelector('.tab-corner-close-btn')) {
+      if (!headerCard.classList.contains('relative')) {
+        headerCard.classList.add('relative');
+      }
+      const closeBtn = document.createElement('button');
+      closeBtn.type = 'button';
+      closeBtn.className = 'tab-corner-close-btn absolute top-3.5 right-3.5 sm:top-4 sm:right-5 z-20 inline-flex items-center gap-1 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-xl bg-white/95 dark:bg-stone-800/95 hover:bg-rose-50 dark:hover:bg-rose-950/60 text-stone-500 hover:text-[#8B1E1E] dark:text-stone-300 dark:hover:text-rose-400 text-xs font-bold shadow-xs hover:shadow-md border border-stone-200/90 dark:border-stone-700 hover:border-rose-300 transition-all cursor-pointer group';
+      closeBtn.title = 'Đóng tác vụ, quay về Trang Chủ';
+      closeBtn.innerHTML = '<i data-lucide="x" class="w-4 h-4 text-stone-400 group-hover:text-rose-600 transition-transform group-hover:scale-110"></i><span class="hidden sm:inline">Đóng</span>';
+      closeBtn.onclick = (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        switchTab('home');
+      };
+      headerCard.appendChild(closeBtn);
+      if (typeof refreshIcons === 'function') refreshIcons(headerCard);
+    }
+  });
 }
 
 window.addEventListener('popstate', () => {
@@ -230,6 +265,7 @@ function initApp() {
   initVisitorTracker();
   initFloatingAiAssistant();
   initFloatingDock();
+  attachTabCloseButtons();
 }
 
 window.addEventListener('DOMContentLoaded', initApp);
