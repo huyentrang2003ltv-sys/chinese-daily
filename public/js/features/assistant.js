@@ -1,13 +1,19 @@
 // ==========================================
-// MODULE: TRỢ LÝ DỊCH AI NỔI (FLOATING AI ASSISTANT CHAT WIDGET)
+// MODULE: TRỢ LÝ GIA SƯ AI THÔNG MINH (AI CONVERSATIONAL TUTOR & ASSISTANT)
 // ==========================================
-let floatingAiMode = 'translate'; // 'translate', 'chat', 'grammar'
+let floatingAiMode = 'chat'; // 'chat' (hỏi đáp phản xạ), 'translate' (dịch thuật), 'grammar' (bác sĩ ngữ pháp)
 let floatingAiMessages = [
   {
     sender: 'ai',
-    hanzi: '你好！我是你的AI翻译与口语助教 🤖🎧',
-    pinyin: 'Nǐ hǎo! Wǒ shì nǐ de AI fānyì yǔ kǒuyǔ zhùjiào.',
-    vi: 'Xin chào! Mình là Trợ lý Dịch AI & Khẩu Ngữ. Bạn có thể nhập bất kỳ câu tiếng Việt nào để dịch sang tiếng Trung, dán câu tiếng Trung cần tra cứu, hoặc luyện đàm thoại cùng mình nhé!',
+    hanzi: '你好！我是你的AI中文私教小华 🤖🎧',
+    pinyin: 'Nǐ hǎo! Wǒ shì nǐ de AI zhōngwén sījiào Xiǎohuá.',
+    vi: 'Xin chào! Mình là Tiểu Hoa, gia sư AI tiếng Trung của bạn. Mình có thể cùng bạn đàm thoại hỏi đáp, giải thích ngữ pháp và luyện phản xạ giao tiếp mỗi ngày nhé!',
+    followUp: '今天你想和我聊些什么呢？',
+    quickReplies: [
+      { hanzi: '你好！很高兴认识你。', pinyin: 'Nǐ hǎo! Hěn gāoxìng rènshi nǐ.', vi: 'Xin chào! Rất vui được quen biết bạn.' },
+      { hanzi: '我想提高中文口语能力。', pinyin: 'Wǒ xiǎng tígāo zhōngwén kǒuyǔ nénglì.', vi: 'Tôi muốn nâng cao năng lực khẩu ngữ tiếng Trung.' },
+      { hanzi: '请考我几个实用的HSK词汇！', pinyin: 'Qǐng kǎo wǒ jǐ gè shíyòng de HSK cíhuì!', vi: 'Hãy thử kiểm tra tôi vài từ vựng HSK thực tế nhé!' }
+    ],
     timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
   }
 ];
@@ -71,7 +77,7 @@ function dismissFloatingAiTooltip(e) {
 
 function switchFloatingAiMode(mode) {
   floatingAiMode = mode;
-  const modes = ['translate', 'chat', 'grammar'];
+  const modes = ['chat', 'translate', 'grammar'];
   modes.forEach(m => {
     const btn = document.getElementById(`btn-flmode-${m}`);
     if (!btn) return;
@@ -84,10 +90,10 @@ function switchFloatingAiMode(mode) {
 
   const input = document.getElementById('floatingAiInput');
   if (input) {
-    if (mode === 'translate') {
-      input.placeholder = 'Nhập câu tiếng Việt ➔ Dịch sang tiếng Trung (hoặc ngược lại)...';
-    } else if (mode === 'chat') {
+    if (mode === 'chat') {
       input.placeholder = 'Nhập câu trò chuyện bằng tiếng Trung hoặc tiếng Việt...';
+    } else if (mode === 'translate') {
+      input.placeholder = 'Nhập câu tiếng Việt ➔ Dịch sang tiếng Trung (hoặc ngược lại)...';
     } else if (mode === 'grammar') {
       input.placeholder = 'Dán câu tiếng Trung để AI bắt lỗi trật tự & ngữ pháp...';
     }
@@ -101,19 +107,21 @@ function renderFloatingAiQuickChips() {
   if (!container) return;
 
   let chips = [];
-  if (floatingAiMode === 'translate') {
+  if (floatingAiMode === 'chat') {
+    chips = [
+      '你好！你叫什么名字？',
+      '学中文有什么好方法？',
+      '你最喜欢吃哪道中国菜？',
+      '北京现在天气怎么样？',
+      '请考我几个HSK常用词',
+      '周末你一般喜欢做什么？'
+    ];
+  } else if (floatingAiMode === 'translate') {
     chips = [
       'Dịch: Hôm nay bạn ăn cơm chưa?',
       'Dịch: Tôi muốn học tiếng Trung',
       'Dịch: Chiều mai bạn có rảnh không?',
       'Dịch: Táo này bao nhiêu tiền một cân?'
-    ];
-  } else if (floatingAiMode === 'chat') {
-    chips = [
-      '你好！你叫什么名字？',
-      '今天北京天气怎么样？',
-      '你觉得学习中文难吗？',
-      '请推荐一道好吃的中国菜'
     ];
   } else if (floatingAiMode === 'grammar') {
     chips = [
@@ -149,13 +157,26 @@ function applyFloatingAiChip(chip) {
   }
 }
 
+function sendQuickReply(text) {
+  const input = document.getElementById('floatingAiInput');
+  if (input) {
+    input.value = text;
+    sendFloatingAiMessage();
+  }
+}
+
 function clearFloatingAiChat() {
   floatingAiMessages = [
     {
       sender: 'ai',
-      hanzi: 'Đã làm mới cuộc hội thoại! Hãy hỏi mình bất kỳ điều gì nhé! 🤖',
-      pinyin: '',
-      vi: '',
+      hanzi: '已清空对话记录！今天想和我聊些什么呢？🤖',
+      pinyin: 'Yǐ qīngkōng duìhuà jìlù! Jīntiān xiǎng hé wǒ liáo xiē shénme ne?',
+      vi: 'Đã làm mới cuộc hội thoại! Bạn muốn trò chuyện về chủ đề gì nào? Hãy hỏi mình bất kỳ điều gì nhé! 🤖',
+      followUp: '你今天过得怎么样？',
+      quickReplies: [
+        { hanzi: '我今天很好，谢谢！', pinyin: 'Wǒ jīntiān hěn hǎo, xièxie!', vi: 'Hôm nay mình rất tốt, cảm ơn bạn!' },
+        { hanzi: '请教我一句实用地道中文。', pinyin: 'Qǐng jiào wǒ yí jù shíyòng dìdao zhōngwén.', vi: 'Hãy dạy mình một câu tiếng Trung tự nhiên nhé.' }
+      ],
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
     }
   ];
@@ -198,7 +219,7 @@ function renderFloatingAiMessages() {
             />
           </div>
 
-          <div class="p-3.5 rounded-2xl rounded-tl-xs bg-white border border-amber-200/90 shadow-2xs space-y-2 flex-1">
+          <div class="p-3.5 rounded-2xl rounded-tl-xs bg-white border border-amber-200/90 shadow-2xs space-y-2.5 flex-1">
             <!-- Main Content -->
             <div>
               ${msg.hanzi ? `
@@ -211,7 +232,7 @@ function renderFloatingAiMessages() {
                       <button 
                         type="button"
                         onclick="playChineseTTS(${jsArg(msg.hanzi)}, 'female')" 
-                        title="Nghe giọng Nữ" 
+                        title="Nghe giọng Nữ Bắc Kinh" 
                         class="p-1 rounded hover:bg-rose-50 text-rose-800 transition-colors cursor-pointer text-2xs font-bold"
                       >
                         👩
@@ -219,7 +240,7 @@ function renderFloatingAiMessages() {
                       <button 
                         type="button"
                         onclick="playChineseTTS(${jsArg(msg.hanzi)}, 'male')" 
-                        title="Nghe giọng Nam" 
+                        title="Nghe giọng Nam đề thi CCTV" 
                         class="p-1 rounded hover:bg-blue-50 text-blue-800 transition-colors cursor-pointer text-2xs font-bold"
                       >
                         👨
@@ -235,12 +256,49 @@ function renderFloatingAiMessages() {
 
               ${msg.vi ? `
                 <p class="text-xs text-stone-700 mt-1.5 pt-1.5 border-t border-amber-100 leading-relaxed">
-                  <span class="font-bold text-[#8B1E1E]">Dịch nghĩa:</span> ${escapeHtml(msg.vi)}
+                  <span class="font-bold text-[#8B1E1E]">Ý nghĩa:</span> ${escapeHtml(msg.vi)}
                 </p>
               ` : (msg.text ? `
                 <p class="text-xs text-stone-700 leading-relaxed break-words">${escapeHtml(msg.text)}</p>
               ` : '')}
             </div>
+
+            <!-- Follow-up Question for Student (Hỏi lại học viên) -->
+            ${msg.followUp ? `
+              <div class="p-2.5 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50/60 border border-amber-300 text-xs text-amber-950 leading-relaxed space-y-1 shadow-2xs">
+                <p class="font-bold flex items-center gap-1.5 text-[#8B1E1E]">
+                  <span class="text-sm">❓</span>
+                  <span>Câu hỏi gợi mở dành cho bạn:</span>
+                </p>
+                <p class="font-hanzi font-bold text-stone-900 text-xs sm:text-sm pl-4">${escapeHtml(msg.followUp)}</p>
+              </div>
+            ` : ''}
+
+            <!-- Quick Interactive Reply Chips (Bấm để trả lời ngay) -->
+            ${msg.quickReplies && msg.quickReplies.length > 0 ? `
+              <div class="pt-1 space-y-1.5">
+                <span class="text-[10px] font-bold text-stone-500 flex items-center gap-1">
+                  <span>💡</span>
+                  <span>Gợi ý câu trả lời nhanh (Bấm để gửi):</span>
+                </span>
+                <div class="flex flex-col gap-1.5">
+                  ${msg.quickReplies.map(qr => `
+                    <button 
+                      type="button" 
+                      onclick="sendQuickReply(${jsArg(qr.hanzi || qr.text)})" 
+                      class="text-left p-2 rounded-xl bg-amber-50/60 hover:bg-amber-100/90 text-stone-800 border border-amber-200/90 text-xs transition-all cursor-pointer flex items-center justify-between group shadow-2xs"
+                    >
+                      <div class="space-y-0.5">
+                        <p class="font-hanzi font-bold text-[#8B1E1E] group-hover:translate-x-0.5 transition-transform">${escapeHtml(qr.hanzi || qr.text)}</p>
+                        ${qr.pinyin ? `<p class="text-[10px] text-stone-500 font-mono">${escapeHtml(qr.pinyin)}</p>` : ''}
+                        ${qr.vi ? `<p class="text-[11px] text-stone-600">${escapeHtml(qr.vi)}</p>` : ''}
+                      </div>
+                      <i data-lucide="send" class="w-3.5 h-3.5 text-amber-600 group-hover:translate-x-0.5 transition-transform shrink-0 ml-2"></i>
+                    </button>
+                  `).join('')}
+                </div>
+              </div>
+            ` : ''}
 
             <!-- Vocabulary Breakdown (if available) -->
             ${msg.vocab && msg.vocab.length > 0 ? `
@@ -298,6 +356,7 @@ async function sendFloatingAiMessage() {
   if (!input || floatingAiBusy) return;
   const text = input.value.trim();
   if (!text) return;
+
   input.value = '';
   floatingAiBusy = true;
 
@@ -308,7 +367,7 @@ async function sendFloatingAiMessage() {
     id: loadingId,
     sender: 'ai',
     hanzi: '',
-    text: '🤖 Robot AI đang dịch và phân tích ngữ pháp...',
+    text: floatingAiMode === 'chat' ? '🤖 Tiểu Hoa đang chuẩn bị câu trả lời...' : '🤖 Robot AI đang dịch và phân tích ngữ pháp...',
     timestamp: nowTimeLabel()
   });
   renderFloatingAiMessages();
@@ -324,37 +383,37 @@ async function sendFloatingAiMessage() {
     floatingAiMessages = floatingAiMessages.filter(m => m.id !== loadingId);
 
     if (res.ok && data && data.ok) {
-      addExp(5, 'Trò chuyện cùng Trợ Lý Dịch AI');
-      // Source Vietnamese -> translated is Chinese; source Chinese -> translated is Vietnamese.
-      const source = data.sourceText || text;
-      const replyHanzi = data.isChineseTarget ? data.translated : source;
-      const replyVi = data.isChineseTarget ? source : data.translated;
-      const grammarTips = (floatingAiMode === 'grammar' || /[把被比了]/.test(text))
-        ? '• Điểm lưu ý: Câu có cấu trúc biểu đạt tự nhiên. Hãy chú ý trật tự từ và trợ từ để câu văn chuẩn văn phong bản ngữ nhất.'
-        : '';
+      addExp(5, 'Trò chuyện cùng Trợ Lý AI');
+
+      const replyHanzi = data.hanzi || (data.isChineseTarget ? data.translated : (data.sourceText || text));
+      const replyPinyin = data.pinyin || '';
+      const replyVi = data.vi || (data.isChineseTarget ? (data.sourceText || text) : data.translated);
+      const grammarTips = data.grammarTips || '';
 
       floatingAiMessages.push({
         sender: 'ai',
         hanzi: replyHanzi,
-        pinyin: data.pinyin || '',
+        pinyin: replyPinyin,
         vi: replyVi,
+        followUp: data.followUp || '',
+        quickReplies: data.quickReplies || [],
         vocab: data.vocab || [],
         grammarTips,
         timestamp: nowTimeLabel()
       });
       renderFloatingAiMessages();
 
-      // Read the answer aloud when it is Chinese.
+      // Read aloud in standard Chinese
       if (replyHanzi && /[一-龥]/.test(replyHanzi)) {
         playChineseTTS(replyHanzi);
       }
     } else {
-      errorMessage = (data && data.error) || 'Robot AI gặp trục trặc khi dịch. Bạn thử lại nhé!';
+      errorMessage = (data && data.error) || 'Robot AI gặp trục trặc khi phản hồi. Bạn thử lại nhé!';
     }
   } catch (err) {
     console.warn('AI chat request failed:', err);
     floatingAiMessages = floatingAiMessages.filter(m => m.id !== loadingId);
-    errorMessage = 'Không thể kết nối máy chủ dịch thuật. Vui lòng kiểm tra mạng và thử lại.';
+    errorMessage = 'Không thể kết nối máy chủ AI. Vui lòng kiểm tra mạng và thử lại.';
   } finally {
     floatingAiBusy = false;
   }
@@ -400,3 +459,14 @@ function startFloatingAiSpeechInput() {
 
   recognition.start();
 }
+
+window.initFloatingAiAssistant = initFloatingAiAssistant;
+window.toggleFloatingAiChat = toggleFloatingAiChat;
+window.openFloatingAiChat = openFloatingAiChat;
+window.dismissFloatingAiTooltip = dismissFloatingAiTooltip;
+window.switchFloatingAiMode = switchFloatingAiMode;
+window.applyFloatingAiChip = applyFloatingAiChip;
+window.sendQuickReply = sendQuickReply;
+window.clearFloatingAiChat = clearFloatingAiChat;
+window.sendFloatingAiMessage = sendFloatingAiMessage;
+window.startFloatingAiSpeechInput = startFloatingAiSpeechInput;

@@ -4976,12 +4976,12 @@
           </div>
           <div>
             <div class="flex items-center gap-1.5">
-              <h4 class="text-sm font-bold tracking-wide">Trợ Lý Dịch AI (AI 助教)</h4>
+              <h4 class="text-sm font-bold tracking-wide">Gia Sư & Trợ Lý AI (AI 助教)</h4>
               <span class="px-1.5 py-0.2 rounded text-[10px] font-black bg-amber-400 text-amber-950">PRO</span>
             </div>
             <p class="text-2xs text-amber-100/90 font-medium flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
-              <span>Dịch thuật song ngữ · Ngữ pháp · Đàm thoại</span>
+              <span>Hỏi đáp song ngữ · Luyện khẩu ngữ · Bác sĩ ngữ pháp</span>
             </p>
           </div>
         </div>
@@ -4998,11 +4998,11 @@
 
       <!-- Mode Selector Toolbar -->
       <div class="px-3 py-2 bg-amber-50/70 border-b border-amber-200/60 flex items-center justify-between gap-1 text-2xs font-bold overflow-x-auto shrink-0">
-        <button onclick="switchFloatingAiMode('translate')" id="btn-flmode-translate" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs whitespace-nowrap flex items-center gap-1 cursor-pointer">
-          <span>🌐 Dịch Song Ngữ</span>
+        <button onclick="switchFloatingAiMode('chat')" id="btn-flmode-chat" class="px-2.5 py-1 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs whitespace-nowrap flex items-center gap-1 cursor-pointer">
+          <span>💬 Hỏi & Đáp / Trò Chuyện</span>
         </button>
-        <button onclick="switchFloatingAiMode('chat')" id="btn-flmode-chat" class="px-2.5 py-1 rounded-lg bg-white hover:bg-amber-100 text-stone-700 border border-stone-200 whitespace-nowrap flex items-center gap-1 cursor-pointer">
-          <span>🗣️ Luyện Khẩu Ngữ</span>
+        <button onclick="switchFloatingAiMode('translate')" id="btn-flmode-translate" class="px-2.5 py-1 rounded-lg bg-white hover:bg-amber-100 text-stone-700 border border-stone-200 whitespace-nowrap flex items-center gap-1 cursor-pointer">
+          <span>🌐 Dịch Song Ngữ</span>
         </button>
         <button onclick="switchFloatingAiMode('grammar')" id="btn-flmode-grammar" class="px-2.5 py-1 rounded-lg bg-white hover:bg-amber-100 text-stone-700 border border-stone-200 whitespace-nowrap flex items-center gap-1 cursor-pointer">
           <span>🩺 Bác Sĩ Ngữ Pháp</span>
@@ -5025,7 +5025,7 @@
           <input 
             id="floatingAiInput" 
             type="text" 
-            placeholder="Nhập câu cần dịch (Việt ➔ Trung) hoặc hỏi bài..." 
+            placeholder="Nhập câu hỏi, trò chuyện hoặc câu cần dịch..." 
             class="w-full pl-3 pr-8 py-2.5 text-xs rounded-xl border border-stone-200 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] bg-stone-50/50 focus:bg-white text-stone-900"
             onkeydown="if(event.key==='Enter') sendFloatingAiMessage()"
           />

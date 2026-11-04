@@ -162,10 +162,10 @@ function updateVoiceUi() {
   if (icon && label) {
     if (currentTtsGender === 'male') {
       icon.innerText = '👨';
-      label.innerText = 'Bắc Kinh (Nam)';
+      label.innerText = 'Nam Đề Thi (CCTV)';
     } else {
       icon.innerText = '👩';
-      label.innerText = 'Bắc Kinh (Nữ)';
+      label.innerText = 'Nữ Chuẩn HSK (Bắc Kinh)';
     }
   }
 

@@ -5,6 +5,7 @@ const accounts = require('./accounts');
 const { PAYMENT, VIP_PRICES } = require('./config');
 const visitors = require('./visitors');
 const { translate } = require('./translate');
+const { handleAiChat } = require('./ai_tutor');
 const { notifyAdmin, isNotifyConfigured } = require('./notify');
 const {
   HttpError, sendJson, readJson, clientIp, isHttps, parseCookies, createRateLimiter, str
@@ -249,7 +250,9 @@ const routes = {
     const body = await readJson(req);
     const text = str(body.message, 500);
     if (!text) throw new HttpError(400, 'Thiếu nội dung tin nhắn.');
-    sendJson(res, 200, { ok: true, mode: str(body.mode, 20) || 'translate', ...(await translate(text)) });
+    const mode = str(body.mode, 20) || 'chat';
+    const tutorResponse = await handleAiChat({ message: text, mode });
+    sendJson(res, 200, { ok: true, ...tutorResponse });
   }
 };
 

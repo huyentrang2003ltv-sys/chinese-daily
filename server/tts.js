@@ -14,7 +14,7 @@ try {
 const TTS_MAX_CHARS = 1000;
 const TTS_CACHE_MAX_BYTES = 64 * 1024 * 1024;
 const TTS_TIMEOUT_MS = 15000;
-const VOICES = { female: 'zh-CN-XiaoxiaoNeural', male: 'zh-CN-YunxiNeural' };
+const VOICES = { female: 'zh-CN-XiaoxiaoNeural', male: 'zh-CN-YunyangNeural' };
 
 /** Simple LRU keyed by voice/rate/text, bounded by total bytes. */
 const ttsCache = new Map();

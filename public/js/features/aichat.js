@@ -1390,7 +1390,7 @@ function sendAiChatMessage() {
 
   addExp(5, 'Đối thoại với AI');
 
-  setTimeout(() => {
+  const fallbackReply = () => {
     let replyHanzi = '你的中文说得很好！继续加油！';
     let replyPinyin = 'Nǐ de zhōngwén shuō de hěn hǎo! Jìxù jiāyóu!';
     let replyVi = 'Tiếng Trung của bạn nói rất hay! Cố gắng tiếp tục nhé!';
@@ -1422,7 +1422,32 @@ function sendAiChatMessage() {
     });
     renderAiChatMessages();
     playChineseTTS(replyHanzi);
-  }, 700);
+  };
+
+  fetch('/api/ai-chat', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ message: text, mode: 'chat' })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data && data.ok && data.hanzi) {
+      aiChatHistory.push({
+        sender: 'ai',
+        hanzi: data.hanzi,
+        pinyin: data.pinyin || '',
+        vi: data.vi || '',
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+      });
+      renderAiChatMessages();
+      playChineseTTS(data.hanzi);
+    } else {
+      fallbackReply();
+    }
+  })
+  .catch(() => {
+    setTimeout(fallbackReply, 500);
+  });
 }
 
 function resetCurrentAiScenario() {
