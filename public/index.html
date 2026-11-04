@@ -1571,100 +1571,475 @@
       <div id="translationStageContainer" class="space-y-6"></div>
     </section>
 
-    <!-- TAB: TRỢ LÝ AI LUYỆN KHẨU NGỮ & SỬA BÀI -->
+        <!-- TAB: HỘI THOẠI TÌNH HUỐNG (150 BÀI GIAO TIẾP & TRỢ LÝ AI) -->
     <section id="tab-aichat" class="hidden space-y-6">
-      <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-violet-50/70 via-white to-pink-50/50 border border-violet-200/80 shadow-xs">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-violet-100 text-violet-800 border border-violet-300 text-xs font-bold mb-3">
-            <i data-lucide="bot" class="w-3.5 h-3.5 text-violet-600"></i>
-            <span>AI Chinese Tutor • Luyện Khẩu Ngữ & Chữa Lỗi Ngữ Pháp</span>
+      <!-- Hero Header & Global Progress -->
+      <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-amber-50/80 via-white to-rose-50/60 border border-amber-200/90 shadow-sm">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="max-w-2xl space-y-2">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-100 text-[#8B1E1E] border border-amber-300 text-xs font-bold">
+              <i data-lucide="messages-square" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+              <span>150 Bài Hội Thoại Tình Huống Thực Chiến (情景对话150课)</span>
+            </div>
+            <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight">
+              Giao Tiếp Tiếng Trung Tình Huống Toàn Diện
+            </h2>
+            <p class="text-sm text-stone-600 leading-relaxed">
+              Trọn bộ 150 bài hội thoại chuẩn hóa theo 15 chủ đề đời sống, du lịch, công sở và thi cử từ HSK 1 đến HSK 6. Tích hợp audio phát âm bản xứ từng câu, danh sách từ vựng, ngữ pháp, bài tập thực hành thấu hiểu và luyện nói phản xạ.
+            </p>
           </div>
-          <h2 class="text-2xl lg:text-3xl font-black text-slate-900 tracking-tight mb-2">
-            Trò Chuyện & Sửa Lỗi Cùng Trợ Lý AI Bản Xứ
-          </h2>
-          <p class="text-sm lg:text-base text-slate-700 leading-relaxed">
-            Chọn các tình huống giao tiếp thực tế để rèn luyện phản xạ đối thoại tiếng Trung với giọng đọc bản ngữ. Bạn cũng có thể dán bất kỳ câu nào để AI bắt lỗi và gợi ý cách diễn đạt tự nhiên nhất!
-          </p>
+
+          <!-- Overall Progress & Mode Toggles -->
+          <div class="flex flex-col sm:flex-row lg:flex-col items-end gap-3 shrink-0">
+            <!-- Progress Card -->
+            <div class="w-full sm:w-64 bg-white/90 backdrop-blur-xs p-4 rounded-xl border border-amber-200/70 shadow-2xs space-y-2">
+              <div class="flex items-center justify-between text-xs font-bold text-stone-700">
+                <span class="flex items-center gap-1.5"><i data-lucide="award" class="w-4 h-4 text-amber-600"></i> Tiến độ hoàn thành:</span>
+                <span id="convProgressStats" class="text-[#8B1E1E] font-mono">0 / 150 bài</span>
+              </div>
+              <div class="w-full bg-stone-100 rounded-full h-2.5 overflow-hidden border border-stone-200/60">
+                <div id="convProgressBar" class="bg-gradient-to-r from-amber-500 to-[#8B1E1E] h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+              </div>
+              <div class="flex items-center justify-between text-[11px] text-stone-500 pt-0.5">
+                <span id="convFavoritesCountBadge" class="flex items-center gap-1"><i data-lucide="star" class="w-3 h-3 text-amber-500 fill-amber-500"></i> 0 yêu thích</span>
+                <span id="convExpRewardBadge" class="text-amber-700 font-semibold">+15 EXP / bài</span>
+              </div>
+            </div>
+
+            <!-- Mode Switcher Tabs -->
+            <div class="inline-flex p-1 rounded-xl bg-stone-100 border border-stone-200 text-xs font-bold">
+              <button 
+                id="btn-conv-tab-library" 
+                onclick="switchAiChatTabMode('library')" 
+                class="px-3.5 py-1.5 rounded-lg transition-all shadow-2xs bg-white text-[#8B1E1E] flex items-center gap-1.5">
+                <i data-lucide="library" class="w-3.5 h-3.5"></i>
+                <span>Thư Viện 150 Bài</span>
+              </button>
+              <button 
+                id="btn-conv-tab-roleplay" 
+                onclick="switchAiChatTabMode('roleplay')" 
+                class="px-3.5 py-1.5 rounded-lg transition-all text-stone-600 hover:text-stone-900 flex items-center gap-1.5">
+                <i data-lucide="bot" class="w-3.5 h-3.5"></i>
+                <span>Trợ Lý AI & Bác Sĩ Ngữ Pháp</span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- AI Chat Stage -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-        
-        <!-- Left Column: Scenarios & Modes (4 Cols) -->
-        <div class="lg:col-span-4 space-y-4">
-          <div class="glass-card rounded-2xl p-5 border-violet-200/70 bg-white shadow-xs">
-            <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3 flex items-center gap-2">
-              <i data-lucide="sparkles" class="w-4 h-4 text-violet-500"></i>
-              <span>Chọn Tình Huống Hội Thoại</span>
-            </h3>
-            <div id="aiScenariosContainer" class="space-y-2"></div>
+      <!-- VIEW 1: THƯ VIỆN 150 BÀI HỘI THOẠI -->
+      <div id="convLibraryView" class="space-y-6">
+        <!-- Search & Filter Controls Toolbar -->
+        <div class="glass-card rounded-2xl p-4 lg:p-5 bg-white border border-stone-200 shadow-2xs space-y-4">
+          <div class="flex flex-col md:flex-row items-center gap-3">
+            <!-- Search Bar -->
+            <div class="relative flex-1 w-full">
+              <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input 
+                id="convSearchInput" 
+                type="text" 
+                placeholder="Tìm kiếm theo tên bài, bối cảnh, chữ Hán, Pinyin..." 
+                oninput="handleConvFilterChange()"
+                class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-stone-200 text-sm text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] focus:border-transparent transition-all"
+              />
+              <button 
+                onclick="clearConvSearch()" 
+                id="convClearSearchBtn" 
+                class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-1">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- Status Filter Pills -->
+            <div class="flex items-center gap-1.5 shrink-0 self-start md:self-auto overflow-x-auto pb-1 md:pb-0">
+              <button onclick="setConvStatusFilter('all')" id="convFilterStatus-all" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-[#8B1E1E] text-white">
+                Tất cả (150)
+              </button>
+              <button onclick="setConvStatusFilter('completed')" id="convFilterStatus-completed" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700">
+                Đã hoàn thành (<span id="countCompletedStatus">0</span>)
+              </button>
+              <button onclick="setConvStatusFilter('favorite')" id="convFilterStatus-favorite" class="px-3 py-1.5 rounded-lg text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700 flex items-center gap-1">
+                <i data-lucide="star" class="w-3 h-3 text-amber-500 fill-amber-500"></i>
+                Yêu thích (<span id="countFavoriteStatus">0</span>)
+              </button>
+            </div>
           </div>
 
-          <!-- Free Grammar Doctor Box -->
-          <div class="glass-card rounded-2xl p-5 border-teal-200/80 bg-white shadow-xs space-y-3">
-            <h3 class="text-xs font-bold text-teal-900 uppercase tracking-wider flex items-center gap-2">
-              <i data-lucide="stethoscope" class="w-4 h-4 text-teal-600"></i>
-              <span>Bác Sĩ Ngữ Pháp (Sửa Câu Tự Do)</span>
-            </h3>
-            <p class="text-xs text-slate-500">Dán câu tiếng Trung bạn vừa viết để AI kiểm tra:</p>
-            <textarea 
-              id="aiGrammarDoctorInput" 
-              rows="3" 
-              placeholder="Ví dụ: 我去超市买一本书。(Tôi đi siêu thị mua 1 quyển sách...)" 
-              class="w-full p-3 rounded-xl border border-slate-200 text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-teal-500 resize-none"
-            ></textarea>
-            <button onclick="analyzeSentenceGrammar()" class="w-full py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs transition-all shadow-xs flex items-center justify-center gap-1.5">
-              <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
-              <span>Phân Tích & Bắt Lỗi</span>
-            </button>
-            <div id="aiGrammarDoctorResult" class="hidden p-3 rounded-xl bg-teal-50/60 border border-teal-100 text-xs text-slate-700 space-y-1"></div>
+          <!-- HSK Level Filter Pills -->
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pt-1 border-t border-stone-100">
+            <span class="text-xs font-bold text-stone-500 shrink-0">Cấp độ HSK:</span>
+            <button onclick="setConvHskFilter('all')" id="convFilterHsk-all" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all bg-amber-100 text-amber-900 border border-amber-300">Tất cả</button>
+            <button onclick="setConvHskFilter('HSK 1')" id="convFilterHsk-HSK 1" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700">HSK 1</button>
+            <button onclick="setConvHskFilter('HSK 2')" id="convFilterHsk-HSK 2" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700">HSK 2</button>
+            <button onclick="setConvHskFilter('HSK 3')" id="convFilterHsk-HSK 3" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700">HSK 3</button>
+            <button onclick="setConvHskFilter('HSK 4')" id="convFilterHsk-HSK 4" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700">HSK 4</button>
+            <button onclick="setConvHskFilter('HSK 5')" id="convFilterHsk-HSK 5" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700">HSK 5</button>
+            <button onclick="setConvHskFilter('HSK 6')" id="convFilterHsk-HSK 6" class="px-2.5 py-1 rounded-md text-xs font-bold transition-all bg-stone-100 hover:bg-stone-200 text-stone-700">HSK 6</button>
           </div>
         </div>
 
-        <!-- Right Column: Chat Box Interface (8 Cols) -->
-        <div class="lg:col-span-8 glass-card rounded-2xl border-slate-200 bg-white shadow-xs overflow-hidden flex flex-col h-[600px]">
-          
-          <!-- Chat Header -->
-          <div class="p-4 bg-gradient-to-r from-violet-600 to-indigo-600 text-white flex items-center justify-between shadow-xs">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-lg">
-                🤖
-              </div>
-              <div>
-                <h4 id="aiChatPartnerName" class="text-sm font-bold">Lý Hoa (Giáo viên bản xứ)</h4>
-                <p id="aiChatPartnerRole" class="text-[11px] text-violet-100">Kịch bản: Chào hỏi & Làm quen</p>
+        <!-- 15 Topics Horizontal Navigator -->
+        <div class="space-y-2">
+          <div class="flex items-center justify-between text-xs font-bold text-stone-700 px-1">
+            <span class="flex items-center gap-1.5"><i data-lucide="layers" class="w-4 h-4 text-amber-600"></i> Danh mục 15 Chủ Đề:</span>
+            <span id="convCurrentTopicLabel" class="text-[#8B1E1E]">Tất cả chủ đề (150 bài)</span>
+          </div>
+          <div id="convTopicsHorizontalBar" class="flex items-center gap-2.5 overflow-x-auto no-scrollbar pb-2">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- Dialogue Cards Grid -->
+        <div id="convCardsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4.5">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- Empty Results Notification -->
+        <div id="convEmptyResults" class="hidden text-center py-16 bg-white rounded-2xl border border-dashed border-stone-300 p-8 space-y-3">
+          <div class="w-16 h-16 mx-auto rounded-full bg-amber-50 text-amber-700 flex items-center justify-center text-2xl">
+            🔍
+          </div>
+          <h4 class="text-base font-bold text-stone-800">Không tìm thấy bài hội thoại phù hợp</h4>
+          <p class="text-xs text-stone-500 max-w-sm mx-auto">Vui lòng thử tìm kiếm bằng từ khóa khác hoặc xóa bộ lọc để hiển thị toàn bộ 150 bài học.</p>
+          <button onclick="resetConvAllFilters()" class="px-4 py-2 rounded-xl bg-stone-800 text-white text-xs font-bold hover:bg-stone-900 transition-all">
+            Xem lại tất cả bài học
+          </button>
+        </div>
+
+        <!-- Pagination or Load More Info -->
+        <div id="convPaginationContainer" class="flex items-center justify-between text-xs text-stone-500 px-2 pt-2">
+          <span id="convShowingCountText">Đang hiển thị 150 bài</span>
+          <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="inline-flex items-center gap-1 text-stone-600 hover:text-[#8B1E1E] font-medium transition-all">
+            <span>Lên đầu trang</span>
+            <i data-lucide="arrow-up" class="w-3.5 h-3.5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- VIEW 2: MODAL / FULL INTERACTIVE STUDY STUDIO (CHẾ ĐỘ HỌC TẬP CHI TIẾT 15 MỤC) -->
+      <div id="convStudioModal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5">
+        <div class="bg-[#FAF7F2] w-full max-w-4xl rounded-2xl shadow-2xl border border-amber-200/90 overflow-hidden flex flex-col max-h-[92vh]">
+          <!-- Studio Header -->
+          <div class="p-4 lg:p-5 bg-gradient-to-r from-[#8B1E1E] via-[#9B2424] to-[#731818] text-white flex items-center justify-between shadow-md shrink-0">
+            <div class="flex items-center gap-3 min-w-0">
+              <button onclick="closeConvStudio()" class="p-2 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all shrink-0" title="Đóng cửa sổ">
+                <i data-lucide="arrow-left" class="w-5 h-5"></i>
+              </button>
+              <div class="min-w-0">
+                <div class="flex items-center gap-2 flex-wrap">
+                  <span id="convStudioNumBadge" class="px-2 py-0.5 rounded-md bg-amber-400 text-stone-950 text-[11px] font-black uppercase">Bài 1</span>
+                  <span id="convStudioLvlBadge" class="px-2 py-0.5 rounded-md bg-white/20 text-amber-200 text-[11px] font-bold">HSK 1</span>
+                  <span id="convStudioTopicBadge" class="text-xs text-rose-100 truncate">1. Chào hỏi và giới thiệu bản thân</span>
+                </div>
+                <h3 id="convStudioTitle" class="text-base lg:text-lg font-serif-luxury font-black text-white truncate mt-0.5">
+                  Chào hỏi lần đầu gặp mặt
+                </h3>
               </div>
             </div>
-            <button onclick="resetCurrentAiScenario()" class="px-3 py-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-xs font-semibold transition-all flex items-center gap-1">
-              <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
-              <span>Bắt đầu lại</span>
-            </button>
+
+            <!-- Action Badges in Header -->
+            <div class="flex items-center gap-2 shrink-0">
+              <!-- Bookmark Favorite Button -->
+              <button 
+                id="convStudioFavoriteBtn" 
+                onclick="toggleConvStudioFavorite()" 
+                class="p-2.5 rounded-xl bg-white/15 hover:bg-white/25 transition-all text-white flex items-center justify-center" 
+                title="Lưu bài yêu thích">
+                <i data-lucide="star" class="w-4 h-4"></i>
+              </button>
+              <!-- Completed Checkmark Button -->
+              <button 
+                id="convStudioCompleteBtn" 
+                onclick="toggleConvStudioComplete()" 
+                class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs transition-all flex items-center gap-1.5 shadow-sm">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span id="convStudioCompleteBtnText">Đánh dấu hoàn thành</span>
+              </button>
+              <!-- Close Window Button -->
+              <button onclick="closeConvStudio()" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all">
+                <i data-lucide="x" class="w-4 h-4"></i>
+              </button>
+            </div>
           </div>
 
-          <!-- Messages Scroll Area -->
-          <div id="aiChatMessagesContainer" class="flex-1 p-4 overflow-y-auto space-y-4 bg-slate-50/50"></div>
+          <!-- Studio Scrollable Content Body -->
+          <div id="convStudioBody" class="flex-1 overflow-y-auto p-4 lg:p-6 space-y-6">
+            <!-- Studio Audio Player & Reading Tools Bar -->
+            <div class="glass-card rounded-2xl p-4 bg-white border border-amber-200/80 shadow-2xs space-y-3">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <!-- Play Sequence Controller -->
+                <div class="flex items-center gap-2">
+                  <button 
+                    id="btnConvAudioPlayFull" 
+                    onclick="toggleConvFullAudioPlayback()" 
+                    class="px-4 py-2.5 rounded-xl bg-[#8B1E1E] hover:bg-[#A52A2A] text-white font-bold text-xs shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+                    <i id="iconConvAudioPlayFull" data-lucide="play" class="w-4 h-4"></i>
+                    <span id="textConvAudioPlayFull">Phát toàn bộ bài</span>
+                  </button>
+                  <button 
+                    id="btnConvAudioStop" 
+                    onclick="stopConvAudioPlayback()" 
+                    class="p-2.5 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-600 transition-all cursor-pointer" 
+                    title="Dừng phát">
+                    <i data-lucide="square" class="w-4 h-4"></i>
+                  </button>
+                  <!-- Speed Selector -->
+                  <div class="inline-flex items-center gap-1 text-xs font-semibold text-stone-600 ml-1">
+                    <span class="text-[11px] text-stone-400">Tốc độ:</span>
+                    <button onclick="setConvAudioSpeed(0.8)" id="convSpeed-0.8" class="px-2 py-1 rounded bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-bold">0.8x</button>
+                    <button onclick="setConvAudioSpeed(1.0)" id="convSpeed-1.0" class="px-2 py-1 rounded bg-amber-100 text-amber-900 border border-amber-300 text-[11px] font-bold">1.0x</button>
+                    <button onclick="setConvAudioSpeed(1.2)" id="convSpeed-1.2" class="px-2 py-1 rounded bg-stone-100 hover:bg-stone-200 text-stone-700 text-[11px] font-bold">1.2x</button>
+                  </div>
+                </div>
 
-          <!-- Suggested Replies Quick Chips -->
-          <div id="aiSuggestedRepliesContainer" class="px-4 py-2 bg-white border-t border-slate-100 flex items-center gap-2 overflow-x-auto no-scrollbar"></div>
+                <!-- Display Settings Toggles -->
+                <div class="flex items-center gap-2 text-xs font-semibold">
+                  <label class="inline-flex items-center gap-1.5 cursor-pointer select-none bg-stone-50 px-2.5 py-1.5 rounded-lg border border-stone-200">
+                    <input type="checkbox" id="convTogglePinyin" checked onchange="toggleConvDisplaySettings()" class="rounded text-[#8B1E1E] focus:ring-0">
+                    <span>Hiện Pinyin</span>
+                  </label>
+                  <label class="inline-flex items-center gap-1.5 cursor-pointer select-none bg-stone-50 px-2.5 py-1.5 rounded-lg border border-stone-200">
+                    <input type="checkbox" id="convToggleVi" checked onchange="toggleConvDisplaySettings()" class="rounded text-[#8B1E1E] focus:ring-0">
+                    <span>Dịch Tiếng Việt</span>
+                  </label>
+                </div>
+              </div>
+            </div>
 
-          <!-- Input Footer -->
-          <div class="p-4 bg-white border-t border-slate-200 flex items-center gap-2">
-            <input 
-              id="aiUserChatInput" 
-              type="text" 
-              placeholder="Nhập câu trả lời bằng tiếng Trung hoặc tiếng Việt..." 
-              class="flex-1 px-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-violet-500"
-              onkeydown="if(event.key === 'Enter') sendAiChatMessage()"
-            />
-            <button onclick="sendAiChatMessage()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-violet-600 to-indigo-600 text-white font-bold text-xs hover:opacity-90 transition-all shadow-xs flex items-center gap-1.5">
-              <i data-lucide="send" class="w-3.5 h-3.5"></i>
-              <span>Gửi</span>
-            </button>
+            <!-- Situation & Characters Info Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+              <!-- Situation Box (7 Cols) -->
+              <div class="md:col-span-7 glass-card rounded-2xl p-4 bg-amber-50/50 border border-amber-200/70 space-y-1.5">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-amber-900 uppercase tracking-wide">
+                  <i data-lucide="compass" class="w-4 h-4 text-amber-700"></i>
+                  <span>Bối Cảnh Tình Huống:</span>
+                </div>
+                <p id="convStudioSituation" class="text-xs lg:text-sm text-stone-700 leading-relaxed font-medium">
+                  Đang tải thông tin tình huống...
+                </p>
+              </div>
+
+              <!-- Characters Box (5 Cols) -->
+              <div class="md:col-span-5 glass-card rounded-2xl p-4 bg-white border border-stone-200 space-y-2">
+                <div class="flex items-center gap-1.5 text-xs font-bold text-stone-800 uppercase tracking-wide">
+                  <i data-lucide="users" class="w-4 h-4 text-indigo-600"></i>
+                  <span>Nhân Vật Đối Thoại:</span>
+                </div>
+                <div id="convStudioCharactersList" class="flex flex-col gap-1.5 text-xs">
+                  <!-- Rendered by JS -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Turn-by-Turn Dialogue Stage -->
+            <div class="glass-card rounded-2xl p-4 lg:p-6 bg-white border border-stone-200 shadow-2xs space-y-4">
+              <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+                <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider flex items-center gap-2">
+                  <i data-lucide="message-circle" class="w-4 h-4 text-[#8B1E1E]"></i>
+                  <span>Nội Dung Đối Thoại (Click loa để nghe từng câu)</span>
+                </h4>
+                <span class="text-[11px] text-stone-400 italic">Giọng nam & nữ chuẩn Bắc Kinh</span>
+              </div>
+              <!-- Speech bubbles container -->
+              <div id="convStudioDialogueContainer" class="space-y-4">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Vocabulary Section -->
+            <div class="glass-card rounded-2xl p-4 lg:p-6 bg-white border border-stone-200 shadow-2xs space-y-3">
+              <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-stone-100">
+                <i data-lucide="book-open" class="w-4 h-4 text-amber-600"></i>
+                <span>Từ Vựng Trọng Tâm Của Bài</span>
+              </h4>
+              <div id="convStudioVocabGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Grammar Section -->
+            <div class="glass-card rounded-2xl p-4 lg:p-6 bg-white border border-stone-200 shadow-2xs space-y-3">
+              <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider flex items-center gap-2 pb-2 border-b border-stone-100">
+                <i data-lucide="spell-check" class="w-4 h-4 text-emerald-600"></i>
+                <span>Giải Thích Điểm Ngữ Pháp</span>
+              </h4>
+              <div id="convStudioGrammarContainer" class="space-y-3">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Comprehension Quiz Section -->
+            <div class="glass-card rounded-2xl p-4 lg:p-6 bg-white border border-stone-200 shadow-2xs space-y-4">
+              <div class="flex items-center justify-between pb-2 border-b border-stone-100">
+                <h4 class="text-xs font-bold text-stone-800 uppercase tracking-wider flex items-center gap-2">
+                  <i data-lucide="help-circle" class="w-4 h-4 text-violet-600"></i>
+                  <span>Bài Tập Thấu Hiểu Nội Dung (Quiz)</span>
+                </h4>
+                <span class="text-[11px] text-amber-700 font-semibold">+10 EXP khi trả lời đúng</span>
+              </div>
+              <div id="convStudioQuizContainer" class="space-y-4">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Speaking Practice / Shadowing Section -->
+            <div class="glass-card rounded-2xl p-4 lg:p-6 bg-gradient-to-br from-stone-900 to-stone-800 text-white shadow-md space-y-4">
+              <div class="flex items-center justify-between pb-2 border-b border-stone-700">
+                <h4 class="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center gap-2">
+                  <i data-lucide="mic" class="w-4 h-4 text-amber-400"></i>
+                  <span>Chức Năng Luyện Nói Phản Xạ & Nhại Giọng (Shadowing)</span>
+                </h4>
+                <span class="text-[11px] text-stone-400">Ghi âm & Chấm điểm ngữ điệu</span>
+              </div>
+
+              <div class="p-4 rounded-xl bg-white/10 border border-white/10 space-y-2">
+                <p class="text-[11px] text-amber-300 font-semibold uppercase">Mẫu câu trọng tâm cần phát âm:</p>
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h5 id="convShadowHanzi" class="font-hanzi text-xl lg:text-2xl font-bold text-white leading-relaxed">
+                      你好！请问这是留学生宿舍吗？
+                    </h5>
+                    <p id="convShadowPinyin" class="text-sm font-medium text-amber-200 mt-0.5">
+                      Nǐ hǎo! Qǐngwèn zhè shì liúxuéshēng sùshè ma?
+                    </p>
+                    <p id="convShadowVi" class="text-xs text-stone-300 mt-1 italic">
+                      ➔ Chào bạn! Xin hỏi đây có phải là ký túc xá lưu học sinh không?
+                    </p>
+                  </div>
+                  <button 
+                    onclick="playConvShadowModelAudio()" 
+                    class="p-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-stone-950 font-bold transition-all shrink-0 shadow-sm cursor-pointer" 
+                    title="Nghe câu mẫu phát âm">
+                    <i data-lucide="volume-2" class="w-5 h-5"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Speaking Tip & Recorder Controls -->
+              <div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-1">
+                <div class="flex items-center gap-2 text-xs text-stone-300">
+                  <i data-lucide="sparkles" class="w-4 h-4 text-amber-400 shrink-0"></i>
+                  <span id="convShadowTip">Mẹo: Nhấn giọng rõ ràng, ngắt nghỉ tự nhiên sau cụm 请问.</span>
+                </div>
+
+                <div class="flex items-center gap-2 shrink-0">
+                  <button 
+                    id="btnConvRecordPractice" 
+                    onclick="toggleConvSpeechRecording()" 
+                    class="px-4 py-2 rounded-xl bg-gradient-to-r from-rose-600 to-red-600 hover:opacity-90 text-white font-bold text-xs shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+                    <i id="iconConvMic" data-lucide="mic" class="w-4 h-4"></i>
+                    <span id="textConvMic">Nhấn để nói (Luyện âm)</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Speech Evaluation Feedback Container -->
+              <div id="convSpeechEvaluationResult" class="hidden p-3 rounded-xl bg-white/10 border border-white/10 text-xs space-y-1">
+                <!-- Rendered by JS -->
+              </div>
+            </div>
+
+            <!-- Footer Navigation: Prev & Next Lesson -->
+            <div class="flex items-center justify-between pt-4 border-t border-stone-200">
+              <button 
+                id="btnConvPrevLesson" 
+                onclick="navigateConvLesson(-1)" 
+                class="px-4 py-2 rounded-xl bg-white border border-stone-200 hover:bg-stone-50 text-stone-700 text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer">
+                <i data-lucide="chevron-left" class="w-4 h-4"></i>
+                <span>Bài trước</span>
+              </button>
+              <span id="convLessonProgressFooter" class="text-xs text-stone-400 font-mono">Bài 1 / 150</span>
+              <button 
+                id="btnConvNextLesson" 
+                onclick="navigateConvLesson(1)" 
+                class="px-4 py-2 rounded-xl bg-[#8B1E1E] hover:bg-[#A52A2A] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                <span>Bài tiếp theo</span>
+                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- VIEW 3: TRỢ LÝ ĐỐI THOẠI AI & BÁC SĨ NGỮ PHÁP (ROLEPLAY & GRAMMAR DOCTOR) -->
+      <div id="convAiRoleplayView" class="hidden space-y-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+          
+          <!-- Left Column: Scenarios & Modes (4 Cols) -->
+          <div class="lg:col-span-4 space-y-4">
+            <div class="glass-card rounded-2xl p-5 border-amber-200/70 bg-white shadow-2xs">
+              <h3 class="text-xs font-bold text-stone-900 uppercase tracking-wider mb-3 flex items-center gap-2">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amber-600"></i>
+                <span>Chọn Kịch Bản AI Nhập Vai</span>
+              </h3>
+              <div id="aiScenariosContainer" class="space-y-2 max-h-[380px] overflow-y-auto no-scrollbar"></div>
+            </div>
+
+            <!-- Free Grammar Doctor Box -->
+            <div class="glass-card rounded-2xl p-5 border-teal-200/80 bg-white shadow-2xs space-y-3">
+              <h3 class="text-xs font-bold text-teal-900 uppercase tracking-wider flex items-center gap-2">
+                <i data-lucide="stethoscope" class="w-4 h-4 text-teal-600"></i>
+                <span>Bác Sĩ Ngữ Pháp (Sửa Câu Tự Do)</span>
+              </h3>
+              <p class="text-xs text-stone-500">Dán câu tiếng Trung bạn vừa viết để AI kiểm tra:</p>
+              <textarea 
+                id="aiGrammarDoctorInput" 
+                rows="3" 
+                placeholder="Ví dụ: 我去超市买一本书。(Tôi đi siêu thị mua 1 quyển sách...)" 
+                class="w-full p-3 rounded-xl border border-stone-200 text-xs text-stone-900 focus:outline-none focus:ring-2 focus:ring-teal-500 resize-none"
+              ></textarea>
+              <button onclick="analyzeSentenceGrammar()" class="w-full py-2.5 rounded-xl bg-teal-600 hover:bg-teal-700 text-white font-bold text-xs transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer">
+                <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+                <span>Phân Tích & Bắt Lỗi</span>
+              </button>
+              <div id="aiGrammarDoctorResult" class="hidden p-3 rounded-xl bg-teal-50/60 border border-teal-100 text-xs text-stone-700 space-y-1"></div>
+            </div>
+          </div>
+
+          <!-- Right Column: Chat Box Interface (8 Cols) -->
+          <div class="lg:col-span-8 glass-card rounded-2xl border-stone-200 bg-white shadow-2xs overflow-hidden flex flex-col h-[620px]">
+            
+            <!-- Chat Header -->
+            <div class="p-4 bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white flex items-center justify-between shadow-xs">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center text-lg">
+                  🤖
+                </div>
+                <div>
+                  <h4 id="aiChatPartnerName" class="text-sm font-bold">Lý Hoa (Giáo viên bản xứ)</h4>
+                  <p id="aiChatPartnerRole" class="text-[11px] text-rose-100">Kịch bản: Chào hỏi & Làm quen</p>
+                </div>
+              </div>
+              <button onclick="resetCurrentAiScenario()" class="px-3 py-1.5 rounded-lg bg-white/20 hover:bg-white/30 text-xs font-semibold transition-all flex items-center gap-1 cursor-pointer">
+                <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
+                <span>Bắt đầu lại</span>
+              </button>
+            </div>
+
+            <!-- Messages Scroll Area -->
+            <div id="aiChatMessagesContainer" class="flex-1 p-4 overflow-y-auto space-y-4 bg-stone-50/50"></div>
+
+            <!-- Suggested Replies Quick Chips -->
+            <div id="aiSuggestedRepliesContainer" class="px-4 py-2 bg-white border-t border-stone-100 flex items-center gap-2 overflow-x-auto no-scrollbar"></div>
+
+            <!-- Input Footer -->
+            <div class="p-4 bg-white border-t border-stone-200 flex items-center gap-2">
+              <input 
+                id="aiUserChatInput" 
+                type="text" 
+                placeholder="Nhập câu trả lời bằng tiếng Trung hoặc tiếng Việt..." 
+                class="flex-1 px-4 py-2.5 rounded-xl border border-stone-200 text-sm text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]"
+                onkeydown="if(event.key === 'Enter') sendAiChatMessage()"
+              />
+              <button onclick="sendAiChatMessage()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white font-bold text-xs hover:opacity-90 transition-all shadow-xs flex items-center gap-1.5 cursor-pointer">
+                <i data-lucide="send" class="w-3.5 h-3.5"></i>
+                <span>Gửi</span>
+              </button>
+            </div>
+
           </div>
 
         </div>
-
       </div>
     </section>
 

@@ -10,6 +10,7 @@ let practiceData = [];
 let cultureData = [];
 let mockExamsData = [];
 let aiScenariosData = [];
+let conversations150Data = [];
 let radicalsData = [];
 let chengyuData = [];
 let readingsData = [];
@@ -31,7 +32,8 @@ const DATASETS = {
   practice: { url: 'data/practice.json', set: v => { practiceData = v || []; } },
   culture: { url: 'data/culture.json', set: v => { cultureData = v || []; } },
   mockExam: { url: 'data/mock_exam.json', set: v => { mockExamsData = v || []; } },
-  aiScenarios: { url: 'data/ai_scenarios.json', set: v => { aiScenariosData = v || []; } },
+  aiScenarios: { url: 'data/conversations_150.json', set: v => { aiScenariosData = v || []; conversations150Data = v || []; } },
+  conversations150: { url: 'data/conversations_150.json', set: v => { conversations150Data = v || []; aiScenariosData = v || []; } },
   radicals: { url: 'data/radicals.json', set: v => { radicalsData = v || []; } },
   chengyu: { url: 'data/chengyu.json', set: v => { chengyuData = v || []; } },
   readings: { url: 'data/readings.json', set: v => { readingsData = v || []; } },

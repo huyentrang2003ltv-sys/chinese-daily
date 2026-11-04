@@ -71,13 +71,13 @@ function startCloudflareTunnel() {
   cf.stdout.on('data', data => {
     const text = data.toString();
     process.stdout.write(text);
-    handleTunnelOutput(text, 'Cloudflare Turbo');
+    handleTunnelOutput(text, 'Cloudflare Turbo'); if (text.includes('Unauthorized: Tunnel not found')) { console.log('Cloudflare edge lost tunnel. Restarting child process...'); try { cf.kill(); } catch(_) {} }
   });
 
   cf.stderr.on('data', data => {
     const text = data.toString();
     process.stderr.write(text);
-    handleTunnelOutput(text, 'Cloudflare Turbo');
+    handleTunnelOutput(text, 'Cloudflare Turbo'); if (text.includes('Unauthorized: Tunnel not found')) { console.log('Cloudflare edge lost tunnel. Restarting child process...'); try { cf.kill(); } catch(_) {} }
   });
 
   cf.on('close', code => {
