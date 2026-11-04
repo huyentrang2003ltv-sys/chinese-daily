@@ -763,14 +763,13 @@ function openFlipCardVictoryModal(lvl, stars) {
     }).join('');
   }
 
-  modal.classList.remove('hidden');
-  refreshIcons(modal);
+  openModal('flipCardVictoryModal');
 }
 
 function closeFlipCardVictoryModal() {
-  const modal = document.getElementById('flipCardVictoryModal');
-  if (modal) modal.classList.add('hidden');
+  closeModal('flipCardVictoryModal');
 }
+registerModal('flipCardVictoryModal', closeFlipCardVictoryModal);
 
 function nextFlipCardLevel() {
   closeFlipCardVictoryModal();
@@ -816,17 +815,15 @@ function setFlipCardGameMode(mode) {
 
 // ---------------- FLIP CARD LEVEL SELECTOR MODAL ----------------
 function openFlipCardLevelModal() {
-  const modal = document.getElementById('flipCardLevelModal');
-  if (!modal) return;
+  if (!document.getElementById('flipCardLevelModal')) return;
   filterFlipCardLevelMap(flipActiveTierFilter);
-  modal.classList.remove('hidden');
-  refreshIcons(modal);
+  openModal('flipCardLevelModal');
 }
 
 function closeFlipCardLevelModal() {
-  const modal = document.getElementById('flipCardLevelModal');
-  if (modal) modal.classList.add('hidden');
+  closeModal('flipCardLevelModal');
 }
+registerModal('flipCardLevelModal', closeFlipCardLevelModal);
 
 function filterFlipCardLevelMap(filter) {
   flipActiveTierFilter = filter;

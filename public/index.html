@@ -3244,8 +3244,10 @@
 
     </section>
 
-    <!-- ==================== LEVEL SELECTOR MODAL (BẢN ĐỒ 60 LEVEL) ==================== -->
-    <div id="woodLevelSelectorModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm animate-fade-in">
+</main>
+
+      <!-- ==================== LEVEL SELECTOR MODAL (BẢN ĐỒ 60 LEVEL) ==================== -->
+    <div id="woodLevelSelectorModal" onclick="if(event.target === this) closeWoodLevelSelectorModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in">
       <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-2xl max-h-[90vh] rounded-3xl border-2 border-amber-400/90 dark:border-amber-500/40 p-6 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100">
         
         <!-- Close Button -->
@@ -3365,7 +3367,7 @@
     </div>
 
     <!-- ==================== FLIP CARD LEVEL SELECTOR MODAL ==================== -->
-    <div id="flipCardLevelModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm animate-fade-in">
+    <div id="flipCardLevelModal" onclick="if(event.target === this) closeFlipCardLevelModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in">
       <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-3xl max-h-[90vh] rounded-3xl border-2 border-rose-400/90 dark:border-rose-500/40 p-6 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100">
         
         <!-- Close Button -->
@@ -3418,8 +3420,13 @@
     </div>
 
     <!-- ==================== FLIP CARD VICTORY CELEBRATION MODAL ==================== -->
-    <div id="flipCardVictoryModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fade-in">
+    <div id="flipCardVictoryModal" onclick="if(event.target === this) closeFlipCardVictoryModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-fade-in">
       <div class="bg-gradient-to-b from-[#FFFDF9] via-[#FAF5EB] to-[#FFFDF9] dark:from-[#1b222d] dark:via-[#161B22] dark:to-[#1b222d] w-full max-w-lg rounded-3xl border-3 border-amber-400/90 dark:border-amber-500/50 p-6 sm:p-8 shadow-2xl relative space-y-4 text-center text-stone-900 dark:text-stone-100 overflow-hidden">
+        
+        <!-- Nút Đóng Góc Phải -->
+        <button type="button" onclick="closeFlipCardVictoryModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-red-100/90 hover:bg-[#8B1E1E] text-[#8B1E1E] hover:text-white border border-red-300 hover:border-amber-400 flex items-center justify-center transition-all duration-200 cursor-pointer shadow-md group z-20" title="Đóng (Esc)">
+          <i data-lucide="x" class="w-4 h-4 group-hover:rotate-90 transition-transform"></i>
+        </button>
         
         <!-- Victory Badge & Confetti -->
         <div class="w-20 h-20 mx-auto rounded-3xl bg-gradient-to-tr from-amber-500 via-rose-500 to-amber-600 text-white flex items-center justify-center text-4xl shadow-xl border-2 border-white ring-4 ring-amber-300/40 animate-bounce">
@@ -3495,7 +3502,7 @@
       </div>
     </div>
 
-</main>
+
 
   <!-- MODAL: LUYỆN VIẾT NÉT CHỮ HÁN TƯƠNG TÁC (HANZIWRITER POPUP) -->
   <div id="writingModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/75 backdrop-blur-md">
