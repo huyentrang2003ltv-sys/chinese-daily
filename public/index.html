@@ -2053,10 +2053,10 @@
               <span>Phòng Thi Thử HSK Trực Tuyến Chuẩn Cấu Trúc</span>
             </div>
             <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
-              Khảo Sát Năng Lực Hán Ngữ HSK 1 - HSK 5
+              Khảo Sát Năng Lực Hán Ngữ HSK 1 - HSK 6 (360 Đề Thi Chuẩn Hanban)
             </h2>
             <p class="text-sm text-stone-600 max-w-2xl leading-relaxed">
-              Mô phỏng đề thi thực chiến chuẩn cấu trúc HSK 1 đến HSK 5: Nghe hiểu phản xạ, Đọc hiểu phân tích ngữ nghĩa, Sắp xếp trật tự câu và Nhận diện bệnh cú. Có đồng hồ đếm ngược, tự động chấm điểm và giải thích cặn kẽ đáp án.
+              Kho 360 đề thi mô phỏng chính xác cấu trúc đề thi thật của Hanban CTI (60 đề cho mỗi cấp độ từ HSK 1 đến HSK 6): Đầy đủ Nghe hiểu (giọng Bắc Kinh chuẩn), Đọc hiểu (Điền từ, Sắp xếp câu, Đọc đoạn văn, 找病句), và Viết (Sắp xếp câu). Tự động chấm điểm, phân tích chi tiết đáp án và theo dõi tiến độ.
             </p>
           </div>
 
@@ -2074,24 +2074,112 @@
         </div>
 
         <!-- Level Selector Toolbar -->
-        <div class="pt-6 border-t border-amber-200/60 mt-6 flex items-center gap-3">
-          <span class="text-xs text-stone-500 font-bold whitespace-nowrap">Chọn cấp độ thi:</span>
+        <div class="pt-6 border-t border-amber-200/60 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div class="flex items-center gap-2 overflow-x-auto pb-1">
-            <button onclick="switchMockExamLevel(1)" id="btn-exam-lvl-1" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap">
-              HSK 1 (Đề 01 - 15p)
+            <span class="text-xs text-stone-500 font-bold whitespace-nowrap shrink-0">Cấp độ thi:</span>
+            <button onclick="switchMockExamLevel(1)" id="btn-exam-lvl-1" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer">
+              HSK 1 (60 Đề • 35p)
             </button>
-            <button onclick="switchMockExamLevel(2)" id="btn-exam-lvl-2" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              HSK 2 (Đề 01 - 20p)
+            <button onclick="switchMockExamLevel(2)" id="btn-exam-lvl-2" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-50 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              HSK 2 (60 Đề • 50p)
             </button>
-            <button onclick="switchMockExamLevel(3)" id="btn-exam-lvl-3" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              HSK 3 (Đề 01 - 25p)
+            <button onclick="switchMockExamLevel(3)" id="btn-exam-lvl-3" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-50 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              HSK 3 (60 Đề • 85p)
             </button>
-            <button onclick="switchMockExamLevel(4)" id="btn-exam-lvl-4" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              HSK 4 (Đề 01 - 35p)
+            <button onclick="switchMockExamLevel(4)" id="btn-exam-lvl-4" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-50 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              HSK 4 (60 Đề • 100p)
             </button>
-            <button onclick="switchMockExamLevel(5)" id="btn-exam-lvl-5" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              HSK 5 (Đề 01 - 45p)
+            <button onclick="switchMockExamLevel(5)" id="btn-exam-lvl-5" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-50 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              HSK 5 (60 Đề • 120p)
             </button>
+            <button onclick="switchMockExamLevel(6)" id="btn-exam-lvl-6" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-50 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              HSK 6 (60 Đề • 135p)
+            </button>
+          </div>
+        </div>
+
+        <!-- Test Selector Toolbar (60 Tests per level) -->
+        <div class="pt-4 border-t border-amber-200/50 mt-4 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs">
+          <!-- Left: Current Test Info & Select Dropdown -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="font-bold text-stone-700 dark:text-stone-300 flex items-center gap-1.5">
+              <i data-lucide="layers" class="w-4 h-4 text-[#8B1E1E] dark:text-amber-400"></i>
+              <span>Chọn Đề Thi (1 - 60):</span>
+            </span>
+            <select 
+              id="examTestNumberSelect" 
+              onchange="switchMockExamTest(parseInt(this.value))"
+              class="px-3 py-1.5 rounded-xl bg-white dark:bg-stone-800 border border-amber-300 dark:border-stone-700 font-bold text-stone-800 dark:text-stone-200 shadow-2xs focus:ring-2 focus:ring-[#8B1E1E] cursor-pointer"
+            >
+              <!-- 1 to 60 populated by JS -->
+            </select>
+
+            <!-- Nút Lưới 60 Đề -->
+            <button 
+              onclick="openExamSelectorModal()" 
+              class="px-3 py-1.5 rounded-xl bg-amber-100 hover:bg-amber-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-amber-950 dark:text-amber-300 font-bold flex items-center gap-1 shadow-2xs cursor-pointer"
+              title="Mở lưới chọn toàn bộ 60 đề thi"
+            >
+              <i data-lucide="grid" class="w-3.5 h-3.5 text-amber-700 dark:text-amber-400"></i>
+              <span>Kho 60 Đề Thi</span>
+            </button>
+          </div>
+
+          <!-- Right: Nav Buttons & Random Test -->
+          <div class="flex items-center gap-2 flex-wrap">
+            <button 
+              onclick="prevMockExamTest()" 
+              class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-bold flex items-center gap-1 shadow-2xs cursor-pointer"
+              title="Đề thi trước"
+            >
+              <i data-lucide="chevron-left" class="w-4 h-4"></i>
+              <span>Đề trước</span>
+            </button>
+            <button 
+              onclick="nextMockExamTest()" 
+              class="px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 text-stone-700 dark:text-stone-300 font-bold flex items-center gap-1 shadow-2xs cursor-pointer"
+              title="Đề thi tiếp theo"
+            >
+              <span>Đề tiếp theo</span>
+              <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            </button>
+            <button 
+              onclick="randomMockExamTest()" 
+              class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-500 to-amber-600 hover:opacity-95 text-white font-bold flex items-center gap-1 shadow-2xs cursor-pointer"
+              title="Luyện một đề ngẫu nhiên trong 60 đề"
+            >
+              <i data-lucide="shuffle" class="w-3.5 h-3.5"></i>
+              <span>Đề ngẫu nhiên</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Active Exam Overview Banner -->
+        <div class="pt-4 border-t border-amber-200/40 mt-4 flex flex-col md:flex-row md:items-center justify-between gap-3 text-xs bg-amber-50/50 dark:bg-stone-900/40 p-3.5 rounded-2xl border border-amber-200/60">
+          <div>
+            <div class="flex items-center gap-2 flex-wrap mb-1">
+              <span id="examLevelBadge" class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-[#8B1E1E] text-white shadow-2xs">
+                HSK 1 • Chuẩn Hanban CTI
+              </span>
+              <span id="examScoreInfo" class="font-bold text-amber-900 dark:text-amber-300">
+                Thang điểm: 200 điểm | Điểm đỗ: 120 điểm | 35 phút
+              </span>
+            </div>
+            <h3 id="examTitleDisplay" class="text-sm font-bold text-stone-900 dark:text-stone-100">
+              Đề Thi Thử HSK 1 Chuẩn Hanban - Đề Số 01
+            </h3>
+            <p id="examDescDisplay" class="text-stone-600 dark:text-stone-400 text-[11px] mt-0.5">
+              Mô phỏng cấu trúc đề thi chính thức: Nghe hiểu và Đọc hiểu.
+            </p>
+          </div>
+          <!-- Progress Indicator -->
+          <div class="shrink-0 text-right">
+            <span id="examAnsweredCountText" class="text-xs font-bold text-stone-700 dark:text-stone-300">
+              Đã làm: 0 / 10 câu
+            </span>
+            <div class="w-36 h-2 bg-stone-200 dark:bg-stone-700 rounded-full overflow-hidden mt-1">
+              <div id="examProgressBar" class="h-full bg-gradient-to-r from-amber-500 to-[#8B1E1E] transition-all duration-300" style="width: 0%"></div>
+            </div>
           </div>
         </div>
       </div>
@@ -4204,6 +4292,46 @@
           Xem Lại Đề Thi
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- MODAL: KHO 60 ĐỀ THI HSK CHUẨN HANBAN -->
+  <div id="examSelectorModal" onclick="if(event.target === this) closeExamSelectorModal()" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-slate-950/70 backdrop-blur-md">
+    <div class="bg-white dark:bg-stone-900 w-full max-w-4xl rounded-3xl border border-amber-300/80 shadow-2xl relative flex flex-col max-h-[90vh] overflow-hidden text-stone-800 dark:text-stone-100">
+      
+      <!-- Header -->
+      <div class="p-5 md:p-6 bg-gradient-to-r from-red-900/10 via-[#FAF7F2] to-amber-50/80 dark:from-stone-900 dark:via-stone-850 dark:to-stone-900 border-b border-amber-200/80 shrink-0 flex items-center justify-between">
+        <div>
+          <div class="flex items-center gap-2">
+            <span id="examModalLevelBadge" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-[#8B1E1E] text-white">
+              HSK 1
+            </span>
+            <h3 class="text-lg md:text-xl font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
+              Kho 60 Đề Thi Thử Mô Phỏng Chuẩn Hanban
+            </h3>
+          </div>
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">
+            Chọn một đề thi bất kỳ để bắt đầu làm bài và đánh giá năng lực thực chiến.
+          </p>
+        </div>
+        <button onclick="closeExamSelectorModal()" class="p-2 rounded-xl text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- 60 Exams Grid Container -->
+      <div id="examSelectorGridContainer" class="flex-1 overflow-y-auto p-4 md:p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 custom-scrollbar">
+        <!-- Generated by JS -->
+      </div>
+
+      <!-- Footer -->
+      <div class="p-4 border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/60 flex items-center justify-between text-xs text-stone-500">
+        <span>Tổng cộng: <strong>60 Đề Thi</strong> chính thức</span>
+        <button onclick="closeExamSelectorModal()" class="px-4 py-2 rounded-xl bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 font-bold text-stone-700 dark:text-stone-200 cursor-pointer">
+          Đóng
+        </button>
+      </div>
+
     </div>
   </div>
 
