@@ -40,7 +40,7 @@ const TABS = {
   mockexam: { label: 'Thi thử HSK', icon: 'file-check-2', data: ['mockExam'], init: () => initMockExamModule() },
   woodblock: { label: 'Xếp khối gỗ', icon: 'puzzle', data: ['woodBlock'], init: () => initWoodBlockGame() },
   flipcard: { label: 'Lật thẻ tìm từ', icon: 'layers', data: ['flipCard'], init: () => initFlipCardGame() },
-  classroom: { label: 'Lớp học', icon: 'school', data: ['dictionary'], init: () => initClassroom() }
+  classroom: { label: 'Lớp học thông minh', icon: 'school', data: ['dictionary', 'mockExam'], init: () => initClassroom() }
 };
 
 /** Top-level groups shown in the main nav (bottom bar on mobile). */
