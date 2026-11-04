@@ -360,11 +360,56 @@ function createFlipCardElement(card, idx) {
     handleCardClick(idx);
   };
 
+  const isImageMode = card.type === 'image';
+  const isImageCard = isImageMode && card.word && card.word.isImage;
   const isSynonym = card.type === 'synonym';
-  const badgeClass = isSynonym 
-    ? 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border-emerald-300' 
-    : 'bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300 border-rose-300';
-  const badgeText = isSynonym ? '近义 • Đồng nghĩa' : '反义 • Trái nghĩa';
+
+  let badgeClass = '';
+  let badgeText = '';
+
+  if (isImageMode) {
+    if (isImageCard) {
+      badgeClass = 'bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 border-amber-300';
+      badgeText = '图文 • Hình ảnh';
+    } else {
+      badgeClass = 'bg-sky-100 dark:bg-sky-950 text-sky-800 dark:text-sky-300 border-sky-300';
+      badgeText = '汉字 • Từ Hán';
+    }
+  } else if (isSynonym) {
+    badgeClass = 'bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border-emerald-300';
+    badgeText = '近义 • Đồng nghĩa';
+  } else {
+    badgeClass = 'bg-rose-100 dark:bg-rose-950 text-rose-800 dark:text-rose-300 border-rose-300';
+    badgeText = '反义 • Trái nghĩa';
+  }
+
+  const centerContentHtml = isImageCard
+    ? `
+      <div class="my-auto py-1 flex flex-col items-center justify-center">
+        <div class="text-4xl sm:text-5xl my-1 select-none transform hover:scale-110 transition-transform">
+          ${card.word.image}
+        </div>
+        <div class="text-xs font-bold text-stone-800 dark:text-stone-200 line-clamp-1 mt-0.5">
+          ${card.word.meaning}
+        </div>
+        <div class="text-[9px] text-amber-600 dark:text-amber-400 font-semibold tracking-wider uppercase mt-0.5">
+          Hình Minh Họa
+        </div>
+      </div>
+    `
+    : `
+      <div class="my-auto py-1">
+        <div class="font-hanzi font-black text-2xl sm:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
+          ${card.word.hanzi}
+        </div>
+        <div class="text-xs font-bold text-[#8B1E1E] dark:text-amber-400 mt-0.5">
+          ${card.word.pinyin}
+        </div>
+        <div class="text-[11px] text-stone-600 dark:text-stone-300 line-clamp-1 mt-0.5">
+          ${card.word.meaning}
+        </div>
+      </div>
+    `;
 
   cardDiv.innerHTML = `
     <div class="flip-card-inner">
@@ -396,18 +441,8 @@ function createFlipCardElement(card, idx) {
           </button>
         </div>
 
-        <!-- Center Hanzi & Pinyin -->
-        <div class="my-auto py-1">
-          <div class="font-hanzi font-black text-2xl sm:text-3xl text-stone-900 dark:text-stone-100 leading-tight">
-            ${card.word.hanzi}
-          </div>
-          <div class="text-xs font-bold text-[#8B1E1E] dark:text-amber-400 mt-0.5">
-            ${card.word.pinyin}
-          </div>
-          <div class="text-[11px] text-stone-600 dark:text-stone-300 line-clamp-1 mt-0.5">
-            ${card.word.meaning}
-          </div>
-        </div>
+        <!-- Center Display -->
+        ${centerContentHtml}
 
         <!-- Bottom Matched Indicator -->
         <div class="w-full">
@@ -556,38 +591,54 @@ function showFlipMatchReviewBanner(pair) {
 
   if (!banner) return;
 
+  const isImage = pair.type === 'image';
   const isSynonym = pair.type === 'synonym';
+
   if (badge) {
-    badge.innerText = isSynonym ? 'CẶP ĐỒNG NGHĨA' : 'CẶP TRÁI NGHĨA';
-    badge.className = isSynonym 
-      ? 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-500 text-white shadow-2xs' 
-      : 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-500 text-white shadow-2xs';
+    if (isImage) {
+      badge.innerText = 'TỪ VỰNG & HÌNH ẢNH (图文)';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-amber-600 to-amber-500 text-white shadow-2xs';
+    } else if (isSynonym) {
+      badge.innerText = 'CẶP ĐỒNG NGHĨA';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-500 text-white shadow-2xs';
+    } else {
+      badge.innerText = 'CẶP TRÁI NGHĨA';
+      badge.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-rose-500 text-white shadow-2xs';
+    }
   }
 
-  const symbol = isSynonym ? '≈' : '≠';
   if (title) {
-    title.innerText = `${pair.wordA.hanzi} (${pair.wordA.pinyin}) ${symbol} ${pair.wordB.hanzi} (${pair.wordB.pinyin})`;
+    if (isImage) {
+      title.innerText = `${pair.wordA.hanzi} (${pair.wordA.pinyin}) ↔ ${pair.wordA.image} ${pair.wordA.meaning}`;
+    } else {
+      const symbol = isSynonym ? '≈' : '≠';
+      title.innerText = `${pair.wordA.hanzi} (${pair.wordA.pinyin}) ${symbol} ${pair.wordB.hanzi} (${pair.wordB.pinyin})`;
+    }
   }
   if (meaning) meaning.innerText = pair.relationDesc;
   if (example) example.innerText = `"${pair.exampleSentence}"`;
 
   banner.classList.remove('hidden');
 
-  // Speak both words
+  // Speak pronunciation
   setTimeout(() => {
     playChineseTTS(pair.wordA.hanzi);
-    setTimeout(() => {
-      playChineseTTS(pair.wordB.hanzi);
-    }, 1100);
+    if (!isImage && pair.wordB && pair.wordB.hanzi) {
+      setTimeout(() => {
+        playChineseTTS(pair.wordB.hanzi);
+      }, 1100);
+    }
   }, 250);
 }
 
 function playCurrentMatchAudio() {
   if (!currentMatchPairData) return;
   playChineseTTS(currentMatchPairData.wordA.hanzi);
-  setTimeout(() => {
-    playChineseTTS(currentMatchPairData.wordB.hanzi);
-  }, 1000);
+  if (currentMatchPairData.type !== 'image' && currentMatchPairData.wordB && currentMatchPairData.wordB.hanzi) {
+    setTimeout(() => {
+      playChineseTTS(currentMatchPairData.wordB.hanzi);
+    }, 1000);
+  }
 }
 
 function flipCardAutoHint() {
@@ -675,9 +726,19 @@ function openFlipCardVictoryModal(lvl, stars) {
   // Populate Review Pairs Table
   if (pairsListEl) {
     pairsListEl.innerHTML = lvl.pairs.map(p => {
+      const isImg = p.type === 'image';
       const isSyn = p.type === 'synonym';
-      const symbol = isSyn ? '≈' : '≠';
-      const badgeClass = isSyn ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800';
+      const symbol = isImg ? '↔' : (isSyn ? '≈' : '≠');
+      const badgeClass = isImg 
+        ? 'bg-amber-100 text-amber-800 border border-amber-200' 
+        : (isSyn ? 'bg-emerald-100 text-emerald-800 border border-emerald-200' : 'bg-rose-100 text-rose-800 border border-rose-200');
+      const secondPart = isImg 
+        ? `<span class="text-base">${p.wordA.image}</span> <strong class="text-xs text-stone-800 dark:text-stone-200">${p.wordA.meaning}</strong>`
+        : `<strong class="font-hanzi text-sm text-stone-900 dark:text-stone-100">${p.wordB.hanzi} (${p.wordB.pinyin})</strong>`;
+      const ttsHandler = isImg
+        ? `playChineseTTS('${p.wordA.hanzi}');`
+        : `playChineseTTS('${p.wordA.hanzi}'); setTimeout(() => playChineseTTS('${p.wordB.hanzi}'), 1000);`;
+
       return `
         <div class="p-2.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 flex items-center justify-between gap-2 shadow-2xs">
           <div>
@@ -685,15 +746,15 @@ function openFlipCardVictoryModal(lvl, stars) {
               <span class="px-1.5 py-0.2 rounded text-[9px] font-bold ${badgeClass}">${p.typeLabel}</span>
               <strong class="font-hanzi text-sm text-stone-900 dark:text-stone-100">${p.wordA.hanzi} (${p.wordA.pinyin})</strong>
               <span class="text-xs text-amber-600 font-bold">${symbol}</span>
-              <strong class="font-hanzi text-sm text-stone-900 dark:text-stone-100">${p.wordB.hanzi} (${p.wordB.pinyin})</strong>
+              ${secondPart}
             </div>
             <p class="text-[11px] text-stone-600 dark:text-stone-400 mt-0.5">${p.relationDesc}</p>
           </div>
           <button 
             type="button" 
-            onclick="playChineseTTS('${p.wordA.hanzi}'); setTimeout(() => playChineseTTS('${p.wordB.hanzi}'), 1000);"
+            onclick="${ttsHandler}"
             class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-xs shrink-0 cursor-pointer shadow-2xs"
-            title="Nghe phát âm cả cặp từ"
+            title="Nghe phát âm"
           >
             🔊
           </button>
@@ -730,6 +791,7 @@ function setFlipCardGameMode(mode) {
   currentFlipGameMode = mode;
 
   const btnAll = document.getElementById('flipModeBtn-all');
+  const btnImg = document.getElementById('flipModeBtn-image');
   const btnSyn = document.getElementById('flipModeBtn-synonym');
   const btnAnt = document.getElementById('flipModeBtn-antonym');
 
@@ -737,6 +799,7 @@ function setFlipCardGameMode(mode) {
   const inactiveCls = 'px-3 py-1.5 rounded-xl font-bold transition-all text-stone-700 dark:text-stone-300 hover:text-[#8B1E1E] cursor-pointer';
 
   if (btnAll) btnAll.className = mode === 'all' ? activeCls : inactiveCls;
+  if (btnImg) btnImg.className = mode === 'image' ? activeCls : inactiveCls;
   if (btnSyn) btnSyn.className = mode === 'synonym' ? activeCls : inactiveCls;
   if (btnAnt) btnAnt.className = mode === 'antonym' ? activeCls : inactiveCls;
 
@@ -768,17 +831,17 @@ function closeFlipCardLevelModal() {
 function filterFlipCardLevelMap(filter) {
   flipActiveTierFilter = filter;
   const btnAll = document.getElementById('flipFilterBtn-all');
+  const btnImg = document.getElementById('flipFilterBtn-image');
   const btnSyn = document.getElementById('flipFilterBtn-synonym');
   const btnAnt = document.getElementById('flipFilterBtn-antonym');
-  const btnMix = document.getElementById('flipFilterBtn-mixed');
 
   const activeCls = 'px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#BE123C] to-[#E11D48] text-white shadow-2xs cursor-pointer';
   const inactiveCls = 'px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-rose-700 cursor-pointer';
 
   if (btnAll) btnAll.className = filter === 'all' ? activeCls : inactiveCls;
+  if (btnImg) btnImg.className = filter === 'image' ? activeCls : inactiveCls;
   if (btnSyn) btnSyn.className = filter === 'synonym' ? activeCls : inactiveCls;
   if (btnAnt) btnAnt.className = filter === 'antonym' ? activeCls : inactiveCls;
-  if (btnMix) btnMix.className = filter === 'mixed' ? activeCls : inactiveCls;
 
   renderFlipCardLevelGrid();
 }
@@ -817,7 +880,14 @@ function renderFlipCardLevelGrid() {
 
     card.innerHTML = `
       <div class="flex items-center justify-between w-full text-[10px] text-stone-400">
-        <span>#${lvl.level}</span>
+        <div class="flex items-center gap-1">
+          <span class="font-bold">#${lvl.level}</span>
+          ${lvl.mode === 'image' 
+            ? '<span class="px-1 py-0.2 rounded text-[8px] font-bold bg-amber-100 text-amber-800 border border-amber-200">图文</span>' 
+            : (lvl.mode === 'synonym' 
+              ? '<span class="px-1 py-0.2 rounded text-[8px] font-bold bg-emerald-100 text-emerald-800 border border-emerald-200">近义</span>' 
+              : '<span class="px-1 py-0.2 rounded text-[8px] font-bold bg-rose-100 text-rose-800 border border-rose-200">反义</span>')}
+        </div>
         <span>${isUnlocked ? (stars >= 3 ? '⭐⭐⭐' : (stars > 0 ? '⭐' : '')) : '🔒'}</span>
       </div>
       <div class="my-1.5 w-11 h-11 rounded-2xl ${isUnlocked ? 'bg-gradient-to-tr from-rose-100 to-amber-100 dark:bg-stone-700 text-rose-800 dark:text-amber-200' : 'bg-stone-200 dark:bg-stone-800 text-stone-400'} flex items-center justify-center font-bold text-base shadow-2xs">

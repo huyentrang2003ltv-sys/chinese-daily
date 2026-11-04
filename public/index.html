@@ -2898,10 +2898,10 @@
             <div>
               <div class="flex items-center gap-2 flex-wrap">
                 <h2 class="text-xl lg:text-2xl font-black text-stone-900 dark:text-stone-100 font-serif-luxury tracking-tight">
-                  Lật Thẻ Tìm Từ Đồng Nghĩa & Trái Nghĩa
+                  Lật Thẻ Tìm Từ & Hình Ảnh
                 </h2>
                 <span class="font-hanzi font-black text-rose-700 dark:text-rose-400 text-sm">
-                  汉语翻翻卡
+                  汉语翻翻卡 (1.000 Cặp Thẻ)
                 </span>
                 <span id="flipCurrentTierBadge" class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 dark:bg-emerald-950 text-emerald-800 dark:text-emerald-300 border border-emerald-300">
                   Sơ Cấp
@@ -2924,6 +2924,13 @@
                 class="px-3 py-1.5 rounded-xl font-bold transition-all bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs cursor-pointer"
               >
                 Tất Cả
+              </button>
+              <button 
+                id="flipModeBtn-image" 
+                onclick="setFlipCardGameMode('image')"
+                class="px-3 py-1.5 rounded-xl font-bold transition-all text-stone-700 dark:text-stone-300 hover:text-[#8B1E1E] cursor-pointer"
+              >
+                Hình Ảnh (图文)
               </button>
               <button 
                 id="flipModeBtn-synonym" 
@@ -3233,16 +3240,16 @@
         <!-- Filter Pills Bar -->
         <div class="flex items-center gap-2 flex-wrap border-b border-stone-200 dark:border-stone-800 pb-3 shrink-0 text-xs font-bold">
           <button id="flipFilterBtn-all" onclick="filterFlipCardLevelMap('all')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#BE123C] to-[#E11D48] text-white shadow-2xs cursor-pointer">
-            Tất Cả
+            Tất Cả (200 Màn)
+          </button>
+          <button id="flipFilterBtn-image" onclick="filterFlipCardLevelMap('image')" class="px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-rose-700 cursor-pointer">
+            Hình Ảnh (图文 • 70 Màn)
           </button>
           <button id="flipFilterBtn-synonym" onclick="filterFlipCardLevelMap('synonym')" class="px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-rose-700 cursor-pointer">
-            Đồng Nghĩa (近义词)
+            Đồng Nghĩa (近义 • 70 Màn)
           </button>
           <button id="flipFilterBtn-antonym" onclick="filterFlipCardLevelMap('antonym')" class="px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-rose-700 cursor-pointer">
-            Trái Nghĩa (反义词)
-          </button>
-          <button id="flipFilterBtn-mixed" onclick="filterFlipCardLevelMap('mixed')" class="px-3.5 py-1.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:text-rose-700 cursor-pointer">
-            Hỗn Hợp (综合)
+            Trái Nghĩa (反义 • 60 Màn)
           </button>
         </div>
 
