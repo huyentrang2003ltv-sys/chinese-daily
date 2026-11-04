@@ -2662,7 +2662,15 @@
         </div>
       </div>
 
-      <!-- Live Match Knowledge Banner (Xuất hiện ngay khi ghép đúng một cặp từ) -->
+      <!-- Main Game Arena: The 3D Cards Grid (Vị trí cố định ổn định, không bị dịch chuyển khi lật/ghép) -->
+      <div class="p-6 lg:p-8 rounded-3xl bg-radial from-[#FDF8ED] via-[#F5EAD4] to-[#E8D4B4] dark:from-[#1b222d] dark:via-[#161B22] dark:to-[#11141a] border-4 border-[#C59A3F]/80 shadow-2xl relative min-h-[420px] flex items-center justify-center">
+        <!-- Card Grid Container -->
+        <div id="flipCardArenaGrid" class="grid gap-3.5 sm:gap-4 md:gap-5 w-full max-w-5xl mx-auto items-center justify-center">
+          <!-- Populated dynamically by JS -->
+        </div>
+      </div>
+
+      <!-- Live Match Knowledge Banner (Đặt bên dưới bàn chơi để khi xuất hiện KHÔNG làm xê dịch vị trí thẻ) -->
       <div id="flipCardMatchReviewBanner" class="hidden rounded-3xl p-4 lg:p-5 bg-gradient-to-r from-emerald-500/15 via-teal-500/10 to-amber-500/15 border-2 border-emerald-400/80 shadow-md relative overflow-hidden transition-all animate-fade-in text-xs">
         <div class="flex items-center justify-between flex-wrap gap-3">
           <div class="flex items-center gap-3">
@@ -2693,14 +2701,6 @@
               <span>Nghe Phát Âm Cặp Từ</span>
             </button>
           </div>
-        </div>
-      </div>
-
-      <!-- Main Game Arena: The 3D Cards Grid -->
-      <div class="p-6 lg:p-8 rounded-3xl bg-radial from-[#FDF8ED] via-[#F5EAD4] to-[#E8D4B4] dark:from-[#1b222d] dark:via-[#161B22] dark:to-[#11141a] border-4 border-[#C59A3F]/80 shadow-2xl relative min-h-[420px] flex items-center justify-center">
-        <!-- Card Grid Container -->
-        <div id="flipCardArenaGrid" class="grid gap-3.5 sm:gap-4 md:gap-5 w-full max-w-5xl mx-auto items-center justify-center">
-          <!-- Populated dynamically by JS -->
         </div>
       </div>
 

@@ -14,6 +14,7 @@ let currentFlipGameMode = 'all'; // 'all', 'synonym', 'antonym'
 let flipActiveTierFilter = 'all';
 let currentMatchPairData = null;
 let flipCardGameInitialized = false;
+let flipStatusResetTimer = null;
 
 let flipUserProgress = {
   unlockedLevel: 1,
@@ -205,7 +206,14 @@ function loadFlipCardLevel(index) {
 
   if (levelNumEl) levelNumEl.innerText = lvl.level;
   if (levelNameEl) levelNameEl.innerText = lvl.title;
-  if (descTextEl) descTextEl.innerText = lvl.description;
+  if (descTextEl) {
+    if (flipStatusResetTimer) {
+      clearTimeout(flipStatusResetTimer);
+      flipStatusResetTimer = null;
+    }
+    descTextEl.innerText = lvl.description;
+    descTextEl.setAttribute('data-original-desc', lvl.description);
+  }
 
   if (tierBadgeEl) {
     if (lvl.tier === 'easy') {
@@ -344,7 +352,13 @@ function createFlipCardElement(card, idx) {
   const cardDiv = document.createElement('div');
   cardDiv.id = `flip-card-${idx}`;
   cardDiv.className = `flip-card ${card.isFlipped ? 'is-flipped' : ''} ${card.isMatched ? 'is-matched' : ''}`;
-  cardDiv.onclick = () => handleCardClick(idx);
+  cardDiv.onclick = (e) => {
+    if (e) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+    handleCardClick(idx);
+  };
 
   const isSynonym = card.type === 'synonym';
   const badgeClass = isSynonym 
@@ -374,7 +388,7 @@ function createFlipCardElement(card, idx) {
           </span>
           <button 
             type="button"
-            onclick="event.stopPropagation(); playChineseTTS('${card.word.hanzi}');"
+            onclick="event.stopPropagation(); event.preventDefault(); playChineseTTS('${card.word.hanzi}');"
             class="p-1 rounded-full bg-amber-50 hover:bg-amber-100 text-amber-800 dark:bg-stone-800 text-[10px] cursor-pointer shadow-2xs"
             title="Nghe phát âm"
           >
@@ -437,6 +451,21 @@ function handleCardClick(cardIndex) {
   }
 }
 
+function setFlipTemporaryStatus(msg, durationMs = 2000) {
+  const descEl = document.getElementById('flipLevelDescText');
+  if (!descEl) return;
+  if (flipStatusResetTimer) clearTimeout(flipStatusResetTimer);
+  const originalText = descEl.getAttribute('data-original-desc') || descEl.innerText;
+  if (!descEl.getAttribute('data-original-desc')) {
+    descEl.setAttribute('data-original-desc', originalText);
+  }
+  descEl.innerHTML = `<span class="text-rose-600 dark:text-rose-400 font-bold animate-pulse">${msg}</span>`;
+  flipStatusResetTimer = setTimeout(() => {
+    descEl.innerText = descEl.getAttribute('data-original-desc') || originalText;
+    flipStatusResetTimer = null;
+  }, durationMs);
+}
+
 function evaluateCardPair() {
   if (flippedCardIndices.length < 2) {
     isFlipCardProcessing = false;
@@ -491,13 +520,16 @@ function evaluateCardPair() {
     }
 
   } else {
-    // MISMATCH
+    // MISMATCH (Hai thẻ không trùng khớp)
     playCardMismatchSound();
     flipCombo = 1;
     updateFlipHudStats();
 
     if (cardEl1) cardEl1.classList.add('is-wrong');
     if (cardEl2) cardEl2.classList.add('is-wrong');
+
+    // Theo yêu cầu học viên: Giữ mở thẻ đúng 2.0s để người chơi kịp nhìn chữ Hán, Pinyin và ghi nhớ vị trí trước khi úp lại
+    setFlipTemporaryStatus('⏳ Hai thẻ chưa trùng khớp! Đang giữ mở 2 giây để bạn kịp nhìn chữ Hán & ghi nhớ vị trí...', 2000);
 
     setTimeout(() => {
       if (cardEl1) {
@@ -510,7 +542,7 @@ function evaluateCardPair() {
       card2.isFlipped = false;
       flippedCardIndices = [];
       isFlipCardProcessing = false;
-    }, 850);
+    }, 2000);
   }
 }
 
@@ -823,3 +855,4 @@ window.getFlipScore = () => flipScore;
 window.getFlipCombo = () => flipCombo;
 window.getMatchedPairsCount = () => matchedPairsCount;
 window.getFlipMovesCount = () => flipMovesCount;
+window.isFlipCardProcessing = () => isFlipCardProcessing;

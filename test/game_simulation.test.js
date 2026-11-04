@@ -130,6 +130,32 @@ async function run() {
   console.log(`Card 0 isMatched: ${c1.isMatched}, Card ${c2Idx} isMatched: ${c2.isMatched}`);
   if (!c1.isMatched || !c2.isMatched) throw new Error('Flip card matching failed!');
 
+  // Test Mismatch: Find 2 cards that do NOT share a pairId
+  const remaining = activeCards.filter(c => !c.isMatched);
+  const m1 = remaining[0];
+  const m2 = remaining.find(c => c.pairId !== m1.pairId);
+  const m1Idx = activeCards.indexOf(m1);
+  const m2Idx = activeCards.indexOf(m2);
+
+  console.log(`\nTesting Mismatch Delay (2s): Card ${m1Idx} (${m1.word.hanzi}) with Card ${m2Idx} (${m2.word.hanzi})`);
+  sandbox.handleCardClick(m1Idx);
+  sandbox.handleCardClick(m2Idx);
+
+  // At 1000ms: both cards must STILL BE FLIPPED (due to 2-second hold time)
+  await new Promise(r => setTimeout(r, 1000));
+  console.log(`  After 1000ms: Card ${m1Idx} isFlipped=${m1.isFlipped}, Card ${m2Idx} isFlipped=${m2.isFlipped}, isProcessing=${sandbox.isFlipCardProcessing()}`);
+  if (!m1.isFlipped || !m2.isFlipped) {
+    throw new Error('Mismatch cards flipped back too quickly! Expected cards to remain visible for 2 seconds.');
+  }
+
+  // At 2600ms total: cards should now have flipped back
+  await new Promise(r => setTimeout(r, 1600));
+  console.log(`  After 2600ms total: Card ${m1Idx} isFlipped=${m1.isFlipped}, Card ${m2Idx} isFlipped=${m2.isFlipped}, isProcessing=${sandbox.isFlipCardProcessing()}`);
+  if (m1.isFlipped || m2.isFlipped) {
+    throw new Error('Mismatch cards did not flip back after 2 seconds!');
+  }
+  console.log('  ✓ Verified: Mismatch cards remain visible for 2 seconds before flipping back.');
+
   console.log('\n--- 2. Testing Wood Block Game Engine ---');
   await sandbox.initWoodBlockGame();
   console.log(`Wood Block Level Index: ${sandbox.getCurrentWoodLevelIndex()}`);

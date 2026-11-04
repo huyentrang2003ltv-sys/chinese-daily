@@ -721,6 +721,7 @@ html.dark #floatingContactTooltip {
   max-width: 170px;
   width: 100%;
   margin: 0 auto;
+  touch-action: manipulation;
 }
 
 .flip-card-inner {
@@ -803,7 +804,7 @@ html.dark #floatingContactTooltip {
   display: inline-flex !important;
 }
 
-/* Wrong Shake State */
+/* Wrong Shake State & 2-Second Memorization Countdown */
 .flip-card.is-wrong {
   animation: flip-card-shake 0.45s ease-in-out;
 }
@@ -812,6 +813,31 @@ html.dark #floatingContactTooltip {
   border-color: #EF4444 !important;
   background: #FEF2F2 !important;
   box-shadow: 0 0 18px rgba(239, 68, 68, 0.4) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.flip-card.is-wrong .flip-card-back::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #EF4444, #F59E0B);
+  animation: flip-card-countdown 2s linear forwards;
+  border-radius: 0 0 18px 18px;
+}
+
+.dark .flip-card.is-wrong .flip-card-back {
+  background: #2D1518 !important;
+  border-color: #F87171 !important;
+  color: #FEE2E2 !important;
+}
+
+@keyframes flip-card-countdown {
+  from { width: 100%; opacity: 1; }
+  to { width: 0%; opacity: 0.3; }
 }
 
 @keyframes flip-card-match {
