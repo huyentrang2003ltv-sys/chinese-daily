@@ -3283,25 +3283,34 @@
 </main>
 
       <!-- ==================== LEVEL SELECTOR MODAL (BẢN ĐỒ 60 LEVEL) ==================== -->
-    <div id="woodLevelSelectorModal" onclick="if(event.target === this) closeWoodLevelSelectorModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in">
-      <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-2xl max-h-[90vh] rounded-3xl border-2 border-amber-400/90 dark:border-amber-500/40 p-6 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100">
+    <div id="woodLevelSelectorModal" onclick="if(event.target === this) closeWoodLevelSelectorModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in cursor-pointer">
+      <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-2xl max-h-[90vh] rounded-3xl border-2 border-amber-400/90 dark:border-amber-500/40 p-4 sm:p-6 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100 cursor-default" onclick="event.stopPropagation()">
         
-        <!-- Close Button -->
-        <button onclick="closeWoodLevelSelectorModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-
         <!-- Header -->
-        <div class="flex items-center gap-3 border-b border-amber-200/80 dark:border-stone-800 pb-3 shrink-0">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#784212] to-amber-700 text-amber-200 border border-amber-400 flex items-center justify-center font-bold text-2xl shadow-sm">
-            🗺️
+        <div class="flex items-center justify-between gap-3 border-b border-amber-200/80 dark:border-stone-800 pb-3 shrink-0">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-[#784212] to-amber-700 text-amber-200 border border-amber-400 flex items-center justify-center font-bold text-2xl shadow-sm shrink-0">
+              🗺️
+            </div>
+            <div>
+              <h3 class="text-base sm:text-lg font-serif-luxury font-black text-amber-950 dark:text-amber-200">
+                Bản Đồ 60 Cấp Độ Xếp Khối Gỗ (关卡选择)
+              </h3>
+              <p class="text-xs text-stone-500 dark:text-stone-400">Vượt qua từng cấp độ để mở khóa thử thách tiếp theo</p>
+            </div>
           </div>
-          <div>
-            <h3 class="text-lg font-serif-luxury font-black text-amber-950 dark:text-amber-200">
-              Bản Đồ 60 Cấp Độ Xếp Khối Gỗ (关卡选择)
-            </h3>
-            <p class="text-xs text-stone-500 dark:text-stone-400">Vượt qua từng cấp độ để mở khóa thử thách tiếp theo</p>
-          </div>
+
+          <!-- Nút tròn ✕ Oriental Luxury đóng modal góc trên phải -->
+          <button 
+            type="button" 
+            onclick="closeWoodLevelSelectorModal()" 
+            class="group relative flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-[#8B1E1E] shadow-md hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer ring-2 ring-amber-300/70 shrink-0" 
+            title="Đóng bản đồ cấp độ (Phím Esc hoặc click bên ngoài)"
+          >
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-rose-950 flex items-center justify-center text-amber-200 border border-amber-300/80">
+              <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-200 group-hover:rotate-90 transition-transform duration-300"></i>
+            </div>
+          </button>
         </div>
 
         <!-- Tier Switcher Tabs -->
@@ -3320,6 +3329,23 @@
         <!-- 60 Level Grid Container -->
         <div id="woodLevelGridContainer" class="flex-1 overflow-y-auto pr-1 grid grid-cols-4 sm:grid-cols-5 gap-3 custom-scrollbar p-2">
           <!-- Populated by JS -->
+        </div>
+
+        <!-- Modal Footer Bar -->
+        <div class="border-t border-amber-200/80 dark:border-stone-800 pt-3 flex items-center justify-between gap-3 shrink-0 bg-[#FFFDF9] dark:bg-[#161B22]">
+          <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
+            <span class="inline-block w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+            <span class="hidden sm:inline">Mẹo: Nhấn <b>Esc</b> hoặc click vùng tối bên ngoài để đóng</span>
+            <span class="sm:hidden">Nhấn <b>Esc</b> để đóng</span>
+          </div>
+          <button 
+            type="button" 
+            onclick="closeWoodLevelSelectorModal()" 
+            class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-stone-200 via-stone-100 to-stone-200 dark:from-stone-800 dark:via-stone-750 dark:to-stone-800 hover:from-amber-100 hover:to-amber-200 dark:hover:from-amber-950/70 dark:hover:to-amber-900/60 text-stone-800 dark:text-stone-200 hover:text-[#8B1E1E] dark:hover:text-amber-200 font-bold text-xs transition-all flex items-center gap-2 cursor-pointer shadow-sm border border-stone-300/80 dark:border-stone-700"
+          >
+            <i data-lucide="x" class="w-4 h-4 text-[#8B1E1E] dark:text-amber-400"></i>
+            <span>Đóng Cửa Sổ (✕)</span>
+          </button>
         </div>
 
       </div>
@@ -3403,32 +3429,41 @@
     </div>
 
     <!-- ==================== FLIP CARD LEVEL SELECTOR MODAL ==================== -->
-    <div id="flipCardLevelModal" onclick="if(event.target === this) closeFlipCardLevelModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in">
-      <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-3xl max-h-[90vh] rounded-3xl border-2 border-rose-400/90 dark:border-rose-500/40 p-6 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100">
+    <div id="flipCardLevelModal" onclick="if(event.target === this) closeFlipCardLevelModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in cursor-pointer">
+      <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-3xl max-h-[90vh] rounded-3xl border-2 border-rose-400/90 dark:border-rose-500/40 p-4 sm:p-6 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100 cursor-default" onclick="event.stopPropagation()">
         
-        <!-- Close Button -->
-        <button onclick="closeFlipCardLevelModal()" class="absolute top-4 right-4 text-stone-400 hover:text-stone-600 dark:hover:text-stone-200 p-2 rounded-xl hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5"></i>
-        </button>
-
         <!-- Header -->
-        <div class="flex items-center gap-3 border-b border-rose-200/80 dark:border-stone-800 pb-3 shrink-0">
-          <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#BE123C] to-rose-700 text-amber-200 border border-rose-400 flex items-center justify-center font-bold text-2xl shadow-sm">
-            🎴
-          </div>
-          <div>
-            <div class="flex items-center gap-2">
-              <h3 class="text-lg font-serif-luxury font-black text-rose-950 dark:text-rose-300">
-                Kho Cấp Độ Lật Thẻ Hán Ngữ (汉语翻翻卡)
-              </h3>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-rose-600 to-amber-600 text-white shadow-2xs">
-                ĐỒNG & TRÁI NGHĨA
-              </span>
+        <div class="flex items-center justify-between gap-3 border-b border-rose-200/80 dark:border-stone-800 pb-3 shrink-0">
+          <div class="flex items-center gap-3">
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-[#BE123C] to-rose-700 text-amber-200 border border-rose-400 flex items-center justify-center font-bold text-2xl shadow-sm shrink-0">
+              🎴
             </div>
-            <p class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
-              Chọn một cấp độ để thử thách trí nhớ từ vựng và thu thập sao danh vọng.
-            </p>
+            <div>
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-base sm:text-lg font-serif-luxury font-black text-rose-950 dark:text-rose-300">
+                  Kho Cấp Độ Lật Thẻ Hán Ngữ (汉语翻翻卡)
+                </h3>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-rose-600 to-amber-600 text-white shadow-2xs">
+                  ĐỒNG & TRÁI NGHĨA
+                </span>
+              </div>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                Chọn một cấp độ để thử thách trí nhớ từ vựng và thu thập sao danh vọng.
+              </p>
+            </div>
           </div>
+
+          <!-- Nút tròn ✕ Oriental Luxury đóng modal góc trên phải -->
+          <button 
+            type="button" 
+            onclick="closeFlipCardLevelModal()" 
+            class="group relative flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-[#8B1E1E] shadow-md hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer ring-2 ring-amber-300/70 shrink-0" 
+            title="Đóng bảng chọn màn chơi (Phím Esc hoặc click bên ngoài)"
+          >
+            <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-rose-950 flex items-center justify-center text-amber-200 border border-amber-300/80">
+              <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-200 group-hover:rotate-90 transition-transform duration-300"></i>
+            </div>
+          </button>
         </div>
 
         <!-- Filter Pills Bar -->
@@ -3450,6 +3485,23 @@
         <!-- Levels Grid Container -->
         <div id="flipCardLevelGridContainer" class="flex-1 overflow-y-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 p-1 custom-scrollbar">
           <!-- Rendered by JS -->
+        </div>
+
+        <!-- Modal Footer Bar -->
+        <div class="border-t border-rose-200/80 dark:border-stone-800 pt-3 flex items-center justify-between gap-3 shrink-0 bg-[#FFFDF9] dark:bg-[#161B22]">
+          <div class="flex items-center gap-2 text-xs text-stone-500 dark:text-stone-400">
+            <span class="inline-block w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
+            <span class="hidden sm:inline">Mẹo: Nhấn phím <b>Esc</b> hoặc click vùng tối bên ngoài để đóng</span>
+            <span class="sm:hidden">Nhấn <b>Esc</b> để đóng</span>
+          </div>
+          <button 
+            type="button" 
+            onclick="closeFlipCardLevelModal()" 
+            class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-stone-200 via-stone-100 to-stone-200 dark:from-stone-800 dark:via-stone-750 dark:to-stone-800 hover:from-rose-100 hover:to-rose-200 dark:hover:from-rose-950/70 dark:hover:to-rose-900/60 text-stone-800 dark:text-stone-200 hover:text-rose-900 dark:hover:text-rose-200 font-bold text-xs transition-all flex items-center gap-2 cursor-pointer shadow-sm border border-stone-300/80 dark:border-stone-700"
+          >
+            <i data-lucide="x" class="w-4 h-4 text-[#8B1E1E] dark:text-rose-400"></i>
+            <span>Đóng Cửa Sổ (✕)</span>
+          </button>
         </div>
 
       </div>
@@ -3702,7 +3754,7 @@
   </div>
 
   <!-- MODAL: MỤC LỤC 50 BÀI ĐỌC HIỂU SONG NGỮ -->
-  <div id="readingTocModal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-slate-950/70 backdrop-blur-md">
+  <div id="readingTocModal" onclick="if(event.target === this) closeReadingTocModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 md:p-6 bg-slate-950/80 backdrop-blur-md cursor-pointer">
     <div class="glass-card bg-[#FFFDF9] border border-amber-300 rounded-3xl w-full max-w-4xl max-h-[90vh] flex flex-col shadow-2xl overflow-hidden animate-fade-in">
       <!-- Header -->
       <div class="p-5 md:p-6 border-b border-amber-200/80 bg-gradient-to-r from-amber-50 via-stone-50 to-orange-50 flex items-center justify-between">
@@ -3715,8 +3767,16 @@
             Danh Sách 50 Bài Đọc Hiểu Tuyển Chọn (双语阅读目录)
           </h3>
         </div>
-        <button onclick="closeReadingTocModal()" class="w-9 h-9 rounded-full bg-white hover:bg-stone-100 border border-stone-200 flex items-center justify-center text-stone-500 hover:text-stone-900 transition-all shadow-2xs cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <!-- Nút tròn ✕ Oriental Luxury đóng modal góc trên phải -->
+        <button 
+          type="button" 
+          onclick="closeReadingTocModal()" 
+          class="group relative flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-[#8B1E1E] shadow-md hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer ring-2 ring-amber-300/70 shrink-0" 
+          title="Đóng mục lục bài đọc (Phím Esc hoặc click bên ngoài)"
+        >
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-rose-950 flex items-center justify-center text-amber-200 border border-amber-300/80">
+            <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-200 group-hover:rotate-90 transition-transform duration-300"></i>
+          </div>
         </button>
       </div>
 
@@ -4493,17 +4553,17 @@
   </div>
 
   <!-- MODAL: KHO 60 ĐỀ THI HSK CHUẨN HANBAN -->
-  <div id="examSelectorModal" onclick="if(event.target === this) closeExamSelectorModal()" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 md:p-6 bg-slate-950/70 backdrop-blur-md">
-    <div class="bg-white dark:bg-stone-900 w-full max-w-4xl rounded-3xl border border-amber-300/80 shadow-2xl relative flex flex-col max-h-[90vh] overflow-hidden text-stone-800 dark:text-stone-100">
+  <div id="examSelectorModal" onclick="if(event.target === this) closeExamSelectorModal()" class="hidden fixed inset-0 z-[80] flex items-center justify-center p-3 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in cursor-pointer">
+    <div class="bg-white dark:bg-stone-900 w-full max-w-4xl rounded-3xl border-2 border-amber-300/90 shadow-2xl relative flex flex-col max-h-[90vh] overflow-hidden text-stone-800 dark:text-stone-100 cursor-default" onclick="event.stopPropagation()">
       
       <!-- Header -->
-      <div class="p-5 md:p-6 bg-gradient-to-r from-red-900/10 via-[#FAF7F2] to-amber-50/80 dark:from-stone-900 dark:via-stone-850 dark:to-stone-900 border-b border-amber-200/80 shrink-0 flex items-center justify-between">
+      <div class="p-4 sm:p-5 md:p-6 bg-gradient-to-r from-red-900/10 via-[#FAF7F2] to-amber-50/80 dark:from-stone-900 dark:via-stone-850 dark:to-stone-900 border-b border-amber-200/80 shrink-0 flex items-center justify-between gap-3">
         <div>
           <div class="flex items-center gap-2">
             <span id="examModalLevelBadge" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-[#8B1E1E] text-white">
               HSK 1
             </span>
-            <h3 class="text-lg md:text-xl font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
+            <h3 class="text-base sm:text-lg md:text-xl font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
               Kho 60 Đề Thi Thử Mô Phỏng Chuẩn Hanban
             </h3>
           </div>
@@ -4511,8 +4571,17 @@
             Chọn một đề thi bất kỳ để bắt đầu làm bài và đánh giá năng lực thực chiến.
           </p>
         </div>
-        <button onclick="closeExamSelectorModal()" class="p-2 rounded-xl text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 hover:bg-stone-100 dark:hover:bg-stone-800 transition-all cursor-pointer">
-          <i data-lucide="x" class="w-5 h-5"></i>
+
+        <!-- Nút tròn ✕ Oriental Luxury đóng modal góc trên phải -->
+        <button 
+          type="button" 
+          onclick="closeExamSelectorModal()" 
+          class="group relative flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-[#8B1E1E] shadow-md hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer ring-2 ring-amber-300/70 shrink-0" 
+          title="Đóng bảng chọn đề thi (Phím Esc hoặc click bên ngoài)"
+        >
+          <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-rose-950 flex items-center justify-center text-amber-200 border border-amber-300/80">
+            <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-200 group-hover:rotate-90 transition-transform duration-300"></i>
+          </div>
         </button>
       </div>
 
@@ -4522,14 +4591,23 @@
       </div>
 
       <!-- Footer -->
-      <div class="p-4 border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/60 flex items-center justify-between text-xs text-stone-500">
-        <span>Tổng cộng: <strong>60 Đề Thi</strong> chính thức</span>
-        <button onclick="closeExamSelectorModal()" class="px-4 py-2 rounded-xl bg-stone-200 dark:bg-stone-800 hover:bg-stone-300 font-bold text-stone-700 dark:text-stone-200 cursor-pointer">
-          Đóng
+      <div class="p-4 border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/60 flex items-center justify-between text-xs text-stone-500 shrink-0">
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-[#8B1E1E] animate-pulse"></span>
+          <span>Tổng cộng: <strong>60 Đề Thi</strong> chính thức • Nhấn <b>Esc</b> hoặc click bên ngoài để đóng</span>
+        </div>
+        <button 
+          type="button" 
+          onclick="closeExamSelectorModal()" 
+          class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-stone-200 to-stone-300 dark:from-stone-800 dark:to-stone-700 hover:from-amber-100 hover:to-amber-200 text-stone-800 dark:text-stone-200 font-bold text-xs transition-all flex items-center gap-2 cursor-pointer shadow-sm border border-stone-300/80 dark:border-stone-700"
+        >
+          <i data-lucide="x" class="w-4 h-4 text-[#8B1E1E]"></i>
+          <span>Đóng Cửa Sổ (✕)</span>
         </button>
       </div>
 
     </div>
+  </div>
 
   <!-- MODAL XÁC NHẬN HỦY / THOÁT TÁC VỤ DỞ DANG (ORIENTAL LUXURY CONFIRMATION) -->
   <div 

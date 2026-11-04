@@ -478,16 +478,25 @@ function removeExamReorderWord(qId, idx) {
 
 // ---------------- 60 EXAMS SELECTOR MODAL ----------------
 function openExamSelectorModal() {
-  const modal = document.getElementById('examSelectorModal');
-  if (!modal) return;
+  if (!document.getElementById('examSelectorModal')) return;
   renderExamSelectorGrid();
-  modal.classList.remove('hidden');
-  if (typeof refreshIcons === 'function') refreshIcons(modal);
+  if (typeof openModal === 'function') {
+    openModal('examSelectorModal');
+  } else {
+    document.getElementById('examSelectorModal').classList.remove('hidden');
+  }
 }
 
 function closeExamSelectorModal() {
-  const modal = document.getElementById('examSelectorModal');
-  if (modal) modal.classList.add('hidden');
+  if (typeof closeModal === 'function') {
+    closeModal('examSelectorModal');
+  } else {
+    const modal = document.getElementById('examSelectorModal');
+    if (modal) modal.classList.add('hidden');
+  }
+}
+if (typeof registerModal === 'function') {
+  registerModal('examSelectorModal', closeExamSelectorModal);
 }
 
 async function renderExamSelectorGrid() {
