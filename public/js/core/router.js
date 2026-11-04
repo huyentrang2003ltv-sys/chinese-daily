@@ -16,7 +16,7 @@ const TABS = {
   },
   radicals: { label: '214 Bộ thủ', icon: 'grid-3x3', data: ['radicals'], init: () => { renderRadicals(); setupRadicalSearch(); } },
   dictionary: { label: 'Từ điển & Chủ đề', icon: 'book-open', data: ['dictionary'], init: () => renderDictionary(true) },
-  flashcards: { label: 'Flashcard ôn tập', icon: 'layers', data: ['dictionary'], init: () => initFlashcards() },
+  flashcards: { label: 'Flashcard ôn tập', icon: 'layers', data: ['dictionary', 'thematicVocab', 'topics', 'multidimensionalWords'], init: () => initFlashcards() },
   confusions: { label: 'Từ dễ lẫn', icon: 'split', data: ['confusions'], init: () => renderConfusions() },
   chengyu: { label: 'Thành ngữ', icon: 'scroll', data: ['chengyu'], init: () => { renderChengyu(); setupChengyuSearch(); } },
   grammar: {
