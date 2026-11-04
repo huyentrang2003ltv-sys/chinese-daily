@@ -85,7 +85,7 @@ function serveStatic(req, res, pathname) {
   const ext = filePath ? path.extname(filePath).toLowerCase() : '';
   const file = filePath && MIME_TYPES[ext] ? loadFile(filePath, ext) : null;
   if (!file) {
-    send(res, 404, { 'Content-Type': 'text/plain; charset=utf-8' }, '404 Not Found');
+    send(res, 404, { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store, no-cache, must-revalidate' }, '404 Not Found');
     return;
   }
 

@@ -143,6 +143,7 @@ async function run() {
   console.log(`Placed blocks: ${sandbox.getWoodPlacedBlocks().size}`);
 
   console.log('\n=== ALL SIMULATION TESTS PASSED 100%! ===');
+  process.exit(0);
 }
 
 run().catch(err => {

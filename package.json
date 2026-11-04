@@ -13,7 +13,7 @@
     "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o public/assets/tailwind.css --watch",
     "start": "node server.js",
     "admin": "node scripts/admin.js",
-    "test": "node --test test/",
+    "test": "node --test test/*.test.js",
     "dev": "npm run build:css && node --watch server.js",
     "check": "node --check server.js && node --check tunnel_manager.js && node scripts/check-frontend.js",
     "tunnel": "node --env-file=.env tunnel_manager.js"
