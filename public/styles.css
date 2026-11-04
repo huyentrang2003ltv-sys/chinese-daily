@@ -965,3 +965,38 @@ section[aria-busy="true"]::after {
 .dark .nav-group-bottom.is-active { color: #FCD34D; }
 .dark .search-option.is-highlighted { background: #3A2E12; }
 .dark section[aria-busy="true"]::after { color: #FCD34D; background: rgba(13, 17, 23, 0.7); }
+
+/* ==========================================================================
+   APP MODALS & DIALOGS HIGH-PRIORITY STACKING CONTEXT (z-index: 100)
+   Ensures modals always overlay top navbar, side dock, content cards & bottom nav.
+   ========================================================================== */
+#flipCardLevelModal,
+#flipCardVictoryModal,
+#woodLevelSelectorModal,
+#woodVictoryModal,
+#readingTocModal,
+#examSelectorModal,
+#examResultModal,
+#confirmExitTaskModal,
+#lessonDetailModal,
+#writingModal,
+#wordModal,
+#authModal,
+#vipUpgradeModal,
+#notebookModal,
+#visitorStatsModal,
+#adminDashboardModal,
+#convStudioModal,
+.app-modal-layer {
+  z-index: 100 !important;
+}
+
+/* Modal Content Card Centering and Viewport Fitting */
+#flipCardLevelModal > div,
+#woodLevelSelectorModal > div,
+#examSelectorModal > div,
+#readingTocModal > div {
+  max-height: calc(100vh - 3rem) !important;
+  margin-top: auto;
+  margin-bottom: auto;
+}

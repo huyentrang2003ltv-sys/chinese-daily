@@ -114,8 +114,8 @@ function renderNav() {
     // On mobile the group row lives in the bottom bar, so the top bar would be empty.
     document.getElementById('mainNav').classList.toggle('max-md:hidden', group.tabs.length < 2);
     const closeTabAction = activeTab !== 'home'
-      ? `<button type="button" onclick="requestExitActiveTask(activeTab)" class="nav-subtab-close ml-auto flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold text-stone-500 hover:text-[#8B1E1E] hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-stone-200/90 hover:border-rose-300 dark:border-stone-700 transition-all cursor-pointer shadow-2xs" title="Đóng tác vụ hiện tại, trở về Trang Chủ">
-          <i data-lucide="x" class="w-3.5 h-3.5 text-rose-600"></i>
+      ? `<button type="button" onclick="requestExitActiveTask(activeTab)" class="nav-subtab-close ml-auto flex items-center gap-1.5 px-3 py-1 rounded-xl text-xs font-bold text-stone-600 dark:text-stone-300 hover:text-[#8B1E1E] bg-white/80 dark:bg-stone-800/80 hover:bg-rose-50 dark:hover:bg-rose-950/40 border border-amber-300/80 hover:border-rose-400 dark:border-stone-700 transition-all cursor-pointer shadow-2xs group" title="Đóng tác vụ hiện tại, trở về Trang Chủ">
+          <span class="w-4 h-4 rounded-full bg-gradient-to-br from-[#8B1E1E] to-rose-700 text-amber-200 flex items-center justify-center text-[10px] font-black group-hover:rotate-90 transition-transform">✕</span>
           <span>Đóng tác vụ</span>
         </button>`
       : '';
@@ -209,46 +209,18 @@ function switchTab(tabId, options = {}) {
   }
   document.title = `${TABS[tabId].label} · Học Tiếng Trung Mỗi Ngày`;
   renderNav();
-  attachTabCloseButtons();
 
   if (changed && !options.keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
   // The dashboard summarises other tabs, so refresh it every time it is shown.
   const alreadyRendered = renderedTabs.has(tabId);
   const job = ensureTabRendered(tabId);
   if (alreadyRendered && changed && tabId === 'home') renderHomeDashboard();
-  setTimeout(attachTabCloseButtons, 120);
   return job;
 }
 
-/** Tự động gắn nút tròn '✕' phong cách Oriental Luxury sang trọng ở góc trên mỗi tab màn hình */
-function attachTabCloseButtons() {
-  Object.keys(TABS).forEach(tabId => {
-    if (tabId === 'home') return;
-    const section = document.getElementById(`tab-${tabId}`);
-    if (!section) return;
-    const headerCard = section.querySelector('.glass-card') || section.firstElementChild;
-    if (headerCard && !headerCard.querySelector('.tab-corner-close-btn')) {
-      if (!headerCard.classList.contains('relative')) {
-        headerCard.classList.add('relative');
-      }
-      const closeBtn = document.createElement('button');
-      closeBtn.type = 'button';
-      closeBtn.className = 'tab-corner-close-btn absolute top-3.5 right-3.5 sm:top-4 sm:right-5 z-20 group flex items-center justify-center p-0.5 rounded-full bg-gradient-to-br from-amber-300 via-amber-500 to-[#8B1E1E] shadow-md hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer ring-2 ring-amber-300/60';
-      closeBtn.title = 'Đóng tác vụ, quay về Trang Chủ (Hỏi xác nhận nếu đang làm dở)';
-      closeBtn.innerHTML = `
-        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-rose-950 flex items-center justify-center text-amber-200 border border-amber-300/80">
-          <i data-lucide="x" class="w-4 h-4 text-amber-200 group-hover:rotate-90 transition-transform duration-300"></i>
-        </div>
-      `;
-      closeBtn.onclick = (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        requestExitActiveTask(tabId);
-      };
-      headerCard.appendChild(closeBtn);
-      if (typeof refreshIcons === 'function') refreshIcons(headerCard);
-    }
-  });
+/** Dọn dẹp các nút close góc tự động lỗi thời nếu còn tồn tại */
+function cleanupStrayTabCloseButtons() {
+  document.querySelectorAll('.tab-corner-close-btn').forEach(el => el.remove());
 }
 
 // ---------------- TASK EXIT CONFIRMATION ENGINE (ORIENTAL LUXURY) ----------------
@@ -407,7 +379,7 @@ function initApp() {
   initVisitorTracker();
   initFloatingAiAssistant();
   initFloatingDock();
-  attachTabCloseButtons();
+  cleanupStrayTabCloseButtons();
 }
 
 window.addEventListener('DOMContentLoaded', initApp);
