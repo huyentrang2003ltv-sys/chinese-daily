@@ -7,14 +7,14 @@ let chengyuSearchQuery = '';
 // =========================================================================
 function filterChengyuCategory(cat) {
   activeChengyuCategory = cat;
-  const categories = ['all', 'wisdom', 'diligence', 'history'];
+  const categories = ['all', 'wisdom', 'diligence', 'history', 'caution', 'daily'];
   categories.forEach(c => {
     const el = document.getElementById(`btn-chengyu-${c}`);
     if (!el) return;
     if (c === cat) {
-      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-amber-600 text-white shadow-2xs transition-all whitespace-nowrap';
+      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-xs transition-all whitespace-nowrap cursor-pointer';
     } else {
-      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-slate-700 border border-slate-200 transition-all whitespace-nowrap';
+      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-750 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer';
     }
   });
   renderChengyu();
