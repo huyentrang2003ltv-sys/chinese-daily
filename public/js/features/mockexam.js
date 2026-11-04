@@ -1,5 +1,5 @@
 // ==========================================
-// MODULE: THI THỬ HSK MÔ PHỎNG CHUẨN HANBAN
+// MODULE: THI THỬ HSK MÔ PHỎNG CHUẨN HANBAN CTI & STUDY4
 // Kho 360 Đề Thi (60 Đề / Cấp Độ HSK 1 - 6)
 // ==========================================
 
@@ -11,6 +11,7 @@ let examTimeRemaining = 0;
 let examTimerInterval = null;
 let examLevelDataCache = {};
 let userExamHistory = {};
+let activeExamPartFilter = 'all'; // 'all' | 'listening' | 'reading' | 'writing'
 
 function loadExamHistory() {
   try {
@@ -121,25 +122,35 @@ async function switchMockExamTest(testNumber) {
 function nextMockExamTest() {
   if (currentExamTestNumber < 60) {
     switchMockExamTest(currentExamTestNumber + 1);
-    showToast(`👉 Đã chuyển sang Đề Số ${currentExamTestNumber < 10 ? '0' + currentExamTestNumber : currentExamTestNumber}!`, 'info');
+    if (typeof showToast === 'function') {
+      showToast(`👉 Đã chuyển sang Đề Số ${currentExamTestNumber < 10 ? '0' + currentExamTestNumber : currentExamTestNumber}!`, 'info');
+    }
   } else {
-    showToast('🏆 Bạn đang ở Đề số 60 - đề cuối cùng của cấp HSK này!', 'info');
+    if (typeof showToast === 'function') {
+      showToast('🏆 Bạn đang ở Đề số 60 - đề cuối cùng của cấp HSK này!', 'info');
+    }
   }
 }
 
 function prevMockExamTest() {
   if (currentExamTestNumber > 1) {
     switchMockExamTest(currentExamTestNumber - 1);
-    showToast(`👈 Đã quay lại Đề Số ${currentExamTestNumber < 10 ? '0' + currentExamTestNumber : currentExamTestNumber}!`, 'info');
+    if (typeof showToast === 'function') {
+      showToast(`👈 Đã quay lại Đề Số ${currentExamTestNumber < 10 ? '0' + currentExamTestNumber : currentExamTestNumber}!`, 'info');
+    }
   } else {
-    showToast('Bạn đang ở Đề số 01!', 'info');
+    if (typeof showToast === 'function') {
+      showToast('Bạn đang ở Đề số 01!', 'info');
+    }
   }
 }
 
 function randomMockExamTest() {
   const rand = Math.floor(Math.random() * 60) + 1;
   switchMockExamTest(rand);
-  showToast(`🎲 Đã chọn ngẫu nhiên Đề số ${rand < 10 ? '0' + rand : rand} cho bạn!`, 'success');
+  if (typeof showToast === 'function') {
+    showToast(`🎲 Đã chọn ngẫu nhiên Đề số ${rand < 10 ? '0' + rand : rand} cho bạn!`, 'success');
+  }
 }
 
 async function loadAndRenderActiveExam() {
@@ -159,20 +170,23 @@ async function loadAndRenderActiveExam() {
   const descDisplay = document.getElementById('examDescDisplay');
 
   if (levelBadge && activeExam) {
-    levelBadge.innerText = `HSK ${activeExam.level} • Chuẩn Hanban CTI`;
+    levelBadge.innerText = `HSK ${activeExam.level} • Chuẩn Hanban CTI (${activeExam.questions ? activeExam.questions.length : 40} Câu)`;
   }
   if (scoreInfo && activeExam) {
-    scoreInfo.innerText = `Thang điểm: ${activeExam.totalScore} điểm | Điểm đỗ: ${activeExam.passScore} điểm | ${activeExam.durationMinutes} phút`;
+    scoreInfo.innerText = `Thang điểm: ${activeExam.totalScore} điểm | Điểm đỗ: ${activeExam.passScore} điểm | Thời gian: ${activeExam.durationMinutes} phút`;
   }
   if (titleDisplay && activeExam) {
     titleDisplay.innerText = activeExam.title;
   }
   if (descDisplay && activeExam) {
-    descDisplay.innerText = activeExam.description;
+    descDisplay.innerText = activeExam.description || 'Đề thi mô phỏng định dạng chuẩn CTI Hanban & STUDY4: Gồm 2 phần Nghe hiểu và Đọc hiểu trọn vẹn.';
   }
 
   examUserAnswers = {};
+  activeExamPartFilter = 'all';
+  updatePartFilterButtons();
   renderMockExam();
+  renderQuestionPalette();
   updateExamProgressStats();
   startExamTimer(activeExam ? activeExam.durationMinutes : 35);
 }
@@ -187,7 +201,9 @@ function startExamTimer(minutes) {
     updateTimerDisplay();
     if (examTimeRemaining <= 0) {
       clearInterval(examTimerInterval);
-      showToast('⏰ Hết giờ làm bài! Hệ thống tự động thu bài và chấm điểm.', 'warning');
+      if (typeof showToast === 'function') {
+        showToast('⏰ Hết giờ làm bài! Hệ thống tự động thu bài và chấm điểm.', 'warning');
+      }
       submitMockExam();
     }
   }, 1000);
@@ -227,30 +243,132 @@ function updateExamProgressStats() {
   if (bar) bar.style.width = `${pct}%`;
 }
 
+// ---------------- STUDY4 STYLE PART FILTER & PALETTE ----------------
+function filterExamQuestionsByPart(part) {
+  activeExamPartFilter = part;
+  updatePartFilterButtons();
+  renderMockExam();
+  renderQuestionPalette();
+}
+
+function updatePartFilterButtons() {
+  ['all', 'listening', 'reading', 'writing'].forEach(p => {
+    const btn = document.getElementById(`examPartBtn-${p}`);
+    if (!btn) return;
+    if (p === activeExamPartFilter) {
+      btn.className = 'px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer font-bold';
+    } else {
+      btn.className = 'px-3.5 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer font-bold';
+    }
+  });
+}
+
+function renderQuestionPalette() {
+  const palette = document.getElementById('examQuestionPalette');
+  if (!palette || !activeExam) return;
+
+  const questions = activeExam.questions || [];
+  palette.innerHTML = questions.map((q, idx) => {
+    const ans = examUserAnswers[q.id];
+    const isAnswered = ans && (Array.isArray(ans) ? ans.length > 0 : String(ans).trim() !== '');
+    
+    // Check if hidden by filter
+    let isHiddenByFilter = false;
+    const secLower = (q.section || '').toLowerCase();
+    const isListening = q.skill === 'listening' || secLower.includes('nghe') || secLower.includes('听力');
+    const isWriting = q.skill === 'writing' || secLower.includes('viết') || secLower.includes('书写');
+    const isReading = !isListening && !isWriting;
+
+    if (activeExamPartFilter === 'listening' && !isListening) isHiddenByFilter = true;
+    if (activeExamPartFilter === 'reading' && !isReading) isHiddenByFilter = true;
+    if (activeExamPartFilter === 'writing' && !isWriting) isHiddenByFilter = true;
+
+    return `
+      <button 
+        type="button" 
+        onclick="scrollToExamQuestion(${idx})" 
+        class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg text-xs font-bold transition-all flex items-center justify-center cursor-pointer ${
+          isAnswered
+            ? 'bg-emerald-600 text-white font-black shadow-xs ring-1 ring-emerald-400 hover:bg-emerald-700'
+            : 'bg-white dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700 hover:border-amber-400'
+        } ${isHiddenByFilter ? 'opacity-40' : ''}"
+        title="Câu ${idx + 1}: ${isAnswered ? 'Đã làm' : 'Chưa làm'}"
+      >
+        ${idx + 1}
+      </button>
+    `;
+  }).join('');
+}
+
+function scrollToExamQuestion(idx) {
+  // If current question is filtered out, switch to 'all'
+  if (activeExamPartFilter !== 'all') {
+    filterExamQuestionsByPart('all');
+  }
+
+  setTimeout(() => {
+    const qEl = document.getElementById(`exam-q-box-${idx}`);
+    if (qEl) {
+      qEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      qEl.classList.add('ring-4', 'ring-[#8B1E1E]/40', 'transition-all');
+      setTimeout(() => qEl.classList.remove('ring-4', 'ring-[#8B1E1E]/40'), 1600);
+    }
+  }, 60);
+}
+
+function playHanbanRepeatAudio(text) {
+  if (typeof playChineseTTS !== 'function') return;
+  if (typeof showToast === 'function') {
+    showToast('🎧 Đang phát âm thanh lần 1 (Chuẩn phòng thi Hanban)...', 'info');
+  }
+  playChineseTTS(text, 'female');
+  setTimeout(() => {
+    if (typeof showToast === 'function') {
+      showToast('🎧 Đang phát lại lần 2 (Chuẩn phòng thi Hanban)...', 'info');
+    }
+    playChineseTTS(text, 'male');
+  }, 2300);
+}
+
+// ---------------- RENDER EXAM QUESTIONS ----------------
 function renderMockExam() {
   const container = document.getElementById('mockExamQuestionsContainer');
   if (!container || !activeExam) return;
 
   const questions = activeExam.questions || [];
+
   container.innerHTML = questions.map((q, idx) => {
+    const secLower = (q.section || '').toLowerCase();
+    const isListening = q.skill === 'listening' || secLower.includes('nghe') || secLower.includes('听力');
+    const isWriting = q.skill === 'writing' || secLower.includes('viết') || secLower.includes('书写');
+    const isReading = !isListening && !isWriting;
+
+    // Filter check
+    if (activeExamPartFilter === 'listening' && !isListening) return '';
+    if (activeExamPartFilter === 'reading' && !isReading) return '';
+    if (activeExamPartFilter === 'writing' && !isWriting) return '';
+
     const userAns = examUserAnswers[q.id];
 
     let contentHtml = '';
     // Listening audio section
     if (q.audioText) {
       contentHtml += `
-        <div class="flex items-center gap-2 mb-3 p-3 rounded-2xl bg-amber-50/80 dark:bg-stone-800/80 border border-amber-200/80 dark:border-stone-700">
+        <div class="flex items-center gap-2 mb-3 p-3 rounded-2xl bg-amber-50/80 dark:bg-stone-800/80 border border-amber-200/80 dark:border-stone-700 flex-wrap">
           <div class="inline-flex items-center gap-1.5 bg-white dark:bg-stone-900 p-1 rounded-xl border border-amber-300 dark:border-stone-700 shadow-2xs">
             <button type="button" onclick="event.preventDefault(); playChineseTTS('${escapeJs(q.audioText)}', 'female')" class="px-3 py-1.5 rounded-lg bg-rose-50 hover:bg-rose-100 dark:bg-rose-950/50 text-rose-800 dark:text-rose-300 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer" title="Nghe câu hỏi giọng Nữ bản ngữ">
               <i data-lucide="volume-2" class="w-3.5 h-3.5 text-rose-600"></i>
-              <span>👩 Nghe Nữ</span>
+              <span>👩 Nữ Bắc Kinh</span>
             </button>
             <button type="button" onclick="event.preventDefault(); playChineseTTS('${escapeJs(q.audioText)}', 'male')" class="px-3 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 dark:bg-amber-950/50 text-amber-900 dark:text-amber-300 font-bold text-xs flex items-center gap-1 transition-all cursor-pointer" title="Nghe câu hỏi giọng Nam bản ngữ">
               <i data-lucide="volume-2" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-              <span>👨 Nghe Nam</span>
+              <span>👨 Nam Bắc Kinh</span>
             </button>
           </div>
-          <span class="text-xs text-amber-800 dark:text-amber-300 font-medium">Bấm để nghe audio bản xứ</span>
+          <button type="button" onclick="event.preventDefault(); playHanbanRepeatAudio('${escapeJs(q.audioText)}')" class="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 font-bold text-xs flex items-center gap-1 border border-emerald-300/80 transition-all cursor-pointer shadow-2xs" title="Phát 2 lần chuẩn quy chuẩn thi Hanban">
+            <i data-lucide="repeat" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>🔁 Phát 2 Lần (Chuẩn Hanban)</span>
+          </button>
         </div>
       `;
     }
@@ -258,7 +376,7 @@ function renderMockExam() {
     if (q.statement) {
       contentHtml += `
         <div class="text-sm font-semibold text-stone-800 dark:text-stone-200 mb-3 bg-amber-50/50 dark:bg-stone-800/50 p-3 rounded-xl border border-amber-200/60 dark:border-stone-700">
-          <span class="text-xs font-bold text-amber-900 dark:text-amber-400 block mb-1">📌 Nhận định cần phán đoán:</span>
+          <span class="text-xs font-bold text-amber-900 dark:text-amber-400 block mb-1">📌 Nội dung câu hỏi / Nhận định:</span>
           "${q.statement}"
         </div>
       `;
@@ -298,10 +416,10 @@ function renderMockExam() {
               onclick="selectExamAnswer('${escapeJs(q.id)}', '${escapeJs(opt.key)}')"
               class="w-full text-left p-3.5 rounded-xl border transition-all flex items-center gap-3 cursor-pointer ${
                 userAns === opt.key
-                  ? 'bg-amber-100/80 dark:bg-amber-950/60 border-amber-400 text-amber-950 dark:text-amber-200 font-bold shadow-2xs ring-1 ring-amber-400'
+                  ? 'bg-amber-100/90 dark:bg-amber-950/70 border-amber-500 text-amber-950 dark:text-amber-200 font-bold shadow-2xs ring-2 ring-amber-400'
                   : 'bg-white dark:bg-stone-800 hover:bg-stone-50 dark:hover:bg-stone-750 border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300'
               }">
-              <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
+              <span class="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${
                 userAns === opt.key ? 'bg-[#8B1E1E] text-white' : 'bg-stone-100 dark:bg-stone-700 text-stone-600 dark:text-stone-300'
               }">
                 ${opt.key}
@@ -314,21 +432,22 @@ function renderMockExam() {
     }
 
     return `
-      <div class="glass-card rounded-2xl p-6 border border-stone-200 dark:border-stone-750 bg-white dark:bg-stone-850 shadow-xs space-y-3.5">
-        <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-2.5">
+      <div id="exam-q-box-${idx}" class="glass-card rounded-2xl p-6 border border-stone-200 dark:border-stone-750 bg-white dark:bg-stone-850 shadow-xs space-y-3.5 transition-all">
+        <div class="flex items-center justify-between border-b border-stone-100 dark:border-stone-800 pb-2.5 flex-wrap gap-2">
           <span class="text-xs font-black text-[#8B1E1E] dark:text-amber-400 flex items-center gap-1.5">
-            <span class="w-2 h-2 rounded-full bg-[#8B1E1E] dark:bg-amber-400 inline-block"></span>
+            <span class="w-2.5 h-2.5 rounded-full ${isListening ? 'bg-sky-500' : isReading ? 'bg-amber-500' : 'bg-rose-500'} inline-block"></span>
             ${q.section}
           </span>
-          <span class="text-xs font-bold text-stone-400">Câu ${idx + 1} / ${questions.length}</span>
+          <span class="text-xs font-bold text-stone-400 font-mono">Câu ${idx + 1} / ${questions.length}</span>
         </div>
-        <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 leading-snug">${q.prompt}</h4>
+        <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 leading-snug whitespace-pre-line">${q.prompt}</h4>
         ${contentHtml}
       </div>
     `;
   }).join('');
 
   if (typeof refreshIcons === 'function') refreshIcons(container);
+  renderQuestionPalette();
 }
 
 function escapeJs(str) {
@@ -398,25 +517,24 @@ async function renderExamSelectorGrid() {
         ? 'bg-amber-100/90 dark:bg-amber-950/70 border-[#8B1E1E] dark:border-amber-500 shadow-md ring-2 ring-[#8B1E1E]/30'
         : 'bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 hover:border-amber-400 hover:shadow-xs'
     }`;
-
     card.onclick = () => {
-      closeExamSelectorModal();
       switchMockExamTest(ex.testNumber);
+      closeExamSelectorModal();
     };
 
-    let statusBadge = '<span class="px-1.5 py-0.5 rounded text-[9px] font-bold bg-stone-100 dark:bg-stone-700 text-stone-500">Chưa thi</span>';
+    let statusBadge = '<span class="text-[9px] px-1.5 py-0.5 rounded-md bg-stone-100 dark:bg-stone-700 text-stone-500 font-bold">Chưa thi</span>';
     if (record) {
       if (record.isPassed) {
-        statusBadge = `<span class="px-1.5 py-0.5 rounded text-[9px] font-black bg-emerald-100 text-emerald-800 border border-emerald-300">Đỗ: ${record.score}/${ex.totalScore}</span>`;
+        statusBadge = `<span class="text-[9px] px-1.5 py-0.5 rounded-md bg-emerald-100 text-emerald-800 font-black">Đỗ (${record.score}đ)</span>`;
       } else {
-        statusBadge = `<span class="px-1.5 py-0.5 rounded text-[9px] font-black bg-rose-100 text-rose-800 border border-rose-300">Trượt: ${record.score}/${ex.totalScore}</span>`;
+        statusBadge = `<span class="text-[9px] px-1.5 py-0.5 rounded-md bg-rose-100 text-rose-800 font-black">Trượt (${record.score}đ)</span>`;
       }
     }
 
     const pad = ex.testNumber < 10 ? '0' + ex.testNumber : ex.testNumber;
     card.innerHTML = `
-      <div class="flex items-center justify-between w-full mb-1.5">
-        <span class="text-xs font-black text-[#8B1E1E] dark:text-amber-400">Đề ${pad}</span>
+      <div class="flex items-center justify-between w-full mb-1">
+        <span class="text-xs font-black text-amber-900 dark:text-amber-300 font-mono">Đề #${pad}</span>
         ${statusBadge}
       </div>
       <p class="text-[11px] font-bold text-stone-800 dark:text-stone-200 line-clamp-1">
@@ -451,8 +569,8 @@ function submitMockExam() {
     let correctAnsText = '';
 
     const secLower = (q.section || '').toLowerCase();
-    const isListening = secLower.includes('nghe') || secLower.includes('听力');
-    const isWriting = secLower.includes('viết') || secLower.includes('书写');
+    const isListening = q.skill === 'listening' || secLower.includes('nghe') || secLower.includes('听力');
+    const isWriting = q.skill === 'writing' || secLower.includes('viết') || secLower.includes('书写');
     const isReading = !isListening && !isWriting;
 
     if (isListening) listeningTotal++;
@@ -493,8 +611,26 @@ function submitMockExam() {
 
   const totalScore = activeExam.totalScore || (activeExam.level <= 2 ? 200 : 300);
   const passScore = activeExam.passScore || (activeExam.level <= 2 ? 120 : 180);
-  const scorePerQuestion = totalScore / Math.max(1, questions.length);
-  const totalScoreAchieved = Math.round(correctCount * scorePerQuestion);
+
+  // Hanban standard score calculation
+  let listeningScore = 0;
+  let readingScore = 0;
+  let writingScore = 0;
+  let totalScoreAchieved = 0;
+
+  if (activeExam.level <= 2) {
+    // 200 max points (100 listening + 100 reading)
+    listeningScore = Math.round((listeningCorrect / Math.max(1, listeningTotal)) * 100);
+    readingScore = Math.round((readingCorrect / Math.max(1, readingTotal)) * 100);
+    totalScoreAchieved = listeningScore + readingScore;
+  } else {
+    // 300 max points (100 listening + 100 reading + 100 writing)
+    listeningScore = Math.round((listeningCorrect / Math.max(1, listeningTotal)) * 100);
+    readingScore = Math.round((readingCorrect / Math.max(1, readingTotal)) * 100);
+    writingScore = Math.round((writingCorrect / Math.max(1, writingTotal)) * 100);
+    totalScoreAchieved = listeningScore + readingScore + writingScore;
+  }
+
   const isPassed = totalScoreAchieved >= passScore;
 
   // Save history
@@ -524,7 +660,7 @@ function submitMockExam() {
 
   if (isPassed) {
     if (emojiEl) emojiEl.innerText = '🎉';
-    if (titleEl) titleEl.innerText = 'Chúc Mừng Bạn Đã Đỗ Kỳ Thi!';
+    if (titleEl) titleEl.innerText = 'Chúc Mừng Bạn Đã Đỗ Kỳ Thi HSK!';
     if (subtitleEl) subtitleEl.innerText = `Đạt chuẩn điểm đỗ Hanban CTI với ${correctCount}/${questions.length} câu đúng (+60 EXP ⭐)`;
     if (badgeEl) {
       badgeEl.className = 'mt-2 px-4 py-1 rounded-full text-xs font-black bg-emerald-100 text-emerald-800 border border-emerald-300';
@@ -533,7 +669,7 @@ function submitMockExam() {
   } else {
     if (emojiEl) emojiEl.innerText = '💪';
     if (titleEl) titleEl.innerText = 'Chưa Đạt Điểm Chuẩn Đỗ!';
-    if (subtitleEl) subtitleEl.innerText = `Bạn đạt ${correctCount}/${questions.length} câu đúng. Cần đạt tối thiểu ${passScore} điểm để vượt qua (+25 EXP ⭐)`;
+    if (subtitleEl) subtitleEl.innerText = `Bạn đạt ${correctCount}/${questions.length} câu đúng (${totalScoreAchieved}/${totalScore}đ). Cần tối thiểu ${passScore}đ để đạt (+25 EXP ⭐)`;
     if (badgeEl) {
       badgeEl.className = 'mt-2 px-4 py-1 rounded-full text-xs font-black bg-rose-100 text-rose-800 border border-rose-300';
       badgeEl.innerText = `CHƯA ĐẠT (Điểm liệt: ${passScore})`;
@@ -543,19 +679,22 @@ function submitMockExam() {
   // Detailed section stats + question breakdown
   if (breakdownContainer) {
     const secHtml = `
-      <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5 p-3 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 text-center mb-4">
+      <div class="grid grid-cols-2 ${writingTotal > 0 ? 'sm:grid-cols-3' : ''} gap-2.5 p-3 rounded-2xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200 dark:border-stone-700 text-center mb-4">
         <div>
           <div class="text-[10px] text-stone-400 font-bold uppercase">🎧 Nghe Hiểu (听力)</div>
-          <div class="text-base font-black text-stone-800 dark:text-stone-200">${listeningCorrect} / ${listeningTotal}</div>
+          <div class="text-base font-black text-sky-700 dark:text-sky-300">${listeningCorrect} / ${listeningTotal}</div>
+          <div class="text-[11px] font-bold text-stone-500">${listeningScore} / 100 điểm</div>
         </div>
         <div>
           <div class="text-[10px] text-stone-400 font-bold uppercase">📖 Đọc Hiểu (阅读)</div>
-          <div class="text-base font-black text-stone-800 dark:text-stone-200">${readingCorrect} / ${readingTotal}</div>
+          <div class="text-base font-black text-amber-700 dark:text-amber-300">${readingCorrect} / ${readingTotal}</div>
+          <div class="text-[11px] font-bold text-stone-500">${readingScore} / 100 điểm</div>
         </div>
         ${writingTotal > 0 ? `
         <div>
           <div class="text-[10px] text-stone-400 font-bold uppercase">✍️ Viết (书写)</div>
-          <div class="text-base font-black text-stone-800 dark:text-stone-200">${writingCorrect} / ${writingTotal}</div>
+          <div class="text-base font-black text-rose-700 dark:text-rose-300">${writingCorrect} / ${writingTotal}</div>
+          <div class="text-[11px] font-bold text-stone-500">${writingScore} / 100 điểm</div>
         </div>
         ` : ''}
       </div>
@@ -591,24 +730,4 @@ function closeExamResultModal() {
     const modal = document.getElementById('examResultModal');
     if (modal) modal.classList.add('hidden');
   }
-}
-
-// Window Exports
-window.initMockExamModule = initMockExamModule;
-window.switchMockExamLevel = switchMockExamLevel;
-window.switchMockExamTest = switchMockExamTest;
-window.nextMockExamTest = nextMockExamTest;
-window.prevMockExamTest = prevMockExamTest;
-window.randomMockExamTest = randomMockExamTest;
-window.openExamSelectorModal = openExamSelectorModal;
-window.closeExamSelectorModal = closeExamSelectorModal;
-window.selectExamAnswer = selectExamAnswer;
-window.addExamReorderWord = addExamReorderWord;
-window.removeExamReorderWord = removeExamReorderWord;
-window.submitMockExam = submitMockExam;
-window.closeExamResultModal = closeExamResultModal;
-
-if (typeof registerModal === 'function') {
-  registerModal('examResultModal', closeExamResultModal);
-  registerModal('examSelectorModal', closeExamSelectorModal);
 }
