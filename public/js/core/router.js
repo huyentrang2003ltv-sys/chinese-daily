@@ -11,7 +11,7 @@ const TABS = {
     init: () => { renderJiaocheng(); setupJiaochengSearch(); }
   },
   etymology: {
-    label: 'Chiết tự & Gốc từ', icon: 'sparkles', data: ['etymology', 'dictionary', 'radicals'],
+    label: 'Chiết tự & Gốc từ', icon: 'sparkles', data: ['etymology', 'dictionary', 'radicals', 'hanziDecompositions'],
     init: () => { renderCharacterPills(); renderEtymologyDetail(activeEtymologyIndex || 0); }
   },
   radicals: { label: '214 Bộ thủ', icon: 'grid-3x3', data: ['radicals'], init: () => { renderRadicals(); setupRadicalSearch(); } },
