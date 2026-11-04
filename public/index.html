@@ -1547,27 +1547,63 @@
           </div>
         </div>
 
-        <!-- Level & Lesson Selector Toolbar -->
+        <!-- Difficulty Mode & Level Selector Toolbar -->
         <div class="pt-6 border-t border-amber-200/60 mt-6 space-y-4">
-          <!-- Level Pills -->
+          
+          <!-- HÀNG 1: CHỌN MỨC ĐỘ KHÓ DẦN (CÂU ĐƠN -> CÂU PHỨC -> ĐOẠN ĐỜI THƯỜNG -> VIẾT LUẬN) -->
           <div class="flex items-center gap-2 overflow-x-auto pb-1">
-            <span class="text-xs text-stone-500 font-bold whitespace-nowrap">Cấp độ:</span>
-            <button onclick="filterTransLevel(1)" id="btn-trans-lvl-1" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-xs transition-all whitespace-nowrap">
-              HSK 1
-            </button>
-            <button onclick="filterTransLevel(2)" id="btn-trans-lvl-2" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              HSK 2
-            </button>
-            <button onclick="filterTransLevel(3)" id="btn-trans-lvl-3" class="px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap">
-              HSK 3
-            </button>
+            <span class="text-xs text-stone-500 font-bold whitespace-nowrap flex items-center gap-1">
+              <i data-lucide="gauge" class="w-3.5 h-3.5 text-[#8B1E1E]"></i> Độ khó:
+            </span>
+            <div class="flex items-center gap-1.5 p-1 rounded-2xl bg-amber-100/60 border border-amber-200 text-xs font-bold">
+              <button onclick="filterTransDifficulty('all')" id="btn-trans-diff-all" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-xs transition-all whitespace-nowrap cursor-pointer">
+                🌟 Tất Cả
+              </button>
+              <button onclick="filterTransDifficulty('simple')" id="btn-trans-diff-simple" class="px-3 py-1.5 rounded-xl text-stone-700 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer">
+                🟢 Câu Đơn
+              </button>
+              <button onclick="filterTransDifficulty('complex')" id="btn-trans-diff-complex" class="px-3 py-1.5 rounded-xl text-stone-700 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer">
+                🟡 Câu Phức
+              </button>
+              <button onclick="filterTransDifficulty('paragraph_daily')" id="btn-trans-diff-paragraph_daily" class="px-3 py-1.5 rounded-xl text-stone-700 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer">
+                🟠 Đoạn Văn Đời Thường
+              </button>
+              <button onclick="filterTransDifficulty('paragraph_essay')" id="btn-trans-diff-paragraph_essay" class="px-3 py-1.5 rounded-xl text-stone-700 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer">
+                🔴 Đoạn Văn Viết Luận (HSK 5-6)
+              </button>
+            </div>
           </div>
 
-          <!-- Lessons Horizontal Scrollbar (Highlighting Lesson 4 as in hihsk.com/hsk30/luyen-dich/1/4) -->
+          <!-- HÀNG 2: CHỌN CẤP ĐỘ HSK 1 - 6 ĐẦY ĐỦ -->
+          <div class="flex items-center gap-2 overflow-x-auto pb-1">
+            <span class="text-xs text-stone-500 font-bold whitespace-nowrap">Cấp độ:</span>
+            
+              <button onclick="filterTransLevel(1)" id="btn-trans-lvl-1" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-xs transition-all whitespace-nowrap cursor-pointer">
+                HSK 1
+              </button>
+              <button onclick="filterTransLevel(2)" id="btn-trans-lvl-2" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+                HSK 2
+              </button>
+              <button onclick="filterTransLevel(3)" id="btn-trans-lvl-3" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+                HSK 3
+              </button>
+              <button onclick="filterTransLevel(4)" id="btn-trans-lvl-4" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+                HSK 4
+              </button>
+              <button onclick="filterTransLevel(5)" id="btn-trans-lvl-5" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+                HSK 5
+              </button>
+              <button onclick="filterTransLevel(6)" id="btn-trans-lvl-6" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+                HSK 6
+              </button>
+          </div>
+
+          <!-- HÀNG 3: CHỌN BÀI HỌC / CHỦ ĐỀ -->
           <div class="flex items-center gap-2 overflow-x-auto pb-1">
             <span class="text-xs text-stone-500 font-bold whitespace-nowrap">Chọn bài:</span>
             <div id="transLessonListContainer" class="flex items-center gap-2"></div>
           </div>
+
         </div>
       </div>
 
