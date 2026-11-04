@@ -714,6 +714,7 @@ html.dark #floatingContactTooltip {
 
 .flip-card {
   perspective: 1000px;
+  -webkit-perspective: 1000px;
   user-select: none;
   cursor: pointer;
   aspect-ratio: 3 / 4;
@@ -722,6 +723,7 @@ html.dark #floatingContactTooltip {
   width: 100%;
   margin: 0 auto;
   touch-action: manipulation;
+  position: relative;
 }
 
 .flip-card-inner {
@@ -731,20 +733,28 @@ html.dark #floatingContactTooltip {
   text-align: center;
   transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
   transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
   border-radius: 20px;
 }
 
 .flip-card.is-flipped .flip-card-inner,
 .flip-card.is-matched .flip-card-inner {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
 }
 
 .flip-card-face {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
@@ -753,16 +763,20 @@ html.dark #floatingContactTooltip {
   padding: 0.6rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
   transition: all 0.25s ease;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* Mặt Úp (Facedown - Card Front) - Oriental Imperial Red & Gold Lacquer */
 .flip-card-front {
+  transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
   background: radial-gradient(circle at 50% 30%, #991B1B 0%, #7F1D1D 50%, #450A0A 100%);
   border: 3px solid #F59E0B;
   box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.35), 0 8px 22px rgba(127, 29, 29, 0.35);
   color: #FEF3C7;
-  position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
 .flip-card-front::before {
@@ -774,8 +788,9 @@ html.dark #floatingContactTooltip {
   pointer-events: none;
 }
 
-.flip-card-front:hover {
+.flip-card:not(.is-flipped):not(.is-matched):hover .flip-card-front {
   transform: translateY(-4px) scale(1.02);
+  -webkit-transform: translateY(-4px) scale(1.02);
   border-color: #FBBF24;
   box-shadow: 0 14px 28px rgba(127, 29, 29, 0.45), 0 0 16px rgba(245, 158, 11, 0.4);
 }
@@ -783,12 +798,14 @@ html.dark #floatingContactTooltip {
 /* Mặt Ngửa (Revealed - Card Back) - Ivory Pearl & Silk Inlay */
 .flip-card-back {
   transform: rotateY(180deg);
+  -webkit-transform: rotateY(180deg);
   background: linear-gradient(135deg, #FFFFFF 0%, #FFFDF9 50%, #FEF9EE 100%);
   border: 3px solid #D4A373;
   box-shadow: inset 0 1px 3px rgba(255, 255, 255, 0.9), 0 8px 20px rgba(180, 100, 30, 0.14);
   color: #1C1917;
-  position: relative;
   justify-content: space-between;
+  overflow: hidden;
+  z-index: 1;
 }
 
 /* Matched State */
@@ -813,7 +830,6 @@ html.dark #floatingContactTooltip {
   border-color: #EF4444 !important;
   background: #FEF2F2 !important;
   box-shadow: 0 0 18px rgba(239, 68, 68, 0.4) !important;
-  position: relative;
   overflow: hidden;
 }
 
@@ -841,9 +857,9 @@ html.dark #floatingContactTooltip {
 }
 
 @keyframes flip-card-match {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.09); }
-  100% { transform: scale(1); }
+  0% { transform: rotateY(180deg) scale(1); }
+  50% { transform: rotateY(180deg) scale(1.08); }
+  100% { transform: rotateY(180deg) scale(1); }
 }
 
 @keyframes flip-card-shake {
