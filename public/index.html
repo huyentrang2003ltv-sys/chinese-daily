@@ -2155,100 +2155,184 @@
 
       <!-- ==================== MỤC 2: TỪ VỰNG THEO CHỦ ĐỀ ==================== -->
       <div id="dictSectionTopic" class="hidden space-y-6">
-        <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-emerald-50/80 via-[#FAF7F2] to-amber-50/60 border border-emerald-300/40">
+        <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-amber-50/90 via-[#FAF7F2] to-amber-100/50 border border-amber-300/60 dark:border-stone-700 shadow-sm">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
             <div>
-              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/70 text-emerald-950 border border-emerald-200 text-xs font-bold mb-3">
-                <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-emerald-800"></i>
-                <span>125 Chủ Đề Thực Tế & Chuyên Ngành Theo Tiếng Trung Giỏi (14,605+ Từ)</span>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-amber-100 text-xs font-bold mb-3 shadow-xs">
+                <i data-lucide="layout-grid" class="w-3.5 h-3.5 text-amber-200"></i>
+                <span>125 Chủ Đề Thực Tế & Chuyên Ngành (14,605+ Từ)</span>
               </div>
-              <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
+              <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 dark:text-stone-100 tracking-tight mb-2">
                 Từ Vựng Tiếng Trung Theo Chủ Đề (主题分类词汇)
               </h2>
-              <p class="text-sm text-stone-600 max-w-2xl">
-                Đồng bộ chuyên sâu từ <strong>Tiếng Trung Giỏi (tiengtrunggioi.vn)</strong>: 125 chủ đề thực tế từ Đời sống, Gia đình, Trường học, Y tế, Kế toán, Thương mại, Khách sạn đến Kỹ thuật, Cơ khí, Hàn xì, May mặc... Đầy đủ phát âm chuẩn 2 giọng Bắc Kinh và tập viết nét.
+              <p class="text-sm text-stone-600 dark:text-stone-400 max-w-2xl leading-relaxed">
+                Đồng bộ chuyên sâu 125 chủ đề thực tế từ Đời sống, Gia đình, Trường học, Y tế, Kế toán, Thương mại, Khách sạn đến Kỹ thuật, Cơ khí, Hàn xì, May mặc... Đầy đủ phát âm chuẩn 2 giọng Bắc Kinh và tập viết nét.
               </p>
             </div>
 
             <div class="flex items-center gap-3">
-              <div class="px-4 py-2 rounded-xl bg-emerald-50/80 border border-emerald-200 text-right shadow-xs">
-                <p class="text-[11px] text-stone-500 font-medium">Đang hiển thị:</p>
-                <p class="text-sm font-bold text-emerald-950">
-                  <span id="topicFilteredCount">0</span> / <span id="topicTotalCountLabel">0</span> từ
+              <div class="px-4 py-2 rounded-xl bg-amber-50/90 dark:bg-stone-800 border border-amber-200/80 dark:border-stone-700 text-right shadow-2xs">
+                <p class="text-[11px] text-stone-500 dark:text-stone-400 font-medium">Đang hiển thị:</p>
+                <p class="text-sm font-bold text-amber-950 dark:text-amber-200">
+                  <span id="topicFilteredCount">0</span> / <span id="topicTotalCountLabel">14,605</span> từ
                 </p>
               </div>
             </div>
           </div>
 
-          <!-- Topic Navigation Pills / Filter Cards -->
-          <div class="pt-6 border-t border-emerald-200/60 mt-6 space-y-4">
+          <!-- TẦNG 1: 6 ĐẠI DANH MỤC LỚN (SUPER CATEGORIES) -->
+          <div class="pt-6 border-t border-amber-200/60 dark:border-stone-700 mt-6 space-y-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs text-stone-600 font-bold flex items-center gap-1.5">
-                <i data-lucide="tag" class="w-3.5 h-3.5 text-emerald-700"></i>
-                Chọn chủ đề từ vựng:
+              <span class="text-xs text-stone-700 dark:text-stone-300 font-bold flex items-center gap-1.5 uppercase tracking-wide">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-600"></i>
+                1. Phân nhóm danh mục lớn:
               </span>
-              <span id="activeTopicLabel" class="text-xs font-bold text-emerald-900 bg-emerald-100/80 px-2.5 py-0.5 rounded-lg border border-emerald-200">
-                🌟 Tất Cả 14 Chủ Đề
+              <span id="activeSuperCategoryLabel" class="text-xs font-bold text-amber-900 dark:text-amber-300 bg-amber-100/80 dark:bg-amber-950 px-2.5 py-0.5 rounded-lg border border-amber-300/60">
+                🌟 Tất Cả 125 Chủ Đề
               </span>
             </div>
 
-            <!-- Fast Topic Search Filter -->
-            <div class="flex items-center gap-2 pt-1 pb-1 flex-wrap">
-              <div class="relative flex-1 max-w-sm">
-                <i data-lucide="filter" class="w-3.5 h-3.5 absolute left-3 top-2.5 text-stone-400"></i>
-                <input 
-                  id="topicPillSearchInput"
-                  type="text"
-                  oninput="filterTopicPills(this.value)"
-                  placeholder="Lọc 125 chủ đề (vd: kế toán, y tế, hàn xì, gia đình...)..."
-                  class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-600/30"
-                />
+            <div id="topicSuperCategoriesContainer" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 pt-1 pb-1">
+              <!-- Dynamically populated by renderTopicSuperCategories() -->
+            </div>
+          </div>
+
+          <!-- TẦNG 2: CHỦ ĐỀ CON & THANH CÔNG CỤ TÌM KIẾM -->
+          <div class="pt-4 border-t border-amber-200/40 dark:border-stone-700/60 space-y-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <span class="text-xs text-stone-700 dark:text-stone-300 font-bold flex items-center gap-1.5 uppercase tracking-wide">
+                <i data-lucide="tag" class="w-3.5 h-3.5 text-amber-600"></i>
+                2. Chọn chủ đề chi tiết:
+              </span>
+              
+              <!-- Fast Filter inside Active Category -->
+              <div class="flex items-center gap-2">
+                <div class="relative w-full sm:w-64">
+                  <i data-lucide="filter" class="w-3.5 h-3.5 absolute left-3 top-2.5 text-stone-400"></i>
+                  <input 
+                    id="topicPillSearchInput"
+                    type="text"
+                    oninput="filterTopicPills(this.value)"
+                    placeholder="Lọc chủ đề (vd: gia đình, kế toán...)..."
+                    class="w-full pl-8 pr-3 py-1.5 text-xs rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500/30"
+                  />
+                </div>
+                <span id="topicPillCountBadge" class="text-[11px] font-bold text-amber-900 dark:text-amber-300 bg-amber-100/80 dark:bg-amber-950 px-2.5 py-1 rounded-xl border border-amber-200 dark:border-amber-800 whitespace-nowrap">
+                  125 chủ đề
+                </span>
               </div>
-              <span id="topicPillCountBadge" class="text-[11px] font-bold text-emerald-900 bg-emerald-100/80 px-2.5 py-1 rounded-xl border border-emerald-200">
-                125 chủ đề
-              </span>
             </div>
 
-            <!-- Topic Pills Container (Scrollable clean grid) -->
-            <div id="topicFilterPills" class="flex flex-wrap gap-2 pt-1 pb-1 max-h-56 overflow-y-auto custom-scrollbar p-1.5 rounded-2xl bg-white/50 dark:bg-stone-900/40 border border-emerald-200/50 dark:border-stone-700/50">
+            <!-- Topic Pills Container (Scrollable clean grid with custom scrollbar) -->
+            <div id="topicFilterPills" class="flex flex-wrap gap-2 pt-1 pb-1 max-h-48 overflow-y-auto custom-scrollbar p-2 rounded-2xl bg-white/70 dark:bg-stone-900/60 border border-amber-200/60 dark:border-stone-700/60 shadow-inner">
               <!-- Dynamically populated by renderTopicPills() -->
             </div>
 
-            <!-- Instant Search Bar inside Topic Section -->
-            <div class="relative max-w-xl pt-2">
-              <div class="absolute inset-y-0 left-0 pl-3.5 pt-2 flex items-center pointer-events-none text-stone-400">
-                <i data-lucide="search" class="w-4 h-4"></i>
+            <!-- THANH TÌM KIẾM, SẮP XẾP VÀ CHUYỂN CHẾ ĐỘ XEM (TOOLBAR) -->
+            <div class="pt-3 border-t border-amber-200/40 dark:border-stone-700/60 flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3">
+              <!-- Search Input -->
+              <div class="relative flex-1 max-w-xl">
+                <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-stone-400">
+                  <i data-lucide="search" class="w-4 h-4"></i>
+                </div>
+                <input 
+                  id="topicSearchInput" 
+                  type="text" 
+                  oninput="onTopicSearchInput(this.value)" 
+                  placeholder="🔍 Tìm từ theo chữ Hán, Pinyin, Hán Việt hoặc nghĩa..." 
+                  class="w-full pl-10 pr-10 py-2 rounded-xl border border-stone-200 dark:border-stone-700 bg-white dark:bg-stone-800 text-stone-800 dark:text-stone-200 placeholder-stone-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-amber-500/20 focus:border-amber-600 transition-all shadow-2xs"
+                />
+                <button 
+                  id="topicClearSearchBtn" 
+                  onclick="clearTopicSearch()" 
+                  class="hidden absolute inset-y-0 right-0 pr-3 flex items-center text-stone-400 hover:text-stone-600 transition-colors cursor-pointer">
+                  <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
               </div>
-              <input 
-                id="topicSearchInput" 
-                type="text" 
-                oninput="onTopicSearchInput(this.value)" 
-                placeholder="🔍 Tìm kiếm từ vựng theo chữ Hán, Pinyin hoặc nghĩa trong chủ đề..." 
-                class="w-full pl-10 pr-10 py-2.5 rounded-xl border border-stone-200 bg-white text-stone-800 placeholder-stone-400 text-xs sm:text-sm focus:outline-none focus:ring-2 focus:ring-emerald-600/20 focus:border-emerald-600 transition-all shadow-2xs"
-              />
-              <button 
-                id="topicClearSearchBtn" 
-                onclick="clearTopicSearch()" 
-                class="hidden absolute inset-y-0 right-0 pr-3 pt-2 flex items-center text-stone-400 hover:text-stone-600 transition-colors cursor-pointer">
-                <i data-lucide="x" class="w-4 h-4"></i>
-              </button>
+
+              <!-- Controls: Sort + View Toggle + Flashcard Action -->
+              <div class="flex items-center gap-2 flex-wrap">
+                <!-- Sort Selector -->
+                <div class="flex items-center gap-1.5 text-xs text-stone-600 dark:text-stone-300">
+                  <i data-lucide="arrow-down-up" class="w-3.5 h-3.5 text-amber-600"></i>
+                  <select 
+                    id="topicSortOrder" 
+                    onchange="changeTopicSort(this.value)"
+                    class="py-1.5 px-2.5 rounded-xl text-xs font-semibold bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-700 dark:text-stone-300 focus:outline-none focus:ring-2 focus:ring-amber-500/30 cursor-pointer">
+                    <option value="smart">🌟 Ưu tiên phổ biến & cơ bản</option>
+                    <option value="hsk-asc">📈 Cấp độ HSK (Dễ → Khó)</option>
+                    <option value="hsk-desc">📉 Cấp độ HSK (Khó → Dễ)</option>
+                    <option value="alpha">🔤 Theo Pinyin (A → Z)</option>
+                  </select>
+                </div>
+
+                <!-- View Mode Toggle: Cards vs Table -->
+                <div class="flex items-center p-0.5 rounded-xl bg-amber-100/60 dark:bg-stone-800 border border-amber-200/70 dark:border-stone-700">
+                  <button 
+                    id="btn-topic-view-cards" 
+                    onclick="setTopicViewMode('cards')" 
+                    class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer bg-white dark:bg-stone-700 text-amber-900 dark:text-amber-200 shadow-2xs"
+                    title="Chế độ xem dạng Thẻ (Cards)">
+                    <i data-lucide="layout-grid" class="w-3.5 h-3.5"></i>
+                    <span>Thẻ</span>
+                  </button>
+                  <button 
+                    id="btn-topic-view-table" 
+                    onclick="setTopicViewMode('table')" 
+                    class="px-2.5 py-1 rounded-lg text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer text-stone-600 dark:text-stone-400 hover:text-stone-900"
+                    title="Chế độ xem dạng Bảng danh sách (Table)">
+                    <i data-lucide="table" class="w-3.5 h-3.5"></i>
+                    <span>Bảng</span>
+                  </button>
+                </div>
+
+                <!-- Quick Flashcard Practice Button -->
+                <button 
+                  onclick="startTopicFlashcards()" 
+                  class="px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:brightness-110 text-white shadow-xs flex items-center gap-1.5 cursor-pointer transition-all shrink-0"
+                  title="Ôn tập toàn bộ từ vựng chủ đề này bằng Flashcard">
+                  <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-200"></i>
+                  <span>Luyện Flashcard</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
-        <!-- Topic Dictionary Grid Container -->
+        <!-- 1. Topic Dictionary Cards Container (Active by default) -->
         <div id="topicGridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+        <!-- 2. Topic Dictionary Table Container (Table view) -->
+        <div id="topicTableContainer" class="hidden overflow-x-auto rounded-2xl border border-amber-200/80 dark:border-stone-700 bg-white dark:bg-[#161B22] shadow-sm">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-gradient-to-r from-amber-100/70 via-[#FAF7F2] to-amber-50 dark:from-stone-800 dark:to-stone-800/80 text-stone-700 dark:text-stone-300 border-b border-amber-200 dark:border-stone-700 text-xs font-bold uppercase tracking-wider">
+                <th class="py-3 px-3 sm:px-4 text-center w-12">#</th>
+                <th class="py-3 px-3 sm:px-4 font-hanzi text-sm sm:text-base">Chữ Hán</th>
+                <th class="py-3 px-3 sm:px-4">Phiên Âm</th>
+                <th class="py-3 px-3 sm:px-4">Hán Việt</th>
+                <th class="py-3 px-3 sm:px-4">Nghĩa Tiếng Việt</th>
+                <th class="py-3 px-3 sm:px-4 text-center hidden md:table-cell">Chủ Đề</th>
+                <th class="py-3 px-3 sm:px-4 text-center">Cấp Độ</th>
+                <th class="py-3 px-3 sm:px-4 text-center">Phát Âm</th>
+                <th class="py-3 px-3 sm:px-4 text-center">Hành Động</th>
+              </tr>
+            </thead>
+            <tbody id="topicTableBody" class="divide-y divide-amber-100/70 dark:divide-stone-800">
+              <!-- Dynamically populated rows -->
+            </tbody>
+          </table>
+        </div>
 
         <!-- Load more topic dictionary items -->
         <div class="flex justify-center pt-4">
-          <button id="loadMoreTopicBtn" onclick="loadMoreTopicDict()" class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white hover:bg-emerald-50 text-stone-800 border border-stone-200 shadow-sm transition-all flex items-center gap-2 cursor-pointer">
+          <button id="loadMoreTopicBtn" onclick="loadMoreTopicDict()" class="px-6 py-2.5 rounded-xl text-sm font-semibold bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 border border-amber-200 dark:border-stone-700 shadow-sm transition-all flex items-center gap-2 cursor-pointer">
             <span>Tải thêm từ vựng chủ đề</span>
             <i data-lucide="chevron-down" class="w-4 h-4"></i>
           </button>
         </div>
       </div>
-
-    </section>
+      </section>
 
   
     <!-- ==================== TAB: XẾP KHỐI GỖ TIẾNG TRUNG (汉语积木 - WOOD BLOCK PUZZLE) ==================== -->

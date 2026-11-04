@@ -18,7 +18,8 @@ const FLASHCARD_MODES = {
   due: { label: 'Đến hạn ôn', icon: 'alarm-clock' },
   new: { label: 'Học từ mới', icon: 'sparkles' },
   notebook: { label: 'Sổ tay', icon: 'bookmark' },
-  browse: { label: 'Xem tự do', icon: 'shuffle' }
+  browse: { label: 'Xem tự do', icon: 'shuffle' },
+  topic: { label: 'Theo chủ đề', icon: 'tag' }
 };
 
 function initFlashcards() {
@@ -65,7 +66,11 @@ function buildFlashcardQueue(mode) {
 function startFlashcardSession(mode, options = {}) {
   flashcardMode = mode;
   if (options.level) flashcardNewLevel = options.level;
-  flashcardQueue = buildFlashcardQueue(mode);
+  if (options.customCards) {
+    flashcardQueue = options.customCards;
+  } else {
+    flashcardQueue = buildFlashcardQueue(mode);
+  }
   currentFlashcardIndex = 0;
   flashcardSession = { done: 0, remembered: 0 };
   renderFlashcardModeBar();
