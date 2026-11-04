@@ -7,7 +7,6 @@ active_url.txt
 Thumbs.db
 
 # Build output & secrets
-public/assets/tailwind.css
 .env
 scripts/data/source/
 
