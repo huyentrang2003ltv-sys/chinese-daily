@@ -65,12 +65,32 @@ test('Flip Card 1000 Pairs Engine & Data Integrity', async (t) => {
       return elements[id];
     }
 
+    const activeIntervals = new Set();
+    const activeTimeouts = new Set();
+
     const sandbox = {
       console,
-      setTimeout,
-      clearTimeout,
-      setInterval,
-      clearInterval,
+      setTimeout: (fn, ms) => {
+        const id = setTimeout(() => {
+          activeTimeouts.delete(id);
+          fn();
+        }, ms);
+        activeTimeouts.add(id);
+        return id;
+      },
+      clearTimeout: (id) => {
+        activeTimeouts.delete(id);
+        clearTimeout(id);
+      },
+      setInterval: (fn, ms) => {
+        const id = setInterval(fn, ms);
+        activeIntervals.add(id);
+        return id;
+      },
+      clearInterval: (id) => {
+        activeIntervals.delete(id);
+        clearInterval(id);
+      },
       Math,
       Date,
       parseInt,
@@ -160,5 +180,11 @@ test('Flip Card 1000 Pairs Engine & Data Integrity', async (t) => {
     assert.strictEqual(cardHanzi.isMatched, true, 'Hanzi card should be matched');
     assert.strictEqual(cardImg.isMatched, true, 'Image card should be matched');
     assert.strictEqual(sandbox.getMatchedPairsCount(), 1);
+
+    if (typeof sandbox.stopTimer === 'function') {
+      sandbox.stopTimer();
+    }
+    for (const id of activeIntervals) clearInterval(id);
+    for (const id of activeTimeouts) clearTimeout(id);
   });
 });

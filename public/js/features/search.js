@@ -592,64 +592,146 @@ function clearSearch() {
   if (searchInput) searchInput.focus();
 }
 
-// ---------------- WORD DETAIL MODAL ----------------
+// ---------------- WORD DETAIL MODAL (MULTIDIMENSIONAL 6-IN-1) ----------------
+// 1. Cách dùng | 2. Nghĩa | 3. Từ đồng nghĩa | 4. Trái nghĩa | 5. Từ đồng âm | 6. Hình ảnh mô tả
+
+let floatingLookupTargetWord = '';
+let floatingLookupHideTimeout = null;
+
 async function openWordModalByTitle(title) {
+  if (!title) return;
+  const cleanTitle = String(title).trim();
+
   try {
-    await loadDatasets(['dictionary', 'etymology', 'radicals']);
+    await loadDatasets(['multidimensionalWords', 'dictionary', 'etymology', 'radicals']);
   } catch (err) {
-    showToast('Không tải được dữ liệu từ điển.', 'error');
-    return;
+    console.warn('Could not preload all datasets for wordModal:', err);
   }
-  let word = (dictionaryData || []).find(w => w.title === title);
-  if (!word && etymologyData) {
-    const etymMatch = etymologyData.find(e => e.hanzi === title);
+
+  // 1. Try multidimensionalWordsData first (richest 6-in-1 data)
+  let word = (multidimensionalWordsData && multidimensionalWordsData[cleanTitle]) ? multidimensionalWordsData[cleanTitle] : null;
+
+  // 2. Fall back to dictionaryData
+  if (!word && typeof dictionaryData !== 'undefined' && dictionaryData) {
+    const dictMatch = dictionaryData.find(w => w.title === cleanTitle);
+    if (dictMatch) {
+      word = {
+        hanzi: dictMatch.title,
+        pinyin: dictMatch.pinyin || '',
+        hanviet: dictMatch.hanviet || '',
+        meaning: dictMatch.meaning || '',
+        pos: dictMatch.pos || 'từ vựng',
+        level: dictMatch.level || 1,
+        usage: [
+          `🔹 Từ vựng cốt lõi HSK ${dictMatch.level || 1}.`,
+          `🔹 Ngữ cảnh: Thường xuất hiện trong giao tiếp hàng ngày.`
+        ],
+        exampleSentence: dictMatch.exampleSentence || `${cleanTitle}很好。`,
+        examplePinyin: dictMatch.examplePinyin || '',
+        exampleMeaning: dictMatch.exampleMeaning || '',
+        synonyms: [],
+        antonyms: [],
+        homophones: [],
+        image: dictMatch.topicIcon || '🏮',
+        imageCaption: dictMatch.meaning || 'Minh họa ngữ nghĩa'
+      };
+    }
+  }
+
+  // 3. Fall back to etymologyData
+  if (!word && typeof etymologyData !== 'undefined' && etymologyData) {
+    const etymMatch = etymologyData.find(e => e.hanzi === cleanTitle);
     if (etymMatch) {
       word = {
-        title: etymMatch.hanzi,
-        pinyin: etymMatch.pinyin,
-        hanviet: etymMatch.hanviet,
-        meaning: etymMatch.meaning,
+        hanzi: etymMatch.hanzi,
+        pinyin: etymMatch.pinyin || '',
+        hanviet: etymMatch.hanviet || '',
+        meaning: etymMatch.meaning || '',
+        pos: 'chữ Hán (Chiết tự)',
         level: 1,
-        pos: 'chữ Hán',
-        exampleSentence: etymMatch.etymologyStory ? etymMatch.etymologyStory.slice(0, 100) : title,
-        examplePinyin: etymMatch.pinyin,
-        exampleMeaning: etymMatch.meaning
+        usage: [
+          `🔹 Lục thư: ${etymMatch.category || 'Tượng hình'}.`,
+          `🔹 Ý nghĩa chiết tự: ${etymMatch.meaning || ''}.`
+        ],
+        exampleSentence: etymMatch.etymologyStory ? etymMatch.etymologyStory.slice(0, 100) : cleanTitle,
+        examplePinyin: etymMatch.pinyin || '',
+        exampleMeaning: etymMatch.meaning || '',
+        synonyms: [],
+        antonyms: [],
+        homophones: [],
+        image: '🏛️',
+        imageCaption: `Chiết tự chữ ${etymMatch.hanzi}`
       };
     }
   }
-  if (!word && radicalsData) {
-    const radMatch = radicalsData.find(r => r.char === title);
+
+  // 4. Fall back to radicalsData
+  if (!word && typeof radicalsData !== 'undefined' && radicalsData) {
+    const radMatch = radicalsData.find(r => r.char === cleanTitle);
     if (radMatch) {
       word = {
-        title: radMatch.char,
-        pinyin: radMatch.pinyin,
-        hanviet: `Bộ ${radMatch.hanviet}`,
-        meaning: radMatch.meaning,
+        hanzi: radMatch.char,
+        pinyin: radMatch.pinyin || '',
+        hanviet: `Bộ ${radMatch.hanviet || ''}`,
+        meaning: radMatch.meaning || '',
+        pos: `Bộ thủ (${radMatch.strokes || 1} nét)`,
         level: 1,
-        pos: `Bộ thủ (${radMatch.strokes} nét)`,
-        exampleSentence: `Bộ thủ Khang Hy: ${radMatch.char} (${radMatch.hanviet})`,
-        examplePinyin: radMatch.pinyin,
-        exampleMeaning: radMatch.meaning
+        usage: [
+          `🔹 Bộ thủ Khang Hy số ${radMatch.number || ''}.`,
+          `🔹 Biểu nghĩa nền tảng cho nhiều chữ Hán phái sinh.`
+        ],
+        exampleSentence: `Bộ thủ ${radMatch.char} (${radMatch.hanviet})`,
+        examplePinyin: radMatch.pinyin || '',
+        exampleMeaning: radMatch.meaning || '',
+        synonyms: [],
+        antonyms: [],
+        homophones: [],
+        image: '🏮',
+        imageCaption: `Bộ thủ ${radMatch.char}`
       };
     }
   }
-  if (!word) {
-    showToast(`Không tìm thấy chi tiết từ "${title}"`, 'warning');
-    return;
-  }
-  currentWordModalWord = word;
 
+  // 5. If still not found, synthesize a valid multidimensional card on-the-fly
+  if (!word) {
+    word = {
+      hanzi: cleanTitle,
+      pinyin: '',
+      hanviet: 'Đang cập nhật',
+      meaning: `Từ vựng: ${cleanTitle}`,
+      pos: 'từ vựng',
+      level: 1,
+      usage: [
+        `🔹 Từ vựng tiếng Trung thực hành giao tiếp.`,
+        `🔹 Bấm 'Tập Viết Nét' hoặc 'Xem Chiết Tự' để tra cứu sâu hơn.`
+      ],
+      exampleSentence: cleanTitle,
+      examplePinyin: '',
+      exampleMeaning: '',
+      synonyms: [],
+      antonyms: [],
+      homophones: [],
+      image: '✨',
+      imageCaption: cleanTitle
+    };
+  }
+
+  currentWordModalWord = {
+    title: word.hanzi || cleanTitle,
+    ...word
+  };
+
+  // Populate Header
   const hanziEl = document.getElementById('modalHanzi');
   const pinyinEl = document.getElementById('modalPinyin');
   const posEl = document.getElementById('modalPos');
   const meaningEl = document.getElementById('modalMeaning');
   const hanvietBadge = document.getElementById('modalHanvietBadge');
   const levelBadge = document.getElementById('modalLevelBadge');
-  const exHanzi = document.getElementById('modalExampleHanzi');
-  const exPinyin = document.getElementById('modalExamplePinyin');
-  const exVi = document.getElementById('modalExampleVi');
+  const imgDisplay = document.getElementById('modalImageDisplay');
+  const imgCaption = document.getElementById('modalImageCaption');
 
-  if (hanziEl) hanziEl.innerText = word.title;
+  if (hanziEl) hanziEl.innerText = word.hanzi || cleanTitle;
   if (pinyinEl) pinyinEl.innerText = word.pinyin || '';
   if (posEl) posEl.innerText = word.pos || 'từ vựng';
   if (meaningEl) meaningEl.innerText = word.meaning || '';
@@ -657,18 +739,92 @@ async function openWordModalByTitle(title) {
   if (hanvietBadge) {
     hanvietBadge.innerText = word.hanviet ? `Hán Việt: ${word.hanviet}` : 'Hán Việt: Đang cập nhật';
   }
-
   if (levelBadge) {
     levelBadge.innerText = `HSK ${word.level || 1}`;
   }
+  if (imgDisplay) {
+    imgDisplay.innerText = word.image || '🏮';
+  }
+  if (imgCaption) {
+    imgCaption.innerText = word.imageCaption || word.meaning || 'Minh họa ngữ nghĩa';
+    imgCaption.title = word.imageCaption || '';
+  }
 
-  if (exHanzi) exHanzi.innerText = word.exampleSentence || word.title;
+  // Populate Usage (Cách dùng & Cụm từ thường gặp)
+  const usageContainer = document.getElementById('modalUsageContainer');
+  if (usageContainer) {
+    const usages = (word.usage && word.usage.length > 0)
+      ? word.usage
+      : [`🔹 Cấu trúc kết hợp thông dụng trong giao tiếp và kỳ thi HSK.`];
+
+    usageContainer.innerHTML = usages.map(u => `
+      <div class="flex items-start gap-2">
+        <span class="text-amber-600 dark:text-amber-400 font-bold shrink-0">✦</span>
+        <span class="leading-relaxed">${escapeHtml(u)}</span>
+      </div>
+    `).join('');
+  }
+
+  // Populate Example Sentence
+  const exHanzi = document.getElementById('modalExampleHanzi');
+  const exPinyin = document.getElementById('modalExamplePinyin');
+  const exVi = document.getElementById('modalExampleVi');
+
+  if (exHanzi) exHanzi.innerText = word.exampleSentence || cleanTitle;
   if (exPinyin) exPinyin.innerText = word.examplePinyin || word.pinyin || '';
   if (exVi) exVi.innerText = word.exampleMeaning || word.meaning || '';
 
-  updateWordModalBookmarkState();
+  // Populate Synonyms (近义词)
+  const synList = document.getElementById('modalSynonymsList');
+  if (synList) {
+    if (word.synonyms && word.synonyms.length > 0) {
+      synList.innerHTML = word.synonyms.map(s => `
+        <button onclick="openWordModalByTitle('${escapeHtml(s.hanzi)}')" class="group flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-700/80 hover:border-emerald-500 hover:bg-emerald-50 dark:hover:bg-emerald-900/50 shadow-2xs transition-all cursor-pointer" title="${escapeHtml(s.desc || s.meaning || '')}">
+          <span class="font-hanzi font-bold text-stone-900 dark:text-emerald-200 group-hover:text-emerald-700 dark:group-hover:text-emerald-300">${escapeHtml(s.hanzi)}</span>
+          ${s.pinyin ? `<span class="text-[10px] text-emerald-800 dark:text-emerald-400 font-mono">(${escapeHtml(s.pinyin)})</span>` : ''}
+          ${s.meaning ? `<span class="text-[11px] text-stone-600 dark:text-stone-300">${escapeHtml(s.meaning)}</span>` : ''}
+        </button>
+      `).join('');
+    } else {
+      synList.innerHTML = `<span class="text-xs text-stone-400 dark:text-stone-500 italic py-0.5">Không có từ đồng nghĩa tương đương trực tiếp</span>`;
+    }
+  }
 
+  // Populate Antonyms (反义词)
+  const antList = document.getElementById('modalAntonymsList');
+  if (antList) {
+    if (word.antonyms && word.antonyms.length > 0) {
+      antList.innerHTML = word.antonyms.map(a => `
+        <button onclick="openWordModalByTitle('${escapeHtml(a.hanzi)}')" class="group flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white dark:bg-rose-950/60 border border-rose-300 dark:border-rose-700/80 hover:border-rose-500 hover:bg-rose-50 dark:hover:bg-rose-900/50 shadow-2xs transition-all cursor-pointer" title="${escapeHtml(a.desc || a.meaning || '')}">
+          <span class="font-hanzi font-bold text-stone-900 dark:text-rose-200 group-hover:text-rose-700 dark:group-hover:text-rose-300">${escapeHtml(a.hanzi)}</span>
+          ${a.pinyin ? `<span class="text-[10px] text-rose-800 dark:text-rose-400 font-mono">(${escapeHtml(a.pinyin)})</span>` : ''}
+          ${a.meaning ? `<span class="text-[11px] text-stone-600 dark:text-stone-300">${escapeHtml(a.meaning)}</span>` : ''}
+        </button>
+      `).join('');
+    } else {
+      antList.innerHTML = `<span class="text-xs text-stone-400 dark:text-stone-500 italic py-0.5">Không có cặp từ phản nghĩa đối lập trực tiếp</span>`;
+    }
+  }
+
+  // Populate Homophones (同音词 • Tránh Nhầm Lẫn)
+  const homoList = document.getElementById('modalHomophonesList');
+  if (homoList) {
+    if (word.homophones && word.homophones.length > 0) {
+      homoList.innerHTML = word.homophones.map(h => `
+        <button onclick="openWordModalByTitle('${escapeHtml(h.hanzi)}')" class="group flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-white dark:bg-amber-950/50 border border-amber-300 dark:border-amber-700/80 hover:border-amber-500 hover:bg-amber-50 dark:hover:bg-amber-900/40 shadow-2xs transition-all cursor-pointer" title="Cùng âm ${escapeHtml(h.pinyin || '')}">
+          <span class="font-hanzi font-bold text-stone-900 dark:text-amber-200 group-hover:text-amber-700 dark:group-hover:text-amber-300">${escapeHtml(h.hanzi)}</span>
+          ${h.pinyin ? `<span class="text-[10px] text-amber-800 dark:text-amber-400 font-mono">(${escapeHtml(h.pinyin)})</span>` : ''}
+          ${h.meaning ? `<span class="text-[11px] text-stone-600 dark:text-stone-300">${escapeHtml(h.meaning)}</span>` : ''}
+        </button>
+      `).join('');
+    } else {
+      homoList.innerHTML = `<span class="text-xs text-stone-400 dark:text-stone-500 italic py-0.5">Phiên âm độc lập, không có từ đồng âm gây nhầm lẫn</span>`;
+    }
+  }
+
+  updateWordModalBookmarkState();
   openModal('wordModal');
+  if (typeof refreshIcons === 'function') refreshIcons();
 }
 
 function closeWordModal() {
@@ -706,7 +862,7 @@ async function openEtymologyFromWordModal() {
 
 function updateWordModalBookmarkState() {
   if (!currentWordModalWord) return;
-  const isSaved = isWordSaved(currentWordModalWord.title);
+  const isSaved = typeof isWordSaved === 'function' ? isWordSaved(currentWordModalWord.title) : false;
   const btn = document.getElementById('modalBookmarkBtn');
   const label = document.getElementById('modalBookmarkLabel');
   if (btn && label) {
@@ -723,46 +879,113 @@ function updateWordModalBookmarkState() {
 function toggleSaveWordFromModal() {
   if (!currentWordModalWord) return;
   const w = currentWordModalWord;
-  toggleSaveWord(w.title, w.pinyin, w.meaning, w.level || 1);
+  if (typeof toggleSaveWord === 'function') {
+    toggleSaveWord(w.title, w.pinyin, w.meaning, w.level || 1);
+  }
   updateWordModalBookmarkState();
 }
 
-// =========================================================================
-// 1. TOKEN LOOKUP MODAL (REUSE WORDMODAL)
-// =========================================================================
+// ---------------- TOKEN LOOKUP MODAL (REUSE WORDMODAL) ----------------
 async function openWordModalWithToken(hanzi, pinyin, vi) {
   if (!hanzi) return;
-  // Try dictionary first for rich data
-  try {
-    await loadData('dictionary');
-  } catch (err) {
-    // Fall back to the token data below.
+  await openWordModalByTitle(hanzi);
+}
+
+// ---------------- FLOATING WORD QUICK LOOKUP (GLOBAL TAP & SELECTION) ----------------
+function hideFloatingWordLookup() {
+  const pill = document.getElementById('floatingWordLookupBtn');
+  if (pill) pill.classList.add('hidden');
+  floatingLookupTargetWord = '';
+  if (typeof window !== 'undefined') window.floatingLookupTargetWord = '';
+}
+
+async function handleFloatingWordLookupClick() {
+  const target = (typeof window !== 'undefined' && window.floatingLookupTargetWord) ? window.floatingLookupTargetWord : floatingLookupTargetWord;
+  if (target) {
+    const wordToLookup = target;
+    hideFloatingWordLookup();
+    await openWordModalByTitle(wordToLookup);
   }
-  const dictMatch = dictionaryData.find(w => w.title === hanzi);
-  if (dictMatch) {
-    openWordModalByTitle(dictMatch.title);
-    return;
+}
+
+function initGlobalWordTapListener() {
+  const checkSelection = (e) => {
+    // If clicking directly on the floating pill or inside word modal, ignore
+    if (e && e.target && (e.target.closest('#floatingWordLookupBtn') || e.target.closest('#wordModal'))) {
+      return;
+    }
+
+    const selection = window.getSelection ? window.getSelection() : null;
+    if (!selection || selection.isCollapsed) {
+      if (floatingLookupHideTimeout) clearTimeout(floatingLookupHideTimeout);
+      floatingLookupHideTimeout = setTimeout(hideFloatingWordLookup, 200);
+      return;
+    }
+
+    const text = selection.toString().trim();
+    // Match 1 to 6 Chinese characters
+    const hanziMatch = text.match(/[\u4e00-\u9fa5]{1,6}/);
+    if (!hanziMatch) {
+      hideFloatingWordLookup();
+      return;
+    }
+
+    const hanziWord = hanziMatch[0];
+    floatingLookupTargetWord = hanziWord;
+
+    const pill = document.getElementById('floatingWordLookupBtn');
+    const label = document.getElementById('floatingLookupWordText');
+    if (!pill || !label) return;
+
+    label.innerText = `Tra từ: ${hanziWord}`;
+
+    try {
+      const range = selection.getRangeAt(0);
+      const rect = range.getBoundingClientRect();
+      if (rect.width > 0 && rect.height > 0) {
+        pill.style.left = `${Math.max(60, Math.min(window.innerWidth - 60, rect.left + rect.width / 2))}px`;
+        pill.style.top = `${Math.max(20, rect.top + window.scrollY - 8)}px`;
+        pill.classList.remove('hidden');
+        if (floatingLookupHideTimeout) clearTimeout(floatingLookupHideTimeout);
+      }
+    } catch (_) {
+      hideFloatingWordLookup();
+    }
+  };
+
+  document.addEventListener('mouseup', checkSelection);
+  document.addEventListener('touchend', checkSelection);
+
+  // Click on any element containing Chinese text with dict-trigger attributes or classes
+  document.addEventListener('click', (e) => {
+    const target = e.target;
+    if (!target) return;
+
+    // Check data-hanzi or data-word
+    const hanziAttr = target.getAttribute('data-hanzi') || target.getAttribute('data-word');
+    if (hanziAttr && /[\u4e00-\u9fa5]/.test(hanziAttr)) {
+      e.stopPropagation();
+      openWordModalByTitle(hanziAttr);
+      return;
+    }
+
+    // Check specific class tokens
+    if (target.classList.contains('hanzi-token') || target.classList.contains('dict-clickable') || target.classList.contains('word-token')) {
+      const tokenText = target.innerText.trim();
+      const m = tokenText.match(/[\u4e00-\u9fa5]+/);
+      if (m) {
+        e.stopPropagation();
+        openWordModalByTitle(m[0]);
+      }
+    }
+  });
+}
+
+// Auto-initialize global tap listener
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initGlobalWordTapListener);
+  } else {
+    initGlobalWordTapListener();
   }
-
-  currentWordModalWord = { title: hanzi, pinyin: pinyin || '', meaning: vi || '', level: 1, exampleSentence: hanzi };
-  updateWordModalBookmarkState();
-  
-  // Set values into existing wordModal
-  const mHanzi = document.getElementById('modalHanzi');
-  const mPinyin = document.getElementById('modalPinyin');
-  const mPos = document.getElementById('modalPos');
-  const mMeaning = document.getElementById('modalMeaning');
-  const mExHanzi = document.getElementById('modalExampleHanzi');
-  const mExPinyin = document.getElementById('modalExamplePinyin');
-  const mExVi = document.getElementById('modalExampleVi');
-
-  if (mHanzi) mHanzi.innerText = hanzi;
-  if (mPinyin) mPinyin.innerText = pinyin || '';
-  if (mPos) mPos.innerText = 'Từ Vựng Bài Đọc';
-  if (mMeaning) mMeaning.innerText = vi || 'Chưa có chú giải';
-  if (mExHanzi) mExHanzi.innerText = hanzi;
-  if (mExPinyin) mExPinyin.innerText = pinyin || '';
-  if (mExVi) mExVi.innerText = vi || '';
-
-  openModal('wordModal');
 }

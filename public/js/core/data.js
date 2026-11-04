@@ -22,6 +22,7 @@ let hsk30RoadmapData = null;
 let woodBlockLevels = [];
 let flipCardLevels = [];
 let hanziDecompositionsData = {};
+let multidimensionalWordsData = {};
 
 const DATASETS = {
   dictionary: { url: 'data/dictionary.json', set: v => { dictionaryData = v || []; } },
@@ -44,7 +45,9 @@ const DATASETS = {
   hsk30Roadmap: { url: 'data/hsk30_roadmap.json', set: v => { hsk30RoadmapData = v || null; } },
   woodBlock: { url: 'data/wood_block_levels.json', set: v => { woodBlockLevels = v || []; } },
   flipCard: { url: 'data/flip_card_levels.json', set: v => { flipCardLevels = v || []; } },
-  hanziDecompositions: { url: 'data/hanzi_decompositions.json', set: v => { hanziDecompositionsData = v || {}; } }
+  hanziDecompositions: { url: 'data/hanzi_decompositions.json', set: v => { hanziDecompositionsData = v || {}; } },
+  multidimensionalWords: { url: 'data/multidimensional_words.json', set: v => { multidimensionalWordsData = v || {}; } },
+  multidimensional_words: { url: 'data/multidimensional_words.json', set: v => { multidimensionalWordsData = v || {}; } }
 };
 
 const dataPromises = new Map();
