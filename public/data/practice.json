@@ -1188,5 +1188,3734 @@
       }
     ],
     "explanation": "• Đáp án đúng: 进而 (jìn'ér).\n• Ngữ pháp văn thư HSK 6: 「进而」 là liên từ biểu thị bước phát triển tiếp theo trên nền tảng hành động trước (đào sâu tinh hoa, hòa quyện thẩm mỹ -> từ đó/tiếp theo sáng tác nên kiệt tác). 「反而」 biểu thị nghịch chuyển; 「未免」 biểu thị đánh giá chê trách nhẹ."
+  },
+  {
+    "id": "hsk1_listen_qa_2",
+    "level": 1,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Hỏi tuổi và sinh nhật",
+    "audioText": "男：你的女儿今年几岁了？女：她今年五岁了，非常可爱。",
+    "passageText": "男：你的女儿今年几岁了？\n女：她今年五岁了，非常可爱。",
+    "pinyin": "Nán: Nǐ de nǚ'ér jīnnián jǐ suì le? Nǚ: Tā jīnnián wǔ suì le, fēicháng kě'ài.",
+    "vietnamese": "Nam: Con gái của bạn năm nay mấy tuổi rồi? Nữ: Bé năm nay năm tuổi rồi, rất đáng yêu.",
+    "question": "问：女儿今年几岁？(Hỏi: Con gái năm nay mấy tuổi?)",
+    "options": [
+      {
+        "text": "五岁 (wǔ suì - 5 tuổi)",
+        "isCorrect": true
+      },
+      {
+        "text": "四岁 (sì suì - 4 tuổi)",
+        "isCorrect": false
+      },
+      {
+        "text": "六岁 (liù suì - 6 tuổi)",
+        "isCorrect": false
+      },
+      {
+        "text": "三岁 (sān suì - 3 tuổi)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 五岁 (wǔ suì).\n• Người nữ trả lời trực tiếp: 「她今年五岁了」 (Bé năm nay 5 tuổi rồi)."
+  },
+  {
+    "id": "hsk1_listen_qa_3",
+    "level": 1,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Mua sắm hoa quả",
+    "audioText": "男：请问，这个苹果多少钱一斤？女：三块钱一斤，很甜。",
+    "passageText": "男：请问，这个苹果多少钱一斤？\n女：三块钱一斤，很甜。",
+    "pinyin": "Nán: Qǐngwèn, zhè ge píngguǒ duōshao qián yì jīn? Nǚ: Sān kuài qián yì jīn, hěn tián.",
+    "vietnamese": "Nam: Xin hỏi, táo này bao nhiêu tiền một cân? Nữ: Ba tệ một cân, ngọt lắm.",
+    "question": "问：苹果多少钱一斤？(Hỏi: Táo bao nhiêu tiền một cân?)",
+    "options": [
+      {
+        "text": "三块 (sān kuài - 3 tệ)",
+        "isCorrect": true
+      },
+      {
+        "text": "五块 (wǔ kuài - 5 tệ)",
+        "isCorrect": false
+      },
+      {
+        "text": "十块 (shí kuài - 10 tệ)",
+        "isCorrect": false
+      },
+      {
+        "text": "两块 (liǎng kuài - 2 tệ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 三块 (sān kuài).\n• Người bán hàng đáp: 「三块钱一斤」 (3 tệ một cân)."
+  },
+  {
+    "id": "hsk1_listen_qa_4",
+    "level": 1,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Thời tiết hôm nay",
+    "audioText": "男：今天天气怎么样？冷不冷？女：今天不冷，很暖和。",
+    "passageText": "男：今天天气怎么样？冷不冷？\n女：今天不冷，很暖和。",
+    "pinyin": "Nán: Jīntiān tiānqì zěnmeyàng? Lěng bù lěng? Nǚ: Jīntiān bù lěng, hěn nuǎnhuo.",
+    "vietnamese": "Nam: Hôm nay thời tiết thế nào? Có lạnh không? Nữ: Hôm nay không lạnh, rất ấm áp.",
+    "question": "问：今天天气怎么样？(Hỏi: Thời tiết hôm nay thế nào?)",
+    "options": [
+      {
+        "text": "不冷 (bù lěng - không lạnh)",
+        "isCorrect": true
+      },
+      {
+        "text": "很冷 (hěn lěng - rất lạnh)",
+        "isCorrect": false
+      },
+      {
+        "text": "下雨 (xià yǔ - mưa)",
+        "isCorrect": false
+      },
+      {
+        "text": "下雪 (xià xuě - tuyết rơi)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 不冷 (bù lěng).\n• Người nữ khẳng định: 「今天不冷，很暖和」."
+  },
+  {
+    "id": "hsk1_listen_truefalse_1",
+    "level": 1,
+    "skill": "listening",
+    "subType": "listening_truefalse",
+    "category": "Nghe hiểu phán đoán Đúng / Sai",
+    "title": "Phương tiện đi làm",
+    "audioText": "王先生每天坐出租车去公司上班。",
+    "passageText": "王先生每天坐出租车去公司上班。",
+    "pinyin": "Wáng xiānsheng měitiān zuò chūzūchē qù gōngsī shàngbān.",
+    "vietnamese": "Ông Vương mỗi ngày đều đi taxi đến công ty đi làm.",
+    "question": "判断正误：王先生坐出租车上班。(Phán đoán Đúng/Sai: Ông Vương đi taxi đi làm.)",
+    "options": [
+      {
+        "text": "正确 (Đúng - 正确)",
+        "isCorrect": true
+      },
+      {
+        "text": "错误 (Sai - 错误)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 正确 (Đúng).\n• Câu nghe nói rõ: 「坐出租车去公司上班」."
+  },
+  {
+    "id": "hsk1_speak_2",
+    "level": 1,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Cảm ơn và đáp lại",
+    "audioText": "不客气，明天见！",
+    "targetText": "不客气明天见",
+    "targetPinyin": "Bú kèqi, míngtiān jiàn!",
+    "vietnamese": "Đừng khách sáo, ngày mai gặp lại!",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Từ 「不」(bù) khi đứng trước âm tiết mang thanh 4 「客」(kè) sẽ biến điệu thành thanh 2 (bú kèqi)."
+  },
+  {
+    "id": "hsk1_speak_3",
+    "level": 1,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi địa điểm làm việc",
+    "audioText": "你在哪儿工作？",
+    "targetText": "你在哪儿工作",
+    "targetPinyin": "Nǐ zài nǎr gōngzuò?",
+    "vietnamese": "Bạn làm việc ở đâu?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「哪儿」(nǎr) có âm uốn lưỡi cuốn nhẹ đầu lưỡi chạm vòm miệng cứng. 「工作」(gōngzuò) thanh 1 đi kèm thanh 4."
+  },
+  {
+    "id": "hsk1_speak_4",
+    "level": 1,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi thời gian",
+    "audioText": "现在几点了？",
+    "targetText": "现在几点了",
+    "targetPinyin": "Xiànzài jǐ diǎn le?",
+    "vietnamese": "Bây giờ mấy giờ rồi?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「现在」(xiànzài) đều là thanh 4 dứt khoát. 「几点」(jǐ diǎn) hai thanh 3 đi liền nhau, chữ 「几」(jǐ) biến điệu thành thanh 2 (jí diǎn)."
+  },
+  {
+    "id": "hsk1_speak_5",
+    "level": 1,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Bày tỏ sở thích ăn uống",
+    "audioText": "我很喜欢吃中国菜。",
+    "targetText": "我很喜欢吃中国菜",
+    "targetPinyin": "Wǒ hěn xǐhuan chī Zhōngguó cài.",
+    "vietnamese": "Tôi rất thích ăn món Trung Quốc.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Cụm ba thanh 3 「我很喜」(wǒ hěn xǐ) đọc biến điệu tự nhiên: wó hén xǐhuan. Âm 「吃」(chī) bật hơi cong lưỡi."
+  },
+  {
+    "id": "hsk1_read_main_2",
+    "level": 1,
+    "skill": "reading",
+    "subType": "reading_main_idea",
+    "category": "Đọc hiểu tìm ý chính",
+    "title": "Giới thiệu gia đình",
+    "passageText": "我家有三口人：爸爸、妈妈和我。爸爸是医生，妈妈是老师，我是在校学生。",
+    "pinyin": "Wǒ jiā yǒu sān kǒu rén: bàba, māma hé wǒ. Bàba shì yīshēng, māma shì lǎoshī, wǒ shì zàixiào xuésheng.",
+    "vietnamese": "Nhà tôi có 3 người: bố, mẹ và tôi. Bố là bác sĩ, mẹ là giáo viên, tôi là học sinh đang đi học.",
+    "question": "这段话主要讲什么？(Đoạn văn này chủ yếu nói về điều gì?)",
+    "options": [
+      {
+        "text": "我家的三口人和职业 (Gia đình 3 người và nghề nghiệp)",
+        "isCorrect": true
+      },
+      {
+        "text": "我和朋友去医院 (Tôi và bạn đi bệnh viện)",
+        "isCorrect": false
+      },
+      {
+        "text": "爸爸妈妈在买菜 (Bố mẹ đang mua thức ăn)",
+        "isCorrect": false
+      },
+      {
+        "text": "学校有很多老师 (Trường học có rất nhiều thầy cô)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 我家的三口人和职业.\n• Đoạn văn tóm lược thành viên trong gia đình và nghề nghiệp của từng người."
+  },
+  {
+    "id": "hsk1_read_qa_1",
+    "level": 1,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu chi tiết",
+    "title": "Hẹn gặp bạn bè",
+    "passageText": "大卫：小明，今天晚上你有时间吗？我们一起去看电影吧。小明：对不起，今天晚上我要在家做作业。",
+    "pinyin": "Dàwèi: Xiǎomíng, jīntiān wǎnshang nǐ yǒu shíjiān ma? Wǒmen yìqǐ qù kàn diànyǐng ba. Xiǎomíng: Duìbuqǐ, jīntiān wǎnshang wǒ yào zài jiā zuò zuòyè.",
+    "vietnamese": "David: Tiểu Minh, tối nay bạn có rảnh không? Chúng mình cùng đi xem phim nhé. Tiểu Minh: Xin lỗi, tối nay mình phải ở nhà làm bài tập.",
+    "question": "小明今天晚上要做什么？(Tiểu Minh tối nay làm gì?)",
+    "options": [
+      {
+        "text": "在家做作业 (Ở nhà làm bài tập)",
+        "isCorrect": true
+      },
+      {
+        "text": "和大卫去看电影 (Đi xem phim cùng David)",
+        "isCorrect": false
+      },
+      {
+        "text": "去学校看书 (Đến trường đọc sách)",
+        "isCorrect": false
+      },
+      {
+        "text": "去商店买东西 (Đến cửa hàng mua đồ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 在家做作业.\n• Tiểu Minh nói rõ: 「今天晚上我要在家做作业」."
+  },
+  {
+    "id": "hsk1_read_qa_2",
+    "level": 1,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu chi tiết",
+    "title": "Vật nuôi yêu thích",
+    "passageText": "桌子下面有一只小猫，它是白色的。小猫正在睡觉，非常漂亮。",
+    "pinyin": "Zhuōzi xiàmiàn yǒu yì zhī xiǎo māo, tā shì báisè de. Xiǎo māo zhèngzài shuìjiào, fēicháng piàoliang.",
+    "vietnamese": "Dưới bàn có một con mèo nhỏ, nó màu trắng. Mèo con đang ngủ, vô cùng xinh xắn.",
+    "question": "小猫在哪儿？(Mèo con đang ở đâu?)",
+    "options": [
+      {
+        "text": "桌子下面 (Dưới cái bàn)",
+        "isCorrect": true
+      },
+      {
+        "text": "椅子上面 (Trên cái ghế)",
+        "isCorrect": false
+      },
+      {
+        "text": "房间外面 (Ngoài căn phòng)",
+        "isCorrect": false
+      },
+      {
+        "text": "床上面 (Ở trên giường)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 桌子下面.\n• Câu mở đầu nêu rõ vị trí: 「桌子下面有一只小猫」."
+  },
+  {
+    "id": "hsk1_write_reorder_2",
+    "level": 1,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chỉ thời gian",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Ngày mai tôi đi Bắc Kinh.",
+    "words": [
+      "去北京",
+      "明天",
+      "我"
+    ],
+    "correctOrder": [
+      "我",
+      "明天",
+      "去北京"
+    ],
+    "hanzi": "我明天去北京。",
+    "pinyin": "Wǒ míngtiān qù Běijīng.",
+    "explanation": "• Trạng từ thời gian 「明天」 có thể đứng sau chủ ngữ hoặc trước chủ ngữ: 「S + Thời gian + V + O」."
+  },
+  {
+    "id": "hsk1_write_reorder_3",
+    "level": 1,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 的 (Sở hữu)",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Đây là sách của thầy giáo.",
+    "words": [
+      "老师的",
+      "这是",
+      "书"
+    ],
+    "correctOrder": [
+      "这是",
+      "老师的",
+      "书"
+    ],
+    "hanzi": "这是老师的书。",
+    "pinyin": "Zhè shì lǎoshī de shū.",
+    "explanation": "• Cấu trúc: 「这是 + Định ngữ + 的 + Trung tâm ngữ (Danh từ)」."
+  },
+  {
+    "id": "hsk1_write_reorder_4",
+    "level": 1,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu hỏi số lượng",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Bạn có bao nhiêu quyển sách tiếng Trung?",
+    "words": [
+      "汉语书",
+      "你有",
+      "多少本"
+    ],
+    "correctOrder": [
+      "你有",
+      "多少本",
+      "汉语书"
+    ],
+    "hanzi": "你有多少本汉语书？",
+    "pinyin": "Nǐ yǒu duōshao běn Hànyǔ shū?",
+    "explanation": "• Cấu trúc câu hỏi số lượng: 「Chủ ngữ + 有 + 多少 + Lượng từ + Danh từ」."
+  },
+  {
+    "id": "hsk2_listen_qa_2",
+    "level": 2,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại thường nhật",
+    "title": "Chọn món tại nhà hàng",
+    "audioText": "男：服务员，我们想要两杯咖啡和一份牛肉面。女：好的先生，请您稍等十分钟。",
+    "passageText": "男：服务员，我们想要两杯咖啡和一份牛肉面。\n女：好的先生，请您稍等十分钟。",
+    "pinyin": "Nán: Fúwùyuán, wǒmen xiǎng yào liǎng bēi kāfēi hé yí fèn niúròumiàn. Nǚ: Hǎo de xiānsheng, qǐng nín shāoděng shí fēnzhōng.",
+    "vietnamese": "Nam: Phục vụ ơi, chúng tôi muốn gọi 2 tách cà phê và 1 bát mì bò. Nữ: Vâng thưa anh, xin anh đợi khoảng 10 phút ạ.",
+    "question": "问：这位男士点了什么？(Hỏi: Người nam này đã gọi món gì?)",
+    "options": [
+      {
+        "text": "咖啡和牛肉面 (Cà phê và mì bò)",
+        "isCorrect": true
+      },
+      {
+        "text": "茶和米饭 (Trà và cơm trắng)",
+        "isCorrect": false
+      },
+      {
+        "text": "啤酒和鱼 (Bia và cá)",
+        "isCorrect": false
+      },
+      {
+        "text": "水和面包 (Nước lọc và bánh mì)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 咖啡和牛肉面.\n• Người nam nói rõ: 「两杯咖啡和一份牛肉面」."
+  },
+  {
+    "id": "hsk2_listen_qa_3",
+    "level": 2,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại thường nhật",
+    "title": "Hỏi đường đến bưu điện",
+    "audioText": "男：请问邮局怎么走？女：往前面走五百米，路右边就是。",
+    "passageText": "男：请问邮局怎么走？\n女：往前面走五百米，路右边就是。",
+    "pinyin": "Nán: Qǐngwèn yóujú zěnme zǒu? Nǚ: Wǎng qiánmiàn zǒu wǔbǎi mǐ, lù yòubiān jiù shì.",
+    "vietnamese": "Nam: Xin hỏi bưu điện đi như thế nào? Nữ: Đi về phía trước 500 mét, bên phải đường là tới.",
+    "question": "问：邮局在哪儿？(Hỏi: Bưu điện ở đâu?)",
+    "options": [
+      {
+        "text": "路右边 (Bên phải đường)",
+        "isCorrect": true
+      },
+      {
+        "text": "路左边 (Bên trái đường)",
+        "isCorrect": false
+      },
+      {
+        "text": "后面 (Phía sau)",
+        "isCorrect": false
+      },
+      {
+        "text": "火车站旁边 (Cạnh ga tàu hỏa)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 路右边.\n• Người nữ chỉ dẫn: 「往前面走五百米，路右边就是」."
+  },
+  {
+    "id": "hsk2_listen_truefalse_1",
+    "level": 2,
+    "skill": "listening",
+    "subType": "listening_truefalse",
+    "category": "Nghe hiểu phán đoán Đúng / Sai",
+    "title": "Thói quen tập thể dục",
+    "audioText": "我姐姐虽然很忙，但每天早上都坚持跑步半个小时。",
+    "passageText": "我姐姐虽然很忙，但每天早上都坚持跑步半个小时。",
+    "pinyin": "Wǒ jiějie suīrán hěn máng, dàn měitiān zǎoshang dōu jiānchí pǎobù bàn ge xiǎoshí.",
+    "vietnamese": "Chị gái tôi tuy rất bận, nhưng mỗi sáng đều kiên trì chạy bộ nửa tiếng đồng hồ.",
+    "question": "判断正误：姐姐每天早上跑步。(Phán đoán Đúng/Sai: Chị gái mỗi sáng đều chạy bộ.)",
+    "options": [
+      {
+        "text": "正确 (Đúng - 正确)",
+        "isCorrect": true
+      },
+      {
+        "text": "错误 (Sai - 错误)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 正确 (Đúng).\n• Câu nói: 「每天早上都坚持跑步半个小时」."
+  },
+  {
+    "id": "hsk2_speak_2",
+    "level": 2,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi thăm sức khỏe",
+    "audioText": "你身体好点儿了吗？",
+    "targetText": "你身体好点儿了吗",
+    "targetPinyin": "Nǐ shēntǐ hǎo diǎnr le ma?",
+    "vietnamese": "Sức khỏe của bạn đã đỡ hơn chút nào chưa?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「身体」(shēntǐ thanh 1 + thanh 3). 「点儿」(diǎnr) uốn lưỡi tự nhiên nhẹ nhàng, biểu thị một chút."
+  },
+  {
+    "id": "hsk2_speak_3",
+    "level": 2,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Đề nghị giúp đỡ",
+    "audioText": "需要我帮你拿行李吗？",
+    "targetText": "需要我帮你拿行李吗",
+    "targetPinyin": "Xūyào wǒ bāng nǐ ná xíngli ma?",
+    "vietnamese": "Có cần tôi giúp bạn xách hành lý không?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「需要」(xūyào) âm 'x' phát âm bằng cách nâng mặt lưỡi ép nhẹ vào ngạc cứng. 「行李」(xíngli) chữ thứ hai thanh nhẹ."
+  },
+  {
+    "id": "hsk2_speak_4",
+    "level": 2,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Bày tỏ kế hoạch cuối tuần",
+    "audioText": "这个周末我和朋友去打篮球。",
+    "targetText": "这个周末我和朋友去打篮球",
+    "targetPinyin": "Zhè ge zhōumò wǒ hé péngyou qù dǎ lánqiú.",
+    "vietnamese": "Cuối tuần này tôi cùng bạn bè đi chơi bóng rổ.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「周末」(zhōumò) thanh 1 + thanh 4. 「打篮球」(dǎ lánqiú) chữ 「打」 thanh 3, 「篮」 thanh 2, 「球」 thanh 2."
+  },
+  {
+    "id": "hsk2_read_qa_1",
+    "level": 2,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu chi tiết",
+    "title": "Mua vé tàu hỏa",
+    "passageText": "去上海的火车票已经买好了。因为路有点儿远，所以我们坐下午两点的高铁去。",
+    "pinyin": "Qù Shànghǎi de huǒchēpiào yǐjīng mǎi hǎo le. Yīnwèi lù yǒudiǎnr yuǎn, suǒyǐ wǒmen zuò xiàwǔ liǎng diǎn de gāotiě qù.",
+    "vietnamese": "Vé tàu hỏa đi Thượng Hải đã mua xong rồi. Bởi vì đường hơi xa, nên chúng tôi đi chuyến tàu cao tốc lúc 2 giờ chiều.",
+    "question": "他们什么时候出发？(Họ xuất phát lúc nào?)",
+    "options": [
+      {
+        "text": "下午两点 (2 giờ chiều)",
+        "isCorrect": true
+      },
+      {
+        "text": "上午十点 (10 giờ sáng)",
+        "isCorrect": false
+      },
+      {
+        "text": "晚上八点 (8 giờ tối)",
+        "isCorrect": false
+      },
+      {
+        "text": "明天早上 (Sáng mai)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 下午两点.\n• Đoạn văn nêu: 「坐下午两点的高铁去」."
+  },
+  {
+    "id": "hsk2_read_qa_2",
+    "level": 2,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu chi tiết",
+    "title": "Món quà sinh nhật",
+    "passageText": "今天是小雨的生日。妈妈送给她一块非常漂亮的手表，小雨非常高兴。",
+    "pinyin": "Jīntiān shì Xiǎoyǔ de shēngrì. Māma sòng gěi tā yí kuài fēicháng piàoliang de shǒubiǎo, Xiǎoyǔ fēicháng gāoxìng.",
+    "vietnamese": "Hôm nay là sinh nhật Tiểu Vũ. Mẹ tặng cho cô ấy một chiếc đồng hồ đeo tay rất đẹp, Tiểu Vũ vô cùng vui sướng.",
+    "question": "妈妈送给小雨什么礼物？(Mẹ tặng Tiểu Vũ món quà gì?)",
+    "options": [
+      {
+        "text": "一块手表 (Một chiếc đồng hồ)",
+        "isCorrect": true
+      },
+      {
+        "text": "一件衣服 (Một bộ quần áo)",
+        "isCorrect": false
+      },
+      {
+        "text": "一本书 (Một quyển sách)",
+        "isCorrect": false
+      },
+      {
+        "text": "一部手机 (Một chiếc điện thoại)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 一块手表.\n• Trong bài viết: 「送给她一块非常漂亮的手表」."
+  },
+  {
+    "id": "hsk2_write_reorder_2",
+    "level": 2,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu so sánh 比",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Hôm nay lạnh hơn hôm qua nhiều.",
+    "words": [
+      "今天",
+      "冷得多",
+      "比昨天"
+    ],
+    "correctOrder": [
+      "今天",
+      "比昨天",
+      "冷得多"
+    ],
+    "hanzi": "今天比昨天冷得多。",
+    "pinyin": "Jīntiān bǐ zuótiān lěng de duō.",
+    "explanation": "• Cấu trúc so sánh chữ 比: 「A + 比 + B + Tính từ + 得多 / 多了」."
+  },
+  {
+    "id": "hsk2_write_reorder_3",
+    "level": 2,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu liên kết 因为...所以...",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Vì trời mưa nên tôi không đi đá bóng.",
+    "words": [
+      "我没去踢足球",
+      "下雨",
+      "因为",
+      "所以"
+    ],
+    "correctOrder": [
+      "因为",
+      "下雨",
+      "所以",
+      "我没去踢足球"
+    ],
+    "hanzi": "因为下雨，所以我没去踢足球。",
+    "pinyin": "Yīnwèi xiàyǔ, suǒyǐ wǒ méi qù tī zúqiú.",
+    "explanation": "• Cấu trúc nguyên nhân kết quả: 「因为 + Nguyên nhân, 所以 + Kết quả」."
+  },
+  {
+    "id": "hsk3_listen_qa_2",
+    "level": 3,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu đối thoại công sở & đời sống",
+    "title": "Phỏng vấn xin việc",
+    "audioText": "男：请问您是从哪所大学毕业的？学什么专业？女：我两年前从北京语言大学毕业，学的是中文专业。",
+    "passageText": "男：请问您是从哪所大学毕业的？学什么专业？\n女：我两年前从北京语言大学毕业，学的是中文专业。",
+    "pinyin": "Nán: Qǐngwèn nín shì cóng nǎ suǒ dàxué bìyè de? Xué shénme zhuānyè? Nǚ: Wǒ liǎng nián qián cóng Běijīng Yǔyán Dàxué bìyè, xué de shì Zhōngwén zhuānyè.",
+    "vietnamese": "Nam: Xin hỏi bạn tốt nghiệp trường đại học nào? Học chuyên ngành gì? Nữ: Tôi tốt nghiệp Đại học Ngôn ngữ Bắc Kinh hai năm trước, chuyên ngành học là tiếng Trung.",
+    "question": "问：这位女士学什么专业？(Hỏi: Người phụ nữ này học chuyên ngành gì?)",
+    "options": [
+      {
+        "text": "中文专业 (Chuyên ngành tiếng Trung)",
+        "isCorrect": true
+      },
+      {
+        "text": "英语专业 (Chuyên ngành tiếng Anh)",
+        "isCorrect": false
+      },
+      {
+        "text": "历史专业 (Chuyên ngành Lịch sử)",
+        "isCorrect": false
+      },
+      {
+        "text": "计算机专业 (Chuyên ngành Tin học)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 中文专业.\n• Người nữ nói: 「学的是中文专业」."
+  },
+  {
+    "id": "hsk3_listen_qa_3",
+    "level": 3,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu đối thoại công sở & đời sống",
+    "title": "Đặt phòng khách sạn",
+    "audioText": "男：我想预订一间双人房，住两个晚上。女：好的，每晚四百元，包含双人早餐。",
+    "passageText": "男：我想预订一间双人房，住两个晚上。\n女：好的，每晚四百元，包含双人早餐。",
+    "pinyin": "Nán: Wǒ xiǎng yùdìng yì jiān shuāngrén fáng, zhù liǎng ge wǎnshang. Nǚ: Hǎo de, měi wǎn sìbǎi yuán, bāohán shuāngrén zǎocān.",
+    "vietnamese": "Nam: Tôi muốn đặt một phòng đôi, ở hai đêm. Nữ: Vâng được ạ, mỗi đêm 400 tệ, bao gồm bữa sáng cho 2 người.",
+    "question": "问：房间价格包含什么？(Hỏi: Giá phòng bao gồm dịch vụ gì?)",
+    "options": [
+      {
+        "text": "双人早餐 (Bữa sáng cho hai người)",
+        "isCorrect": true
+      },
+      {
+        "text": "机场接送 (Đưa đón sân bay)",
+        "isCorrect": false
+      },
+      {
+        "text": "免费晚餐 (Bữa tối miễn phí)",
+        "isCorrect": false
+      },
+      {
+        "text": "游泳票 (Vé bơi lội)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 双人早餐.\n• Lời thoại người nữ: 「包含双人早餐」."
+  },
+  {
+    "id": "hsk3_speak_2",
+    "level": 3,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Đưa ra lời khuyên",
+    "audioText": "你最近工作太累了，应该多注意休息。",
+    "targetText": "你最近工作太累了应该多注意休息",
+    "targetPinyin": "Nǐ zuìjìn gōngzuò tài lèi le, yīnggāi duō zhùyì xiūxi.",
+    "vietnamese": "Dạo gần đây bạn làm việc mệt quá rồi, nên chú ý nghỉ ngơi nhiều hơn.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「应该」(yīnggāi) thanh 1 + thanh 1. 「注意」(zhùyì) hai thanh 4 liên tiếp, dứt khoát và rõ ràng."
+  },
+  {
+    "id": "hsk3_speak_3",
+    "level": 3,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Bày tỏ quan điểm cá nhân",
+    "audioText": "我认为学好外语最重要的是多听多说。",
+    "targetText": "我认为学好外语最重要的是多听多说",
+    "targetPinyin": "Wǒ rènwéi xuéhǎo wàiyǔ zuì zhòngyào de shì duō tīng duō shuō.",
+    "vietnamese": "Tôi cho rằng điều quan trọng nhất khi học tốt ngoại ngữ là nghe nhiều nói nhiều.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Cụm 「我认为」(wǒ rènwéi) là khẩu ngữ mở đầu thể hiện quan điểm. 「最重要」(zuì zhòngyào) nhấn giọng rõ ở trọng âm."
+  },
+  {
+    "id": "hsk3_read_qa_1",
+    "level": 3,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu đoạn văn",
+    "title": "Văn hóa trà Trung Hoa",
+    "passageText": "中国人喝茶的历史非常悠久。不仅口渴时喝茶，客人来家里做客时，主人也会热情地泡上一杯好茶表示欢迎。",
+    "pinyin": "Zhōngguó rén hē chá de lìshǐ fēicháng yōujiǔ. Bùjǐn kǒukě shí hē chá, kèrén lái jiālǐ zuòkè shí, zhǔrén yě huì rèqíng de pào shang yì bēi hǎo chá biǎoshì huānyíng.",
+    "vietnamese": "Lịch sử uống trà của người Trung Quốc vô cùng lâu đời. Không chỉ uống trà khi khát nước, mà khi khách đến nhà chơi, chủ nhà cũng sẽ nhiệt tình pha một chén trà ngon để tỏ lòng hoan nghênh.",
+    "question": "客人来家里时，主人通常会做什么？(Khi khách đến nhà, chủ nhà thường làm gì?)",
+    "options": [
+      {
+        "text": "热情地泡好茶表示欢迎 (Nhiệt tình pha trà ngon đón khách)",
+        "isCorrect": true
+      },
+      {
+        "text": "请客人喝酒 (Mời khách uống rượu)",
+        "isCorrect": false
+      },
+      {
+        "text": "送给客人贵重礼物 (Tặng khách quà đắt tiền)",
+        "isCorrect": false
+      },
+      {
+        "text": "带客人去饭馆 (Dẫn khách ra nhà hàng)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 热情地泡好茶表示欢迎.\n• Bài đọc chỉ rõ: 「客人来家里做客时，主人也会热情地泡上一杯好茶表示欢迎」."
+  },
+  {
+    "id": "hsk3_write_reorder_2",
+    "level": 3,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 把",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Anh ấy đã đặt quyển sách lên bàn.",
+    "words": [
+      "放",
+      "把书",
+      "他",
+      "在桌子上",
+      "了"
+    ],
+    "correctOrder": [
+      "他",
+      "把书",
+      "放",
+      "在桌子上",
+      "了"
+    ],
+    "hanzi": "他把书放在桌子上了。",
+    "pinyin": "Tā bǎ shū fàng zài zhuōzi shang le.",
+    "explanation": "• Cấu trúc câu chữ 把: 「Chủ ngữ + 把 + Tân ngữ + Động từ + Bổ ngữ kết quả/địa điểm (在/到) + 了」."
+  },
+  {
+    "id": "hsk3_write_reorder_3",
+    "level": 3,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu liên kết 不但...而且...",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Cô ấy không những biết nói tiếng Trung mà còn biết viết chữ Hán.",
+    "words": [
+      "而且会写汉字",
+      "不但会说中文",
+      "她"
+    ],
+    "correctOrder": [
+      "她",
+      "不但会说中文",
+      "而且会写汉字"
+    ],
+    "hanzi": "她不但会说中文，而且会写汉字。",
+    "pinyin": "Tā búdàn huì shuō Zhōngwén, érqiě huì xiě Hànzì.",
+    "explanation": "• Cấu trúc tăng tiến: 「Chủ ngữ + 不但... 而且...」 (Không những... mà còn...)."
+  },
+  {
+    "id": "hsk4_listen_qa_2",
+    "level": 4,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu đoạn hội thoại công việc & xã hội",
+    "title": "Kế hoạch quảng cáo sản phẩm",
+    "audioText": "男：王经理，关于新产品的网络推广方案，我们打算下周一正式上线。女：很好，但务必在上线前做好所有安全测试，确保万无一失。",
+    "passageText": "男：王经理，关于新产品的网络推广方案，我们打算下周一正式上线。\n女：很好，但务必在上线前做好所有安全测试，确保万无一失。",
+    "pinyin": "Nán: Wáng jīnglǐ, guānyú xīn chǎnpǐn de wǎngluò tuīguǎng fāng'àn, wǒmen dǎsuàn xià zhōuyī zhèngshì shàngxiàn. Nǚ: Hěn hǎo, dàn wùbì zài shàngxiàn qián zuò hǎo suǒyǒu ānquán cèshì, quèbǎo wànwúyīshī.",
+    "vietnamese": "Nam: Thưa giám đốc Vương, về phương án quảng bá sản phẩm mới trên mạng, chúng tôi dự định thứ Hai tuần sau sẽ chính thức vận hành. Nữ: Rất tốt, nhưng nhất định phải hoàn tất mọi bài kiểm tra an toàn trước khi lên sóng, đảm bảo vạn phần chu đáo không sai sót.",
+    "question": "问：王经理要求上线前做什么？(Hỏi: Giám đốc Vương yêu cầu làm gì trước khi lên mạng?)",
+    "options": [
+      {
+        "text": "做好安全测试 (Làm tốt kiểm tra an toàn)",
+        "isCorrect": true
+      },
+      {
+        "text": "降低产品价格 (Hạ giá sản phẩm)",
+        "isCorrect": false
+      },
+      {
+        "text": "更换项目负责人 (Thay đổi người phụ trách)",
+        "isCorrect": false
+      },
+      {
+        "text": "推迟到下个月 (Hoãn lại sang tháng sau)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 做好安全测试.\n• Giám đốc Vương dặn: 「务必在上线前做好所有安全测试」."
+  },
+  {
+    "id": "hsk4_listen_qa_3",
+    "level": 4,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu đoạn hội thoại công việc & xã hội",
+    "title": "Kinh nghiệm du lịch tự túc",
+    "audioText": "男：听说你上个月一个人去云南旅行了？感觉怎么样？女：风景美极了，尤其是当地人的热情和特色小吃，让我印象深刻。",
+    "passageText": "男：听说你上个月一个人去云南旅行了？感觉怎么样？\n女：风景美极了，尤其是当地人的热情和特色小吃，让我印象深刻。",
+    "pinyin": "Nán: Tīngshuō nǐ shàng ge yuè yí ge rén qù Yúnnán lǚxíng le? Gǎnjué zěnmeyàng? Nǚ: Fēngjǐng měi jí le, yóuqí shì dāngdì rén de rèqíng hé tèsè xiǎochī, ràng wǒ yìnxiàng shēnkè.",
+    "vietnamese": "Nam: Nghe nói tháng trước bạn đi du lịch một mình ở Vân Nam à? Cảm giác thế nào? Nữ: Cảnh sắc đẹp vô cùng, đặc biệt là sự hiếu khách của người dân địa phương và các món ăn vặt đặc sắc khiến mình ấn tượng sâu sắc.",
+    "question": "问：什么让这位女士印象深刻？(Hỏi: Điều gì khiến người phụ nữ ấn tượng sâu sắc?)",
+    "options": [
+      {
+        "text": "当地人的热情和特色小吃 (Sự nhiệt tình và món ăn đặc sắc)",
+        "isCorrect": true
+      },
+      {
+        "text": "昂贵的酒店费用 (Chi phí khách sạn đắt đỏ)",
+        "isCorrect": false
+      },
+      {
+        "text": "交通非常不方便 (Giao thông rất bất tiện)",
+        "isCorrect": false
+      },
+      {
+        "text": "复杂的天气变化 (Thời tiết thay đổi phức tạp)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 当地人的热情和特色小吃.\n• Lời thoại người nữ: 「尤其是当地人的热情和特色小吃，让我印象深刻」."
+  },
+  {
+    "id": "hsk4_speak_2",
+    "level": 4,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Thuyết trình và lập luận",
+    "audioText": "面对困难时，坚持往往比能力更为关键。",
+    "targetText": "面对困难时坚持往往比能力更为关键",
+    "targetPinyin": "Miànduì kùnnan shí, jiānchí wǎngwǎng bǐ nénglì gèng wéi guānjiàn.",
+    "vietnamese": "Khi đối mặt với khó khăn, sự kiên trì thường mang tính then chốt hơn cả năng lực.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「困难」(kùnnan) âm sau đọc nhẹ. 「坚持」(jiānchí) thanh 1 + thanh 2 bật hơi âm 'ch'. 「关键」(guānjiàn) thanh 1 + thanh 4."
+  },
+  {
+    "id": "hsk4_speak_3",
+    "level": 4,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Thương lượng và đàm phán",
+    "audioText": "如果贵公司能提供技术支持，我们愿意长期合作。",
+    "targetText": "如果贵公司能提供技术支持我们愿意长期合作",
+    "targetPinyin": "Rúguǒ guì gōngsī néng tígōng jìshù zhīchí, wǒmen yuànyì chángqī hézuò.",
+    "vietnamese": "Nếu quý công ty có thể cung cấp hỗ trợ kỹ thuật, chúng tôi sẵn lòng hợp tác lâu dài.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Câu đàm phán thương mại chuẩn mực. Chú ý ngắt nghỉ sau vế điều kiện 「提供技术支持」(tígōng jìshù zhīchí)."
+  },
+  {
+    "id": "hsk4_read_qa_1",
+    "level": 4,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu nghị luận & xã hội",
+    "title": "Ý nghĩa của việc đọc sách",
+    "passageText": "现代社会节奏很快，许多人忙于工作而忽略了阅读。事实上，每天抽出半小时静心读书，不仅能开拓视野，更能帮助我们缓解压力，保持内心的平静。",
+    "pinyin": "Xiàndài shèhuì jiézòu hěn kuài, xǔduō rén máng yú gōngzuò ér hūlüè le yuèdú. Shìshí shang, měitiān chōuchū bàn xiǎoshí jìngxīn dúshū, bùjǐn néng kāituò shìyě, gèng néng bāngzhù wǒmen huǎnjiě yālì, bǎochí nèixīn de píngjìng.",
+    "vietnamese": "Nhịp sống xã hội hiện đại rất nhanh, nhiều người bận rộn với công việc mà lơ là việc đọc sách. Trên thực tế, mỗi ngày dành ra nửa giờ tĩnh tâm đọc sách không chỉ mở rộng tầm nhìn, mà còn giúp chúng ta giải tỏa áp lực và duy trì sự bình yên trong nội tâm.",
+    "question": "根据这段话，每天静心读书有什么好处？(Theo đoạn văn, đọc sách mỗi ngày có ích lợi gì?)",
+    "options": [
+      {
+        "text": "开拓视野并缓解压力 (Mở rộng tầm mắt và giải tỏa áp lực)",
+        "isCorrect": true
+      },
+      {
+        "text": "提高跑步速度 (Tăng tốc độ chạy bộ)",
+        "isCorrect": false
+      },
+      {
+        "text": "增加工作薪水 (Tăng lương bổng)",
+        "isCorrect": false
+      },
+      {
+        "text": "减少睡眠时间 (Giảm thời gian ngủ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 开拓视野并缓解压力.\n• Bài viết khẳng định: 「不仅能开拓视野，更能帮助我们缓解压力」."
+  },
+  {
+    "id": "hsk4_write_reorder_2",
+    "level": 4,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 被 (Bị động)",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Máy tính của tôi đã bị em trai làm hỏng rồi.",
+    "words": [
+      "弄坏了",
+      "被弟弟",
+      "我的电脑"
+    ],
+    "correctOrder": [
+      "我的电脑",
+      "被弟弟",
+      "弄坏了"
+    ],
+    "hanzi": "我的电脑被弟弟弄坏了。",
+    "pinyin": "Wǒ de diànnǎo bèi dìdi nòng huài le.",
+    "explanation": "• Cấu trúc câu bị động chữ 被: 「Chủ ngữ (vật chịu tác động) + 被 + Tác nhân + Động từ + Thành phần khác」."
+  },
+  {
+    "id": "hsk4_write_reorder_3",
+    "level": 4,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu đảo ngữ tân ngữ với 把",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Xin hãy nộp bản báo cáo này trước thứ Sáu.",
+    "words": [
+      "请把",
+      "周五前",
+      "交上来",
+      "这份报告"
+    ],
+    "correctOrder": [
+      "请把",
+      "这份报告",
+      "周五前",
+      "交上来"
+    ],
+    "hanzi": "请把这份报告周五前交上来。",
+    "pinyin": "Qǐng bǎ zhè fèn bàogào zhōuwǔ qián jiāo shànglái.",
+    "explanation": "• Cấu trúc câu mệnh lệnh chữ 把: 「请把 + Tân ngữ + Thời gian + Động từ + Bổ ngữ xu hướng」."
+  },
+  {
+    "id": "hsk5_listen_qa_2",
+    "level": 5,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu chuyên sâu & Báo cáo",
+    "title": "Chiến lược chuyển đổi số doanh nghiệp",
+    "audioText": "男：各位董事，我们在过去一年的数字化转型中，通过云计算和智能分析，使得仓储物流周转效率提升了百分之三十五。女：这个成效非常显著，下一步我们要加快客户服务终端的智能化改造。",
+    "passageText": "男：各位董事，我们在过去一年的数字化转型中，通过云计算和智能分析，使得仓储物流周转效率提升了百分之三十五。\n女：这个成效非常显著，下一步我们要加快客户服务终端的智能化改造。",
+    "pinyin": "Nán: Gèwèi dǒngshì, wǒmen zài guòqù yì nián de shùzìhuà zhuǎnxíng zhōng, tōngguò yúnjìsuàn hé zhìnéng fēnxī, shǐdé cāngchǔ wùliú zhōuzhuǎn xiàolǜ tíshēng le bǎifēnzhī sānshíwǔ. Nǚ: Zhè ge chéngxiào fēicháng xiǎnzhù, xià yí bù wǒmen yào jiākuài kèhù fúwù duānzhuāng de zhìnénghuà gǎizào.",
+    "vietnamese": "Nam: Thưa các quý vị thành viên hội đồng quản trị, trong công cuộc chuyển đổi số một năm qua, thông qua điện toán đám mây và phân tích thông minh, chúng ta đã giúp hiệu suất quay vòng kho vận tăng lên 35%. Nữ: Thành quả này rất nổi bật, bước tiếp theo chúng ta cần đẩy nhanh cải tạo thông minh ở các đầu mối dịch vụ khách hàng.",
+    "question": "问：数字化转型取得了什么具体成效？(Hỏi: Việc chuyển đổi số đã thu được hiệu quả cụ thể gì?)",
+    "options": [
+      {
+        "text": "仓储物流周转效率提升了35% (Hiệu suất kho vận tăng 35%)",
+        "isCorrect": true
+      },
+      {
+        "text": "全体员工工资翻倍 (Lương toàn thể nhân viên tăng gấp đôi)",
+        "isCorrect": false
+      },
+      {
+        "text": "关闭了所有线下门店 (Đóng cửa toàn bộ cửa hàng trực tiếp)",
+        "isCorrect": false
+      },
+      {
+        "text": "减少了百分之五十的研发投入 (Cắt giảm 50% chi phí R&D)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 仓储物流周转效率提升了35%.\n• Số liệu được nêu trực tiếp và chính xác trong báo cáo."
+  },
+  {
+    "id": "hsk5_speak_2",
+    "level": 5,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Diễn thuyết truyền cảm hứng",
+    "audioText": "真正的智慧，不在于知晓所有答案，而在于懂得提出深刻的问题。",
+    "targetText": "真正的智慧不在于知晓所有答案而在于懂得提出深刻的问题",
+    "targetPinyin": "Zhēnzhèng de zhìhuì, bú zàiyú zhīxiǎo suǒyǒu dá'àn, ér zàiyú dǒngdé tíchū shēnkè de wèntí.",
+    "vietnamese": "Trí tuệ chân chính không nằm ở chỗ biết hết mọi đáp án, mà nằm ở việc biết cách đặt ra những câu hỏi sâu sắc.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Mẫu câu đối lập chuẩn văn viết: 「不在于... 而在于...」(Không nằm ở... mà ở...). Yêu cầu ngữ điệu trầm ấm, dứt khoát ở các từ then chốt 「智慧」(zhìhuì), 「深刻」(shēnkè)."
+  },
+  {
+    "id": "hsk5_read_qa_1",
+    "level": 5,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu văn hóa & Triết lý",
+    "title": "Triết lý Đạo Đức Kinh: Thượng thiện nhược thủy",
+    "passageText": "老子在《道德经》中写道：“上善若水，水善利万物而不争。”水滋养万物却从不夸耀功劳，总是处在众人不愿停留的低处。这种谦逊包容、顺应自然的品质，千百年来一直被中国人奉为人格修养的崇高境界。",
+    "pinyin": "Lǎozǐ zài 《Dàodé Jīng》 zhōng xiě dào: “Shàng shàn ruò shuǐ, shuǐ shàn lì wànwù ér bù zhēng.” Shuǐ zīyǎng wànwù què cóng bù kuāyào gōngláo, zǒngshì chǔ zài zhòngrén bú yuàn tíngliú de dīchù. Zhè zhǒng qiānxùn bāoróng, shùnyìng zìrán de pǐnzhì, qiānbǎi nián lái yìzhí bèi Zhōngguó rén fèng wéi réngé xiūyǎng de chónggāo jìngjiè.",
+    "vietnamese": "Lão Tử trong cuốn 'Đạo Đức Kinh' đã viết: 'Thượng thiện nhược thủy, thủy thiện lợi vạn vật nhi bất tranh' (Điều thiện tột cùng giống như nước, nước làm lợi cho vạn vật mà chẳng tranh giành). Nước nuôi dưỡng muôn loài nhưng chưa bao giờ khoe khoang công lao, luôn khiêm nhường ở chỗ trũng mà người đời không muốn ở lại. Phẩm chất khiêm cung, bao dung, thuận theo tự nhiên này suốt hàng ngàn năm qua luôn được người Trung Hoa tôn vinh là cảnh giới cao quý của tu dưỡng nhân cách.",
+    "question": "“上善若水”强调的主要精神品质是什么？(Tinh thần phẩm chất chính mà 'Thượng thiện nhược thủy' nhấn mạnh là gì?)",
+    "options": [
+      {
+        "text": "谦逊包容与顺应自然 (Khiêm cung bao dung và thuận theo tự nhiên)",
+        "isCorrect": true
+      },
+      {
+        "text": "勇猛争夺与寸步不让 (Dũng mãnh tranh giành và không nhường nửa bước)",
+        "isCorrect": false
+      },
+      {
+        "text": "追逐名利与炫耀功绩 (Theo đuổi danh lợi và khoe khoang công tích)",
+        "isCorrect": false
+      },
+      {
+        "text": "孤芳自赏与避世隐居 (Tự phụ cô độc và trốn tránh thế sự)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 谦逊包容与顺应自然.\n• Bài luận chỉ rõ: 「这种谦逊包容、顺应自然的品质，千百年来一直被中国人奉为人格修养的崇高境界」."
+  },
+  {
+    "id": "hsk5_write_reorder_2",
+    "level": 5,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu văn bản học thuật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Báo cáo này đã phân tích sâu sắc xu thế phát triển kinh tế tương lai.",
+    "words": [
+      "深刻地",
+      "这份报告",
+      "未来的经济发展趋势",
+      "分析了"
+    ],
+    "correctOrder": [
+      "这份报告",
+      "深刻地",
+      "分析了",
+      "未来的经济发展趋势"
+    ],
+    "hanzi": "这份报告深刻地分析了未来的经济发展趋势。",
+    "pinyin": "Zhè fèn bàogào shēnkè de fēnxī le wèilái de jīngjì fāzhǎn qūshì.",
+    "explanation": "• Cấu trúc chuẩn: 「Chủ ngữ + Trạng từ (深刻地) + Động từ + 了 + Cụm tân ngữ phức hợp」."
+  },
+  {
+    "id": "hsk6_listen_qa_2",
+    "level": 6,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu học thuật & Diễn đàn kinh tế quốc tế",
+    "title": "Kinh tế tuần hoàn và phát triển bền vững",
+    "audioText": "男：在全球碳中和愿景下，单纯依靠末端治理已无法应对严峻的气候挑战。我们必须在全产业链构建闭环式的循环经济模式，将资源消耗与经济增长彻底解耦。女：确实如此，这意味着制造业必须重塑从原材料甄选、工艺改良到产品报废回收的整个生命周期管理体系。",
+    "passageText": "男：在全球碳中和愿景下，单纯依靠末端治理已无法应对严峻的气候挑战。我们必须在全产业链构建闭环式的循环经济模式，将资源消耗与经济增长彻底解耦。\n女：确实如此，这意味着制造业必须重塑从原材料甄选、工艺改良到产品报废回收的整个生命周期管理体系。",
+    "pinyin": "Nán: Zài quánqiú tànzhōnghé yuànjǐng xià, dānchún yīkào mòduān zhìlǐ yǐ wúfǎ yìngduì yánjùn de qìhòu tiǎozhàn. Wǒmen bìxū zài quán chǎnyèliàn gòujiàn bìhuánshì de xúnhuán jīngjì móshì, jiāng zīyuán xiāohào yǔ jīngjì zēngzhǎng chèdǐ jiě'ǒu. Nǚ: Quèshí rúcǐ, zhè yìwèizhe zhìzàoyè bìxū chóngshù cóng yuáncáiliào zhēnxuǎn, gōngyì gǎiliáng dào chǎnpǐn bàofèi huíshōu de zhěnggè shēngmìng zhōuqī guǎnlǐ tǐxì.",
+    "vietnamese": "Nam: Dưới viễn cảnh trung hòa carbon toàn cầu, việc chỉ đơn thuần dựa vào xử lý phần ngọn đã không còn đáp ứng nổi các thách thức khí hậu khắc nghiệt. Chúng ta bắt buộc phải xây dựng mô hình kinh tế tuần hoàn khép kín trên toàn chuỗi công nghiệp, tách rời triệt để mức tiêu hao tài nguyên khỏi tăng trưởng kinh tế. Nữ: Quả đúng như vậy, điều này đồng nghĩa với việc ngành chế tạo phải tái định hình toàn bộ hệ thống quản lý vòng đời từ khâu tuyển chọn nguyên vật liệu, cải tiến công nghệ tới thu hồi phế phẩm.",
+    "question": "问：对话中强调应对气候挑战的关键举措是什么？(Hỏi: Biện pháp mấu chốt được nhấn mạnh trong đối thoại để ứng phó thách thức khí hậu là gì?)",
+    "options": [
+      {
+        "text": "构建闭环循环经济并解耦资源消耗与经济增长 (Xây dựng kinh tế tuần hoàn khép kín)",
+        "isCorrect": true
+      },
+      {
+        "text": "全面停止一切工业制造业生产 (Ngừng toàn bộ sản xuất công nghiệp)",
+        "isCorrect": false
+      },
+      {
+        "text": "仅依靠末端排污治理 (Chỉ phụ thuộc vào xử lý chất thải cuối nguồn)",
+        "isCorrect": false
+      },
+      {
+        "text": "无限度增加化石燃料开采 (Khai thác nhiên liệu hóa thạch không giới hạn)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 构建闭环循环经济并解耦资源消耗与经济增长.\n• Lời thoại nêu rõ giải pháp cốt lõi: 「必须在全产业链构建闭环式的循环经济模式，将资源消耗与经济增长彻底解耦」."
+  },
+  {
+    "id": "hsk6_speak_2",
+    "level": 6,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Khẩu ngữ ngoại giao & Luận biện cao cấp",
+    "audioText": "文明因多样而交流，因交流而互鉴，因互鉴而发展。",
+    "targetText": "文明因多样而交流因交流而互鉴因互鉴而发展",
+    "targetPinyin": "Wénmíng yīn duōyàng ér jiāoliú, yīn jiāoliú ér hùjiàn, yīn hùjiàn ér fāzhǎn.",
+    "vietnamese": "Văn minh vì đa dạng mà giao lưu, vì giao lưu mà học hỏi lẫn nhau, vì học hỏi lẫn nhau mà phát triển.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Câu châm ngôn triết học văn hóa đối ngẫu đỉnh cao. Cần duy trì nhịp thở vững vàng, ngắt đúng từng phân đoạn điệp từ 「因...而...」 với thanh điệu chuẩn xác."
+  },
+  {
+    "id": "hsk6_read_qa_1",
+    "level": 6,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu văn nghệ & Khảo cứu",
+    "title": "Nghệ thuật Thư pháp và Đạo lý hội họa Trung Hoa",
+    "passageText": "中国书法之所以被誉为“无言之诗，无图之画”，根源在于其以黑白线条的干湿浓淡、疾徐涩畅，具象化地展现了创作者的心性涵养与生命节律。书家笔下的提按转折，不仅是技法的运筹，更暗合天地万物的生克变化。",
+    "pinyin": "Zhōngguó shūfǎ zhī suǒyǐ bèi yù wéi “wúyán zhī shī, wútú zhī huà”, gēnyuán zàiyú qí yǐ hēibái xiàntiáo de gān shī nóng dàn, jí xú sè chàng, jùxiànghuà de zhǎnxiàn le chuàngzuòzhě de xīnxìng hánhyǎng yǔ shēngmìng jiélǜ. Shūjiā bǐxià de tí àn zhuǎn zhé, bùjǐn shì jìfǎ de yùnchóu, gèng ànhé tiāndì wànwù de shēngkè biànhuà.",
+    "vietnamese": "Thư pháp Trung Hoa sở dĩ được ngợi ca là 'thơ không lời, họa không hình', căn nguyên là vì nó dùng độ khô ướt, đậm nhạt, nhanh chậm, rít thoát của những đường nét đen trắng để thể hiện một cách cụ tượng phẩm hạnh tâm tính cùng nhịp điệu sinh mệnh của người sáng tạo. Nét nhấn thả, chuyển ngoặt dưới ngòi bút của bậc thư pháp gia không chỉ là sự vận trù kỹ pháp, mà còn thầm ứng hợp với quy luật sinh khắc biến hóa của vạn vật trong trời đất.",
+    "question": "中国书法被誉为“无言之诗，无图之画”的核心原因是什么？(Nguyên nhân cốt lõi khiến thư pháp Trung Hoa được ví là 'thơ không lời, họa không hình' là gì?)",
+    "options": [
+      {
+        "text": "通过黑白线条具象化展现心性涵养与生命节律 (Thể hiện tâm tính và nhịp điệu sinh mệnh qua nét đen trắng)",
+        "isCorrect": true
+      },
+      {
+        "text": "所有毛笔均用最名贵的纯金制成 (Tất cả bút lông đều đúc bằng vàng ròng)",
+        "isCorrect": false
+      },
+      {
+        "text": "只允许在宫廷内部秘传而不外传 (Chỉ lưu truyền bí mật trong hoàng cung)",
+        "isCorrect": false
+      },
+      {
+        "text": "书写时绝对不能使用任何墨汁 (Khi viết tuyệt đối không dùng mực)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 通过黑白线条具象化展现心性涵养与生命节律.\n• Bài văn nêu rõ: 「根源在于其以黑白线条的干湿浓淡、疾徐涩畅，具象化地展现了创作者的心性涵养与生命节律」."
+  },
+  {
+    "id": "hsk6_write_reorder_2",
+    "level": 6,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu nghị luận học thuật HSK 6",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Nghiên cứu này đã làm sáng tỏ cơ chế tác động tương hỗ giữa các biến số.",
+    "words": [
+      "阐明了",
+      "各项变量之间的",
+      "这项研究",
+      "相互作用机制"
+    ],
+    "correctOrder": [
+      "这项研究",
+      "阐明了",
+      "各项变量之间的",
+      "相互作用机制"
+    ],
+    "hanzi": "这项研究阐明了各项变量之间的相互作用机制。",
+    "pinyin": "Zhè xiàng yánjiū chǎnmíng le gèxiàng biànliàng zhījiān de xiānghù zuòyòng jīzhì.",
+    "explanation": "• Cấu trúc câu chuẩn mực văn phong nghiên cứu khoa học HSK 6: 「Chủ ngữ (这项研究) + Vị ngữ (阐明了) + Định ngữ (各项变量之间的) + Trung tâm ngữ (相互作用机制)」."
+  },
+  {
+    "id": "hsk1_listen_gen_1",
+    "level": 1,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Hỏi thăm đồ uống",
+    "audioText": "男：你想喝点儿什么？女：我想喝一杯热茶。",
+    "passageText": "男：你想喝点儿什么？\n女：我想喝一杯热茶。",
+    "pinyin": "Nán: Nǐ xiǎng hē diǎnr shénme? Nǚ: Wǒ xiǎng hē yì bēi rè chá.",
+    "vietnamese": "Nam: Bạn muốn uống chút gì nào? Nữ: Tôi muốn uống một cốc trà nóng.",
+    "question": "问：女士想喝什么？(Hỏi: Người nữ muốn uống gì?)",
+    "options": [
+      {
+        "text": "热茶 (rè chá - Trà nóng)",
+        "isCorrect": true
+      },
+      {
+        "text": "冷水 (lěng shuǐ - Nước lạnh)",
+        "isCorrect": false
+      },
+      {
+        "text": "牛奶 (niúnǎi - Sữa bò)",
+        "isCorrect": false
+      },
+      {
+        "text": "苹果汁 (píngguǒzhī - Nước táo)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 热茶 (rè chá).\n• Người nữ nói: 「我想喝一杯热茶」."
+  },
+  {
+    "id": "hsk1_listen_gen_2",
+    "level": 1,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Hỏi vị trí cuốn sách",
+    "audioText": "男：我的汉语书在哪儿？女：在你的书包里。",
+    "passageText": "男：我的汉语书在哪儿？\n女：在你的书包里。",
+    "pinyin": "Nán: Wǒ de Hànyǔ shū zài nǎr? Nǚ: Zài nǐ de shūbāo lǐ.",
+    "vietnamese": "Nam: Sách tiếng Trung của tôi ở đâu rồi? Nữ: Ở trong cặp sách của bạn kìa.",
+    "question": "问：汉语书在哪儿？(Hỏi: Sách tiếng Trung ở đâu?)",
+    "options": [
+      {
+        "text": "书包里 (Trong cặp sách)",
+        "isCorrect": true
+      },
+      {
+        "text": "桌子上 (Trên bàn)",
+        "isCorrect": false
+      },
+      {
+        "text": "椅子下 (Dưới ghế)",
+        "isCorrect": false
+      },
+      {
+        "text": "学校里 (Trong trường)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 书包里.\n• Người nữ đáp rõ: 「在你的书包里」."
+  },
+  {
+    "id": "hsk1_listen_gen_3",
+    "level": 1,
+    "skill": "listening",
+    "subType": "listening_truefalse",
+    "category": "Nghe hiểu phán đoán Đúng / Sai",
+    "title": "Thói quen đọc sách",
+    "audioText": "张医生每天晚上八点都在家看书。",
+    "passageText": "张医生每天晚上八点都在家看书。",
+    "pinyin": "Zhāng yīshēng měitiān wǎnshang bā diǎn dōu zài jiā kànshū.",
+    "vietnamese": "Bác sĩ Trương mỗi tối lúc 8 giờ đều ở nhà đọc sách.",
+    "question": "判断正误：张医生晚上看书。(Phán đoán Đúng/Sai: Bác sĩ Trương buổi tối đọc sách.)",
+    "options": [
+      {
+        "text": "正确 (Đúng - 正确)",
+        "isCorrect": true
+      },
+      {
+        "text": "错误 (Sai - 错误)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 正确 (Đúng).\n• Câu khẳng định rõ: 「每天晚上八点都在家看书」."
+  },
+  {
+    "id": "hsk1_speak_gen_1",
+    "level": 1,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Cảm ơn người giúp đỡ",
+    "audioText": "太谢谢你了！",
+    "targetText": "太谢谢你了",
+    "targetPinyin": "Tài xièxie nǐ le!",
+    "vietnamese": "Vô cùng cảm ơn bạn!",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「太...了」(tài...le) cấu trúc cảm thán. 「谢谢」(xièxie) chữ thứ hai đọc thanh nhẹ."
+  },
+  {
+    "id": "hsk1_speak_gen_2",
+    "level": 1,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi thăm tên",
+    "audioText": "你叫什么名字？",
+    "targetText": "你叫什么名字",
+    "targetPinyin": "Nǐ jiào shénme míngzi?",
+    "vietnamese": "Bạn tên là gì?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「名字」(míngzi) chữ 「子」 thanh nhẹ. 「叫」(jiào) phát âm thanh 4 dứt khoát."
+  },
+  {
+    "id": "hsk1_speak_gen_3",
+    "level": 1,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi quốc tịch",
+    "audioText": "我是越南人，你是哪国人？",
+    "targetText": "我是越南人你是哪国人",
+    "targetPinyin": "Wǒ shì Yuènán rén, nǐ shì nǎ guó rén?",
+    "vietnamese": "Tôi là người Việt Nam, bạn là người nước nào?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「越南」(Yuènán) thanh 4 + thanh 2. 「哪国人」(nǎ guó rén) ngữ điệu hỏi nhẹ nhàng nâng giọng cuối câu."
+  },
+  {
+    "id": "hsk1_read_gen_1",
+    "level": 1,
+    "skill": "reading",
+    "subType": "reading_main_idea",
+    "category": "Đọc hiểu tìm ý chính",
+    "title": "Thời tiết mùa xuân",
+    "passageText": "北京的三月天气很好，不冷也不热。树绿了，花开了，很多人去公园散步。",
+    "pinyin": "Běijīng de sānyuè tiānqì hěn hǎo, bù lěng yě bú rè. Shù lǜ le, huā kāi le, hěn duō rén qù gōngyuán sànbù.",
+    "vietnamese": "Tháng Ba ở Bắc Kinh thời tiết rất đẹp, không lạnh cũng không nóng. Cây cối xanh tươi, hoa nở rộ, rất nhiều người đi dạo công viên.",
+    "question": "这段话主要讲什么？(Đoạn văn này chủ yếu nói về điều gì?)",
+    "options": [
+      {
+        "text": "北京三月的美好天气 (Thời tiết tươi đẹp tháng Ba ở Bắc Kinh)",
+        "isCorrect": true
+      },
+      {
+        "text": "人们不喜欢去公园 (Mọi người không thích đến công viên)",
+        "isCorrect": false
+      },
+      {
+        "text": "三月份北京下大雪 (Tháng Ba ở Bắc Kinh tuyết rơi dày)",
+        "isCorrect": false
+      },
+      {
+        "text": "学校放假了 (Trường học nghỉ lễ rồi)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 北京三月的美好天气.\n• Đoạn văn miêu tả thời tiết ấm áp, cây cối hoa cỏ tháng Ba tại Bắc Kinh."
+  },
+  {
+    "id": "hsk1_read_gen_2",
+    "level": 1,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu chi tiết",
+    "title": "Món ăn yêu thích của bạn bè",
+    "passageText": "大卫是美国人，但他很喜欢吃中国米饭和米粉。他每天中午都在学校食堂吃饭。",
+    "pinyin": "Dàwèi shì Měiguó rén, dàn tā hěn xǐhuan chī Zhōngguó mǐfàn hé mǐfěn. Tā měitiān zhōngwǔ dōu zài xuéxiào shítáng chīfàn.",
+    "vietnamese": "David là người Mỹ, nhưng anh ấy rất thích ăn cơm và bún Trung Quốc. Buổi trưa mỗi ngày anh ấy đều ăn cơm ở nhà ăn của trường.",
+    "question": "大卫每天中午在哪儿吃饭？(David mỗi buổi trưa ăn cơm ở đâu?)",
+    "options": [
+      {
+        "text": "学校食堂 (Nhà ăn trường học)",
+        "isCorrect": true
+      },
+      {
+        "text": "家里 (Ở nhà)",
+        "isCorrect": false
+      },
+      {
+        "text": "大饭店 (Khách sạn lớn)",
+        "isCorrect": false
+      },
+      {
+        "text": "飞机上 (Trên máy bay)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 学校食堂.\n• Câu cuối nói rõ: 「每天中午都在学校食堂吃饭」."
+  },
+  {
+    "id": "hsk1_write_gen_1",
+    "level": 1,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu vị ngữ động từ",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Tôi muốn mua một chiếc cốc uống nước.",
+    "words": [
+      "一个水杯",
+      "想买",
+      "我"
+    ],
+    "correctOrder": [
+      "我",
+      "想买",
+      "一个水杯"
+    ],
+    "hanzi": "我想买一个水杯。",
+    "pinyin": "Wǒ xiǎng mǎi yí ge shuǐbēi.",
+    "explanation": "• Cấu trúc: 「Chủ ngữ + Năng nguyện động từ (想) + Động từ (买) + Lượng từ + Tân ngữ」."
+  },
+  {
+    "id": "hsk1_write_gen_2",
+    "level": 1,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu vị từ tính từ",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Trường học của chúng tôi rất to và đẹp.",
+    "words": [
+      "很大也很漂亮",
+      "我们的",
+      "学校"
+    ],
+    "correctOrder": [
+      "我们的",
+      "学校",
+      "很大也很漂亮"
+    ],
+    "hanzi": "我们的学校很大也很漂亮。",
+    "pinyin": "Wǒmen de xuéxiào hěn dà yě hěn piàoliang.",
+    "explanation": "• Cấu trúc miêu tả: 「Định ngữ (我们的) + Chủ ngữ (学校) + Cụm vị ngữ tính từ (很大也很漂亮)」."
+  },
+  {
+    "id": "hsk2_listen_gen_1",
+    "level": 2,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu thường nhật",
+    "title": "Hỏi giờ máy bay cất cánh",
+    "audioText": "男：请问飞往广州的航班几点起飞？女：原本是上午九点，因为大雾推迟到十点半了。",
+    "passageText": "男：请问飞往广州的航班几点起飞？\n女：原本是上午九点，因为大雾推迟到十点半了。",
+    "pinyin": "Nán: Qǐngwèn fēi wǎng Guǎngzhōu de hángbān jǐ diǎn qǐfēi? Nǚ: Yuánběn shì shàngwǔ jiǔ diǎn, yīnwèi dàwù tuīchí dào shí diǎn bàn le.",
+    "vietnamese": "Nam: Xin hỏi chuyến bay đi Quảng Châu mấy giờ cất cánh? Nữ: Ban đầu là 9 giờ sáng, do sương mù dày đặc nên hoãn đến 10 giờ rưỡi rồi.",
+    "question": "问：飞机几点起飞？(Hỏi: Máy bay mấy giờ cất cánh?)",
+    "options": [
+      {
+        "text": "十点半 (10 giờ rưỡi)",
+        "isCorrect": true
+      },
+      {
+        "text": "九点整 (9 giờ đúng)",
+        "isCorrect": false
+      },
+      {
+        "text": "八点 (8 giờ)",
+        "isCorrect": false
+      },
+      {
+        "text": "下午一点 (1 giờ chiều)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 十点半.\n• Người nữ thông báo: 「推迟到十点半了」 (Hoãn tới 10h30)."
+  },
+  {
+    "id": "hsk2_speak_gen_1",
+    "level": 2,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi thăm phương thức thanh toán",
+    "audioText": "可以用微信或者支付宝付款吗？",
+    "targetText": "可以用微信或者支付宝付款吗",
+    "targetPinyin": "Kěyǐ yòng Wēixìn huòzhě Zhīfùbǎo fùkuǎn ma?",
+    "vietnamese": "Có thể dùng WeChat hay Alipay để thanh toán không?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「微信」(Wēixìn thanh 1 + thanh 4). 「支付宝」(Zhīfùbǎo thanh 1 + thanh 4 + thanh 3). 「付款」(fùkuǎn) thanh 4 + thanh 3."
+  },
+  {
+    "id": "hsk2_read_gen_1",
+    "level": 2,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu chi tiết",
+    "title": "Thói quen sinh hoạt lành mạnh",
+    "passageText": "王奶奶今年七十五岁了，身体非常健康。她说自己的秘密是每天少吃油腻的食物，饭后走一走，早睡早起。",
+    "pinyin": "Wáng nǎinai jīnnián qīshíwǔ suì le, shēntǐ fēicháng jiànkāng. Tā shuō zìjǐ de mìmì shì měitiān shǎo chī yóunì de shíwù, fànhòu zǒu yi zǒu, zǎoshuì zǎoqǐ.",
+    "vietnamese": "Bà Vương năm nay 75 tuổi rồi, thân thể vô cùng khỏe mạnh. Bà chia sẻ bí quyết của mình là mỗi ngày bớt ăn đồ dầu mỡ, sau bữa cơm đi dạo một chút, ngủ sớm dậy sớm.",
+    "question": "王奶奶保持健康的秘密是什么？(Bí quyết giữ gìn sức khỏe của bà Vương là gì?)",
+    "options": [
+      {
+        "text": "少吃油腻、饭后散步、早睡早起 (Ăn ít đồ dầu mỡ, đi dạo, ngủ sớm dậy sớm)",
+        "isCorrect": true
+      },
+      {
+        "text": "每天喝很多可乐 (Mỗi ngày uống nhiều nước ngọt có ga)",
+        "isCorrect": false
+      },
+      {
+        "text": "整天躺在床上不运动 (Cả ngày nằm trên giường không vận động)",
+        "isCorrect": false
+      },
+      {
+        "text": "经常熬夜看电视 (Thường xuyên thức khuya xem ti vi)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 少吃油腻、饭后散步、早睡早起.\n• Đoạn văn liệt kê đầy đủ 3 thói quen vàng của bà."
+  },
+  {
+    "id": "hsk2_write_gen_1",
+    "level": 2,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 比 và 得",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Anh ấy chạy nhanh hơn tôi nhiều.",
+    "words": [
+      "跑得",
+      "他",
+      "比我",
+      "快得多"
+    ],
+    "correctOrder": [
+      "他",
+      "比我",
+      "跑得",
+      "快得多"
+    ],
+    "hanzi": "他比我跑得快得多。",
+    "pinyin": "Tā bǐ wǒ pǎo de kuài de duō.",
+    "explanation": "• Cấu trúc kết hợp 比 và bổ ngữ trạng thái: 「A + 比 + B + V + 得 + Tính từ + 得多」."
+  },
+  {
+    "id": "hsk3_listen_gen_1",
+    "level": 3,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu công sở & dịch vụ",
+    "title": "Gửi bưu phẩm chuyển phát nhanh",
+    "audioText": "男：师傅，这箱水果寄到成都大概需要几天？女：走特快专递的话，明天下午就能送到。",
+    "passageText": "男：师傅，这箱水果寄到成都大概需要几天？\n女：走特快专递的话，明天下午就能送到。",
+    "pinyin": "Nán: Shīfu, zhè xiāng shuǐguǒ jì dào Chéngdū dàgài xūyào jǐ tiān? Nǚ: Zǒu tèkuài zhuāndì dehuà, míngtiān xiàwǔ jiù néng sòngdào.",
+    "vietnamese": "Nam: Bác ơi, thùng hoa quả này gửi đến Thành Đô tầm mất mấy ngày? Nữ: Nếu gửi chuyển phát hỏa tốc thì chiều mai là giao tới nơi rồi.",
+    "question": "问：特快专递什么时候能送到？(Hỏi: Chuyển phát hỏa tốc khi nào giao tới?)",
+    "options": [
+      {
+        "text": "明天下午 (Chiều mai)",
+        "isCorrect": true
+      },
+      {
+        "text": "三天以后 (3 ngày sau)",
+        "isCorrect": false
+      },
+      {
+        "text": "下周一 (Thứ Hai tuần sau)",
+        "isCorrect": false
+      },
+      {
+        "text": "今天晚上 (Tối nay)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 明天下午.\n• Nhân viên trả lời: 「明天下午就能送到」."
+  },
+  {
+    "id": "hsk3_speak_gen_1",
+    "level": 3,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Xin phép và hẹn lại",
+    "audioText": "实在抱歉，今天我有急事，能改天再约吗？",
+    "targetText": "实在抱歉今天我有急事能改天再约吗",
+    "targetPinyin": "Shízài bàoqiàn, jīntiān wǒ yǒu jíshì, néng gǎitiān zài yuē ma?",
+    "vietnamese": "Thành thật xin lỗi, hôm nay tôi có việc gấp, có thể hẹn lại hôm khác được không?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「实在抱歉」(shízài bàoqiàn) ngữ khí lịch sự, chân thành. 「改天」(gǎitiān) có nghĩa là hôm khác."
+  },
+  {
+    "id": "hsk3_read_gen_1",
+    "level": 3,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh hoạt xã hội",
+    "title": "Ý nghĩa của nụ cười",
+    "passageText": "微笑是人类最美丽的语言。无论走到哪里，一个真诚的微笑都能拉近人与人之间的距离，化解许多不必要的误会与烦恼。",
+    "pinyin": "Wēixiào shì rénlèi zuì měilì de yǔyán. Wúlùn zǒu dào nǎlǐ, yí ge zhēnchéng de wēixiào dōu néng lājìn rén yǔ rén zhījiān de jùlí, huàjiě xǔduō bú bìyào de wùhuì yǔ fánnǎo.",
+    "vietnamese": "Nụ cười là ngôn ngữ đẹp đẽ nhất của nhân loại. Dù đi tới bất cứ nơi đâu, một nụ cười chân thành đều có thể kéo gần khoảng cách giữa người với người, hóa giải nhiều hiểu lầm và phiền muộn không đáng có.",
+    "question": "真诚的微笑有什么作用？(Nụ cười chân thành có tác dụng gì?)",
+    "options": [
+      {
+        "text": "拉近距离并化解误会 (Kéo gần khoảng cách và hóa giải hiểu lầm)",
+        "isCorrect": true
+      },
+      {
+        "text": "让人感到非常害怕 (Khiến người khác cảm thấy sợ hãi)",
+        "isCorrect": false
+      },
+      {
+        "text": "增加购物的开销 (Tăng chi tiêu mua sắm)",
+        "isCorrect": false
+      },
+      {
+        "text": "让人不想说话 (Làm người khác không muốn nói chuyện)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 拉近距离并化解误会.\n• Bài văn nêu: 「拉近人与人之间的距离，化解许多不必要的误会与烦恼」."
+  },
+  {
+    "id": "hsk3_write_gen_1",
+    "level": 3,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 虽然...但是...",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Tuy rằng bài thi này hơi khó, nhưng điểm số của anh ấy rất cao.",
+    "words": [
+      "这门考试有点儿难",
+      "他的成绩很好",
+      "但是",
+      "虽然"
+    ],
+    "correctOrder": [
+      "虽然",
+      "这门考试有点儿难",
+      "但是",
+      "他的成绩很好"
+    ],
+    "hanzi": "虽然这门考试有点儿难，但是他的成绩很好。",
+    "pinyin": "Suīrán zhè mén kǎoshì yǒudiǎnr nán, dànshì tā de chéngjì hěn hǎo.",
+    "explanation": "• Cấu trúc câu nhượng bộ: 「虽然 + Vế A, 但是 + Vế B」."
+  },
+  {
+    "id": "hsk4_listen_gen_1",
+    "level": 4,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu công sở & chuyên môn",
+    "title": "Đánh giá hiệu suất nhân viên",
+    "audioText": "男：小李最近的工作状态如何？女：他不仅能按时高效地完成日常任务，还主动提出了两项节约成本的创新方案，表现相当优异。",
+    "passageText": "男：小李最近的工作状态如何？\n女：他不仅能按时高效地完成日常任务，还主动提出了两项节约成本的创新方案，表现相当优异。",
+    "pinyin": "Nán: Xiǎo Lǐ zuìjìn de gōngzuò zhuàngtài rúhé? Nǚ: Tā bùjǐn néng ànshí gāoxiào de wánchéng rìcháng rènwu, hái zhǔdòng tíchū le liǎng xiàng jiéyuē chéngběn de chuàngxīn fāng'àn, biǎoxiàn xiāngdāng yōuyì.",
+    "vietnamese": "Nam: Trạng thái công việc gần đây của Tiểu Lý thế nào? Nữ: Cậu ấy không những hoàn thành nhiệm vụ thường nhật đúng hạn và hiệu quả cao, mà còn chủ động đề xuất hai phương án đổi mới tiết kiệm chi phí, thể hiện vô cùng xuất sắc.",
+    "question": "问：女经理对小李的评价如何？(Hỏi: Nữ quản lý đánh giá thế nào về Tiểu Lý?)",
+    "options": [
+      {
+        "text": "表现相当优异 (Thể hiện rất xuất sắc)",
+        "isCorrect": true
+      },
+      {
+        "text": "工作经常迟到 (Đi làm thường xuyên trễ)",
+        "isCorrect": false
+      },
+      {
+        "text": "缺乏团队合作精神 (Thiếu tinh thần đồng đội)",
+        "isCorrect": false
+      },
+      {
+        "text": "无法按时完成工作 (Không thể hoàn thành đúng hạn)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 表现相当优异.\n• Người nữ khẳng định: 「表现相当优异」."
+  },
+  {
+    "id": "hsk4_speak_gen_1",
+    "level": 4,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Trình bày giải pháp",
+    "audioText": "为了确保项目如期交付，我们必须合理调配团队资源。",
+    "targetText": "为了确保项目如期交付我们必须合理调配团队资源",
+    "targetPinyin": "Wèile quèbǎo xiàngmù rúqī jiāofù, wǒmen bìxū hélǐ tiáopèi tuánduì zīyuán.",
+    "vietnamese": "Để đảm bảo dự án bàn giao đúng thời hạn, chúng ta bắt buộc phải phân bổ hợp lý các nguồn lực nhóm.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「确保」(quèbǎo thanh 4 + thanh 3). 「如期交付」(rúqī jiāofù) là cụm từ thương mại trang trọng."
+  },
+  {
+    "id": "hsk4_read_gen_1",
+    "level": 4,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu tâm lý học & cuộc sống",
+    "title": "Nghệ thuật lắng nghe",
+    "passageText": "在人际交往中，倾听往往比表达更具力量。懂得认真聆听他人心声的人，更容易赢得信任与尊重，因为倾听本身就是一种深沉的接纳与关爱。",
+    "pinyin": "Zài rénjì jiāowǎng zhōng, qīngtīng wǎngwǎng bǐ biǎodá gèng jù lìliang. Dǒngdé rènzhēn língtīng tārén xīnshēng de rén, gèng róngyì yíngdé xìnrèn yǔ zūnzhòng, yīnwèi qīngtīng běnshēn jiù shì yì zhǒng shēnchén de jiēnà yǔ guān'ài.",
+    "vietnamese": "Trong giao tiếp ứng xử giữa người với người, lắng nghe thường mang sức mạnh to lớn hơn việc diễn đạt. Người biết nghiêm túc lắng nghe tiếng lòng của người khác dễ nhận được sự tín nhiệm và tôn trọng hơn, bởi vì bản thân sự lắng nghe đã là một cách tiếp nhận và quan tâm sâu sắc.",
+    "question": "根据短文，懂得认真聆听他人的人容易得到什么？(Theo đoạn văn, người biết lắng nghe dễ nhận được điều gì?)",
+    "options": [
+      {
+        "text": "赢得信任与尊重 (Giành được sự tin tưởng và tôn trọng)",
+        "isCorrect": true
+      },
+      {
+        "text": "得到更多的物质奖励 (Nhận được nhiều phần thưởng vật chất)",
+        "isCorrect": false
+      },
+      {
+        "text": "避免参加任何社交活动 (Tránh né tham gia giao lưu xã hội)",
+        "isCorrect": false
+      },
+      {
+        "text": "忘记自己的烦恼 (Quên đi phiền muộn của chính mình)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 赢得信任与尊重.\n• Câu trong bài chỉ rõ: 「更容易赢得信任与尊重」."
+  },
+  {
+    "id": "hsk4_write_gen_1",
+    "level": 4,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 连...也/都...",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Anh ấy bận rộn đến mức ngay cả cơm cũng không kịp ăn.",
+    "words": [
+      "都顾不上吃",
+      "他忙得",
+      "连午饭"
+    ],
+    "correctOrder": [
+      "他忙得",
+      "连午饭",
+      "都顾不上吃"
+    ],
+    "hanzi": "他忙得连午饭都顾不上吃。",
+    "pinyin": "Tā máng de lián wǔfàn dōu gùbushàng chī.",
+    "explanation": "• Cấu trúc nhấn mạnh cực đoan: 「Tính từ + 得 + 连... 都/也...」."
+  },
+  {
+    "id": "hsk5_listen_gen_1",
+    "level": 5,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu chuyên đề & Khoa học xã hội",
+    "title": "Trí tuệ nhân tạo và giáo dục tương lai",
+    "audioText": "男：随着生成式人工智能的快速迭代，传统以死记硬背为主的教学模式正面临颠覆。女：是的，未来的教育更应当侧重培养学生的批判性思维、跨学科整合能力以及情感共鸣等机器难以替代的软实力。",
+    "passageText": "男：随着生成式人工智能的快速迭代，传统以死记硬背为主的教学模式正面临颠覆。\n女：是的，未来的教育更应当侧重培养学生的批判性思维、跨学科整合能力以及情感共鸣等机器难以替代的软实力。",
+    "pinyin": "Nán: Suízhe shēngchéngshì réngōng zhìnéng de kuàisù diédài, chuántǒng yǐ sǐjì yìngbèi wéizhǔ de jiàoxué móshì zhèng miànlín diānfù. Nǚ: Shì de, wèilái de jiàoyù gèng yīngdāng cèzhòng péiyǎng xuésheng de pīpànxìng sīwéi, kuàxuékē zhěnghé nénglì yǐjí qínggǎn gòngmíng děng jīqì nányǐ tìdài de ruǎnlìlì.",
+    "vietnamese": "Nam: Cùng với sự nâng cấp nhanh chóng của AI tạo sinh, mô hình giáo dục truyền thống vốn lấy học vẹt ghi nhớ làm chủ đạo đang đối mặt với sự đảo lộn toàn diện. Nữ: Đúng vậy, giáo dục tương lai càng nên chú trọng bồi dưỡng tư duy phản biện, năng lực tích hợp liên ngành cũng như sự thấu cảm - những năng lực mềm mà máy móc khó lòng thay thế.",
+    "question": "问：女专家认为未来教育应该重点培养什么？(Hỏi: Chuyên gia nữ cho rằng giáo dục tương lai cần bồi dưỡng điều gì?)",
+    "options": [
+      {
+        "text": "批判性思维与机器难替代的软实力 (Tư duy phản biện và năng lực mềm máy móc khó thay thế)",
+        "isCorrect": true
+      },
+      {
+        "text": "大量背诵标准答案的能力 (Khả năng học thuộc lòng hàng loạt đáp án)",
+        "isCorrect": false
+      },
+      {
+        "text": "彻底废除所有学校与教师 (Bãi bỏ hoàn toàn trường học và giáo viên)",
+        "isCorrect": false
+      },
+      {
+        "text": "仅学习电脑硬件组装 (Chỉ học lắp ráp phần cứng máy tính)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 批判性思维与机器难替代的软实力.\n• Lời nữ chuyên gia nhấn mạnh: 「培养学生的批判性思维、跨学科整合能力以及情感共鸣等机器难以替代的软实力」."
+  },
+  {
+    "id": "hsk5_speak_gen_1",
+    "level": 5,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Luận bàn văn hóa",
+    "audioText": "传统文化并非僵死不变的遗存，而是要在当代语境中焕发新生。",
+    "targetText": "传统文化并非僵死不变的遗存而是要在当代语境中焕发新生",
+    "targetPinyin": "Chuántǒng wénhuà bìngfēi jiāngsǐ búbiàn de yícún, ér shì yào zài dāngdài yǔjìng zhōng huànfā xīnshēng.",
+    "vietnamese": "Văn hóa truyền thống tuyệt đối không phải di sản đóng băng bất biến, mà cần phải tỏa sáng sức sống mới trong ngữ cảnh đương đại.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「并非... 而是...」(Bìngfēi... ér shì... / Tuyệt đối không phải... mà là...). Cần thể hiện âm sắc tròn vành rõ chữ, nhịp điệu đĩnh đạc."
+  },
+  {
+    "id": "hsk5_read_gen_1",
+    "level": 5,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh thái & kinh tế",
+    "title": "Cơ chế bảo vệ đa dạng sinh học",
+    "passageText": "生态系统的平衡犹如一张纵横交错的巨网，任何物种的消亡都可能触发无法预估的多米诺骨牌效应。保护生物多样性，不仅是维护自然秩序的崇高伦理，更是关乎人类自身生存与永续繁衍的底线工程。",
+    "pinyin": "Shēngtài xìtǒng de pínghéng yóurú yì zhāng zònghéng jiāocuò de jùwǎng, rènhé wùzhǒng de xiāowáng dōu kěnéng chùfā wúfǎ yùgū de duōmǐnuò gǔpái xiàoyìng. Bǎohù shēngwù duōyàngxìng, bùjǐn shì wéihù zìrán zhìxù de chónggāo lúnlǐ, gèng shì guānhū rénlèi zìshēn shēngcún yǔ yǒngxù fányǎn de dǐxiàn gōngchéng.",
+    "vietnamese": "Sự cân bằng của hệ sinh thái tựa như một tấm lưới khổng lồ đan xen chằng chịt, sự tuyệt chủng của bất kỳ loài nào cũng có thể kích hoạt hiệu ứng domino không thể lường trước. Bảo vệ đa dạng sinh học không chỉ là chuẩn mực đạo đức cao cả nhằm duy trì trật tự tự nhiên, mà còn là công trình ranh giới sinh tử liên quan mật thiết tới sự sinh tồn và phát triển bền vững của chính nhân loại.",
+    "question": "文章把生态平衡比喻为什么？(Bài viết ví sự cân bằng sinh thái như cái gì?)",
+    "options": [
+      {
+        "text": "纵横交错的巨网 (Một tấm lưới khổng lồ chằng chịt)",
+        "isCorrect": true
+      },
+      {
+        "text": "孤立无援的荒岛 (Một hòn đảo hoang cô độc)",
+        "isCorrect": false
+      },
+      {
+        "text": "坚不可摧的城墙 (Một bức tường thành kiên cố)",
+        "isCorrect": false
+      },
+      {
+        "text": "奔流不息的长河 (Một dòng sông dài chảy xiết)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 纵横交错的巨网.\n• Câu mở đầu: 「生态系统的平衡犹如一张纵横交错的巨网」."
+  },
+  {
+    "id": "hsk5_write_gen_1",
+    "level": 5,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chuẩn mực học thuật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Thí nghiệm này đã chứng minh đầy đủ tính khả thi của lý thuyết đó.",
+    "words": [
+      "充分证明了",
+      "这一理论的",
+      "该实验",
+      "可行性"
+    ],
+    "correctOrder": [
+      "该实验",
+      "充分证明了",
+      "这一理论的",
+      "可行性"
+    ],
+    "hanzi": "该实验充分证明了这一理论的可行性。",
+    "pinyin": "Gāi shíyàn chōngfèn zhèngmíng le zhè yí lǐlùn de kěxíngxìng.",
+    "explanation": "• Cấu trúc ngữ pháp HSK 5: 「Chủ ngữ (该实验) + Phó từ bổ nghĩa (充分) + Động từ (证明了) + Cụm danh từ định tân (这一理论的可行性)」."
+  },
+  {
+    "id": "hsk6_listen_gen_1",
+    "level": 6,
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu học thuật & Triết học nghệ thuật",
+    "title": "Khái niệm 'Ý cảnh' trong thẩm mỹ phương Đông",
+    "audioText": "男：先生，中国古典美学中的‘意境’究竟如何界定？女：‘意境’乃是情景交融、虚实相生的艺术化境。它超越了对外在物象的单纯摹写，将有限的笔墨引申出无限的象外之意，使鉴赏者在澄怀味象中体悟宇宙生命的苍茫与玄妙。",
+    "passageText": "男：先生，中国古典美学中的‘意境’究竟如何界定？\n女：‘意境’乃是情景交融、虚实相生的艺术化境。它超越了对外在物象的单纯摹写，将有限的笔墨引申出无限的象外之意，使鉴赏者在澄怀味象中体悟宇宙生命的苍茫与玄妙。",
+    "pinyin": "Nán: Xiānsheng, Zhōngguó gǔdiǎn měixué zhōng de ‘yìjìng’ jiùjìng rúhé jièdìng? Nǚ: ‘Yìjìng’ nǎi shì qíngjǐng jiāoróng, xūshí xiāngshēng de yìshù huàjìng. Tā chāoyuè le duì wàizài wùxiàng de dānchún móxiě, jiāng yǒuxiàn de bǐmò yǐnshēn chū wúxiàn de xiàngwài zhī yì, shǐ jiànshǎngzhě zài chénghuái wèixiàng zhōng tǐwù yǔzhòu shēngmìng de cāngmáng yǔ xuánmiào.",
+    "vietnamese": "Nam: Thưa cô, khái niệm 'Ý cảnh' trong mỹ học cổ điển Trung Hoa rốt cuộc được định nghĩa thế nào? Nữ: 'Ý cảnh' chính là cảnh giới nghệ thuật dung hợp tình - cảnh, hư - thực tương sinh. Nó vượt thoát khỏi sự sao chép thuần túy đối với ngoại vật, từ bút mực hữu hạn gợi mở tầng ý nghĩa vô hạn ngoài hình tượng, giúp người thưởng ngoạn trong sự tĩnh lặng gột rửa tâm hồn có thể chiêm nghiệm sự bao la huyền diệu của sinh mệnh vũ trụ.",
+    "question": "问：‘意境’的核心美学特征是什么？(Hỏi: Đặc trưng mỹ học cốt lõi của 'Ý cảnh' là gì?)",
+    "options": [
+      {
+        "text": "情景交融、虚实相生超越外在摹写 (Tình cảnh dung hợp, hư thực tương sinh vượt thoát sao chép ngoại vật)",
+        "isCorrect": true
+      },
+      {
+        "text": "追求百分之百的照片级写实复刻 (Theo đuổi sự phục chế chân thực kiểu ảnh chụp 100%)",
+        "isCorrect": false
+      },
+      {
+        "text": "仅用昂贵的矿物颜料堆砌画面 (Chỉ dùng các màu khoáng đắt tiền để đắp vẽ)",
+        "isCorrect": false
+      },
+      {
+        "text": "完全脱离任何情感与哲学思考 (Hoàn toàn tách rời khỏi mọi cảm xúc và triết lý)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 情景交融、虚实相生超越外在摹写.\n• Khái niệm mỹ học kinh điển: 「情景交融、虚实相生」."
+  },
+  {
+    "id": "hsk6_speak_gen_1",
+    "level": 6,
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Diễn từ học thuật đỉnh cao",
+    "audioText": "惟其涵养深醇，方能发越磅礴；惟其笃行致远，方能开创宏图。",
+    "targetText": "惟其涵养深醇方能发越磅礴惟其笃行致远方能开创宏图",
+    "targetPinyin": "Wéi qí hányǎng shēnchún, fāng néng fāyuè pángbó; wéi qí dǔxíng zhìyuǎn, fāng néng kāichuàng hóngtú.",
+    "vietnamese": "Chỉ khi hàm dưỡng thâm hậu thuần khiết, mới có thể phát tiết khí thế bàng bạc; chỉ khi kiên định thực hành vươn xa, mới có thể mở mang đại đồ vĩ nghiệp.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Ngữ pháp cổ hán ngữ song hành điệp từ: 「惟其... 方能...」 (Duy chỉ khi... mới có thể...). Cần phát âm hùng hồn, giữ vững trường độ của các thanh điệu khó."
+  },
+  {
+    "id": "hsk6_read_gen_1",
+    "level": 6,
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu khảo cứu lịch sử học",
+    "title": "Hệ thống khoa cử và sự lưu chuyển xã hội",
+    "passageText": "中国古代科举制度历经一千三百余年，其深远的历史意义在于打破了世家门阀对政治权力的绝对垄断，构建了一条制度化的社会阶层流动通道。即便是一介寒儒，亦可通过笃学苦读跻身朝堂，这一机制在维系国家大一统与儒家正统价值的传播中发挥了不可估量的纽带作用。",
+    "pinyin": "Zhōngguó gǔdài kējǔ zhìdù lìjīng yìqiān sānbǎi yú nián, qí shēnyuǎn de lìshǐ yìyì zàiyú dǎpò le shìjiā ménfá duì zhèngzhì quánlì de juéduì lǒngduàn, gòujiàn le yì tiáo zhìdùhuà de shèhuì jiēcéng liúdòng tōngdào. Jíbìan shì yí jiè hánrú, yì kě tōngguò dǔxué kǔdú jīshēn cháotáng, zhè yí jīzhì zài wéixì guójiā dàyītǒng yǔ Rújiā zhèngtǒng jiàzhí de chuánbō zhōng fāhuī le bùkě gūliáng de niǔdài zuòyòng.",
+    "vietnamese": "Chế độ khoa cử Trung Hoa cổ đại trải qua hơn 1.300 năm, ý nghĩa lịch sử sâu xa của nó nằm ở việc đập tan sự độc quyền tuyệt đối của các dòng dõi thế gia quý tộc đối với quyền lực chính trị, xây dựng nên một con đường lưu chuyển tầng lớp xã hội được thể chế hóa. Cho dù là một hàn sĩ nghèo khó, cũng có thể thông qua khổ học đèn sách mà bước chân vào triều đình, cơ chế này đóng vai trò nhịp cầu không thể đong đếm trong việc duy trì nền đại thống quốc gia và truyền bá giá trị Nho gia chính thống.",
+    "question": "科举制度打破世家门阀垄断的核心贡献是什么？(Đóng góp cốt lõi của chế độ khoa cử trong việc phá vỡ độc quyền thế gia là gì?)",
+    "options": [
+      {
+        "text": "构建了制度化的社会阶层流动通道 (Xây dựng kênh lưu chuyển tầng lớp xã hội có thể chế hóa)",
+        "isCorrect": true
+      },
+      {
+        "text": "彻底废除了所有的国家税收 (Bãi bỏ hoàn toàn mọi loại thuế khóa quốc gia)",
+        "isCorrect": false
+      },
+      {
+        "text": "严禁平民百姓学习任何文化知识 (Nghiêm cấm thường dân học tập tri thức văn hóa)",
+        "isCorrect": false
+      },
+      {
+        "text": "将朝廷官员全部替换为外国学者 (Thay thế toàn bộ quan lại bằng học giả ngoại quốc)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 构建了制度化的社会阶层流动通道.\n• Trích dẫn bài đọc: 「构建了一条制度化的社会阶层流动通道」."
+  },
+  {
+    "id": "hsk6_write_gen_1",
+    "level": 6,
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chuẩn mực học thuật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Chính sách mới này đã kích phát tiềm năng nội tại của việc cải cách kinh tế thị trường.",
+    "words": [
+      "内在潜力",
+      "这项新政策",
+      "市场经济改革的",
+      "极大地激发了"
+    ],
+    "correctOrder": [
+      "这项新政策",
+      "极大地激发了",
+      "市场经济改革的",
+      "内在潜力"
+    ],
+    "hanzi": "这项新政策极大地激发了市场经济改革的内在潜力。",
+    "pinyin": "Zhè xiàng xīn zhèngcè jídà de jīfā le shìchǎng jīngjì gǎigé de nèizài qiánlì.",
+    "explanation": "• Cấu trúc: 「Chủ ngữ (这项新政策) + Trạng từ + Động từ (极大地激发了) + Định ngữ (市场经济改革的) + Tân ngữ (内在潜力)」."
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Hỏi thăm phương tiện di chuyển",
+    "audioText": "男：你怎么去学校？女：我坐公共汽车去学校。",
+    "passageText": "男：你怎么去学校？\n女：我坐公共汽车去学校。",
+    "pinyin": "Nán: Nǐ zěnme qù xuéxiào? Nǚ: Wǒ zuò gōnggòng qìchē qù xuéxiào.",
+    "vietnamese": "Nam: Bạn đến trường bằng cách nào? Nữ: Tôi đi xe buýt đến trường.",
+    "question": "问：女士怎么去学校？(Hỏi: Người nữ đến trường bằng gì?)",
+    "options": [
+      {
+        "text": "坐公共汽车 (Đi xe buýt)",
+        "isCorrect": true
+      },
+      {
+        "text": "开飞机 (Lái máy bay)",
+        "isCorrect": false
+      },
+      {
+        "text": "骑自行车 (Đi xe đạp)",
+        "isCorrect": false
+      },
+      {
+        "text": "走路 (Đi bộ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 坐公共汽车 (Đi xe buýt).\n• Nữ đáp: 「我坐公共汽车去学校」.",
+    "id": "hsk1_listening_cycle1_1",
+    "level": 1
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi giá tiền đồ vật",
+    "audioText": "请问这个多少钱？",
+    "targetText": "请问这个多少钱",
+    "targetPinyin": "Qǐngwèn zhè ge duōshao qián?",
+    "vietnamese": "Xin hỏi cái này bao nhiêu tiền?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「多少钱」(duōshao qián) là mẫu câu hỏi giá tiền thông dụng nhất.",
+    "id": "hsk1_speaking_cycle1_2",
+    "level": 1
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh hoạt hàng ngày",
+    "title": "Thời gian làm việc trong tuần",
+    "passageText": "李医生星期一到星期五在医院工作，星期六和星期天在家休息。",
+    "pinyin": "Lǐ yīshēng xīngqīyī dào xīngqīwǔ zài yīyuàn gōngzuò, xīngqīliù hé xīngqītiān zài jiā xiūxi.",
+    "vietnamese": "Bác sĩ Lý từ thứ Hai đến thứ Sáu làm việc ở bệnh viện, thứ Bảy và Chủ nhật ở nhà nghỉ ngơi.",
+    "question": "李医生什么时候休息？(Bác sĩ Lý khi nào nghỉ ngơi?)",
+    "options": [
+      {
+        "text": "星期六和星期天 (Thứ Bảy và Chủ nhật)",
+        "isCorrect": true
+      },
+      {
+        "text": "星期一和星期二 (Thứ Hai và thứ Ba)",
+        "isCorrect": false
+      },
+      {
+        "text": "每天都工作 (Ngày nào cũng làm việc)",
+        "isCorrect": false
+      },
+      {
+        "text": "下午休息 (Buổi chiều nghỉ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 星期六和星期天.\n• Bài đọc nêu rõ: 「星期六和星期天在家休息」.",
+    "id": "hsk1_reading_cycle1_3",
+    "level": 1
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu vị trí đồ vật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Điện thoại ở trên bàn.",
+    "words": [
+      "在桌子上",
+      "手机",
+      "爸爸的"
+    ],
+    "correctOrder": [
+      "爸爸的",
+      "手机",
+      "在桌子上"
+    ],
+    "hanzi": "爸爸的手机在桌子上。",
+    "pinyin": "Bàba de shǒujī zài zhuōzi shang.",
+    "explanation": "• Cấu trúc: 「Định ngữ + Chủ ngữ + 在 + Nơi chốn」.",
+    "id": "hsk1_writing_cycle1_4",
+    "level": 1
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu thường nhật",
+    "title": "Chọn mua quần áo",
+    "audioText": "男：这件红色的衣服真好看！女：但是有点儿贵，我们再看看那件黑色的吧。",
+    "passageText": "男：这件红色的衣服真好看！\n女：但是有点儿贵，我们再看看那件黑色的吧。",
+    "pinyin": "Nán: Zhè jiàn hóngsè de yīfu zhēn hǎokàn! Nǚ: Dànshì yǒudiǎnr guì, wǒmen zài kànkan nà jiàn hēisè de ba.",
+    "vietnamese": "Nam: Chiếc áo màu đỏ này đẹp thật đấy! Nữ: Nhưng mà hơi đắt, chúng mình xem thêm chiếc màu đen kia nhé.",
+    "question": "问：女士觉得红色的衣服怎么样？(Hỏi: Người nữ thấy chiếc áo màu đỏ thế nào?)",
+    "options": [
+      {
+        "text": "有点儿贵 (Hơi đắt một chút)",
+        "isCorrect": true
+      },
+      {
+        "text": "太便宜了 (Quá rẻ rồi)",
+        "isCorrect": false
+      },
+      {
+        "text": "颜色不好看 (Màu sắc không đẹp)",
+        "isCorrect": false
+      },
+      {
+        "text": "尺寸太小 (Cỡ áo quá nhỏ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 有点儿贵.\n• Lời nữ: 「但是有点儿贵」.",
+    "id": "hsk2_listening_cycle1_1",
+    "level": 2
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi thăm đường đi",
+    "audioText": "从这儿到机场坐出租车要多久？",
+    "targetText": "从这儿到机场坐出租车要多久",
+    "targetPinyin": "Cóng zhèr dào jīchǎng zuò chūzūchē yào duōjiǔ?",
+    "vietnamese": "Từ đây đến sân bay đi taxi mất bao lâu?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「从...到...」(Cóng... dào... / Từ... đến...). 「多久」(duōjiǔ) hỏi khoảng thời gian.",
+    "id": "hsk2_speaking_cycle1_2",
+    "level": 2
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh hoạt",
+    "title": "Thói quen học tập buổi sáng",
+    "passageText": "早上六点，校园里非常安静。小王习惯在操场边读半个小时的英语课文，然后再去吃早餐。",
+    "pinyin": "Zǎoshang liù diǎn, xiàoyuán lǐ fēicháng ānjìng. Xiǎo Wáng xíguàn zài cāochǎng biān dú bàn ge xiǎoshí de Yīngyǔ kèwén, ránhòu zài qù chī zǎocān.",
+    "vietnamese": "6 giờ sáng, trong khuôn viên trường vô cùng yên tĩnh. Tiểu Vương có thói quen đọc bài tiếng Anh nửa tiếng bên sân vận động, sau đó mới đi ăn bữa sáng.",
+    "question": "小王早上在操场边做什么？(Tiểu Vương buổi sáng làm gì bên sân vận động?)",
+    "options": [
+      {
+        "text": "读英语课文 (Đọc bài khóa tiếng Anh)",
+        "isCorrect": true
+      },
+      {
+        "text": "踢足球 (Đá bóng)",
+        "isCorrect": false
+      },
+      {
+        "text": "睡觉 (Ngủ)",
+        "isCorrect": false
+      },
+      {
+        "text": "买早餐 (Mua đồ ăn sáng)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 读英语课文.\n• Đoạn văn: 「在操场边读半个小时的英语课文」.",
+    "id": "hsk2_reading_cycle1_3",
+    "level": 2
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 得 (Bổ ngữ trạng thái)",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Cô ấy hát rất hay.",
+    "words": [
+      "歌唱得",
+      "非常好听",
+      "她"
+    ],
+    "correctOrder": [
+      "她",
+      "歌唱得",
+      "非常好听"
+    ],
+    "hanzi": "她歌唱得非常好听。",
+    "pinyin": "Tā gē chàng de fēicháng hǎotīng.",
+    "explanation": "• Bổ ngữ trạng thái: 「Chủ ngữ + Tân ngữ + Động từ + 得 + Cụm tính từ」.",
+    "id": "hsk2_writing_cycle1_4",
+    "level": 2
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu thường nhật & xã hội",
+    "title": "Hẹn giờ họp công ty",
+    "audioText": "男：下午两点的会议推迟了吗？女：对，推迟到三点半了，在三楼第一会议室。",
+    "passageText": "男：下午两点的会议推迟了吗？\n女：对，推迟到三点半了，在三楼第一会议室。",
+    "pinyin": "Nán: Xiàwǔ liǎng diǎn de huìyì tuīchí le ma? Nǚ: Duì, tuīchí dào sān diǎn bàn le, zài sān lóu dì-yī huìyìshì.",
+    "vietnamese": "Nam: Cuộc họp lúc 2 giờ chiều hoãn lại rồi à? Nữ: Đúng vậy, hoãn tới 3 giờ rưỡi, ở phòng họp số 1 tầng 3.",
+    "question": "问：会议改在几点开？(Hỏi: Cuộc họp đổi sang mấy giờ tổ chức?)",
+    "options": [
+      {
+        "text": "三点半 (3 giờ rưỡi)",
+        "isCorrect": true
+      },
+      {
+        "text": "两点整 (2 giờ đúng)",
+        "isCorrect": false
+      },
+      {
+        "text": "四点 (4 giờ)",
+        "isCorrect": false
+      },
+      {
+        "text": "明天上午 (Sáng mai)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 三点半.\n• Nữ nói: 「推迟到三点半了」.",
+    "id": "hsk3_listening_cycle1_1",
+    "level": 3
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Thương lượng công việc",
+    "audioText": "请您再考虑一下，我们真的很想促成这次合作。",
+    "targetText": "请您再考虑一下我们真的很想促成这次合作",
+    "targetPinyin": "Qǐng nín zài kǎolǜ yíxià, wǒmen zhēnde hěn xiǎng cùchéng zhè cì hézuò.",
+    "vietnamese": "Xin quý vị cân nhắc thêm một chút, chúng tôi thực sự rất mong thúc đẩy sự hợp tác lần này.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「考虑」(kǎolǜ thanh 3 + thanh 4). 「促成」(cùchéng thanh 4 + thanh 2).",
+    "id": "hsk3_speaking_cycle1_2",
+    "level": 3
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh thái",
+    "title": "Bảo vệ môi trường xanh",
+    "passageText": "垃圾分类看似是一件小事，却对环境保护有着巨大的影响。如果每个人都能主动做好垃圾分类，城市的环境将会变得更加整洁美好。",
+    "pinyin": "Lājī fēnlèi kànsì shì yí jiàn xiǎoshì, què duì huánjìng bǎohù yǒu zhe jùdà de yǐngxiǎng. Rúguǒ měi ge rén dōu néng zhǔdòng zuò hǎo lājī fēnlèi, chéngshì de huánjìng jiāng huì biànde gèngjiā zhěngjié měihǎo.",
+    "vietnamese": "Phân loại rác thoạt nhìn như một việc nhỏ, nhưng lại mang ảnh hưởng to lớn tới việc bảo vệ môi trường. Nếu mỗi người đều có thể chủ động phân loại rác thật tốt, môi trường thành phố sẽ trở nên ngăn nắp và tươi đẹp hơn.",
+    "question": "做好垃圾分类对城市有什么影响？(Làm tốt phân loại rác có ảnh hưởng gì tới thành phố?)",
+    "options": [
+      {
+        "text": "让城市环境更加整洁美好 (Làm môi trường thành phố ngăn nắp tươi đẹp hơn)",
+        "isCorrect": true
+      },
+      {
+        "text": "增加城市的交通拥堵 (Làm tăng tắc nghẽn giao thông)",
+        "isCorrect": false
+      },
+      {
+        "text": "浪费居民的大量时间 (Lãng phí nhiều thời gian cư dân)",
+        "isCorrect": false
+      },
+      {
+        "text": "让空气质量变差 (Làm chất lượng không khí kém đi)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 让城市环境更加整洁美好.\n• Bài văn: 「城市的环境将会变得更加整洁美好」.",
+    "id": "hsk3_reading_cycle1_3",
+    "level": 3
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 除了...以外...",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Ngoài tiếng Trung ra, anh ấy còn biết nói tiếng Pháp.",
+    "words": [
+      "还会说法语",
+      "中文以外",
+      "除了",
+      "他"
+    ],
+    "correctOrder": [
+      "除了",
+      "中文以外",
+      "他",
+      "还会说法语"
+    ],
+    "hanzi": "除了中文以外，他还会说法语。",
+    "pinyin": "Chúle Zhōngwén yǐwài, tā hái huì shuō Fǎyǔ.",
+    "explanation": "• Cấu trúc ngoại trừ và bổ sung: 「除了...以外, S + 还...」.",
+    "id": "hsk3_writing_cycle1_4",
+    "level": 3
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu đối thoại xã hội",
+    "title": "Tầm quan trọng của giấc ngủ",
+    "audioText": "男：医生，我最近总是失眠，白天精神很差。女：长期熬夜会严重打乱人体的生物钟，建议你晚上十点后远离手机，适度听些轻音乐。",
+    "passageText": "男：医生，我最近总是失眠，白天精神很差。\n女：长期熬夜会严重打乱人体的生物钟，建议你晚上十点后远离手机，适度听些轻音乐。",
+    "pinyin": "Nán: Yīshēng, wǒ zuìjìn zǒngshì shīmián, báitiān jīngshen hěn chà. Nǚ: Chángqī áoyè huì yánzhòng dǎluàn réntǐ de shēngwùzhōng, jiànyì nǐ wǎnshang shí diǎn hòu yuǎnlí shǒujī, shìdù tīng xiē qīngyīnyuè.",
+    "vietnamese": "Nam: Thưa bác sĩ, dạo này tôi luôn mất ngủ, ban ngày tinh thần rất uể oải. Nữ: Thức khuya dài ngày sẽ làm rối loạn nghiêm trọng đồng hồ sinh học cơ thể, khuyên bạn sau 10 giờ tối nên để điện thoại ra xa, nghe chút nhạc êm dịu vừa phải.",
+    "question": "问：女医生建议男士怎么做？(Hỏi: Bác sĩ khuyên người nam nên làm gì?)",
+    "options": [
+      {
+        "text": "十点后远离手机并听轻音乐 (Sau 10h để điện thoại ra xa và nghe nhạc nhẹ)",
+        "isCorrect": true
+      },
+      {
+        "text": "每天喝大量的烈酒 (Mỗi ngày uống thật nhiều rượu mạnh)",
+        "isCorrect": false
+      },
+      {
+        "text": "整夜开着强光灯看书 (Bật đèn sáng cả đêm đọc sách)",
+        "isCorrect": false
+      },
+      {
+        "text": "增加白天的剧烈运动 (Tăng cường vận động mạnh ban ngày)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 十点后远离手机并听轻音乐.\n• Lời bác sĩ: 「晚上十点后远离手机，适度听些轻音乐」.",
+    "id": "hsk4_listening_cycle1_1",
+    "level": 4
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Phương châm sống tích cực",
+    "audioText": "失败并不可怕，可怕的是丧失重新站起来的勇气。",
+    "targetText": "失败并不可怕可怕的是丧失重新站起来的勇气",
+    "targetPinyin": "Shībài bìng bù kěpà, kěpà de shì sàngshī chóngxīn zhàn qǐlái de yǒngqì.",
+    "vietnamese": "Thất bại không đáng sợ, đáng sợ là đánh mất đi dũng khí để đứng dậy một lần nữa.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「并不可怕」(bìng bù kěpà) ngữ khí phủ định mạnh mẽ. 「丧失」(sàngshī thanh 4 + thanh 1).",
+    "id": "hsk4_speaking_cycle1_2",
+    "level": 4
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu kinh tế",
+    "title": "Tiêu dùng thông minh thời đại số",
+    "passageText": "网购给人们的生活带来了前所未有的便利，但也容易让人陷入冲动消费的陷阱。理性的消费者应当在下单前冷静思考：这件商品究竟是自己真正需要的，还是仅仅因为打折而产生的购买欲望。",
+    "pinyin": "Wǎnggòu gěi rénmen de shēnghuó dài lái le qiánsuǒwèiyǒu de biànlì, dàn yě róngyì ràng rén xiànrù chōngdòng xiāofèi de xiànjǐng. Lǐxìng de xiāofèizhě yīngdāng zài xiàdān qián lěngjìng sīkǎo: zhè jiàn shāngpǐn jiùjìng shì zìjǐ zhēnzhèng xūyào de, háishi jǐnjǐn yīnwèi dǎzhé ér chǎnshēng de gòumǎi yùwàng.",
+    "vietnamese": "Mua sắm qua mạng mang lại sự tiện lợi chưa từng có cho đời sống con người, nhưng cũng dễ khiến người ta rơi vào bẫy tiêu dùng bốc đồng. Người tiêu dùng lý trí nên bình tĩnh suy ngẫm trước khi đặt đơn: món hàng này rốt cuộc là thứ bản thân thực sự cần, hay chỉ là ham muốn mua sắm nảy sinh do giảm giá.",
+    "question": "理性的消费者在下单前应当考虑什么？(Người tiêu dùng lý trí nên cân nhắc điều gì trước khi đặt hàng?)",
+    "options": [
+      {
+        "text": "商品是真正需要还是因打折产生的欲望 (Hàng là thực sự cần hay chỉ do giảm giá)",
+        "isCorrect": true
+      },
+      {
+        "text": "能不能借钱购买更多 (Có thể vay tiền để mua thêm không)",
+        "isCorrect": false
+      },
+      {
+        "text": "快递员送货速度是否为全国第一 (Tốc độ giao hàng có phải số 1 toàn quốc không)",
+        "isCorrect": false
+      },
+      {
+        "text": "商品包装盒是否足够奢华 (Vỏ hộp có đủ sang trọng không)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 商品是真正需要还是因打折产生的欲望.\n• Bài văn: 「这件商品究竟是自己真正需要的，还是仅仅因为打折而产生的购买欲望」.",
+    "id": "hsk4_reading_cycle1_3",
+    "level": 4
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 由...决定",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Thành bại của việc này do chính thái độ của bạn quyết định.",
+    "words": [
+      "由你自己的态度",
+      "这件事的成败",
+      "决定的",
+      "是"
+    ],
+    "correctOrder": [
+      "这件事的成败",
+      "是",
+      "由你自己的态度",
+      "决定的"
+    ],
+    "hanzi": "这件事的成败是由你自己的态度决定的。",
+    "pinyin": "Zhè jiàn shì de chéngbài shì yóu nǐ zìjǐ de tàidu juédìng de.",
+    "explanation": "• Cấu trúc nhấn mạnh tác nhân: 「Chủ ngữ + 是 + 由... + 决定 的」.",
+    "id": "hsk4_writing_cycle1_4",
+    "level": 4
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu diễn đàn & kinh tế học",
+    "title": "Chính sách năng lượng tái tạo",
+    "audioText": "男：随着风电与光伏发电成本的大幅下降，清洁能源的平价上网已经成为现实。女：未来竞争的核心不再是装机规模，而是在于储能系统的调峰能力以及智能电网的调度效率。",
+    "passageText": "男：随着风电与光伏发电成本的大幅下降，清洁能源的平价上网已经成为现实。\n女：未来竞争的核心不再是装机规模，而是在于储能系统的调峰能力以及智能电网的调度效率。",
+    "pinyin": "Nán: Suízhe fēngdiàn yǔ guāngfú fādiàn chéngběn de dàfú xiàjiàng, qīngjié néngyuán de píngjià shàngwǎng yǐjīng chéngwéi xiànshí. Nǚ: Wèilái jìngzhēng de héxīn bú zài shì zhuāngjī guīmó, ér shì zàiyú chǔnéng xìtǒng de tiáofēng nénglì yǐjí zhìnéng diànwǎng de diàodù xiàolǜ.",
+    "vietnamese": "Nam: Cùng với việc giá thành điện gió và quang điện giảm mạnh, năng lượng sạch với giá bán ngang bằng điện truyền thống đã trở thành hiện thực. Nữ: Cốt lõi cạnh tranh trong tương lai không còn nằm ở quy mô công suất lắp đặt, mà nằm ở năng lực điều tiết đỉnh phụ tải của hệ thống tích trữ năng lượng và hiệu suất điều độ lưới điện thông minh.",
+    "question": "问：未来清洁能源竞争的核心在于什么？(Hỏi: Cốt lõi cạnh tranh năng lượng sạch tương lai nằm ở đâu?)",
+    "options": [
+      {
+        "text": "储能系统的调峰能力与电网调度效率 (Năng lực điều tiết lưu trữ và hiệu suất điều độ lưới điện)",
+        "isCorrect": true
+      },
+      {
+        "text": "无限度增加燃煤发电厂 (Tăng nhà máy nhiệt điện than không giới hạn)",
+        "isCorrect": false
+      },
+      {
+        "text": "彻底关闭所有光伏电站 (Đóng cửa toàn bộ trạm quang điện)",
+        "isCorrect": false
+      },
+      {
+        "text": "停止研发储能电池 (Ngừng nghiên cứu ắc quy lưu trữ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 储能系统的调峰能力与电网调度效率.\n• Lời nữ phân tích rõ ràng hai yếu tố then chốt.",
+    "id": "hsk5_listening_cycle1_1",
+    "level": 5
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Luận biện triết học nhân sinh",
+    "audioText": "博学而不穷，笃行而不倦，方为学者之至境。",
+    "targetText": "博学而不穷笃行而不倦方为学者之至境",
+    "targetPinyin": "Bóxué ér bù qióng, dǔxíng ér bú juàn, fāng wéi xuézhě zhī zhìjìng.",
+    "vietnamese": "Học rộng mà không bao giờ ngừng lại, kiên định thực hành mà không biết mỏi mệt, mới là cảnh giới tột cùng của người làm học vấn.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Văn phong tứ tự thành ngữ biền ngẫu: 「博学而不穷，笃行而不倦」. Cần giữ âm vực sâu lắng, nhịp điệu uy nghiêm.",
+    "id": "hsk5_speaking_cycle1_2",
+    "level": 5
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu văn hóa học",
+    "title": "Nghệ thuật kiến trúc Tứ Hợp Viện",
+    "passageText": "北京四合院不仅是一种居住建筑形式，更承载着中国传统伦理观念与宇宙哲学。四周房屋围合而中间留出庭院，对外封闭以保私密安宁，对内开敞以迎日月清风，深刻体现了天人合一、内和外顺的人文意蕴。",
+    "pinyin": "Běijīng sìhéyuàn bùjǐn shì yì zhǒng jūzhù jiànzhù xíngshì, gèng chéngzǎi zhe Zhōngguó chuántǒng lúnlǐ guānniàn yǔ yǔzhòu zhéxué. Sìzhōu fángwū wéihé ér zhōngjiān liúchū tíngyuàn, duìwài fēngbì yǐ bǎo sīmì ānníng, duìnèi kāichǎng yǐ yíng rìyuè qīngfēng, shēnkè tǐxiàn le tiānrén-héyī, nèihé-wàishùn de rénwén yìyùn.",
+    "vietnamese": "Tứ hợp viện Bắc Kinh không chỉ là một hình thái kiến trúc nhà ở, mà còn chuyên chở quan niệm đạo đức luân lý truyền thống và triết học vũ trụ Trung Hoa. Bốn phía gian phòng bao bọc và ở giữa để ra một sân trời, đối ngoại khép kín để giữ gìn sự riêng tư an tĩnh, đối nội mở rộng để đón lấy ánh dương và ngọn gió thanh lành, thể hiện sâu sắc ý vị nhân văn 'thiên nhân hợp nhất, trong ấm ngoài êm'.",
+    "question": "四合院的建筑格局体现了怎样的文化意蕴？(Quy cách kiến trúc Tứ Hợp Viện thể hiện ý vị văn hóa nào?)",
+    "options": [
+      {
+        "text": "天人合一与内和外顺 (Thiên nhân hợp nhất và trong ấm ngoài êm)",
+        "isCorrect": true
+      },
+      {
+        "text": "追逐西式洛可可奢华 (Theo đuổi sự xa hoa phong cách Rococo phương Tây)",
+        "isCorrect": false
+      },
+      {
+        "text": "完全舍弃家庭私密性 (Từ bỏ hoàn toàn sự riêng tư gia đình)",
+        "isCorrect": false
+      },
+      {
+        "text": "纯粹用于军事防御城堡 (Thuần túy là pháo đài phòng thủ quân sự)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 天人合一与内和外顺.\n• Trích dẫn bài đọc: 「深刻体现了天人合一、内和外顺的人文意蕴」.",
+    "id": "hsk5_reading_cycle1_3",
+    "level": 5
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu đảo ngữ học thuật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Sự phát triển của công nghệ đã làm phong phú sâu sắc thêm đời sống văn hóa của người dân.",
+    "words": [
+      "极大地丰富了",
+      "科技的发展",
+      "居民的精神文化生活"
+    ],
+    "correctOrder": [
+      "科技的发展",
+      "极大地丰富了",
+      "居民的精神文化生活"
+    ],
+    "hanzi": "科技的发展极大地丰富了居民的精神文化生活。",
+    "pinyin": "Kējì de fāzhǎn jídà de fēngfù le jūmín de jīngshén wénhuà shēnghuó.",
+    "explanation": "• Cấu trúc: 「Chủ ngữ (科技的发展) + Trạng từ + Động từ (极大地丰富了) + Tân ngữ phức hợp (居民的精神文化生活)」.",
+    "id": "hsk5_writing_cycle1_4",
+    "level": 5
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu học thuật & Diễn đàn kinh tế quốc tế",
+    "title": "Toàn cầu hóa kinh tế và khả năng chống chịu chuỗi cung ứng",
+    "audioText": "男：后疫情时代，国际经贸格局正经历深刻重构，跨国企业日益将考量重心从‘效率至上’转向‘安全与韧性并重’。女：这意味着全球化并未走向终结，而是演变为更具区域化、多元化特征的网状协同生态。",
+    "passageText": "男：后疫情时代，国际经贸格局正经历深刻重构，跨国企业日益将考量重心从‘效率至上’转向‘安全与韧性并重’。\n女：这意味着全球化并未走向终结，而是演变为更具区域化、多元化特征的网状协同生态。",
+    "pinyin": "Nán: Hòuyìqíng shídài, guójì jīngmào gégú zhèng jīnglì shēnkè chónggòu, kuàguó qǐyè rìyì jiāng kǎoliang zhòngxīn cóng ‘xiàolǜ zhìshàng’ zhuǎnxiàng ‘ānquán yǔ rènxìng bìngzhòng’. Nǚ: Zhè yìwèizhe quánqiúhuà bìng wèi zǒuxiàng zhōngjié, ér shì yǎnbiàn wéi gèng jù qūyùhuà, duōyuánhuà tèzhēng de wǎngzhuàng xiétóng shēngtài.",
+    "vietnamese": "Nam: Thời kỳ hậu đại dịch, cục diện kinh tế thương mại quốc tế đang trải qua sự tái cấu trúc sâu sắc, các doanh nghiệp đa quốc gia ngày càng chuyển trọng tâm cân nhắc từ 'hiệu quả trên hết' sang 'coi trọng đồng thời cả an toàn và độ bền vững dẻo dai'. Nữ: Điều này đồng nghĩa với việc toàn cầu hóa không hề đi tới hồi kết, mà đang phát triển thành một hệ sinh thái hiệp đồng dạng mạng lưới mang đặc trưng khu vực hóa và đa nguyên hóa rõ nét hơn.",
+    "question": "问：对话中指出跨国企业的考量重心发生了什么转变？(Hỏi: Đối thoại chỉ ra trọng tâm cân nhắc của doanh nghiệp đa quốc gia đã chuyển biến ra sao?)",
+    "options": [
+      {
+        "text": "从‘效率至上’转向‘安全与韧性并重’ (Từ 'hiệu quả trên hết' sang 'coi trọng cả an toàn và dẻo dai')",
+        "isCorrect": true
+      },
+      {
+        "text": "完全放弃所有海外分支机构 (Từ bỏ toàn bộ chi nhánh ở nước ngoài)",
+        "isCorrect": false
+      },
+      {
+        "text": "彻底停止与任何国际伙伴合作 (Dứt khoát ngừng hợp tác với đối tác quốc tế)",
+        "isCorrect": false
+      },
+      {
+        "text": "仅生产单一廉价塑料制品 (Chỉ sản xuất một mặt hàng nhựa giá rẻ duy nhất)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 从‘效率至上’转向‘安全与韧性并重’.\n• Trích nguyên văn: 「从‘效率至上’转向‘安全与韧性并重’」.",
+    "id": "hsk6_listening_cycle1_1",
+    "level": 6
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Luận thuyết đỉnh cao văn phong học thuật",
+    "audioText": "致广大而尽精微，极高明而道中庸。",
+    "targetText": "致广大而尽精微极高明而道中庸",
+    "targetPinyin": "Zhì guǎngdà ér jìn jīngwēi, jí gāomíng ér dào zhōngyōng.",
+    "vietnamese": "Đạt tới chỗ quảng đại bao la mà tận cùng đến từng nét tinh vi tường tận; vươn tới chốn cao minh tột bực mà luôn hành xử theo đạo Trung Dung hòa hợp.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Điển tích cổ Hán ngữ trong sách 'Trung Dung'. Phát âm từng âm tiết dứt khoát, thanh 4 và thanh 1 giao thoa hùng tráng.",
+    "id": "hsk6_speaking_cycle1_2",
+    "level": 6
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu khảo cứu triết học",
+    "title": "Học thuyết 'Tri hành hợp nhất' của Vương Dương Minh",
+    "passageText": "明代思想家王阳明提出“知行合一”说，直指“知是行之始，行是知之成”。知而不行，只是未知；真正的真知灼见必在事上磨炼、知行交融中方得彰显。这一学说彻底廓清了知行脱节的弊病，成为东亚心学传统中影响至深的精神坐标。",
+    "pinyin": "Míngdài sīxiǎngjiā Wáng Yángmíng tíchū “zhī xíng hé yī” shuō, zhízhǐ “zhī shì xíng zhī shǐ, xíng shì zhī zhī chéng”. Zhī ér bù xíng, zhǐ shì wèi zhī; zhēnzhèng de zhēnzhī-zhuójiàn bì zài shì shang móliàn, zhī xíng jiāoróng zhōng fāng dé zhāngxiǎn. Zhè yì xuéshuō chèdǐ kuòqīng le zhī xíng tuōjié de bìbìng, chéngwéi Dōngyà xīnxué chuántǒng zhōng yǐngxiǎng zhìshēn de jīngshén zuòbiāo.",
+    "vietnamese": "Nhà tư tưởng triều Minh Vương Dương Minh đưa ra thuyết 'Tri hành hợp nhất', chỉ thẳng rằng: 'Biết là khởi đầu của làm, làm là sự hoàn thành của biết'. Biết mà không làm thì chỉ là chưa biết; chân tri trác kiến thực sự bắt buộc phải được tôi rèn qua sự việc thực tế, trong sự giao hòa giữa tri và hành mới được hiển lộ rạng ngời. Học thuyết này đã dẹp tan triệt để căn bệnh tách rời giữa lý thuyết và hành động, trở thành tọa độ tinh thần có sức ảnh hưởng sâu rộng nhất trong truyền thống Tâm học Đông Á.",
+    "question": "王阳明“知行合一”的核心内涵是什么？(Nội hàm cốt lõi của 'Tri hành hợp nhất' là gì?)",
+    "options": [
+      {
+        "text": "知行交融并在实践磨炼中彰显真知 (Tri hành giao hòa và thể hiện chân tri qua tôi luyện thực tế)",
+        "isCorrect": true
+      },
+      {
+        "text": "只读书而不必参与任何实际生活 (Chỉ đọc sách mà không cần tham gia đời sống thực tế)",
+        "isCorrect": false
+      },
+      {
+        "text": "将书本知识全部抛弃废黜 (Vứt bỏ xóa bỏ toàn bộ kiến thức sách vở)",
+        "isCorrect": false
+      },
+      {
+        "text": "认为人的认知完全由运气决定 (Cho rằng nhận thức của con người do vận may quyết định)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 知行交融并在实践磨炼中彰显真知.\n• Bài văn: 「知是行之始，行是知之成。真正的真知灼见必在事上磨炼、知行交融中方得彰显」.",
+    "id": "hsk6_reading_cycle1_3",
+    "level": 6
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu luận biện triết học HSK 6",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Sự phát triển của nền văn minh nhân loại được quyết định bởi tinh thần đổi mới liên tục.",
+    "words": [
+      "由持续的创新精神",
+      "人类文明的发展进程",
+      "决定的",
+      "是"
+    ],
+    "correctOrder": [
+      "人类文明的发展进程",
+      "是",
+      "由持续的创新精神",
+      "决定的"
+    ],
+    "hanzi": "人类文明的发展进程是由持续的创新精神决定的。",
+    "pinyin": "Rénlèi wénmíng de fāzhǎn jìnchéng shì yóu chíxù de chuàngxīn jīngshén juédìng de.",
+    "explanation": "• Cấu trúc nhấn mạnh tác nhân đỉnh cao: 「Chủ ngữ (人类文明的发展进程) + 是 + 由 (Nguyên nhân/Tác nhân) + 决定的」.",
+    "id": "hsk6_writing_cycle1_4",
+    "level": 6
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Hỏi thăm phương tiện di chuyển",
+    "audioText": "男：你怎么去学校？女：我坐公共汽车去学校。",
+    "passageText": "男：你怎么去学校？\n女：我坐公共汽车去学校。",
+    "pinyin": "Nán: Nǐ zěnme qù xuéxiào? Nǚ: Wǒ zuò gōnggòng qìchē qù xuéxiào.",
+    "vietnamese": "Nam: Bạn đến trường bằng cách nào? Nữ: Tôi đi xe buýt đến trường.",
+    "question": "问：女士怎么去学校？(Hỏi: Người nữ đến trường bằng gì?)",
+    "options": [
+      {
+        "text": "坐公共汽车 (Đi xe buýt)",
+        "isCorrect": true
+      },
+      {
+        "text": "开飞机 (Lái máy bay)",
+        "isCorrect": false
+      },
+      {
+        "text": "骑自行车 (Đi xe đạp)",
+        "isCorrect": false
+      },
+      {
+        "text": "走路 (Đi bộ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 坐公共汽车 (Đi xe buýt).\n• Nữ đáp: 「我坐公共汽车去学校」.",
+    "id": "hsk1_listening_cycle2_1",
+    "level": 1
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi giá tiền đồ vật",
+    "audioText": "请问这个多少钱？",
+    "targetText": "请问这个多少钱",
+    "targetPinyin": "Qǐngwèn zhè ge duōshao qián?",
+    "vietnamese": "Xin hỏi cái này bao nhiêu tiền?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「多少钱」(duōshao qián) là mẫu câu hỏi giá tiền thông dụng nhất.",
+    "id": "hsk1_speaking_cycle2_2",
+    "level": 1
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh hoạt hàng ngày",
+    "title": "Thời gian làm việc trong tuần",
+    "passageText": "李医生星期一到星期五在医院工作，星期六和星期天在家休息。",
+    "pinyin": "Lǐ yīshēng xīngqīyī dào xīngqīwǔ zài yīyuàn gōngzuò, xīngqīliù hé xīngqītiān zài jiā xiūxi.",
+    "vietnamese": "Bác sĩ Lý từ thứ Hai đến thứ Sáu làm việc ở bệnh viện, thứ Bảy và Chủ nhật ở nhà nghỉ ngơi.",
+    "question": "李医生什么时候休息？(Bác sĩ Lý khi nào nghỉ ngơi?)",
+    "options": [
+      {
+        "text": "星期六和星期天 (Thứ Bảy và Chủ nhật)",
+        "isCorrect": true
+      },
+      {
+        "text": "星期一和星期二 (Thứ Hai và thứ Ba)",
+        "isCorrect": false
+      },
+      {
+        "text": "每天都工作 (Ngày nào cũng làm việc)",
+        "isCorrect": false
+      },
+      {
+        "text": "下午休息 (Buổi chiều nghỉ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 星期六和星期天.\n• Bài đọc nêu rõ: 「星期六和星期天在家休息」.",
+    "id": "hsk1_reading_cycle2_3",
+    "level": 1
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu vị trí đồ vật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Điện thoại ở trên bàn.",
+    "words": [
+      "在桌子上",
+      "手机",
+      "爸爸的"
+    ],
+    "correctOrder": [
+      "爸爸的",
+      "手机",
+      "在桌子上"
+    ],
+    "hanzi": "爸爸的手机在桌子上。",
+    "pinyin": "Bàba de shǒujī zài zhuōzi shang.",
+    "explanation": "• Cấu trúc: 「Định ngữ + Chủ ngữ + 在 + Nơi chốn」.",
+    "id": "hsk1_writing_cycle2_4",
+    "level": 1
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu thường nhật",
+    "title": "Chọn mua quần áo",
+    "audioText": "男：这件红色的衣服真好看！女：但是有点儿贵，我们再看看那件黑色的吧。",
+    "passageText": "男：这件红色的衣服真好看！\n女：但是有点儿贵，我们再看看那件黑色的吧。",
+    "pinyin": "Nán: Zhè jiàn hóngsè de yīfu zhēn hǎokàn! Nǚ: Dànshì yǒudiǎnr guì, wǒmen zài kànkan nà jiàn hēisè de ba.",
+    "vietnamese": "Nam: Chiếc áo màu đỏ này đẹp thật đấy! Nữ: Nhưng mà hơi đắt, chúng mình xem thêm chiếc màu đen kia nhé.",
+    "question": "问：女士觉得红色的衣服怎么样？(Hỏi: Người nữ thấy chiếc áo màu đỏ thế nào?)",
+    "options": [
+      {
+        "text": "有点儿贵 (Hơi đắt một chút)",
+        "isCorrect": true
+      },
+      {
+        "text": "太便宜了 (Quá rẻ rồi)",
+        "isCorrect": false
+      },
+      {
+        "text": "颜色不好看 (Màu sắc không đẹp)",
+        "isCorrect": false
+      },
+      {
+        "text": "尺寸太小 (Cỡ áo quá nhỏ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 有点儿贵.\n• Lời nữ: 「但是有点儿贵」.",
+    "id": "hsk2_listening_cycle2_1",
+    "level": 2
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi thăm đường đi",
+    "audioText": "从这儿到机场坐出租车要多久？",
+    "targetText": "从这儿到机场坐出租车要多久",
+    "targetPinyin": "Cóng zhèr dào jīchǎng zuò chūzūchē yào duōjiǔ?",
+    "vietnamese": "Từ đây đến sân bay đi taxi mất bao lâu?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「从...到...」(Cóng... dào... / Từ... đến...). 「多久」(duōjiǔ) hỏi khoảng thời gian.",
+    "id": "hsk2_speaking_cycle2_2",
+    "level": 2
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh hoạt",
+    "title": "Thói quen học tập buổi sáng",
+    "passageText": "早上六点，校园里非常安静。小王习惯在操场边读半个小时的英语课文，然后再去吃早餐。",
+    "pinyin": "Zǎoshang liù diǎn, xiàoyuán lǐ fēicháng ānjìng. Xiǎo Wáng xíguàn zài cāochǎng biān dú bàn ge xiǎoshí de Yīngyǔ kèwén, ránhòu zài qù chī zǎocān.",
+    "vietnamese": "6 giờ sáng, trong khuôn viên trường vô cùng yên tĩnh. Tiểu Vương có thói quen đọc bài tiếng Anh nửa tiếng bên sân vận động, sau đó mới đi ăn bữa sáng.",
+    "question": "小王早上在操场边做什么？(Tiểu Vương buổi sáng làm gì bên sân vận động?)",
+    "options": [
+      {
+        "text": "读英语课文 (Đọc bài khóa tiếng Anh)",
+        "isCorrect": true
+      },
+      {
+        "text": "踢足球 (Đá bóng)",
+        "isCorrect": false
+      },
+      {
+        "text": "睡觉 (Ngủ)",
+        "isCorrect": false
+      },
+      {
+        "text": "买早餐 (Mua đồ ăn sáng)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 读英语课文.\n• Đoạn văn: 「在操场边读半个小时的英语课文」.",
+    "id": "hsk2_reading_cycle2_3",
+    "level": 2
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 得 (Bổ ngữ trạng thái)",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Cô ấy hát rất hay.",
+    "words": [
+      "歌唱得",
+      "非常好听",
+      "她"
+    ],
+    "correctOrder": [
+      "她",
+      "歌唱得",
+      "非常好听"
+    ],
+    "hanzi": "她歌唱得非常好听。",
+    "pinyin": "Tā gē chàng de fēicháng hǎotīng.",
+    "explanation": "• Bổ ngữ trạng thái: 「Chủ ngữ + Tân ngữ + Động từ + 得 + Cụm tính từ」.",
+    "id": "hsk2_writing_cycle2_4",
+    "level": 2
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu thường nhật & xã hội",
+    "title": "Hẹn giờ họp công ty",
+    "audioText": "男：下午两点的会议推迟了吗？女：对，推迟到三点半了，在三楼第一会议室。",
+    "passageText": "男：下午两点的会议推迟了吗？\n女：对，推迟到三点半了，在三楼第一会议室。",
+    "pinyin": "Nán: Xiàwǔ liǎng diǎn de huìyì tuīchí le ma? Nǚ: Duì, tuīchí dào sān diǎn bàn le, zài sān lóu dì-yī huìyìshì.",
+    "vietnamese": "Nam: Cuộc họp lúc 2 giờ chiều hoãn lại rồi à? Nữ: Đúng vậy, hoãn tới 3 giờ rưỡi, ở phòng họp số 1 tầng 3.",
+    "question": "问：会议改在几点开？(Hỏi: Cuộc họp đổi sang mấy giờ tổ chức?)",
+    "options": [
+      {
+        "text": "三点半 (3 giờ rưỡi)",
+        "isCorrect": true
+      },
+      {
+        "text": "两点整 (2 giờ đúng)",
+        "isCorrect": false
+      },
+      {
+        "text": "四点 (4 giờ)",
+        "isCorrect": false
+      },
+      {
+        "text": "明天上午 (Sáng mai)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 三点半.\n• Nữ nói: 「推迟到三点半了」.",
+    "id": "hsk3_listening_cycle2_1",
+    "level": 3
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Thương lượng công việc",
+    "audioText": "请您再考虑一下，我们真的很想促成这次合作。",
+    "targetText": "请您再考虑一下我们真的很想促成这次合作",
+    "targetPinyin": "Qǐng nín zài kǎolǜ yíxià, wǒmen zhēnde hěn xiǎng cùchéng zhè cì hézuò.",
+    "vietnamese": "Xin quý vị cân nhắc thêm một chút, chúng tôi thực sự rất mong thúc đẩy sự hợp tác lần này.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「考虑」(kǎolǜ thanh 3 + thanh 4). 「促成」(cùchéng thanh 4 + thanh 2).",
+    "id": "hsk3_speaking_cycle2_2",
+    "level": 3
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh thái",
+    "title": "Bảo vệ môi trường xanh",
+    "passageText": "垃圾分类看似是一件小事，却对环境保护有着巨大的影响。如果每个人都能主动做好垃圾分类，城市的环境将会变得更加整洁美好。",
+    "pinyin": "Lājī fēnlèi kànsì shì yí jiàn xiǎoshì, què duì huánjìng bǎohù yǒu zhe jùdà de yǐngxiǎng. Rúguǒ měi ge rén dōu néng zhǔdòng zuò hǎo lājī fēnlèi, chéngshì de huánjìng jiāng huì biànde gèngjiā zhěngjié měihǎo.",
+    "vietnamese": "Phân loại rác thoạt nhìn như một việc nhỏ, nhưng lại mang ảnh hưởng to lớn tới việc bảo vệ môi trường. Nếu mỗi người đều có thể chủ động phân loại rác thật tốt, môi trường thành phố sẽ trở nên ngăn nắp và tươi đẹp hơn.",
+    "question": "做好垃圾分类对城市有什么影响？(Làm tốt phân loại rác có ảnh hưởng gì tới thành phố?)",
+    "options": [
+      {
+        "text": "让城市环境更加整洁美好 (Làm môi trường thành phố ngăn nắp tươi đẹp hơn)",
+        "isCorrect": true
+      },
+      {
+        "text": "增加城市的交通拥堵 (Làm tăng tắc nghẽn giao thông)",
+        "isCorrect": false
+      },
+      {
+        "text": "浪费居民的大量时间 (Lãng phí nhiều thời gian cư dân)",
+        "isCorrect": false
+      },
+      {
+        "text": "让空气质量变差 (Làm chất lượng không khí kém đi)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 让城市环境更加整洁美好.\n• Bài văn: 「城市的环境将会变得更加整洁美好」.",
+    "id": "hsk3_reading_cycle2_3",
+    "level": 3
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 除了...以外...",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Ngoài tiếng Trung ra, anh ấy còn biết nói tiếng Pháp.",
+    "words": [
+      "还会说法语",
+      "中文以外",
+      "除了",
+      "他"
+    ],
+    "correctOrder": [
+      "除了",
+      "中文以外",
+      "他",
+      "还会说法语"
+    ],
+    "hanzi": "除了中文以外，他还会说法语。",
+    "pinyin": "Chúle Zhōngwén yǐwài, tā hái huì shuō Fǎyǔ.",
+    "explanation": "• Cấu trúc ngoại trừ và bổ sung: 「除了...以外, S + 还...」.",
+    "id": "hsk3_writing_cycle2_4",
+    "level": 3
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu đối thoại xã hội",
+    "title": "Tầm quan trọng của giấc ngủ",
+    "audioText": "男：医生，我最近总是失眠，白天精神很差。女：长期熬夜会严重打乱人体的生物钟，建议你晚上十点后远离手机，适度听些轻音乐。",
+    "passageText": "男：医生，我最近总是失眠，白天精神很差。\n女：长期熬夜会严重打乱人体的生物钟，建议你晚上十点后远离手机，适度听些轻音乐。",
+    "pinyin": "Nán: Yīshēng, wǒ zuìjìn zǒngshì shīmián, báitiān jīngshen hěn chà. Nǚ: Chángqī áoyè huì yánzhòng dǎluàn réntǐ de shēngwùzhōng, jiànyì nǐ wǎnshang shí diǎn hòu yuǎnlí shǒujī, shìdù tīng xiē qīngyīnyuè.",
+    "vietnamese": "Nam: Thưa bác sĩ, dạo này tôi luôn mất ngủ, ban ngày tinh thần rất uể oải. Nữ: Thức khuya dài ngày sẽ làm rối loạn nghiêm trọng đồng hồ sinh học cơ thể, khuyên bạn sau 10 giờ tối nên để điện thoại ra xa, nghe chút nhạc êm dịu vừa phải.",
+    "question": "问：女医生建议男士怎么做？(Hỏi: Bác sĩ khuyên người nam nên làm gì?)",
+    "options": [
+      {
+        "text": "十点后远离手机并听轻音乐 (Sau 10h để điện thoại ra xa và nghe nhạc nhẹ)",
+        "isCorrect": true
+      },
+      {
+        "text": "每天喝大量的烈酒 (Mỗi ngày uống thật nhiều rượu mạnh)",
+        "isCorrect": false
+      },
+      {
+        "text": "整夜开着强光灯看书 (Bật đèn sáng cả đêm đọc sách)",
+        "isCorrect": false
+      },
+      {
+        "text": "增加白天的剧烈运动 (Tăng cường vận động mạnh ban ngày)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 十点后远离手机并听轻音乐.\n• Lời bác sĩ: 「晚上十点后远离手机，适度听些轻音乐」.",
+    "id": "hsk4_listening_cycle2_1",
+    "level": 4
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Phương châm sống tích cực",
+    "audioText": "失败并不可怕，可怕的是丧失重新站起来的勇气。",
+    "targetText": "失败并不可怕可怕的是丧失重新站起来的勇气",
+    "targetPinyin": "Shībài bìng bù kěpà, kěpà de shì sàngshī chóngxīn zhàn qǐlái de yǒngqì.",
+    "vietnamese": "Thất bại không đáng sợ, đáng sợ là đánh mất đi dũng khí để đứng dậy một lần nữa.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「并不可怕」(bìng bù kěpà) ngữ khí phủ định mạnh mẽ. 「丧失」(sàngshī thanh 4 + thanh 1).",
+    "id": "hsk4_speaking_cycle2_2",
+    "level": 4
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu kinh tế",
+    "title": "Tiêu dùng thông minh thời đại số",
+    "passageText": "网购给人们的生活带来了前所未有的便利，但也容易让人陷入冲动消费的陷阱。理性的消费者应当在下单前冷静思考：这件商品究竟是自己真正需要的，还是仅仅因为打折而产生的购买欲望。",
+    "pinyin": "Wǎnggòu gěi rénmen de shēnghuó dài lái le qiánsuǒwèiyǒu de biànlì, dàn yě róngyì ràng rén xiànrù chōngdòng xiāofèi de xiànjǐng. Lǐxìng de xiāofèizhě yīngdāng zài xiàdān qián lěngjìng sīkǎo: zhè jiàn shāngpǐn jiùjìng shì zìjǐ zhēnzhèng xūyào de, háishi jǐnjǐn yīnwèi dǎzhé ér chǎnshēng de gòumǎi yùwàng.",
+    "vietnamese": "Mua sắm qua mạng mang lại sự tiện lợi chưa từng có cho đời sống con người, nhưng cũng dễ khiến người ta rơi vào bẫy tiêu dùng bốc đồng. Người tiêu dùng lý trí nên bình tĩnh suy ngẫm trước khi đặt đơn: món hàng này rốt cuộc là thứ bản thân thực sự cần, hay chỉ là ham muốn mua sắm nảy sinh do giảm giá.",
+    "question": "理性的消费者在下单前应当考虑什么？(Người tiêu dùng lý trí nên cân nhắc điều gì trước khi đặt hàng?)",
+    "options": [
+      {
+        "text": "商品是真正需要还是因打折产生的欲望 (Hàng là thực sự cần hay chỉ do giảm giá)",
+        "isCorrect": true
+      },
+      {
+        "text": "能不能借钱购买更多 (Có thể vay tiền để mua thêm không)",
+        "isCorrect": false
+      },
+      {
+        "text": "快递员送货速度是否为全国第一 (Tốc độ giao hàng có phải số 1 toàn quốc không)",
+        "isCorrect": false
+      },
+      {
+        "text": "商品包装盒是否足够奢华 (Vỏ hộp có đủ sang trọng không)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 商品是真正需要还是因打折产生的欲望.\n• Bài văn: 「这件商品究竟是自己真正需要的，还是仅仅因为打折而产生的购买欲望」.",
+    "id": "hsk4_reading_cycle2_3",
+    "level": 4
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 由...决定",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Thành bại của việc này do chính thái độ của bạn quyết định.",
+    "words": [
+      "由你自己的态度",
+      "这件事的成败",
+      "决定的",
+      "是"
+    ],
+    "correctOrder": [
+      "这件事的成败",
+      "是",
+      "由你自己的态度",
+      "决定的"
+    ],
+    "hanzi": "这件事的成败是由你自己的态度决定的。",
+    "pinyin": "Zhè jiàn shì de chéngbài shì yóu nǐ zìjǐ de tàidu juédìng de.",
+    "explanation": "• Cấu trúc nhấn mạnh tác nhân: 「Chủ ngữ + 是 + 由... + 决定 的」.",
+    "id": "hsk4_writing_cycle2_4",
+    "level": 4
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu diễn đàn & kinh tế học",
+    "title": "Chính sách năng lượng tái tạo",
+    "audioText": "男：随着风电与光伏发电成本的大幅下降，清洁能源的平价上网已经成为现实。女：未来竞争的核心不再是装机规模，而是在于储能系统的调峰能力以及智能电网的调度效率。",
+    "passageText": "男：随着风电与光伏发电成本的大幅下降，清洁能源的平价上网已经成为现实。\n女：未来竞争的核心不再是装机规模，而是在于储能系统的调峰能力以及智能电网的调度效率。",
+    "pinyin": "Nán: Suízhe fēngdiàn yǔ guāngfú fādiàn chéngběn de dàfú xiàjiàng, qīngjié néngyuán de píngjià shàngwǎng yǐjīng chéngwéi xiànshí. Nǚ: Wèilái jìngzhēng de héxīn bú zài shì zhuāngjī guīmó, ér shì zàiyú chǔnéng xìtǒng de tiáofēng nénglì yǐjí zhìnéng diànwǎng de diàodù xiàolǜ.",
+    "vietnamese": "Nam: Cùng với việc giá thành điện gió và quang điện giảm mạnh, năng lượng sạch với giá bán ngang bằng điện truyền thống đã trở thành hiện thực. Nữ: Cốt lõi cạnh tranh trong tương lai không còn nằm ở quy mô công suất lắp đặt, mà nằm ở năng lực điều tiết đỉnh phụ tải của hệ thống tích trữ năng lượng và hiệu suất điều độ lưới điện thông minh.",
+    "question": "问：未来清洁能源竞争的核心在于什么？(Hỏi: Cốt lõi cạnh tranh năng lượng sạch tương lai nằm ở đâu?)",
+    "options": [
+      {
+        "text": "储能系统的调峰能力与电网调度效率 (Năng lực điều tiết lưu trữ và hiệu suất điều độ lưới điện)",
+        "isCorrect": true
+      },
+      {
+        "text": "无限度增加燃煤发电厂 (Tăng nhà máy nhiệt điện than không giới hạn)",
+        "isCorrect": false
+      },
+      {
+        "text": "彻底关闭所有光伏电站 (Đóng cửa toàn bộ trạm quang điện)",
+        "isCorrect": false
+      },
+      {
+        "text": "停止研发储能电池 (Ngừng nghiên cứu ắc quy lưu trữ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 储能系统的调峰能力与电网调度效率.\n• Lời nữ phân tích rõ ràng hai yếu tố then chốt.",
+    "id": "hsk5_listening_cycle2_1",
+    "level": 5
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Luận biện triết học nhân sinh",
+    "audioText": "博学而不穷，笃行而不倦，方为学者之至境。",
+    "targetText": "博学而不穷笃行而不倦方为学者之至境",
+    "targetPinyin": "Bóxué ér bù qióng, dǔxíng ér bú juàn, fāng wéi xuézhě zhī zhìjìng.",
+    "vietnamese": "Học rộng mà không bao giờ ngừng lại, kiên định thực hành mà không biết mỏi mệt, mới là cảnh giới tột cùng của người làm học vấn.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Văn phong tứ tự thành ngữ biền ngẫu: 「博学而不穷，笃行而不倦」. Cần giữ âm vực sâu lắng, nhịp điệu uy nghiêm.",
+    "id": "hsk5_speaking_cycle2_2",
+    "level": 5
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu văn hóa học",
+    "title": "Nghệ thuật kiến trúc Tứ Hợp Viện",
+    "passageText": "北京四合院不仅是一种居住建筑形式，更承载着中国传统伦理观念与宇宙哲学。四周房屋围合而中间留出庭院，对外封闭以保私密安宁，对内开敞以迎日月清风，深刻体现了天人合一、内和外顺的人文意蕴。",
+    "pinyin": "Běijīng sìhéyuàn bùjǐn shì yì zhǒng jūzhù jiànzhù xíngshì, gèng chéngzǎi zhe Zhōngguó chuántǒng lúnlǐ guānniàn yǔ yǔzhòu zhéxué. Sìzhōu fángwū wéihé ér zhōngjiān liúchū tíngyuàn, duìwài fēngbì yǐ bǎo sīmì ānníng, duìnèi kāichǎng yǐ yíng rìyuè qīngfēng, shēnkè tǐxiàn le tiānrén-héyī, nèihé-wàishùn de rénwén yìyùn.",
+    "vietnamese": "Tứ hợp viện Bắc Kinh không chỉ là một hình thái kiến trúc nhà ở, mà còn chuyên chở quan niệm đạo đức luân lý truyền thống và triết học vũ trụ Trung Hoa. Bốn phía gian phòng bao bọc và ở giữa để ra một sân trời, đối ngoại khép kín để giữ gìn sự riêng tư an tĩnh, đối nội mở rộng để đón lấy ánh dương và ngọn gió thanh lành, thể hiện sâu sắc ý vị nhân văn 'thiên nhân hợp nhất, trong ấm ngoài êm'.",
+    "question": "四合院的建筑格局体现了怎样的文化意蕴？(Quy cách kiến trúc Tứ Hợp Viện thể hiện ý vị văn hóa nào?)",
+    "options": [
+      {
+        "text": "天人合一与内和外顺 (Thiên nhân hợp nhất và trong ấm ngoài êm)",
+        "isCorrect": true
+      },
+      {
+        "text": "追逐西式洛可可奢华 (Theo đuổi sự xa hoa phong cách Rococo phương Tây)",
+        "isCorrect": false
+      },
+      {
+        "text": "完全舍弃家庭私密性 (Từ bỏ hoàn toàn sự riêng tư gia đình)",
+        "isCorrect": false
+      },
+      {
+        "text": "纯粹用于军事防御城堡 (Thuần túy là pháo đài phòng thủ quân sự)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 天人合一与内和外顺.\n• Trích dẫn bài đọc: 「深刻体现了天人合一、内和外顺的人文意蕴」.",
+    "id": "hsk5_reading_cycle2_3",
+    "level": 5
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu đảo ngữ học thuật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Sự phát triển của công nghệ đã làm phong phú sâu sắc thêm đời sống văn hóa của người dân.",
+    "words": [
+      "极大地丰富了",
+      "科技的发展",
+      "居民的精神文化生活"
+    ],
+    "correctOrder": [
+      "科技的发展",
+      "极大地丰富了",
+      "居民的精神文化生活"
+    ],
+    "hanzi": "科技的发展极大地丰富了居民的精神文化生活。",
+    "pinyin": "Kējì de fāzhǎn jídà de fēngfù le jūmín de jīngshén wénhuà shēnghuó.",
+    "explanation": "• Cấu trúc: 「Chủ ngữ (科技的发展) + Trạng từ + Động từ (极大地丰富了) + Tân ngữ phức hợp (居民的精神文化生活)」.",
+    "id": "hsk5_writing_cycle2_4",
+    "level": 5
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu học thuật & Diễn đàn kinh tế quốc tế",
+    "title": "Toàn cầu hóa kinh tế và khả năng chống chịu chuỗi cung ứng",
+    "audioText": "男：后疫情时代，国际经贸格局正经历深刻重构，跨国企业日益将考量重心从‘效率至上’转向‘安全与韧性并重’。女：这意味着全球化并未走向终结，而是演变为更具区域化、多元化特征的网状协同生态。",
+    "passageText": "男：后疫情时代，国际经贸格局正经历深刻重构，跨国企业日益将考量重心从‘效率至上’转向‘安全与韧性并重’。\n女：这意味着全球化并未走向终结，而是演变为更具区域化、多元化特征的网状协同生态。",
+    "pinyin": "Nán: Hòuyìqíng shídài, guójì jīngmào gégú zhèng jīnglì shēnkè chónggòu, kuàguó qǐyè rìyì jiāng kǎoliang zhòngxīn cóng ‘xiàolǜ zhìshàng’ zhuǎnxiàng ‘ānquán yǔ rènxìng bìngzhòng’. Nǚ: Zhè yìwèizhe quánqiúhuà bìng wèi zǒuxiàng zhōngjié, ér shì yǎnbiàn wéi gèng jù qūyùhuà, duōyuánhuà tèzhēng de wǎngzhuàng xiétóng shēngtài.",
+    "vietnamese": "Nam: Thời kỳ hậu đại dịch, cục diện kinh tế thương mại quốc tế đang trải qua sự tái cấu trúc sâu sắc, các doanh nghiệp đa quốc gia ngày càng chuyển trọng tâm cân nhắc từ 'hiệu quả trên hết' sang 'coi trọng đồng thời cả an toàn và độ bền vững dẻo dai'. Nữ: Điều này đồng nghĩa với việc toàn cầu hóa không hề đi tới hồi kết, mà đang phát triển thành một hệ sinh thái hiệp đồng dạng mạng lưới mang đặc trưng khu vực hóa và đa nguyên hóa rõ nét hơn.",
+    "question": "问：对话中指出跨国企业的考量重心发生了什么转变？(Hỏi: Đối thoại chỉ ra trọng tâm cân nhắc của doanh nghiệp đa quốc gia đã chuyển biến ra sao?)",
+    "options": [
+      {
+        "text": "从‘效率至上’转向‘安全与韧性并重’ (Từ 'hiệu quả trên hết' sang 'coi trọng cả an toàn và dẻo dai')",
+        "isCorrect": true
+      },
+      {
+        "text": "完全放弃所有海外分支机构 (Từ bỏ toàn bộ chi nhánh ở nước ngoài)",
+        "isCorrect": false
+      },
+      {
+        "text": "彻底停止与任何国际伙伴合作 (Dứt khoát ngừng hợp tác với đối tác quốc tế)",
+        "isCorrect": false
+      },
+      {
+        "text": "仅生产单一廉价塑料制品 (Chỉ sản xuất một mặt hàng nhựa giá rẻ duy nhất)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 从‘效率至上’转向‘安全与韧性并重’.\n• Trích nguyên văn: 「从‘效率至上’转向‘安全与韧性并重’」.",
+    "id": "hsk6_listening_cycle2_1",
+    "level": 6
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Luận thuyết đỉnh cao văn phong học thuật",
+    "audioText": "致广大而尽精微，极高明而道中庸。",
+    "targetText": "致广大而尽精微极高明而道中庸",
+    "targetPinyin": "Zhì guǎngdà ér jìn jīngwēi, jí gāomíng ér dào zhōngyōng.",
+    "vietnamese": "Đạt tới chỗ quảng đại bao la mà tận cùng đến từng nét tinh vi tường tận; vươn tới chốn cao minh tột bực mà luôn hành xử theo đạo Trung Dung hòa hợp.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Điển tích cổ Hán ngữ trong sách 'Trung Dung'. Phát âm từng âm tiết dứt khoát, thanh 4 và thanh 1 giao thoa hùng tráng.",
+    "id": "hsk6_speaking_cycle2_2",
+    "level": 6
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu khảo cứu triết học",
+    "title": "Học thuyết 'Tri hành hợp nhất' của Vương Dương Minh",
+    "passageText": "明代思想家王阳明提出“知行合一”说，直指“知是行之始，行是知之成”。知而不行，只是未知；真正的真知灼见必在事上磨炼、知行交融中方得彰显。这一学说彻底廓清了知行脱节的弊病，成为东亚心学传统中影响至深的精神坐标。",
+    "pinyin": "Míngdài sīxiǎngjiā Wáng Yángmíng tíchū “zhī xíng hé yī” shuō, zhízhǐ “zhī shì xíng zhī shǐ, xíng shì zhī zhī chéng”. Zhī ér bù xíng, zhǐ shì wèi zhī; zhēnzhèng de zhēnzhī-zhuójiàn bì zài shì shang móliàn, zhī xíng jiāoróng zhōng fāng dé zhāngxiǎn. Zhè yì xuéshuō chèdǐ kuòqīng le zhī xíng tuōjié de bìbìng, chéngwéi Dōngyà xīnxué chuántǒng zhōng yǐngxiǎng zhìshēn de jīngshén zuòbiāo.",
+    "vietnamese": "Nhà tư tưởng triều Minh Vương Dương Minh đưa ra thuyết 'Tri hành hợp nhất', chỉ thẳng rằng: 'Biết là khởi đầu của làm, làm là sự hoàn thành của biết'. Biết mà không làm thì chỉ là chưa biết; chân tri trác kiến thực sự bắt buộc phải được tôi rèn qua sự việc thực tế, trong sự giao hòa giữa tri và hành mới được hiển lộ rạng ngời. Học thuyết này đã dẹp tan triệt để căn bệnh tách rời giữa lý thuyết và hành động, trở thành tọa độ tinh thần có sức ảnh hưởng sâu rộng nhất trong truyền thống Tâm học Đông Á.",
+    "question": "王阳明“知行合一”的核心内涵是什么？(Nội hàm cốt lõi của 'Tri hành hợp nhất' là gì?)",
+    "options": [
+      {
+        "text": "知行交融并在实践磨炼中彰显真知 (Tri hành giao hòa và thể hiện chân tri qua tôi luyện thực tế)",
+        "isCorrect": true
+      },
+      {
+        "text": "只读书而不必参与任何实际生活 (Chỉ đọc sách mà không cần tham gia đời sống thực tế)",
+        "isCorrect": false
+      },
+      {
+        "text": "将书本知识全部抛弃废黜 (Vứt bỏ xóa bỏ toàn bộ kiến thức sách vở)",
+        "isCorrect": false
+      },
+      {
+        "text": "认为人的认知完全由运气决定 (Cho rằng nhận thức của con người do vận may quyết định)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 知行交融并在实践磨炼中彰显真知.\n• Bài văn: 「知是行之始，行是知之成。真正的真知灼见必在事上磨炼、知行交融中方得彰显」.",
+    "id": "hsk6_reading_cycle2_3",
+    "level": 6
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu luận biện triết học HSK 6",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Sự phát triển của nền văn minh nhân loại được quyết định bởi tinh thần đổi mới liên tục.",
+    "words": [
+      "由持续的创新精神",
+      "人类文明的发展进程",
+      "决定的",
+      "是"
+    ],
+    "correctOrder": [
+      "人类文明的发展进程",
+      "是",
+      "由持续的创新精神",
+      "决定的"
+    ],
+    "hanzi": "人类文明的发展进程是由持续的创新精神决定的。",
+    "pinyin": "Rénlèi wénmíng de fāzhǎn jìnchéng shì yóu chíxù de chuàngxīn jīngshén juédìng de.",
+    "explanation": "• Cấu trúc nhấn mạnh tác nhân đỉnh cao: 「Chủ ngữ (人类文明的发展进程) + 是 + 由 (Nguyên nhân/Tác nhân) + 决定的」.",
+    "id": "hsk6_writing_cycle2_4",
+    "level": 6
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu hội thoại ngắn",
+    "title": "Hỏi thăm phương tiện di chuyển",
+    "audioText": "男：你怎么去学校？女：我坐公共汽车去学校。",
+    "passageText": "男：你怎么去学校？\n女：我坐公共汽车去学校。",
+    "pinyin": "Nán: Nǐ zěnme qù xuéxiào? Nǚ: Wǒ zuò gōnggòng qìchē qù xuéxiào.",
+    "vietnamese": "Nam: Bạn đến trường bằng cách nào? Nữ: Tôi đi xe buýt đến trường.",
+    "question": "问：女士怎么去学校？(Hỏi: Người nữ đến trường bằng gì?)",
+    "options": [
+      {
+        "text": "坐公共汽车 (Đi xe buýt)",
+        "isCorrect": true
+      },
+      {
+        "text": "开飞机 (Lái máy bay)",
+        "isCorrect": false
+      },
+      {
+        "text": "骑自行车 (Đi xe đạp)",
+        "isCorrect": false
+      },
+      {
+        "text": "走路 (Đi bộ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 坐公共汽车 (Đi xe buýt).\n• Nữ đáp: 「我坐公共汽车去学校」.",
+    "id": "hsk1_listening_cycle3_1",
+    "level": 1
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi giá tiền đồ vật",
+    "audioText": "请问这个多少钱？",
+    "targetText": "请问这个多少钱",
+    "targetPinyin": "Qǐngwèn zhè ge duōshao qián?",
+    "vietnamese": "Xin hỏi cái này bao nhiêu tiền?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「多少钱」(duōshao qián) là mẫu câu hỏi giá tiền thông dụng nhất.",
+    "id": "hsk1_speaking_cycle3_2",
+    "level": 1
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh hoạt hàng ngày",
+    "title": "Thời gian làm việc trong tuần",
+    "passageText": "李医生星期一到星期五在医院工作，星期六和星期天在家休息。",
+    "pinyin": "Lǐ yīshēng xīngqīyī dào xīngqīwǔ zài yīyuàn gōngzuò, xīngqīliù hé xīngqītiān zài jiā xiūxi.",
+    "vietnamese": "Bác sĩ Lý từ thứ Hai đến thứ Sáu làm việc ở bệnh viện, thứ Bảy và Chủ nhật ở nhà nghỉ ngơi.",
+    "question": "李医生什么时候休息？(Bác sĩ Lý khi nào nghỉ ngơi?)",
+    "options": [
+      {
+        "text": "星期六和星期天 (Thứ Bảy và Chủ nhật)",
+        "isCorrect": true
+      },
+      {
+        "text": "星期一和星期二 (Thứ Hai và thứ Ba)",
+        "isCorrect": false
+      },
+      {
+        "text": "每天都工作 (Ngày nào cũng làm việc)",
+        "isCorrect": false
+      },
+      {
+        "text": "下午休息 (Buổi chiều nghỉ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 星期六和星期天.\n• Bài đọc nêu rõ: 「星期六和星期天在家休息」.",
+    "id": "hsk1_reading_cycle3_3",
+    "level": 1
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu vị trí đồ vật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Điện thoại ở trên bàn.",
+    "words": [
+      "在桌子上",
+      "手机",
+      "爸爸的"
+    ],
+    "correctOrder": [
+      "爸爸的",
+      "手机",
+      "在桌子上"
+    ],
+    "hanzi": "爸爸的手机在桌子上。",
+    "pinyin": "Bàba de shǒujī zài zhuōzi shang.",
+    "explanation": "• Cấu trúc: 「Định ngữ + Chủ ngữ + 在 + Nơi chốn」.",
+    "id": "hsk1_writing_cycle3_4",
+    "level": 1
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu thường nhật",
+    "title": "Chọn mua quần áo",
+    "audioText": "男：这件红色的衣服真好看！女：但是有点儿贵，我们再看看那件黑色的吧。",
+    "passageText": "男：这件红色的衣服真好看！\n女：但是有点儿贵，我们再看看那件黑色的吧。",
+    "pinyin": "Nán: Zhè jiàn hóngsè de yīfu zhēn hǎokàn! Nǚ: Dànshì yǒudiǎnr guì, wǒmen zài kànkan nà jiàn hēisè de ba.",
+    "vietnamese": "Nam: Chiếc áo màu đỏ này đẹp thật đấy! Nữ: Nhưng mà hơi đắt, chúng mình xem thêm chiếc màu đen kia nhé.",
+    "question": "问：女士觉得红色的衣服怎么样？(Hỏi: Người nữ thấy chiếc áo màu đỏ thế nào?)",
+    "options": [
+      {
+        "text": "有点儿贵 (Hơi đắt một chút)",
+        "isCorrect": true
+      },
+      {
+        "text": "太便宜了 (Quá rẻ rồi)",
+        "isCorrect": false
+      },
+      {
+        "text": "颜色不好看 (Màu sắc không đẹp)",
+        "isCorrect": false
+      },
+      {
+        "text": "尺寸太小 (Cỡ áo quá nhỏ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 有点儿贵.\n• Lời nữ: 「但是有点儿贵」.",
+    "id": "hsk2_listening_cycle3_1",
+    "level": 2
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Hỏi thăm đường đi",
+    "audioText": "从这儿到机场坐出租车要多久？",
+    "targetText": "从这儿到机场坐出租车要多久",
+    "targetPinyin": "Cóng zhèr dào jīchǎng zuò chūzūchē yào duōjiǔ?",
+    "vietnamese": "Từ đây đến sân bay đi taxi mất bao lâu?",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「从...到...」(Cóng... dào... / Từ... đến...). 「多久」(duōjiǔ) hỏi khoảng thời gian.",
+    "id": "hsk2_speaking_cycle3_2",
+    "level": 2
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh hoạt",
+    "title": "Thói quen học tập buổi sáng",
+    "passageText": "早上六点，校园里非常安静。小王习惯在操场边读半个小时的英语课文，然后再去吃早餐。",
+    "pinyin": "Zǎoshang liù diǎn, xiàoyuán lǐ fēicháng ānjìng. Xiǎo Wáng xíguàn zài cāochǎng biān dú bàn ge xiǎoshí de Yīngyǔ kèwén, ránhòu zài qù chī zǎocān.",
+    "vietnamese": "6 giờ sáng, trong khuôn viên trường vô cùng yên tĩnh. Tiểu Vương có thói quen đọc bài tiếng Anh nửa tiếng bên sân vận động, sau đó mới đi ăn bữa sáng.",
+    "question": "小王早上在操场边做什么？(Tiểu Vương buổi sáng làm gì bên sân vận động?)",
+    "options": [
+      {
+        "text": "读英语课文 (Đọc bài khóa tiếng Anh)",
+        "isCorrect": true
+      },
+      {
+        "text": "踢足球 (Đá bóng)",
+        "isCorrect": false
+      },
+      {
+        "text": "睡觉 (Ngủ)",
+        "isCorrect": false
+      },
+      {
+        "text": "买早餐 (Mua đồ ăn sáng)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 读英语课文.\n• Đoạn văn: 「在操场边读半个小时的英语课文」.",
+    "id": "hsk2_reading_cycle3_3",
+    "level": 2
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 得 (Bổ ngữ trạng thái)",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Cô ấy hát rất hay.",
+    "words": [
+      "歌唱得",
+      "非常好听",
+      "她"
+    ],
+    "correctOrder": [
+      "她",
+      "歌唱得",
+      "非常好听"
+    ],
+    "hanzi": "她歌唱得非常好听。",
+    "pinyin": "Tā gē chàng de fēicháng hǎotīng.",
+    "explanation": "• Bổ ngữ trạng thái: 「Chủ ngữ + Tân ngữ + Động từ + 得 + Cụm tính từ」.",
+    "id": "hsk2_writing_cycle3_4",
+    "level": 2
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu thường nhật & xã hội",
+    "title": "Hẹn giờ họp công ty",
+    "audioText": "男：下午两点的会议推迟了吗？女：对，推迟到三点半了，在三楼第一会议室。",
+    "passageText": "男：下午两点的会议推迟了吗？\n女：对，推迟到三点半了，在三楼第一会议室。",
+    "pinyin": "Nán: Xiàwǔ liǎng diǎn de huìyì tuīchí le ma? Nǚ: Duì, tuīchí dào sān diǎn bàn le, zài sān lóu dì-yī huìyìshì.",
+    "vietnamese": "Nam: Cuộc họp lúc 2 giờ chiều hoãn lại rồi à? Nữ: Đúng vậy, hoãn tới 3 giờ rưỡi, ở phòng họp số 1 tầng 3.",
+    "question": "问：会议改在几点开？(Hỏi: Cuộc họp đổi sang mấy giờ tổ chức?)",
+    "options": [
+      {
+        "text": "三点半 (3 giờ rưỡi)",
+        "isCorrect": true
+      },
+      {
+        "text": "两点整 (2 giờ đúng)",
+        "isCorrect": false
+      },
+      {
+        "text": "四点 (4 giờ)",
+        "isCorrect": false
+      },
+      {
+        "text": "明天上午 (Sáng mai)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 三点半.\n• Nữ nói: 「推迟到三点半了」.",
+    "id": "hsk3_listening_cycle3_1",
+    "level": 3
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Thương lượng công việc",
+    "audioText": "请您再考虑一下，我们真的很想促成这次合作。",
+    "targetText": "请您再考虑一下我们真的很想促成这次合作",
+    "targetPinyin": "Qǐng nín zài kǎolǜ yíxià, wǒmen zhēnde hěn xiǎng cùchéng zhè cì hézuò.",
+    "vietnamese": "Xin quý vị cân nhắc thêm một chút, chúng tôi thực sự rất mong thúc đẩy sự hợp tác lần này.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「考虑」(kǎolǜ thanh 3 + thanh 4). 「促成」(cùchéng thanh 4 + thanh 2).",
+    "id": "hsk3_speaking_cycle3_2",
+    "level": 3
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu sinh thái",
+    "title": "Bảo vệ môi trường xanh",
+    "passageText": "垃圾分类看似是一件小事，却对环境保护有着巨大的影响。如果每个人都能主动做好垃圾分类，城市的环境将会变得更加整洁美好。",
+    "pinyin": "Lājī fēnlèi kànsì shì yí jiàn xiǎoshì, què duì huánjìng bǎohù yǒu zhe jùdà de yǐngxiǎng. Rúguǒ měi ge rén dōu néng zhǔdòng zuò hǎo lājī fēnlèi, chéngshì de huánjìng jiāng huì biànde gèngjiā zhěngjié měihǎo.",
+    "vietnamese": "Phân loại rác thoạt nhìn như một việc nhỏ, nhưng lại mang ảnh hưởng to lớn tới việc bảo vệ môi trường. Nếu mỗi người đều có thể chủ động phân loại rác thật tốt, môi trường thành phố sẽ trở nên ngăn nắp và tươi đẹp hơn.",
+    "question": "做好垃圾分类对城市有什么影响？(Làm tốt phân loại rác có ảnh hưởng gì tới thành phố?)",
+    "options": [
+      {
+        "text": "让城市环境更加整洁美好 (Làm môi trường thành phố ngăn nắp tươi đẹp hơn)",
+        "isCorrect": true
+      },
+      {
+        "text": "增加城市的交通拥堵 (Làm tăng tắc nghẽn giao thông)",
+        "isCorrect": false
+      },
+      {
+        "text": "浪费居民的大量时间 (Lãng phí nhiều thời gian cư dân)",
+        "isCorrect": false
+      },
+      {
+        "text": "让空气质量变差 (Làm chất lượng không khí kém đi)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 让城市环境更加整洁美好.\n• Bài văn: 「城市的环境将会变得更加整洁美好」.",
+    "id": "hsk3_reading_cycle3_3",
+    "level": 3
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 除了...以外...",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Ngoài tiếng Trung ra, anh ấy còn biết nói tiếng Pháp.",
+    "words": [
+      "还会说法语",
+      "中文以外",
+      "除了",
+      "他"
+    ],
+    "correctOrder": [
+      "除了",
+      "中文以外",
+      "他",
+      "还会说法语"
+    ],
+    "hanzi": "除了中文以外，他还会说法语。",
+    "pinyin": "Chúle Zhōngwén yǐwài, tā hái huì shuō Fǎyǔ.",
+    "explanation": "• Cấu trúc ngoại trừ và bổ sung: 「除了...以外, S + 还...」.",
+    "id": "hsk3_writing_cycle3_4",
+    "level": 3
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu đối thoại xã hội",
+    "title": "Tầm quan trọng của giấc ngủ",
+    "audioText": "男：医生，我最近总是失眠，白天精神很差。女：长期熬夜会严重打乱人体的生物钟，建议你晚上十点后远离手机，适度听些轻音乐。",
+    "passageText": "男：医生，我最近总是失眠，白天精神很差。\n女：长期熬夜会严重打乱人体的生物钟，建议你晚上十点后远离手机，适度听些轻音乐。",
+    "pinyin": "Nán: Yīshēng, wǒ zuìjìn zǒngshì shīmián, báitiān jīngshen hěn chà. Nǚ: Chángqī áoyè huì yánzhòng dǎluàn réntǐ de shēngwùzhōng, jiànyì nǐ wǎnshang shí diǎn hòu yuǎnlí shǒujī, shìdù tīng xiē qīngyīnyuè.",
+    "vietnamese": "Nam: Thưa bác sĩ, dạo này tôi luôn mất ngủ, ban ngày tinh thần rất uể oải. Nữ: Thức khuya dài ngày sẽ làm rối loạn nghiêm trọng đồng hồ sinh học cơ thể, khuyên bạn sau 10 giờ tối nên để điện thoại ra xa, nghe chút nhạc êm dịu vừa phải.",
+    "question": "问：女医生建议男士怎么做？(Hỏi: Bác sĩ khuyên người nam nên làm gì?)",
+    "options": [
+      {
+        "text": "十点后远离手机并听轻音乐 (Sau 10h để điện thoại ra xa và nghe nhạc nhẹ)",
+        "isCorrect": true
+      },
+      {
+        "text": "每天喝大量的烈酒 (Mỗi ngày uống thật nhiều rượu mạnh)",
+        "isCorrect": false
+      },
+      {
+        "text": "整夜开着强光灯看书 (Bật đèn sáng cả đêm đọc sách)",
+        "isCorrect": false
+      },
+      {
+        "text": "增加白天的剧烈运动 (Tăng cường vận động mạnh ban ngày)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 十点后远离手机并听轻音乐.\n• Lời bác sĩ: 「晚上十点后远离手机，适度听些轻音乐」.",
+    "id": "hsk4_listening_cycle3_1",
+    "level": 4
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Phương châm sống tích cực",
+    "audioText": "失败并不可怕，可怕的是丧失重新站起来的勇气。",
+    "targetText": "失败并不可怕可怕的是丧失重新站起来的勇气",
+    "targetPinyin": "Shībài bìng bù kěpà, kěpà de shì sàngshī chóngxīn zhàn qǐlái de yǒngqì.",
+    "vietnamese": "Thất bại không đáng sợ, đáng sợ là đánh mất đi dũng khí để đứng dậy một lần nữa.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: 「并不可怕」(bìng bù kěpà) ngữ khí phủ định mạnh mẽ. 「丧失」(sàngshī thanh 4 + thanh 1).",
+    "id": "hsk4_speaking_cycle3_2",
+    "level": 4
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu kinh tế",
+    "title": "Tiêu dùng thông minh thời đại số",
+    "passageText": "网购给人们的生活带来了前所未有的便利，但也容易让人陷入冲动消费的陷阱。理性的消费者应当在下单前冷静思考：这件商品究竟是自己真正需要的，还是仅仅因为打折而产生的购买欲望。",
+    "pinyin": "Wǎnggòu gěi rénmen de shēnghuó dài lái le qiánsuǒwèiyǒu de biànlì, dàn yě róngyì ràng rén xiànrù chōngdòng xiāofèi de xiànjǐng. Lǐxìng de xiāofèizhě yīngdāng zài xiàdān qián lěngjìng sīkǎo: zhè jiàn shāngpǐn jiùjìng shì zìjǐ zhēnzhèng xūyào de, háishi jǐnjǐn yīnwèi dǎzhé ér chǎnshēng de gòumǎi yùwàng.",
+    "vietnamese": "Mua sắm qua mạng mang lại sự tiện lợi chưa từng có cho đời sống con người, nhưng cũng dễ khiến người ta rơi vào bẫy tiêu dùng bốc đồng. Người tiêu dùng lý trí nên bình tĩnh suy ngẫm trước khi đặt đơn: món hàng này rốt cuộc là thứ bản thân thực sự cần, hay chỉ là ham muốn mua sắm nảy sinh do giảm giá.",
+    "question": "理性的消费者在下单前应当考虑什么？(Người tiêu dùng lý trí nên cân nhắc điều gì trước khi đặt hàng?)",
+    "options": [
+      {
+        "text": "商品是真正需要还是因打折产生的欲望 (Hàng là thực sự cần hay chỉ do giảm giá)",
+        "isCorrect": true
+      },
+      {
+        "text": "能不能借钱购买更多 (Có thể vay tiền để mua thêm không)",
+        "isCorrect": false
+      },
+      {
+        "text": "快递员送货速度是否为全国第一 (Tốc độ giao hàng có phải số 1 toàn quốc không)",
+        "isCorrect": false
+      },
+      {
+        "text": "商品包装盒是否足够奢华 (Vỏ hộp có đủ sang trọng không)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 商品是真正需要还是因打折产生的欲望.\n• Bài văn: 「这件商品究竟是自己真正需要的，还是仅仅因为打折而产生的购买欲望」.",
+    "id": "hsk4_reading_cycle3_3",
+    "level": 4
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu chữ 由...决定",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Thành bại của việc này do chính thái độ của bạn quyết định.",
+    "words": [
+      "由你自己的态度",
+      "这件事的成败",
+      "决定的",
+      "是"
+    ],
+    "correctOrder": [
+      "这件事的成败",
+      "是",
+      "由你自己的态度",
+      "决定的"
+    ],
+    "hanzi": "这件事的成败是由你自己的态度决定的。",
+    "pinyin": "Zhè jiàn shì de chéngbài shì yóu nǐ zìjǐ de tàidu juédìng de.",
+    "explanation": "• Cấu trúc nhấn mạnh tác nhân: 「Chủ ngữ + 是 + 由... + 决定 的」.",
+    "id": "hsk4_writing_cycle3_4",
+    "level": 4
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu diễn đàn & kinh tế học",
+    "title": "Chính sách năng lượng tái tạo",
+    "audioText": "男：随着风电与光伏发电成本的大幅下降，清洁能源的平价上网已经成为现实。女：未来竞争的核心不再是装机规模，而是在于储能系统的调峰能力以及智能电网的调度效率。",
+    "passageText": "男：随着风电与光伏发电成本的大幅下降，清洁能源的平价上网已经成为现实。\n女：未来竞争的核心不再是装机规模，而是在于储能系统的调峰能力以及智能电网的调度效率。",
+    "pinyin": "Nán: Suízhe fēngdiàn yǔ guāngfú fādiàn chéngběn de dàfú xiàjiàng, qīngjié néngyuán de píngjià shàngwǎng yǐjīng chéngwéi xiànshí. Nǚ: Wèilái jìngzhēng de héxīn bú zài shì zhuāngjī guīmó, ér shì zàiyú chǔnéng xìtǒng de tiáofēng nénglì yǐjí zhìnéng diànwǎng de diàodù xiàolǜ.",
+    "vietnamese": "Nam: Cùng với việc giá thành điện gió và quang điện giảm mạnh, năng lượng sạch với giá bán ngang bằng điện truyền thống đã trở thành hiện thực. Nữ: Cốt lõi cạnh tranh trong tương lai không còn nằm ở quy mô công suất lắp đặt, mà nằm ở năng lực điều tiết đỉnh phụ tải của hệ thống tích trữ năng lượng và hiệu suất điều độ lưới điện thông minh.",
+    "question": "问：未来清洁能源竞争的核心在于什么？(Hỏi: Cốt lõi cạnh tranh năng lượng sạch tương lai nằm ở đâu?)",
+    "options": [
+      {
+        "text": "储能系统的调峰能力与电网调度效率 (Năng lực điều tiết lưu trữ và hiệu suất điều độ lưới điện)",
+        "isCorrect": true
+      },
+      {
+        "text": "无限度增加燃煤发电厂 (Tăng nhà máy nhiệt điện than không giới hạn)",
+        "isCorrect": false
+      },
+      {
+        "text": "彻底关闭所有光伏电站 (Đóng cửa toàn bộ trạm quang điện)",
+        "isCorrect": false
+      },
+      {
+        "text": "停止研发储能电池 (Ngừng nghiên cứu ắc quy lưu trữ)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 储能系统的调峰能力与电网调度效率.\n• Lời nữ phân tích rõ ràng hai yếu tố then chốt.",
+    "id": "hsk5_listening_cycle3_1",
+    "level": 5
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Luận biện triết học nhân sinh",
+    "audioText": "博学而不穷，笃行而不倦，方为学者之至境。",
+    "targetText": "博学而不穷笃行而不倦方为学者之至境",
+    "targetPinyin": "Bóxué ér bù qióng, dǔxíng ér bú juàn, fāng wéi xuézhě zhī zhìjìng.",
+    "vietnamese": "Học rộng mà không bao giờ ngừng lại, kiên định thực hành mà không biết mỏi mệt, mới là cảnh giới tột cùng của người làm học vấn.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Văn phong tứ tự thành ngữ biền ngẫu: 「博学而不穷，笃行而不倦」. Cần giữ âm vực sâu lắng, nhịp điệu uy nghiêm.",
+    "id": "hsk5_speaking_cycle3_2",
+    "level": 5
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu văn hóa học",
+    "title": "Nghệ thuật kiến trúc Tứ Hợp Viện",
+    "passageText": "北京四合院不仅是一种居住建筑形式，更承载着中国传统伦理观念与宇宙哲学。四周房屋围合而中间留出庭院，对外封闭以保私密安宁，对内开敞以迎日月清风，深刻体现了天人合一、内和外顺的人文意蕴。",
+    "pinyin": "Běijīng sìhéyuàn bùjǐn shì yì zhǒng jūzhù jiànzhù xíngshì, gèng chéngzǎi zhe Zhōngguó chuántǒng lúnlǐ guānniàn yǔ yǔzhòu zhéxué. Sìzhōu fángwū wéihé ér zhōngjiān liúchū tíngyuàn, duìwài fēngbì yǐ bǎo sīmì ānníng, duìnèi kāichǎng yǐ yíng rìyuè qīngfēng, shēnkè tǐxiàn le tiānrén-héyī, nèihé-wàishùn de rénwén yìyùn.",
+    "vietnamese": "Tứ hợp viện Bắc Kinh không chỉ là một hình thái kiến trúc nhà ở, mà còn chuyên chở quan niệm đạo đức luân lý truyền thống và triết học vũ trụ Trung Hoa. Bốn phía gian phòng bao bọc và ở giữa để ra một sân trời, đối ngoại khép kín để giữ gìn sự riêng tư an tĩnh, đối nội mở rộng để đón lấy ánh dương và ngọn gió thanh lành, thể hiện sâu sắc ý vị nhân văn 'thiên nhân hợp nhất, trong ấm ngoài êm'.",
+    "question": "四合院的建筑格局体现了怎样的文化意蕴？(Quy cách kiến trúc Tứ Hợp Viện thể hiện ý vị văn hóa nào?)",
+    "options": [
+      {
+        "text": "天人合一与内和外顺 (Thiên nhân hợp nhất và trong ấm ngoài êm)",
+        "isCorrect": true
+      },
+      {
+        "text": "追逐西式洛可可奢华 (Theo đuổi sự xa hoa phong cách Rococo phương Tây)",
+        "isCorrect": false
+      },
+      {
+        "text": "完全舍弃家庭私密性 (Từ bỏ hoàn toàn sự riêng tư gia đình)",
+        "isCorrect": false
+      },
+      {
+        "text": "纯粹用于军事防御城堡 (Thuần túy là pháo đài phòng thủ quân sự)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 天人合一与内和外顺.\n• Trích dẫn bài đọc: 「深刻体现了天人合一、内和外顺的人文意蕴」.",
+    "id": "hsk5_reading_cycle3_3",
+    "level": 5
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu đảo ngữ học thuật",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Sự phát triển của công nghệ đã làm phong phú sâu sắc thêm đời sống văn hóa của người dân.",
+    "words": [
+      "极大地丰富了",
+      "科技的发展",
+      "居民的精神文化生活"
+    ],
+    "correctOrder": [
+      "科技的发展",
+      "极大地丰富了",
+      "居民的精神文化生活"
+    ],
+    "hanzi": "科技的发展极大地丰富了居民的精神文化生活。",
+    "pinyin": "Kējì de fāzhǎn jídà de fēngfù le jūmín de jīngshén wénhuà shēnghuó.",
+    "explanation": "• Cấu trúc: 「Chủ ngữ (科技的发展) + Trạng từ + Động từ (极大地丰富了) + Tân ngữ phức hợp (居民的精神文化生活)」.",
+    "id": "hsk5_writing_cycle3_4",
+    "level": 5
+  },
+  {
+    "skill": "listening",
+    "subType": "listening_qa",
+    "category": "Nghe hiểu học thuật & Diễn đàn kinh tế quốc tế",
+    "title": "Toàn cầu hóa kinh tế và khả năng chống chịu chuỗi cung ứng",
+    "audioText": "男：后疫情时代，国际经贸格局正经历深刻重构，跨国企业日益将考量重心从‘效率至上’转向‘安全与韧性并重’。女：这意味着全球化并未走向终结，而是演变为更具区域化、多元化特征的网状协同生态。",
+    "passageText": "男：后疫情时代，国际经贸格局正经历深刻重构，跨国企业日益将考量重心从‘效率至上’转向‘安全与韧性并重’。\n女：这意味着全球化并未走向终结，而是演变为更具区域化、多元化特征的网状协同生态。",
+    "pinyin": "Nán: Hòuyìqíng shídài, guójì jīngmào gégú zhèng jīnglì shēnkè chónggòu, kuàguó qǐyè rìyì jiāng kǎoliang zhòngxīn cóng ‘xiàolǜ zhìshàng’ zhuǎnxiàng ‘ānquán yǔ rènxìng bìngzhòng’. Nǚ: Zhè yìwèizhe quánqiúhuà bìng wèi zǒuxiàng zhōngjié, ér shì yǎnbiàn wéi gèng jù qūyùhuà, duōyuánhuà tèzhēng de wǎngzhuàng xiétóng shēngtài.",
+    "vietnamese": "Nam: Thời kỳ hậu đại dịch, cục diện kinh tế thương mại quốc tế đang trải qua sự tái cấu trúc sâu sắc, các doanh nghiệp đa quốc gia ngày càng chuyển trọng tâm cân nhắc từ 'hiệu quả trên hết' sang 'coi trọng đồng thời cả an toàn và độ bền vững dẻo dai'. Nữ: Điều này đồng nghĩa với việc toàn cầu hóa không hề đi tới hồi kết, mà đang phát triển thành một hệ sinh thái hiệp đồng dạng mạng lưới mang đặc trưng khu vực hóa và đa nguyên hóa rõ nét hơn.",
+    "question": "问：对话中指出跨国企业的考量重心发生了什么转变？(Hỏi: Đối thoại chỉ ra trọng tâm cân nhắc của doanh nghiệp đa quốc gia đã chuyển biến ra sao?)",
+    "options": [
+      {
+        "text": "从‘效率至上’转向‘安全与韧性并重’ (Từ 'hiệu quả trên hết' sang 'coi trọng cả an toàn và dẻo dai')",
+        "isCorrect": true
+      },
+      {
+        "text": "完全放弃所有海外分支机构 (Từ bỏ toàn bộ chi nhánh ở nước ngoài)",
+        "isCorrect": false
+      },
+      {
+        "text": "彻底停止与任何国际伙伴合作 (Dứt khoát ngừng hợp tác với đối tác quốc tế)",
+        "isCorrect": false
+      },
+      {
+        "text": "仅生产单一廉价塑料制品 (Chỉ sản xuất một mặt hàng nhựa giá rẻ duy nhất)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 从‘效率至上’转向‘安全与韧性并重’.\n• Trích nguyên văn: 「从‘效率至上’转向‘安全与韧性并重’」.",
+    "id": "hsk6_listening_cycle3_1",
+    "level": 6
+  },
+  {
+    "skill": "speaking",
+    "subType": "speaking_shadowing",
+    "category": "Luyện phát âm & Giao tiếp phản xạ",
+    "title": "Luận thuyết đỉnh cao văn phong học thuật",
+    "audioText": "致广大而尽精微，极高明而道中庸。",
+    "targetText": "致广大而尽精微极高明而道中庸",
+    "targetPinyin": "Zhì guǎngdà ér jìn jīngwēi, jí gāomíng ér dào zhōngyōng.",
+    "vietnamese": "Đạt tới chỗ quảng đại bao la mà tận cùng đến từng nét tinh vi tường tận; vươn tới chốn cao minh tột bực mà luôn hành xử theo đạo Trung Dung hòa hợp.",
+    "question": "Nhấn nút 'Nghe mẫu' rồi nhấn micro và phát âm câu trên thật chuẩn xác:",
+    "options": [],
+    "explanation": "• Điểm lưu ý: Điển tích cổ Hán ngữ trong sách 'Trung Dung'. Phát âm từng âm tiết dứt khoát, thanh 4 và thanh 1 giao thoa hùng tráng.",
+    "id": "hsk6_speaking_cycle3_2",
+    "level": 6
+  },
+  {
+    "skill": "reading",
+    "subType": "reading_qa",
+    "category": "Đọc hiểu khảo cứu triết học",
+    "title": "Học thuyết 'Tri hành hợp nhất' của Vương Dương Minh",
+    "passageText": "明代思想家王阳明提出“知行合一”说，直指“知是行之始，行是知之成”。知而不行，只是未知；真正的真知灼见必在事上磨炼、知行交融中方得彰显。这一学说彻底廓清了知行脱节的弊病，成为东亚心学传统中影响至深的精神坐标。",
+    "pinyin": "Míngdài sīxiǎngjiā Wáng Yángmíng tíchū “zhī xíng hé yī” shuō, zhízhǐ “zhī shì xíng zhī shǐ, xíng shì zhī zhī chéng”. Zhī ér bù xíng, zhǐ shì wèi zhī; zhēnzhèng de zhēnzhī-zhuójiàn bì zài shì shang móliàn, zhī xíng jiāoróng zhōng fāng dé zhāngxiǎn. Zhè yì xuéshuō chèdǐ kuòqīng le zhī xíng tuōjié de bìbìng, chéngwéi Dōngyà xīnxué chuántǒng zhōng yǐngxiǎng zhìshēn de jīngshén zuòbiāo.",
+    "vietnamese": "Nhà tư tưởng triều Minh Vương Dương Minh đưa ra thuyết 'Tri hành hợp nhất', chỉ thẳng rằng: 'Biết là khởi đầu của làm, làm là sự hoàn thành của biết'. Biết mà không làm thì chỉ là chưa biết; chân tri trác kiến thực sự bắt buộc phải được tôi rèn qua sự việc thực tế, trong sự giao hòa giữa tri và hành mới được hiển lộ rạng ngời. Học thuyết này đã dẹp tan triệt để căn bệnh tách rời giữa lý thuyết và hành động, trở thành tọa độ tinh thần có sức ảnh hưởng sâu rộng nhất trong truyền thống Tâm học Đông Á.",
+    "question": "王阳明“知行合一”的核心内涵是什么？(Nội hàm cốt lõi của 'Tri hành hợp nhất' là gì?)",
+    "options": [
+      {
+        "text": "知行交融并在实践磨炼中彰显真知 (Tri hành giao hòa và thể hiện chân tri qua tôi luyện thực tế)",
+        "isCorrect": true
+      },
+      {
+        "text": "只读书而不必参与任何实际生活 (Chỉ đọc sách mà không cần tham gia đời sống thực tế)",
+        "isCorrect": false
+      },
+      {
+        "text": "将书本知识全部抛弃废黜 (Vứt bỏ xóa bỏ toàn bộ kiến thức sách vở)",
+        "isCorrect": false
+      },
+      {
+        "text": "认为人的认知完全由运气决定 (Cho rằng nhận thức của con người do vận may quyết định)",
+        "isCorrect": false
+      }
+    ],
+    "explanation": "• Đáp án đúng: 知行交融并在实践磨炼中彰显真知.\n• Bài văn: 「知是行之始，行是知之成。真正的真知灼见必在事上磨炼、知行交融中方得彰显」.",
+    "id": "hsk6_reading_cycle3_3",
+    "level": 6
+  },
+  {
+    "skill": "writing",
+    "subType": "reorder",
+    "category": "连词成句 (Sắp xếp trật tự từ)",
+    "title": "Sắp xếp câu luận biện triết học HSK 6",
+    "question": "连词成句 (Sắp xếp các mảnh từ sau thành câu hoàn chỉnh):",
+    "vietnamese": "Sự phát triển của nền văn minh nhân loại được quyết định bởi tinh thần đổi mới liên tục.",
+    "words": [
+      "由持续的创新精神",
+      "人类文明的发展进程",
+      "决定的",
+      "是"
+    ],
+    "correctOrder": [
+      "人类文明的发展进程",
+      "是",
+      "由持续的创新精神",
+      "决定的"
+    ],
+    "hanzi": "人类文明的发展进程是由持续的创新精神决定的。",
+    "pinyin": "Rénlèi wénmíng de fāzhǎn jìnchéng shì yóu chíxù de chuàngxīn jīngshén juédìng de.",
+    "explanation": "• Cấu trúc nhấn mạnh tác nhân đỉnh cao: 「Chủ ngữ (人类文明的发展进程) + 是 + 由 (Nguyên nhân/Tác nhân) + 决定的」.",
+    "id": "hsk6_writing_cycle3_4",
+    "level": 6
   }
 ]

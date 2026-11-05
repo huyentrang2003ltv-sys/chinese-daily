@@ -987,6 +987,9 @@ section[aria-busy="true"]::after {
 #visitorStatsModal,
 #adminDashboardModal,
 #convStudioModal,
+#platformPolicyModal,
+#quickSettingsModal,
+#appInstallModal,
 .app-modal-layer {
   z-index: 100 !important;
 }
@@ -995,7 +998,10 @@ section[aria-busy="true"]::after {
 #flipCardLevelModal > div,
 #woodLevelSelectorModal > div,
 #examSelectorModal > div,
-#readingTocModal > div {
+#readingTocModal > div,
+#platformPolicyModal > div,
+#quickSettingsModal > div,
+#appInstallModal > div {
   max-height: calc(100vh - 3rem) !important;
   margin-top: auto;
   margin-bottom: auto;
