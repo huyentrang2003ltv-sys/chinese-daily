@@ -52,6 +52,47 @@ function extractVocabFromChinese(chineseText, limit = 4) {
  */
 const CONVERSATION_INTENTS = [
   {
+    pattern: /(mới bắt đầu|người mới|mới học|\bf0\b|bắt đầu từ đâu|bắt đầu như thế nào|nhập môn|bài đầu tiên|bỡ ngỡ)/i,
+    reply: {
+      hanzi: '欢迎你开启中文学习之旅！🌱 零基础学中文一点都不难，最关键的第一步是掌握拼音声调和基本汉字笔顺。',
+      pinyin: 'Huānyíng nǐ kāiqǐ zhōngwén xuéxí zhī lǚ! Líng jīchǔ xué zhōngwén yìdiǎn dōu bù nán, zuì guānjiàn de dì-yī bù shì zhǎngwò pīnyīn shēngdiào hé jīběn hànzì bǐshùn.',
+      vi: 'Chào mừng bạn đến với hành trình chinh phục tiếng Trung! 🌱 Đừng lo lắng nhé, người mới bắt đầu (F0) chỉ cần đi đúng 3 bước: 1. Nắm 4 thanh điệu Pinyin, 2. Quy tắc bút thuận viết chữ Hán, và 3. 10 bộ thủ cơ bản. Bạn có thể mở ngay "Lộ Trình Nhập Môn 7 Ngày" trên Trang chủ nhé!',
+      followUp: '你想先学怎么读4个声调，还是练习第一句打招呼“你好”呢？',
+      quickReplies: [
+        { hanzi: '我想学习4个声调。', pinyin: 'Wǒ xiǎng xuéxí sì gè shēngdiào.', vi: 'Mình muốn học 4 thanh điệu Pinyin.' },
+        { hanzi: '怎么写好汉字笔顺？', pinyin: 'Zěnme xiě hǎo hànzì bǐshùn?', vi: 'Làm sao viết đúng quy tắc bút thuận chữ Hán?' },
+        { hanzi: '请教我第一句问候语！', pinyin: 'Qǐng jiāo wǒ dì-yī jù wènhòuyǔ!', vi: 'Hãy dạy mình câu chào hỏi đầu tiên!' }
+      ]
+    }
+  },
+  {
+    pattern: /(thanh điệu|4 thanh|bốn thanh|thanh 1|thanh 4|phát âm pinyin|biến âm|biến điệu)/i,
+    reply: {
+      hanzi: '中文有4个主要声调：一声平(55)，二声扬(35)，三声拐弯(214)，四声降(51)。练习声调就像唱歌一样有趣！',
+      pinyin: 'Zhōngwén yǒu sì gè zhǔyào shēngdiào: yī shēng píng, èr shēng yáng, sān shēng guǎiwān, sì shēng jiàng. Liànxí shēngdiào jiù xiàng chànggē yíyàng yǒuqù!',
+      vi: 'Tiếng Trung có 4 thanh điệu chính: Thanh 1 (ngang cao bổng như Sol), Thanh 2 (lên cao như dấu sắc), Thanh 3 (lượn xuống rồi lên như dấu hỏi), Thanh 4 (dứt khoát từ trên cao xuống). Ví dụ: mā (mẹ), má (gai), mǎ (ngựa), mà (mắng).',
+      followUp: '试着读一下“mā, má, mǎ, mà”，你觉得哪一个声调最难发呢？',
+      quickReplies: [
+        { hanzi: '我觉得第四声最难。', pinyin: 'Wǒ juéde dì-sì shēng zuì nán.', vi: 'Mình thấy thanh 4 khó phát âm nhất.' },
+        { hanzi: '两个三声怎么变调？', pinyin: 'Liǎng gè sān shēng zěnme biàndiào?', vi: 'Hai thanh 3 đi liền nhau thì biến âm thế nào?' },
+        { hanzi: '我想听听“你好”的标准发音。', pinyin: 'Wǒ xiǎng tīngting “nǐ hǎo” de biāozhǔn fāyīn.', vi: 'Mình muốn nghe phát âm chuẩn của "Nǐ hǎo".' }
+      ]
+    }
+  },
+  {
+    pattern: /(bút thuận|quy tắc viết|nét chữ|viết chữ hán|thứ tự nét)/i,
+    reply: {
+      hanzi: '汉字笔顺有八大黄金法则：先横后竖，先撇后捺，从上到下，从左到右，从外到内，先里头后封口，先中间后两边！',
+      pinyin: 'Hànzì bǐshùn yǒu bā dà huángjīn fǎzé: xiān héng hòu shù, xiān piě hòu nà, cóng shàng dào xià, cóng zuǒ dào yòu, cóng wài dào nèi, xiān lǐtou hòu fēngkǒu, xiān zhōngjiān hòu liǎngbiān!',
+      vi: 'Chữ Hán có 8 quy tắc bút thuận vàng: Ngang trước sổ sau (十), Phẩy trước mác sau (人), Trên trước dưới sau (三), Trái trước phải sau (你), Ngoài trước trong sau (月), Vào trước đóng sau (日, 国), Giữa trước hai bên sau (小). Viết đúng quy tắc chữ sẽ rất vuông vắn và cân đối!',
+      followUp: '你想试试在屏幕上手写汉字练习吗？',
+      quickReplies: [
+        { hanzi: '我想练习写“十”和“人”。', pinyin: 'Wǒ xiǎng liànxí xiě “shí” hé “rén”.', vi: 'Mình muốn tập viết chữ Thập (十) và Nhân (人).' },
+        { hanzi: '最常用的10个偏旁是什么？', pinyin: 'Zuì chángyòng de shí gè piānpáng shì shénme?', vi: '10 bộ thủ thông dụng nhất là gì?' }
+      ]
+    }
+  },
+  {
     pattern: /(chào|xin chào|\bhello\b|\bhi\b|\bhelo\b|\balo\b|hế lô|你好|您好|哈喽|早上好|晚上好)/i,
     reply: {
       hanzi: '你好！我是你的AI中文私教小华 🤖。今天很高兴和你一起练习中文！你今天想聊些什么呢？',

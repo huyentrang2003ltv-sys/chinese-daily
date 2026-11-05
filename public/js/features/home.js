@@ -686,6 +686,8 @@ function renderHomeDashboard() {
   renderHomeHanzi();
   renderHomeQuiz();
   renderHomeLeaderboard();
+  if (typeof initLearnerMode === 'function') initLearnerMode();
+  if (typeof renderBeginnerGoldenPath === 'function') renderBeginnerGoldenPath();
 
   const tabHome = document.getElementById('tab-home');
   if (tabHome) refreshIcons(tabHome);
@@ -696,4 +698,5 @@ function onProfileChanged() {
   if (activeTab !== 'home') return;
   renderHomeStreak();
   renderHomeQuests();
+  if (typeof renderBeginnerGoldenPath === 'function') renderBeginnerGoldenPath();
 }

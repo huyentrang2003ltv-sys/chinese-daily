@@ -10,6 +10,7 @@ let floatingAiMessages = [
     vi: 'Xin chào! Mình là Tiểu Hoa, gia sư AI tiếng Trung của bạn. Mình có thể cùng bạn đàm thoại hỏi đáp, giải thích ngữ pháp và luyện phản xạ giao tiếp mỗi ngày nhé!',
     followUp: '今天你想和我聊些什么呢？',
     quickReplies: [
+      { hanzi: '我是零基础新手，请指导我！', pinyin: 'Wǒ shì líng jīchǔ xīnshǒu, qǐng zhǐdǎo wǒ!', vi: 'Em là người mới bắt đầu F0, hãy hướng dẫn em nhé!' },
       { hanzi: '你好！很高兴认识你。', pinyin: 'Nǐ hǎo! Hěn gāoxìng rènshi nǐ.', vi: 'Xin chào! Rất vui được quen biết bạn.' },
       { hanzi: '我想提高中文口语能力。', pinyin: 'Wǒ xiǎng tígāo zhōngwén kǒuyǔ nénglì.', vi: 'Tôi muốn nâng cao năng lực khẩu ngữ tiếng Trung.' },
       { hanzi: '请考我几个实用的HSK词汇！', pinyin: 'Qǐng kǎo wǒ jǐ gè shíyòng de HSK cíhuì!', vi: 'Hãy thử kiểm tra tôi vài từ vựng HSK thực tế nhé!' }
@@ -109,6 +110,9 @@ function renderFloatingAiQuickChips() {
   let chips = [];
   if (floatingAiMode === 'chat') {
     chips = [
+      '🌱 Em mới bắt đầu (F0), hướng dẫn em học nhé!',
+      '🔊 Dạy phát âm 4 thanh điệu tiếng Trung',
+      '✍️ 8 quy tắc viết bút thuận chữ Hán',
       '你好！你叫什么名字？',
       '学中文有什么好方法？',
       '你最喜欢吃哪道中国菜？',
