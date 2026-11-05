@@ -64,20 +64,15 @@ function quickDockSearch() {
 }
 
 function handleSupportAvatarClick(e) {
-  if (typeof showToast === 'function') {
-    showToast('Đang kết nối Zalo Trợ Lý Hỗ Trợ 24/7 (Hotline: 0988886666)...', 'success');
-  }
+  openComplaintModal();
 }
 
 function toggleSupportContactModal() {
-  if (typeof showToast === 'function') {
-    showToast('Đang kết nối Zalo Trợ Lý Hỗ Trợ 24/7 (Hotline: 0988886666)...', 'success');
-  }
-  window.open('https://zalo.me/0988886666', '_blank');
+  openComplaintModal();
 }
 
 function closeSupportContactModal() {
-  // Backwards compatibility stub
+  closeComplaintModal();
 }
 
 function dismissFloatingContactTooltip(e) {
@@ -123,9 +118,14 @@ const PLATFORM_POLICIES = {
     content: `
       <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Đơn vị Vận hành & Bản quyền Nội dung</h4>
       <p class="mb-2"><strong>Đơn vị chủ quản:</strong> Hệ thống Giáo dục Ngôn ngữ Trực tuyến Hi HSK EduTech.</p>
-      <p class="mb-2"><strong>Email chính thức:</strong> <a href="mailto:hihsk.com@gmail.com" class="text-rose-700 dark:text-amber-400 underline">hihsk.com@gmail.com</a></p>
+      <p class="mb-2"><strong>Email tiếp nhận & khiếu nại:</strong> <a href="mailto:hoangpham1618@gmail.com" class="text-rose-700 dark:text-amber-400 font-bold underline">hoangpham1618@gmail.com</a></p>
       <p class="mb-2"><strong>Đường dây nóng hỗ trợ:</strong> 0988.88.66.66 (Zalo 24/7)</p>
       <p class="mb-2"><strong>Bản quyền hệ thống:</strong> Toàn bộ dữ liệu 3.592 từ vựng HSK, 14.605 từ chuyên ngành, 150 hội thoại tình huống và 1.000 cặp thẻ lật thuộc quyền sở hữu độc quyền của nền tảng.</p>
+      <div class="mt-4 pt-3 border-t border-amber-200/60 dark:border-stone-800">
+        <button onclick="closePlatformPolicyModal(); openComplaintModal();" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white text-xs font-bold hover:shadow-md transition-all inline-flex items-center gap-1.5 cursor-pointer">
+          <span>Gửi khiếu nại & phản ánh tới Ban Quản Trị →</span>
+        </button>
+      </div>
     `
   },
   privacy: {
@@ -150,11 +150,19 @@ const PLATFORM_POLICIES = {
     title: "Tiếp nhận & Giải quyết khiếu nại",
     badge: "KHIẾU NẠI & HỖ TRỢ",
     content: `
-      <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Quy trình xử lý phản ánh & khiếu nại</h4>
-      <p class="mb-2 leading-relaxed Chúng tôi cam kết tiếp nhận và phản hồi mọi yêu cầu của học viên trong vòng <strong>2 giờ làm việc</strong> qua các kênh:</p>
-      <p class="mb-1">• <strong>Email phản ánh trực tiếp:</strong> <a href="mailto:hihsk.com@gmail.com" class="text-rose-700 dark:text-amber-400 font-bold underline">hihsk.com@gmail.com</a></p>
-      <p class="mb-1">• <strong>Hotline/Zalo tiếp nhận khiếu nại 24/7:</strong> 0988.88.66.66</p>
+      <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Quy trình tiếp nhận & giải quyết khiếu nại minh bạch</h4>
+      <p class="mb-2 leading-relaxed">Chúng tôi cam kết tiếp nhận và phản hồi mọi yêu cầu, khiếu nại của học viên trong vòng <strong>2 giờ làm việc</strong> qua các kênh chính thức:</p>
+      <p class="mb-1.5">• <strong>Hòm thư tiếp nhận khiếu nại:</strong> <a href="mailto:hoangpham1618@gmail.com" class="text-rose-700 dark:text-amber-400 font-black underline">hoangpham1618@gmail.com</a></p>
+      <p class="mb-1.5">• <strong>Hotline/Zalo tiếp nhận khẩn cấp 24/7:</strong> <span class="font-bold">0988.88.66.66</span></p>
       <p class="mt-2 leading-relaxed">Mọi trường hợp lỗi kỹ thuật, thanh toán hoặc thắc mắc học liệu đều được chuyên viên hỗ trợ tận tình đến khi học viên hài lòng 100%.</p>
+      <div class="mt-4 pt-3 border-t border-amber-200/60 dark:border-stone-800 flex items-center gap-2 flex-wrap">
+        <button onclick="closePlatformPolicyModal(); openComplaintModal('Khiếu nại thanh toán & Kích hoạt gói VIP');" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white text-xs font-bold hover:shadow-md transition-all inline-flex items-center gap-1.5 cursor-pointer">
+          <span>Gửi khiếu nại trực tuyến ngay →</span>
+        </button>
+        <a href="mailto:hoangpham1618@gmail.com?subject=[Hi HSK Khiếu Nại] Cần hỗ trợ khẩn cấp" class="px-4 py-2 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 text-stone-800 dark:text-stone-200 text-xs font-bold border border-stone-300 dark:border-stone-700 transition-all inline-flex items-center gap-1.5">
+          <span>Soạn email tới hoangpham1618@gmail.com</span>
+        </a>
+      </div>
     `
   },
   pricing: {
@@ -188,7 +196,12 @@ const PLATFORM_POLICIES = {
     badge: "CAM KẾT 100% HOÀN TIỀN",
     content: `
       <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Chính sách Cam kết Hoàn tiền trong 7 ngày</h4>
-      <p class="mb-3 leading-relaxed">Nếu trong vòng <strong>7 ngày</strong> kể từ khi nâng cấp tài khoản VIP, học viên cảm thấy nền tảng không phù hợp với nhu cầu học tập, quý khách chỉ cần gửi email tới <a href="mailto:hihsk.com@gmail.com" class="text-rose-700 dark:text-amber-400 font-bold underline">hihsk.com@gmail.com</a> hoặc nhắn tin qua Zalo 0988.88.66.66. Chúng tôi cam kết <strong>hoàn tiền 100%</strong> vô điều kiện trong vòng 24 giờ.</p>
+      <p class="mb-3 leading-relaxed">Nếu trong vòng <strong>7 ngày</strong> kể từ khi nâng cấp tài khoản VIP, học viên cảm thấy nền tảng không phù hợp với nhu cầu học tập, quý khách chỉ cần gửi email tới <a href="mailto:hoangpham1618@gmail.com" class="text-rose-700 dark:text-amber-400 font-black underline">hoangpham1618@gmail.com</a> hoặc nhắn tin qua Zalo 0988.88.66.66. Chúng tôi cam kết <strong>hoàn tiền 100%</strong> vô điều kiện trong vòng 24 giờ.</p>
+      <div class="mt-4 pt-3 border-t border-amber-200/60 dark:border-stone-800">
+        <button onclick="closePlatformPolicyModal(); openComplaintModal('Yêu cầu hoàn tiền 100% trong 7 ngày');" class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 text-white text-xs font-bold hover:shadow-md transition-all inline-flex items-center gap-1.5 cursor-pointer">
+          <span>Yêu cầu hoàn tiền trực tuyến (24h) →</span>
+        </button>
+      </div>
     `
   },
   delete_account: {
@@ -198,9 +211,14 @@ const PLATFORM_POLICIES = {
       <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Quy trình Yêu cầu Hủy bỏ Tài khoản</h4>
       <p class="mb-3 leading-relaxed">Học viên có toàn quyền yêu cầu xóa vĩnh viễn tài khoản và toàn bộ lịch sử học tập khỏi hệ thống của chúng tôi.</p>
       <p class="mb-2"><strong>Cách thực hiện:</strong></p>
-      <p class="mb-1">1. Gửi email từ chính hòm thư đăng ký của bạn đến <a href="mailto:hihsk.com@gmail.com" class="text-rose-700 dark:text-amber-400 font-bold underline">hihsk.com@gmail.com</a> với tiêu đề <code>[Yêu Cầu Xóa Tài Khoản]</code>.</p>
-      <p class="mb-2">2. Hoặc liên hệ trực tiếp qua Zalo Quản trị viên: 0988.88.66.66.</p>
+      <p class="mb-1">1. Gửi email từ chính hòm thư đăng ký của bạn đến <a href="mailto:hoangpham1618@gmail.com" class="text-rose-700 dark:text-amber-400 font-black underline">hoangpham1618@gmail.com</a> với tiêu đề <code>[Yêu Cầu Xóa Tài Khoản]</code>.</p>
+      <p class="mb-2">2. Hoặc gửi yêu cầu trực tiếp qua mẫu khiếu nại trực tuyến của nền tảng.</p>
       <p class="text-stone-500 dark:text-stone-400 text-xs mt-2">Hệ thống sẽ tiến hành xóa sạch dữ liệu người dùng trong vòng 24 giờ và gửi email xác nhận hoàn tất.</p>
+      <div class="mt-4 pt-3 border-t border-amber-200/60 dark:border-stone-800">
+        <button onclick="closePlatformPolicyModal(); openComplaintModal('Yêu cầu xóa vĩnh viễn tài khoản');" class="px-4 py-2 rounded-xl bg-rose-700 hover:bg-rose-800 text-white text-xs font-bold hover:shadow-md transition-all inline-flex items-center gap-1.5 cursor-pointer">
+          <span>Gửi yêu cầu xóa tài khoản trực tuyến →</span>
+        </button>
+      </div>
     `
   },
   catalog: {
@@ -280,6 +298,99 @@ if (typeof registerModal === 'function') {
   registerModal('appInstallModal', closeAppInstallModal);
 }
 
+// ---------------- COMPLAINT & DISPUTE MODAL (TIẾP NHẬN & GIẢI QUYẾT KHIẾU NẠI) ----------------
+function openComplaintModal(defaultCategory = '') {
+  const modal = document.getElementById('complaintModal');
+  if (!modal) return;
+
+  // Tự động điền thông tin người dùng nếu đã đăng nhập
+  const savedUser = (typeof currentUser !== 'undefined' && currentUser) || 
+                    (typeof storage !== 'undefined' && storage.get('user', null));
+  if (savedUser) {
+    const nameInput = document.getElementById('complaintSenderName');
+    const contactInput = document.getElementById('complaintSenderContact');
+    if (nameInput && !nameInput.value) nameInput.value = savedUser.name || '';
+    if (contactInput && !contactInput.value) contactInput.value = savedUser.email || '';
+  }
+
+  if (defaultCategory) {
+    const catSelect = document.getElementById('complaintCategory');
+    if (catSelect) catSelect.value = defaultCategory;
+  }
+
+  openModal('complaintModal');
+  if (typeof refreshIcons === 'function') refreshIcons(modal);
+}
+
+function closeComplaintModal() {
+  closeModal('complaintModal');
+}
+if (typeof registerModal === 'function') {
+  registerModal('complaintModal', closeComplaintModal);
+}
+
+async function submitComplaintForm(e) {
+  if (e) e.preventDefault();
+  const nameEl = document.getElementById('complaintSenderName');
+  const contactEl = document.getElementById('complaintSenderContact');
+  const catEl = document.getElementById('complaintCategory');
+  const msgEl = document.getElementById('complaintMessage');
+  const submitBtn = document.getElementById('complaintSubmitBtn');
+
+  const name = (nameEl && nameEl.value.trim()) || 'Học viên';
+  const contact = (contactEl && contactEl.value.trim()) || '';
+  const category = (catEl && catEl.value) || 'Khiếu nại & Góp ý chung';
+  const message = (msgEl && msgEl.value.trim()) || '';
+
+  if (!contact || !message) {
+    if (typeof showToast === 'function') {
+      showToast('Vui lòng nhập thông tin liên hệ và chi tiết khiếu nại!', 'error');
+    }
+    return;
+  }
+
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="animate-spin inline-block mr-1">⏳</span> Đang gửi tiếp nhận...';
+  }
+
+  const fullPayload = `[KHIẾU NẠI & PHẢN ÁNH HỌC VIÊN]\n• Người gửi: ${name}\n• Kênh liên hệ: ${contact}\n• Phân loại: ${category}\n• Hòm thư tiếp nhận: hoangpham1618@gmail.com\n• Nội dung: ${message}`;
+
+  try {
+    const res = await fetch('/api/feedback', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: fullPayload, name, email: contact, category })
+    });
+
+    if (res.ok) {
+      if (typeof showToast === 'function') {
+        showToast('✓ Tiếp nhận khiếu nại thành công! Chúng tôi đã chuyển tới hoangpham1618@gmail.com và sẽ giải quyết trong 2 giờ.', 'success');
+      }
+      if (msgEl) msgEl.value = '';
+      closeComplaintModal();
+    } else {
+      const err = await res.json().catch(() => ({}));
+      throw new Error(err.message || 'Lỗi gửi phản hồi');
+    }
+  } catch (err) {
+    // Nếu có lỗi mạng hoặc API rate limit, chuyển hướng mở trình soạn email trực tiếp tới hoangpham1618@gmail.com
+    if (typeof showToast === 'function') {
+      showToast('Đang kết nối mở trình soạn email gửi tới hoangpham1618@gmail.com...', 'info');
+    }
+    const subject = encodeURIComponent(`[Hi HSK Khiếu Nại] ${category} - ${name}`);
+    const body = encodeURIComponent(fullPayload);
+    window.open(`mailto:hoangpham1618@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    closeComplaintModal();
+  } finally {
+    if (submitBtn) {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i data-lucide="send" class="w-4 h-4"></i><span>Gửi Khiếu Nại Trực Tuyến</span>';
+      if (typeof refreshIcons === 'function') refreshIcons(submitBtn);
+    }
+  }
+}
+
 // Global exports
 window.initFloatingDock = initFloatingDock;
 window.toggleFloatingDockVisibility = toggleFloatingDockVisibility;
@@ -288,6 +399,9 @@ window.quickDockSearch = quickDockSearch;
 window.handleSupportAvatarClick = handleSupportAvatarClick;
 window.toggleSupportContactModal = toggleSupportContactModal;
 window.closeSupportContactModal = closeSupportContactModal;
+window.openComplaintModal = openComplaintModal;
+window.closeComplaintModal = closeComplaintModal;
+window.submitComplaintForm = submitComplaintForm;
 window.openQuickSettingsModal = openQuickSettingsModal;
 window.closeQuickSettingsModal = closeQuickSettingsModal;
 window.openPlatformPolicyModal = openPlatformPolicyModal;

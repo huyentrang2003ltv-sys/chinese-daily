@@ -990,6 +990,7 @@ section[aria-busy="true"]::after {
 #platformPolicyModal,
 #quickSettingsModal,
 #appInstallModal,
+#complaintModal,
 .app-modal-layer {
   z-index: 100 !important;
 }
@@ -1001,7 +1002,8 @@ section[aria-busy="true"]::after {
 #readingTocModal > div,
 #platformPolicyModal > div,
 #quickSettingsModal > div,
-#appInstallModal > div {
+#appInstallModal > div,
+#complaintModal > div {
   max-height: calc(100vh - 3rem) !important;
   margin-top: auto;
   margin-bottom: auto;

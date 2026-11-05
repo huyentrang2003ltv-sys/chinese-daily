@@ -230,8 +230,8 @@ const routes = {
     const message = str(body.message, 1000);
     if (!message) throw new HttpError(400, 'Vui lòng nhập nội dung.');
     const user = currentUser(req);
-    const from = user ? `${user.name} <${user.email}>` : 'Khách';
-    await notifyAdmin(`📩 Phản hồi mới\n👤 ${from}\n💬 ${message}`);
+    const from = user ? `${user.name} <${user.email}>` : (body.email ? `${str(body.name, 100) || 'Khách'} <${str(body.email, 190)}>` : 'Khách');
+    await notifyAdmin(`📩 Phản hồi / Khiếu nại mới\n👤 ${from}\n💬 ${message}`);
     sendJson(res, 200, { ok: true });
   },
 

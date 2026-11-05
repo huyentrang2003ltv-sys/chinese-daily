@@ -5250,10 +5250,10 @@
           <div class="space-y-2 text-xs">
             <p class="flex items-center gap-1.5 text-stone-700 dark:text-stone-300">
               <i data-lucide="mail" class="w-3.5 h-3.5 text-amber-600"></i>
-              <a href="mailto:hihsk.com@gmail.com" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors font-medium">hihsk.com@gmail.com</a>
+              <a href="mailto:hoangpham1618@gmail.com" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors font-medium">hoangpham1618@gmail.com</a>
             </p>
             <p>
-              <button onclick="toggleSupportContactModal()" class="text-sky-600 dark:text-sky-400 font-bold hover:underline flex items-center gap-1 cursor-pointer">
+              <button onclick="openComplaintModal()" class="text-sky-600 dark:text-sky-400 font-bold hover:underline flex items-center gap-1 cursor-pointer">
                 <span>Gửi phản ánh / Khiếu nại trực tuyến</span>
                 <i data-lucide="arrow-right" class="w-3 h-3"></i>
               </button>
@@ -5712,6 +5712,171 @@
           Cài đặt ngay (📲)
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- ==================== COMPLAINT & CONTACT MODAL (TIẾP NHẬN & GIẢI QUYẾT KHIẾU NẠI) ==================== -->
+  <div id="complaintModal" onclick="if(event.target === this) closeComplaintModal()" class="hidden fixed inset-0 z-100 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/80 backdrop-blur-md animate-fade-in cursor-pointer">
+    <div class="bg-[#FFFDF9] dark:bg-[#161B22] w-full max-w-2xl max-h-[92vh] rounded-3xl border-2 border-amber-300/90 dark:border-amber-500/40 p-5 sm:p-7 shadow-2xl flex flex-col space-y-4 overflow-hidden relative text-stone-900 dark:text-stone-100 cursor-default" onclick="event.stopPropagation()">
+      
+      <!-- Header -->
+      <div class="flex items-center justify-between border-b border-amber-200/80 dark:border-stone-800 pb-3.5 shrink-0">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-gradient-to-br from-[#8B1E1E] to-rose-700 text-amber-200 border border-amber-400 flex items-center justify-center font-bold text-2xl shadow-sm shrink-0">
+            ⚖️
+          </div>
+          <div>
+            <div class="flex items-center gap-2 flex-wrap">
+              <h3 class="text-base sm:text-lg font-serif-luxury font-black text-amber-950 dark:text-amber-300">
+                Tiếp Nhận & Giải Quyết Khiếu Nại
+              </h3>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-red-600 to-amber-600 text-white shadow-2xs">
+                投诉与建议
+              </span>
+            </div>
+            <p class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+              Kênh bảo vệ quyền lợi học viên chính thức qua email <span class="text-rose-700 dark:text-amber-400 font-bold">hoangpham1618@gmail.com</span>
+            </p>
+          </div>
+        </div>
+
+        <button 
+          type="button" 
+          onclick="closeComplaintModal()" 
+          class="group flex items-center justify-center p-2 rounded-full hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors cursor-pointer"
+          title="Đóng cửa sổ"
+        >
+          <i data-lucide="x" class="w-5 h-5 group-hover:rotate-90 transition-transform"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Body Content -->
+      <div class="flex-1 overflow-y-auto pr-1 space-y-4 custom-scrollbar text-xs">
+        
+        <!-- Direct Contact Card with Action Buttons -->
+        <div class="p-4 rounded-2xl bg-gradient-to-br from-amber-50 via-rose-50/40 to-amber-50/60 dark:from-stone-900 dark:via-stone-850 dark:to-stone-900 border border-amber-300/80 dark:border-stone-700 shadow-xs">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+            <div>
+              <span class="text-[10px] uppercase font-bold tracking-wider text-rose-800 dark:text-rose-400 block mb-1">
+                Hòm thư tiếp nhận khiếu nại chính thức
+              </span>
+              <div class="flex items-center gap-2">
+                <i data-lucide="mail" class="w-4 h-4 text-[#8B1E1E] dark:text-amber-400"></i>
+                <a href="mailto:hoangpham1618@gmail.com" class="text-sm sm:text-base font-black text-stone-900 dark:text-stone-100 hover:underline">
+                  hoangpham1618@gmail.com
+                </a>
+              </div>
+              <p class="text-[11px] text-stone-500 dark:text-stone-400 mt-1">
+                Hotline / Zalo hỗ trợ: <strong>0988.88.66.66</strong> (Phục vụ 24/7)
+              </p>
+            </div>
+            
+            <div class="flex items-center gap-2 shrink-0">
+              <button 
+                type="button" 
+                onclick="copySupportInfo('hoangpham1618@gmail.com', 'Email hoangpham1618@gmail.com')"
+                class="px-3 py-2 rounded-xl bg-white dark:bg-stone-800 hover:bg-stone-100 dark:hover:bg-stone-700 border border-stone-200 dark:border-stone-700 font-bold text-stone-800 dark:text-stone-200 transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer"
+              >
+                <i data-lucide="copy" class="w-3.5 h-3.5 text-stone-500"></i>
+                <span>Sao chép email</span>
+              </button>
+              <a 
+                href="mailto:hoangpham1618@gmail.com?subject=[Hi HSK] Phản ánh / Khiếu nại dịch vụ"
+                class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white font-bold hover:shadow-md transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer"
+              >
+                <i data-lucide="send" class="w-3.5 h-3.5 text-amber-200"></i>
+                <span>Soạn thư</span>
+              </a>
+            </div>
+          </div>
+          
+          <div class="mt-3 pt-2.5 border-t border-amber-200/60 dark:border-stone-800 flex items-center gap-2 text-[11px] text-emerald-700 dark:text-emerald-400">
+            <i data-lucide="clock" class="w-3.5 h-3.5 shrink-0"></i>
+            <span><strong>Cam kết SLA:</strong> Ban Quản trị cam kết phản hồi và xử lý dứt điểm khiếu nại trong vòng <strong>2 giờ làm việc</strong>.</span>
+          </div>
+        </div>
+
+        <!-- Online Form -->
+        <form id="complaintOnlineForm" onsubmit="submitComplaintForm(event)" class="space-y-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block font-bold text-stone-800 dark:text-stone-200 mb-1">
+                Họ và tên của bạn <span class="text-rose-600">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="complaintSenderName" 
+                placeholder="Ví dụ: Nguyễn Văn A"
+                required
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] text-stone-900 dark:text-stone-100 placeholder-stone-400"
+              />
+            </div>
+            <div>
+              <label class="block font-bold text-stone-800 dark:text-stone-200 mb-1">
+                Email hoặc SĐT nhận phản hồi <span class="text-rose-600">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="complaintSenderContact" 
+                placeholder="Email hoặc số điện thoại Zalo"
+                required
+                class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] text-stone-900 dark:text-stone-100 placeholder-stone-400"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 dark:text-stone-200 mb-1">
+              Phân loại yêu cầu / khiếu nại <span class="text-rose-600">*</span>
+            </label>
+            <select 
+              id="complaintCategory"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] text-stone-900 dark:text-stone-100 font-medium cursor-pointer"
+            >
+              <option value="Chất lượng học liệu & bài học">📚 Góp ý chất lượng học liệu & bài học HSK</option>
+              <option value="Thanh toán & Kích hoạt gói VIP">💳 Thắc mắc thanh toán & Kích hoạt gói VIP</option>
+              <option value="Yêu cầu hoàn tiền 100% trong 7 ngày">💰 Yêu cầu hoàn tiền 100% vô điều kiện (trong 7 ngày)</option>
+              <option value="Báo lỗi kỹ thuật hoặc hiển thị">🐛 Báo lỗi kỹ thuật / chức năng trang web</option>
+              <option value="Yêu cầu xóa vĩnh viễn tài khoản">🗑️ Yêu cầu hủy / xóa vĩnh viễn dữ liệu tài khoản</option>
+              <option value="Vấn đề khác">💬 Khiếu nại hoặc góp ý vấn đề khác</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-bold text-stone-800 dark:text-stone-200 mb-1">
+              Chi tiết nội dung phản ánh / khiếu nại <span class="text-rose-600">*</span>
+            </label>
+            <textarea 
+              id="complaintMessage"
+              rows="4" 
+              placeholder="Vui lòng mô tả cụ thể vấn đề quý học viên đang gặp phải (mã đơn hàng, ảnh chụp màn hình, mô tả sự cố...)"
+              required
+              class="w-full px-3.5 py-2.5 rounded-xl bg-white dark:bg-stone-800 border border-stone-300 dark:border-stone-700 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] text-stone-900 dark:text-stone-100 placeholder-stone-400 resize-none"
+            ></textarea>
+          </div>
+
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pt-2">
+            <button 
+              type="button" 
+              onclick="closeComplaintModal(); openPlatformPolicyModal('dispute');"
+              class="text-xs text-stone-500 hover:text-rose-700 dark:text-stone-400 dark:hover:text-amber-400 underline text-left cursor-pointer"
+            >
+              Xem toàn văn Quy chế giải quyết khiếu nại & bồi thường →
+            </button>
+
+            <button 
+              type="submit" 
+              id="complaintSubmitBtn"
+              class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span>Gửi Khiếu Nại Trực Tuyến</span>
+            </button>
+          </div>
+        </form>
+
+      </div>
+
     </div>
   </div>
 </body>

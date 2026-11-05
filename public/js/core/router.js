@@ -380,6 +380,11 @@ function initApp() {
   initFloatingAiAssistant();
   initFloatingDock();
   cleanupStrayTabCloseButtons();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('modal') === 'complaint' && typeof openComplaintModal === 'function') {
+    setTimeout(() => openComplaintModal(), 200);
+  }
 }
 
 window.addEventListener('DOMContentLoaded', initApp);
