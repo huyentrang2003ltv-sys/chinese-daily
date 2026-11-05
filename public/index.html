@@ -1443,6 +1443,33 @@
 
       <!-- SUB-VIEW 2: CẨM NANG CHUYÊN ĐỀ (COMPENDIUM) -->
       <div id="grammar-view-compendium" class="hidden space-y-6">
+        <!-- Level Filter Bar (HSK 1 - 6) -->
+        <div class="glass-card rounded-2xl p-4 bg-gradient-to-r from-purple-50/70 via-white to-amber-50/50 dark:from-[#1b222d] dark:via-[#161B22] dark:to-[#1b222d] border border-amber-300/60 dark:border-stone-700 shadow-2xs">
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+            <span class="text-xs font-bold text-stone-500 whitespace-nowrap">Cấp Độ HSK:</span>
+            <button onclick="filterGrammarLevel('all')" id="btn-grammar-lvl-all" class="px-3 py-1 text-xs font-bold rounded-lg bg-indigo-600 text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer">
+              🌟 Tất Cả Levels
+            </button>
+            <button onclick="filterGrammarLevel('hsk1')" id="btn-grammar-lvl-hsk1" class="px-3 py-1 text-xs font-bold rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-emerald-50 text-emerald-800 dark:text-emerald-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              🟢 HSK 1
+            </button>
+            <button onclick="filterGrammarLevel('hsk2')" id="btn-grammar-lvl-hsk2" class="px-3 py-1 text-xs font-bold rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-teal-50 text-teal-800 dark:text-teal-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              🟢 HSK 2
+            </button>
+            <button onclick="filterGrammarLevel('hsk3')" id="btn-grammar-lvl-hsk3" class="px-3 py-1 text-xs font-bold rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-amber-50 text-amber-800 dark:text-amber-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              🟡 HSK 3
+            </button>
+            <button onclick="filterGrammarLevel('hsk4')" id="btn-grammar-lvl-hsk4" class="px-3 py-1 text-xs font-bold rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-sky-50 text-sky-800 dark:text-sky-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              🔵 HSK 4
+            </button>
+            <button onclick="filterGrammarLevel('hsk5')" id="btn-grammar-lvl-hsk5" class="px-3 py-1 text-xs font-bold rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-purple-50 text-purple-800 dark:text-purple-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              🟣 HSK 5
+            </button>
+            <button onclick="filterGrammarLevel('hsk6')" id="btn-grammar-lvl-hsk6" class="px-3 py-1 text-xs font-bold rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-rose-50 text-rose-800 dark:text-rose-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer">
+              🔴 HSK 6
+            </button>
+          </div>
+        </div>
         <!-- Filter & Search Toolbar -->
         <div class="glass-card rounded-2xl p-5 bg-gradient-to-r from-purple-900/5 via-[#FAF7F2] to-amber-50/60 border border-amber-300/40 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
           <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
@@ -2331,6 +2358,18 @@
             <div class="w-36 h-2 bg-stone-200 dark:bg-stone-700 rounded-full overflow-hidden mt-1">
               <div id="examProgressBar" class="h-full bg-gradient-to-r from-amber-500 to-[#8B1E1E] transition-all duration-300" style="width: 0%"></div>
             </div>
+          </div>
+          <!-- PDF Export Button -->
+          <div class="shrink-0 flex items-center">
+            <button 
+              type="button" 
+              onclick="downloadMockExamPdf()" 
+              class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-rose-700 hover:opacity-95 text-white font-bold text-xs shadow-sm hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer"
+              title="Tải toàn bộ đề thi, phiếu làm bài và bảng đáp án dạng file PDF hoặc in A4 trực tiếp"
+            >
+              <span>📥</span>
+              <span>Tải Đề Thi (PDF)</span>
+            </button>
           </div>
         </div>
       </div>
@@ -4646,8 +4685,12 @@
       <div id="examAnswerBreakdown" class="text-left space-y-3 text-xs"></div>
 
       <div class="flex items-center justify-center gap-3 pt-2">
-        <button onclick="closeExamResultModal()" class="px-6 py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs shadow-md shadow-amber-600/20 transition-all">
+        <button onclick="closeExamResultModal()" class="px-5 py-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 text-stone-700 dark:text-stone-300 font-bold text-xs transition-all cursor-pointer">
           Xem Lại Đề Thi
+        </button>
+        <button onclick="downloadMockExamPdf()" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-rose-700 hover:opacity-95 text-white font-bold text-xs shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
+          <span>📥</span>
+          <span>Tải Đề & Đáp Án (PDF)</span>
         </button>
       </div>
     </div>

@@ -10463,6 +10463,10 @@ let examLevelDataCache = {};
 let userExamHistory = {};
 let activeExamPartFilter = 'all'; // 'all' | 'listening' | 'reading' | 'writing'
 
+function setActiveMockExam(exam) {
+  activeExam = exam;
+}
+
 function loadExamHistory() {
   try {
     const saved = localStorage.getItem('hsk_mock_history');
@@ -11188,6 +11192,387 @@ function closeExamResultModal() {
   } else {
     const modal = document.getElementById('examResultModal');
     if (modal) modal.classList.add('hidden');
+  }
+}
+
+/**
+ * Export active mock exam as a Hanban-standard A4 printable PDF document.
+ */
+function downloadMockExamPdf() {
+  if (!activeExam) {
+    if (typeof showToast === 'function') {
+      showToast('Đang mở dữ liệu đề thi để xuất PDF...', 'info');
+    }
+    return;
+  }
+
+  const exam = activeExam;
+  const questions = exam.questions || [];
+  const level = exam.level || currentExamLevel;
+  const testNumber = exam.testNumber || currentExamTestNumber;
+  const testCode = `HSK${level}-${String(testNumber).padStart(2, '0')}`;
+
+  // Partition questions into Listening, Reading, Writing
+  const listeningQs = questions.filter(q => q.skill === 'listening' || (q.section || '').toLowerCase().includes('nghe') || (q.section || '').toLowerCase().includes('听力'));
+  const readingQs = questions.filter(q => q.skill === 'reading' || (!q.skill && !(q.section || '').toLowerCase().includes('nghe') && !(q.section || '').toLowerCase().includes('viết') && !(q.section || '').toLowerCase().includes('书写')));
+  const writingQs = questions.filter(q => q.skill === 'writing' || (q.section || '').toLowerCase().includes('viết') || (q.section || '').toLowerCase().includes('书写'));
+
+  // Build clean HTML document for printing
+  const html = `<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Đề Thi Thử HSK ${level} - Đề Số ${testNumber} (${testCode}) - Hi HSK</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 15mm 15mm 15mm;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", "SimSun", serif;
+      color: #111827;
+      background: #fff;
+      line-height: 1.5;
+      font-size: 13px;
+      margin: 0;
+      padding: 0;
+    }
+    .print-toolbar {
+      position: sticky;
+      top: 0;
+      background: #1e293b;
+      color: #fff;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      z-index: 9999;
+    }
+    .print-btn {
+      background: #dc2626;
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .print-btn:hover { background: #b91c1c; }
+    .close-btn {
+      background: #475569;
+      color: #fff;
+      border: none;
+      padding: 8px 14px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .exam-paper {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+    }
+    .exam-header {
+      border: 3px double #8B1E1E;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 24px;
+      background: #fafaf9;
+    }
+    .exam-header h1 {
+      margin: 0 0 6px 0;
+      font-size: 22px;
+      color: #8B1E1E;
+      letter-spacing: 1px;
+    }
+    .exam-header h2 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      color: #1f2937;
+    }
+    .info-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 12px;
+    }
+    .info-table td {
+      padding: 6px 10px;
+      border: 1px solid #d1d5db;
+    }
+    .section-title {
+      background: #f3f4f6;
+      border-left: 5px solid #8B1E1E;
+      padding: 8px 12px;
+      font-size: 14px;
+      font-weight: bold;
+      margin: 24px 0 14px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .question-card {
+      margin-bottom: 16px;
+      padding-bottom: 14px;
+      border-bottom: 1px dashed #e5e7eb;
+      page-break-inside: avoid;
+    }
+    .question-prompt {
+      font-weight: bold;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+    .chinese-text {
+      font-size: 15px;
+      font-weight: bold;
+      color: #111827;
+      margin: 4px 0;
+    }
+    .pinyin-text {
+      font-size: 12px;
+      color: #4b5563;
+      margin-bottom: 6px;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .option-item {
+      padding: 6px 10px;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      font-size: 12px;
+      background: #fafafa;
+    }
+    .reorder-box {
+      border: 1px solid #9ca3af;
+      padding: 10px;
+      border-radius: 6px;
+      margin: 6px 0;
+      background: #f9fafb;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+    .write-line {
+      border-bottom: 1px dotted #9ca3af;
+      height: 24px;
+      margin-top: 8px;
+    }
+    .page-break {
+      page-break-before: always;
+    }
+    .answer-key-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .answer-key-table th, .answer-key-table td {
+      border: 1px solid #cbd5e1;
+      padding: 6px 8px;
+      text-align: center;
+    }
+    .answer-key-table th { background: #e2e8f0; font-weight: bold; }
+    .answer-key-table td.correct { font-weight: bold; color: #dc2626; }
+    @media print {
+      .no-print { display: none !important; }
+      body { margin: 0; }
+      .exam-paper { max-width: 100%; margin: 0; padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <div class="print-toolbar no-print">
+    <div>
+      <strong>Hi HSK • Đề Thi Thử HSK ${level} (Mã: ${testCode})</strong>
+      <span style="font-size: 11px; opacity: 0.8; margin-left: 10px;">(In ấn trực tiếp hoặc Lưu dưới dạng file PDF)</span>
+    </div>
+    <div style="display: flex; gap: 10px;">
+      <button class="print-btn" onclick="window.print()">🖨️ Lưu Thành File PDF / In Ngay</button>
+      <button class="close-btn" onclick="window.close()">✕ Đóng</button>
+    </div>
+  </div>
+
+  <div class="exam-paper">
+    <div class="exam-header">
+      <h1>汉语水平考试 HSK (第 ${level} 级)</h1>
+      <h2>ĐỀ THI THỬ HSK ${level} CHUẨN HANBAN CTI - ĐỀ SỐ ${String(testNumber).padStart(2, '0')}</h2>
+      <p style="margin: 4px 0; font-size: 12px; color: #4b5563;">
+        Thời gian làm bài: <strong>${exam.durationMinutes || 35} phút</strong> • Tổng số câu: <strong>${questions.length} câu</strong> • Tổng điểm: <strong>${exam.totalScore || 200} điểm</strong> (Điểm đỗ: ${exam.passScore || 120} điểm)
+      </p>
+
+      <table class="info-table">
+        <tr>
+          <td><strong>考生姓名 (Họ tên):</strong> ....................................................</td>
+          <td><strong>准考证号 (Số báo danh):</strong> .................................</td>
+        </tr>
+        <tr>
+          <td><strong>考试日期 (Ngày thi):</strong> ...... / ...... / 202...</td>
+          <td><strong>得分 (Điểm đạt được):</strong> ............. / ${exam.totalScore || 200}</td>
+        </tr>
+      </table>
+    </div>
+
+    <div style="padding: 10px 14px; background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; margin-bottom: 20px; font-size: 11px; color: #92400e;">
+      <strong>LƯU Ý DÀNH CHO THÍ SINH:</strong><br>
+      1. Đề thi gồm ${questions.length} câu hỏi trắc nghiệm và thực hành. Hãy đọc kỹ từng câu và khoanh tròn vào đáp án đúng.<br>
+      2. Đối với phần thi Nghe, bạn có thể nghe trực tiếp trên ứng dụng <em>Hi HSK</em> hoặc nhờ giáo viên đọc theo transcript.<br>
+      3. Bảng đáp án chuẩn và lời giải chi tiết được in ở trang cuối của tài liệu này để đối chiếu sau khi hoàn thành bài thi.
+    </div>
+
+    ${listeningQs.length > 0 ? `
+      <div class="section-title">PHẦN I: NGHE HIỂU (第一部分：听力 - ${listeningQs.length} CÂU)</div>
+      ${listeningQs.map((q, idx) => `
+        <div class="question-card">
+          <div class="question-prompt">Câu ${idx + 1}: ${escapeHtml(q.prompt || 'Nghe và chọn đáp án đúng:')}</div>
+          ${q.audioText ? `
+            <div style="padding: 6px 10px; background: #fefce8; border-left: 3px solid #eab308; margin: 4px 0; font-size: 12px;">
+              <strong>[Transcript]:</strong> <span class="chinese-text">${escapeHtml(q.audioText)}</span> 
+              ${q.pinyin ? `<span class="pinyin-text">(${escapeHtml(q.pinyin)})</span>` : ''}
+            </div>
+          ` : ''}
+          ${q.statement ? `<div style="font-size: 12px; margin: 4px 0;"><strong>Nhận định:</strong> "${escapeHtml(q.statement)}"</div>` : ''}
+          <div class="options-grid">
+            ${(q.options || []).map(opt => `
+              <div class="option-item">
+                <strong>${escapeHtml(opt.key || '')}.</strong> ${escapeHtml(opt.text || '')}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('')}
+    ` : ''}
+
+    ${readingQs.length > 0 ? `
+      <div class="section-title">PHẦN II: ĐỌC HIỂU (第二部分：阅读 - ${readingQs.length} CÂU)</div>
+      ${readingQs.map((q, idx) => `
+        <div class="question-card">
+          <div class="question-prompt">Câu ${listeningQs.length + idx + 1}: ${escapeHtml(q.prompt || 'Đọc hiểu và chọn đáp án đúng:')}</div>
+          ${q.passage ? `<div style="padding: 8px 12px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; margin: 6px 0; font-size: 13px;">${escapeHtml(q.passage)}</div>` : ''}
+          ${q.chineseText ? `<div class="chinese-text">${escapeHtml(q.chineseText)}</div>` : ''}
+          ${q.pinyin ? `<div class="pinyin-text">${escapeHtml(q.pinyin)}</div>` : ''}
+          <div class="options-grid">
+            ${(q.options || []).map(opt => `
+              <div class="option-item">
+                <strong>${escapeHtml(opt.key || '')}.</strong> ${escapeHtml(opt.text || '')}
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `).join('')}
+    ` : ''}
+
+    ${writingQs.length > 0 ? `
+      <div class="section-title">PHẦN III: VIẾT (第三部分：书写 - ${writingQs.length} CÂU)</div>
+      ${writingQs.map((q, idx) => `
+        <div class="question-card">
+          <div class="question-prompt">Câu ${listeningQs.length + readingQs.length + idx + 1}: ${escapeHtml(q.prompt || 'Sắp xếp các từ thành câu hoàn chỉnh:')}</div>
+          ${q.scrambledWords && q.scrambledWords.length > 0 ? `
+            <div class="reorder-box">${q.scrambledWords.join(' / ')}</div>
+          ` : ''}
+          <div class="write-line"></div>
+          <div class="write-line"></div>
+        </div>
+      `).join('')}
+    ` : ''}
+
+    <div class="page-break"></div>
+    <div class="section-title" style="border-left-color: #059669; background: #ecfdf5; color: #065f46;">
+      BẢNG ĐÁP ÁN CHUẨN & HƯỚNG DẪN GIẢI CHI TIẾT (参考答案与详解)
+    </div>
+
+    <table class="answer-key-table">
+      <thead>
+        <tr>
+          <th>Câu</th>
+          <th>Đáp án</th>
+          <th>Câu</th>
+          <th>Đáp án</th>
+          <th>Câu</th>
+          <th>Đáp án</th>
+          <th>Câu</th>
+          <th>Đáp án</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${(() => {
+          let rows = '';
+          const total = questions.length;
+          const cols = 4;
+          const rowCount = Math.ceil(total / cols);
+          for (let r = 0; r < rowCount; r++) {
+            rows += '<tr>';
+            for (let c = 0; c < cols; c++) {
+              const qIndex = r + c * rowCount;
+              if (qIndex < total) {
+                const q = questions[qIndex];
+                const correctOpt = (q.options || []).find(o => o.isCorrect);
+                const ansKey = correctOpt ? correctOpt.key : (q.correctAnswer || 'A');
+                rows += `<td><strong>${qIndex + 1}</strong></td><td class="correct">${escapeHtml(ansKey)}</td>`;
+              } else {
+                rows += '<td></td><td></td>';
+              }
+            }
+            rows += '</tr>';
+          }
+          return rows;
+        })()}
+      </tbody>
+    </table>
+
+    <div style="margin-top: 24px;">
+      <h3 style="font-size: 14px; font-weight: bold; margin-bottom: 12px; border-bottom: 2px solid #e5e7eb; padding-bottom: 4px;">
+        HƯỚNG DẪN DỊCH NGHĨA & PHÂN TÍCH CHI TIẾT
+      </h3>
+      ${questions.map((q, idx) => {
+        const correctOpt = (q.options || []).find(o => o.isCorrect);
+        const ansKey = correctOpt ? `${correctOpt.key}. ${correctOpt.text}` : (q.correctAnswer || '');
+        return `
+          <div style="margin-bottom: 12px; font-size: 12px; line-height: 1.6; border-left: 2px solid #cbd5e1; padding-left: 10px;">
+            <div><strong>Câu ${idx + 1}:</strong> Đáp án đúng là <strong style="color: #dc2626;">${escapeHtml(ansKey)}</strong></div>
+            ${q.explanation ? `<div style="color: #4b5563;"><em>Giải thích:</em> ${escapeHtml(q.explanation)}</div>` : ''}
+          </div>
+        `;
+      }).join('')}
+    </div>
+
+    <div style="margin-top: 30px; text-align: center; font-size: 11px; color: #9ca3af; border-top: 1px solid #e5e7eb; padding-top: 10px;">
+      Bản quyền tài liệu thuộc về Học Tiếng Trung Mỗi Ngày (Hi HSK) • hoangpham1618@gmail.com • Chúc bạn ôn thi đạt điểm cao!
+    </div>
+  </div>
+</body>
+</html>`;
+
+  const printWindow = window.open('', '_blank');
+  if (printWindow) {
+    printWindow.document.open();
+    printWindow.document.write(html);
+    printWindow.document.close();
+    if (typeof showToast === 'function') {
+      showToast('Đang mở trang in & xuất PDF đề thi chuẩn...', 'success');
+    }
+  } else {
+    const blob = new Blob([html], { type: 'text/html;charset=utf-8' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `De_Thi_Thu_${testCode}_Hanban.html`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    if (typeof showToast === 'function') {
+      showToast('Đã tải file đề thi về máy. Hãy mở file và bấm Ctrl+P để in/lưu PDF nhé!', 'success');
+    }
   }
 }
 
@@ -12303,6 +12688,7 @@ function playAllReadingParagraphs(gender = 'female') {
 (function(){
 // Module state
 let activeGrammarCategory = 'all';
+let activeGrammarLevel = 'all';
 let activeGrammarViewMode = 'mindmap';
 let grammarSearchQuery = '';
 
@@ -12325,7 +12711,7 @@ function setGrammarViewMode(mode) {
     if (btnCompendium) {
       btnCompendium.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer';
     }
-    renderMindmap();
+    if (typeof renderMindmap === 'function') renderMindmap();
   } else {
     if (mindmapView) mindmapView.classList.add('hidden');
     if (compendiumView) compendiumView.classList.remove('hidden');
@@ -12338,22 +12724,41 @@ function setGrammarViewMode(mode) {
     renderGrammarCompendium();
   }
   const tabGrammar = document.getElementById('tab-grammar');
-  if (tabGrammar) refreshIcons(tabGrammar);
+  if (tabGrammar && typeof refreshIcons === 'function') refreshIcons(tabGrammar);
 }
 
 function filterGrammarCategory(cat) {
   activeGrammarCategory = cat;
-  const categories = ['all', 'comparison', 'ba_bei', 'complements', 'particles_adverbs', 'fixed_connectors'];
+  const categories = ['all', 'sentence_structure', 'comparison', 'ba_bei', 'complements', 'particles_adverbs', 'fixed_connectors'];
   categories.forEach(c => {
     const el = document.getElementById(`btn-grammar-${c}`);
     if (!el) return;
     if (c === cat) {
-      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-indigo-600 text-white shadow-2xs transition-all whitespace-nowrap';
+      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer';
     } else {
-      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-indigo-50 text-slate-700 border border-slate-200 transition-all whitespace-nowrap';
+      el.className = 'px-3 py-1.5 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer';
     }
   });
   renderGrammarCompendium();
+}
+
+function filterGrammarLevel(lvl) {
+  activeGrammarLevel = lvl;
+  const levels = ['all', 'hsk1', 'hsk2', 'hsk3', 'hsk4', 'hsk5', 'hsk6'];
+  levels.forEach(l => {
+    const el = document.getElementById(`btn-grammar-lvl-${l}`);
+    if (!el) return;
+    if (l === lvl) {
+      el.className = 'px-3 py-1 text-xs font-bold rounded-lg bg-indigo-600 text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer';
+    } else {
+      el.className = 'px-3 py-1 text-xs font-bold rounded-lg bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer';
+    }
+  });
+  renderGrammarCompendium();
+}
+
+function getActiveGrammarLevel() {
+  return activeGrammarLevel;
 }
 
 function setupGrammarSearch() {
@@ -12366,15 +12771,74 @@ function setupGrammarSearch() {
   }, 120));
 }
 
+function checkGrammarQuiz(itemId, optIdx) {
+  if (!grammarData) return;
+  const item = grammarData.find(x => x.id === itemId);
+  if (!item || !item.practiceQuiz) return;
+
+  const quiz = item.practiceQuiz;
+  const isCorrect = optIdx === quiz.answer;
+  const resultEl = document.getElementById(`quiz-result-${itemId}`);
+
+  // Update button states
+  const buttons = document.querySelectorAll(`.quiz-btn-${itemId}`);
+  buttons.forEach((btn, idx) => {
+    btn.disabled = true;
+    if (idx === quiz.answer) {
+      btn.className = `quiz-btn-${itemId} p-2.5 rounded-xl text-left text-xs font-bold bg-emerald-100 dark:bg-emerald-950 text-emerald-900 dark:text-emerald-300 border-2 border-emerald-500`;
+    } else if (idx === optIdx && !isCorrect) {
+      btn.className = `quiz-btn-${itemId} p-2.5 rounded-xl text-left text-xs font-bold bg-rose-100 dark:bg-rose-950 text-rose-900 dark:text-rose-300 border-2 border-rose-500`;
+    } else {
+      btn.className = `quiz-btn-${itemId} p-2.5 rounded-xl text-left text-xs font-medium opacity-50 bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700`;
+    }
+  });
+
+  if (resultEl) {
+    resultEl.classList.remove('hidden');
+    if (isCorrect) {
+      resultEl.className = 'p-3 rounded-xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 text-emerald-900 dark:text-emerald-300 text-xs space-y-1 animate-fade-in';
+      resultEl.innerHTML = `
+        <div class="font-bold flex items-center gap-1.5">
+          <span>🎉 Chính xác! (+10 EXP)</span>
+        </div>
+        <p class="text-[11px] leading-relaxed">${escapeHtml(quiz.explain || '')}</p>
+      `;
+      if (typeof addExp === 'function') {
+        addExp(10, `Làm đúng trắc nghiệm ngữ pháp: ${item.title}`);
+      }
+    } else {
+      resultEl.className = 'p-3 rounded-xl bg-rose-50 dark:bg-rose-950/60 border border-rose-300 text-rose-900 dark:text-rose-300 text-xs space-y-1 animate-fade-in';
+      resultEl.innerHTML = `
+        <div class="font-bold flex items-center gap-1.5">
+          <span>❌ Chưa chính xác!</span>
+        </div>
+        <p class="text-[11px] leading-relaxed"><strong>Giải thích:</strong> ${escapeHtml(quiz.explain || '')}</p>
+      `;
+    }
+  }
+}
+
 function renderGrammarCompendium() {
   const container = document.getElementById('grammarGridContainer');
   if (!container) return;
 
-  let filtered = grammarData;
+  let filtered = grammarData || [];
+
+  // Category filter
   if (activeGrammarCategory !== 'all') {
     filtered = filtered.filter(item => item.category === activeGrammarCategory);
   }
 
+  // Level filter
+  if (activeGrammarLevel !== 'all') {
+    const targetLvl = activeGrammarLevel.replace('hsk', 'hsk ');
+    filtered = filtered.filter(item => {
+      const itemLvl = (item.level || '').toLowerCase().replace(/\s+/g, '');
+      return itemLvl.includes(activeGrammarLevel);
+    });
+  }
+
+  // Search filter
   if (grammarSearchQuery) {
     filtered = filtered.filter(item => {
       const examplesText = (item.examples || []).map(e => `${e.hanzi} ${e.pinyin} ${e.vi}`).join(' ');
@@ -12385,90 +12849,130 @@ function renderGrammarCompendium() {
   }
 
   const badgeEl = document.getElementById('grammarCountBadge');
-  if (badgeEl) {
+  if (badgeEl && grammarData) {
     badgeEl.innerText = `${filtered.length} / ${grammarData.length} Chuyên Đề`;
   }
 
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="col-span-full py-12 text-center text-slate-400">
+      <div class="col-span-full py-12 text-center text-stone-400">
         <i data-lucide="compass" class="w-12 h-12 mx-auto mb-3 opacity-40"></i>
-        <p class="font-bold text-slate-600">Không tìm thấy chủ điểm ngữ pháp phù hợp</p>
+        <p class="font-bold text-stone-600 dark:text-stone-400">Không tìm thấy chuyên đề ngữ pháp phù hợp với bộ lọc</p>
       </div>
     `;
-    refreshIcons();
+    if (typeof refreshIcons === 'function') refreshIcons();
     return;
   }
 
-  container.innerHTML = filtered.map(item => `
-    <div class="glass-card rounded-2xl p-6 border border-indigo-200/80 hover:border-indigo-400 transition-all space-y-4 relative overflow-hidden bg-white/95 shadow-xs">
-      <!-- Card Header -->
-      <div class="flex items-start justify-between gap-3">
-        <div>
-          <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black bg-indigo-100 text-indigo-800 border border-indigo-200 inline-block mb-1.5">
-            ${item.level} • ${item.categoryName}
-          </span>
-          <h3 class="text-base lg:text-lg font-black text-slate-900 tracking-tight">${item.title}</h3>
-        </div>
-      </div>
+  container.innerHTML = filtered.map(item => {
+    let levelBadgeColor = 'bg-indigo-100 text-indigo-800 border-indigo-200';
+    if ((item.level || '').includes('1')) levelBadgeColor = 'bg-emerald-100 text-emerald-800 border-emerald-200 dark:bg-emerald-950 dark:text-emerald-300';
+    else if ((item.level || '').includes('2')) levelBadgeColor = 'bg-teal-100 text-teal-800 border-teal-200 dark:bg-teal-950 dark:text-teal-300';
+    else if ((item.level || '').includes('3')) levelBadgeColor = 'bg-amber-100 text-amber-800 border-amber-200 dark:bg-amber-950 dark:text-amber-300';
+    else if ((item.level || '').includes('4')) levelBadgeColor = 'bg-sky-100 text-sky-800 border-sky-200 dark:bg-sky-950 dark:text-sky-300';
+    else if ((item.level || '').includes('5')) levelBadgeColor = 'bg-purple-100 text-purple-800 border-purple-200 dark:bg-purple-950 dark:text-purple-300';
+    else if ((item.level || '').includes('6')) levelBadgeColor = 'bg-rose-100 text-rose-800 border-rose-200 dark:bg-rose-950 dark:text-rose-300';
 
-      <!-- Formula Pill Banner -->
-      <div class="p-3.5 rounded-xl bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200/80">
-        <span class="text-[10px] font-bold text-indigo-700 uppercase tracking-wider block mb-1">CÔNG THỨC CHUẨN:</span>
-        <code class="font-mono font-bold text-xs lg:text-sm text-indigo-950 block">${item.formula}</code>
-      </div>
-
-      <!-- Explanation -->
-      <p class="text-xs text-slate-700 leading-relaxed">
-        ${item.explanation}
-      </p>
-
-      <!-- Rules List -->
-      ${item.rules && item.rules.length > 0 ? `
-        <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 space-y-2 text-xs">
-          <span class="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">Quy tắc ứng dụng:</span>
-          <ul class="space-y-1.5">
-            ${item.rules.map(rule => `
-              <li class="flex items-start gap-2 text-slate-700">
-                <i data-lucide="check-circle" class="w-3.5 h-3.5 text-indigo-600 shrink-0 mt-0.5"></i>
-                <span>${rule}</span>
-              </li>
-            `).join('')}
-          </ul>
-        </div>
-      ` : ''}
-
-      <!-- Common Mistakes Box -->
-      ${item.mistakes ? `
-        <div class="p-3 rounded-xl bg-rose-50/70 border border-rose-200 text-xs text-rose-950 space-y-1">
-          <span class="text-[10px] font-bold text-rose-800 uppercase tracking-wider block">⚠️ Lỗi kinh điển người Việt hay mắc:</span>
-          <p class="font-medium">${item.mistakes}</p>
-        </div>
-      ` : ''}
-
-      <!-- Example Sentences -->
-      ${item.examples && item.examples.length > 0 ? `
-        <div class="space-y-2.5 pt-1">
-          <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Ví dụ minh họa:</span>
-          ${item.examples.map(ex => `
-            <div class="p-3 rounded-xl bg-indigo-50/40 border border-indigo-100 space-y-1 text-xs">
-              <div class="flex items-center justify-between">
-                <span class="font-hanzi font-bold text-slate-900 text-sm">${ex.hanzi}</span>
-                <div class="inline-flex items-center gap-0.5">
-                  <button onclick="playChineseTTS(${jsArg(ex.hanzi)}, 'female')" class="px-1.5 py-0.5 rounded bg-white hover:bg-rose-50 text-rose-800 border border-rose-200 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe giọng Nữ">👩 Nữ</button>
-                  <button onclick="playChineseTTS(${jsArg(ex.hanzi)}, 'male')" class="px-1.5 py-0.5 rounded bg-white hover:bg-blue-50 text-blue-800 border border-blue-200 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe giọng Nam">👨 Nam</button>
-                </div>
-              </div>
-              <p class="text-indigo-700 font-sans text-[11px]">${ex.pinyin}</p>
-              <p class="text-slate-600">${ex.vi}</p>
+    return `
+      <div class="glass-card rounded-3xl p-6 border-2 border-stone-200/90 dark:border-stone-800 hover:border-indigo-400 dark:hover:border-indigo-500 transition-all space-y-4 relative overflow-hidden bg-white/95 dark:bg-[#161B22] shadow-sm">
+        <!-- Card Header -->
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <div class="flex items-center gap-2 flex-wrap mb-1.5">
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black border inline-block ${levelBadgeColor}">
+                ${escapeHtml(item.level || 'HSK')}
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300 border border-stone-200 dark:border-stone-700">
+                ${escapeHtml(item.categoryName || 'Ngữ pháp')}
+              </span>
             </div>
-          `).join('')}
+            <h3 class="text-base lg:text-lg font-black text-stone-900 dark:text-stone-100 tracking-tight font-serif-luxury">
+              ${escapeHtml(item.title)}
+            </h3>
+          </div>
         </div>
-      ` : ''}
-    </div>
-  `).join('');
 
-  refreshIcons();
+        <!-- Formula Pill Banner -->
+        <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-stone-800 dark:to-stone-800 border border-amber-200/80 dark:border-stone-700 shadow-2xs">
+          <span class="text-[10px] font-bold text-amber-800 dark:text-amber-400 uppercase tracking-wider block mb-1">CÔNG THỨC CHUẨN:</span>
+          <code class="font-mono font-bold text-xs lg:text-sm text-stone-900 dark:text-amber-200 block">${escapeHtml(item.formula)}</code>
+        </div>
+
+        <!-- Explanation -->
+        <p class="text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
+          ${escapeHtml(item.explanation)}
+        </p>
+
+        <!-- Rules List -->
+        ${item.rules && item.rules.length > 0 ? `
+          <div class="p-3.5 rounded-2xl bg-stone-50 dark:bg-stone-850 border border-stone-200/80 dark:border-stone-750 space-y-2 text-xs">
+            <span class="text-[10px] font-bold text-stone-500 uppercase tracking-wider block">Quy tắc ứng dụng:</span>
+            <ul class="space-y-1.5">
+              ${item.rules.map(rule => `
+                <li class="flex items-start gap-2 text-stone-700 dark:text-stone-300">
+                  <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5"></i>
+                  <span>${escapeHtml(rule)}</span>
+                </li>
+              `).join('')}
+            </ul>
+          </div>
+        ` : ''}
+
+        <!-- Common Mistakes Box -->
+        ${item.mistakes ? `
+          <div class="p-3.5 rounded-2xl bg-rose-50/80 dark:bg-rose-950/40 border border-rose-200 dark:border-rose-900/60 text-xs text-rose-950 dark:text-rose-300 space-y-1">
+            <span class="text-[10px] font-bold text-rose-800 dark:text-rose-400 uppercase tracking-wider block">⚠️ Lỗi kinh điển người Việt hay mắc:</span>
+            <p class="font-medium leading-relaxed">${escapeHtml(item.mistakes)}</p>
+          </div>
+        ` : ''}
+
+        <!-- Example Sentences -->
+        ${item.examples && item.examples.length > 0 ? `
+          <div class="space-y-2.5 pt-1">
+            <span class="text-[10px] font-bold text-stone-400 uppercase tracking-wider block">Ví dụ minh họa song ngữ:</span>
+            ${item.examples.map(ex => `
+              <div class="p-3 rounded-2xl bg-stone-50/80 dark:bg-stone-850 border border-stone-200/80 dark:border-stone-700/80 space-y-1 text-xs">
+                <div class="flex items-center justify-between">
+                  <span class="font-chinese font-bold text-stone-900 dark:text-stone-100 text-sm">${escapeHtml(ex.hanzi)}</span>
+                  <div class="inline-flex items-center gap-1">
+                    <button onclick="playChineseTTS(${jsArg(ex.hanzi)}, 'female')" class="px-2 py-0.5 rounded-lg bg-white dark:bg-stone-700 hover:bg-rose-50 text-rose-800 dark:text-rose-300 border border-stone-200 dark:border-stone-600 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe giọng Nữ">👩 Nữ</button>
+                    <button onclick="playChineseTTS(${jsArg(ex.hanzi)}, 'male')" class="px-2 py-0.5 rounded-lg bg-white dark:bg-stone-700 hover:bg-blue-50 text-blue-800 dark:text-blue-300 border border-stone-200 dark:border-stone-600 text-[10px] font-bold transition-colors cursor-pointer" title="Nghe giọng Nam">👨 Nam</button>
+                  </div>
+                </div>
+                <p class="text-amber-800 dark:text-amber-400 font-sans text-[11px]">${escapeHtml(ex.pinyin)}</p>
+                <p class="text-stone-600 dark:text-stone-400">${escapeHtml(ex.vi)}</p>
+              </div>
+            `).join('')}
+          </div>
+        ` : ''}
+
+        <!-- Interactive Practice Quiz -->
+        ${item.practiceQuiz ? `
+          <div class="p-4 rounded-2xl bg-amber-50/80 dark:bg-stone-800/80 border border-amber-200/80 dark:border-stone-700 space-y-2.5 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-bold text-amber-800 dark:text-amber-300 uppercase tracking-wider">🎯 Trắc nghiệm kiểm tra nhanh:</span>
+              <span class="text-[10px] text-stone-400 font-medium">Bấm chọn đáp án</span>
+            </div>
+            <p class="font-bold text-stone-900 dark:text-stone-100">${escapeHtml(item.practiceQuiz.question)}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+              ${item.practiceQuiz.options.map((opt, oIdx) => `
+                <button 
+                  type="button"
+                  onclick="checkGrammarQuiz(${jsArg(item.id)}, ${oIdx})"
+                  class="quiz-btn-${item.id} p-2.5 rounded-xl text-left text-[11px] font-medium bg-white dark:bg-stone-900 hover:bg-amber-100 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-stone-700 transition-all cursor-pointer"
+                >
+                  ${escapeHtml(opt)}
+                </button>
+              `).join('')}
+            </div>
+            <div id="quiz-result-${item.id}" class="hidden"></div>
+          </div>
+        ` : ''}
+      </div>
+    `;
+  }).join('');
+
+  if (typeof refreshIcons === 'function') refreshIcons();
 }
 
 })();
