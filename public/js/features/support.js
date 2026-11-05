@@ -364,11 +364,13 @@ async function submitComplaintForm(e) {
     });
 
     if (res.ok) {
+      const data = await res.json().catch(() => ({}));
+      const ticketId = data.ticketId || ('HSK-' + Date.now().toString(36).toUpperCase());
       if (typeof showToast === 'function') {
-        showToast('✓ Tiếp nhận khiếu nại thành công! Chúng tôi đã chuyển tới hoangpham1618@gmail.com và sẽ giải quyết trong 2 giờ.', 'success');
+        showToast(`✓ Đã tiếp nhận khiếu nại! Mã phiếu: ${ticketId}. Chúng tôi sẽ giải quyết trong 2 giờ.`, 'success');
       }
+      showComplaintSuccessReceipt(ticketId, category, name, contact);
       if (msgEl) msgEl.value = '';
-      closeComplaintModal();
     } else {
       const err = await res.json().catch(() => ({}));
       throw new Error(err.message || 'Lỗi gửi phản hồi');
@@ -389,6 +391,59 @@ async function submitComplaintForm(e) {
       if (typeof refreshIcons === 'function') refreshIcons(submitBtn);
     }
   }
+}
+
+function showComplaintSuccessReceipt(ticketId, category, name, contact) {
+  const form = document.getElementById('complaintOnlineForm');
+  if (!form) {
+    if (typeof showToast === 'function') {
+      showToast(`✓ Đã tiếp nhận khiếu nại! Mã phiếu: ${ticketId}`, 'success');
+    }
+    closeComplaintModal();
+    return;
+  }
+  form.innerHTML = `
+    <div class="p-5 rounded-2xl bg-emerald-50 dark:bg-emerald-950/50 border-2 border-emerald-400 dark:border-emerald-700 text-center space-y-3.5 animate-fade-in">
+      <div class="w-12 h-12 mx-auto rounded-full bg-emerald-100 dark:bg-emerald-900 text-emerald-700 dark:text-emerald-300 flex items-center justify-center text-2xl font-bold shadow-xs">
+        ✓
+      </div>
+      <div>
+        <h4 class="text-base font-black text-emerald-900 dark:text-emerald-200 font-serif-luxury">
+          Tiếp Nhận Phản Ánh Thành Công!
+        </h4>
+        <p class="text-xs text-stone-600 dark:text-stone-300 mt-1">
+          Hệ thống đã chuyển trực tiếp yêu cầu của bạn tới Ban Quản Trị và hòm thư <strong>hoangpham1618@gmail.com</strong>.
+        </p>
+      </div>
+
+      <!-- Ticket Card -->
+      <div class="p-3.5 rounded-xl bg-white dark:bg-stone-900 border border-emerald-300 dark:border-stone-700 text-left space-y-2">
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-stone-500 font-semibold">Mã phiếu tiếp nhận:</span>
+          <div class="flex items-center gap-1.5">
+            <span class="font-mono font-black text-rose-700 dark:text-amber-400 text-sm tracking-wide">${ticketId}</span>
+            <button type="button" onclick="copySupportInfo('${ticketId}', 'Mã phiếu ${ticketId}')" class="px-2 py-0.5 rounded-md bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 text-[11px] font-bold text-stone-700 dark:text-stone-300 cursor-pointer">
+              Sao chép
+            </button>
+          </div>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-stone-500 font-semibold">Phân loại:</span>
+          <span class="font-bold text-stone-800 dark:text-stone-200">${category}</span>
+        </div>
+        <div class="flex items-center justify-between text-xs">
+          <span class="text-stone-500 font-semibold">Thời hạn cam kết xử lý:</span>
+          <span class="font-bold text-emerald-700 dark:text-emerald-400">Trước 2 giờ làm việc</span>
+        </div>
+      </div>
+
+      <div class="pt-2 flex items-center justify-center gap-2">
+        <button type="button" onclick="closeComplaintModal()" class="px-6 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white font-bold text-xs shadow-sm hover:opacity-95 cursor-pointer">
+          Đã hiểu & Đóng (✓)
+        </button>
+      </div>
+    </div>
+  `;
 }
 
 // Global exports

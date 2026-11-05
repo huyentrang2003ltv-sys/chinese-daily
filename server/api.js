@@ -7,6 +7,8 @@ const visitors = require('./visitors');
 const { translate } = require('./translate');
 const { handleAiChat } = require('./ai_tutor');
 const { notifyAdmin, isNotifyConfigured } = require('./notify');
+const { syncUser, recordFeedbackTicket, recordSyncEvent } = require('./db');
+const crypto = require('crypto');
 const {
   HttpError, sendJson, readJson, clientIp, isHttps, parseCookies, createRateLimiter, str
 } = require('./http');

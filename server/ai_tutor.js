@@ -52,7 +52,7 @@ function extractVocabFromChinese(chineseText, limit = 4) {
  */
 const CONVERSATION_INTENTS = [
   {
-    pattern: /(chào|xin chào|hello|hi|helo|alo|hế lô|你好|您好|哈喽|早上好|晚上好)/i,
+    pattern: /(chào|xin chào|\bhello\b|\bhi\b|\bhelo\b|\balo\b|hế lô|你好|您好|哈喽|早上好|晚上好)/i,
     reply: {
       hanzi: '你好！我是你的AI中文私教小华 🤖。今天很高兴和你一起练习中文！你今天想聊些什么呢？',
       pinyin: 'Nǐ hǎo! Wǒ shì nǐ de AI zhōngwén sījiào Xiǎohuá. Jīntiān hěn gāoxìng hé nǐ yìqǐ liànxí zhōngwén! Nǐ jīntiān xiǎng liáo xiē shénme ne?',
@@ -122,7 +122,49 @@ const CONVERSATION_INTENTS = [
     }
   },
   {
-    pattern: /(khỏe không|thế nào|hôm nay thế nào|ổn không|dạo này|怎么样|好吗|身体好吗|最近)/i,
+    pattern: /(phân biệt|khác nhau|dễ nhầm|常常.*往往|刚.*刚才|以为.*认为|适合.*合适|了解.*理解)/i,
+    reply: {
+      hanzi: '这是HSK考试中非常经典的同义词辨析！\n1. “刚”是副词，只能放在动词前；“刚才”是时间名词，可作主语或置于主语前。\n2. “常常”指动作频率高；“往往”除了频率高，通常带有一定的规律或条件。\n3. “适合”是动词（适合你）；“合适”是形容词（尺寸很合适）。你想深入了解哪一组词呢？',
+      pinyin: 'Zhè shì HSK kǎoshì zhōng fēicháng jīngdiǎn de tóngyìcí biànxī! 1. "Gāng" shì fùcí; "gāngcái" shì shíjiān míngcí. 2. "Chángcháng" zhǐ pínlǜ; "wǎngwǎng" dài guīlǜ. 3. "Shìhé" shì dòngcí; "héshì" shì xíngróngcí. Nǐ xiǎng shēnrù liǎojiě nǎ yì zǔ cí ne?',
+      vi: 'Đây là các cặp từ phân biệt kinh điển trong các bài thi HSK!\n1. "刚" là phó từ, chỉ đứng trước động từ; "刚才" là danh từ chỉ thời gian, có thể làm chủ ngữ.\n2. "常常" chỉ tần suất cao; "往往" chỉ thói quen/quy luật có điều kiện đi kèm.\n3. "适合" là động từ (phù hợp với bạn); "合适" là tính từ (kích cỡ rất vừa vặn). Bạn muốn phân tích chi tiết cặp nào?',
+      followUp: '你还想辨析哪一组易混词？',
+      quickReplies: [
+        { hanzi: '请讲讲“刚”和“刚才”的例句。', pinyin: 'Qǐng jiǎngjiang "gāng" hé "gāngcái" de lìjù.', vi: 'Xin ví dụ cụ thể về "gang" và "gangcai".' },
+        { hanzi: '“以为”和“认为”有什么不同？', pinyin: '"Yǐwéi" hé "rènwéi" yǒu shénme bùtóng?', vi: '"Di tưởng" và "nhận vi" khác nhau thế nào?' },
+        { hanzi: '“了解”和“理解”该怎么用？', pinyin: '"Liǎojiě" hé "lǐjiě" gāi zěnme yòng?', vi: '"Liễu giải" và "lý giải" dùng ra sao?' }
+      ]
+    }
+  },
+  {
+    pattern: /(mẹo thi|kinh nghiệm thi|ôn thi HSK|bài thi HSK|chiến thuật thi|thi đậu|hsk tips)/i,
+    reply: {
+      hanzi: '备考HSK有三大黄金法则：\n1. 听力部分：拿到试卷先抢读选项，圈出关键词，预判对话场景。\n2. 阅读部分：先看题目后读文章，抓住首尾句，避免逐字翻译。\n3. 写作部分：紧扣核心词汇，多用规范句型（如把字句、虽然...但是...），书写务必工整。你目前正在准备几级考试呢？',
+      pinyin: 'Bèikǎo HSK yǒu sān dà huángjīn fǎzé: 1. Tīnglì: qiǎng dú xuǎnxiàng. 2. Yuèdú: xiān kàn tímù hòu dú wénzhāng. 3. Xiězuò: jǐnkòu héxīn cíhuì, shūxiě gōngzhěng. Nǐ mùqián zhèngzài zhǔnbèi jǐ jí kǎoshì ne?',
+      vi: '3 nguyên tắc vàng khi thi HSK:\n1. Phần Nghe: Tận dụng thời gian đọc lướt đáp án trước, khoanh từ khóa để đoán ngữ cảnh.\n2. Phần Đọc: Đọc câu hỏi trước rồi quét bài đọc tìm thông tin, chú ý câu đầu và cuối đoạn.\n3. Phần Viết: Dùng từ vựng chắc chắn, áp dụng cấu trúc ngữ pháp chuẩn (câu chữ 把, 虽然...但是...), chữ viết ngay ngắn. Bạn đang chuẩn bị thi cấp độ mấy?',
+      followUp: '你目前在准备HSK几级考试？',
+      quickReplies: [
+        { hanzi: '我正在备考HSK3级。', pinyin: 'Wǒ zhèngzài bèikǎo HSK sān jí.', vi: 'Tôi đang ôn thi HSK 3.' },
+        { hanzi: '我计划今年考过HSK4级！', pinyin: 'Wǒ jìhuà jīnnián kǎoguò HSK sì jí!', vi: 'Tôi dự định năm nay thi đỗ HSK 4!' },
+        { hanzi: 'HSK5级的阅读时间总是不够怎么办？', pinyin: 'HSK wǔ jí de yuèdú shíjiān zǒngshì bú gòu zěnme bàn?', vi: 'Đọc HSK 5 không kịp giờ thì làm sao?' }
+      ]
+    }
+  },
+  {
+    pattern: /(công sở|văn phòng|phỏng vấn|xin việc|đối tác|hợp đồng|thương mại|kinh doanh)/i,
+    reply: {
+      hanzi: '商务与职场中文非常重视礼貌与专业度！\n常用表达：\n• “祝我们合作愉快！”（Zhù wǒmen hézuò yúkuài! - Chúc hợp tác vui vẻ!）\n• “请问贵公司有什么要求？”（Qǐngwèn guì gōngsī yǒu shénme yāoqiú?）\n• “这份合同我们双方再确认一下。”你想模拟哪一个商务场景？',
+      pinyin: 'Shāngwù yǔ zhíchǎng zhōngwén fēicháng zhòngshì lǐmào yǔ zhuānyèdù! Chángyòng: "Zhù wǒmen hézuò yúkuài!" "Qǐngwèn guì gōngsī yǒu shénme yāoqiú?" Nǐ xiǎng mónǐ nǎ yí gè shāngwù chǎngjǐng?',
+      vi: 'Tiếng Trung văn phòng và thương mại rất coi trọng tính lễ nghi và chuyên nghiệp!\nCác câu chuẩn mực:\n• "祝我们合作愉快！" (Chúc chúng ta hợp tác vui vẻ!)\n• "请问贵公司有什么要求？" (Xin hỏi quý công ty có yêu cầu gì?)\n• "这份合同我们双方再确认一下。" (Bản hợp đồng này hai bên cùng xác nhận lại nhé). Bạn muốn thực hành tình huống nào?',
+      followUp: '你想模拟面试还是商务谈判？',
+      quickReplies: [
+        { hanzi: '我想模拟面试自我介绍。', pinyin: 'Wǒ xiǎng mónǐ miànshì zìwǒ jièshào.', vi: 'Tôi muốn mô phỏng phỏng vấn giới thiệu bản thân.' },
+        { hanzi: '请教我几句邮件常用商务客套话。', pinyin: 'Qǐng jiào wǒ jǐ jù yóujiàn chángyòng shāngwù kètàohuà.', vi: 'Dạy tôi vài câu viết email thương mại.' },
+        { hanzi: '商谈价格时该怎么说更专业？', pinyin: 'Shāngtán jiàgé shí gāi zěnme shuō gèng zhuānyè?', vi: 'Khi đàm phán giá nên nói thế nào cho chuyên nghiệp?' }
+      ]
+    }
+  },
+  {
+    pattern: /(khỏe không|bạn thế nào|hôm nay thế nào|ổn không|dạo này thế nào|dạo này|怎么样|好吗|身体好吗|最近)/i,
     reply: {
       hanzi: '我非常好，每天能陪大家学习中文让我很开心！“最近怎么样？”是朋友见面最常用的问候语。你今天工作和学习顺利吗？',
       pinyin: 'Wǒ fēicháng hǎo, měitiān néng péi dàjiā xuéxí zhōngwén ràng wǒ hěn kāixīn! "Zuìjìn zěnmeyàng?" shì péngyou jiànmiàn zuì chángyòng de wènhòuyǔ. Nǐ jīntiān gōngzuò hé xuéxí shùnlì ma?',
@@ -206,7 +248,7 @@ const CONVERSATION_INTENTS = [
     }
   },
   {
-    pattern: /(ngữ pháp|cấu trúc|câu chữ 把|câu chữ 被|chữ 的|trợ từ|bổ ngữ|phân biệt|语法|把字句|被字句)/i,
+    pattern: /(ngữ pháp|cấu trúc|câu chữ 把|câu chữ 被|chữ 的|trợ từ|bổ ngữ|语法|把字句|被字句)/i,
     reply: {
       hanzi: '中文语法很有规律！比如“把字句”结构是：主语 + 把 + 宾语 + 动词 + 其他成分（如：我把作业做完了）。你想了解哪个具体语法点？我为你详细解析！',
       pinyin: 'Zhōngwén yǔfǎ hěn yǒu guīlǜ! Bǐrú "bǎzìjù" jiégòu shì: Zhǔyǔ + bǎ + bīnyǔ + dòngcí + qítā chéngfèn (rú: Wǒ bǎ zuòyè zuò wán le). Nǐ xiǎng liǎojiě nǎge jùtǐ yǔfǎ diǎn? Wǒ wèi nǐ xiángxì jiěxī!',
@@ -218,7 +260,7 @@ const CONVERSATION_INTENTS = [
         { hanzi: '怎么用“越来越……”句型？', pinyin: 'Zěnme yòng "yuè lái yuè..." jùxíng?', vi: 'Dùng mẫu câu "càng ngày càng..." như thế nào?' }
       ]
     }
-  }
+  },
 ];
 
 /**

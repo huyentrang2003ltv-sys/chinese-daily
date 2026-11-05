@@ -8,7 +8,7 @@
     "node": ">=20.6"
   },
   "scripts": {
-    "build": "npm run build:css",
+    "build": "npm run build:css && node scripts/build_bundle.js",
     "build:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o public/assets/tailwind.css --minify",
     "watch:css": "tailwindcss -c tailwind.config.js -i src/tailwind.css -o public/assets/tailwind.css --watch",
     "start": "node server.js",

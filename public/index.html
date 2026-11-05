@@ -11,6 +11,10 @@
   <!-- Fonts (Vietnamese + Chinese subsets) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
+  <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+  <link rel="preload" href="styles.css?v=20261104_inplace_flip_v5" as="style" />
+  <link rel="preload" href="assets/tailwind.css?v=20261104_restore_v5" as="style" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600&display=swap" />
 
   <!-- Styles: custom first so Tailwind utilities (e.g. .hidden) win; Tailwind is built by `npm run build:css` -->
@@ -4942,6 +4946,17 @@
       >
         <i data-lucide="settings" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 group-hover:rotate-45 transition-transform duration-300"></i>
         <span class="text-[9px] font-bold text-stone-700 dark:text-stone-300">Cài đặt</span>
+      </button>
+
+      <!-- Đồng bộ đám mây (Cloud Sync) -->
+      <button 
+        type="button" 
+        onclick="triggerManualCloudSync()" 
+        class="group w-11 h-11 sm:w-12 sm:h-12 rounded-2xl bg-white dark:bg-stone-800 hover:bg-teal-50 dark:hover:bg-teal-950/40 border border-stone-200 dark:border-stone-700 hover:border-teal-400 shadow-md flex flex-col items-center justify-center transition-all cursor-pointer hover:scale-105 active:scale-95" 
+        title="Đồng bộ tiến độ học tập và sổ tay lên đám mây an toàn"
+      >
+        <span id="cloudSyncStatusIcon" class="text-xs text-teal-600 dark:text-teal-400">☁️</span>
+        <span id="cloudSyncStatusText" class="text-[9px] font-bold text-stone-700 dark:text-stone-300">Đồng bộ</span>
       </button>
     </div>
 

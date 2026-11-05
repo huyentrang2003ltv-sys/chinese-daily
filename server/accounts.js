@@ -6,6 +6,7 @@ const fs = require('fs');
 const path = require('path');
 const { ROOT, SESSION_SECRET } = require('./config');
 const { createJsonStore, readJsonFile, storagePath } = require('./store');
+const { syncUser } = require('./db');
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 const TRIAL_DAYS = 7;
@@ -90,6 +91,9 @@ if (!Array.isArray(store.get())) {
   store.set(importLegacyUsers());
   store.flush();
 }
+if (Array.isArray(store.get())) {
+  store.get().forEach(u => syncUser(u));
+}
 
 const users = () => store.get();
 const findByEmail = email => users().find(u => u.email === String(email || '').trim().toLowerCase()) || null;
@@ -119,6 +123,7 @@ function createUser({ name, email, password, language, profession, purpose, prog
   };
   users().push(user);
   store.save();
+  syncUser(user);
   return user;
 }
 
@@ -126,6 +131,7 @@ function setPassword(user, password) {
   user.passwordHash = hashPassword(password);
   user.sessionVersion = (user.sessionVersion || 1) + 1;
   store.save();
+  syncUser(user);
 }
 
 function setVipTier(user, tier) {
@@ -147,6 +153,7 @@ function setVipTier(user, tier) {
     throw new Error('Gói VIP không hợp lệ');
   }
   store.save();
+  syncUser(user);
 }
 
 /** VIP status, computed on the server so the client cannot grant itself access. */

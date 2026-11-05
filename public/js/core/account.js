@@ -415,3 +415,53 @@ async function adminSetUserVip(targetEmail, tier) {
     showToast(err.message, 'error');
   }
 }
+
+
+// ---------------- CLOUD DATA SYNC STATUS & ACTIONS ----------------
+function updateCloudSyncStatus(status) {
+  const icon = document.getElementById('cloudSyncStatusIcon');
+  const text = document.getElementById('cloudSyncStatusText');
+  if (icon) {
+    if (status === 'syncing') {
+      icon.innerHTML = '⏳';
+      icon.className = 'animate-spin inline-block text-xs';
+    } else if (status === 'synced') {
+      icon.innerHTML = '☁️✓';
+      icon.className = 'text-xs text-emerald-600 font-bold';
+    } else if (status === 'error') {
+      icon.innerHTML = '⚠️';
+      icon.className = 'text-xs text-amber-500 font-bold';
+    }
+  }
+  if (text) {
+    if (status === 'syncing') text.innerText = 'Đang đồng bộ...';
+    else if (status === 'synced') text.innerText = 'Đã lưu đám mây';
+    else if (status === 'error') text.innerText = 'Chưa đồng bộ';
+  }
+}
+
+async function triggerManualCloudSync() {
+  if (!currentUser) {
+    if (typeof showToast === 'function') {
+      showToast('Vui lòng đăng nhập để đồng bộ tiến độ học lên đám mây!', 'info');
+    }
+    if (typeof openAuthModal === 'function') openAuthModal('login');
+    return;
+  }
+  updateCloudSyncStatus('syncing');
+  try {
+    await apiRequest('/api/me/merge-sync', { method: 'POST', body: progressSnapshot() });
+    updateCloudSyncStatus('synced');
+    if (typeof showToast === 'function') {
+      showToast('✓ Đã đồng bộ tiến độ học tập và sổ tay lên đám mây an toàn!', 'success');
+    }
+  } catch (err) {
+    updateCloudSyncStatus('error');
+    if (typeof showToast === 'function') {
+      showToast('Lỗi đồng bộ đám mây: ' + err.message, 'error');
+    }
+  }
+}
+
+window.updateCloudSyncStatus = updateCloudSyncStatus;
+window.triggerManualCloudSync = triggerManualCloudSync;

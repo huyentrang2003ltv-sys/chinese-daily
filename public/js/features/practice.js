@@ -162,7 +162,10 @@ function submitPracticeReorder(qId) {
 function startPracticeSpeechRecognition(qId, targetText) {
   const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   if (!SpeechRecognition) {
-    showToast('Trình duyệt hiện tại chưa hỗ trợ nhận diện giọng nói tiếng Trung. Bạn có thể dùng Google Chrome hoặc Microsoft Edge để trải nghiệm tính năng này.', 'warning');
+    if (typeof showToast === 'function') {
+      showToast('Trình duyệt chưa hỗ trợ ghi âm trực tiếp. Đã mở chế độ nhập Pinyin thông minh!', 'info');
+    }
+    showPinyinInputFallback(qId, targetText);
     return;
   }
 
@@ -230,7 +233,10 @@ function startPracticeSpeechRecognition(qId, targetText) {
         btnEl.classList.remove('animate-pulse', 'ring-4', 'ring-red-400', 'bg-red-600', 'text-white');
       }
       if (statusEl) {
-        statusEl.innerHTML = `<span class="text-amber-700 text-xs font-semibold">Ghi âm gián đoạn (${event.error}). Vui lòng nghe lại câu mẫu và nhấn nút thử lại nhé!</span>`;
+        statusEl.innerHTML = `<div class="p-2.5 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-900 dark:text-amber-300 text-xs flex items-center justify-between gap-2">
+          <span>⚠️ Ghi âm bị gián đoạn (${event.error || 'không bắt được tiếng'}). Bạn có thể chuyển sang chế độ gõ Pinyin!</span>
+          <button type="button" onclick="showPinyinInputFallback('${qId}', '${targetText}')" class="px-2.5 py-1 rounded-lg bg-[#8B1E1E] text-white font-bold hover:opacity-90 cursor-pointer">Gõ Pinyin</button>
+        </div>`;
       }
     };
 
@@ -565,3 +571,86 @@ function renderPractice() {
   updatePracticeDashboard();
   refreshIcons();
 }
+
+
+// ---------------- PINYIN FALLBACK & INPUT HELPER ----------------
+function showPinyinInputFallback(qId, targetText) {
+  const statusEl = document.getElementById(`speech-status-${qId}`);
+  if (!statusEl) return;
+  statusEl.innerHTML = `
+    <div class="mt-2 p-3 rounded-2xl bg-amber-50/90 dark:bg-stone-800/90 border border-amber-300 dark:border-stone-700 space-y-2.5">
+      <div class="flex items-center justify-between text-xs font-bold text-amber-900 dark:text-amber-300">
+        <span>⌨️ Chế độ dự phòng: Nhập Pinyin hoặc gõ Hán tự tương ứng</span>
+        <span class="text-[10px] text-stone-500">Mục tiêu: <strong class="text-rose-700 dark:text-amber-400">${targetText}</strong></span>
+      </div>
+      <div class="flex items-center gap-2">
+        <input 
+          type="text" 
+          id="pinyin-fallback-input-${qId}" 
+          placeholder="Gõ Pinyin hoặc Hán tự..."
+          class="flex-1 px-3 py-1.5 rounded-xl bg-white dark:bg-stone-900 border border-stone-300 dark:border-stone-600 text-xs focus:ring-2 focus:ring-[#8B1E1E] text-stone-900 dark:text-stone-100"
+          onkeydown="if(event.key==='Enter') checkPinyinAnswer('${qId}', '${targetText}')"
+        />
+        <button 
+          type="button"
+          onclick="checkPinyinAnswer('${qId}', '${targetText}')" 
+          class="px-3.5 py-1.5 rounded-xl bg-[#8B1E1E] text-white text-xs font-bold hover:opacity-90 shadow-2xs cursor-pointer"
+        >
+          Kiểm tra
+        </button>
+      </div>
+      <div class="flex items-center gap-1 flex-wrap text-2xs">
+        <span class="text-stone-400 font-semibold mr-1">Thanh điệu:</span>
+        ${['ā', 'á', 'ǎ', 'à', 'ō', 'ó', 'ǒ', 'ò', 'ē', 'é', 'ě', 'è', 'ī', 'í', 'ǐ', 'ì', 'ū', 'ú', 'ǔ', 'ù', 'ǖ', 'ǘ', 'ǚ', 'ǜ'].map(c => `
+          <button type="button" onclick="insertPinyinChar('${qId}', '${c}')" class="w-6 h-6 rounded-md bg-white dark:bg-stone-700 hover:bg-amber-100 text-stone-800 dark:text-stone-200 border border-stone-200 dark:border-stone-600 font-medium">${c}</button>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function insertPinyinChar(qId, char) {
+  const input = document.getElementById(`pinyin-fallback-input-${qId}`);
+  if (!input) return;
+  input.value += char;
+  input.focus();
+}
+
+function checkPinyinAnswer(qId, targetText) {
+  const input = document.getElementById(`pinyin-fallback-input-${qId}`);
+  const statusEl = document.getElementById(`speech-status-${qId}`);
+  if (!input || !statusEl) return;
+  const val = input.value.trim().toLowerCase();
+  if (!val) {
+    if (typeof showToast === 'function') showToast('Vui lòng nhập Pinyin hoặc câu trả lời!', 'warning');
+    return;
+  }
+  const cleanVal = val.replace(/[\s,!?，。！？]/g, '');
+  const cleanTarget = targetText.toLowerCase().replace(/[\s,!?，。！？]/g, '');
+  
+  const isMatch = cleanVal === cleanTarget || cleanVal.includes(cleanTarget) || cleanTarget.includes(cleanVal);
+  if (isMatch) {
+    statusEl.innerHTML = `
+      <div class="p-3 rounded-2xl bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-300 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300 text-xs flex items-center justify-between">
+        <div>
+          <span class="font-bold">🎉 Hoàn hảo! Bạn đã nắm vững ngữ âm câu: "${targetText}"</span>
+          <p class="text-[11px] text-emerald-600 mt-0.5">+10 EXP phát âm chính xác</p>
+        </div>
+        <span class="text-xl">💯</span>
+      </div>
+    `;
+    if (typeof addPracticeExp === 'function') addPracticeExp(10);
+  } else {
+    statusEl.innerHTML = `
+      <div class="p-3 rounded-2xl bg-amber-50 dark:bg-stone-800 border border-amber-300 dark:border-stone-700 text-amber-900 dark:text-amber-300 text-xs space-y-1.5">
+        <span class="font-bold">⚠️ Câu trả lời của bạn: "${input.value}"</span>
+        <p class="text-[11px] text-stone-600 dark:text-stone-400">Đáp án chuẩn là: <strong class="text-[#8B1E1E] dark:text-amber-400">${targetText}</strong></p>
+        <button type="button" onclick="showPinyinInputFallback('${qId}', '${targetText}')" class="text-xs text-rose-700 dark:text-amber-400 font-bold underline">Thử lại một lần nữa →</button>
+      </div>
+    `;
+  }
+}
+
+window.showPinyinInputFallback = showPinyinInputFallback;
+window.insertPinyinChar = insertPinyinChar;
+window.checkPinyinAnswer = checkPinyinAnswer;
