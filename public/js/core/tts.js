@@ -85,6 +85,20 @@ function playChineseTTS(text, forceGender = null) {
   }
 }
 
+function stopChineseTTS() {
+  if (currentTtsAudio) {
+    try {
+      currentTtsAudio.pause();
+      currentTtsAudio.currentTime = 0;
+    } catch (e) {}
+  }
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch (e) {}
+  }
+}
+
 function playWebSpeechFallback(text, targetGender, targetSpeed) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
   try {

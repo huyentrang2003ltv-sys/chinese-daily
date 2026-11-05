@@ -36,7 +36,7 @@ const TABS = {
     label: 'Luyện dịch', icon: 'languages', data: ['lessons'],
     init: () => { renderTranslationLessonList(); renderTranslationStage(); }
   },
-  aichat: { label: 'Hội thoại tình huống', icon: 'bot', data: ['aiScenarios'], init: () => initAiChatModule() },
+  aichat: { label: 'Hội thoại tình huống', icon: 'messages-square', data: ['aiScenarios'], init: () => initAiChatModule() },
   mockexam: { label: 'Thi thử HSK', icon: 'file-check-2', data: ['mockExam'], init: () => initMockExamModule() },
   woodblock: { label: 'Xếp khối gỗ', icon: 'puzzle', data: ['woodBlock'], init: () => initWoodBlockGame() },
   flipcard: { label: 'Lật thẻ tìm từ', icon: 'layers', data: ['flipCard'], init: () => initFlipCardGame() },
@@ -54,7 +54,17 @@ const NAV_GROUPS = [
 ];
 
 const DEFAULT_TAB = 'home';
-const TAB_ALIASES = { mindmap: 'grammar', today: 'home' };
+const TAB_ALIASES = {
+  mindmap: 'grammar',
+  today: 'home',
+  conversations: 'aichat',
+  conversation: 'aichat',
+  hoithoai: 'aichat',
+  scenario: 'aichat',
+  scenarios: 'aichat',
+  dialogue: 'aichat',
+  dialogues: 'aichat'
+};
 const LAST_TAB_PER_GROUP_KEY = 'yuhan_last_tab_per_group';
 const RECENT_TABS_KEY = 'yuhan_recent_tabs';
 

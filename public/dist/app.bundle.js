@@ -349,6 +349,20 @@ function playChineseTTS(text, forceGender = null) {
   }
 }
 
+function stopChineseTTS() {
+  if (currentTtsAudio) {
+    try {
+      currentTtsAudio.pause();
+      currentTtsAudio.currentTime = 0;
+    } catch (e) {}
+  }
+  if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+    try {
+      window.speechSynthesis.cancel();
+    } catch (e) {}
+  }
+}
+
 function playWebSpeechFallback(text, targetGender, targetSpeed) {
   if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
   try {
@@ -8563,6 +8577,17 @@ function initAiChatModule() {
   }
 
   refreshIcons();
+
+  // Support direct linking via hash query (e.g. #/aichat?lesson=1 or #/conversations?id=conv_005)
+  try {
+    const hashPart = (location.hash.split('?')[1]) || '';
+    const searchPart = location.search.replace(/^\?/, '') || '';
+    const params = new URLSearchParams(hashPart || searchPart);
+    const reqLesson = parseInt(params.get('lesson') || params.get('num') || params.get('id')?.replace(/\D/g, ''), 10);
+    if (reqLesson && reqLesson >= 1 && reqLesson <= 150) {
+      setTimeout(() => openConvStudio(reqLesson), 150);
+    }
+  } catch (_) {}
 }
 
 // -------------------------------------------------------------------------
@@ -8599,7 +8624,7 @@ function switchAiChatTabMode(mode) {
   const libView = document.getElementById('convLibraryView');
   const roleplayView = document.getElementById('convAiRoleplayView');
   const btnLib = document.getElementById('btn-conv-tab-library');
-  const btnRoleplay = document.getElementById('btn-conv-tab-aichat');
+  const btnRoleplay = document.getElementById('btn-conv-tab-roleplay') || document.getElementById('btn-conv-tab-aichat');
 
   if (mode === 'library') {
     if (libView) libView.classList.remove('hidden');
@@ -8867,7 +8892,8 @@ function renderConvCardsGrid() {
 
     return `
       <div 
-        class="glass-card rounded-2xl p-5 bg-white border border-stone-200/90 hover:border-amber-400 hover:shadow-md transition-all duration-200 flex flex-col justify-between group">
+        onclick="openConvStudio(${item.number})"
+        class="glass-card rounded-2xl p-5 bg-white border border-stone-200/90 hover:border-amber-400 hover:shadow-md transition-all duration-200 flex flex-col justify-between group cursor-pointer hover:-translate-y-0.5">
         
         <!-- Card Top Bar -->
         <div class="space-y-3">
@@ -9047,6 +9073,7 @@ function openConvStudio(lessonNumber) {
 
 function closeConvStudio() {
   stopConvAudioPlayback();
+  stopConvSpeechRecording();
   const modal = document.getElementById('convStudioModal');
   if (modal) modal.classList.add('hidden');
   renderConvCardsGrid();
@@ -9486,6 +9513,9 @@ function fallbackConvSpeechEvaluation() {
 // -------------------------------------------------------------------------
 function playConvTurnAudio(turnIndex) {
   if (!convActiveLesson) return;
+  if (convAudioSequenceActive) {
+    stopConvAudioPlayback();
+  }
   const turns = convActiveLesson.dialogue || [];
   const turn = turns[turnIndex];
   if (!turn) return;
@@ -9567,6 +9597,10 @@ function stopConvAudioPlayback() {
     convAudioSequenceTimeout = null;
   }
   convCurrentAudioTurnIndex = -1;
+
+  if (typeof stopChineseTTS === 'function') {
+    stopChineseTTS();
+  }
 
   const btn = document.getElementById('btnConvAudioPlayFull');
   const icon = document.getElementById('iconConvAudioPlayFull');
@@ -9979,6 +10013,19 @@ function analyzeSentenceGrammar() {
   `;
   addExp(5, 'Sử dụng Bác Sĩ Ngữ Pháp');
   refreshIcons();
+}
+
+
+// Global Escape key dismiss for Conv Studio Modal
+if (typeof window !== 'undefined') {
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const modal = document.getElementById('convStudioModal');
+      if (modal && !modal.classList.contains('hidden')) {
+        closeConvStudio();
+      }
+    }
+  });
 }
 
 })();
@@ -20258,7 +20305,7 @@ const TABS = {
     label: 'Luyện dịch', icon: 'languages', data: ['lessons'],
     init: () => { renderTranslationLessonList(); renderTranslationStage(); }
   },
-  aichat: { label: 'Hội thoại tình huống', icon: 'bot', data: ['aiScenarios'], init: () => initAiChatModule() },
+  aichat: { label: 'Hội thoại tình huống', icon: 'messages-square', data: ['aiScenarios'], init: () => initAiChatModule() },
   mockexam: { label: 'Thi thử HSK', icon: 'file-check-2', data: ['mockExam'], init: () => initMockExamModule() },
   woodblock: { label: 'Xếp khối gỗ', icon: 'puzzle', data: ['woodBlock'], init: () => initWoodBlockGame() },
   flipcard: { label: 'Lật thẻ tìm từ', icon: 'layers', data: ['flipCard'], init: () => initFlipCardGame() },
@@ -20276,7 +20323,17 @@ const NAV_GROUPS = [
 ];
 
 const DEFAULT_TAB = 'home';
-const TAB_ALIASES = { mindmap: 'grammar', today: 'home' };
+const TAB_ALIASES = {
+  mindmap: 'grammar',
+  today: 'home',
+  conversations: 'aichat',
+  conversation: 'aichat',
+  hoithoai: 'aichat',
+  scenario: 'aichat',
+  scenarios: 'aichat',
+  dialogue: 'aichat',
+  dialogues: 'aichat'
+};
 const LAST_TAB_PER_GROUP_KEY = 'yuhan_last_tab_per_group';
 const RECENT_TABS_KEY = 'yuhan_recent_tabs';
 
