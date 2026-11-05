@@ -106,7 +106,7 @@ const PLATFORM_POLICIES = {
     badge: "QUY CHẾ CHUNG",
     content: `
       <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">1. Mục đích và Phạm vi Áp dụng</h4>
-      <p class="mb-3 leading-relaxed">Nền tảng "Hi HSK - Học Tiếng Trung Mỗi Ngày" (每日中文) được vận hành nhằm cung cấp môi trường học tập trực tuyến chuẩn hóa HSK 3.0, từ vựng logic, chiết tự 214 bộ thủ và mô phỏng phòng thi chuẩn quốc tế cho học viên tại Việt Nam và cộng đồng người học toàn cầu.</p>
+      <p class="mb-3 leading-relaxed">Nền tảng "Học Tiếng Trung Mỗi Ngày" (每日中文) được vận hành nhằm cung cấp môi trường học tập trực tuyến chuẩn hóa HSK 3.0, từ vựng logic, chiết tự 214 bộ thủ và mô phỏng phòng thi chuẩn quốc tế cho học viên tại Việt Nam và cộng đồng người học toàn cầu.</p>
       
       <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">2. Nguyên tắc hoạt động</h4>
       <p class="mb-3 leading-relaxed">• Tôn trọng quyền sở hữu trí tuệ và chuẩn mực giáo dục ngôn ngữ quốc tế Hanban.<br>• Mọi học viên tham gia học tập, thảo luận trong Lớp học thông minh (Smart Peer Study Room) cam kết tôn trọng văn minh, không spam, không phát tán nội dung vi phạm thuần phong mỹ tục.<br>• Nền tảng đảm bảo vận hành ổn định 24/7 với hệ thống máy chủ biên CDN và bảo mật đa lớp.</p>
@@ -117,7 +117,7 @@ const PLATFORM_POLICIES = {
     badge: "CHỦ QUẢN & BẢN QUYỀN",
     content: `
       <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Đơn vị Vận hành & Bản quyền Nội dung</h4>
-      <p class="mb-2"><strong>Đơn vị chủ quản:</strong> Hệ thống Giáo dục Ngôn ngữ Trực tuyến Hi HSK EduTech.</p>
+      <p class="mb-2"><strong>Đơn vị chủ quản:</strong> Hệ thống Giáo dục Ngôn ngữ Trực tuyến Học Tiếng Trung Mỗi Ngày EduTech.</p>
       <p class="mb-2"><strong>Email tiếp nhận & khiếu nại:</strong> <a href="mailto:hoangpham1618@gmail.com" class="text-rose-700 dark:text-amber-400 font-bold underline">hoangpham1618@gmail.com</a></p>
       <p class="mb-2"><strong>Đường dây nóng hỗ trợ:</strong> 0988.88.66.66 (Zalo 24/7)</p>
       <p class="mb-2"><strong>Bản quyền hệ thống:</strong> Toàn bộ dữ liệu 3.592 từ vựng HSK, 14.605 từ chuyên ngành, 150 hội thoại tình huống và 1.000 cặp thẻ lật thuộc quyền sở hữu độc quyền của nền tảng.</p>
@@ -159,7 +159,7 @@ const PLATFORM_POLICIES = {
         <button onclick="closePlatformPolicyModal(); openComplaintModal('Khiếu nại thanh toán & Kích hoạt gói VIP');" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white text-xs font-bold hover:shadow-md transition-all inline-flex items-center gap-1.5 cursor-pointer">
           <span>Gửi khiếu nại trực tuyến ngay →</span>
         </button>
-        <a href="mailto:hoangpham1618@gmail.com?subject=[Hi HSK Khiếu Nại] Cần hỗ trợ khẩn cấp" class="px-4 py-2 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 text-stone-800 dark:text-stone-200 text-xs font-bold border border-stone-300 dark:border-stone-700 transition-all inline-flex items-center gap-1.5">
+        <a href="mailto:hoangpham1618@gmail.com?subject=[Học Tiếng Trung Mỗi Ngày - Khiếu Nại] Cần hỗ trợ khẩn cấp" class="px-4 py-2 rounded-xl bg-stone-100 dark:bg-stone-800 hover:bg-stone-200 text-stone-800 dark:text-stone-200 text-xs font-bold border border-stone-300 dark:border-stone-700 transition-all inline-flex items-center gap-1.5">
           <span>Soạn email tới hoangpham1618@gmail.com</span>
         </a>
       </div>
@@ -225,8 +225,8 @@ const PLATFORM_POLICIES = {
     title: "Danh mục chính sách nền tảng",
     badge: "MỤC LỤC CHÍNH SÁCH",
     content: `
-      <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Tổng hợp Quy chuẩn Pháp lý Nền tảng Hi HSK</h4>
-      <p class="mb-3 leading-relaxed">Nền tảng Hi HSK tuân thủ nghiêm ngặt các quy định pháp luật hiện hành về cung cấp dịch vụ nội dung số và thương mại điện tử.</p>
+      <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Tổng hợp Quy chuẩn Pháp lý Nền tảng Học Tiếng Trung Mỗi Ngày</h4>
+      <p class="mb-3 leading-relaxed">Nền tảng Học Tiếng Trung Mỗi Ngày tuân thủ nghiêm ngặt các quy định pháp luật hiện hành về cung cấp dịch vụ nội dung số và thương mại điện tử.</p>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
         <button onclick="switchPlatformPolicyTab('operating')" class="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-left hover:bg-rose-50 hover:text-rose-700 font-bold cursor-pointer">1. Quy chế hoạt động số</button>
         <button onclick="switchPlatformPolicyTab('owner')" class="p-2.5 rounded-xl bg-stone-100 dark:bg-stone-800 text-left hover:bg-rose-50 hover:text-rose-700 font-bold cursor-pointer">2. Thông tin chủ quản</button>
@@ -279,11 +279,11 @@ function showAppInstallModal(platform = 'google_play') {
   const iconEl = document.getElementById('appInstallIcon');
 
   if (platform === 'app_store') {
-    if (titleEl) titleEl.innerText = 'Cài đặt Hi HSK trên iPhone / iPad (iOS)';
+    if (titleEl) titleEl.innerText = 'Cài đặt Học Tiếng Trung Mỗi Ngày trên iPhone / iPad (iOS)';
     if (descEl) descEl.innerHTML = 'Để học mượt mà như app gốc trên iOS: Mở Safari &rarr; Nhấn biểu tượng <b>Chia sẻ (Share)</b> &rarr; Chọn <b>"Thêm vào Màn hình chính" (Add to Home Screen)</b>.';
     if (iconEl) iconEl.innerText = '🍏';
   } else {
-    if (titleEl) titleEl.innerText = 'Cài đặt Hi HSK trên Android / Google Play';
+    if (titleEl) titleEl.innerText = 'Cài đặt Học Tiếng Trung Mỗi Ngày trên Android / Google Play';
     if (descEl) descEl.innerHTML = 'Để cài đặt app trên Android: Mở Chrome &rarr; Nhấn menu <b>3 chấm</b> ở góc trên phải &rarr; Chọn <b>"Cài đặt ứng dụng" (Install App)</b> hoặc tải trực tiếp file APK an toàn.';
     if (iconEl) iconEl.innerText = '▶️';
   }
@@ -380,7 +380,7 @@ async function submitComplaintForm(e) {
     if (typeof showToast === 'function') {
       showToast('Đang kết nối mở trình soạn email gửi tới hoangpham1618@gmail.com...', 'info');
     }
-    const subject = encodeURIComponent(`[Hi HSK Khiếu Nại] ${category} - ${name}`);
+    const subject = encodeURIComponent(`[Học Tiếng Trung Mỗi Ngày - Khiếu Nại] ${category} - ${name}`);
     const body = encodeURIComponent(fullPayload);
     window.open(`mailto:hoangpham1618@gmail.com?subject=${subject}&body=${body}`, '_blank');
     closeComplaintModal();

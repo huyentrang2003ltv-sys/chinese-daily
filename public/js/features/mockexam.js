@@ -772,7 +772,7 @@ function downloadMockExamPdf() {
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <title>Đề Thi Thử HSK ${level} - Đề Số ${testNumber} (${testCode}) - Hi HSK</title>
+  <title>Đề Thi Thử HSK ${level} - Đề Số ${testNumber} (${testCode}) - Học Tiếng Trung Mỗi Ngày</title>
   <style>
     @page {
       size: A4;
@@ -943,7 +943,7 @@ function downloadMockExamPdf() {
 <body>
   <div class="print-toolbar no-print">
     <div>
-      <strong>Hi HSK • Đề Thi Thử HSK ${level} (Mã: ${testCode})</strong>
+      <strong>Học Tiếng Trung Mỗi Ngày • Đề Thi Thử HSK ${level} (Mã: ${testCode})</strong>
       <span style="font-size: 11px; opacity: 0.8; margin-left: 10px;">(In ấn trực tiếp hoặc Lưu dưới dạng file PDF)</span>
     </div>
     <div style="display: flex; gap: 10px;">
@@ -975,7 +975,7 @@ function downloadMockExamPdf() {
     <div style="padding: 10px 14px; background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; margin-bottom: 20px; font-size: 11px; color: #92400e;">
       <strong>LƯU Ý DÀNH CHO THÍ SINH:</strong><br>
       1. Đề thi gồm ${questions.length} câu hỏi trắc nghiệm và thực hành. Hãy đọc kỹ từng câu và khoanh tròn vào đáp án đúng.<br>
-      2. Đối với phần thi Nghe, bạn có thể nghe trực tiếp trên ứng dụng <em>Hi HSK</em> hoặc nhờ giáo viên đọc theo transcript.<br>
+      2. Đối với phần thi Nghe, bạn có thể nghe trực tiếp trên ứng dụng <em>Học Tiếng Trung Mỗi Ngày</em> hoặc nhờ giáo viên đọc theo transcript.<br>
       3. Bảng đáp án chuẩn và lời giải chi tiết được in ở trang cuối của tài liệu này để đối chiếu sau khi hoàn thành bài thi.
     </div>
 
@@ -1096,7 +1096,7 @@ function downloadMockExamPdf() {
     </div>
 
     <div style="margin-top: 30px; text-align: center; font-size: 11px; color: #9ca3af; border-top: 1px solid #e5e7eb; padding-top: 10px;">
-      Bản quyền tài liệu thuộc về Học Tiếng Trung Mỗi Ngày (Hi HSK) • hoangpham1618@gmail.com • Chúc bạn ôn thi đạt điểm cao!
+      Bản quyền tài liệu thuộc về Học Tiếng Trung Mỗi Ngày • hoangpham1618@gmail.com • Chúc bạn ôn thi đạt điểm cao!
     </div>
   </div>
 </body>
