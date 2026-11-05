@@ -6069,5 +6069,103 @@
 
     </div>
   </div>
+
+  <!-- HSK 3.0 Standard Course Lesson Detail Modal -->
+  <div id="hsk30LessonDetailModal" class="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5 hidden" onclick="if(event.target === this) closeHsk30LessonModal()">
+    <div class="glass-card bg-white dark:bg-[#161B22] rounded-3xl border border-amber-200 dark:border-stone-800 shadow-2xl max-w-4xl w-full max-h-[92vh] flex flex-col overflow-hidden animate-scale-up">
+      <!-- Header -->
+      <div class="p-5 sm:p-6 border-b border-amber-100 dark:border-stone-800 bg-gradient-to-r from-amber-50/70 via-stone-50/60 to-amber-50/70 dark:from-[#1c222d] dark:via-[#161B22] dark:to-[#1c222d] flex items-start justify-between gap-4">
+        <div class="space-y-1">
+          <div class="flex items-center gap-2 flex-wrap">
+            <span id="hsk30ModalLevelBadge" class="px-2.5 py-0.5 rounded-full text-xs font-black bg-[#8B1E1E] text-white shadow-2xs">
+              HSK 1 · Bài 1
+            </span>
+            <span id="hsk30ModalThemeBadge" class="px-2.5 py-0.5 rounded-full text-2xs font-bold bg-amber-100 text-amber-900 dark:bg-stone-800 dark:text-amber-300">
+              Chủ đề
+            </span>
+          </div>
+          <div class="flex items-center gap-2 pt-1">
+            <h3 id="hsk30ModalTitleZh" class="font-hanzi font-black text-2xl sm:text-3xl text-stone-900 dark:text-stone-100">AI小语，你好！</h3>
+            <button id="hsk30ModalTtsBtn" class="p-2 rounded-xl bg-amber-100/70 hover:bg-amber-200 dark:bg-stone-800 text-amber-900 dark:text-amber-300 transition-colors cursor-pointer" title="Nghe phát âm tiêu đề">
+              <i data-lucide="volume-2" class="w-5 h-5"></i>
+            </button>
+          </div>
+          <p id="hsk30ModalTitlePinyin" class="text-xs sm:text-sm text-stone-500 dark:text-stone-400 italic">AI Xiǎoyǔ, nǐ hǎo!</p>
+          <p id="hsk30ModalTitleVi" class="text-sm font-semibold text-stone-700 dark:text-stone-300">AI Xiaoyu, chào bạn!</p>
+        </div>
+        <button onclick="closeHsk30LessonModal()" class="w-9 h-9 rounded-2xl bg-stone-100 hover:bg-stone-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-500 flex items-center justify-center transition-colors cursor-pointer shrink-0" title="Đóng">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <!-- Quick Action Bar -->
+      <div class="px-5 py-2.5 bg-amber-50/40 dark:bg-stone-900/60 border-b border-amber-100 dark:border-stone-800 flex items-center justify-between flex-wrap gap-2 text-xs">
+        <div class="flex items-center gap-2 flex-wrap">
+          <button onclick="playHsk30AllDialogues()" class="px-3 py-1.5 rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-100 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 border border-amber-200 dark:border-stone-700 font-medium flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer">
+            <i data-lucide="headphones" class="w-3.5 h-3.5 text-amber-600"></i>
+            <span>Nghe Toàn Bài</span>
+          </button>
+          <button onclick="saveAllHsk30LessonVocab()" class="px-3 py-1.5 rounded-xl bg-white dark:bg-stone-800 hover:bg-amber-100 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 border border-amber-200 dark:border-stone-700 font-medium flex items-center gap-1.5 transition-all shadow-2xs cursor-pointer">
+            <i data-lucide="bookmark-plus" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span>Lưu Từ Vựng Vào Sổ</span>
+          </button>
+        </div>
+        <button onclick="switchHsk30LessonTab('practice')" class="px-3 py-1.5 rounded-xl bg-gradient-to-r from-amber-600 to-amber-700 hover:from-amber-700 hover:to-amber-800 text-white font-bold flex items-center gap-1.5 transition-all shadow-xs cursor-pointer">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-200"></i>
+          <span>Làm Bài Tập (+20 EXP)</span>
+        </button>
+      </div>
+
+      <!-- Tab Navigation -->
+      <div class="flex border-b border-stone-200 dark:border-stone-800 bg-stone-50/50 dark:bg-stone-900/40 overflow-x-auto custom-scrollbar px-3">
+        <button id="hsk30TabBtn-dialogues" onclick="switchHsk30LessonTab('dialogues')" class="px-4 py-3 text-xs font-bold border-b-2 border-[#8B1E1E] text-[#8B1E1E] dark:text-amber-400 whitespace-nowrap flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+          <span>💬 Hội Thoại & Bài Đọc</span>
+        </button>
+        <button id="hsk30TabBtn-vocabulary" onclick="switchHsk30LessonTab('vocabulary')" class="px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>📖 Từ Vựng Trọng Tâm</span>
+        </button>
+        <button id="hsk30TabBtn-grammar" onclick="switchHsk30LessonTab('grammar')" class="px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="compass" class="w-3.5 h-3.5"></i>
+          <span>🎯 Trọng Điểm Ngữ Pháp</span>
+        </button>
+        <button id="hsk30TabBtn-culture" onclick="switchHsk30LessonTab('culture')" class="px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i>
+          <span>💡 Văn Hóa & Mẹo HSK 3.0</span>
+        </button>
+        <button id="hsk30TabBtn-practice" onclick="switchHsk30LessonTab('practice')" class="px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-1.5 cursor-pointer">
+          <i data-lucide="pencil" class="w-3.5 h-3.5"></i>
+          <span>✍️ Luyện Tập Củng Cố</span>
+        </button>
+      </div>
+
+      <!-- Tab Content Area (Scrollable) -->
+      <div id="hsk30LessonModalBody" class="flex-1 overflow-y-auto p-5 sm:p-6 custom-scrollbar space-y-6">
+        <!-- Injected via JavaScript -->
+      </div>
+
+      <!-- Footer Navigation Bar -->
+      <div class="p-4 border-t border-stone-200 dark:border-stone-800 bg-stone-50 dark:bg-stone-900/80 flex items-center justify-between gap-3">
+        <button id="hsk30PrevLessonBtn" onclick="navigateHsk30Lesson('prev')" class="px-4 py-2 rounded-xl text-xs font-bold bg-white dark:bg-stone-800 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 shadow-2xs flex items-center gap-1.5 cursor-pointer transition-all">
+          <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          <span>Bài trước</span>
+        </button>
+        <div id="hsk30LessonProgressText" class="text-xs font-semibold text-stone-500 dark:text-stone-400">
+          Bài 1 / 48
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="hsk30NextLessonBtn" onclick="navigateHsk30Lesson('next')" class="px-4 py-2 rounded-xl text-xs font-bold bg-amber-100/70 hover:bg-amber-200/80 dark:bg-amber-950/60 dark:hover:bg-amber-900 text-[#8B1E1E] dark:text-amber-300 border border-amber-200 dark:border-stone-700 shadow-2xs flex items-center gap-1.5 cursor-pointer transition-all">
+            <span>Bài tiếp theo</span>
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+          <button onclick="closeHsk30LessonModal()" class="px-4 py-2 rounded-xl text-xs font-bold bg-stone-200 hover:bg-stone-300 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 cursor-pointer transition-all">
+            Đóng
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
