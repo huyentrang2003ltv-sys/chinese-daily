@@ -3592,79 +3592,104 @@ function filterExamMatrixLevel(lvl) {
 function filterPathwayGrammarLevel(lvl) {
   currentPathwayGrammarLevel = lvl;
   const container = document.getElementById('pathwayDynamicContent');
-  if (container) renderPathwayGrammar(container);
+  if (container) {
+    renderPathwayGrammar(container);
+    if (typeof refreshIcons === 'function') refreshIcons(container);
+  }
 }
 
 function renderPathwayGrammar(container) {
-  const data = hsk30RoadmapData;
+  const data = hsk30RoadmapData || {};
   const sections = data.grammarSections || [];
+  if (!sections.length) {
+    container.innerHTML = '<div class="p-8 text-center text-stone-500">Đang tải dữ liệu trọng tâm ngữ pháp HSK 3.0...</div>';
+    return;
+  }
   const currentSection = sections.find(s => s.level === currentPathwayGrammarLevel) || sections[0];
+  const items = currentSection.items || [];
+  const totalCount = sections.reduce((acc, s) => acc + (s.items?.length || 0), 0);
 
   let html = `
     <div class="space-y-6">
       <div class="flex items-center justify-between flex-wrap gap-3 p-3 rounded-2xl bg-amber-50/60 dark:bg-amber-950/20 border border-amber-200 dark:border-stone-700">
         <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar">
           ${sections.map(s => {
-            const isActive = s.level === currentPathwayGrammarLevel;
+            const isActive = s.level === currentSection.level;
             const btnClass = isActive 
               ? 'px-4 py-2 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm border border-transparent'
               : 'px-4 py-2 text-xs font-bold rounded-xl bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-300 hover:bg-amber-100 dark:hover:bg-stone-800 border border-stone-200 dark:border-stone-700';
             return `
               <button onclick="filterPathwayGrammarLevel(${jsArg(s.level)})" class="${btnClass} cursor-pointer transition-all whitespace-nowrap">
-                <span>${s.level}</span>
-                <span class="opacity-80 text-[11px] ml-1">(${s.items.length} cấu trúc)</span>
+                <span>${escapeHtml(s.level)}</span>
+                <span class="opacity-80 text-[11px] ml-1">(${(s.items || []).length} cấu trúc)</span>
               </button>
             `;
           }).join('')}
         </div>
         <div class="text-xs text-stone-500 dark:text-stone-400">
-          Tổng cộng: <strong>48 trọng tâm ngữ pháp chuẩn sơ cấp</strong>
+          Tổng cộng: <strong>${totalCount} trọng tâm ngữ pháp chuẩn HSK 3.0</strong>
         </div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        ${currentSection.items.map(item => `
-          <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3.5">
-            <div class="space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-[#8B1E1E] dark:text-amber-400 border border-amber-200 dark:border-amber-800">
-                  ${item.category || currentSection.level}
-                </span>
-                <span class="text-xs text-stone-400 font-mono">#${item.id}</span>
-              </div>
+        ${items.map((item, idx) => {
+          const id = item.id || ('g_' + (idx + 1));
+          const title = item.title || item.name || 'Cấu trúc ngữ pháp';
+          const category = item.category || currentSection.level;
+          const explanation = item.explanation || item.notes || 'Cấu trúc nòng cốt thường gặp trong đề thi HSK.';
+          const formula = item.formula || item.pattern || 'Công thức chuẩn';
+          const exampleZh = item.exampleZh || (item.example ? item.example.split(/[\(（]/)[0].trim() : '') || item.example || '';
+          const examplePinyin = item.examplePinyin || item.pinyin || '';
+          const exampleVi = item.exampleVi || item.translation || (item.example && item.example.includes('(') ? item.example.match(/[\(（]([^\)）]+)[\)）]/)?.[1] : '') || '';
 
-              <h4 class="text-sm sm:text-base font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
-                ${item.title}
-              </h4>
-              <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
-                ${item.explanation}
-              </p>
-
-              <div class="p-3 rounded-xl bg-amber-50/70 dark:bg-stone-800/60 border border-amber-200/80 dark:border-stone-700 font-mono text-xs text-amber-950 dark:text-amber-300 font-bold space-y-1">
-                <span class="text-[10px] text-stone-400 font-normal uppercase tracking-wider block font-sans">Công thức toán học hóa:</span>
-                <span>${item.formula}</span>
-              </div>
-
-              <div class="p-3 rounded-xl bg-[#FFFDF9] dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 text-xs space-y-1">
+          return `
+            <div class="glass-card rounded-2xl p-5 bg-white dark:bg-[#161B22] border border-stone-200 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3.5 hover:shadow-md transition-shadow">
+              <div class="space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-[10px] text-stone-400 uppercase tracking-wider font-bold">Ví dụ thực chiến:</span>
-                  <button onclick="playChineseTTS(${jsArg(item.exampleZh)}, 'female')" class="text-amber-800 dark:text-amber-300 hover:underline text-[11px] flex items-center gap-1 cursor-pointer">
-                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-                    <span>Nghe câu</span>
-                  </button>
+                  <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-amber-950 text-[#8B1E1E] dark:text-amber-400 border border-amber-200 dark:border-amber-800">
+                    ${escapeHtml(category)}
+                  </span>
+                  <span class="text-xs text-stone-400 font-mono">#${escapeHtml(String(id))}</span>
                 </div>
-                <p class="font-hanzi text-sm font-semibold text-[#8B1E1E] dark:text-red-400">${item.exampleZh}</p>
-                <p class="text-[11px] text-amber-900 dark:text-amber-300 font-mono">${item.examplePinyin}</p>
-                <p class="text-xs text-stone-600 dark:text-stone-400">${item.exampleVi}</p>
+
+                <h4 class="text-sm sm:text-base font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
+                  ${escapeHtml(title)}
+                </h4>
+                <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+                  ${escapeHtml(explanation)}
+                </p>
+
+                <div class="p-3 rounded-xl bg-amber-50/70 dark:bg-stone-800/60 border border-amber-200/80 dark:border-stone-700 font-mono text-xs text-amber-950 dark:text-amber-300 font-bold space-y-1">
+                  <span class="text-[10px] text-stone-400 font-normal uppercase tracking-wider block font-sans">Công thức toán học hóa:</span>
+                  <span>${escapeHtml(formula)}</span>
+                </div>
+
+                <div class="p-3 rounded-xl bg-[#FFFDF9] dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 text-xs space-y-1">
+                  <div class="flex items-center justify-between">
+                    <span class="text-[10px] text-stone-400 uppercase tracking-wider font-bold">Ví dụ thực chiến:</span>
+                    ${exampleZh ? `
+                      <button onclick="playChineseTTS(${jsArg(exampleZh)}, 'female')" class="text-amber-800 dark:text-amber-300 hover:underline text-[11px] flex items-center gap-1 cursor-pointer">
+                        <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                        <span>Nghe câu</span>
+                      </button>
+                    ` : ''}
+                  </div>
+                  <p class="font-hanzi text-sm font-semibold text-[#8B1E1E] dark:text-red-400">${escapeHtml(exampleZh)}</p>
+                  ${examplePinyin ? `<p class="text-[11px] text-amber-900 dark:text-amber-300 font-mono">${escapeHtml(examplePinyin)}</p>` : ''}
+                  ${exampleVi ? `<p class="text-xs text-stone-600 dark:text-stone-400">${escapeHtml(exampleVi)}</p>` : ''}
+                </div>
               </div>
             </div>
-          </div>
-        `).join('')}
+          `;
+        }).join('')}
       </div>
     </div>
   `;
 
   container.innerHTML = html;
+  if (typeof refreshIcons === 'function') {
+    refreshIcons(container);
+  }
 }
 
 function renderPathwayTranslation(container) {

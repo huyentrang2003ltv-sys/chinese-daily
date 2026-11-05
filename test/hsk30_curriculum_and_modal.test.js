@@ -196,4 +196,81 @@ test('HSK 3.0 Standard Course Curriculum & Interactive Lesson Detail Modal', asy
     sandbox.closeHsk30LessonModal();
     assert.equal(modal.classList.contains('hidden'), true, 'Modal must have hidden class after close');
   });
+
+  await t.test('4. Validates all 48 grammar structures and verifies renderPathwayGrammar has 0 undefined', () => {
+    assert.ok(Array.isArray(roadmapData.grammarSections), 'grammarSections must be an array');
+    const sections = roadmapData.grammarSections;
+    assert.equal(sections.length, 4, 'Must have 4 grammar sections: HSK 1, 2, 3, 4 - 6');
+
+    const totalGrammarItems = sections.reduce((acc, s) => acc + (s.items ? s.items.length : 0), 0);
+    assert.equal(totalGrammarItems, 48, 'Must have exactly 48 grammar structures in total');
+
+    // Expected distribution
+    const hsk1Sec = sections.find(s => s.level === 'HSK 1');
+    const hsk2Sec = sections.find(s => s.level === 'HSK 2');
+    const hsk3Sec = sections.find(s => s.level === 'HSK 3');
+    const hsk4Sec = sections.find(s => s.level === 'HSK 4 - 6');
+
+    assert.ok(hsk1Sec && hsk1Sec.items.length === 14, 'HSK 1 must have 14 grammar structures');
+    assert.ok(hsk2Sec && hsk2Sec.items.length === 12, 'HSK 2 must have 12 grammar structures');
+    assert.ok(hsk3Sec && hsk3Sec.items.length === 8, 'HSK 3 must have 8 grammar structures');
+    assert.ok(hsk4Sec && hsk4Sec.items.length === 14, 'HSK 4 - 6 must have 14 grammar structures');
+
+    // Thorough data schema verification
+    sections.forEach(sec => {
+      sec.items.forEach((item, idx) => {
+        const tag = `${sec.level} Item ${idx + 1} (${item.title || item.name})`;
+        assert.ok(item.id, `${tag} missing id`);
+        assert.ok(item.title, `${tag} missing title`);
+        assert.ok(item.formula || item.pattern, `${tag} missing formula`);
+        assert.ok(item.explanation, `${tag} missing explanation`);
+        assert.ok(item.exampleZh, `${tag} missing exampleZh`);
+        assert.ok(item.examplePinyin, `${tag} missing examplePinyin`);
+        assert.ok(item.exampleVi, `${tag} missing exampleVi`);
+
+        // Check for literal "undefined" string
+        assert.ok(!String(item.id).includes('undefined'), `${tag} id has undefined`);
+        assert.ok(!String(item.title).includes('undefined'), `${tag} title has undefined`);
+        assert.ok(!String(item.formula).includes('undefined'), `${tag} formula has undefined`);
+        assert.ok(!String(item.explanation).includes('undefined'), `${tag} explanation has undefined`);
+        assert.ok(!String(item.exampleZh).includes('undefined'), `${tag} exampleZh has undefined`);
+        assert.ok(!String(item.examplePinyin).includes('undefined'), `${tag} examplePinyin has undefined`);
+        assert.ok(!String(item.exampleVi).includes('undefined'), `${tag} exampleVi has undefined`);
+      });
+    });
+
+    // Test frontend render execution in sandbox
+    const container = { innerHTML: '' };
+    const elements = { pathwayDynamicContent: container };
+    const mockDocument = {
+      getElementById(id) { return elements[id] || null; },
+      querySelectorAll() { return []; }
+    };
+    const sandbox = {
+      window: {},
+      document: mockDocument,
+      hsk30RoadmapData: roadmapData,
+      currentPathwayGrammarLevel: 'HSK 1',
+      escapeHtml(str) { return String(str || ''); },
+      jsArg(v) { return JSON.stringify(v); },
+      refreshIcons() {},
+      console
+    };
+    vm.createContext(sandbox);
+
+    // Run pathway script
+    vm.runInContext(pathwayJs, sandbox);
+
+    // Test rendering for each section
+    ['HSK 1', 'HSK 2', 'HSK 3', 'HSK 4 - 6'].forEach(lvl => {
+      sandbox.filterPathwayGrammarLevel(lvl);
+      const renderedHtml = container.innerHTML;
+
+      assert.ok(renderedHtml.length > 0, `HTML rendered for ${lvl} must not be empty`);
+      assert.ok(!renderedHtml.includes('#undefined'), `Rendered HTML for ${lvl} must not contain #undefined`);
+      assert.ok(!renderedHtml.includes('>undefined<'), `Rendered HTML for ${lvl} must not contain >undefined<`);
+      assert.ok(!renderedHtml.includes('undefined'), `Rendered HTML for ${lvl} must not contain the word undefined`);
+      assert.ok(renderedHtml.includes('48 trọng tâm ngữ pháp chuẩn HSK 3.0'), 'Must show total 48 grammar structures');
+    });
+  });
 });
