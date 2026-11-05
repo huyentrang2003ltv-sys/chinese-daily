@@ -5948,8 +5948,19 @@
 
 
   <!-- VIEW 2: MODAL / FULL INTERACTIVE STUDY STUDIO (CHẾ ĐỘ HỌC TẬP CHI TIẾT 15 MỤC) -->
-      <div id="convStudioModal" class="hidden fixed inset-0 z-[100] overflow-y-auto bg-stone-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-5" onclick="if(event.target === this) closeConvStudio()">
-        <div class="bg-[#FAF7F2] w-full max-w-4xl rounded-2xl shadow-2xl border border-amber-200/90 overflow-hidden flex flex-col max-h-[92vh]">
+      <div id="convStudioModal" class="hidden fixed inset-0 z-[100] overflow-y-auto bg-stone-950/80 backdrop-blur-md flex items-start sm:items-center justify-center p-2 sm:p-4 md:p-6" onclick="if(event.target === this) closeConvStudio()">
+        <!-- Floating Super-Visible Close Button (Always fixed at top-right of screen) -->
+        <button 
+          onclick="closeConvStudio()" 
+          style="position: fixed; top: 16px; right: 20px; z-index: 99999;"
+          class="flex items-center gap-2 px-4 py-2.5 rounded-full bg-stone-900 hover:bg-black text-white text-xs font-bold shadow-2xl border-2 border-amber-400 hover:border-amber-300 transition-all cursor-pointer hover:scale-105 active:scale-95 group"
+          title="Đóng bài học (Phím ESC hoặc click ra ngoài)">
+          <span class="w-2.5 h-2.5 rounded-full bg-rose-500 animate-pulse"></span>
+          <i data-lucide="x" class="w-4 h-4 text-amber-300"></i>
+          <span class="text-xs font-black tracking-wide">Đóng (ESC)</span>
+        </button>
+
+        <div class="relative bg-[#FAF7F2] dark:bg-[#161B22] w-full max-w-4xl rounded-2xl sm:rounded-3xl shadow-2xl border border-amber-300/80 dark:border-stone-800 overflow-hidden flex flex-col my-auto max-h-[96vh] sm:max-h-[92vh]">
           <!-- Studio Header -->
           <div class="p-4 lg:p-5 bg-gradient-to-r from-[#8B1E1E] via-[#9B2424] to-[#731818] text-white flex items-center justify-between shadow-md shrink-0">
             <div class="flex items-center gap-3 min-w-0">
@@ -5986,9 +5997,13 @@
                 <i data-lucide="check-circle" class="w-4 h-4"></i>
                 <span id="convStudioCompleteBtnText">Đánh dấu hoàn thành</span>
               </button>
-              <!-- Close Window Button -->
-              <button onclick="closeConvStudio()" class="p-2.5 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-all">
-                <i data-lucide="x" class="w-4 h-4"></i>
+              <!-- Close Window Button (Nút Đóng Rõ Ràng Có Chữ và Icon X) -->
+              <button 
+                onclick="closeConvStudio()" 
+                class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white text-stone-900 hover:bg-rose-50 hover:text-rose-700 font-bold text-xs shadow-md transition-all cursor-pointer hover:scale-105 active:scale-95 shrink-0" 
+                title="Đóng cửa sổ (Phím ESC)">
+                <i data-lucide="x" class="w-4 h-4 text-[#8B1E1E]"></i>
+                <span class="hidden sm:inline font-bold">Đóng</span>
               </button>
             </div>
           </div>
@@ -6170,23 +6185,34 @@
               </div>
             </div>
 
-            <!-- Footer Navigation: Prev & Next Lesson -->
-            <div class="flex items-center justify-between pt-4 border-t border-stone-200">
+            <!-- Footer Navigation: Prev, Next & Close Lesson -->
+            <div class="flex items-center justify-between pt-4 border-t border-stone-200 dark:border-stone-800 flex-wrap gap-2">
               <button 
                 id="btnConvPrevLesson" 
                 onclick="navigateConvLesson(-1)" 
-                class="px-4 py-2 rounded-xl bg-white border border-stone-200 hover:bg-stone-50 text-stone-700 text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer">
+                class="px-4 py-2 rounded-xl bg-white dark:bg-stone-800 border border-stone-200 dark:border-stone-700 hover:bg-stone-50 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs cursor-pointer">
                 <i data-lucide="chevron-left" class="w-4 h-4"></i>
                 <span>Bài trước</span>
               </button>
+              
               <span id="convLessonProgressFooter" class="text-xs text-stone-400 font-mono">Bài 1 / 150</span>
-              <button 
-                id="btnConvNextLesson" 
-                onclick="navigateConvLesson(1)" 
-                class="px-4 py-2 rounded-xl bg-[#8B1E1E] hover:bg-[#A52A2A] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
-                <span>Bài tiếp theo</span>
-                <i data-lucide="chevron-right" class="w-4 h-4"></i>
-              </button>
+              
+              <div class="flex items-center gap-2">
+                <button 
+                  id="btnConvNextLesson" 
+                  onclick="navigateConvLesson(1)" 
+                  class="px-4 py-2 rounded-xl bg-[#8B1E1E] hover:bg-[#A52A2A] text-white text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm cursor-pointer">
+                  <span>Bài tiếp theo</span>
+                  <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                </button>
+                <button 
+                  onclick="closeConvStudio()" 
+                  class="px-4 py-2 rounded-xl text-xs font-bold bg-stone-200 hover:bg-stone-300 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 cursor-pointer transition-all flex items-center gap-1.5"
+                  title="Đóng bài học (Phím ESC)">
+                  <i data-lucide="x" class="w-4 h-4"></i>
+                  <span>Đóng bài học</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>

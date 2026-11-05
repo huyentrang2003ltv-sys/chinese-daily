@@ -43,4 +43,13 @@ test('Situational Dialogues, Routing & Modal Architecture Integrity', async (t) 
   await t.test('6. aichat.js card rendering attaches onclick to outer card', () => {
     assert.match(aichatJs, /onclick="openConvStudio\(\$\{item\.number\}\)"/);
   });
+
+  await t.test('7. convStudioModal provides multiple prominent close buttons', () => {
+    // Floating top-right ESC pill
+    assert.ok(indexHtml.includes('closeConvStudio()') && indexHtml.includes('Đóng (ESC)'), 'Must have floating ESC close button');
+    // Header prominent close button
+    assert.ok(indexHtml.includes('Nút Đóng Rõ Ràng Có Chữ và Icon X'), 'Must have prominent header close button');
+    // Footer close lesson button
+    assert.ok(indexHtml.includes('Đóng bài học'), 'Must have footer close button');
+  });
 });
