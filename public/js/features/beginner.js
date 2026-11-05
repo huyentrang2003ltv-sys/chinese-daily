@@ -93,6 +93,13 @@ const BEGINNER_CURRICULUM = [
             </button>
           </div>
         </div>
+
+        <div class="p-3 rounded-2xl bg-amber-50/80 dark:bg-stone-800 border border-amber-300 dark:border-stone-700 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <span class="text-xs text-stone-700 dark:text-stone-300">📈 Muốn tra cứu toàn diện 4 thanh điệu, quy tắc biến âm (3+3, chữ 不, chữ 一)?</span>
+          <button onclick="closeBeginnerDayModal(); switchTab('pinyin'); switchPinyinSubTab('tones');" class="px-3 py-1.5 rounded-xl bg-[#8B1E1E] text-white font-bold text-xs hover:bg-[#A52A2A] transition-colors cursor-pointer shrink-0">
+            Xem Bảng Thanh Điệu →
+          </button>
+        </div>
       </div>
     `
   },
@@ -155,6 +162,13 @@ const BEGINNER_CURRICULUM = [
             <span><strong>P:</strong> Bật mạnh luồng hơi qua môi ➔ <em>píngguǒ (quả táo)</em></span>
             <button onclick="playBeginnerAudio('píngguǒ')" class="px-2 py-0.5 rounded bg-stone-200 dark:bg-stone-700 font-bold">🔊 píngguǒ</button>
           </div>
+        </div>
+
+        <div class="p-3 rounded-2xl bg-amber-50/80 dark:bg-stone-800 border border-amber-300 dark:border-stone-700 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
+          <span class="text-xs text-stone-700 dark:text-stone-300">📖 Muốn tra cứu toàn bộ 23 Thanh mẫu, 36 Vận mẫu & bảng ghép âm?</span>
+          <button onclick="closeBeginnerDayModal(); switchTab('pinyin');" class="px-3 py-1.5 rounded-xl bg-[#8B1E1E] text-white font-bold text-xs hover:bg-[#A52A2A] transition-colors cursor-pointer shrink-0">
+            Mở Bảng Pinyin Toàn Diện →
+          </button>
         </div>
       </div>
     `

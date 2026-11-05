@@ -702,7 +702,31 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-4">
+
+          <!-- Hub 0: Bảng Phiên Âm Pinyin Chuẩn -->
+          <div onclick="switchTab('pinyin')" class="glass-card rounded-3xl p-5 bg-[#FFFDF9] dark:bg-[#161B22] border-2 border-stone-200 dark:border-stone-800 hover:border-amber-500 dark:hover:border-amber-400 transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between space-y-4 group">
+            <div>
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-amber-600 to-rose-600 text-white flex items-center justify-center font-bold text-lg shadow-sm group-hover:scale-110 transition-transform">
+                  👄
+                </div>
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300">
+                  Chuẩn 2026
+                </span>
+              </div>
+              <h4 class="font-bold text-sm text-stone-900 dark:text-stone-100 mt-3 group-hover:text-[#8B1E1E] dark:group-hover:text-amber-400 transition-colors">
+                Bảng Phiên Âm Pinyin
+              </h4>
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-1 leading-relaxed">
+                23 Thanh mẫu, 36 Vận mẫu, bí kíp phát âm chuẩn khẩu hình miệng, phân biệt âm bật hơi & luyện tai.
+              </p>
+            </div>
+            <div class="flex items-center justify-between pt-2 border-t border-stone-100 dark:border-stone-800 text-xs font-bold text-amber-800 dark:text-amber-400">
+              <span>Học Phát Âm Ngay</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </div>
 
           <!-- Hub 1: Lộ Trình HSK 3.0 -->
           <div onclick="switchTab('pathway')" class="glass-card rounded-3xl p-5 bg-[#FFFDF9] dark:bg-[#161B22] border-2 border-stone-200 dark:border-stone-800 hover:border-amber-400 dark:hover:border-amber-500 transition-all duration-200 hover:-translate-y-1 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between space-y-4 group">
@@ -2213,6 +2237,11 @@
           <span>Hoàn Thành & Nộp Bài Chấm Điểm</span>
         </button>
       </div>
+    </section>
+
+    <!-- TAB: BẢNG PHIÊN ÂM PINYIN & NGỮ ÂM TIÊU CHUẨN -->
+    <section id="tab-pinyin" class="hidden space-y-6">
+      <!-- Injected dynamically by pinyin.js -->
     </section>
 
     <!-- TAB 4: LỘ TRÌNH HSK 3.0 TOÀN DIỆN (TIÊU CHUẨN 3 CẤP 9 BẬC) -->
@@ -5142,7 +5171,7 @@
           <ul class="space-y-2 text-xs">
             <li><button onclick="switchTab('radicals')" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors text-left cursor-pointer">214 Bộ thủ & Chiết tự Hán</button></li>
             <li><button onclick="switchTab('translation')" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors text-left cursor-pointer">Công cụ dịch & Phòng luyện dịch</button></li>
-            <li><button onclick="switchTab('pathway')" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors text-left cursor-pointer">Lộ trình Pinyin nhập môn</button></li>
+            <li><button onclick="switchTab('pinyin')" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors text-left cursor-pointer">Bảng phiên âm Pinyin chuẩn 2026</button></li>
             <li><button onclick="switchTab('practice')" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors text-left cursor-pointer">Luyện phát âm & 4 Kỹ năng</button></li>
             <li><button onclick="switchTab('readings')" class="hover:text-[#8B1E1E] dark:hover:text-amber-400 transition-colors text-left cursor-pointer">Đọc hiểu văn bản & Song ngữ</button></li>
           </ul>
@@ -5322,6 +5351,7 @@
   <script defer src="js/features/culture.js"></script>
   <script defer src="js/features/mindmap.js"></script>
   <script defer src="js/features/confusions.js"></script>
+  <script defer src="js/features/pinyin.js"></script>
   <script defer src="js/features/pathway.js"></script>
   <script defer src="js/features/translation.js"></script>
   <script defer src="js/features/practice.js"></script>

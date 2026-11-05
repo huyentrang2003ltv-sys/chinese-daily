@@ -5,6 +5,7 @@
 /** Every tab: label, Lucide icon, datasets it needs and how to render it the first time. */
 const TABS = {
   home: { label: 'Trang chủ', icon: 'house', data: ['dictionary'], init: () => renderHomeDashboard() },
+  pinyin: { label: 'Bảng phiên âm Pinyin', icon: 'volume-2', data: ['pinyinData'], init: () => initPinyinModule() },
   pathway: { label: 'Lộ trình HSK 3.0', icon: 'map', data: ['hsk30Roadmap'], init: () => renderPathwayTab() },
   jiaocheng: {
     label: 'Giáo trình Hán ngữ', icon: 'book-marked', data: ['jiaocheng'],
@@ -46,7 +47,7 @@ const TABS = {
 /** Top-level groups shown in the main nav (bottom bar on mobile). */
 const NAV_GROUPS = [
   { id: 'home', label: 'Trang chủ', short: 'Trang chủ', icon: 'house', tabs: ['home'] },
-  { id: 'path', label: 'Lộ trình', short: 'Lộ trình', icon: 'route', tabs: ['pathway', 'jiaocheng'] },
+  { id: 'path', label: 'Lộ trình & Ngữ âm', short: 'Lộ trình', icon: 'route', tabs: ['pinyin', 'pathway', 'jiaocheng'] },
   { id: 'hanzi', label: 'Chữ Hán', short: 'Chữ Hán', icon: 'type', tabs: ['etymology', 'radicals'] },
   { id: 'vocab', label: 'Từ vựng', short: 'Từ vựng', icon: 'book-a', tabs: ['dictionary', 'flashcards', 'confusions', 'chengyu'] },
   { id: 'read', label: 'Ngữ pháp & Đọc', short: 'Ngữ pháp', icon: 'library', tabs: ['grammar', 'readings', 'culture'] },
@@ -57,6 +58,15 @@ const DEFAULT_TAB = 'home';
 const TAB_ALIASES = {
   mindmap: 'grammar',
   today: 'home',
+  pinyin: 'pinyin',
+  nguam: 'pinyin',
+  phienam: 'pinyin',
+  bangphienam: 'pinyin',
+  bangpinyin: 'pinyin',
+  bophatam: 'pinyin',
+  tones: 'pinyin',
+  initials: 'pinyin',
+  finals: 'pinyin',
   conversations: 'aichat',
   conversation: 'aichat',
   hoithoai: 'aichat',

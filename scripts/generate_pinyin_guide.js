@@ -1,0 +1,1175 @@
+const fs = require('fs');
+const path = require('path');
+
+const pinyinGuideData = {
+  version: "2.0.0",
+  title: "Cẩm Nang Ngữ Âm & Bảng Phiên Âm Pinyin Toàn Diện 2026",
+  subtitle: "Chuẩn HSK 3.0 & Ngữ Âm Tiếng Trung Bắc Kinh Tiêu Chuẩn - Bí quyết phát âm chuẩn 100% cho người Việt",
+  overview: {
+    definition: "Bính âm Hán ngữ (Hànyǔ Pīnyīn - 汉语拼音) là hệ thống ký âm chữ Hán bằng chữ cái Latinh chính thức được phê chuẩn bởi Bộ Giáo dục Trung Quốc và Liên Hợp Quốc. Pinyin là chìa khóa then chốt đầu tiên giúp người học gõ bàn phím tiếng Trung, tra từ điển và phát âm chuẩn xác như người bản xứ.",
+    structureSummary: "Một âm tiết Pinyin hoàn chỉnh thường gồm 3 thành phần: Thanh mẫu (Phụ âm đầu) + Vận mẫu (Nguyên âm & Vần) + Thanh điệu (Dấu giọng).",
+    goldenRules: [
+      "Luôn giữ đúng khẩu hình miệng: Không thay đổi vị trí môi và lưỡi giữa chừng khi phát âm nguyên âm đơn.",
+      "Phân biệt rõ ràng giữa âm Bật hơi (Aspirated) và Không bật hơi (Unaspirated). Đây là điểm khác biệt lớn nhất giữa tiếng Trung và tiếng Việt.",
+      "Luyện thanh 4 dứt khoát: Thanh 4 rơi từ cao độ 5 xuống 1, không được kéo dài lê thê thành dấu nặng tiếng Việt.",
+      "Thực hành với gương hoặc tờ giấy mỏng để quan sát độ mở của môi và luồng hơi phóng ra."
+    ]
+  },
+  initials: [
+    {
+      symbol: "b",
+      name: "Âm hai môi b (pua)",
+      group: "Âm hai môi (双唇音)",
+      groupId: "labial",
+      ipa: "[p]",
+      type: "Tắc, vô thanh, không bật hơi",
+      mouthShape: "Hai môi khép chặt chặn luồng hơi, sau đó mở nhanh ra để hơi thoát nhẹ nhàng, dây thanh không rung.",
+      vietnameseComparison: "Gần giống âm 'P' trong tiếng Việt (như trong 'pin', 'pa-pơ'). Tuyệt đối KHÔNG đọc thành âm 'B' như con bò tiếng Việt!",
+      secretTip: "Đặt ngón tay lên trước môi: khi đọc 'b' bạn sẽ cảm thấy hơi thoát ra rất ít và êm ái, không làm rung ngón tay.",
+      commonMistakes: "Người Việt hay nhầm thành âm 'B' tiếng Việt (đọc bàba thành ba-ba có rung thanh quản) hoặc nhầm sang âm bật hơi 'p'.",
+      example: { hanzi: "爸爸", pinyin: "bàba", meaning: "Bố / Ba", audio: "bàba" },
+      practiceSyllables: ["bā", "bá", "bǎ", "bà", "bō", "bǎi", "bào", "bān", "bēn", "bīng", "bù"]
+    },
+    {
+      symbol: "p",
+      name: "Âm hai môi bật hơi p (pʰua)",
+      group: "Âm hai môi (双唇音)",
+      groupId: "labial",
+      ipa: "[pʰ]",
+      type: "Tắc, vô thanh, BẬT HƠI CỰC MẠNH",
+      mouthShape: "Hai môi ngậm chặt tích tụ luồng khí mạnh trong khoang miệng rồi đột ngột mở môi đẩy luồng hơi mạnh ra ngoài.",
+      vietnameseComparison: "Tiếng Việt không có âm tương đương. Khẩu hình giống 'P' nhưng luồng hơi phóng ra mạnh gấp 3 lần.",
+      secretTip: "Cầm 1 tờ khăn giấy ăn mỏng để trước miệng 5cm: khi phát âm 'p', luồng hơi phải làm tờ giấy bay vạt lên một góc 45 độ!",
+      commonMistakes: "Bật hơi quá yếu khiến người bản xứ nghe nhầm thành âm 'b' (ví dụ péngyou bạn bè nghe thành bèngyou).",
+      example: { hanzi: "朋友", pinyin: "péngyou", meaning: "Bạn bè", audio: "péngyou" },
+      practiceSyllables: ["pā", "pá", "pǎ", "pà", "pō", "pái", "páo", "pān", "pēn", "píng", "pù"]
+    },
+    {
+      symbol: "m",
+      name: "Âm hai môi mũi m (mua)",
+      group: "Âm hai môi (双唇音)",
+      groupId: "labial",
+      ipa: "[m]",
+      type: "Mũi, hữu thanh, vang",
+      mouthShape: "Hai môi khép nhẹ, luồng hơi thoát ra từ khoang mũi, dây thanh rung rõ ràng.",
+      vietnameseComparison: "Hoàn toàn tương đồng với âm 'M' trong tiếng Việt (như 'mẹ', 'mưa').",
+      secretTip: "Thả lỏng cơ mặt, cho âm vang tự nhiên trong vòm mũi.",
+      commonMistakes: "Âm này rất dễ, học viên Việt Nam hầu như phát âm đúng ngay lần đầu.",
+      example: { hanzi: "妈妈", pinyin: "māma", meaning: "Mẹ", audio: "māma" },
+      practiceSyllables: ["mā", "má", "mǎ", "mà", "mō", "mǎi", "mào", "mān", "mēn", "míng", "mù"]
+    },
+    {
+      symbol: "f",
+      name: "Âm môi - răng f (fua)",
+      group: "Âm môi - răng (唇齿音)",
+      groupId: "labio_dental",
+      ipa: "[f]",
+      type: "Xát, vô thanh",
+      mouthShape: "Răng cửa hàm trên chạm nhẹ vào viền môi dưới, đẩy luồng hơi ma sát lách qua kẽ răng.",
+      vietnameseComparison: "Tương đương âm 'Ph' trong tiếng Việt (như 'phở', 'phát').",
+      secretTip: "Chỉ để răng trên chạm hờ vào lòng môi dưới, không cắn chặt môi.",
+      commonMistakes: "Dùng lực cắn quá mạnh làm ngắt luồng hơi hoặc để môi trên chạm môi dưới.",
+      example: { hanzi: "飞机", pinyin: "fēijī", meaning: "Máy bay", audio: "fēijī" },
+      practiceSyllables: ["fā", "fá", "fǎ", "fà", "fō", "fēi", "fǒu", "fān", "fēn", "fēng", "fù"]
+    },
+    {
+      symbol: "d",
+      name: "Âm đầu lưỡi d (tưa)",
+      group: "Âm đầu lưỡi giữa (舌尖中音)",
+      groupId: "alveolar",
+      ipa: "[t]",
+      type: "Tắc, vô thanh, không bật hơi",
+      mouthShape: "Đầu lưỡi chạm ngạc cứng (chân răng hàm trên), chặn luồng khí rồi hạ nhanh lưỡi xuống, KHÔNG bật hơi.",
+      vietnameseComparison: "Phát âm giống âm 'T' trong tiếng Việt (như 'tôi', 'tin'). Tuyệt đối KHÔNG đọc thành 'Đ' tiếng Việt!",
+      secretTip: "Nghĩ trong đầu là chữ 'T' tiếng Việt nhưng nhấn dứt khoát và gọn gàng.",
+      commonMistakes: "Hơn 80% người mới học đọc nhầm thành chữ 'Đ' tiếng Việt (dìdi đọc thành 'đi-đi' là sai, phải là 'ti-ti').",
+      example: { hanzi: "弟弟", pinyin: "dìdi", meaning: "Em trai", audio: "dìdi" },
+      practiceSyllables: ["dā", "dá", "dǎ", "dà", "dē", "dǎi", "dào", "dān", "dēng", "dōng", "dū"]
+    },
+    {
+      symbol: "t",
+      name: "Âm đầu lưỡi bật hơi t (tʰưa)",
+      group: "Âm đầu lưỡi giữa (舌尖中音)",
+      groupId: "alveolar",
+      ipa: "[tʰ]",
+      type: "Tắc, vô thanh, BẬT HƠI MẠNH",
+      mouthShape: "Đầu lưỡi chạm chân răng trên chặn khí, sau đó hạ nhanh lưỡi xuống đẩy luồng hơi cực mạnh ra ngoài.",
+      vietnameseComparison: "Gần giống âm 'Th' trong tiếng Việt (như 'thỏ', 'thầy') nhưng có độ nén khí và bật hơi sắc bén hơn.",
+      secretTip: "Đặt tờ giấy trước miệng: phát âm 't' phải làm tờ giấy bay mạnh giống âm 'p'.",
+      commonMistakes: "Đọc thành chữ 'T' thường hoặc phát âm luồng hơi quá yếu.",
+      example: { hanzi: "天气", pinyin: "tiānqì", meaning: "Thời tiết", audio: "tiānqì" },
+      practiceSyllables: ["tā", "tá", "tǎ", "tà", "tē", "tǎi", "tào", "tān", "tēng", "tōng", "tū"]
+    },
+    {
+      symbol: "n",
+      name: "Âm mũi đầu lưỡi n (nưa)",
+      group: "Âm đầu lưỡi giữa (舌尖中音)",
+      groupId: "alveolar",
+      ipa: "[n]",
+      type: "Mũi, hữu thanh, vang",
+      mouthShape: "Đầu lưỡi chạm ngạc cứng chân răng trên, luồng hơi thoát qua đường mũi, dây thanh rung.",
+      vietnameseComparison: "Tương đồng 100% với âm 'N' trong tiếng Việt (như 'nắng', 'nói').",
+      secretTip: "Âm chuẩn mực, dễ đọc, chỉ cần chú ý không ngọng sang 'L'.",
+      commonMistakes: "Lẫn lộn giữa 'N' và 'L' ở một số địa phương.",
+      example: { hanzi: "你好", pinyin: "nǐhǎo", meaning: "Xin chào", audio: "nǐhǎo" },
+      practiceSyllables: ["nā", "ná", "nǎ", "nà", "nē", "nǎi", "nào", "nān", "nēn", "náng", "nǐ"]
+    },
+    {
+      symbol: "l",
+      name: "Âm bên đầu lưỡi l (lưa)",
+      group: "Âm đầu lưỡi giữa (舌尖中音)",
+      groupId: "alveolar",
+      ipa: "[l]",
+      type: "Bên, hữu thanh",
+      mouthShape: "Đầu lưỡi chạm ngạc trên, luồng hơi thoát ra từ hai bên mép lưỡi, dây thanh rung.",
+      vietnameseComparison: "Tương đồng với âm 'L' trong tiếng Việt (như 'làng', 'lúa').",
+      secretTip: "Lưỡi đưa lên chân răng trên và hơi thoát qua hai bên sườn lưỡi.",
+      commonMistakes: "Nhầm lẫn với âm 'N'.",
+      example: { hanzi: "老师", pinyin: "lǎoshī", meaning: "Thầy cô giáo", audio: "lǎoshī" },
+      practiceSyllables: ["lā", "lá", "lǎ", "là", "lē", "lǎi", "lào", "lān", "lēng", "líng", "lù"]
+    },
+    {
+      symbol: "g",
+      name: "Âm cuống lưỡi g (cưa)",
+      group: "Âm cuống lưỡi (舌根音)",
+      groupId: "velar",
+      ipa: "[k]",
+      type: "Tắc, vô thanh, không bật hơi",
+      mouthShape: "Phần cuống lưỡi nâng lên chạm ngạc mềm chặn khí, rồi hạ xuống đẩy hơi nhẹ, KHÔNG bật hơi.",
+      vietnameseComparison: "Giống âm 'C / K' trong tiếng Việt (như 'cá', 'kim'). Tuyệt đối KHÔNG đọc thành 'G' như con gà!",
+      secretTip: "Nghĩ ngay tới chữ 'C' tiếng Việt: gāoxìng đọc là 'cao-xinh', không đọc 'gao-xinh'.",
+      commonMistakes: "Người mới học hay đọc thành 'G' tiếng Việt làm người bản xứ hoàn toàn không hiểu.",
+      example: { hanzi: "高兴", pinyin: "gāoxìng", meaning: "Vui mừng", audio: "gāoxìng" },
+      practiceSyllables: ["gā", "gá", "gǎ", "gà", "gē", "gǎi", "gào", "gān", "gēn", "gāng", "gōng"]
+    },
+    {
+      symbol: "k",
+      name: "Âm cuống lưỡi bật hơi k (kʰưa)",
+      group: "Âm cuống lưỡi (舌根音)",
+      groupId: "velar",
+      ipa: "[kʰ]",
+      type: "Tắc, vô thanh, BẬT HƠI CỰC MẠNH",
+      mouthShape: "Cuống lưỡi chạm ngạc mềm nén khí, sau đó hạ mạnh cuống lưỡi bật luồng hơi xốc từ cổ họng ra.",
+      vietnameseComparison: "Gần giống âm 'Kh' trong tiếng Việt (như 'khó', 'không') nhưng có độ tắc nén khí trước khi bật tung hơi.",
+      secretTip: "Tập ho nhẹ từ cuống họng để cảm nhận vị trí bật hơi của âm 'k'. Tờ giấy trước miệng phải bay mạnh.",
+      commonMistakes: "Đọc thành âm 'Kh' nhẹ nhàng trơn tru mà không có độ bật nén của âm tắc.",
+      example: { hanzi: "开会", pinyin: "kāihuì", meaning: "Họp hành", audio: "kāihuì" },
+      practiceSyllables: ["kā", "ká", "kǎ", "kà", "kē", "kǎi", "kào", "kān", "kēn", "kāng", "kōng"]
+    },
+    {
+      symbol: "h",
+      name: "Âm xát cuống lưỡi h (hưa)",
+      group: "Âm cuống lưỡi (舌根音)",
+      groupId: "velar",
+      ipa: "[x]",
+      type: "Xát, vô thanh",
+      mouthShape: "Cuống lưỡi nâng lên gần ngạc mềm tạo khe hở hẹp, luồng hơi ma sát nhẹ thoát ra ngoài.",
+      vietnameseComparison: "Nằm ở giữa âm 'H' và 'Kh' trong tiếng Việt. Bắc Kinh thường đọc có chút ma sát cuống họng nhẹ.",
+      secretTip: "Phát âm âm 'H' nhưng đẩy hơi sâu từ tận đáy cuống họng.",
+      commonMistakes: "Đọc quá nặng thành 'Kh' hoặc quá yếu như 'H' tiếng Anh.",
+      example: { hanzi: "很好", pinyin: "hěnhǎo", meaning: "Rất tốt", audio: "hěnhǎo" },
+      practiceSyllables: ["hā", "há", "hǎ", "hà", "hē", "hǎi", "hào", "hān", "hēn", "hāng", "hóng"]
+    },
+    {
+      symbol: "j",
+      name: "Âm mặt lưỡi j (chi)",
+      group: "Âm mặt lưỡi (舌面音)",
+      groupId: "palatal",
+      ipa: "[tɕ]",
+      type: "Tắc xát, vô thanh, không bật hơi",
+      mouthShape: "Đầu lưỡi hạ xuống chân răng dưới, mặt lưỡi dâng lên ép sát ngạc cứng, hai khóe môi dẹt ngang như cười tươi, KHÔNG bật hơi.",
+      vietnameseComparison: "Gần giống âm 'Ch' trong tiếng Việt (như 'chị', 'chợ') nhưng miệng cười dẹt hơn, lưỡi dán chặt ngạc trên.",
+      secretTip: "Cười dẹt môi sang hai bên, mặt lưỡi phẳng chạm vòm trên rồi thả lỏng luồng hơi lách qua khe.",
+      commonMistakes: "Tròn môi (nhầm sang âm uốn lưỡi zh) hoặc bật hơi mạnh thành âm 'q'.",
+      example: { hanzi: "今天", pinyin: "jīntiān", meaning: "Hôm nay", audio: "jīntiān" },
+      practiceSyllables: ["jī", "jí", "jǐ", "jì", "jiā", "jiào", "jiān", "jīng", "jiù", "jū", "jué"]
+    },
+    {
+      symbol: "q",
+      name: "Âm mặt lưỡi bật hơi q (chʰi)",
+      group: "Âm mặt lưỡi (舌面音)",
+      groupId: "palatal",
+      ipa: "[tɕʰ]",
+      type: "Tắc xát, vô thanh, BẬT HƠI CỰC MẠNH",
+      mouthShape: "Khẩu hình giống hệt 'j' (mặt lưỡi ép ngạc cứng, miệng cười dẹt), nhưng tống luồng hơi xì cực mạnh qua kẽ răng.",
+      vietnameseComparison: "Tiếng Việt không có âm tương đương. Tưởng tượng phát âm 'Ch' dẹt môi kết hợp xì luồng gió mạnh như mở nắp bình ga.",
+      secretTip: "Luôn dẹt môi cười, đẩy hơi thật mạnh qua rãnh giữa mặt lưỡi và vòm họng. Tờ giấy trước miệng phải bay bổng!",
+      commonMistakes: "Không bật hơi khiến nhầm thành 'j' (ví dụ qù [đi] nghe thành jù [câu]).",
+      example: { hanzi: "去学校", pinyin: "qù xuéxiào", meaning: "Đi đến trường", audio: "qù" },
+      practiceSyllables: ["qī", "qí", "qǐ", "qì", "qiā", "qiáo", "qiān", "qīng", "qiù", "qū", "qué"]
+    },
+    {
+      symbol: "x",
+      name: "Âm xát mặt lưỡi x (xi)",
+      group: "Âm mặt lưỡi (舌面音)",
+      groupId: "palatal",
+      ipa: "[ɕ]",
+      type: "Xát, vô thanh",
+      mouthShape: "Đầu lưỡi để chân răng dưới, mặt lưỡi nâng sát ngạc cứng tạo khe hẹp, khóe môi kéo dẹt, luồng hơi ma sát êm ái.",
+      vietnameseComparison: "Gần giống âm 'X' trong tiếng Việt (như 'xe', 'xinh') nhưng miệng cười dẹt hơn và âm trong trẻo hơn.",
+      secretTip: "Cười thật tươi, luồng hơi xát nhẹ qua mặt lưỡi phẳng.",
+      commonMistakes: "Chu môi lên (lẫn sang âm 'sh') hoặc để răng cắn chặt làm âm bị bí.",
+      example: { hanzi: "谢谢", pinyin: "xièxie", meaning: "Cảm ơn", audio: "xièxie" },
+      practiceSyllables: ["xī", "xí", "xǐ", "xì", "xiā", "xiào", "xiān", "xīng", "xiù", "xū", "xué"]
+    },
+    {
+      symbol: "zh",
+      name: "Âm uốn lưỡi zh (trư)",
+      group: "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
+      groupId: "retroflex",
+      ipa: "[ʈʂ]",
+      type: "Tắc xát, uốn lưỡi, không bật hơi",
+      mouthShape: "Đầu lưỡi uốn cong lên chạm ngạc cứng sau chân răng trên, môi mở tự nhiên, không bật hơi.",
+      vietnameseComparison: "Gần giống âm 'Tr' uốn lưỡi trong tiếng Việt miền Trung/Nam (như 'tre', 'trời') nhưng dứt khoát và khô gọn hơn.",
+      secretTip: "Uốn đầu lưỡi chạm vòm họng trên, nén hơi rồi hạ nhẹ đầu lưỡi để hơi thoát ra êm ái, KHÔNG bật hơi.",
+      commonMistakes: "Bật hơi (nhầm sang ch) hoặc không uốn lưỡi (nhầm sang âm z).",
+      example: { hanzi: "中国", pinyin: "zhōngguó", meaning: "Trung Quốc", audio: "zhōngguó" },
+      practiceSyllables: ["zhī", "zhí", "zhǐ", "zhì", "zhā", "zhē", "zhài", "zhào", "zhān", "zhōng"]
+    },
+    {
+      symbol: "ch",
+      name: "Âm uốn lưỡi bật hơi ch (trʰư)",
+      group: "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
+      groupId: "retroflex",
+      ipa: "[ʈʂʰ]",
+      type: "Tắc xát, uốn lưỡi, BẬT HƠI CỰC MẠNH",
+      mouthShape: "Đầu lưỡi uốn cong chạm ngạc cứng giống 'zh', nhưng bật mạnh luồng khí tích tụ ra ngoài.",
+      vietnameseComparison: "Không có trong tiếng Việt. Là sự kết hợp giữa uốn lưỡi 'Tr' và luồng hơi bật nén cực mạnh.",
+      secretTip: "Uốn lưỡi giữ nguyên vị trí, hít một hơi rồi đẩy mạnh làm rung luồng khí qua đầu lưỡi cong. Giấy phải bay vạt!",
+      commonMistakes: "Quên uốn lưỡi (thành âm c) hoặc quên bật hơi (thành âm zh).",
+      example: { hanzi: "吃饭", pinyin: "chīfàn", meaning: "Ăn cơm", audio: "chīfàn" },
+      practiceSyllables: ["chī", "chí", "chǐ", "chì", "chā", "chē", "chài", "chào", "chān", "chōng"]
+    },
+    {
+      symbol: "sh",
+      name: "Âm xát uốn lưỡi sh (sư)",
+      group: "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
+      groupId: "retroflex",
+      ipa: "[ʂ]",
+      type: "Xát, uốn lưỡi, vô thanh",
+      mouthShape: "Đầu lưỡi uốn cong lên gần ngạc cứng tạo khe hở hẹp, luồng hơi ma sát qua khe lưỡi thoát ra.",
+      vietnameseComparison: "Gần giống âm 'S' nặng trong tiếng Việt (như 'sông', 'sao', 'sấm').",
+      secretTip: "Uốn cong đầu lưỡi lên vòm họng và thổi nhẹ luồng gió ra.",
+      commonMistakes: "Duỗi thẳng lưỡi khiến âm biến thành âm 's' nhẹ (như sān thành shān).",
+      example: { hanzi: "什么是", pinyin: "shénme", meaning: "Cái gì", audio: "shénme" },
+      practiceSyllables: ["shī", "shí", "shǐ", "shì", "shā", "shē", "shài", "shào", "shān", "shēng"]
+    },
+    {
+      symbol: "r",
+      name: "Âm uốn lưỡi r (rư)",
+      group: "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
+      groupId: "retroflex",
+      ipa: "[ʐ]",
+      type: "Xát, uốn lưỡi, hữu thanh, dây thanh rung",
+      mouthShape: "Khẩu hình giống 'sh' (đầu lưỡi uốn cong lên ngạc cứng) nhưng làm rung dây thanh âm.",
+      vietnameseComparison: "Gần giống âm 'R' trong tiếng Việt nhưng êm ái hơn, KHÔNG rung môi hoặc rung đầu lưỡi bần bật.",
+      secretTip: "Giữ khẩu hình âm 'sh' rồi phát âm rung cổ họng như đang ngâm nga nốt nhạc.",
+      commonMistakes: "Rung đầu lưỡi quá mạnh như âm 'R' tiếng Nga/Tây Ban Nha hoặc đọc thành 'D / Gi'.",
+      example: { hanzi: "认识", pinyin: "rènshi", meaning: "Quen biết", audio: "rènshi" },
+      practiceSyllables: ["rī", "rí", "rǐ", "rì", "rè", "rào", "rān", "rēn", "ráng", "róng"]
+    },
+    {
+      symbol: "z",
+      name: "Âm đầu lưỡi trước z (tư)",
+      group: "Âm đầu lưỡi trước (舌尖前音)",
+      groupId: "dental",
+      ipa: "[ts]",
+      type: "Tắc xát, lưỡi thẳng, không bật hơi",
+      mouthShape: "Đầu lưỡi duỗi thẳng áp nhẹ vào mặt sau răng cửa trên, nén hơi rồi hạ nhẹ đầu lưỡi để khí thoát ra, KHÔNG bật hơi.",
+      vietnameseComparison: "Gần giống âm 'Ch' tiếng Việt nhưng đầu lưỡi chạm răng và phát âm dẹp, khô.",
+      secretTip: "Răng khép hờ, lưỡi thẳng đè nhẹ vào răng trên, phát âm dứt khoát.",
+      commonMistakes: "Uốn cong lưỡi (nhầm sang zh) hoặc đọc thành âm 'D' tiếng Việt.",
+      example: { hanzi: "再见", pinyin: "zàijiàn", meaning: "Tạm biệt", audio: "zàijiàn" },
+      practiceSyllables: ["zī", "zí", "zǐ", "zì", "zā", "zē", "zǎi", "zào", "zān", "zōng"]
+    },
+    {
+      symbol: "c",
+      name: "Âm đầu lưỡi trước bật hơi c (tsʰư)",
+      group: "Âm đầu lưỡi trước (舌尖前音)",
+      groupId: "dental",
+      ipa: "[tsʰ]",
+      type: "Tắc xát, lưỡi thẳng, BẬT HƠI CỰC MẠNH",
+      mouthShape: "Đầu lưỡi thẳng áp mặt sau răng trên như 'z', sau đó giật nhẹ đầu lưỡi bật mạnh luồng khí xì qua kẽ răng.",
+      vietnameseComparison: "Tiếng Việt không có âm tương đương. Nghe giống tiếng xì hơi mạnh 'ts-s-s' qua kẽ răng khép hờ.",
+      secretTip: "Cắn nhẹ hai hàm răng, đầu lưỡi chạm răng trên và tống hơi thật mạnh xì qua kẽ răng. Giấy bay mạnh!",
+      commonMistakes: "Quên bật hơi (nghe thành z) hoặc uốn lưỡi (thành ch).",
+      example: { hanzi: "中国菜", pinyin: "cài", meaning: "Món ăn / Rau", audio: "cài" },
+      practiceSyllables: ["cī", "cí", "cǐ", "cì", "cā", "cē", "cǎi", "cào", "cān", "cōng"]
+    },
+    {
+      symbol: "s",
+      name: "Âm xát đầu lưỡi trước s (xư)",
+      group: "Âm đầu lưỡi trước (舌尖前音)",
+      groupId: "dental",
+      ipa: "[s]",
+      type: "Xát, lưỡi thẳng, vô thanh",
+      mouthShape: "Đầu lưỡi duỗi thẳng để sát mặt sau răng cửa dưới, luồng hơi ma sát thoát qua kẽ răng trên và dưới.",
+      vietnameseComparison: "Giống hệt âm 'X' nhẹ trong tiếng Việt (như 'xanh', 'xe máy').",
+      secretTip: "Lưỡi thẳng, hai hàm răng khép hờ, hơi xì êm ái.",
+      commonMistakes: "Uốn cong lưỡi thành âm 'sh'.",
+      example: { hanzi: "一二三四", pinyin: "sì", meaning: "Số 4", audio: "sì" },
+      practiceSyllables: ["sī", "sí", "sǐ", "sì", "sā", "sē", "sǎi", "sào", "sān", "sōng"]
+    },
+    {
+      symbol: "y",
+      name: "Bán nguyên âm y (i)",
+      group: "Phụ âm số 0 / Bán nguyên âm",
+      groupId: "semi_vowel",
+      ipa: "[j]",
+      type: "Bán nguyên âm, hữu thanh",
+      mouthShape: "Đóng vai trò phụ âm đầu khi vận mẫu bắt đầu bằng 'i' hoặc 'ü' đứng độc lập không có phụ âm khác.",
+      vietnameseComparison: "Đọc như 'i' hoặc 'd / gi' nhẹ trong tiếng Việt (như 'yêu', 'yên').",
+      secretTip: "Khi 'y' đi cùng 'u' (như yu, yue, yuan, yun), chữ 'u' thực chất là 'ü' (phải đọc tròn môi huýt sáo).",
+      commonMistakes: "Quên rằng yu chính là y + ü.",
+      example: { hanzi: "月亮", pinyin: "yuèliang", meaning: "Mặt trăng", audio: "yuèliang" },
+      practiceSyllables: ["yī", "yí", "yǐ", "yì", "yā", "yáo", "yān", "yáng", "yòng", "yǔ"]
+    },
+    {
+      symbol: "w",
+      name: "Bán nguyên âm w (u)",
+      group: "Phụ âm số 0 / Bán nguyên âm",
+      groupId: "semi_vowel",
+      ipa: "[w]",
+      type: "Bán nguyên âm, hữu thanh",
+      mouthShape: "Đóng vai trò phụ âm đầu khi vận mẫu bắt đầu bằng 'u' đứng độc lập.",
+      vietnameseComparison: "Đọc giống 'U' hoặc 'Qu' nhẹ trong tiếng Việt (như 'qua', 'uể oải').",
+      secretTip: "Môi chu tròn lại trước khi phát âm.",
+      commonMistakes: "Đọc thành chữ 'V' tiếng Việt (wǒ đọc thành 'vỏ' là hoàn toàn sai, phải là 'ủa').",
+      example: { hanzi: "我们", pinyin: "wǒmen", meaning: "Chúng tôi", audio: "wǒmen" },
+      practiceSyllables: ["wū", "wú", "wǔ", "wù", "wā", "wài", "wān", "wēn", "wāng", "wǒ"]
+    }
+  ],
+  finals: [
+    // 6 Single Finals
+    {
+      symbol: "a",
+      category: "Vận mẫu đơn (单韵母)",
+      categoryId: "single",
+      ipa: "[a]",
+      mouthShape: "Miệng mở to hết cỡ, lưỡi hạ thấp phẳng tự nhiên, âm phát ra to rõ.",
+      vietnameseComparison: "Giống âm 'A' trong tiếng Việt (như 'ba', 'cá').",
+      secretTip: "Mở rộng khẩu hình như khi đi khám bác sĩ bảo há miệng 'A'.",
+      example: { hanzi: "大", pinyin: "dà", meaning: "To / Lớn", audio: "dà" }
+    },
+    {
+      symbol: "o",
+      category: "Vận mẫu đơn (单韵母)",
+      categoryId: "single",
+      ipa: "[o]",
+      mouthShape: "Môi tròn lại, hơi nhô về phía trước, phần cuống lưỡi hơi nâng lên.",
+      vietnameseComparison: "Gần giống âm 'Ô' trong tiếng Việt hoặc hơi lai 'ua' nhẹ khi đi sau b, p, m, f.",
+      secretTip: "Giữ môi thật tròn trong suốt quá trình phát âm.",
+      example: { hanzi: "我", pinyin: "wǒ", meaning: "Tôi / Bản thân", audio: "wǒ" }
+    },
+    {
+      symbol: "e",
+      category: "Vận mẫu đơn (单韵母)",
+      categoryId: "single",
+      ipa: "[ɤ]",
+      mouthShape: "Miệng mở vừa phải, hai khóe môi dẹt bè sang hai bên, cuống lưỡi nâng lên.",
+      vietnameseComparison: "Đọc gần giống âm 'Ưa' hoặc 'Ơ' trong tiếng Việt. KHÔNG đọc là 'E' tiếng Việt!",
+      secretTip: "Tưởng tượng đọc chữ 'Ưa' nhưng nuốt bớt chữ 'a' ở đuôi.",
+      example: { hanzi: "哥哥", pinyin: "gēge", meaning: "Anh trai", audio: "gēge" }
+    },
+    {
+      symbol: "i",
+      category: "Vận mẫu đơn (单韵母)",
+      categoryId: "single",
+      ipa: "[i]",
+      mouthShape: "Hai khóe môi kéo căng sang hai bên như đang cười tươi, mặt lưỡi dâng cao sát ngạc cứng.",
+      vietnameseComparison: "Giống âm 'I' trong tiếng Việt.",
+      secretTip: "⚠️ ĐẶC BIỆT: Khi đi sau 7 thanh mẫu (zh, ch, sh, r, z, c, s), 'i' đọc là âm 'Ư' (ví dụ: zhī đọc là trư, sì đọc là xư)!",
+      example: { hanzi: "一", pinyin: "yī", meaning: "Số 1", audio: "yī" }
+    },
+    {
+      symbol: "u",
+      category: "Vận mẫu đơn (单韵母)",
+      categoryId: "single",
+      ipa: "[u]",
+      mouthShape: "Môi chu tròn nhỏ như lỗ kim, nhô ra phía trước, cuống lưỡi nâng cao.",
+      vietnameseComparison: "Giống âm 'U' trong tiếng Việt (như 'thu', 'ru').",
+      secretTip: "Môi chu tròn dứt khoát.",
+      example: { hanzi: "五", pinyin: "wǔ", meaning: "Số 5", audio: "wǔ" }
+    },
+    {
+      symbol: "ü",
+      category: "Vận mẫu đơn (单韵母)",
+      categoryId: "single",
+      ipa: "[y]",
+      mouthShape: "Khẩu hình môi tròn chu như huýt sáo, nhưng bên trong khoang miệng lại phát âm chữ 'i'.",
+      vietnameseComparison: "Gần giống âm 'Uy' trong tiếng Việt nhưng giữ nguyên môi tròn huýt sáo không được thay đổi vị trí môi.",
+      secretTip: "Mẹo vàng: Hãy chu môi tròn huýt sáo giữ cố định, rồi cố gắng phát âm chữ 'i', âm phát ra sẽ chuẩn 100% là 'ü'!",
+      example: { hanzi: "绿", pinyin: "lǜ", meaning: "Màu xanh lá", audio: "lǜ" }
+    },
+
+    // Compound Finals
+    {
+      symbol: "ai",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[aɪ]",
+      mouthShape: "Bắt đầu mở to miệng âm 'a' rồi trượt nhanh và thu hẹp dần môi sang âm 'i'.",
+      vietnameseComparison: "Giống âm 'Ai' trong tiếng Việt (như 'mai', 'tai').",
+      secretTip: "Âm 'a' đọc dài và rõ hơn, âm 'i' thu nhanh và nhẹ.",
+      example: { hanzi: "爱", pinyin: "ài", meaning: "Yêu", audio: "ài" }
+    },
+    {
+      symbol: "ei",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[eɪ]",
+      mouthShape: "Bắt đầu từ âm 'e' (nghiêng về ê) rồi trượt dẹt môi sang âm 'i'.",
+      vietnameseComparison: "Giống âm 'Êi' hoặc 'Ây' trong tiếng Việt (như 'mây', 'bây').",
+      secretTip: "Miệng mở vừa, trượt nhanh sang dẹt môi.",
+      example: { hanzi: "黑", pinyin: "hēi", meaning: "Màu đen", audio: "hēi" }
+    },
+    {
+      symbol: "ao",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[aʊ]",
+      mouthShape: "Bắt đầu từ âm 'a' to miệng rồi trượt tròn môi sang âm 'o / u'.",
+      vietnameseComparison: "Giống âm 'Ao' trong tiếng Việt (như 'sao', 'cao').",
+      secretTip: "Kết thúc ở khẩu hình môi tròn.",
+      example: { hanzi: "高", pinyin: "gāo", meaning: "Cao", audio: "gāo" }
+    },
+    {
+      symbol: "ou",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[oʊ]",
+      mouthShape: "Bắt đầu từ âm 'o' rồi trượt thu nhỏ môi thành âm 'u'.",
+      vietnameseComparison: "Giống âm 'Âu' trong tiếng Việt (như 'đâu', 'châu').",
+      secretTip: "Không đọc là 'O-U' tách rời mà lướt mượt thành 'Âu'.",
+      example: { hanzi: "手", pinyin: "shǒu", meaning: "Bàn tay", audio: "shǒu" }
+    },
+    {
+      symbol: "ia",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[ja]",
+      mouthShape: "Từ âm 'i' dẹt môi lướt cực nhanh mở rộng sang âm 'a' to miệng.",
+      vietnameseComparison: "Gần giống 'Ia' hoặc 'Da' trong tiếng Việt.",
+      secretTip: "Âm 'i' ngắn nhẹ, trọng tâm rơi vào âm 'a'.",
+      example: { hanzi: "家", pinyin: "jiā", meaning: "Gia đình / Nhà", audio: "jiā" }
+    },
+    {
+      symbol: "ie",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[jɛ]",
+      mouthShape: "Từ âm 'i' trượt sang âm 'e' (đọc mở miệng nghiêng về 'e / ê').",
+      vietnameseComparison: "Giống âm 'Iê' trong tiếng Việt (như 'tiền', 'biển').",
+      secretTip: "Hai khóe miệng mở dần từ dẹt sang hé vừa.",
+      example: { hanzi: "写", pinyin: "xiě", meaning: "Viết", audio: "xiě" }
+    },
+    {
+      symbol: "ua",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[wa]",
+      mouthShape: "Từ môi tròn chu 'u' bung nhanh ra mở rộng miệng âm 'a'.",
+      vietnameseComparison: "Giống âm 'Oa' trong tiếng Việt (như 'hoa', 'họa').",
+      secretTip: "Mở khẩu hình dứt khoát.",
+      example: { hanzi: "花", pinyin: "huā", meaning: "Hoa", audio: "huā" }
+    },
+    {
+      symbol: "uo",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[wo]",
+      mouthShape: "Từ âm 'u' trượt sang âm 'o' (vẫn giữ độ tròn môi).",
+      vietnameseComparison: "Giống âm 'Ua' trong tiếng Việt (như 'mua', 'của').",
+      secretTip: "Môi giữ tròn suốt quá trình phát âm.",
+      example: { hanzi: "多", pinyin: "duō", meaning: "Nhiều", audio: "duō" }
+    },
+    {
+      symbol: "üe",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[yɛ]",
+      mouthShape: "Bắt đầu từ môi tròn huýt sáo 'ü' rồi hé môi sang âm 'e' (ê).",
+      vietnameseComparison: "Gần giống 'Uy-ê' trong tiếng Việt (như 'nguyệt', 'khuyết').",
+      secretTip: "Đặc biệt đi sau j, q, x, y bỏ hai chấm (jué, qué, xué, yuè).",
+      example: { hanzi: "月", pinyin: "yuè", meaning: "Tháng / Mặt trăng", audio: "yuè" }
+    },
+    {
+      symbol: "iao",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[jaʊ]",
+      mouthShape: "Lướt từ 'i' sang 'a' to miệng rồi thu tròn môi ở 'o'.",
+      vietnameseComparison: "Giống âm 'Iêu / Eo' (như 'kêu', 'tiểu').",
+      secretTip: "Âm giữa 'a' mở to nhất.",
+      example: { hanzi: "小", pinyin: "xiǎo", meaning: "Nhỏ / Bé", audio: "xiǎo" }
+    },
+    {
+      symbol: "iu (iou)",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[joʊ]",
+      mouthShape: "Lướt từ 'i' sang 'o' rồi thu môi 'u' (viết tắt là iu).",
+      vietnameseComparison: "Giống âm 'Yêu' trong tiếng Việt (như 'yêu', 'chiều').",
+      secretTip: "Khi phát âm vẫn có âm đệm 'o' nhẹ ở giữa.",
+      example: { hanzi: "六", pinyin: "liù", meaning: "Số 6", audio: "liù" }
+    },
+    {
+      symbol: "uai",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[waɪ]",
+      mouthShape: "Từ 'u' tròn môi lướt sang 'a' mở to rồi thu dẹt ở 'i'.",
+      vietnameseComparison: "Giống âm 'Oai' trong tiếng Việt (như 'khoai', 'ngoài').",
+      secretTip: "Trượt mượt mà 3 nốt u-a-i.",
+      example: { hanzi: "快", pinyin: "kuài", meaning: "Nhanh / Sắp", audio: "kuài" }
+    },
+    {
+      symbol: "ui (uei)",
+      category: "Vận mẫu kép (复韵母)",
+      categoryId: "compound",
+      ipa: "[weɪ]",
+      mouthShape: "Từ 'u' trượt sang 'e' (ê) rồi thu dẹt ở 'i' (viết tắt là ui).",
+      vietnameseComparison: "Giống âm 'Uây' trong tiếng Việt (như 'khuây', 'quây').",
+      secretTip: "Người Việt hay nhầm thành 'Ui' (túi), nhớ phải có âm 'e' nhẹ ở giữa thành 'Uây'!",
+      example: { hanzi: "对", pinyin: "duì", meaning: "Đúng / Đối", audio: "duì" }
+    },
+
+    // Nasal Finals (Front -n)
+    {
+      symbol: "an",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[an]",
+      mouthShape: "Bắt đầu 'a' mở to, kết thúc đầu lưỡi chạm ngạc răng trên chặn khí tạo âm mũi 'n'.",
+      vietnameseComparison: "Giống vần 'An' trong tiếng Việt (như 'bạn', 'lan').",
+      secretTip: "Đầu lưỡi dính vào răng trên khi dứt âm.",
+      example: { hanzi: "看", pinyin: "kàn", meaning: "Xem / Nhìn", audio: "kàn" }
+    },
+    {
+      symbol: "en",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[ən]",
+      mouthShape: "Bắt đầu 'e' (ơ) rồi áp đầu lưỡi lên ngạc răng trên kết thúc 'n'.",
+      vietnameseComparison: "Giống vần 'Ân' trong tiếng Việt (như 'thân', 'cân').",
+      secretTip: "Không đọc là 'En' tiếng Việt, đọc là 'Ân'.",
+      example: { hanzi: "很", pinyin: "hěn", meaning: "Rất", audio: "hěn" }
+    },
+    {
+      symbol: "in",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[in]",
+      mouthShape: "Từ âm 'i' dẹt môi dâng đầu lưỡi chạm ngạc trên dứt âm 'n'.",
+      vietnameseComparison: "Giống vần 'In' trong tiếng Việt (như 'tin', 'nhìn').",
+      secretTip: "Môi dẹt kéo ngang.",
+      example: { hanzi: "新", pinyin: "xīn", meaning: "Mới", audio: "xīn" }
+    },
+    {
+      symbol: "ün",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[yn]",
+      mouthShape: "Môi chu tròn huýt sáo 'ü', sau đó đầu lưỡi chạm ngạc trên thoát hơi mũi.",
+      vietnameseComparison: "Gần giống vần 'Uyn' trong tiếng Việt (như 'huynh', 'quýt').",
+      secretTip: "Môi vẫn chu tròn huýt sáo khi bắt đầu âm.",
+      example: { hanzi: "云", pinyin: "yún", meaning: "Mây", audio: "yún" }
+    },
+    {
+      symbol: "ian",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[jɛn]",
+      mouthShape: "Từ 'i' lướt sang 'e' (ê) rồi kết thúc ở âm mũi 'n'.",
+      vietnameseComparison: "Đọc giống vần 'Iên' trong tiếng Việt (như 'tiền', 'biển'). Tuyệt đối KHÔNG đọc là 'I-an'!",
+      secretTip: "Lưu ý sống còn: 'ian' đọc là 'iên', ví dụ tiān đọc là 'thiên'!",
+      example: { hanzi: "天", pinyin: "tiān", meaning: "Trời / Ngày", audio: "tiān" }
+    },
+    {
+      symbol: "uan",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[wan]",
+      mouthShape: "Từ 'u' tròn môi bung sang 'an'.",
+      vietnameseComparison: "Giống vần 'Oan' trong tiếng Việt (như 'hoàn', 'đoán').",
+      secretTip: "Miệng mở tròn rồi áp lưỡi kết thúc.",
+      example: { hanzi: "关", pinyin: "guān", meaning: "Đóng", audio: "guān" }
+    },
+    {
+      symbol: "üan",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[yɛn]",
+      mouthShape: "Từ 'ü' tròn môi huýt sáo lướt sang 'ên' (khẩu hình dẹt dần).",
+      vietnameseComparison: "Gần giống vần 'Uyên' trong tiếng Việt (như 'khuyên', 'nguyễn').",
+      secretTip: "Sau j, q, x, y viết thành juan, quan, xuan, yuan nhưng đọc là 'Uyên'!",
+      example: { hanzi: "远", pinyin: "yuǎn", meaning: "Xa", audio: "yuǎn" }
+    },
+    {
+      symbol: "un (uen)",
+      category: "Vận mẫu mũi trước (前鼻音韵母)",
+      categoryId: "front_nasal",
+      ipa: "[wən]",
+      mouthShape: "Từ 'u' lướt sang 'en' (ân) kết thúc ở mũi 'n' (viết tắt là un).",
+      vietnameseComparison: "Giống vần 'Uân' trong tiếng Việt (như 'xuân', 'chuẩn').",
+      secretTip: "Không đọc là 'Un' (bún), phải đọc là 'Uân'!",
+      example: { hanzi: "问", pinyin: "wèn", meaning: "Hỏi", audio: "wèn" }
+    },
+
+    // Nasal Finals (Back -ng)
+    {
+      symbol: "ang",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[ɑŋ]",
+      mouthShape: "Miệng mở to hết cỡ 'a', cuống lưỡi nâng lên chạm ngạc mềm, luồng hơi ngân vang trong khoang mũi.",
+      vietnameseComparison: "Giống vần 'Ang' trong tiếng Việt (như 'làng', 'sáng').",
+      secretTip: "Ngân sâu ở cuống họng và mũi.",
+      example: { hanzi: "忙", pinyin: "máng", meaning: "Bận rộn", audio: "máng" }
+    },
+    {
+      symbol: "eng",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[ɤŋ]",
+      mouthShape: "Bắt đầu từ 'e' (ơ) rồi cuống lưỡi nâng lên ngạc mềm kết thúc âm mũi ng.",
+      vietnameseComparison: "Giống vần 'Âng' trong tiếng Việt (như 'tầng', 'vâng'). KHÔNG đọc là 'Eng'!",
+      secretTip: "Lưu ý sống còn: 'eng' đọc là 'Âng', ví dụ péngyou đọc là 'phấng-yâu'!",
+      example: { hanzi: "冷", pinyin: "lěng", meaning: "Lạnh", audio: "lěng" }
+    },
+    {
+      symbol: "ing",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[iŋ]",
+      mouthShape: "Từ 'i' dẹt môi ngân cuống lưỡi lên ngạc mềm tạo âm ng vang dài.",
+      vietnameseComparison: "Giống vần 'Ing' trong tiếng Việt (như 'bình', 'xinh').",
+      secretTip: "Khóe môi giữ dẹt trong khi cuống lưỡi nâng chặn khí.",
+      example: { hanzi: "明", pinyin: "míng", meaning: "Sáng / Rõ", audio: "míng" }
+    },
+    {
+      symbol: "ong",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[ʊŋ]",
+      mouthShape: "Môi tròn nhô ra phía trước, cuống lưỡi nâng lên ngạc mềm, âm phát sâu trong vòm mũi.",
+      vietnameseComparison: "Gần giống vần 'Ung' trong tiếng Việt (như 'trúng', 'cùng').",
+      secretTip: "Không đọc bẹt miệng thành 'Ong' tiếng Việt, môi phải tròn nhỏ giống 'Ung'.",
+      example: { hanzi: "红", pinyin: "hóng", meaning: "Màu đỏ", audio: "hóng" }
+    },
+    {
+      symbol: "iang",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[jɑŋ]",
+      mouthShape: "Từ 'i' lướt sang 'ang' ngân vang trong vòm mũi.",
+      vietnameseComparison: "Giống vần 'Iang' trong tiếng Việt (như 'giang', 'tiếng vang').",
+      secretTip: "Âm 'i' lướt nhanh, trọng tâm âm vang ở 'ang'.",
+      example: { hanzi: "想", pinyin: "xiǎng", meaning: "Muốn / Nhớ", audio: "xiǎng" }
+    },
+    {
+      symbol: "uang",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[wɑŋ]",
+      mouthShape: "Từ 'u' tròn môi bung sang 'ang' ngân sâu.",
+      vietnameseComparison: "Giống vần 'Oang' trong tiếng Việt (như 'hoàng', 'khoang').",
+      secretTip: "Tròn môi lướt sang mở rộng miệng.",
+      example: { hanzi: "黄", pinyin: "huáng", meaning: "Màu vàng", audio: "huáng" }
+    },
+    {
+      symbol: "iong",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[jʊŋ]",
+      mouthShape: "Từ 'i' dẹt môi trượt sang 'ong' tròn môi ngân mũi.",
+      vietnameseComparison: "Gần giống vần 'Iung' trong tiếng Việt (như 'nhung').",
+      secretTip: "Môi khép tròn lại ở cuối âm.",
+      example: { hanzi: "穷", pinyin: "qióng", meaning: "Nghèo", audio: "qióng" }
+    },
+    {
+      symbol: "ueng",
+      category: "Vận mẫu mũi sau (后鼻音韵母)",
+      categoryId: "back_nasal",
+      ipa: "[wəŋ]",
+      mouthShape: "Từ 'u' tròn môi lướt sang 'eng' (âng) ngân sâu trong vòm mũi.",
+      vietnameseComparison: "Giống vần 'Uâng' trong tiếng Việt (như 'quâng').",
+      secretTip: "Thường đứng độc lập không đi sau phụ âm khác, viết là weng (như wēng).",
+      example: { hanzi: "嗡", pinyin: "wēng", meaning: "Tiếng ong kêu vo ve", audio: "wēng" }
+    },
+    {
+      symbol: "er",
+      category: "Vận mẫu uốn lưỡi đặc biệt (卷舌韵母)",
+      categoryId: "retroflex_special",
+      ipa: "[aɚ]",
+      mouthShape: "Phát âm 'e' (ơ) đồng thời cong đầu lưỡi lên phía vòm họng ngạc cứng.",
+      vietnameseComparison: "Gần giống âm 'Ơ' uốn lưỡi (như 'er' trong tiếng Anh 'teacher', 'bird').",
+      secretTip: "Uốn lưỡi ngay khi luồng hơi bắt đầu phát ra, tạo âm cuốn lưỡi đặc trưng Bắc Kinh.",
+      example: { hanzi: "二", pinyin: "èr", meaning: "Số 2", audio: "èr" }
+    }
+  ],
+  tones: [
+    {
+      number: 1,
+      name: "Thanh 1 (Âm Bình - 阴平)",
+      symbol: "ˉ",
+      pitch: "55",
+      contour: "Cao - Bằng phẳng - Ngân đều",
+      description: "Bắt đầu ở nốt cao nhất (Sol cao) và ngân đều ngang không rơi giọng.",
+      vietnameseComparison: "Cao hơn thanh không (thanh ngang) của tiếng Việt khoảng 1 quãng tám, kéo dài và ngân đều như hát.",
+      formula: "mā (妈 - mẹ)",
+      audio: "mā",
+      secretTip: "Giữ cổ họng căng và cao độ ổn định suốt từ đầu tới cuối âm, không hạ giọng xuống như tiếng Việt."
+    },
+    {
+      number: 2,
+      name: "Thanh 2 (Dương Bình - 阳平)",
+      symbol: "ˊ",
+      pitch: "35",
+      contour: "Trung bình vút lên Cao",
+      description: "Bắt đầu từ cao độ trung bình (3) và vút nhanh dứt khoát lên cao độ đỉnh (5).",
+      vietnameseComparison: "Tương tự dấu Sắc trong tiếng Việt nhưng âm đi từ từ dưới lên trên mượt mà hơn.",
+      formula: "má (麻 - cây gai)",
+      audio: "má",
+      secretTip: "Tưởng tượng giọng bạn ngạc nhiên hỏi 'Hả? Cái gì cơ?' để bắt đúng cao độ vút lên."
+    },
+    {
+      number: 3,
+      name: "Thanh 3 (Thượng Thanh - 上声)",
+      symbol: "ˇ",
+      pitch: "214",
+      contour: "Hạ xuống Trầm rồi lượn lên Cao",
+      description: "Từ cao độ trung bình thấp (2) trượt xuống đáy trầm (1) rồi lượn nhẹ lên cao độ (4).",
+      vietnameseComparison: "Gần giống dấu Hỏi tiếng Việt nhưng phần đáy sâu và kéo dài hơn.",
+      formula: "mǎ (马 - con ngựa)",
+      audio: "mǎ",
+      secretTip: "Khi phát âm độc lập phải xuống thật trầm rồi mới hất nhẹ lên. Trong câu thực tế thường chỉ đọc 'nửa thanh 3' (hạ trầm 21)."
+    },
+    {
+      number: 4,
+      name: "Thanh 4 (Khứ Thanh - 去声)",
+      symbol: "ˋ",
+      pitch: "51",
+      contour: "Rơi thẳng đứng từ Đỉnh cao xuống Đáy",
+      description: "Bắt đầu từ nốt cao nhất (5) phóng thẳng xuống đáy thấp nhất (1) cực kỳ dứt khoát.",
+      vietnameseComparison: "Không giống dấu huyền cũng không giống dấu nặng! Giống tiếng ra lệnh dứt khoát 'Không!', 'Dừng!'.",
+      formula: "mà (骂 - mắng chửi)",
+      audio: "mà",
+      secretTip: "Tưởng tượng như ném một hòn đá từ trên đỉnh núi rơi thẳng xuống chân núi: dứt khoát, không kéo dài."
+    },
+    {
+      number: 5,
+      name: "Thanh nhẹ (Khinh Thanh - 轻声)",
+      symbol: "(không dấu)",
+      pitch: "Ngắn, nhẹ, trung tính",
+      contour: "Phụ thuộc vào thanh điệu đứng trước nó",
+      description: "Phát âm cực ngắn, nhẹ nhàng, thả lỏng toàn bộ cơ miệng.",
+      vietnameseComparison: "Giống như âm đuôi lướt nhẹ không mang trọng âm trong tiếng Việt.",
+      formula: "māma (妈妈), bàba (爸爸)",
+      audio: "māma",
+      secretTip: "Không nhấn giọng vào âm này, đọc như một cái chạm nhẹ của ngọn gió thoảng."
+    }
+  ],
+  toneSandhiRules: [
+    {
+      title: "Biến điệu hai thanh 3 đi liền nhau (3 + 3 → 2 + 3)",
+      rule: "Khi hai âm mang thanh 3 đứng liền nhau, từ đứng trước sẽ tự động biến thành thanh 2.",
+      exampleOriginal: "Nǐ (3) + hǎo (3)",
+      exampleReal: "Ní (2) + hǎo (3) [你好 - Xin chào]",
+      explanation: "Quy tắc sinh lý cấu âm: Rất khó để hạ trầm giọng liên tục 2 lần, do đó thanh đầu tự động nâng lên thanh 2 để nói trôi chảy.",
+      moreExamples: [
+        { word: "可以", pinyin: "kěyǐ → kéyǐ", meaning: "Có thể" },
+        { word: "手表", pinyin: "shǒubiǎo → shóubiǎo", meaning: "Đồng hồ" },
+        { word: "洗澡", pinyin: "xǐzǎo → xízǎo", meaning: "Tắm rửa" }
+      ]
+    },
+    {
+      title: "Biến điệu chữ 不 (Bù)",
+      rule: "Chữ 不 nguyên bản là thanh 4 (Bù). Khi đứng trước một chữ mang THANH 4 khác, 不 sẽ biến thành THANH 2 (Bú).",
+      exampleOriginal: "bù (4) + shì (4)",
+      exampleReal: "bú (2) + shì (4) [不是 - Không phải]",
+      explanation: "Trước thanh 1, 2, 3 thì 不 vẫn giữ nguyên thanh 4 (bù gāo, bù lái, bù hǎo). Chỉ biến thành Bú trước thanh 4.",
+      moreExamples: [
+        { word: "不要", pinyin: "bù yào → bú yào", meaning: "Không cần / Đừng" },
+        { word: "不对", pinyin: "bù duì → bú duì", meaning: "Không đúng" },
+        { word: "不去", pinyin: "bù qù → bú qù", meaning: "Không đi" }
+      ]
+    },
+    {
+      title: "Biến điệu chữ 一 (Yī)",
+      rule: "Chữ 一 đọc là Yī khi đếm số (1, 2, 3). Khi đứng trước thanh 4 biến thành Yí (thanh 2). Khi đứng trước thanh 1, 2, 3 biến thành Yì (thanh 4).",
+      exampleOriginal: "yī (1) + dìng (4) → yí dìng | yī (1) + tiān (1) → yì tiān",
+      exampleReal: "一定 (yídìng - Nhất định) | 一起 (yìqǐ - Cùng nhau)",
+      explanation: "Chữ 一 là từ có quy tắc biến âm linh hoạt nhất nhằm tạo nhịp điệu phong phú cho câu nói.",
+      moreExamples: [
+        { word: "一个人", pinyin: "yí gè rén", meaning: "Một người (trước thanh 4)" },
+        { word: "一天", pinyin: "yì tiān", meaning: "Một ngày (trước thanh 1)" },
+        { word: "一年", pinyin: "yì nián", meaning: "Một năm (trước thanh 2)" }
+      ]
+    },
+    {
+      title: "Quy tắc Nửa thanh 3 (Half-third tone)",
+      rule: "Khi thanh 3 đứng trước các âm thanh 1, thanh 2, thanh 4 hoặc thanh nhẹ, ta chỉ đọc nửa đầu (hạ từ 2 xuống 1) mà không lượn lên 4.",
+      exampleOriginal: "Běijīng (Bắc Kinh)",
+      exampleReal: "Běi (chỉ đọc hạ trầm) + jīng",
+      explanation: "Đây là bí quyết quan trọng nhất giúp bạn nói tiếng Trung tự nhiên và nhanh như người bản xứ.",
+      moreExamples: [
+        { word: "北京", pinyin: "Běijīng (21 + 55)", meaning: "Bắc Kinh" },
+        { word: "语言", pinyin: "yǔyán (21 + 35)", meaning: "Ngôn ngữ" },
+        { word: "每天", pinyin: "měitiān (21 + 55)", meaning: "Mỗi ngày" }
+      ]
+    }
+  ],
+  confusingPairs: [
+    {
+      id: "pair_b_p",
+      title: "Cặp Âm Hai Môi: b (Không bật hơi) vs p (Bật hơi mạnh)",
+      soundA: "b",
+      soundB: "p",
+      descA: "Hai môi khép chặn khí, mở êm ái, gần như không có luồng hơi phóng ra. Đọc giống 'P' tiếng Việt.",
+      descB: "Hai môi ép chặt nén khí, bung mở cực mạnh tống luồng hơi gió xốc ra ngoài. Làm bay tờ giấy.",
+      pairWords: [
+        { wordA: "八 (bā - Số 8)", wordB: "发 (pā - Nằm bò)" },
+        { wordA: "包 (bāo - Cái túi)", wordB: "跑 (pǎo - Chạy)" },
+        { wordA: "别 (bié - Đừng)", wordB: "皮 (pí - Da)" }
+      ],
+      tongueTwister: "八百标兵奔北坡，炮兵并排北坡跑。(Bābǎi biāobīng bēn běi pō, pàobīng bìngpái běi pō pǎo.)"
+    },
+    {
+      id: "pair_d_t",
+      title: "Cặp Âm Đầu Lưỡi: d (Không bật hơi) vs t (Bật hơi mạnh)",
+      soundA: "d",
+      soundB: "t",
+      descA: "Đầu lưỡi chạm chân răng trên chặn khí, hạ xuống đẩy hơi nhẹ, đọc giống chữ 'T' tiếng Việt (đừng đọc là Đ).",
+      descB: "Đầu lưỡi chạm chân răng trên, tích tụ khí rồi bật mạnh luồng hơi ra, giống âm 'Th' tiếng Việt.",
+      pairWords: [
+        { wordA: "大 (dà - To lớn)", wordB: "太 (tài - Quá)" },
+        { wordA: "读 (dú - Đọc)", wordB: "图 (tú - Bản đồ)" },
+        { wordA: "到 (dào - Đến)", wordB: "套 (tào - Bộ)" }
+      ],
+      tongueTwister: "吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮。(Chī pútáo bù tǔ pútáo pí...)"
+    },
+    {
+      id: "pair_g_k",
+      title: "Cặp Âm Cuống Lưỡi: g (Không bật hơi) vs k (Bật hơi mạnh)",
+      soundA: "g",
+      soundB: "k",
+      descA: "Cuống lưỡi nâng lên ngạc mềm chặn khí, hạ xuống nhẹ nhàng. Đọc giống chữ 'C / K' tiếng Việt.",
+      descB: "Cuống lưỡi nén khí trong họng rồi bật bung luồng hơi mạnh ra. Giống 'Kh' có độ tắc nén.",
+      pairWords: [
+        { wordA: "哥 (gē - Anh trai)", wordB: "渴 (kě - Khát nước)" },
+        { wordA: "公 (gōng - Công cộng)", wordB: "空 (kōng - Trống rỗng)" },
+        { wordA: "干 (gān - Khô)", wordB: "看 (kàn - Xem)" }
+      ],
+      tongueTwister: "哥挎瓜筐过宽沟，赶快过沟看怪狗。(Gē kuà guā kuāng guò kuān gōu...)"
+    },
+    {
+      id: "pair_j_q",
+      title: "Cặp Âm Mặt Lưỡi: j (Không bật hơi) vs q (Bật hơi dẹt miệng)",
+      soundA: "j",
+      soundB: "q",
+      descA: "Cười dẹt môi sang hai bên, mặt lưỡi ép ngạc trên, mở ra êm ái, giống chữ 'Ch' dẹt miệng.",
+      descB: "Cười dẹt môi, mặt lưỡi ép ngạc trên và tống luồng khí xì cực mạnh qua kẽ răng.",
+      pairWords: [
+        { wordA: "几 (jǐ - Mấy)", wordB: "起 (qǐ - Dậy)" },
+        { wordA: "精 (jīng - Tinh tế)", wordB: "清 (qīng - Trong lành)" },
+        { wordA: "借 (jiè - Mượn)", wordB: "切 (qiē - Cắt)" }
+      ],
+      tongueTwister: "七巷一个漆匠，西巷一个锡匠。(Qī xiàng yí gè qījiàng, xī xiàng yí gè xījiàng...)"
+    },
+    {
+      id: "pair_zh_ch",
+      title: "Cặp Âm Uốn Lưỡi: zh (Không bật hơi) vs ch (Bật hơi uốn lưỡi)",
+      soundA: "zh",
+      soundB: "ch",
+      descA: "Đầu lưỡi uốn cong lên chạm ngạc cứng sau, hạ nhẹ xuống đẩy hơi êm. Giống 'Tr' tiếng Việt uốn lưỡi sâu.",
+      descB: "Đầu lưỡi uốn cong lên ngạc cứng và bật bung luồng hơi mạnh ra ngoài.",
+      pairWords: [
+        { wordA: "这 (zhè - Đây)", wordB: "车 (chē - Xe)" },
+        { wordA: "照 (zhào - Chiếu)", wordB: "超 (chāo - Vượt)" },
+        { wordA: "张 (zhāng - Tờ / Trương)", wordB: "长 (cháng - Dài)" }
+      ],
+      tongueTwister: "知道就说知道，不知道就说不知道。(Zhīdào jiù shuō zhīdào...)"
+    },
+    {
+      id: "pair_z_c",
+      title: "Cặp Âm Đầu Lưỡi Thẳng: z (Không bật hơi) vs c (Bật hơi xì mạnh)",
+      soundA: "z",
+      soundB: "c",
+      descA: "Lưỡi thẳng chạm mặt sau răng trên, không bật hơi, phát âm dứt khoát.",
+      descB: "Lưỡi thẳng chạm răng trên và bật luồng hơi xì cực mạnh qua kẽ răng 'ts-s-s'.",
+      pairWords: [
+        { wordA: "字 (zì - Chữ)", wordB: "次 (cì - Lần)" },
+        { wordA: "早 (zǎo - Sớm)", wordB: "草 (cǎo - Cỏ)" },
+        { wordA: "租 (zū - Thuê)", wordB: "粗 (cū - Thô)" }
+      ],
+      tongueTwister: "四是四，十是十，十四是十四，四十是四十。(Sì shì sì, shí shì shí...)"
+    },
+    {
+      id: "pair_sh_s",
+      title: "Uốn Lưỡi vs Lưỡi Thẳng: sh (Uốn cong) vs s (Duỗi thẳng)",
+      soundA: "sh",
+      soundB: "s",
+      descA: "Đầu lưỡi uốn cong lên vòm họng ngạc cứng, hơi xát qua khe hẹp, âm dày và trầm ấm.",
+      descB: "Đầu lưỡi duỗi thẳng để sát chân răng dưới, hơi xát nhẹ qua kẽ răng phẳng, âm trong và dẹt.",
+      pairWords: [
+        { wordA: "山 (shān - Núi)", wordB: "三 (sān - Số 3)" },
+        { wordA: "十 (shí - Số 10)", wordB: "四 (sì - Số 4)" },
+        { wordA: "诗 (shī - Thơ)", wordB: "撕 (sī - Xé)" }
+      ],
+      tongueTwister: "山上四十四棵柿子树，山下四十四只野鸭子。(Shānshàng sìshísì kē shìzishù...)"
+    }
+  ],
+  interactiveMatrix: {
+    initialsHeaders: ["b", "p", "m", "f", "d", "t", "n", "l", "g", "k", "h", "j", "q", "x", "zh", "ch", "sh", "r", "z", "c", "s", "y", "w"],
+    finalsHeaders: [
+      "a", "o", "e", "i", "u", "ü",
+      "ai", "ei", "ao", "ou",
+      "ia", "ie", "iao", "iu",
+      "ua", "uo", "uai", "ui",
+      "üe",
+      "an", "en", "in", "ün",
+      "ian", "uan", "üan", "un",
+      "ang", "eng", "ing", "ong",
+      "iang", "uang", "iong"
+    ],
+    // Core syllabus combinations mapped to genuine Mandarin syllables
+    syllables: [
+      // Row a
+      { i: "b", f: "a", s: "ba", tones: ["bā", "bá", "bǎ", "bà"], tip: "Ba (bố), bā (số 8)" },
+      { i: "p", f: "a", s: "pa", tones: ["pā", "pá", "pǎ", "pà"], tip: "Bật hơi: pà (sợ)" },
+      { i: "m", f: "a", s: "ma", tones: ["mā", "má", "mǎ", "mà"], tip: "mā (mẹ), ma (trợ từ hỏi)" },
+      { i: "f", f: "a", s: "fa", tones: ["fā", "fá", "fǎ", "fà"], tip: "fā (phát), fǎ (pháp luật)" },
+      { i: "d", f: "a", s: "da", tones: ["dā", "dá", "dǎ", "dà"], tip: "dà (to lớn), dǎ (đánh)" },
+      { i: "t", f: "a", s: "ta", tones: ["tā", "tá", "tǎ", "tà"], tip: "tā (anh ấy / cô ấy)" },
+      { i: "n", f: "a", s: "na", tones: ["nā", "ná", "nǎ", "nà"], tip: "nà (kia), nǎ (nào)" },
+      { i: "l", f: "a", s: "la", tones: ["lā", "lá", "lǎ", "là"], tip: "là (cay), lā (kéo)" },
+      { i: "g", f: "a", s: "ga", tones: ["gā", "gá", "gǎ", "gà"], tip: "Đọc như Ca tiếng Việt" },
+      { i: "k", f: "a", s: "ka", tones: ["kā", "ká", "kǎ", "kà"], tip: "Bật hơi: kāfēi (cà phê)" },
+      { i: "h", f: "a", s: "ha", tones: ["hā", "há", "hǎ", "hà"], tip: "hā (ha ha)" },
+      { i: "zh", f: "a", s: "zha", tones: ["zhā", "zhá", "zhǎ", "zhà"], tip: "Uốn lưỡi: zhā (cắm)" },
+      { i: "ch", f: "a", s: "cha", tones: ["chā", "chá", "chǎ", "chà"], tip: "Uốn lưỡi bật hơi: chá (trà)" },
+      { i: "sh", f: "a", s: "sha", tones: ["shā", "shá", "shǎ", "shà"], tip: "Uốn lưỡi: shā (cát)" },
+      { i: "z", f: "a", s: "za", tones: ["zā", "zá", "zǎ", "zà"], tip: "Lưỡi thẳng: zá (tạp)" },
+      { i: "c", f: "a", s: "ca", tones: ["cā", "cá", "cǎ", "cà"], tip: "Bật hơi thẳng lưỡi: cā (lau)" },
+      { i: "s", f: "a", s: "sa", tones: ["sā", "sá", "sǎ", "sà"], tip: "Lưỡi thẳng: sǎ (rắc)" },
+
+      // Row o / uo
+      { i: "b", f: "o", s: "bo", tones: ["bō", "bó", "bǒ", "bò"], tip: "bō (sóng), bóbó (bác)" },
+      { i: "p", f: "o", s: "po", tones: ["pō", "pó", "pǒ", "pò"], tip: "pópo (bà nội)" },
+      { i: "m", f: "o", s: "mo", tones: ["mō", "mó", "mǒ", "mò"], tip: "mō (sờ mó)" },
+      { i: "f", f: "o", s: "fo", tones: ["fō", "fó", "fǒ", "fò"], tip: "fó (Phật)" },
+      { i: "d", f: "uo", s: "duo", tones: ["duō", "duó", "duǒ", "duò"], tip: "duō (nhiều)" },
+      { i: "t", f: "uo", s: "tuo", tones: ["tuō", "tuó", "tuǒ", "tuò"], tip: "tuō (cởi ra)" },
+      { i: "n", f: "uo", s: "nuo", tones: ["nuō", "nuó", "nuǒ", "nuò"], tip: "nuò (nhu nhược)" },
+      { i: "l", f: "uo", s: "luo", tones: ["luō", "luó", "luǒ", "luò"], tip: "luóbo (củ cải)" },
+      { i: "g", f: "uo", s: "guo", tones: ["guō", "guó", "guǒ", "guò"], tip: "guó (nước), guǒ (quả)" },
+      { i: "k", f: "uo", s: "kuo", tones: ["kuō", "kuó", "kuǒ", "kuò"], tip: "kuò (rộng rãi)" },
+      { i: "h", f: "uo", s: "huo", tones: ["huō", "huó", "huǒ", "huò"], tip: "huǒ (lửa)" },
+      { i: "zh", f: "uo", s: "zhuo", tones: ["zhuō", "zhuó", "zhuǒ", "zhuò"], tip: "zhuōzi (cái bàn)" },
+      { i: "ch", f: "uo", s: "chuo", tones: ["chuō", "chuó", "chuǒ", "chuò"], tip: "chuō (chọc)" },
+      { i: "sh", f: "uo", s: "shuo", tones: ["shuō", "shuó", "shuǒ", "shuò"], tip: "shuō (nói)" },
+      { i: "r", f: "uo", s: "ruo", tones: ["ruō", "ruó", "ruǒ", "ruò"], tip: "ruò (yếu)" },
+      { i: "z", f: "uo", s: "zuo", tones: ["zuō", "zuó", "zuǒ", "zuò"], tip: "zuò (làm, ngồi)" },
+      { i: "c", f: "uo", s: "cuo", tones: ["cuō", "cuó", "cuǒ", "cuò"], tip: "cuò (sai)" },
+      { i: "s", f: "uo", s: "suo", tones: ["suō", "suó", "suǒ", "suò"], tip: "suǒ (khóa)" },
+
+      // Row e
+      { i: "d", f: "e", s: "de", tones: ["dē", "dé", "dě", "de"], tip: "de (trợ từ kết cấu 的)" },
+      { i: "t", f: "e", s: "te", tones: ["tē", "té", "tě", "tè"], tip: "tèbié (đặc biệt)" },
+      { i: "n", f: "e", s: "ne", tones: ["nē", "né", "ně", "ne"], tip: "ne (trợ từ ngữ khí 呢)" },
+      { i: "l", f: "e", s: "le", tones: ["lē", "lé", "lě", "le"], tip: "le (trợ từ 了)" },
+      { i: "g", f: "e", s: "ge", tones: ["gē", "gé", "gě", "gè"], tip: "gēge (anh trai), gè (lượng từ)" },
+      { i: "k", f: "e", s: "ke", tones: ["kē", "ké", "kě", "kè"], tip: "kěyǐ (có thể), kè (bài học)" },
+      { i: "h", f: "e", s: "he", tones: ["hē", "hé", "hě", "hè"], tip: "hē (uống), hé (và)" },
+      { i: "zh", f: "e", s: "zhe", tones: ["zhē", "zhé", "zhě", "zhe"], tip: "zhe (trợ từ 着), zhè (đây)" },
+      { i: "ch", f: "e", s: "che", tones: ["chē", "ché", "chě", "chè"], tip: "chē (xe cộ)" },
+      { i: "sh", f: "e", s: "she", tones: ["shē", "shé", "shě", "shè"], tip: "shèhuì (xã hội)" },
+      { i: "r", f: "e", s: "re", tones: ["rē", "ré", "rě", "rè"], tip: "rè (nóng)" },
+      { i: "z", f: "e", s: "ze", tones: ["zē", "zé", "zě", "zè"], tip: "zěnme (thế nào)" },
+      { i: "c", f: "e", s: "ce", tones: ["cē", "cé", "cě", "cè"], tip: "cèsuǒ (nhà vệ sinh)" },
+      { i: "s", f: "e", s: "se", tones: ["sē", "sé", "sě", "sè"], tip: "yánsè (màu sắc)" },
+
+      // Row i (Notice special rule for zh, ch, sh, r, z, c, s -> pronounced as 'ư'!)
+      { i: "b", f: "i", s: "bi", tones: ["bī", "bí", "bǐ", "bì"], tip: "bǐ (so sánh / cái bút)" },
+      { i: "p", f: "i", s: "pi", tones: ["pī", "pí", "pǐ", "pì"], tip: "pí (da, vỏ)" },
+      { i: "m", f: "i", s: "mi", tones: ["mī", "mí", "mǐ", "mì"], tip: "mǐfàn (cơm)" },
+      { i: "d", f: "i", s: "di", tones: ["dī", "dí", "dǐ", "dì"], tip: "dìdi (em trai)" },
+      { i: "t", f: "i", s: "ti", tones: ["tī", "tí", "tǐ", "tì"], tip: "tī (đá bóng)" },
+      { i: "n", f: "i", s: "ni", tones: ["nī", "ní", "nǐ", "nì"], tip: "nǐ (bạn)" },
+      { i: "l", f: "i", s: "li", tones: ["lī", "lí", "lǐ", "lì"], tip: "lǐ (bên trong)" },
+      { i: "j", f: "i", s: "ji", tones: ["jī", "jí", "jǐ", "jì"], tip: "jī (con gà), jǐ (mấy)" },
+      { i: "q", f: "i", s: "qi", tones: ["qī", "qí", "qǐ", "qì"], tip: "qī (số 7), qǐlái (dậy)" },
+      { i: "x", f: "i", s: "xi", tones: ["xī", "xí", "xǐ", "xì"], tip: "xǐhuan (thích)" },
+      { i: "zh", f: "i", s: "zhi", tones: ["zhī", "zhí", "zhǐ", "zhì"], tip: "⚠️ Đọc là 'TRƯ' uốn lưỡi: zhīdao (biết)" },
+      { i: "ch", f: "i", s: "chi", tones: ["chī", "chí", "chǐ", "chì"], tip: "⚠️ Đọc là 'TRƯ' uốn lưỡi bật hơi: chīfàn (ăn cơm)" },
+      { i: "sh", f: "i", s: "shi", tones: ["shī", "shí", "shǐ", "shì"], tip: "⚠️ Đọc là 'SƯ' uốn lưỡi: shì (là, vâng)" },
+      { i: "r", f: "i", s: "ri", tones: ["rī", "rí", "rǐ", "rì"], tip: "⚠️ Đọc là 'RƯ' uốn lưỡi: rì (ngày)" },
+      { i: "z", f: "i", s: "zi", tones: ["zī", "zí", "zǐ", "zì"], tip: "⚠️ Đọc là 'TƯ' lưỡi thẳng: zì (chữ Hán)" },
+      { i: "c", f: "i", s: "ci", tones: ["cī", "cí", "cǐ", "cì"], tip: "⚠️ Đọc là 'TƯ' bật hơi: cì (lần)" },
+      { i: "s", f: "i", s: "si", tones: ["sī", "sí", "sǐ", "sì"], tip: "⚠️ Đọc là 'XƯ' lưỡi thẳng: sì (số 4)" },
+
+      // Row u
+      { i: "b", f: "u", s: "bu", tones: ["bū", "bú", "bǔ", "bù"], tip: "bù (không)" },
+      { i: "p", f: "u", s: "pu", tones: ["pū", "pú", "pǔ", "pù"], tip: "pǔtōnghuà (tiếng phổ thông)" },
+      { i: "m", f: "u", s: "mu", tones: ["mū", "mú", "mǔ", "mù"], tip: "mù (mục / mắt)" },
+      { i: "f", f: "u", s: "fu", tones: ["fū", "fú", "fǔ", "fù"], tip: "fúwùyuán (phục vụ)" },
+      { i: "d", f: "u", s: "du", tones: ["dū", "dú", "dǔ", "dù"], tip: "dú (đọc sách)" },
+      { i: "t", f: "u", s: "tu", tones: ["tū", "tú", "tǔ", "tù"], tip: "túshūguǎn (thư viện)" },
+      { i: "n", f: "u", s: "nu", tones: ["nū", "nú", "nǔ", "nù"], tip: "nǔlì (nỗ lực)" },
+      { i: "l", f: "u", s: "lu", tones: ["lū", "lú", "lǔ", "lù"], tip: "lù (đường sá)" },
+      { i: "g", f: "u", s: "gu", tones: ["gū", "gú", "gǔ", "gù"], tip: "gùshi (câu chuyện)" },
+      { i: "k", f: "u", s: "ku", tones: ["kū", "kú", "kǔ", "kù"], tip: "kū (khóc)" },
+      { i: "h", f: "u", s: "hu", tones: ["hū", "hú", "hǔ", "hù"], tip: "hùzhào (hộ chiếu)" },
+      { i: "zh", f: "u", s: "zhu", tones: ["zhū", "zhú", "zhǔ", "zhù"], tip: "zhù (ở, chúc)" },
+      { i: "ch", f: "u", s: "chu", tones: ["chū", "chú", "chǔ", "chù"], tip: "chū (ra ngoài)" },
+      { i: "sh", f: "u", s: "shu", tones: ["shū", "shú", "shǔ", "shù"], tip: "shū (sách)" },
+      { i: "r", f: "u", s: "ru", tones: ["rū", "rú", "rǔ", "rù"], tip: "rúguǒ (nếu như)" },
+      { i: "z", f: "u", s: "zu", tones: ["zū", "zú", "zǔ", "zù"], tip: "zū (thuê)" },
+      { i: "c", f: "u", s: "cu", tones: ["cū", "cú", "cǔ", "cù"], tip: "cù (giấm)" },
+      { i: "s", f: "u", s: "su", tones: ["sū", "sú", "sǔ", "sù"], tip: "sùshè (ký túc xá)" },
+
+      // Row ü (with j, q, x, y dot dropped!)
+      { i: "n", f: "ü", s: "nü", tones: ["nǖ", "nǘ", "nǚ", "nǜ"], tip: "nǚ (nữ, phụ nữ - có 2 chấm)" },
+      { i: "l", f: "ü", s: "lü", tones: ["lǖ", "lǘ", "lǚ", "lǜ"], tip: "lǜ (xanh lá - có 2 chấm)" },
+      { i: "j", f: "ü", s: "ju", tones: ["jū", "jú", "jǔ", "jù"], tip: "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': jù (vở kịch)" },
+      { i: "q", f: "ü", s: "qu", tones: ["qū", "qú", "qǔ", "qù"], tip: "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': qù (đi)" },
+      { i: "x", f: "ü", s: "xu", tones: ["xū", "xú", "xǔ", "xù"], tip: "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': xūyào (cần)" },
+      { i: "y", f: "ü", s: "yu", tones: ["yū", "yú", "yǔ", "yù"], tip: "⚠️ Đọc là 'ü': yǔ (mưa), yú (con cá)" },
+
+      // Popular Compound Rows
+      { i: "b", f: "ai", s: "bai", tones: ["bāi", "bái", "bǎi", "bài"], tip: "bái (trắng), bǎi (trăm)" },
+      { i: "p", f: "ai", s: "pai", tones: ["pāi", "pái", "pǎi", "pài"], tip: "pái (hàng)" },
+      { i: "m", f: "ai", s: "mai", tones: ["māi", "mái", "mǎi", "mài"], tip: "mǎi (mua), mài (bán)" },
+      { i: "d", f: "ai", s: "dai", tones: ["dāi", "dái", "dǎi", "dài"], tip: "dài (mang theo)" },
+      { i: "t", f: "ai", s: "tai", tones: ["tāi", "tái", "tǎi", "tài"], tip: "tài (quá, lắm)" },
+      { i: "n", f: "ai", s: "nai", tones: ["nāi", "nái", "nǎi", "nài"], tip: "nǎinai (bà nội)" },
+      { i: "l", f: "ai", s: "lai", tones: ["lāi", "lái", "lǎi", "lài"], tip: "lái (đến)" },
+      { i: "g", f: "ai", s: "gai", tones: ["gāi", "gái", "gǎi", "gài"], tip: "yīnggāi (nên)" },
+      { i: "k", f: "ai", s: "kai", tones: ["kāi", "kái", "kǎi", "kài"], tip: "kāi (mở)" },
+      { i: "h", f: "ai", s: "hai", tones: ["hāi", "hái", "hǎi", "hài"], tip: "hái (vẫn còn), hǎi (biển)" },
+
+      { i: "b", f: "an", s: "ban", tones: ["bān", "bán", "bǎn", "bàn"], tip: "bān (lớp học), bàn (làm)" },
+      { i: "p", f: "an", s: "pan", tones: ["pān", "pán", "pǎn", "pàn"], tip: "pánzi (cái đĩa)" },
+      { i: "m", f: "an", s: "man", tones: ["mān", "mán", "mǎn", "màn"], tip: "màn (chậm chạp)" },
+      { i: "d", f: "an", s: "dan", tones: ["dān", "dán", "dǎn", "dàn"], tip: "dànsì (nhưng)" },
+      { i: "t", f: "an", s: "tan", tones: ["tān", "tán", "tǎn", "tàn"], tip: "tán (nói chuyện)" },
+      { i: "n", f: "an", s: "nan", tones: ["nān", "nán", "nǎn", "nàn"], tip: "nán (khó / nam)" },
+      { i: "zh", f: "ang", s: "zhang", tones: ["zhāng", "zháng", "zhǎng", "zhàng"], tip: "zhāng (họ Trương, tờ)" },
+      { i: "ch", f: "ang", s: "chang", tones: ["chāng", "cháng", "chǎng", "chàng"], tip: "chàng (hát)" },
+      { i: "sh", f: "ang", s: "shang", tones: ["shāng", "sháng", "shǎng", "shàng"], tip: "shàng (trên, lên)" },
+
+      { i: "j", f: "ian", s: "jian", tones: ["jiān", "jián", "jiǎn", "jiàn"], tip: "⚠️ ian đọc là 'IÊN': jiàn (gặp)" },
+      { i: "q", f: "ian", s: "qian", tones: ["qiān", "qián", "qiǎn", "qiàn"], tip: "⚠️ ian đọc là 'IÊN' bật hơi: qián (tiền)" },
+      { i: "x", f: "ian", s: "xian", tones: ["xiān", "xián", "xiǎn", "xiàn"], tip: "⚠️ ian đọc là 'IÊN': xiànzài (bây giờ)" },
+      { i: "t", f: "ian", s: "tian", tones: ["tiān", "tián", "tiǎn", "tiàn"], tip: "⚠️ ian đọc là 'IÊN': tiān (trời, ngày)" },
+      { i: "d", f: "ian", s: "dian", tones: ["diān", "dián", "diǎn", "diàn"], tip: "⚠️ ian đọc là 'IÊN': diànhuà (điện thoại)" },
+
+      { i: "zh", f: "ong", s: "zhong", tones: ["zhōng", "zhóng", "zhǒng", "zhòng"], tip: "zhōngguó (Trung Quốc)" },
+      { i: "t", f: "ong", s: "tong", tones: ["tōng", "tóng", "tǒng", "tòng"], tip: "tóngxué (bạn cùng lớp)" },
+      { i: "d", f: "ong", s: "dong", tones: ["dōng", "dóng", "dǒng", "dòng"], tip: "dōngxi (đồ vật)" }
+    ]
+  },
+  earTrainingQuiz: [
+    {
+      id: "q1",
+      question: "Nghe âm thanh và xác định thanh mẫu nào phát âm BẬT HƠI?",
+      audioTarget: "pà",
+      options: [
+        { label: "A. b (bà)", isCorrect: false },
+        { label: "B. p (pà)", isCorrect: true },
+        { label: "C. m (mà)", isCorrect: false },
+        { label: "D. d (dà)", isCorrect: false }
+      ],
+      explain: "Âm 'p' là âm hai môi bật hơi cực mạnh (pʰ). Trong từ 'pà' (sợ), luồng hơi phóng ra rất rõ."
+    },
+    {
+      id: "q2",
+      question: "Âm tiết 'tiān' (trời/ngày) có vận mẫu 'ian' được phát âm gần giống âm nào trong tiếng Việt?",
+      audioTarget: "tiān",
+      options: [
+        { label: "A. Ti-an", isCorrect: false },
+        { label: "B. Thiên (Iên)", isCorrect: true },
+        { label: "C. Ti-ang", isCorrect: false },
+        { label: "D. Tang", isCorrect: false }
+      ],
+      explain: "Quy tắc vàng: Vận mẫu 'ian' luôn đọc là 'iên' (như trong tiān, jiàn, qián, xiànzài), tuyệt đối không đọc là 'i-an'."
+    },
+    {
+      id: "q3",
+      question: "Khi phát âm từ '你好' (Nǐ hǎo), âm 'Nǐ' sẽ được biến điệu thành thanh mấy?",
+      audioTarget: "nǐhǎo",
+      options: [
+        { label: "A. Giữ nguyên thanh 3 (Nǐ)", isCorrect: false },
+        { label: "B. Biến thành thanh 2 (Ní)", isCorrect: true },
+        { label: "C. Biến thành thanh 4 (Nì)", isCorrect: false },
+        { label: "D. Biến thành thanh 1 (Nī)", isCorrect: false }
+      ],
+      explain: "Quy tắc biến điệu hai thanh 3 đi liền nhau (3 + 3 → 2 + 3). 'Nǐ hǎo' được phát âm là 'Ní hǎo'."
+    },
+    {
+      id: "q4",
+      question: "Trong từ '中国' (zhōngguó), thanh mẫu 'zh' thuộc nhóm âm nào?",
+      audioTarget: "zhōngguó",
+      options: [
+        { label: "A. Âm đầu lưỡi thẳng không uốn", isCorrect: false },
+        { label: "B. Âm uốn lưỡi (cuốn lưỡi chạm ngạc cứng)", isCorrect: true },
+        { label: "C. Âm mặt lưỡi cười dẹt", isCorrect: false },
+        { label: "D. Âm môi răng", isCorrect: false }
+      ],
+      explain: "'zh' là âm uốn lưỡi (卷舌音), đầu lưỡi cong lên chạm vòm ngạc cứng, không bật hơi."
+    },
+    {
+      id: "q5",
+      question: "Nghe âm thanh và xác định thanh điệu của từ sau:",
+      audioTarget: "mà",
+      options: [
+        { label: "A. Thanh 1 (mā - ngang cao)", isCorrect: false },
+        { label: "B. Thanh 2 (má - vút lên)", isCorrect: false },
+        { label: "C. Thanh 3 (mǎ - trầm lượn)", isCorrect: false },
+        { label: "D. Thanh 4 (mà - rơi dứt khoát)", isCorrect: true }
+      ],
+      explain: "Âm 'mà' rơi thẳng đứng từ cao độ 5 xuống 1, rất dứt khoát, mang thanh 4 (骂 - mắng chửi)."
+    },
+    {
+      id: "q6",
+      question: "Khi kết hợp với 'j, q, x, y', chữ 'ü' (u 2 chấm) có quy tắc viết và đọc như thế nào?",
+      audioTarget: "qù",
+      options: [
+        { label: "A. Bỏ 2 chấm và đọc thành 'U' tiếng Việt", isCorrect: false },
+        { label: "B. Bỏ 2 chấm nhưng VẪN PHẢI ĐỌC LÀ 'ü' (tròn môi huýt sáo)", isCorrect: true },
+        { label: "C. Giữ nguyên 2 chấm", isCorrect: false },
+        { label: "D. Biến thành chữ O", isCorrect: false }
+      ],
+      explain: "Khi đi với j, q, x, y, để gọn gàng người ta bỏ hai dấu chấm trên đầu (ju, qu, xu, yu) nhưng bản chất vẫn là âm 'ü' tròn môi huýt sáo!"
+    },
+    {
+      id: "q7",
+      question: "Chữ '不' (bù) trong cụm từ '不是' (không phải) được phát âm thành:",
+      audioTarget: "búshì",
+      options: [
+        { label: "A. Bù shì (thanh 4)", isCorrect: false },
+        { label: "B. Bú shì (thanh 2)", isCorrect: true },
+        { label: "C. Bǔ shì (thanh 3)", isCorrect: false },
+        { label: "D. Bū shì (thanh 1)", isCorrect: false }
+      ],
+      explain: "Quy tắc biến điệu của 不: Khi đứng trước một chữ mang thanh 4 (như shì), chữ 不 biến thành thanh 2 (Bú)."
+    },
+    {
+      id: "q8",
+      question: "Vận mẫu 'e' trong từ '哥哥' (gēge - anh trai) được phát âm gần giống âm nào trong tiếng Việt?",
+      audioTarget: "gēge",
+      options: [
+        { label: "A. E (e thẹn)", isCorrect: false },
+        { label: "B. Ưa / Ơ (gưa-gơ)", isCorrect: true },
+        { label: "C. Ô (gô-gô)", isCorrect: false },
+        { label: "D. I (gi-gi)", isCorrect: false }
+      ],
+      explain: "Vận mẫu 'e' trong tiếng Trung phát âm là 'ưa' hoặc 'ơ', tuyệt đối không phát âm thành 'e' tiếng Việt."
+    }
+  ]
+};
+
+const outPath = path.join(__dirname, '..', 'public', 'data', 'pinyin_guide.json');
+fs.writeFileSync(outPath, JSON.stringify(pinyinGuideData, null, 2), 'utf8');
+console.log('Successfully generated public/data/pinyin_guide.json with', pinyinGuideData.initials.length, 'initials,', pinyinGuideData.finals.length, 'finals,', pinyinGuideData.confusingPairs.length, 'confusing pairs, and', pinyinGuideData.interactiveMatrix.syllables.length, 'interactive syllables.');
