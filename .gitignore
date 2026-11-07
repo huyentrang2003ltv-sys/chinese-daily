@@ -12,3 +12,5 @@ scripts/data/source/
 
 # Runtime data: accounts, session key, visitor counters
 storage/
+
+tmp/
