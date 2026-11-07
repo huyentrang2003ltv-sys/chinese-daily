@@ -2224,15 +2224,27 @@
               onclick="filterExamQuestionsByPart('listening')" 
               class="px-3.5 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer font-bold"
             >
-              🎧 Nghe Hiểu (Câu 1 - 20)
+              🎧 Nghe Hiểu
             </button>
             <button 
               id="examPartBtn-reading" 
               onclick="filterExamQuestionsByPart('reading')" 
               class="px-3.5 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer font-bold"
             >
-              📖 Đọc Hiểu (Câu 21 - 40)
+              📖 Đọc Hiểu
             </button>
+            <button 
+              id="examPartBtn-writing" 
+              onclick="filterExamQuestionsByPart('writing')" 
+              class="hidden px-3.5 py-1.5 rounded-lg text-stone-700 dark:text-stone-300 hover:text-[#8B1E1E] transition-all whitespace-nowrap cursor-pointer font-bold"
+            >
+              ✍️ Viết (书写)
+            </button>
+          </div>
+
+          <!-- Hanban CTI Standard Note for HSK 1-2 -->
+          <div id="examHanbanNote" class="hidden text-xs font-semibold px-2.5 py-1 rounded-lg bg-amber-50 dark:bg-stone-800 text-amber-900 dark:text-amber-300 border border-amber-200 dark:border-stone-700">
+            ℹ️ Chuẩn Hanban CTI: HSK 1-2 chỉ gồm Nghe & Đọc (200 điểm)
           </div>
 
           <!-- Quick Stats & Legend -->

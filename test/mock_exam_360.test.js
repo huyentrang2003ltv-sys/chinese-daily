@@ -188,4 +188,30 @@ test('HSK 360 Mock Exams Integrity & Hanban Simulation', async (t) => {
     const scoreVal = sandbox.document.getElementById('examScoreValue');
     assert.ok(scoreVal, 'Score value element exists');
   });
+
+  test('Writing Section (书写) Verification across HSK 3 - 6 and HSK 1 - 2 Hanban Note', async () => {
+    // 1. Verify index.html contains examPartBtn-writing and examHanbanNote
+    const html = fs.readFileSync('public/index.html', 'utf8');
+    assert.ok(html.includes('id="examPartBtn-writing"'), 'index.html must have examPartBtn-writing');
+    assert.ok(html.includes('id="examHanbanNote"'), 'index.html must have examHanbanNote');
+
+    // 2. Verify all HSK 3 - 6 exams have writing questions
+    [3, 4, 5, 6].forEach(lvl => {
+      const exams = allExams.filter(e => e.level === lvl);
+      assert.strictEqual(exams.length, 60, `HSK ${lvl} must have 60 exams`);
+      exams.forEach((ex, i) => {
+        const writingQs = ex.questions.filter(q => q.skill === 'writing' || (q.section || '').toLowerCase().includes('viết') || (q.section || '').toLowerCase().includes('书写'));
+        assert.ok(writingQs.length > 0, `HSK ${lvl} exam ${i + 1} must contain writing questions`);
+      });
+    });
+
+    // 3. Verify HSK 1 - 2 Hanban standard (Listening & Reading only, 200 total pts)
+    [1, 2].forEach(lvl => {
+      const exams = allExams.filter(e => e.level === lvl);
+      exams.forEach(ex => {
+        assert.strictEqual(ex.totalScore, 200, `HSK ${lvl} total score must be 200`);
+        assert.strictEqual(ex.passScore, 120, `HSK ${lvl} pass score must be 120`);
+      });
+    });
+  });
 });

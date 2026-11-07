@@ -256,6 +256,50 @@ function filterExamQuestionsByPart(part) {
 }
 
 function updatePartFilterButtons() {
+  const questions = (activeExam && activeExam.questions) || [];
+  let listeningCount = 0, readingCount = 0, writingCount = 0;
+
+  questions.forEach(q => {
+    const secLower = (q.section || '').toLowerCase();
+    const isListening = q.skill === 'listening' || secLower.includes('nghe') || secLower.includes('听力');
+    const isWriting = q.skill === 'writing' || secLower.includes('viết') || secLower.includes('书写');
+    if (isListening) listeningCount++;
+    else if (isWriting) writingCount++;
+    else readingCount++;
+  });
+
+  const btnListening = document.getElementById('examPartBtn-listening');
+  const btnReading = document.getElementById('examPartBtn-reading');
+  const btnWriting = document.getElementById('examPartBtn-writing');
+  const noteEl = document.getElementById('examHanbanNote');
+
+  if (btnListening) {
+    btnListening.innerHTML = `🎧 Nghe Hiểu (${listeningCount} câu)`;
+  }
+  if (btnReading) {
+    btnReading.innerHTML = `📖 Đọc Hiểu (${readingCount} câu)`;
+  }
+  if (btnWriting) {
+    if (writingCount > 0) {
+      btnWriting.classList.remove('hidden');
+      btnWriting.innerHTML = `✍️ Viết (书写 - ${writingCount} câu)`;
+    } else {
+      btnWriting.classList.add('hidden');
+      if (activeExamPartFilter === 'writing') {
+        activeExamPartFilter = 'all';
+      }
+    }
+  }
+
+  if (noteEl) {
+    if (writingCount === 0 && activeExam && activeExam.level <= 2) {
+      noteEl.classList.remove('hidden');
+      noteEl.innerHTML = `ℹ️ Chuẩn Hanban CTI: HSK ${activeExam.level} chính quy chỉ gồm 2 phần Nghe & Đọc (Tổng 200 điểm, đỗ 120đ)`;
+    } else {
+      noteEl.classList.add('hidden');
+    }
+  }
+
   ['all', 'listening', 'reading', 'writing'].forEach(p => {
     const btn = document.getElementById(`examPartBtn-${p}`);
     if (!btn) return;
@@ -410,6 +454,28 @@ function renderMockExam() {
           </div>
         </div>
       `;
+    } else if (q.targetChar || q.type === 'hanzi_completion' || q.type === 'input' || q.expectedAnswer) {
+      // Hanzi Character Writing / Sentence Input (根据拼音写汉字 / 看图造句)
+      const currentVal = examUserAnswers[q.id] || '';
+      contentHtml += `
+        <div class="space-y-3">
+          ${q.pinyin ? `
+            <div class="flex items-center gap-2 p-3 rounded-xl bg-amber-50 dark:bg-stone-800 border border-amber-200 dark:border-stone-700">
+              <span class="text-xs font-bold text-amber-900 dark:text-amber-300">Pinyin phiên âm chuẩn:</span>
+              <span class="font-mono text-base font-black text-[#8B1E1E] dark:text-amber-400">${q.pinyin}</span>
+            </div>
+          ` : ''}
+          <div class="flex gap-2 items-center">
+            <input 
+              type="text" 
+              value="${escapeJs(currentVal)}"
+              oninput="setExamTextInput('${escapeJs(q.id)}', this.value)"
+              placeholder="Nhập chữ Hán hoặc câu hoàn chỉnh..." 
+              class="flex-1 px-4 py-2.5 rounded-xl border border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900 text-stone-900 dark:text-stone-100 font-hanzi font-bold text-base focus:ring-2 focus:ring-[#8B1E1E] focus:outline-none"
+            />
+          </div>
+        </div>
+      `;
     } else if (q.options) {
       // Multiple Choice / True-False
       contentHtml += `
@@ -478,6 +544,12 @@ function removeExamReorderWord(qId, idx) {
     renderMockExam();
     updateExamProgressStats();
   }
+}
+
+function setExamTextInput(qId, val) {
+  examUserAnswers[qId] = val;
+  updateExamProgressStats();
+  renderQuestionPalette();
 }
 
 // ---------------- 60 EXAMS SELECTOR MODAL ----------------
@@ -595,6 +667,12 @@ function submitMockExam() {
       isCorrect = selected.join('') === q.correctOrder.join('');
       userAnsText = selected.join(' ') || '(Chưa làm)';
       correctAnsText = q.correctOrder.join(' ');
+    } else if (q.targetChar || q.expectedAnswer) {
+      const userText = String(examUserAnswers[q.id] || '').trim();
+      const expected = String(q.targetChar || q.expectedAnswer || '').trim();
+      isCorrect = userText.toLowerCase() === expected.toLowerCase();
+      userAnsText = userText || '(Chưa điền)';
+      correctAnsText = expected;
     } else if (q.options) {
       const userKey = examUserAnswers[q.id];
       const correctOpt = q.options.find(o => o.isCorrect);

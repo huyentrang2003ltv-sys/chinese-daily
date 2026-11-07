@@ -1,0 +1,5 @@
+2026/11/07-20:45:16.693 2f98 Creating DB C:\Users\Admin\.gemini\antigravity\scratch\hanzii-logic\tmp\edge_cheer_1794059113349\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/11/07-20:45:16.997 2f98 Reusing MANIFEST C:\Users\Admin\.gemini\antigravity\scratch\hanzii-logic\tmp\edge_cheer_1794059113349\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/11/07-20:45:18.871 5d40 Level-0 table #5: started
+2026/11/07-20:45:18.889 5d40 Level-0 table #5: 683284 bytes OK
+2026/11/07-20:45:18.916 5d40 Delete type=0 #3
