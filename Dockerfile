@@ -10,7 +10,7 @@ RUN npm run build:css
 
 # ---- Runtime stage ----
 FROM node:20-alpine
-ENV NODE_ENV=production PORT=3000 STORAGE_DIR=/app/storage
+ENV NODE_ENV=production PORT=3005 STORAGE_DIR=/app/storage
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --omit=dev && npm cache clean --force
@@ -22,6 +22,6 @@ COPY --from=build /app/public ./public
 RUN mkdir -p /app/storage && chown node:node /app/storage
 VOLUME ["/app/storage"]
 USER node
-EXPOSE 3000
-HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://127.0.0.1:3000/healthz || exit 1
+EXPOSE 3005
+HEALTHCHECK --interval=30s --timeout=3s CMD wget -qO- http://127.0.0.1:3005/healthz || exit 1
 CMD ["node", "server.js"]

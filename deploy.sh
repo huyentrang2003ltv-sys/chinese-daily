@@ -1,57 +1,85 @@
 #!/usr/bin/env bash
 # ========================================================
-# YUHAN HSK - VPS deploy script (Ubuntu 20.04+ / Debian 11+)
-# Run from the root of a cloned repository:
-#   git clone <repo> /var/www/yuhan-hsk && cd /var/www/yuhan-hsk && sudo ./deploy.sh
-# The app listens on PORT (default 3000); put Caddy/nginx in front for 80/443.
+# CHINESE DAILY (Học Tiếng Trung Mỗi Ngày) - VPS Production Deployment
+# Target Directory: /opt/chinese-daily
+# Port: 3005 (Behind Nginx reverse proxy on 80/443)
 # ========================================================
 set -euo pipefail
 
-APP_NAME="yuhan-hsk"
-APP_PORT="${PORT:-3000}"
-cd "$(dirname "$0")"
+APP_NAME="chinese-daily"
+APP_DIR="/opt/chinese-daily"
+APP_PORT="${PORT:-3005}"
+LOG_DIR="/var/log/chinese-daily"
 
-echo "🚀 [YUHAN HSK] Deploying from $(pwd)"
+echo "========================================================"
+echo "🚀 [CHINESE DAILY] Starting production deployment..."
+echo "========================================================"
 
+# 1. Ensure required system packages
 if ! command -v node >/dev/null 2>&1; then
   echo "📦 Installing Node.js 20.x..."
   curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
   apt-get install -y nodejs
 fi
-echo "Node $(node -v) / npm $(npm -v)"
+echo "✓ Node $(node -v) / npm $(npm -v)"
+
+if ! command -v git >/dev/null 2>&1; then
+  echo "📦 Installing git..."
+  apt-get update -y && apt-get install -y git
+fi
 
 if ! command -v pm2 >/dev/null 2>&1; then
-  echo "📦 Installing PM2..."
+  echo "📦 Installing PM2 globally..."
   npm install -g pm2
 fi
 
-# One-time migration: older versions kept accounts in data/users.json inside the repo.
-# Keep a copy for the server to import, then drop the local changes so `git pull` can proceed.
-if [ -f data/users.json ] && [ ! -f storage/users.json ]; then
-  echo "🗂️  Migrating data/users.json -> storage/legacy-users.json"
-  mkdir -p storage
-  cp data/users.json storage/legacy-users.json
-fi
-git checkout -- data/users.json data/visitor_stats.json 2>/dev/null || true
+# 2. Setup target directories
+echo "📁 Setting up directories..."
+mkdir -p "$APP_DIR" "$APP_DIR/storage" "$LOG_DIR"
 
+cd "$APP_DIR"
+
+# 3. Pull latest code if git repo exists, otherwise clone
+if [ ! -d ".git" ]; then
+  echo "📥 Cloning repository from GitHub..."
+  git clone https://github.com/huyentrang2003ltv-sys/chinese-daily.git .
+else
+  echo "📥 Fetching and pulling latest changes..."
+  git reset --hard HEAD
+  git pull origin main
+fi
+
+# 4. Install production dependencies and build assets
 echo "📦 Installing dependencies & building assets..."
-git pull --ff-only || true
 npm ci
 npm run build
 npm prune --omit=dev
 
-echo "⚡ (Re)starting $APP_NAME on port $APP_PORT..."
+# 5. Setup PM2 Process Management
+echo "⚡ Starting/Reloading application with PM2..."
 if pm2 describe "$APP_NAME" >/dev/null 2>&1; then
-  PORT="$APP_PORT" NODE_ENV=production pm2 reload "$APP_NAME" --update-env
+  pm2 reload ecosystem.config.cjs --update-env
 else
-  PORT="$APP_PORT" NODE_ENV=production pm2 start server.js --name "$APP_NAME" --time
+  pm2 start ecosystem.config.cjs
 fi
 pm2 save
-pm2 startup systemd -u "$(logname 2>/dev/null || echo root)" --hp "$HOME" >/dev/null 2>&1 || true
+pm2 startup systemd -u root --hp /root >/dev/null 2>&1 || true
+
+# 6. Configure Nginx if installed
+if command -v nginx >/dev/null 2>&1; then
+  echo "🌐 Configuring Nginx reverse proxy..."
+  if [ -f "$APP_DIR/deploy/nginx.conf" ]; then
+    cp "$APP_DIR/deploy/nginx.conf" /etc/nginx/sites-available/chinese-daily
+    ln -sf /etc/nginx/sites-available/chinese-daily /etc/nginx/sites-enabled/chinese-daily
+    rm -f /etc/nginx/sites-enabled/default 2>/dev/null || true
+    nginx -t && systemctl reload nginx || echo "⚠️ Nginx test failed, check manual configuration"
+  fi
+fi
 
 echo "========================================================"
-echo "🎉 Deployed. Health check: curl http://127.0.0.1:${APP_PORT}/healthz"
-echo "   Logs: pm2 logs ${APP_NAME}"
-echo "   Expose publicly via a reverse proxy, e.g. Caddyfile:"
-echo "     your-domain.com { reverse_proxy 127.0.0.1:${APP_PORT} }"
+echo "🎉 DEPLOYMENT COMPLETED SUCCESSFULLY!"
+echo "   Status:      pm2 status"
+echo "   Logs:        pm2 logs $APP_NAME"
+echo "   Log files:   $LOG_DIR/access.log & $LOG_DIR/error.log"
+echo "   Healthcheck: curl http://127.0.0.1:$APP_PORT/healthz"
 echo "========================================================"

@@ -372,6 +372,36 @@
         </div>
       </div>
 
+      <!-- ==================== BANNER ĐÁNH GIÁ NĂNG LỰC 15 PHÚT ==================== -->
+      <div class="p-4 sm:p-5 rounded-3xl bg-gradient-to-r from-amber-500/15 via-[#FFFDF9] to-red-500/10 dark:from-[#241a1a] dark:via-[#161B22] dark:to-[#1c1818] border-2 border-red-800/30 dark:border-red-700/50 shadow-sm flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div class="flex items-center gap-3.5">
+          <div class="w-12 h-12 rounded-2xl bg-gradient-to-tr from-[#8B1E1E] to-amber-600 text-white flex items-center justify-center font-bold text-2xl shadow-sm shrink-0">
+            📝
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h3 class="text-sm sm:text-base font-black text-stone-900 dark:text-stone-100 font-serif-luxury">
+                Bài Đánh Giá Năng Lực Đầu Vào (15 Phút)
+              </h3>
+              <span class="text-[9px] px-2 py-0.5 rounded-full bg-red-100 dark:bg-red-950 text-red-800 dark:text-red-300 font-bold border border-red-300">
+                Khuyên làm ngay
+              </span>
+            </div>
+            <p class="text-xs text-stone-600 dark:text-stone-400 mt-0.5">
+              15 câu hỏi đánh giá từ HSK 1 đến HSK 4 để tư vấn cấp độ học vừa sức, tránh cảm giác quá tải hay chán nản.
+            </p>
+          </div>
+        </div>
+        <button 
+          type="button" 
+          onclick="openPlacementTestModal()" 
+          class="shrink-0 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white text-xs font-bold shadow-md transition-all flex items-center gap-2 cursor-pointer"
+        >
+          <span>Bắt Đầu Kiểm Tra</span>
+          <span>⏱️ 15:00</span>
+        </button>
+      </div>
+
       <!-- ==================== KHỐI LỘ TRÌNH NHẬP MÔN 7 NGÀY (7-DAY GOLDEN PATH) ==================== -->
       <section id="beginnerGoldenPathSection" class="space-y-4">
         <div class="glass-card rounded-3xl p-5 sm:p-7 bg-gradient-to-br from-amber-50/90 via-[#FFFDF9] to-emerald-50/50 dark:from-[#1c2433] dark:via-[#161B22] dark:to-[#172224] border-2 border-amber-300/90 dark:border-amber-500/30 shadow-md relative overflow-hidden">
@@ -4075,6 +4105,31 @@
 
           <form onsubmit="handleAuthRegisterSubmit(event)" class="space-y-3 max-h-[56vh] overflow-y-auto custom-scrollbar pr-1">
             <div>
+              <div class="flex items-center justify-between mb-1">
+                <label class="text-xs font-bold text-stone-700 dark:text-stone-300">Tên Tài Khoản (Tiếng Trung hoặc Tiếng Việt)</label>
+                <span class="text-[10px] text-amber-700 dark:text-amber-400 font-semibold">Duy nhất & Không trùng</span>
+              </div>
+              <div class="relative">
+                <i data-lucide="at-sign" class="absolute left-3 top-2.5 w-4 h-4 text-stone-400"></i>
+                <input 
+                  id="registerUsernameInput" 
+                  type="text" 
+                  placeholder="Chọn tên tiếng Trung (vd: 王小明, 李华) hoặc tiếng Việt" 
+                  required
+                  class="w-full pl-9 pr-3.5 py-2 rounded-xl bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-xs text-stone-900 dark:text-stone-100 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E]" 
+                />
+              </div>
+              <div class="mt-1 flex flex-wrap gap-1 text-[10px] text-stone-500">
+                <span class="text-stone-400">Gợi ý tên Trung:</span>
+                <button type="button" onclick="document.getElementById('registerUsernameInput').value='王小明'" class="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-stone-700 text-amber-900 dark:text-amber-200 hover:opacity-80">王小明</button>
+                <button type="button" onclick="document.getElementById('registerUsernameInput').value='李华'" class="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-stone-700 text-amber-900 dark:text-amber-200 hover:opacity-80">李华</button>
+                <button type="button" onclick="document.getElementById('registerUsernameInput').value='张伟'" class="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-stone-700 text-amber-900 dark:text-amber-200 hover:opacity-80">张伟</button>
+                <button type="button" onclick="document.getElementById('registerUsernameInput').value='陈静'" class="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-stone-700 text-amber-900 dark:text-amber-200 hover:opacity-80">陈静</button>
+              </div>
+              <p class="text-[10px] text-stone-400 mt-1 italic">Mỗi Gmail chỉ có 1 tên tài khoản duy nhất để Admin tiện kiểm soát và hỗ trợ học viên.</p>
+            </div>
+
+            <div>
               <label class="block text-xs font-bold text-stone-700 dark:text-stone-300 mb-1">Họ & Tên Hiển Thị</label>
               <div class="relative">
                 <i data-lucide="user" class="absolute left-3 top-2.5 w-4 h-4 text-stone-400"></i>
@@ -5373,6 +5428,7 @@
   <script defer src="js/features/woodblock.js"></script>
   <script defer src="js/features/flipcard.js"></script>
   <script defer src="js/features/classroom.js"></script>
+  <script defer src="js/features/placement_test.js"></script>
   <script defer src="js/core/router.js"></script>
 
   <!-- ==================== SUPER ADMIN DASHBOARD MODAL ==================== -->

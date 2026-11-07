@@ -97,17 +97,66 @@ if (Array.isArray(store.get())) {
 
 const users = () => store.get();
 const findByEmail = email => users().find(u => u.email === String(email || '').trim().toLowerCase()) || null;
+const findByUsername = uname => {
+  const target = String(uname || '').trim().toLowerCase();
+  if (!target) return null;
+  return users().find(u => {
+    const uName = String(u.username || '').trim().toLowerCase();
+    const dName = String(u.name || '').trim().toLowerCase();
+    return uName === target || dName === target;
+  }) || null;
+};
+const findByName = name => {
+  const target = String(name || '').trim().toLowerCase();
+  if (!target) return null;
+  return users().find(u => String(u.name || '').trim().toLowerCase() === target) || null;
+};
 const findById = id => users().find(u => u.id === id) || null;
+
+const INACTIVITY_LOCK_DAYS = 3;
+
+function checkInactivityLock(user) {
+  if (!user || user.role === 'admin') return false;
+  if (user.isLocked) return true;
+  const lastActive = user.lastActiveAt ? new Date(user.lastActiveAt).getTime() : new Date(user.createdAt || Date.now()).getTime();
+  const diffDays = (Date.now() - lastActive) / DAY_MS;
+  if (diffDays > INACTIVITY_LOCK_DAYS) {
+    user.isLocked = true;
+    user.lockReason = 'Tài khoản bị tạm khóa do quá 3 ngày liên tục chưa hoàn thành 10 phút học tập mỗi ngày.';
+    user.lockedAt = new Date().toISOString();
+    store.save();
+    syncUser(user);
+    return true;
+  }
+  return false;
+}
+
+function unlockUser(user) {
+  if (!user) return;
+  user.isLocked = false;
+  user.lockReason = null;
+  user.lockedAt = null;
+  user.lastActiveAt = new Date().toISOString();
+  store.save();
+  syncUser(user);
+}
+
+function touchUserActivity(user) {
+  if (!user) return;
+  user.lastActiveAt = new Date().toISOString();
+  store.save();
+}
 
 function newId() {
   return 'usr_' + crypto.randomBytes(9).toString('base64url');
 }
 
-function createUser({ name, email, password, language, profession, purpose, progress }) {
+function createUser({ username, name, email, password, language, profession, purpose, progress }) {
   const now = new Date().toISOString();
   const user = {
     id: newId(),
-    name,
+    username: username || name,
+    name: name || username,
     email: email.toLowerCase(),
     passwordHash: hashPassword(password),
     role: 'student',
@@ -115,6 +164,10 @@ function createUser({ name, email, password, language, profession, purpose, prog
     profession,
     purpose,
     createdAt: now,
+    lastActiveAt: now,
+    isLocked: false,
+    lockReason: null,
+    lockedAt: null,
     trialStartedAt: now,
     vipTier: null,
     vipExpiresAt: null,
@@ -183,8 +236,10 @@ function vipInfo(user) {
 /** The user as sent to their own browser (no password hash). */
 function publicUser(user) {
   if (!user) return null;
+  checkInactivityLock(user);
   return {
     id: user.id,
+    username: user.username || user.name,
     name: user.name,
     email: user.email,
     role: user.role,
@@ -192,6 +247,10 @@ function publicUser(user) {
     profession: user.profession,
     purpose: user.purpose,
     createdAt: user.createdAt,
+    lastActiveAt: user.lastActiveAt || user.createdAt,
+    isLocked: Boolean(user.isLocked),
+    lockReason: user.lockReason || null,
+    lockedAt: user.lockedAt || null,
     vipInfo: vipInfo(user),
     progress: user.progress || {}
   };
@@ -264,6 +323,8 @@ module.exports = {
   saveUsers: () => store.save(),
   flushUsers: () => store.flush(),
   findByEmail,
+  findByUsername,
+  findByName,
   findById,
   createUser,
   setPassword,
@@ -272,6 +333,9 @@ module.exports = {
   DUMMY_HASH,
   vipInfo,
   publicUser,
+  checkInactivityLock,
+  unlockUser,
+  touchUserActivity,
   createSessionToken,
   userFromSessionToken,
   sessionCookie

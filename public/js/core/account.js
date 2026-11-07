@@ -116,6 +116,14 @@ function applySignedInUser(user, { merge = false } = {}) {
   saveUserProfile();
   renderAccountUi();
   if (typeof onProfileChanged === 'function') onProfileChanged();
+
+  // Check 3-day inactivity lock and VIP study reminder scheduler
+  if (window.checkUserInactivityLock) {
+    window.checkUserInactivityLock(user);
+  }
+  if (window.initVipStudyReminder) {
+    window.initVipStudyReminder(user);
+  }
 }
 
 // ---------------- Header & user menu ----------------
@@ -275,12 +283,13 @@ async function handleAuthLoginSubmit(e) {
 
 async function handleAuthRegisterSubmit(e) {
   if (e) e.preventDefault();
-  const name = fieldValue('registerNameInput').trim();
+  const username = (fieldValue('registerUsernameInput') || fieldValue('registerNameInput')).trim();
+  const name = fieldValue('registerNameInput').trim() || username;
   const email = fieldValue('registerEmailInput').trim().toLowerCase();
   const password = fieldValue('registerPasswordInput');
   const confirm = fieldValue('registerConfirmPasswordInput');
 
-  if (!name || !email || !password) return setAuthError('registerErrorMsg', 'Vui lòng điền đầy đủ thông tin đăng ký.');
+  if (!username || !email || !password) return setAuthError('registerErrorMsg', 'Vui lòng điền đầy đủ tên tài khoản, email và mật khẩu.');
   if (password.length < 8) return setAuthError('registerErrorMsg', 'Mật khẩu cần tối thiểu 8 ký tự.');
   if (password !== confirm) return setAuthError('registerErrorMsg', 'Mật khẩu xác nhận không khớp.');
   setAuthError('registerErrorMsg', '');
@@ -290,6 +299,7 @@ async function handleAuthRegisterSubmit(e) {
       const { user } = await apiRequest('/api/auth/register', {
         method: 'POST',
         body: {
+          username,
           name,
           email,
           password,
@@ -302,7 +312,10 @@ async function handleAuthRegisterSubmit(e) {
       });
       applySignedInUser(user);
       closeAuthModal();
-      showToast(`Chào mừng ${user.name}! Bạn có ${user.vipInfo.daysRemaining} ngày dùng thử đầy đủ tính năng.`, 'success');
+      showToast(`Chào mừng ${user.name}! Bắt đầu bài đánh giá năng lực 15 phút nhé!`, 'success');
+      if (window.openPlacementTestModal) {
+        setTimeout(() => window.openPlacementTestModal(), 800);
+      }
     } catch (err) {
       setAuthError('registerErrorMsg', err.message);
     }
@@ -389,9 +402,13 @@ async function loadAdminUserVipTable() {
               ${u.needsPasswordReset ? '<div class="text-[10px] text-rose-600 font-bold">Cần đặt lại mật khẩu</div>' : ''}
             </td>
             <td class="p-2.5 font-mono">${(u.exp || 0).toLocaleString('vi-VN')}</td>
-            <td class="p-2.5"><span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">${escapeHtml(u.vipInfo.label)}</span></td>
+            <td class="p-2.5">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">${escapeHtml(u.vipInfo.label)}</span>
+              ${u.isLocked ? `<div class="mt-1"><span class="px-2 py-0.5 rounded-full text-[9px] font-bold bg-red-100 dark:bg-red-950 text-red-700 dark:text-red-300 border border-red-300">🔒 Khóa do quá 3 ngày</span></div>` : ''}
+            </td>
             <td class="p-2.5 text-right">
               ${u.role === 'admin' ? '' : `<div class="inline-flex flex-wrap justify-end gap-1">
+                ${u.isLocked ? `<button onclick="adminUnlockUser(${jsArg(u.email)})" class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-600 hover:bg-emerald-700 text-white shadow-2xs" title="Mở khóa tài khoản học viên">🔓 Mở khóa</button>` : ''}
                 ${actionBtn(u.email, 'monthly', '+1 tháng', 'bg-stone-100 hover:bg-amber-200 dark:bg-stone-800 text-stone-700 dark:text-stone-200', 'Kích hoạt 30 ngày VIP')}
                 ${actionBtn(u.email, 'yearly', '+1 năm', 'bg-amber-500 hover:bg-amber-600 text-white', 'Kích hoạt 365 ngày VIP')}
                 ${actionBtn(u.email, 'lifetime', 'Trọn đời', 'bg-[#8B1E1E] hover:bg-red-800 text-white', 'Kích hoạt VIP trọn đời')}
@@ -410,6 +427,16 @@ async function adminSetUserVip(targetEmail, tier) {
     showToast(result.message, 'success');
     if (currentUser && currentUser.email === result.user.email) currentUser.vipInfo = result.user.vipInfo;
     renderAccountUi();
+    loadAdminUserVipTable();
+  } catch (err) {
+    showToast(err.message, 'error');
+  }
+}
+
+async function adminUnlockUser(email) {
+  try {
+    const result = await apiRequest('/api/admin/unlock-user', { method: 'POST', body: { email } });
+    showToast(result.message, 'success');
     loadAdminUserVipTable();
   } catch (err) {
     showToast(err.message, 'error');

@@ -1,0 +1,188 @@
+{
+  "title": "Bài Kiểm Tra Đánh Giá Năng Lực Đầu Vào (15 Phút)",
+  "description": "Đánh giá chính xác phản xạ từ vựng, ngữ pháp và đọc hiểu tiếng Trung từ HSK 1 đến HSK 4 nhằm tư vấn cấp độ học phù hợp nhất, tránh cảm giác quá tải hay chán nản.",
+  "durationMinutes": 15,
+  "totalQuestions": 15,
+  "recommendations": {
+    "hsk1": {
+      "level": "HSK 1 (Nhập môn & Khởi động)",
+      "scoreRange": "0 - 5 câu đúng",
+      "badge": "🌱 Mầm Non Chăm Chỉ",
+      "advice": "Bạn nên bắt đầu từ Lộ trình HSK 1 và Bảng phiên âm Pinyin. Nắm chắc cách phát âm chuẩn và 150 từ vựng căn bản để xây móng thật vững trước khi tăng tốc!",
+      "targetTab": "pinyin"
+    },
+    "hsk2": {
+      "level": "HSK 2 (Sơ cấp giao tiếp)",
+      "scoreRange": "6 - 9 câu đúng",
+      "badge": "⭐ Người Đồng Hành Tiềm Năng",
+      "advice": "Nền tảng của bạn rất tốt! Bạn đã vượt qua mức vỡ lòng. Hãy bắt đầu ngay với HSK 2 và luyện tập hội thoại tình huống hằng ngày để tự tin giao tiếp.",
+      "targetTab": "conversations"
+    },
+    "hsk3": {
+      "level": "HSK 3 (Trung cấp bứt phá)",
+      "scoreRange": "10 - 12 câu đúng",
+      "badge": "🚀 Chiến Binh HSK",
+      "advice": "Trình độ của bạn rất ấn tượng! Bạn đã nắm vững các mẫu câu cơ bản. HSK 3 là cấp độ lý tưởng để nâng vốn từ lên 600 từ và đọc hiểu các đoạn văn bản thực tế.",
+      "targetTab": "hsk30"
+    },
+    "hsk4": {
+      "level": "HSK 4+ (Cao cấp & Thương mại)",
+      "scoreRange": "13 - 15 câu đúng",
+      "badge": "👑 Cao Thủ Tiếng Trung",
+      "advice": "Xuất sắc! Ngữ pháp và từ vựng của bạn rất vững chắc. Bạn nên học chuyên sâu HSK 4 trở lên, luyện dịch thuật thực chiến và luyện đề thi thử HSK.",
+      "targetTab": "exam"
+    }
+  },
+  "questions": [
+    {
+      "id": 1,
+      "level": "HSK 1",
+      "question": "Chọn Pinyin chuẩn xác cho từ '你好':",
+      "options": ["A. nǐ hǎo", "B. mí hǎo", "C. nǐ hāo", "D. nī hǎo"],
+      "correct": 0,
+      "explain": "'你好' phiên âm chuẩn là 'nǐ hǎo' (xin chào)."
+    },
+    {
+      "id": 2,
+      "level": "HSK 1",
+      "question": "Điền từ thích hợp vào chỗ trống: '我___中国人。'",
+      "options": ["A. 在 (zài)", "B. 是 (shì)", "C. 有 (yǒu)", "D. 去 (qù)"],
+      "correct": 1,
+      "explain": "Cấu trúc A 是 B: '我是中国人' (Tôi là người Trung Quốc)."
+    },
+    {
+      "id": 3,
+      "level": "HSK 1",
+      "question": "Nghĩa tiếng Việt của câu '我想喝茶' là gì?",
+      "options": ["A. Tôi thích uống cà phê", "B. Tôi muốn ăn cơm", "C. Tôi muốn uống trà", "D. Tôi muốn mua hoa quả"],
+      "correct": 2,
+      "explain": "'想' (muốn), '喝' (uống), '茶' (trà)."
+    },
+    {
+      "id": 4,
+      "level": "HSK 2",
+      "question": "Từ nào sau đây mang nghĩa là 'ngày mai'?",
+      "options": ["A. 昨天 (zuótiān)", "B. 今天 (jīntiān)", "C. 明天 (míngtiān)", "D. 去年 (qùnián)"],
+      "correct": 2,
+      "explain": "'明天' (míngtiān) là ngày mai; '昨天' là hôm qua; '今天' là hôm nay."
+    },
+    {
+      "id": 5,
+      "level": "HSK 2",
+      "question": "Chọn câu đúng ngữ pháp diễn tả hành động đang tiếp diễn:",
+      "options": [
+        "A. 他正在看书呢。",
+        "B. 他看正在书呢。",
+        "C. 正在他看书呢。",
+        "D. 他看书正在呢。"
+      ],
+      "correct": 0,
+      "explain": "Cấu trúc hành động tiếp diễn: Chủ ngữ + 正在 + Động từ + (Tân ngữ) + 呢."
+    },
+    {
+      "id": 6,
+      "level": "HSK 2",
+      "question": "Từ trái nghĩa của '大' (to, lớn) là gì?",
+      "options": ["A. 小 (xiǎo)", "B. 多 (duō)", "C. 少 (shǎo)", "D. 高 (gāo)"],
+      "correct": 0,
+      "explain": "'大' (to, lớn) >< '小' (nhỏ, bé)."
+    },
+    {
+      "id": 7,
+      "level": "HSK 2",
+      "question": "'因为...所以...' biểu thị mối quan hệ gì trong câu?",
+      "options": ["A. Giả thiết - Kết quả", "B. Nguyên nhân - Kết quả", "C. Nhượng bộ - Tương phản", "D. Liệt kê đồng thời"],
+      "correct": 1,
+      "explain": "'因为...所以...' (Bởi vì... cho nên...) biểu thị quan hệ nhân quả."
+    },
+    {
+      "id": 8,
+      "level": "HSK 3",
+      "question": "Chọn từ điền vào chỗ trống: '他跑得比我___。'",
+      "options": ["A. 快 (kuài)", "B. 块 (kuài)", "C. 会 (huì)", "D. 筷 (kuài)"],
+      "correct": 0,
+      "explain": "'快' nghĩa là nhanh (bổ ngữ trạng thái so sánh chữ 比)."
+    },
+    {
+      "id": 9,
+      "level": "HSK 3",
+      "question": "Nghĩa của câu '虽然汉语很难，但是很有趣' là gì?",
+      "options": [
+        "A. Tiếng Trung rất khó và không thú vị.",
+        "B. Tuy tiếng Trung rất khó, nhưng rất thú vị.",
+        "C. Vì tiếng Trung dễ nên học rất nhanh.",
+        "D. Nếu tiếng Trung khó thì tôi không học."
+      ],
+      "correct": 1,
+      "explain": "'虽然...但是...' là cặp liên từ 'Tuy... nhưng...'."
+    },
+    {
+      "id": 10,
+      "level": "HSK 3",
+      "question": "Câu chữ 把 nào sau đây được sắp xếp đúng thứ tự ngữ pháp?",
+      "options": [
+        "A. 我把作业做完了。",
+        "B. 我做完了把作业。",
+        "C. 把作业我做完了。",
+        "D. 我作业把做完了。"
+      ],
+      "correct": 0,
+      "explain": "Cấu trúc câu chữ 把: S + 把 + Tân ngữ + Động từ + Thành phần khác (做完了)."
+    },
+    {
+      "id": 11,
+      "level": "HSK 3",
+      "question": "Khi muốn nói 'Vừa nghe nhạc vừa làm bài tập', ta dùng cấu trúc nào?",
+      "options": [
+        "A. 一边听音乐，一边做作业",
+        "B. 一次听音乐，一次做作业",
+        "C. 一样听音乐，一样做作业",
+        "D. 一点听音乐，一点做作业"
+      ],
+      "correct": 0,
+      "explain": "Cấu trúc '一边...一边...' biểu thị hai hành động diễn ra song song cùng lúc."
+    },
+    {
+      "id": 12,
+      "level": "HSK 4",
+      "question": "Từ '坚持' (jiānchí) mang ý nghĩa gì?",
+      "options": ["A. Kiên trì", "B. Từ bỏ", "C. Do dự", "D. Vội vàng"],
+      "correct": 0,
+      "explain": "'坚持' có nghĩa là kiên trì, bền chí đến cùng."
+    },
+    {
+      "id": 13,
+      "level": "HSK 4",
+      "question": "Chọn liên từ thích hợp: '___明天下雨，我们___不去爬山了。'",
+      "options": [
+        "A. 如果...就...",
+        "B. 不仅...而且...",
+        "C. 即使...也...",
+        "D. 既然...就..."
+      ],
+      "correct": 0,
+      "explain": "'如果...就...' (Nếu... thì...) biểu thị câu điều kiện giả thiết."
+    },
+    {
+      "id": 14,
+      "level": "HSK 4",
+      "question": "Thành ngữ '马到成功' thường được dùng trong dịp nào?",
+      "options": [
+        "A. Chúc mừng sinh nhật người lớn tuổi",
+        "B. Chúc mừng đám cưới",
+        "C. Chúc thi cử hoặc công việc thuận lợi, mau chóng thành công",
+        "D. An ủi khi gặp thất bại"
+      ],
+      "correct": 2,
+      "explain": "'马到成功' (Mã đáo thành công) dùng để chúc công việc, thi cử hoặc dự án gặt hái thắng lợi nhanh chóng."
+    },
+    {
+      "id": 15,
+      "level": "HSK 4",
+      "question": "Điền từ thích hợp: '经过几个月的努力，他的汉语水平有了很大的___。'",
+      "options": ["A. 提高 (tígāo)", "B. 骄傲 (jiāo'ào)", "C. 麻烦 (máfan)", "D. 浪费 (làngfèi)"],
+      "correct": 0,
+      "explain": "'提高' nghĩa là nâng cao, cải thiện (水平有了很大的提高 = trình độ được nâng cao rõ rệt)."
+    }
+  ]
+}

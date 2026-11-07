@@ -87,18 +87,24 @@ const routes = {
   'POST /api/auth/register': async (req, res) => {
     limit(registerLimiter, clientIp(req));
     const body = await readJson(req, 512 * 1024);
-    const name = str(body.name, 60);
+    const rawUsername = str(body.username, 60);
+    const name = str(body.name, 60) || rawUsername;
+    const username = rawUsername || name;
     const email = str(body.email, 254).toLowerCase();
     const password = typeof body.password === 'string' ? body.password : '';
 
-    if (!name) throw new HttpError(400, 'Vui lòng nhập họ và tên hiển thị.');
+    if (!name && !username) throw new HttpError(400, 'Vui lòng nhập tên tài khoản hoặc họ tên hiển thị.');
     if (!EMAIL_RE.test(email)) throw new HttpError(400, 'Địa chỉ email không hợp lệ.');
     if (password.length < PASSWORD_MIN || password.length > 200) {
       throw new HttpError(400, `Mật khẩu cần từ ${PASSWORD_MIN} ký tự trở lên.`);
     }
-    if (accounts.findByEmail(email)) throw new HttpError(409, 'Email này đã được đăng ký. Vui lòng đăng nhập.');
+    if (accounts.findByEmail(email)) throw new HttpError(409, 'Email này đã được đăng ký. Mỗi Gmail chỉ có 1 tài khoản duy nhất.');
+    if (rawUsername && accounts.findByUsername(rawUsername)) {
+      throw new HttpError(409, 'Tên tài khoản này đã có người sử dụng. Vui lòng chọn một tên khác (tiếng Trung hoặc tiếng Việt).');
+    }
 
     const user = accounts.createUser({
+      username,
       name,
       email,
       password,
@@ -127,6 +133,7 @@ const routes = {
     if (!user) throw new HttpError(401, 'Email hoặc mật khẩu không đúng.');
     if (result === 'fail') throw new HttpError(401, 'Email hoặc mật khẩu không đúng.');
     if (result === 'ok-legacy') accounts.setPassword(user, password.trim());
+    accounts.touchUserActivity(user);
 
     startSession(req, res, user, 200, { message: `Chào mừng ${user.name}!` });
   },
@@ -141,8 +148,12 @@ const routes = {
 
   'PUT /api/me/progress': async (req, res) => {
     const user = requireUser(req);
+    if (accounts.checkInactivityLock(user)) {
+      throw new HttpError(403, 'Tài khoản của bạn đang bị khóa do không học tập quá 3 ngày liên tục. Vui lòng liên hệ Admin qua email hoangpham1618@gmail.com để được hỗ trợ mở khóa.');
+    }
     const body = await readJson(req, 512 * 1024);
     user.progress = sanitizeProgress(body);
+    accounts.touchUserActivity(user);
     accounts.saveUsers();
     sendJson(res, 200, { ok: true, updatedAt: user.progress.updatedAt });
   },
@@ -214,6 +225,19 @@ const routes = {
     sendJson(res, 200, {
       ok: true,
       message: `Đã cập nhật VIP cho ${target.name}: ${accounts.vipInfo(target).label}`,
+      user: accounts.publicUser(target)
+    });
+  },
+
+  'POST /api/admin/unlock-user': async (req, res) => {
+    requireAdmin(req);
+    const body = await readJson(req);
+    const target = accounts.findByEmail(body.email) || accounts.findById(body.userId);
+    if (!target) throw new HttpError(404, 'Không tìm thấy tài khoản học viên.');
+    accounts.unlockUser(target);
+    sendJson(res, 200, {
+      ok: true,
+      message: `Đã mở khóa tài khoản thành công cho học viên ${target.name}.`,
       user: accounts.publicUser(target)
     });
   },
