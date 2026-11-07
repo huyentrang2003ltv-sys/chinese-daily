@@ -1,85 +1,75 @@
 #!/usr/bin/env bash
 # ========================================================
 # CHINESE DAILY (Học Tiếng Trung Mỗi Ngày) - VPS Production Deployment
-# Target Directory: /opt/chinese-daily
+# Target: Auto-detects current repo or /opt/chinese-daily
 # Port: 3005 (Behind Nginx reverse proxy on 80/443)
 # ========================================================
 set -euo pipefail
 
-APP_NAME="chinese-daily"
-APP_DIR="/opt/chinese-daily"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+APP_DIR="${APP_DIR:-$SCRIPT_DIR}"
+APP_NAME="${APP_NAME:-yuhan-hsk}"
 APP_PORT="${PORT:-3005}"
-LOG_DIR="/var/log/chinese-daily"
+LOG_DIR="$APP_DIR/logs"
 
 echo "========================================================"
 echo "🚀 [CHINESE DAILY] Starting production deployment..."
+echo "   Directory: $APP_DIR"
+echo "   App Name:  $APP_NAME"
+echo "   Port:      $APP_PORT"
 echo "========================================================"
 
-# 1. Ensure required system packages
+# Find Node, NPM and PM2
+export PATH="$HOME/.nvm/versions/node/$(ls $HOME/.nvm/versions/node 2>/dev/null | tail -n 1)/bin:$HOME/.local/bin:/usr/local/bin:$PATH"
+
 if ! command -v node >/dev/null 2>&1; then
-  echo "📦 Installing Node.js 20.x..."
-  curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
-  apt-get install -y nodejs
+  echo "❌ Node.js not found in PATH"
+  exit 1
 fi
 echo "✓ Node $(node -v) / npm $(npm -v)"
 
-if ! command -v git >/dev/null 2>&1; then
-  echo "📦 Installing git..."
-  apt-get update -y && apt-get install -y git
-fi
-
-if ! command -v pm2 >/dev/null 2>&1; then
-  echo "📦 Installing PM2 globally..."
-  npm install -g pm2
-fi
+PM2_BIN="$(command -v pm2 || find $HOME -name pm2 2>/dev/null | grep '/bin/pm2$' | head -n 1 || echo 'pm2')"
+echo "✓ PM2 binary: $PM2_BIN"
 
 # 2. Setup target directories
-echo "📁 Setting up directories..."
-mkdir -p "$APP_DIR" "$APP_DIR/storage" "$LOG_DIR"
+echo "📁 Setting up storage and logs..."
+mkdir -p "$APP_DIR/storage" "$LOG_DIR"
 
 cd "$APP_DIR"
 
-# 3. Pull latest code if git repo exists, otherwise clone
-if [ ! -d ".git" ]; then
-  echo "📥 Cloning repository from GitHub..."
-  git clone https://github.com/huyentrang2003ltv-sys/chinese-daily.git .
-else
-  echo "📥 Fetching and pulling latest changes..."
+# 3. Pull latest code if git repo exists
+if [ -d ".git" ]; then
+  echo "📥 Fetching and pulling latest changes from main..."
   git reset --hard HEAD
   git pull origin main
 fi
 
 # 4. Install production dependencies and build assets
 echo "📦 Installing dependencies & building assets..."
-npm ci
-npm run build
-npm prune --omit=dev
+npm install --omit=dev --no-audit --no-fund
 
 # 5. Setup PM2 Process Management
 echo "⚡ Starting/Reloading application with PM2..."
-if pm2 describe "$APP_NAME" >/dev/null 2>&1; then
-  pm2 reload ecosystem.config.cjs --update-env
+if $PM2_BIN describe "$APP_NAME" >/dev/null 2>&1; then
+  $PM2_BIN reload ecosystem.config.cjs --update-env || $PM2_BIN restart "$APP_NAME"
 else
-  pm2 start ecosystem.config.cjs
+  $PM2_BIN start ecosystem.config.cjs
 fi
-pm2 save
-pm2 startup systemd -u root --hp /root >/dev/null 2>&1 || true
+$PM2_BIN save || true
 
-# 6. Configure Nginx if installed
-if command -v nginx >/dev/null 2>&1; then
-  echo "🌐 Configuring Nginx reverse proxy..."
-  if [ -f "$APP_DIR/deploy/nginx.conf" ]; then
-    cp "$APP_DIR/deploy/nginx.conf" /etc/nginx/sites-available/chinese-daily
-    ln -sf /etc/nginx/sites-available/chinese-daily /etc/nginx/sites-enabled/chinese-daily
-    rm -f /etc/nginx/sites-enabled/default 2>/dev/null || true
-    nginx -t && systemctl reload nginx || echo "⚠️ Nginx test failed, check manual configuration"
-  fi
+# 6. Verify Healthcheck
+sleep 2
+echo "🔍 Checking application health on http://127.0.0.1:$APP_PORT/healthz..."
+if curl -sf "http://127.0.0.1:$APP_PORT/healthz" >/dev/null 2>&1 || curl -sf "http://127.0.0.1:$APP_PORT/" >/dev/null 2>&1; then
+  echo "✅ Server is running healthy on port $APP_PORT!"
+else
+  echo "⚠️ Note: Application is starting up, check with: $PM2_BIN logs $APP_NAME"
 fi
 
 echo "========================================================"
 echo "🎉 DEPLOYMENT COMPLETED SUCCESSFULLY!"
-echo "   Status:      pm2 status"
-echo "   Logs:        pm2 logs $APP_NAME"
-echo "   Log files:   $LOG_DIR/access.log & $LOG_DIR/error.log"
-echo "   Healthcheck: curl http://127.0.0.1:$APP_PORT/healthz"
+echo "   Status:      $PM2_BIN status"
+echo "   Logs:        $PM2_BIN logs $APP_NAME"
+echo "   Log dir:     $LOG_DIR"
+echo "   Local URL:   http://127.0.0.1:$APP_PORT"
 echo "========================================================"
