@@ -312,33 +312,47 @@ async function ensureTopicData() {
 }
 
 async function switchDictMode(mode) {
+  // If user calls switchDictMode when activeTab is not dictionary, switch tab first
+  if (typeof activeTab !== 'undefined' && activeTab !== 'dictionary' && typeof switchTab === 'function') {
+    switchTab('dictionary');
+  }
+
   currentDictMode = mode;
   const hskSection = document.getElementById('dictSectionHsk');
   const topicSection = document.getElementById('dictSectionTopic');
+  const expSection = document.getElementById('dictSectionExpansion');
+
   const hskBtn = document.getElementById('btn-dict-mode-hsk');
   const topicBtn = document.getElementById('btn-dict-mode-topic');
+  const expBtn = document.getElementById('btn-dict-mode-expansion');
+
+  const inactiveBtnClass = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer';
 
   if (mode === 'hsk') {
     if (hskSection) hskSection.classList.remove('hidden');
     if (topicSection) topicSection.classList.add('hidden');
+    if (expSection) expSection.classList.add('hidden');
+
     if (hskBtn) {
       hskBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-md cursor-pointer border border-[#8B1E1E]';
     }
-    if (topicBtn) {
-      topicBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer';
-    }
+    if (topicBtn) topicBtn.className = inactiveBtnClass;
+    if (expBtn) expBtn.className = inactiveBtnClass;
+
     if (dictRendered === 0) {
       renderDictionary(true);
     }
-  } else {
+  } else if (mode === 'topic') {
     if (hskSection) hskSection.classList.add('hidden');
     if (topicSection) topicSection.classList.remove('hidden');
+    if (expSection) expSection.classList.add('hidden');
+
     if (topicBtn) {
       topicBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 text-amber-100 shadow-md cursor-pointer border border-amber-800';
     }
-    if (hskBtn) {
-      hskBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer';
-    }
+    if (hskBtn) hskBtn.className = inactiveBtnClass;
+    if (expBtn) expBtn.className = inactiveBtnClass;
+
     if (!(await ensureTopicData())) return;
     if (currentDictMode !== 'topic') return;
     renderTopicSuperCategories();
@@ -346,6 +360,20 @@ async function switchDictMode(mode) {
     updateViewModeButtons();
     if (topicDictRendered === 0) {
       renderTopicDictionary(true);
+    }
+  } else if (mode === 'expansion') {
+    if (hskSection) hskSection.classList.add('hidden');
+    if (topicSection) topicSection.classList.add('hidden');
+    if (expSection) expSection.classList.remove('hidden');
+
+    if (expBtn) {
+      expBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-rose-800 via-[#8B1E1E] to-amber-800 text-white shadow-md cursor-pointer border border-[#8B1E1E] ring-1 ring-amber-300';
+    }
+    if (hskBtn) hskBtn.className = inactiveBtnClass;
+    if (topicBtn) topicBtn.className = inactiveBtnClass;
+
+    if (typeof initVocabExpansion === 'function') {
+      initVocabExpansion();
     }
   }
   refreshIcons();
