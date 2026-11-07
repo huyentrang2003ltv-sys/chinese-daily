@@ -246,6 +246,20 @@ window.submitPlacementTest = function (autoExpired = false) {
     console.error('Error saving placement test progress:', e);
   }
 
+  // Trigger Cheer or Comfort Modal
+  if (typeof window.showCheerOrComfortModal === 'function') {
+    setTimeout(() => {
+      window.showCheerOrComfortModal({
+        type: 'placement',
+        level: rec.level,
+        score: correctCount,
+        maxScore: total,
+        percentage: pct,
+        isPassed: pct >= 50
+      });
+    }, 300);
+  }
+
   const body = document.getElementById('placementModalBody');
   const footer = document.getElementById('placementModalFooter');
   if (!body || !footer) return;

@@ -654,3 +654,34 @@ function checkPinyinAnswer(qId, targetText) {
 window.showPinyinInputFallback = showPinyinInputFallback;
 window.insertPinyinChar = insertPinyinChar;
 window.checkPinyinAnswer = checkPinyinAnswer;
+
+window.finishPracticeSession = function () {
+  const currentQuestions = getFilteredPracticeQuestions();
+  const total = currentQuestions.length;
+  let correct = 0;
+  let attempted = 0;
+  currentQuestions.forEach(q => {
+    if (practiceUserAnswers[q.id]) {
+      attempted++;
+      if (practiceUserAnswers[q.id].isCorrect) correct++;
+    }
+  });
+
+  if (attempted === 0) {
+    if (typeof showToast === 'function') showToast('Bạn chưa làm câu hỏi nào trong bài luyện tập!', 'warning');
+    return;
+  }
+
+  if (typeof window.showCheerOrComfortModal === 'function') {
+    window.showCheerOrComfortModal({
+      type: 'practice',
+      level: `Luyện 4 Kỹ Năng (HSK ${activePracticeLevel === 'all' ? '1-6' : activePracticeLevel})`,
+      score: correct,
+      maxScore: total,
+      isPassed: (correct / Math.max(1, total)) >= 0.65,
+      onContinue: () => {
+        if (typeof showToast === 'function') showToast('Tiếp tục rèn luyện kỹ năng tiếp theo!', 'success');
+      }
+    });
+  }
+};

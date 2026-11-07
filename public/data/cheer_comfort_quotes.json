@@ -1,0 +1,77 @@
+{
+  "modes": {
+    "gentle": {
+      "id": "gentle",
+      "name": "Dịu Dàng & Vỗ Về (Chữa Lành)",
+      "desc": "Ấm áp, thấu hiểu, giảm bớt áp lực điểm số và tiếp thêm sự tự tin."
+    },
+    "energetic": {
+      "id": "energetic",
+      "name": "Hừng Hực Khí Thế (Thúc Đẩy)",
+      "desc": "Nhiệt huyết, tự hào, khơi dậy tinh thần chiến binh bứt phá mọi giới hạn."
+    },
+    "philosophical": {
+      "id": "philosophical",
+      "name": "Trầm Tĩnh & Trí Tuệ (Triết Lý)",
+      "desc": "Đúc kết các câu danh ngôn, thành ngữ và phương pháp tư duy cổ học."
+    }
+  },
+  "encouragement": {
+    "audioChinese": "太棒了！恭喜你顺利通过，继续保持哦！",
+    "quotes": [
+      {
+        "chinese": "一分耕耘，一分收获。",
+        "pinyin": "Yī fēn gēngyún, yī fēn shōuhuò.",
+        "vietnamese": "Có làm thì mới có ăn, một phần công sức một phần gặt hái.",
+        "message": "Từng phút bạn dành ra học tiếng Trung hôm nay đã nở hoa rực rỡ! Bạn đang tiến những bước vững chắc đến đích!"
+      },
+      {
+        "chinese": "宝剑锋从磨砺出，梅花香自苦寒来。",
+        "pinyin": "Bǎojiàn fēng cóng mólì chū, méihuā xiāng zì kǔhán lái.",
+        "vietnamese": "Gươm báu sắc do mài giũa, hoa mai thơm tự giá rét buốt.",
+        "message": "Nỗ lực không ngừng nghỉ của bạn đã chứng minh sự kiên trì phi thường. Bạn hoàn toàn xứng đáng với điểm số xuất sắc này!"
+      },
+      {
+        "chinese": "功到自然成。",
+        "pinyin": "Gōng dào zìrán chéng.",
+        "vietnamese": "Công phu sâu thì ắt tự khắc thành công.",
+        "message": "Phản xạ từ vựng và ngữ pháp của bạn rất tuyệt vời. Cứ đà này thì HSK điểm tuyệt đối nằm gọn trong tầm tay!"
+      },
+      {
+        "chinese": "百尺竿头，更进一步。",
+        "pinyin": "Bǎi chǐ gān tóu, gèng jìn yī bù.",
+        "vietnamese": "Đầu ngọn sào trăm thước, vẫn tiến thêm một bước.",
+        "message": "Thành tích hôm nay là đỉnh cao mới, hãy tự thưởng cho mình một nụ cười rạng rỡ và tiếp tục phát huy nhé!"
+      }
+    ]
+  },
+  "comfort": {
+    "audioChinese": "别灰心，你已经很棒了！我们一起慢慢进步哦！",
+    "quotes": [
+      {
+        "chinese": "没关系，慢慢来！",
+        "pinyin": "Méiguānxi, mànman lái!",
+        "vietnamese": "Không sao cả, hãy từ từ từng bước một!",
+        "message": "Học một ngoại ngữ mới chưa bao giờ là điều dễ dàng. Việc bạn ngồi làm trọn vẹn cả bài test hôm nay đã là một chiến thắng dũng cảm đáng tự hào rồi!"
+      },
+      {
+        "chinese": "失败是成功之母。",
+        "pinyin": "Shībài shì chénggōng zhī mǔ.",
+        "vietnamese": "Thất bại là mẹ thành công.",
+        "message": "Những câu làm chưa đúng không phải là lỗi lầm — đó là những người thầy tuyệt vời nhất chỉ ra điểm bạn cần khắc phục để lần sau không bao giờ vấp phải nữa."
+      },
+      {
+        "chinese": "千里之行，始于足下。",
+        "pinyin": "Qiānlǐ zhī xíng, shǐ yú zú xià.",
+        "vietnamese": "Hành trình vạn dặm khởi đầu từ một bước chân.",
+        "message": "Đừng so sánh sự khởi đầu của mình với đỉnh vinh quang của người khác. Mỗi ngày bạn tiến thêm 1%, sau một năm bạn đã giỏi hơn gấp 37 lần!"
+      },
+      {
+        "chinese": "只要功夫深，铁杵磨成针。",
+        "pinyin": "Zhǐyào gōngfū shēn, tiěchǔ mó chéng zhēn.",
+        "vietnamese": "Có công mài sắt, có ngày nên kim.",
+        "message": "Hãy uống một ngụm nước ấm, hít thở sâu và thư giãn vài phút. Thầy Cô và Gia sư AI luôn ở bên cạnh đồng hành cùng bạn 24/7!"
+      }
+    ]
+  }
+}

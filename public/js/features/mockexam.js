@@ -734,6 +734,27 @@ function submitMockExam() {
     const modal = document.getElementById('examResultModal');
     if (modal) modal.classList.remove('hidden');
   }
+
+  // Trigger Cheer or Comfort Modal
+  if (typeof window.showCheerOrComfortModal === 'function') {
+    setTimeout(() => {
+      window.showCheerOrComfortModal({
+        type: 'exam',
+        level: `HSK ${activeExam.level} (Đề ${activeExam.testNumber})`,
+        score: totalScoreAchieved,
+        maxScore: totalScore,
+        isPassed: isPassed,
+        onReviewMistakes: () => {
+          const breakdownEl = document.getElementById('examAnswerBreakdown');
+          if (breakdownEl) breakdownEl.scrollIntoView({ behavior: 'smooth' });
+        },
+        onRetry: () => {
+          if (typeof closeExamResultModal === 'function') closeExamResultModal();
+          startMockExam(activeExam.level, activeExam.testNumber);
+        }
+      });
+    }, 400);
+  }
 }
 
 function closeExamResultModal() {
