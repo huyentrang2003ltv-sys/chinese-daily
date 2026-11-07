@@ -1418,6 +1418,30 @@
           "meaning": "Mỗi ngày"
         }
       ]
+    },
+    {
+      "title": "Biến điệu ba thanh 3 đi liền nhau (3 + 3 + 3)",
+      "rule": "Khi ba âm cùng mang thanh 3 đứng liền nhau, cách biến điệu phụ thuộc vào cấu trúc ngữ nghĩa (Prosodic Boundary):",
+      "exampleOriginal": "Wǒ (3) + hěn (3) + hǎo (3) [我很好] | Zhǎn (3) + lǎn (3) + guǎn (3) [展览馆]",
+      "exampleReal": "我很好 đọc là wó hén hǎo (2 + 2 + 3) hoặc wǒ (nửa thanh 3) + hén hǎo | 展览馆 đọc là zhánlán guǎn (2 + 2 + 3)",
+      "explanation": "Dạng [1 + [2+3]]: từ 2 biến thành thanh 2 (hén hǎo), từ 1 đọc lướt thành thanh 2 hoặc nửa thanh 3. Dạng [[1+2] + 3]: từ ghép 1+2 biến điệu trước (zhǎnlǎn -> zhánlǎn), rồi từ 2 lại biến điệu trước từ 3 tạo thành chuỗi (2 + 2 + 3).",
+      "moreExamples": [
+        {
+          "word": "我很好",
+          "pinyin": "wó hén hǎo / wǒ hén hǎo",
+          "meaning": "Tôi rất khỏe"
+        },
+        {
+          "word": "买手表",
+          "pinyin": "mái shóubiǎo",
+          "meaning": "Mua đồng hồ đeo tay"
+        },
+        {
+          "word": "洗脸水",
+          "pinyin": "xílián shuǐ",
+          "meaning": "Nước rửa mặt"
+        }
+      ]
     }
   ],
   "confusingPairs": [
@@ -1431,7 +1455,7 @@
       "pairWords": [
         {
           "wordA": "八 (bā - Số 8)",
-          "wordB": "发 (pā - Nằm bò)"
+          "wordB": "趴 (pā - Nằm bò, nằm sấp)"
         },
         {
           "wordA": "包 (bāo - Cái túi)",
@@ -3244,6 +3268,18 @@
         }
       ],
       "explain": "Vận mẫu 'e' trong tiếng Trung phát âm là 'ưa' hoặc 'ơ', tuyệt đối không phát âm thành 'e' tiếng Việt."
+    }
+  ],
+  "spellingRules": [
+    {
+      "title": "Quy tắc bỏ hai dấu chấm trên đầu nguyên âm ü (j, q, x, y)",
+      "content": "Khi kết hợp với các thanh mẫu mặt lưỡi j, q, x và bán nguyên âm y, hai dấu chấm trên đầu ü được lược bỏ: ju, qu, xu, yu (nhưng phát âm vẫn giữ nguyên âm tròn môi uy/ü).",
+      "contrast": "Đặc biệt: Khi đi với n, l, BẮT BUỘC giữ nguyên hai dấu chấm (nü, lü) để phân biệt tuyệt đối với nu (nộ - tức giận), lu (lộ - con đường)."
+    },
+    {
+      "title": "Quy tắc dấu phân cách âm tiết (Apostrophe - 隔音符号)",
+      "content": "Khi âm tiết bắt đầu bằng nguyên âm a, o, e đứng ngay liền sau một âm tiết khác, bắt buộc dùng dấu phẩy trên (') phân tách ranh giới âm tiết.",
+      "contrast": "Ví dụ: pí'ǎo (皮袄 - áo da) khác với piǎo (漂); Xī'ān (西安 - Tây An) khác với xiān (先 - trước tiên)."
     }
   ]
 }
