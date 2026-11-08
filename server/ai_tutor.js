@@ -472,4 +472,249 @@ async function handleAiChat({ message, mode = 'chat' }) {
   };
 }
 
-module.exports = { handleAiChat };
+/**
+ * AI Writing Grader & Error Corrector for HSK essays and paragraphs
+ */
+async function gradeWritingSubmission({ text = '', prompt = '', targetLevel = 5, keywords = [] }) {
+  const clean = String(text || '').trim();
+  if (!clean) {
+    return {
+      ok: false,
+      error: 'Vui lòng nhập đoạn văn tiếng Hán cần thẩm định.'
+    };
+  }
+
+  // 1. Character and sentence metrics
+  const hanziChars = clean.match(/[\u4e00-\u9fa5]/g) || [];
+  const charCount = hanziChars.length;
+  const rawSentences = clean.split(/[。！？\n]+/).map(s => s.trim()).filter(Boolean);
+  const sentenceCount = rawSentences.length;
+
+  // 2. Lexical diversity & level analysis
+  const hsk13 = [];
+  const hsk45 = [];
+  const hsk6 = [];
+  const idioms = [];
+  const detectedKeywords = [];
+
+  // Check keywords
+  (keywords || []).forEach(kw => {
+    if (kw && clean.includes(kw)) detectedKeywords.push(kw);
+  });
+
+  // Extract from dictWords
+  for (const item of dictWords) {
+    if (clean.includes(item.word)) {
+      if (item.word.length >= 4) idioms.push(item.word);
+      else if (item.level >= 5) hsk6.push(item.word);
+      else if (item.level >= 3) hsk45.push(item.word);
+      else hsk13.push(item.word);
+    }
+  }
+
+  // Deduplicate
+  const uniqueIdioms = [...new Set(idioms)];
+  const uniqueHsk45 = [...new Set(hsk45)];
+  const uniqueHsk6 = [...new Set(hsk6)];
+
+  // 3. Grammar Diagnostic
+  const diagnostics = [];
+  let grammarScore = 25;
+  let vocabScore = 20;
+  let coherenceScore = 22;
+  let taskScore = 25;
+
+  // Check target length
+  const targetMin = targetLevel >= 5 ? 80 : (targetLevel === 4 ? 50 : 30);
+  const targetMax = targetLevel >= 5 ? 150 : (targetLevel === 4 ? 100 : 70);
+
+  if (charCount < targetMin * 0.3) {
+    taskScore = Math.max(5, taskScore - 15);
+    vocabScore = Math.max(5, vocabScore - 12);
+    coherenceScore = Math.max(5, coherenceScore - 12);
+    diagnostics.push({
+      type: 'error',
+      tag: 'Độ dài',
+      message: `Đoạn văn quá ngắn (${charCount} chữ). Mục tiêu tối thiểu cần đạt ${targetMin} chữ Hán.`
+    });
+  } else if (charCount < targetMin * 0.6) {
+    taskScore -= 10;
+    vocabScore -= 5;
+    diagnostics.push({
+      type: 'error',
+      tag: 'Độ dài',
+      message: `Đoạn văn chưa đủ độ dài quy định (${charCount}/${targetMin} chữ Hán).`
+    });
+  } else if (charCount < targetMin) {
+    taskScore -= 5;
+    diagnostics.push({
+      type: 'warning',
+      tag: 'Độ dài',
+      message: `Số lượng chữ (${charCount} chữ) còn hơi ít so với yêu cầu chuẩn (${targetMin}-${targetMax} chữ).`
+    });
+  } else {
+    diagnostics.push({
+      type: 'success',
+      tag: 'Độ dài',
+      message: `Độ dài bài viết lý tưởng (${charCount} chữ), đáp ứng hoàn hảo yêu cầu đề bài HSK ${targetLevel}.`
+    });
+  }
+
+  // Check keywords usage if provided
+  if (keywords && keywords.length > 0) {
+    const missing = keywords.filter(k => !detectedKeywords.includes(k));
+    if (missing.length > 0) {
+      taskScore -= missing.length * 3;
+      diagnostics.push({
+        type: 'warning',
+        tag: 'Từ khóa đề bài',
+        message: `Chưa sử dụng đủ các từ khóa bắt buộc: còn thiếu ${missing.join(', ')}.`
+      });
+    } else {
+      diagnostics.push({
+        type: 'praise',
+        tag: 'Từ khóa đề bài',
+        message: `Tuyệt vời! Đã vận dụng chính xác và linh hoạt toàn bộ ${keywords.length} từ khóa của đề bài.`
+      });
+    }
+  }
+
+  // Grammar check: 的 / 地 / 得
+  const wrongDeMatches = clean.match(/([\u4e00-\u9fa5]{1,3})的(快|好|慢|流利|早|高兴|漂亮)/g);
+  if (wrongDeMatches) {
+    grammarScore -= 4;
+    diagnostics.push({
+      type: 'warning',
+      tag: 'Trợ từ kết cấu',
+      message: `Phát hiện lỗi dùng trợ từ "的" trước tính từ bổ ngữ trạng thái: nên đổi thành "得" (ví dụ: "${wrongDeMatches[0]}" -> "...得...")`
+    });
+  } else if (clean.includes('得') && /[一-龥]得[一-龥]/.test(clean)) {
+    diagnostics.push({
+      type: 'success',
+      tag: 'Bổ ngữ',
+      message: 'Sử dụng chuẩn xác trợ từ kết cấu "得" kết nối bổ ngữ trạng thái/trình độ.'
+    });
+  }
+
+  // Grammar check: 把 sentence without complement or 了
+  const baRegex = /把[\u4e00-\u9fa5]{1,4}(吃|做|写|买|看|拿)[，。！？\s]/;
+  if (baRegex.test(clean)) {
+    grammarScore -= 5;
+    diagnostics.push({
+      type: 'error',
+      tag: 'Câu chữ 把',
+      message: 'Câu chữ 把 có động từ đứng trơ trọi! Vị ngữ câu chữ 把 bắt buộc phải có thành phần khác đi kèm (trợ từ "了", bổ ngữ kết quả hoặc bổ ngữ xu hướng).'
+    });
+  }
+
+  // Grammar check: 比 sentence with 很 / 非常
+  const biHenRegex = /比[\u4e00-\u9fa5]{1,4}(很|非常|极)(高|大|小|贵|便宜|好)/;
+  if (biHenRegex.test(clean)) {
+    grammarScore -= 4;
+    diagnostics.push({
+      type: 'warning',
+      tag: 'Câu so sánh 比',
+      message: 'Trong câu so sánh chữ 比, phía trước tính từ KHÔNG ĐƯỢC dùng phó từ chỉ mức độ như "很", "非常". Hãy dùng "得多", "得多", hoặc số lượng cụ thể.'
+    });
+  }
+
+  // Vocab bonus
+  if (uniqueIdioms.length > 0) {
+    vocabScore = Math.min(25, vocabScore + 4);
+    diagnostics.push({
+      type: 'praise',
+      tag: 'Thành ngữ',
+      message: `Điểm sáng học thuật: Vận dụng thành công các thành ngữ đặc sắc (${uniqueIdioms.slice(0, 3).join(', ')}), giúp văn phong sang trọng và ấn tượng.`
+    });
+  }
+  if (uniqueHsk45.length >= 3 || uniqueHsk6.length >= 1) {
+    vocabScore = Math.min(25, vocabScore + 3);
+    diagnostics.push({
+      type: 'praise',
+      tag: 'Vốn từ vựng',
+      message: `Vốn từ phong phú: Sử dụng nhiều từ vựng cao cấp HSK 4 - 6 (${[...uniqueHsk6, ...uniqueHsk45].slice(0, 4).join(', ')}).`
+    });
+  }
+
+  // Coherence connectives check
+  const connectives = ['因为', '所以', '虽然', '但是', '不但', '而且', '尽管', '从而', '不仅', '此外', '总而言之', '总的来说'];
+  const usedConnectives = connectives.filter(c => clean.includes(c));
+  if (usedConnectives.length >= 2) {
+    coherenceScore = Math.min(25, coherenceScore + 3);
+    diagnostics.push({
+      type: 'success',
+      tag: 'Tính liên kết',
+      message: `Đoạn văn mạch lạc nhờ dùng tốt các liên từ chuyển tiếp (${usedConnectives.join(', ')}).`
+    });
+  } else {
+    coherenceScore -= 3;
+    diagnostics.push({
+      type: 'warning',
+      tag: 'Tính liên kết',
+      message: 'Nên bổ sung thêm các liên từ (như: 不但...而且..., 虽然...但是..., 此外) để các câu văn kết nối tự nhiên hơn.'
+    });
+  }
+
+  // Rubric Scores clamp
+  vocabScore = Math.max(8, Math.min(25, vocabScore));
+  grammarScore = Math.max(8, Math.min(25, grammarScore));
+  coherenceScore = Math.max(8, Math.min(25, coherenceScore));
+  taskScore = Math.max(5, Math.min(25, taskScore));
+  const totalScore = vocabScore + grammarScore + coherenceScore + taskScore;
+
+  let grade = 'B';
+  let gradeBadge = 'bg-blue-100 text-blue-900 border-blue-300';
+  if (totalScore >= 90) { grade = 'A+'; gradeBadge = 'bg-emerald-100 text-emerald-900 border-emerald-400'; }
+  else if (totalScore >= 80) { grade = 'A'; gradeBadge = 'bg-teal-100 text-teal-900 border-teal-400'; }
+  else if (totalScore >= 65) { grade = 'B'; gradeBadge = 'bg-sky-100 text-sky-900 border-sky-400'; }
+  else if (totalScore >= 50) { grade = 'C'; gradeBadge = 'bg-amber-100 text-amber-900 border-amber-400'; }
+  else { grade = 'D'; gradeBadge = 'bg-rose-100 text-rose-900 border-rose-400'; }
+
+  // Sentence-by-sentence breakdown and polish
+  const sentenceCorrections = rawSentences.slice(0, 6).map(orig => {
+    let polished = orig;
+    let tip = 'Câu văn rõ nghĩa, đạt chuẩn.';
+    if (orig.includes('的快')) {
+      polished = orig.replace(/的快/g, '得快');
+      tip = 'Sửa "的快" thành "得快" để nối đúng bổ ngữ trạng thái.';
+    } else if (orig.includes('把') && !orig.includes('了') && !orig.includes('完') && !orig.includes('好')) {
+      polished = orig + '好了';
+      tip = 'Bổ sung bổ ngữ kết quả cho vị ngữ câu chữ 把.';
+    } else if (orig.length > 5 && !orig.includes('，') && orig.length > 25) {
+      tip = 'Câu văn hơi dài, có thể dùng dấu phẩy để ngắt nhịp thở tự nhiên.';
+    }
+    return {
+      original: orig,
+      polished,
+      tip
+    };
+  });
+
+  return {
+    ok: true,
+    charCount,
+    sentenceCount,
+    scores: {
+      vocab: vocabScore,
+      grammar: grammarScore,
+      coherence: coherenceScore,
+      task: taskScore,
+      total: totalScore,
+      grade,
+      gradeBadge
+    },
+    diagnostics,
+    lexicalAnalysis: {
+      idioms: uniqueIdioms,
+      hsk45: uniqueHsk45,
+      hsk6: uniqueHsk6,
+      detectedKeywords
+    },
+    sentenceCorrections,
+    summaryFeedback: totalScore >= 80
+      ? 'Đoạn văn viết rất tốt! Diễn đạt tự nhiên, vốn từ phong phú và bám sát trọng tâm yêu cầu đề thi HSK. Hãy duy trì văn phong này.'
+      : 'Bài viết có ý tưởng tốt và truyền đạt được nội dung. Cần chú ý thêm về tính chuẩn xác của trợ từ kết cấu và đa dạng hóa liên từ nối câu.'
+  };
+}
+
+module.exports = { handleAiChat, gradeWritingSubmission };

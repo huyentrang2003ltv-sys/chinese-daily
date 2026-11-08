@@ -5,7 +5,7 @@ const accounts = require('./accounts');
 const { PAYMENT, VIP_PRICES } = require('./config');
 const visitors = require('./visitors');
 const { translate } = require('./translate');
-const { handleAiChat } = require('./ai_tutor');
+const { handleAiChat, gradeWritingSubmission } = require('./ai_tutor');
 const { notifyAdmin, isNotifyConfigured } = require('./notify');
 const { syncUser, recordFeedbackTicket, recordSyncEvent } = require('./db');
 const crypto = require('crypto');
@@ -279,6 +279,18 @@ const routes = {
     const mode = str(body.mode, 20) || 'chat';
     const tutorResponse = await handleAiChat({ message: text, mode });
     sendJson(res, 200, { ok: true, ...tutorResponse });
+  },
+
+  'POST /api/ai-grade-writing': async (req, res) => {
+    limit(translateLimiter, clientIp(req));
+    const body = await readJson(req, 256 * 1024);
+    const text = str(body.text, 2000);
+    if (!text) throw new HttpError(400, 'Thiếu nội dung bài viết cần chấm.');
+    const prompt = str(body.prompt, 500);
+    const targetLevel = Number(body.targetLevel) || 5;
+    const keywords = Array.isArray(body.keywords) ? body.keywords.map(k => str(k, 30)).filter(Boolean) : [];
+    const evaluation = await gradeWritingSubmission({ text, prompt, targetLevel, keywords });
+    sendJson(res, 200, evaluation);
   }
 };
 
