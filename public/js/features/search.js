@@ -743,7 +743,16 @@ async function openWordModalByTitle(title) {
     levelBadge.innerText = `HSK ${word.level || 1}`;
   }
   if (imgDisplay) {
-    imgDisplay.innerText = word.image || '🏮';
+    if (typeof window.getWordIllustration === 'function') {
+      const illust = window.getWordIllustration(word);
+      if (illust && illust.url) {
+        imgDisplay.innerHTML = `<img src="${illust.url}" alt="${cleanTitle}" class="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover shadow-2xs border border-amber-300/80" onerror="this.outerHTML='🏮'"/>`;
+      } else {
+        imgDisplay.innerText = word.image || '🏮';
+      }
+    } else {
+      imgDisplay.innerText = word.image || '🏮';
+    }
   }
   if (imgCaption) {
     imgCaption.innerText = word.imageCaption || word.meaning || 'Minh họa ngữ nghĩa';

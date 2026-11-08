@@ -3323,6 +3323,16 @@
                   </button>
                 </div>
 
+                <!-- Toggle Images Button -->
+                <button 
+                  id="btn-topic-toggle-images" 
+                  onclick="toggleTopicImages()" 
+                  class="px-2.5 py-1.5 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer bg-amber-100/80 dark:bg-stone-800 text-amber-900 dark:text-amber-300 border border-amber-300/80 dark:border-stone-700 shadow-2xs hover:bg-amber-200"
+                  title="Bật/Tắt hiển thị hình ảnh minh họa trực quan">
+                  <i data-lucide="image" class="w-3.5 h-3.5 text-amber-600"></i>
+                  <span id="topicToggleImagesLabel">Ảnh: BẬT</span>
+                </button>
+
                 <!-- Quick Flashcard Practice Button -->
                 <button 
                   onclick="startTopicFlashcards()" 
@@ -3336,6 +3346,9 @@
           </div>
         </div>
 
+        <!-- Topic Interactive Hero Banner with Visual Illustration & Stats -->
+        <div id="topicHeroBanner" class="transition-all"></div>
+
         <!-- 1. Topic Dictionary Cards Container (Active by default) -->
         <div id="topicGridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
 
@@ -3345,6 +3358,7 @@
             <thead>
               <tr class="bg-gradient-to-r from-amber-100/70 via-[#FAF7F2] to-amber-50 dark:from-stone-800 dark:to-stone-800/80 text-stone-700 dark:text-stone-300 border-b border-amber-200 dark:border-stone-700 text-xs font-bold uppercase tracking-wider">
                 <th class="py-3 px-3 sm:px-4 text-center w-12">#</th>
+                <th class="py-3 px-3 sm:px-4 text-center w-14">Ảnh</th>
                 <th class="py-3 px-3 sm:px-4 font-hanzi text-sm sm:text-base">Chữ Hán</th>
                 <th class="py-3 px-3 sm:px-4">Phiên Âm</th>
                 <th class="py-3 px-3 sm:px-4">Hán Việt</th>
@@ -6295,6 +6309,7 @@
   <script defer src="js/features/translation.js"></script>
   <script defer src="js/features/practice.js"></script>
   <script defer src="js/features/flashcards.js"></script>
+  <script defer src="js/features/topic_visuals.js"></script>
   <script defer src="js/features/dictionary.js"></script>
   <script defer src="js/features/vocab_expansion.js"></script>
   <script defer src="js/features/classifiers.js"></script>

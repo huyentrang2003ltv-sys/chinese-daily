@@ -9,7 +9,7 @@ const CSP = [
   "script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://unpkg.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
-  "img-src 'self' data: blob: https://api.vietqr.io",
+  "img-src 'self' data: blob: https://api.vietqr.io https://images.unsplash.com",
   "media-src 'self' blob: https://dict.youdao.com",
   "connect-src 'self' https://cdn.jsdelivr.net",
   "frame-ancestors 'self'",

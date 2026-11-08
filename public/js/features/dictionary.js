@@ -363,6 +363,9 @@ async function switchDictMode(mode) {
     if (currentDictMode !== 'topic') return;
     renderTopicSuperCategories();
     renderTopicPills();
+    if (typeof window.renderTopicHeroBanner === 'function') {
+      window.renderTopicHeroBanner();
+    }
     updateViewModeButtons();
     if (topicDictRendered === 0) {
       renderTopicDictionary(true);
@@ -448,6 +451,9 @@ function filterSuperCategory(catKey) {
 
   renderTopicSuperCategories();
   renderTopicPills();
+  if (typeof window.renderTopicHeroBanner === 'function') {
+    window.renderTopicHeroBanner();
+  }
   renderTopicDictionary(true);
 }
 
@@ -514,6 +520,9 @@ function filterTopicPills(query) {
 function filterDictTopic(topicId) {
   currentDictTopic = topicId;
   renderTopicPills();
+  if (typeof window.renderTopicHeroBanner === 'function') {
+    window.renderTopicHeroBanner();
+  }
   renderTopicDictionary(true);
 }
 
@@ -689,28 +698,72 @@ function renderTopicDictionary(reset = false) {
 
   if (topicViewMode === 'cards') {
     // ---------------- CARD VIEW RENDERING ----------------
+    const isShowImages = typeof window.showVisualImages === 'function' ? window.showVisualImages() : true;
+
     nextBatch.forEach(item => {
       const card = document.createElement('div');
       const badgeStyle = levelBadgeStyles[item.level] || 'bg-amber-100 text-amber-900 border-amber-200';
       const topic = getTopicInfo(item.topicId);
+      const illust = (isShowImages && typeof window.getWordIllustration === 'function') ? window.getWordIllustration(item) : null;
 
-      card.className = 'glass-card rounded-2xl p-5 border border-amber-200/80 dark:border-stone-700 bg-white dark:bg-[#161B22] flex flex-col justify-between hover:border-amber-500 dark:hover:border-amber-600 transition-all shadow-xs hover:shadow-md';
+      card.className = 'glass-card rounded-2xl p-4 sm:p-5 border border-amber-200/80 dark:border-stone-700 bg-white dark:bg-[#161B22] flex flex-col justify-between hover:border-amber-500 dark:hover:border-amber-600 transition-all shadow-xs hover:shadow-md group/card';
       card.innerHTML = `
         <div>
-          <div class="flex items-center justify-between text-xs text-stone-500 mb-2.5 gap-1.5 flex-wrap">
-            <div class="flex items-center gap-1.5">
-              <span class="px-2 py-0.5 rounded-lg text-[11px] font-bold bg-amber-50 dark:bg-stone-800 text-amber-950 dark:text-amber-300 border border-amber-200 dark:border-stone-700 flex items-center gap-1">
-                <span>${escapeHtml(topic.icon || '🏷️')}</span>
-                <span>${escapeHtml(topic.name || 'Chủ đề')}</span>
-              </span>
-              <span class="px-2 py-0.5 rounded-lg text-[11px] font-bold border ${badgeStyle}">
-                HSK ${item.level || 1}
+          ${illust && illust.url ? `
+            <div class="relative w-full h-32 sm:h-36 rounded-xl overflow-hidden mb-3 bg-stone-100 dark:bg-stone-800 border border-amber-100/80 dark:border-stone-700/80 group/img">
+              <img 
+                src="${illust.url}" 
+                alt="${escapeHtml(item.title)}" 
+                loading="lazy" 
+                class="w-full h-full object-cover group-hover/img:scale-105 transition-transform duration-500" 
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <div class="hidden absolute inset-0 bg-gradient-to-br from-amber-800 to-amber-950 flex-col items-center justify-center text-white">
+                <span class="font-hanzi text-3xl font-black">${escapeHtml(item.title)}</span>
+                <span class="text-xs text-amber-200 mt-1">${escapeHtml(item.pinyin)}</span>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none"></div>
+              
+              <!-- Badges over Image -->
+              <div class="absolute top-2 left-2 flex items-center gap-1">
+                <span class="px-2 py-0.5 rounded-lg text-[10px] font-bold ${badgeStyle} shadow-2xs backdrop-blur-xs">
+                  HSK ${item.level || 1}
+                </span>
+                <span class="px-2 py-0.5 rounded-lg text-[10px] font-medium bg-black/60 text-white backdrop-blur-xs border border-white/20">
+                  ${escapeHtml(item.pos || 'từ vựng')}
+                </span>
+              </div>
+
+              <div class="absolute top-2 right-2">
+                <span class="px-2 py-0.5 rounded-lg text-[10px] font-bold bg-black/60 backdrop-blur-md text-amber-300 border border-white/20 shadow-2xs flex items-center gap-1">
+                  <span>${escapeHtml(topic.icon || '🏷️')}</span>
+                  <span>${escapeHtml(topic.name || 'Chủ đề')}</span>
+                </span>
+              </div>
+
+              <div class="absolute bottom-2 left-2.5 right-2.5 flex items-center justify-between text-white drop-shadow-sm">
+                <span class="text-xs font-bold truncate pr-2">${escapeHtml(item.meaning)}</span>
+                <button onclick="openWordModal(${jsArg(item.title)}, ${jsArg(item.pinyin)}, ${jsArg(item.meaning || '')})" class="p-1 rounded-lg bg-white/20 hover:bg-white/40 text-white backdrop-blur-xs transition-colors cursor-pointer shrink-0" title="Phóng to ảnh & xem chi tiết">
+                  <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                </button>
+              </div>
+            </div>
+          ` : `
+            <div class="flex items-center justify-between text-xs text-stone-500 mb-2.5 gap-1.5 flex-wrap">
+              <div class="flex items-center gap-1.5">
+                <span class="px-2 py-0.5 rounded-lg text-[11px] font-bold bg-amber-50 dark:bg-stone-800 text-amber-950 dark:text-amber-300 border border-amber-200 dark:border-stone-700 flex items-center gap-1">
+                  <span>${escapeHtml(topic.icon || '🏷️')}</span>
+                  <span>${escapeHtml(topic.name || 'Chủ đề')}</span>
+                </span>
+                <span class="px-2 py-0.5 rounded-lg text-[11px] font-bold border ${badgeStyle}">
+                  HSK ${item.level || 1}
+                </span>
+              </div>
+              <span class="text-[11px] text-stone-500 dark:text-stone-400 font-medium px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
+                ${escapeHtml(item.pos || 'từ vựng')}
               </span>
             </div>
-            <span class="text-[11px] text-stone-500 dark:text-stone-400 font-medium px-2 py-0.5 rounded bg-stone-100 dark:bg-stone-800 border border-stone-200 dark:border-stone-700">
-              ${escapeHtml(item.pos || 'từ vựng')}
-            </span>
-          </div>
+          `}
 
           <div class="flex items-center justify-between gap-2">
             <h4 onclick="openWritingModal(${jsArg(item.title)}, ${jsArg(item.pinyin)}, ${jsArg(item.meaning || '')})" class="font-hanzi text-3xl font-black text-stone-900 dark:text-stone-100 tracking-wide cursor-pointer hover:text-[#8B1E1E] transition-colors" title="Nhấn vào chữ để xem và tập viết nét">${escapeHtml(item.title)}</h4>
@@ -767,10 +820,20 @@ function renderTopicDictionary(reset = false) {
       const globalIdx = topicDictRendered + idx + 1;
       const badgeStyle = levelBadgeStyles[item.level] || 'bg-amber-100 text-amber-900 border-amber-200';
       const topic = getTopicInfo(item.topicId);
+      const illust = typeof window.getWordIllustration === 'function' ? window.getWordIllustration(item) : null;
 
       row.className = 'hover:bg-amber-50/70 dark:hover:bg-stone-800/60 transition-colors';
       row.innerHTML = `
         <td class="py-3 px-3 sm:px-4 text-center text-xs font-mono text-stone-400">${globalIdx}</td>
+        <td class="py-2.5 px-3 text-center">
+          <div onclick="openWordModal(${jsArg(item.title)}, ${jsArg(item.pinyin)}, ${jsArg(item.meaning || '')})" class="w-10 h-10 mx-auto rounded-lg overflow-hidden border border-amber-200/80 dark:border-stone-700 bg-stone-100 dark:bg-stone-800 cursor-pointer hover:border-amber-500 transition-colors shadow-2xs group/tb" title="Xem chi tiết & ảnh minh họa">
+            ${illust && illust.url ? `
+              <img src="${illust.url}" alt="${escapeHtml(item.title)}" loading="lazy" class="w-full h-full object-cover group-hover/tb:scale-110 transition-transform duration-300" onerror="this.outerHTML='<span class=\"text-sm flex items-center justify-center h-full\">${escapeHtml(topic.icon || '🏷️')}</span>'"/>
+            ` : `
+              <span class="text-sm flex items-center justify-center h-full">${escapeHtml(topic.icon || '🏷️')}</span>
+            `}
+          </div>
+        </td>
         <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
           <span onclick="openWritingModal(${jsArg(item.title)}, ${jsArg(item.pinyin)}, ${jsArg(item.meaning || '')})" class="font-hanzi text-2xl font-black text-stone-900 dark:text-stone-100 hover:text-[#8B1E1E] cursor-pointer transition-colors" title="Bấm để tập viết nét">${escapeHtml(item.title)}</span>
         </td>
