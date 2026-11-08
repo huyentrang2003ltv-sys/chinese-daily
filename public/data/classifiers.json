@@ -1,0 +1,2352 @@
+[
+  {
+    "id": "clf_zhang",
+    "char": "张",
+    "pinyin": "zhāng",
+    "hanviet": "Trương",
+    "meaning": "tờ, tấm, chiếc, bức (vật có bề mặt phẳng, mỏng hoặc căng rộng)",
+    "category": "shape",
+    "categoryName": "Hình Dáng & Bề Mặt",
+    "applicableObjects": "Giấy tờ, vé, ảnh, bản đồ, bàn, giường, mặt, miệng, cung tên...",
+    "collocations": [
+      {
+        "zh": "一张纸",
+        "py": "yì zhāng zhǐ",
+        "vi": "một tờ giấy"
+      },
+      {
+        "zh": "一张桌子",
+        "py": "yì zhāng zhuōzi",
+        "vi": "một chiếc bàn"
+      },
+      {
+        "zh": "一张床",
+        "py": "yì zhāng chuáng",
+        "vi": "một chiếc giường"
+      },
+      {
+        "zh": "一张照片",
+        "py": "yì zhāng zhàopiàn",
+        "vi": "một bức ảnh"
+      },
+      {
+        "zh": "一张电影票",
+        "py": "yì zhāng diànyǐng piào",
+        "vi": "một vé xem phim"
+      },
+      {
+        "zh": "一张嘴",
+        "py": "yì zhāng zuǐ",
+        "vi": "một cái miệng"
+      }
+    ],
+    "example": {
+      "zh": "他从皮夹里拿出一张珍藏多年的全家福照片。",
+      "py": "Tā cóng píjiā lǐ ná chū yì zhāng zhēncáng duō nián de quánjiāfú zhàopiàn.",
+      "vi": "Anh ấy lấy từ trong ví ra một bức ảnh gia đình trân quý nhiều năm."
+    },
+    "tip": "💡 Bẫy HSK: Giường (床) và bàn (桌子) đều có mặt phẳng lớn nên bắt buộc dùng 张, tuyệt đối không dùng 个!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 请给我____白纸写字。",
+      "options": [
+        "张 (zhāng)",
+        "把 (bǎ)",
+        "条 (tiáo)",
+        "块 (kuài)"
+      ],
+      "answer": 0,
+      "explain": "Bạch chỉ (tờ giấy trắng) có bề mặt phẳng mỏng nên dùng lượng từ 张 (zhāng)."
+    }
+  },
+  {
+    "id": "clf_tiao",
+    "char": "条",
+    "pinyin": "tiáo",
+    "hanviet": "Điều",
+    "meaning": "sợi, con, cái, dải, điều (vật thon dài, mềm mại, uốn lượn)",
+    "category": "shape",
+    "categoryName": "Hình Dáng & Bề Mặt",
+    "applicableObjects": "Đường xá, sông ngòi, cá, rắn, quần, váy, khăn quàng, tin nhắn, điều luật...",
+    "collocations": [
+      {
+        "zh": "一条路",
+        "py": "yì tiáo lù",
+        "vi": "một con đường"
+      },
+      {
+        "zh": "一条河",
+        "py": "yì tiáo hé",
+        "vi": "một con sông"
+      },
+      {
+        "zh": "一条鱼",
+        "py": "yì tiáo yú",
+        "vi": "một con cá"
+      },
+      {
+        "zh": "一条裤子",
+        "py": "yì tiáo kùzi",
+        "vi": "một chiếc quần"
+      },
+      {
+        "zh": "一条围巾",
+        "py": "yì tiáo wéijīn",
+        "vi": "một chiếc khăn quàng"
+      },
+      {
+        "zh": "一条微信",
+        "py": "yì tiáo wēixìn",
+        "vi": "một tin nhắn WeChat"
+      }
+    ],
+    "example": {
+      "zh": "门前这条清澈的小河一直流向远方的大海。",
+      "py": "Ménqián zhè tiáo qīngchè de xiǎohé yìzhí liú wàng yuǎnfāng de dàhǎi.",
+      "vi": "Con sông nhỏ trong vắt trước cửa này chảy mãi về phía biển lớn xa xôi."
+    },
+    "tip": "💡 Bẫy HSK: Quần (裤子), váy (裙子) và tin nhắn (短信/微信) đều dùng lượng từ 条!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 她今天穿了____非常优雅的长裙。",
+      "options": [
+        "条 (tiáo)",
+        "件 (jiàn)",
+        "张 (zhāng)",
+        "个 (gè)"
+      ],
+      "answer": 0,
+      "explain": "Váy dài (长裙) có dáng thon dài buông rủ nên dùng lượng từ 条 (tiáo)."
+    }
+  },
+  {
+    "id": "clf_gen",
+    "char": "根",
+    "pinyin": "gēn",
+    "hanviet": "Căn",
+    "meaning": "cây, que, cọng, sợi (vật thon dài, có độ cứng hoặc mảnh mai)",
+    "category": "shape",
+    "categoryName": "Hình Dáng & Bề Mặt",
+    "applicableObjects": "Kim khâu, que củi, sợi tóc, ngọn cỏ, chuối, dây thừng, xương, xúc xích...",
+    "collocations": [
+      {
+        "zh": "一根针",
+        "py": "yì gēn zhēn",
+        "vi": "một cây kim"
+      },
+      {
+        "zh": "一根头发",
+        "py": "yì gēn tóufa",
+        "vi": "một sợi tóc"
+      },
+      {
+        "zh": "一根香蕉",
+        "py": "yì gēn xiāngjiāo",
+        "vi": "một quả chuối"
+      },
+      {
+        "zh": "一根火柴",
+        "py": "yì gēn huǒchái",
+        "vi": "một que diêm"
+      },
+      {
+        "zh": "一根绳子",
+        "py": "yì gēn shéngzi",
+        "vi": "một sợi dây thừng"
+      },
+      {
+        "zh": "一根骨头",
+        "py": "yì gēn gǔtou",
+        "vi": "một khúc xương"
+      }
+    ],
+    "example": {
+      "zh": "在宽阔的大海里寻找一枚小小的绣花针，比大海捞针还要困难。",
+      "py": "Zài kuānkuò de dàhǎi lǐ xúnzhǎo yì méi xiǎoxiǎo de xiùhuāzhēn, bǐ dàhǎi lāo zhēn hái yào kùnnan.",
+      "vi": "Tìm một cây kim thêu bé xíu trong biển rộng còn khó hơn mò kim đáy bể."
+    },
+    "tip": "💡 Phân biệt: 条 dùng cho vật dài mềm uốn lượn; 根 dùng cho vật dài có gốc rễ, thanh que hoặc sợi mảnh.",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 猴子手里拿着____香蕉吃得正香。",
+      "options": [
+        "根 (gēn)",
+        "只 (zhī)",
+        "张 (zhāng)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Quả chuối đơn lẻ có hình que cong thon dùng lượng từ 根 (gēn)."
+    }
+  },
+  {
+    "id": "clf_kuai",
+    "char": "块",
+    "pinyin": "kuài",
+    "hanviet": "Khối",
+    "meaning": "miếng, cục, hòn, tảng, khối, đồng (tiền)",
+    "category": "shape",
+    "categoryName": "Hình Dáng & Bề Mặt",
+    "applicableObjects": "Bánh ngọt, xà phòng, đá, thịt, đồng hồ đeo tay, đồng tệ (tiền khẩu ngữ)...",
+    "collocations": [
+      {
+        "zh": "一块蛋糕",
+        "py": "yí kuài dàngāo",
+        "vi": "một miếng bánh kem"
+      },
+      {
+        "zh": "一块手表",
+        "py": "yí kuài shǒubiǎo",
+        "vi": "một chiếc đồng hồ đeo tay"
+      },
+      {
+        "zh": "一块西瓜",
+        "py": "yí kuài xīguā",
+        "vi": "một miếng dưa hấu"
+      },
+      {
+        "zh": "一块肥皂",
+        "py": "yí kuài féizào",
+        "vi": "một bánh xà phòng"
+      },
+      {
+        "zh": "一块石头",
+        "py": "yí kuài shítou",
+        "vi": "một hòn đá"
+      },
+      {
+        "zh": "十块钱",
+        "py": "shí kuài qián",
+        "vi": "mười đồng tệ"
+      }
+    ],
+    "example": {
+      "zh": "生日聚会上，寿星切下一块美味的巧克力蛋糕递给我。",
+      "py": "Shēngrì jùhuì shang, shòuxīng qiē xià yí kuài měiwèi de qiǎokèlì dàngāo dì gěi wǒ.",
+      "vi": "Trong bữa tiệc sinh nhật, nhân vật chính cắt một miếng bánh kem sô-cô-la thơm ngon đưa cho tôi."
+    },
+    "tip": "💡 Bẫy HSK: Đồng hồ đeo tay (手表) dùng lượng từ 块 (bề mặt khối nhỏ trên cổ tay)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 这盒瑞士手工巧克力里有十二____。",
+      "options": [
+        "块 (kuài)",
+        "本 (běn)",
+        "支 (zhī)",
+        "张 (zhāng)"
+      ],
+      "answer": 0,
+      "explain": "Từng miếng sô-cô-la dùng lượng từ 块 (kuài)."
+    }
+  },
+  {
+    "id": "clf_ke_grain",
+    "char": "颗",
+    "pinyin": "kē",
+    "hanviet": "Khoa",
+    "meaning": "viên, hạt, ngôi (sao), quả (vật thể hình tròn hoặc nhỏ bé như hạt)",
+    "category": "shape",
+    "categoryName": "Hình Dáng & Bề Mặt",
+    "applicableObjects": "Ngôi sao, trái tim, viên thuốc, hạt dưa, viên ngọc, răng, bom đạn...",
+    "collocations": [
+      {
+        "zh": "一颗星星",
+        "py": "yì kē xīngxing",
+        "vi": "một ngôi sao"
+      },
+      {
+        "zh": "一颗心",
+        "py": "yì kē xīn",
+        "vi": "một trái tim"
+      },
+      {
+        "zh": "一颗珍珠",
+        "py": "yì kē zhēnzhū",
+        "vi": "một viên ngọc trai"
+      },
+      {
+        "zh": "一颗牙齿",
+        "py": "yì kē yáchǐ",
+        "vi": "một chiếc răng"
+      },
+      {
+        "zh": "一颗子弹",
+        "py": "yì kē zǐdàn",
+        "vi": "một viên đạn"
+      },
+      {
+        "zh": "一颗糖果",
+        "py": "yì kē tángguǒ",
+        "vi": "một viên kẹo"
+      }
+    ],
+    "example": {
+      "zh": "晴朗的夜空中有无数颗闪烁的小星星。",
+      "py": "Qínglǎng de yèkōng zhōng yǒu wúshù kē shǎnshuò de xiǎo xīngxing.",
+      "vi": "Trên bầu trời đêm quang đãng có vô số ngôi sao nhỏ lấp lánh."
+    },
+    "tip": "💡 Phân biệt: 颗 (kē - bộ Thạch/Hiệt: viên/hạt) khác với 棵 (kē - bộ Mộc: cây cối)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 天空中最亮的那____星星是指南针。",
+      "options": [
+        "颗 (kē)",
+        "棵 (kē)",
+        "张 (zhāng)",
+        "个 (gè)"
+      ],
+      "answer": 0,
+      "explain": "Sao trời (星星) là vật thể hạt cầu sáng nên dùng 颗 (kē)."
+    }
+  },
+  {
+    "id": "clf_ba",
+    "char": "把",
+    "pinyin": "bǎ",
+    "hanviet": "Bả",
+    "meaning": "chiếc, cây, cái (vật dụng có cán cầm hoặc nắm được trong tay)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Ô dù, quạt, dao, kéo, ghế ngồi, chìa khóa, súng, lược, ấm trà, nắm gạo...",
+    "collocations": [
+      {
+        "zh": "一把雨伞",
+        "py": "yì bǎ yǔsǎn",
+        "vi": "một chiếc ô"
+      },
+      {
+        "zh": "一把椅子",
+        "py": "yì bǎ yǐzi",
+        "vi": "một chiếc ghế"
+      },
+      {
+        "zh": "一把剪刀",
+        "py": "yì bǎ jiǎndāo",
+        "vi": "một cái kéo"
+      },
+      {
+        "zh": "一把钥匙",
+        "py": "yì bǎ yàoshi",
+        "vi": "một chiếc chìa khóa"
+      },
+      {
+        "zh": "一把扇子",
+        "py": "yì bǎ shànzi",
+        "vi": "một chiếc quạt"
+      },
+      {
+        "zh": "一把年纪",
+        "py": "yì bǎ niánjì",
+        "vi": "tuổi tác đã cao"
+      }
+    ],
+    "example": {
+      "zh": "外面正在下倾盆大雨，出门别忘了拿上一把雨伞。",
+      "py": "Wàimiàn zhèngzài xià qīngpén dàyǔ, chūmén bié wàng le ná shàng yì bǎ yǔsǎn.",
+      "vi": "Bên ngoài đang mưa tầm tã, ra ngoài chớ quên cầm theo chiếc ô."
+    },
+    "tip": "💡 Bẫy HSK kinh điển: Ghế (椅子) có chỗ tựa/tay vịn nên dùng 把, còn bàn (桌子) mặt phẳng nên dùng 张!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 请大家各就各位，在自己的____椅子上坐好。",
+      "options": [
+        "把 (bǎ)",
+        "张 (zhāng)",
+        "条 (tiáo)",
+        "部 (bù)"
+      ],
+      "answer": 0,
+      "explain": "Ghế ngồi (椅子) dùng lượng từ 把 (bǎ)."
+    }
+  },
+  {
+    "id": "clf_ben",
+    "char": "本",
+    "pinyin": "běn",
+    "hanviet": "Bổn",
+    "meaning": "quyển, cuốn, tập (sách vở đóng thành tập)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Sách, từ điển, tạp chí, sổ tay, tiểu thuyết, hộ chiếu, album ảnh...",
+    "collocations": [
+      {
+        "zh": "一本书",
+        "py": "yì běn shū",
+        "vi": "một quyển sách"
+      },
+      {
+        "zh": "一本词典",
+        "py": "yì běn cídiǎn",
+        "vi": "một cuốn từ điển"
+      },
+      {
+        "zh": "一本杂志",
+        "py": "yì běn zázhì",
+        "vi": "một cuốn tạp chí"
+      },
+      {
+        "zh": "一本护照",
+        "py": "yì běn hùzhào",
+        "vi": "một cuốn hộ chiếu"
+      },
+      {
+        "zh": "一本相册",
+        "py": "yì běn xiàngcè",
+        "vi": "một tập album ảnh"
+      },
+      {
+        "zh": "一本笔记本",
+        "py": "yì běn bǐjìběn",
+        "vi": "một cuốn sổ tay"
+      }
+    ],
+    "example": {
+      "zh": "图书馆里珍藏着许多具有很高学术价值的历史古籍善本。",
+      "py": "Túshūguǎn lǐ zhēncáng zhe xǔduō jùyǒu hěn gāo xuéshù jiàzhí de lìshǐ gǔjí shànběn.",
+      "vi": "Trong thư viện trân tàng rất nhiều cuốn sách cổ quý hiếm có giá trị học thuật cao."
+    },
+    "tip": "💡 Lưu ý: Hộ chiếu (护照) được đóng thành cuốn nhỏ nên cũng dùng lượng từ 本!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 这____新汉英词典解释非常详尽实用。",
+      "options": [
+        "本 (běn)",
+        "张 (zhāng)",
+        "件 (jiàn)",
+        "只 (zhī)"
+      ],
+      "answer": 0,
+      "explain": "Từ điển (词典) đóng thành quyển nên dùng 本 (běn)."
+    }
+  },
+  {
+    "id": "clf_zhi_pen",
+    "char": "支",
+    "pinyin": "zhī",
+    "hanviet": "Chi",
+    "meaning": "cây, chiếc, bài (vật hình que thẳng; bài hát; đội ngũ)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Bút viết, hoa tươi có cành, bài hát, đội bóng, đoàn quân, súng ống...",
+    "collocations": [
+      {
+        "zh": "一支笔",
+        "py": "yì zhī bǐ",
+        "vi": "một cây bút"
+      },
+      {
+        "zh": "一支毛笔",
+        "py": "yì zhī máobǐ",
+        "vi": "một cây bút lông"
+      },
+      {
+        "zh": "一支歌",
+        "py": "yì zhī gē",
+        "vi": "một bài hát"
+      },
+      {
+        "zh": "一支球队",
+        "py": "yì zhī qiúduì",
+        "vi": "một đội bóng"
+      },
+      {
+        "zh": "一支蜡烛",
+        "py": "yì zhī làzhú",
+        "vi": "một cây nến"
+      },
+      {
+        "zh": "一支枪",
+        "py": "yì zhī qiāng",
+        "vi": "một khẩu súng"
+      }
+    ],
+    "example": {
+      "zh": "他拿起一支精美的毛笔，在宣纸上行云流水般写下了四个大字。",
+      "py": "Tā ná qǐ yì zhī jīngměi de máobǐ, zài xuānzhǐ shang xíngyúnliúshuǐ bān xiě xià le sì gè dà zì.",
+      "vi": "Anh ấy cầm cây bút lông tinh xảo, viết bốn chữ lớn trên giấy xuyến mềm mại như mây bay nước chảy."
+    },
+    "tip": "💡 Phân biệt: 支 (zhī: cây bút, bài hát) khác với 只 (zhī: con vật, chiếc giày lẻ)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 老师用一____红笔仔细批改学生的作业。",
+      "options": [
+        "支 (zhī)",
+        "只 (zhī)",
+        "张 (zhāng)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Bút viết (笔) dùng lượng từ 支 (zhī)."
+    }
+  },
+  {
+    "id": "clf_jian",
+    "char": "件",
+    "pinyin": "jiàn",
+    "hanviet": "Kiện",
+    "meaning": "chiếc, cái, vụ, điều (áo, hành lý, sự việc, tác phẩm)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Áo (thượng y), áo khoác, áo len, hành lý, sự việc, lễ vật, tác phẩm nghệ thuật...",
+    "collocations": [
+      {
+        "zh": "一件衣服",
+        "py": "yí jiàn yīfu",
+        "vi": "một chiếc áo"
+      },
+      {
+        "zh": "一件事",
+        "py": "yí jiàn shì",
+        "vi": "một sự việc"
+      },
+      {
+        "zh": "一件行李",
+        "py": "yí jiàn xíngli",
+        "vi": "một kiện hành lý"
+      },
+      {
+        "zh": "一件礼物",
+        "py": "yí jiàn lǐwù",
+        "vi": "một món quà"
+      },
+      {
+        "zh": "一件衬衫",
+        "py": "yí jiàn chènshān",
+        "vi": "một chiếc áo sơ mi"
+      },
+      {
+        "zh": "一件毛衣",
+        "py": "yí jiàn máoyī",
+        "vi": "một chiếc áo len"
+      }
+    ],
+    "example": {
+      "zh": "今天在公司里发生了一件令人难以置信的离奇事情。",
+      "py": "Jīntiān zài gōngsī lǐ fāshēng le yí jiàn lìngrén nányǐzhìxìn de líqí shìqing.",
+      "vi": "Hôm nay ở công ty đã xảy ra một sự việc kỳ lạ đến mức khó tin."
+    },
+    "tip": "💡 Bẫy HSK: Áo (trên) dùng 件 (jiàn), nhưng quần (dưới) thon dài bắt buộc dùng 条 (tiáo)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 妈妈送给我一____温暖的手工羊毛衫。",
+      "options": [
+        "件 (jiàn)",
+        "条 (tiáo)",
+        "张 (zhāng)",
+        "块 (kuài)"
+      ],
+      "answer": 0,
+      "explain": "Áo len (羊毛衫) dùng lượng từ 件 (jiàn)."
+    }
+  },
+  {
+    "id": "clf_feng",
+    "char": "封",
+    "pinyin": "fēng",
+    "hanviet": "Phong",
+    "meaning": "bức, lá, phong (thư tín có niêm phong)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Thư từ, điện tín, email (thư điện tử), phong bì niêm phong...",
+    "collocations": [
+      {
+        "zh": "一封信",
+        "py": "yì fēng xìn",
+        "vi": "một bức thư"
+      },
+      {
+        "zh": "一封电子邮件",
+        "py": "yì fēng diànzǐ yóujiàn",
+        "vi": "một bức email"
+      },
+      {
+        "zh": "一封感谢信",
+        "py": "yì fēng gǎnxiè xìn",
+        "vi": "một bức thư cảm ơn"
+      },
+      {
+        "zh": "一封推荐信",
+        "py": "yì fēng tuījiàn xìn",
+        "vi": "một thư giới thiệu"
+      }
+    ],
+    "example": {
+      "zh": "远在海外求学的游子每个月都会给父母写一封长长的家书。",
+      "py": "Yuǎn zài hǎiwài qiúxué de yóuzǐ měi gè yuè dōu huì gěi fùmǔ xiě yì fēng chángcháng de jiāshū.",
+      "vi": "Đứa con phương xa du học mỗi tháng đều viết một bức thư nhà dài gửi cha mẹ."
+    },
+    "tip": "💡 Bẫy HSK: Cả thư tay truyền thống (信) lẫn thư điện tử (电子邮件) đều dùng lượng từ 封!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: HR vừa gửi cho ứng viên một____面试通知邮件。",
+      "options": [
+        "封 (fēng)",
+        "张 (zhāng)",
+        "条 (tiáo)",
+        "本 (běn)"
+      ],
+      "answer": 0,
+      "explain": "Thư từ email dùng lượng từ 封 (fēng)."
+    }
+  },
+  {
+    "id": "clf_zhi_animal",
+    "char": "只",
+    "pinyin": "zhī",
+    "hanviet": "Chích",
+    "meaning": "con (động vật nhỏ, chim muông); chiếc (vật có đôi nhưng đứng lẻ)",
+    "category": "living",
+    "categoryName": "Động Thực Vật & Sinh Vật",
+    "applicableObjects": "Chó, mèo, gà, vịt, chim, thỏ, hổ; một chiếc giày, một chiếc tất, một bàn tay...",
+    "collocations": [
+      {
+        "zh": "一只猫",
+        "py": "yì zhī māo",
+        "vi": "một con mèo"
+      },
+      {
+        "zh": "一只鸟",
+        "py": "yì zhī niǎo",
+        "vi": "một con chim"
+      },
+      {
+        "zh": "一只狗",
+        "py": "yì zhī gǒu",
+        "vi": "một con chó"
+      },
+      {
+        "zh": "一只手",
+        "py": "yì zhī shǒu",
+        "vi": "một bàn tay"
+      },
+      {
+        "zh": "一只鞋",
+        "py": "yì zhī xié",
+        "vi": "một chiếc giày (lẻ)"
+      },
+      {
+        "zh": "一只眼睛",
+        "py": "yì zhī yǎnjīng",
+        "vi": "một con mắt"
+      }
+    ],
+    "example": {
+      "zh": "公园草地上有一只欢快奔跑的小花猫。",
+      "py": "Gōngyuán cǎodì shang yǒu yì zhī huānkuài bēnpǎo de xiǎo huāmāo.",
+      "vi": "Trên bãi cỏ công viên có một chú mèo hoa nhỏ đang vui vẻ chạy nhảy."
+    },
+    "tip": "💡 Bẫy HSK: Giày, tất, tay, mắt vốn đi theo cặp (双), khi nói một bên đứng riêng lẻ dùng 只!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 树枝上停着一____羽毛鲜艳的彩色鹦鹉。",
+      "options": [
+        "只 (zhī)",
+        "支 (zhī)",
+        "头 (tóu)",
+        "张 (zhāng)"
+      ],
+      "answer": 0,
+      "explain": "Chim muông (鹦鹉) dùng lượng từ động vật 只 (zhī)."
+    }
+  },
+  {
+    "id": "clf_tou",
+    "char": "头",
+    "pinyin": "tóu",
+    "hanviet": "Đầu",
+    "meaning": "con, đầu (gia súc lớn, thú to)",
+    "category": "living",
+    "categoryName": "Động Thực Vật & Sinh Vật",
+    "applicableObjects": "Bò, trâu, voi, lợn, sư tử, cá voi, tỏi (củ tỏi)...",
+    "collocations": [
+      {
+        "zh": "一头牛",
+        "py": "yì tóu niú",
+        "vi": "một con bò"
+      },
+      {
+        "zh": "一头大象",
+        "py": "yì tóu dàxiàng",
+        "vi": "một con voi"
+      },
+      {
+        "zh": "一头猪",
+        "py": "yì tóu zhū",
+        "vi": "một con lợn"
+      },
+      {
+        "zh": "一头狮子",
+        "py": "yì tóu shīzi",
+        "vi": "một con sư tử"
+      },
+      {
+        "zh": "一头大蒜",
+        "py": "yì tóu dàsuàn",
+        "vi": "một củ tỏi"
+      }
+    ],
+    "example": {
+      "zh": "在非洲大草原上，一头雄壮的成年公象正在悠闲漫步。",
+      "py": "Zài Fēizhōu dà cǎoyuán shang, yì tóu xióngzhuàng de chéngnián gōngxiàng zhèngzài yōuxián mànbù.",
+      "vi": "Trên thảo nguyên châu Phi rộng lớn, một chú voi đực trưởng thành vạm vỡ đang thong thả dạo bước."
+    },
+    "tip": "💡 Động vật lớn (bò, voi, trâu, lợn) dùng 头; Riêng ngựa dùng 匹 (pǐ); Chó/mèo/chim dùng 只 (zhī).",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 农夫在田地里赶着一____老黄牛耕地。",
+      "options": [
+        "头 (tóu)",
+        "只 (zhī)",
+        "匹 (pǐ)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Trâu bò lớn dùng lượng từ 头 (tóu)."
+    }
+  },
+  {
+    "id": "clf_pi",
+    "char": "匹",
+    "pinyin": "pǐ",
+    "hanviet": "Thất",
+    "meaning": "con (ngựa, la, lừa); cây (vải lụa)",
+    "category": "living",
+    "categoryName": "Động Thực Vật & Sinh Vật",
+    "applicableObjects": "Ngựa, lừa, la; cây vải, xấp vải lụa...",
+    "collocations": [
+      {
+        "zh": "一匹马",
+        "py": "yì pǐ mǎ",
+        "vi": "một con ngựa"
+      },
+      {
+        "zh": "一匹白马",
+        "py": "yì pǐ báimǎ",
+        "vi": "một con bạch mã"
+      },
+      {
+        "zh": "一匹黑马",
+        "py": "yì pǐ hēimǎ",
+        "vi": "ngựa ô (nghĩa bóng: nhân tố bất ngờ)"
+      },
+      {
+        "zh": "一匹布",
+        "py": "yì pǐ bù",
+        "vi": "một cây vải"
+      }
+    ],
+    "example": {
+      "zh": "蒙古骑士骑着一匹训练有素的骏马在辽阔草原上飞驰。",
+      "py": "Měnggǔ qíshì qí zhe yì pǐ xùnliàn-yǒusù de jùnmǎ zài liáokuò cǎoyuán shang fēichí.",
+      "vi": "Kỵ sĩ Mông Cổ cưỡi một con tuấn mã huấn luyện thuần thục phóng nhanh trên thảo nguyên bao la."
+    },
+    "tip": "💡 Thuật ngữ HSK: 黑马 (Hēimǎ - Ngựa ô) chỉ nhân tố bí ẩn bất ngờ đoạt giải quán quân!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 草原英雄骑着一____千里马日行千里。",
+      "options": [
+        "匹 (pǐ)",
+        "头 (tóu)",
+        "只 (zhī)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Ngựa (马) bắt buộc dùng lượng từ 匹 (pǐ)."
+    }
+  },
+  {
+    "id": "clf_ke_plant",
+    "char": "棵",
+    "pinyin": "kē",
+    "hanviet": "Khỏa",
+    "meaning": "cây, ngọn, cây cối (thực vật có thân, gốc rễ)",
+    "category": "living",
+    "categoryName": "Động Thực Vật & Sinh Vật",
+    "applicableObjects": "Cây cối, rau cải, cỏ, hoa (cây hoa), lúa mạ...",
+    "collocations": [
+      {
+        "zh": "一棵树",
+        "py": "yì kē shù",
+        "vi": "một cái cây"
+      },
+      {
+        "zh": "一棵大树",
+        "py": "yì kē dàshù",
+        "vi": "một cây đại thụ"
+      },
+      {
+        "zh": "一棵白菜",
+        "py": "yì kē báicài",
+        "vi": "một cây cải thảo"
+      },
+      {
+        "zh": "一棵小草",
+        "py": "yì kē xiǎocǎo",
+        "vi": "một ngọn cỏ nhỏ"
+      },
+      {
+        "zh": "一棵松树",
+        "py": "yì kē sōngshù",
+        "vi": "một cây thông"
+      }
+    ],
+    "example": {
+      "zh": "爷爷在院子里亲手栽种了一棵象征长寿长青的银杏树。",
+      "py": "Yéye zài yuànzi lǐ qīnshǒu zāizhòng le yì kē xiàngzhēng chángshòu chángqīng de yínxìngshù.",
+      "vi": "Ông nội tự tay trồng một cây ngân hạnh tượng trưng cho trường thọ trong sân vườn."
+    },
+    "tip": "💡 Phân biệt: 棵 (kē) có bộ Mộc (木) dùng cho cây cối; 颗 (kē) có bộ Hiệt dùng cho hạt/viên nhỏ!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 学校操场边有一____几百年历史的古槐树。",
+      "options": [
+        "棵 (kē)",
+        "颗 (kē)",
+        "张 (zhāng)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Cây cối thực vật có gốc (槐树) dùng 棵 (kē)."
+    }
+  },
+  {
+    "id": "clf_duo",
+    "char": "朵",
+    "pinyin": "duǒ",
+    "hanviet": "Đóa",
+    "meaning": "bông, đóa, đám (hoa tươi, đám mây)",
+    "category": "living",
+    "categoryName": "Động Thực Vật & Sinh Vật",
+    "applicableObjects": "Bông hoa, đám mây, bọt sóng, vành tai (tai người)...",
+    "collocations": [
+      {
+        "zh": "一朵花",
+        "py": "yì duǒ huā",
+        "vi": "một bông hoa"
+      },
+      {
+        "zh": "一朵红玫瑰",
+        "py": "yì duǒ hóng méigui",
+        "vi": "một bông hồng đỏ"
+      },
+      {
+        "zh": "一朵白云",
+        "py": "yì duǒ báiyún",
+        "vi": "một đám mây trắng"
+      },
+      {
+        "zh": "一朵浪花",
+        "py": "yì duǒ lànghuā",
+        "vi": "một đóa hoa sóng"
+      }
+    ],
+    "example": {
+      "zh": "蔚蓝色的天空中飘浮着几朵形状各异的洁白棉花云。",
+      "py": "Wèilánsè de tiānkōng zhōng piāofú zhe jǐ duǒ xíngzhuàng gèyì de jiébái miánhuayún.",
+      "vi": "Trên bầu trời xanh biếc lơ lửng mấy đám mây bông trắng muốt với muôn hình vạn trạng."
+    },
+    "tip": "💡 Bẫy HSK: Cả bông hoa (花) lẫn đám mây (云) đều dùng chung lượng từ 朵 (duǒ)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 他摘下一____鲜艳的百合花送给恋人。",
+      "options": [
+        "朵 (duǒ)",
+        "棵 (kē)",
+        "把 (bǎ)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Bông hoa (百合花) dùng lượng từ 朵 (duǒ)."
+    }
+  },
+  {
+    "id": "clf_liang",
+    "char": "辆",
+    "pinyin": "liàng",
+    "hanviet": "Lượng",
+    "meaning": "chiếc, chiếc xe (phương tiện đường bộ có bánh xe)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Ô tô, xe đạp, xe máy, xe buýt, xe taxi, xe tải, xe đẩy...",
+    "collocations": [
+      {
+        "zh": "一辆车",
+        "py": "yí liàng chē",
+        "vi": "một chiếc xe"
+      },
+      {
+        "zh": "一辆自行车",
+        "py": "yí liàng zìxíngchē",
+        "vi": "một chiếc xe đạp"
+      },
+      {
+        "zh": "一辆出租车",
+        "py": "yí liàng chūzūchē",
+        "vi": "một chiếc xe taxi"
+      },
+      {
+        "zh": "一辆公交车",
+        "py": "yí liàng gōngjiāochē",
+        "vi": "một chiếc xe buýt"
+      },
+      {
+        "zh": "一辆摩托车",
+        "py": "yí liàng mótuōchē",
+        "vi": "một chiếc xe máy"
+      }
+    ],
+    "example": {
+      "zh": "公司为新入职的优秀员工配备了一辆新能源电动汽车。",
+      "py": "Gōngsī wèi xīn rùzhí de yōuxiù yuángōng pèibèi le yí liàng xīnnéngyuán diàndòng qìchē.",
+      "vi": "Công ty đã trang bị một chiếc ô tô điện năng lượng mới cho nhân viên xuất sắc mới vào làm."
+    },
+    "tip": "💡 Lưu ý: Xe có bánh dùng 辆 (liàng); Máy bay dùng 架 (jià); Tàu thuyền dùng 艘 (sōu); Tàu hỏa dùng 列 (liè)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 门口停着一____崭新的红色跑车。",
+      "options": [
+        "辆 (liàng)",
+        "艘 (sōu)",
+        "架 (jià)",
+        "座 (zuò)"
+      ],
+      "answer": 0,
+      "explain": "Xe thể thao ô tô (跑车) dùng lượng từ 辆 (liàng)."
+    }
+  },
+  {
+    "id": "clf_sou",
+    "char": "艘",
+    "pinyin": "sōu",
+    "hanviet": "Sưu",
+    "meaning": "chiếc, con tàu (tàu thuyền đường thủy lớn nhỏ)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Tàu thủy, thuyền buồm, du thuyền, tàu ngầm, tàu chiến, sà lan...",
+    "collocations": [
+      {
+        "zh": "一艘船",
+        "py": "yì sōu chuán",
+        "vi": "một con tàu"
+      },
+      {
+        "zh": "一艘军舰",
+        "py": "yì sōu jūnjiàn",
+        "vi": "một chiếc tàu chiến"
+      },
+      {
+        "zh": "一艘游轮",
+        "py": "yì sōu yóulún",
+        "vi": "một chiếc du thuyền"
+      },
+      {
+        "zh": "一艘潜艇",
+        "py": "yì sōu qiántǐng",
+        "vi": "một chiếc tàu ngầm"
+      }
+    ],
+    "example": {
+      "zh": "一艘万吨级大型远洋货轮正缓缓驶离繁忙的集装箱港口。",
+      "py": "Yì sōu wàndùn jí dàxíng yuǎnyáng huòlún zhèng huǎnhuǎn shǐlí fánmáng de jízhuāngxiāng gǎngkǒu.",
+      "vi": "Một con tàu chở hàng viễn dương vạn tấn đang từ từ rời khỏi bến cảng container nhộn nhịp."
+    },
+    "tip": "💡 Tàu thuyền chuẩn dùng 艘 (sōu), thuyền nhỏ dân gian có thể dùng 条 (tiáo: 一条小船).",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 港湾里停泊着数十____现代化豪华游轮。",
+      "options": [
+        "艘 (sōu)",
+        "辆 (liàng)",
+        "架 (jià)",
+        "座 (zuò)"
+      ],
+      "answer": 0,
+      "explain": "Du thuyền lớn (游轮) dùng lượng từ 艘 (sōu)."
+    }
+  },
+  {
+    "id": "clf_jia",
+    "char": "架",
+    "pinyin": "jià",
+    "hanviet": "Giá",
+    "meaning": "chiếc, cỗ (máy móc có giàn khung: máy bay, đàn piano, máy ảnh)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Máy bay, trực thăng, đàn piano, kính thiên văn, máy ảnh...",
+    "collocations": [
+      {
+        "zh": "一架飞机",
+        "py": "yí jià fēijī",
+        "vi": "một chiếc máy bay"
+      },
+      {
+        "zh": "一架钢琴",
+        "py": "yí jià gāngqín",
+        "vi": "một cây đàn piano"
+      },
+      {
+        "zh": "一架直升机",
+        "py": "yí jià zhíshēngjī",
+        "vi": "một chiếc trực thăng"
+      },
+      {
+        "zh": "一架望远镜",
+        "py": "yí jià wàngyuǎnjìng",
+        "vi": "một chiếc kính viễn vọng"
+      }
+    ],
+    "example": {
+      "zh": "随着巨大的轰鸣声，一架波音客机平稳降落在国际机场跑道上。",
+      "py": "Suízhe jùdà de hōngmíngshēng, yí jià bōyīn kèjī píngwěn jiàngluò zài guójì jīchǎng pǎodào shang.",
+      "vi": "Cùng với tiếng gầm rú vang trời, một chiếc máy bay chở khách Boeing đã hạ cánh êm thuận xuống đường băng sân bay quốc tế."
+    },
+    "tip": "💡 Bẫy HSK: Đàn piano (钢琴) có khung giàn phức tạp nên dùng lượng từ 架 (jià)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 大厅正中央摆放着一____昂贵的德国斯坦威三角钢琴。",
+      "options": [
+        "架 (jià)",
+        "辆 (liàng)",
+        "把 (bǎ)",
+        "块 (kuài)"
+      ],
+      "answer": 0,
+      "explain": "Đàn đại dương cầm (钢琴) dùng lượng từ 架 (jià)."
+    }
+  },
+  {
+    "id": "clf_zuo",
+    "char": "座",
+    "pinyin": "zuò",
+    "hanviet": "Tọa",
+    "meaning": "ngọn, tòa, cây (vật thể kiến trúc to lớn, cố định vững chãi)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Ngọn núi, cây cầu, tòa nhà cao tầng, thành phố, tượng đài, hải đăng...",
+    "collocations": [
+      {
+        "zh": "一座山",
+        "py": "yí zuò shān",
+        "vi": "một ngọn núi"
+      },
+      {
+        "zh": "一座桥",
+        "py": "yí zuò qiáo",
+        "vi": "một cây cầu"
+      },
+      {
+        "zh": "一座大楼",
+        "py": "yí zuò dàlóu",
+        "vi": "một tòa nhà lớn"
+      },
+      {
+        "zh": "一座城市",
+        "py": "yí zuò chéngshì",
+        "vi": "một thành phố"
+      },
+      {
+        "zh": "一座庙",
+        "py": "yí zuò miào",
+        "vi": "một ngôi miếu / ngôi chùa"
+      },
+      {
+        "zh": "一座雕塑",
+        "py": "yí zuò diāosù",
+        "vi": "một bức tượng điêu khắc"
+      }
+    ],
+    "example": {
+      "zh": "跨海大桥像一条巨龙横卧在海面上，连接着两座经济繁荣的海滨城市。",
+      "py": "Kuàhǎi dàqiáo xiàng yì tiáo jùlóng héngwò zài hǎimiàn shang, liánjiē zhe liǎng zuò jīngjì fánróng de hǎibīn chéngshì.",
+      "vi": "Cây cầu vượt biển tựa như con rồng lớn vắt ngang mặt biển, nối liền hai thành phố ven biển trù phú phát triển."
+    },
+    "tip": "💡 Bẫy HSK: Núi (山), Cầu (桥), Thành phố (城市) đều dùng lượng từ 座 (zuò)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 远处高耸入云的是一____常年积雪的雪山。",
+      "options": [
+        "座 (zuò)",
+        "个 (gè)",
+        "棵 (kē)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Ngọn núi hùng vĩ (雪山) dùng lượng từ 座 (zuò)."
+    }
+  },
+  {
+    "id": "clf_shuang",
+    "char": "双",
+    "pinyin": "shuāng",
+    "hanviet": "Song",
+    "meaning": "đôi (hai vật đi liền nhau không thể tách rời: giày, đũa, mắt)",
+    "category": "sets_measures",
+    "categoryName": "Tập Hợp & Đo Lường",
+    "applicableObjects": "Giày dép, đũa ăn cơm, bít tất, găng tay, bàn tay, đôi mắt...",
+    "collocations": [
+      {
+        "zh": "一双鞋",
+        "py": "yì shuāng xié",
+        "vi": "một đôi giày"
+      },
+      {
+        "zh": "一双筷子",
+        "py": "yì shuāng kuàizi",
+        "vi": "một đôi đũa"
+      },
+      {
+        "zh": "一双袜子",
+        "py": "yì shuāng wàzi",
+        "vi": "một đôi tất"
+      },
+      {
+        "zh": "一双手套",
+        "py": "yì shuāng shǒutào",
+        "vi": "một đôi găng tay"
+      },
+      {
+        "zh": "一双眼睛",
+        "py": "yì shuāng yǎnjing",
+        "vi": "một đôi mắt"
+      }
+    ],
+    "example": {
+      "zh": "吃中餐最基本的餐具就是一双竹筷子。",
+      "py": "Chī zhōngcān zuì jīběn de cānjù jiùshì yì shuāng zhú kuàizi.",
+      "vi": "Dụng cụ ăn uống cơ bản nhất khi ăn đồ Trung là một đôi đũa tre."
+    },
+    "tip": "💡 Phân biệt: 双 (shuāng: đôi tự nhiên có cặp như giày, đũa, mắt); 对 (duì: cặp uyên ương, đôi vợ chồng, cặp bình hoa đối xứng).",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 服务员，请再给我拿一____干净的木筷子。",
+      "options": [
+        "双 (shuāng)",
+        "把 (bǎ)",
+        "根 (gēn)",
+        "张 (zhāng)"
+      ],
+      "answer": 0,
+      "explain": "Đôi đũa đi kèm thành đôi dùng lượng từ 双 (shuāng)."
+    }
+  },
+  {
+    "id": "clf_tao",
+    "char": "套",
+    "pinyin": "tào",
+    "hanviet": "Sáo",
+    "meaning": "bộ, căn (tập hợp hoàn chỉnh gồm nhiều món hoặc căn hộ)",
+    "category": "sets_measures",
+    "categoryName": "Tập Hợp & Đo Lường",
+    "applicableObjects": "Quần áo comple, sách tuyển tập, căn hộ chung cư, bộ ấm chén, bộ quy tắc...",
+    "collocations": [
+      {
+        "zh": "一套西装",
+        "py": "yí tào xīzhuāng",
+        "vi": "một bộ âu phục"
+      },
+      {
+        "zh": "一套房子",
+        "py": "yí tào fángzi",
+        "vi": "một căn nhà/căn hộ"
+      },
+      {
+        "zh": "一套茶具",
+        "py": "yí tào chájù",
+        "vi": "một bộ ấm trà"
+      },
+      {
+        "zh": "一套书",
+        "py": "yí tào shū",
+        "vi": "một bộ sách"
+      },
+      {
+        "zh": "一套方案",
+        "py": "yí tào fāng'àn",
+        "vi": "một bộ phương án"
+      }
+    ],
+    "example": {
+      "zh": "年轻夫妇经过多年努力拼搏，终于在城市中心买下了一套三居室的新房子。",
+      "py": "Niánqīng fūfù jīngguò duō nián nǔlì pīnbó, zhōngyú zài chéngshì zhōngxīn mǎi xià le yí tào sān-jūshì de xīn fángzi.",
+      "vi": "Đôi vợ chồng trẻ sau nhiều năm phấn đấu nỗ lực, cuối cùng đã mua được một căn hộ 3 phòng ngủ mới ngay trung tâm thành phố."
+    },
+    "tip": "💡 Bẫy HSK: Căn hộ nhà ở (房子) dùng 套 (tào), còn tòa nhà cao tầng dùng 座 (zuò) hoặc 栋 (dòng)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 面试时穿上一____得体的商务职业正装显得特别专业。",
+      "options": [
+        "套 (tào)",
+        "件 (jiàn)",
+        "把 (bǎ)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Bộ vest âu phục hoàn chỉnh (西装) gồm cả áo và quần dùng 套 (tào)."
+    }
+  },
+  {
+    "id": "clf_ci",
+    "char": "次",
+    "pinyin": "cì",
+    "hanviet": "Thứ",
+    "meaning": "lần, lượt (đo lường số lần xảy ra hành động nói chung)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Mọi hành động xảy ra theo tần suất: đi, đến, xem, gặp, họp...",
+    "collocations": [
+      {
+        "zh": "去过一次",
+        "py": "qù guò yí cì",
+        "vi": "đã đi một lần"
+      },
+      {
+        "zh": "见一次面",
+        "py": "jiàn yí cì miàn",
+        "vi": "gặp mặt một lần"
+      },
+      {
+        "zh": "第一次",
+        "py": "dì-yī cì",
+        "vi": "lần đầu tiên"
+      },
+      {
+        "zh": "一次机会",
+        "py": "yí cì jīhuì",
+        "vi": "một cơ hội"
+      },
+      {
+        "zh": "参加一次会议",
+        "py": "cānjiā yí cì huìyì",
+        "vi": "tham dự một cuộc họp"
+      }
+    ],
+    "example": {
+      "zh": "这是我第一次独自一人坐飞机出国留学，心里既兴奋又有些紧张。",
+      "py": "Zhè shì wǒ dì-yī cì dúzì yì rén zuò fēijī chūguó liúxué, xīnlǐ jì xīngfèn yòu yǒuxiē jǐnzhāng.",
+      "vi": "Đây là lần đầu tiên tôi một mình đi máy bay ra nước ngoài du học, trong lòng vừa phấn khích vừa có chút hồi hộp."
+    },
+    "tip": "💡 Phân biệt: 次 chỉ số lần chung; 遍 nhấn mạnh quá trình làm từ đầu chí cuối!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 这个问题我向你请教过好几____了。",
+      "options": [
+        "次 (cì)",
+        "遍 (biàn)",
+        "趟 (tàng)",
+        "张 (zhāng)"
+      ],
+      "answer": 0,
+      "explain": "Số lần hỏi thăm thông thường dùng 次 (cì)."
+    }
+  },
+  {
+    "id": "clf_bian",
+    "char": "遍",
+    "pinyin": "biàn",
+    "hanviet": "Biến",
+    "meaning": "lượt, lần (trải nghiệm toàn bộ quá trình từ đầu đến cuối)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Đọc sách, nghe nhạc, xem phim, nói chuyện, viết lại, sao chép...",
+    "collocations": [
+      {
+        "zh": "看一遍",
+        "py": "kàn yí biàn",
+        "vi": "xem một lượt từ đầu đến cuối"
+      },
+      {
+        "zh": "读一遍课文",
+        "py": "dú yí biàn kèwén",
+        "vi": "đọc bài khóa một lượt"
+      },
+      {
+        "zh": "再说一遍",
+        "py": "zài shuō yí biàn",
+        "vi": "nói lại một lần nữa"
+      },
+      {
+        "zh": "抄写三遍",
+        "py": "chāoxiě sān biàn",
+        "vi": "chép lại ba lần"
+      }
+    ],
+    "example": {
+      "zh": "老师，刚才那段录音语速太快，请您再为我们播放一遍好吗？",
+      "py": "Lǎoshī, gāngcái nà duàn lùyīn yǔsù tài kuài, qǐng nín zài wèi wǒmen bōfàng yí biàn hǎo ma?",
+      "vi": "Thầy ơi, đoạn ghi âm vừa rồi nói nhanh quá, xin thầy phát lại từ đầu cho chúng em một lần nữa được không ạ?"
+    },
+    "tip": "💡 Bẫy HSK kinh điển: \"再说一遍\" (Nói lại từ đầu một lượt), không được nói \"再说一次\" khi muốn nghe trọn vẹn!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 请大家打开书，把生词从头到尾认真朗读两____。",
+      "options": [
+        "遍 (biàn)",
+        "次 (cì)",
+        "趟 (tàng)",
+        "本 (běn)"
+      ],
+      "answer": 0,
+      "explain": "Đọc từ đầu đến cuối một cách trọn vẹn bắt buộc dùng 遍 (biàn)."
+    }
+  },
+  {
+    "id": "clf_tang",
+    "char": "趟",
+    "pinyin": "tàng",
+    "hanviet": "Thảng",
+    "meaning": "chuyến, bận (hành động đi đi về về, di chuyển quãng đường)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Đi lại, chạy một chuyến bưu điện, đi siêu thị, đi ngân hàng, chuyến tàu...",
+    "collocations": [
+      {
+        "zh": "去一趟超市",
+        "py": "qù yí tàng chāoshì",
+        "vi": "đi siêu thị một chuyến"
+      },
+      {
+        "zh": "走一趟",
+        "py": "zǒu yí tàng",
+        "vi": "đi một bận / đi một chuyến"
+      },
+      {
+        "zh": "跑一趟银行",
+        "py": "pǎo yí tàng yínháng",
+        "vi": "chạy ra ngân hàng một chuyến"
+      },
+      {
+        "zh": "这趟火车",
+        "py": "zhè tàng huǒchē",
+        "vi": "chuyến tàu hỏa này"
+      }
+    ],
+    "example": {
+      "zh": "下班回家路上顺便去了一趟菜市场买新鲜蔬菜。",
+      "py": "Xiàbān huíjiā lù shang shùnbiàn qù le yí tàng càishìchǎng mǎi xīnxiān shūcài.",
+      "vi": "Trên đường tan làm về nhà tiện thể ghé qua chợ rau một chuyến mua rau tươi."
+    },
+    "tip": "💡 Động từ đi lại (去, 走, 跑, 来) kết hợp địa điểm thường dùng 趟 để chỉ việc đi rồi về!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 下午我要抽空跑一____邮局寄重要文件。",
+      "options": [
+        "趟 (tàng)",
+        "次 (cì)",
+        "遍 (biàn)",
+        "个 (gè)"
+      ],
+      "answer": 0,
+      "explain": "Đi đến bưu điện rồi quay về dùng động lượng từ 趟 (tàng)."
+    }
+  },
+  {
+    "id": "clf_dun",
+    "char": "顿",
+    "pinyin": "dùn",
+    "hanviet": "Đốn",
+    "meaning": "bữa (cơm); trận (mắng mỏ, đòn roi, khuyên can)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Bữa ăn, bữa tiệc, trận đòn, trận mắng mỏ, trận cười...",
+    "collocations": [
+      {
+        "zh": "吃一顿饭",
+        "py": "chī yí dùn fàn",
+        "vi": "ăn một bữa cơm"
+      },
+      {
+        "zh": "吃一顿丰盛的大餐",
+        "py": "chī yí dùn fēngshèng de dàcān",
+        "vi": "ăn một bữa đại tiệc thịnh soạn"
+      },
+      {
+        "zh": "被爸爸批评了一顿",
+        "py": "bèi bàba pīpíng le yí dùn",
+        "vi": "bị bố phê bình một trận"
+      },
+      {
+        "zh": "挨了一顿打",
+        "py": "ái le yí dùn dǎ",
+        "vi": "chịu một trận đòn"
+      }
+    ],
+    "example": {
+      "zh": "辛苦工作了一整周，周末应该和家人一起好好吃一顿丰盛的晚餐。",
+      "py": "Xīnkǔ gōngzuò le yì zhěng zhōu, zhōumò yīnggāi hé jiārén yìqǐ hǎohāo chī yí dùn fēngshèng de wǎncān.",
+      "vi": "Vất vả làm việc suốt cả tuần, cuối tuần nên cùng người nhà thưởng thức một bữa tối thịnh soạn."
+    },
+    "tip": "💡 Bẫy HSK: Cơm và các bữa ăn dùng 顿 (dùn); Bị mắng/phạt cũng dùng 一顿 (ví dụ: 骂了一顿)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 孩子考试不及格，被母亲严厉地训斥了一____。",
+      "options": [
+        "顿 (dùn)",
+        "次 (cì)",
+        "遍 (biàn)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Bị quở trách một trận dùng động lượng từ 顿 (dùn)."
+    }
+  },
+  {
+    "id": "clf_ding",
+    "char": "顶",
+    "pinyin": "dǐng",
+    "hanviet": "Đỉnh",
+    "meaning": "chiếc, cái (vật có chóp đỉnh, dùng đội trên đầu hoặc che chụp từ trên xuống)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Mũ nón, màn ngủ, lều bạt cắm trại...",
+    "collocations": [
+      {
+        "zh": "一顶帽子",
+        "py": "yì dǐng màozi",
+        "vi": "một chiếc mũ"
+      },
+      {
+        "zh": "一顶草帽",
+        "py": "yì dǐng cǎomào",
+        "vi": "một chiếc mũ cói"
+      },
+      {
+        "zh": "一顶帐篷",
+        "py": "yì dǐng zhàngpeng",
+        "vi": "một chiếc lều bạt"
+      },
+      {
+        "zh": "一顶蚊帐",
+        "py": "yì dǐng wénzhàng",
+        "vi": "một chiếc màn ngủ"
+      }
+    ],
+    "example": {
+      "zh": "野外露营时，我们在绿树成荫的草地上搭起了一顶防风帐篷。",
+      "py": "Yěwài lùyíng shí, wǒmen zài lǜshù-chéngyīn de cǎodì shang dā qǐ le yì dǐng fángfēng zhàngpeng.",
+      "vi": "Khi cắm trại dã ngoại, chúng tôi dựng một chiếc lều chắn gió trên bãi cỏ rợp bóng cây xanh."
+    },
+    "tip": "💡 Bẫy HSK: Mũ nón (帽子) và Lều bạt (帐篷) bắt buộc dùng 顶, không dùng 个 hay 把!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 夏天在烈日下劳作需要戴上一____草帽遮阳。",
+      "options": [
+        "顶 (dǐng)",
+        "把 (bǎ)",
+        "张 (zhāng)",
+        "件 (jiàn)"
+      ],
+      "answer": 0,
+      "explain": "Mũ nón (草帽) dùng lượng từ 顶 (dǐng)."
+    }
+  },
+  {
+    "id": "clf_ping",
+    "char": "瓶",
+    "pinyin": "píng",
+    "hanviet": "Bình",
+    "meaning": "chai, lọ, bình (đồ uống, chất lỏng chứa trong bình chai)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Nước khoáng, rượu vang, bia, sữa, nước ngọt, thuốc nước...",
+    "collocations": [
+      {
+        "zh": "一瓶水",
+        "py": "yì píng shuǐ",
+        "vi": "một chai nước"
+      },
+      {
+        "zh": "一瓶红酒",
+        "py": "yì píng hóngjiǔ",
+        "vi": "một chai rượu vang đỏ"
+      },
+      {
+        "zh": "一瓶牛奶",
+        "py": "yì píng niúnǎi",
+        "vi": "một chai sữa bò"
+      },
+      {
+        "zh": "一瓶可乐",
+        "py": "yì píng kělè",
+        "vi": "một chai cô-ca"
+      }
+    ],
+    "example": {
+      "zh": "长跑比赛冲过终点线后，志愿者立刻递过来一瓶清凉解渴的矿泉水。",
+      "py": "Chángpǎo bǐsài chōng guò zhōngdiǎnxiàn hòu, zhìyuànzhě lìkè dì guòlái yì píng qīngliáng jiěkě de kuàngquánshuǐ.",
+      "vi": "Sau khi chạy việt dã cán đích, tình nguyện viên lập tức đưa tới một chai nước khoáng mát lạnh giải khát."
+    },
+    "tip": "💡 Danh từ容器 (vật chứa) như 瓶 (chai), 杯 (cốc), 碗 (bát), 盒 (hộp), 盘 (đĩa) đều làm lượng từ!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 服务员，请给我们开一____干红葡萄酒。",
+      "options": [
+        "瓶 (píng)",
+        "杯 (bēi)",
+        "把 (bǎ)",
+        "本 (běn)"
+      ],
+      "answer": 0,
+      "explain": "Chai rượu vang nguyên chai dùng lượng từ 瓶 (píng)."
+    }
+  },
+  {
+    "id": "clf_bei",
+    "char": "杯",
+    "pinyin": "bēi",
+    "hanviet": "Bôi",
+    "meaning": "ly, cốc, tách (đồ uống chứa trong ly cốc)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Trà, cà phê, nước trái cây, bia rót ly, sữa đậu nành...",
+    "collocations": [
+      {
+        "zh": "一杯咖啡",
+        "py": "yì bēi kāfēi",
+        "vi": "một tách cà phê"
+      },
+      {
+        "zh": "一杯热茶",
+        "py": "yì bēi rèchá",
+        "vi": "một tách trà nóng"
+      },
+      {
+        "zh": "一杯果汁",
+        "py": "yì bēi guǒzhī",
+        "vi": "một ly nước ép"
+      },
+      {
+        "zh": "一杯奶茶",
+        "py": "yì bēi nǎichá",
+        "vi": "một ly trà sữa"
+      }
+    ],
+    "example": {
+      "zh": "清晨醒来喝上一杯温开水，对促进新陈代谢非常有益。",
+      "py": "Qīngchén xǐnglái hē shàng yì bēi wēnkāishuǐ, duì cùjìn xīnchéndàixiè fēicháng yǒuyì.",
+      "vi": "Sáng sớm thức dậy uống một ly nước ấm rất có lợi cho việc thúc đẩy trao đổi chất."
+    },
+    "tip": "💡 Phân biệt: 瓶 là chai đóng sẵn, 杯 là ly cốc uống liền.",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 工作累了的时候，来一____浓郁的美式热咖啡提神醒脑。",
+      "options": [
+        "杯 (bēi)",
+        "瓶 (píng)",
+        "张 (zhāng)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Tách cà phê dùng lượng từ 杯 (bēi)."
+    }
+  },
+  {
+    "id": "clf_wan",
+    "char": "碗",
+    "pinyin": "wǎn",
+    "hanviet": "Oản",
+    "meaning": "bát, chén (thức ăn chứa trong bát)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Cơm, mì sợi, canh súp, cháo, phở...",
+    "collocations": [
+      {
+        "zh": "一碗米饭",
+        "py": "yì wǎn mǐfàn",
+        "vi": "một bát cơm"
+      },
+      {
+        "zh": "一碗牛肉面",
+        "py": "yì wǎn niúròumiàn",
+        "vi": "một bát mì bò"
+      },
+      {
+        "zh": "一碗热汤",
+        "py": "yì wǎn rètāng",
+        "vi": "một bát canh nóng"
+      },
+      {
+        "zh": "一碗八宝粥",
+        "py": "yì wǎn bābǎozhōu",
+        "vi": "một bát cháo bát bảo"
+      }
+    ],
+    "example": {
+      "zh": "冬天回到家，妈妈总会端出一碗热气腾腾的鸡汤让人心里倍感温暖。",
+      "py": "Dōngtiān huí dào jiā, māma zǒng huì duān chū yì wǎn rèqì-téngténg de jītāng ràng rén xīnlǐ bèi gǎn wēnnuǎn.",
+      "vi": "Mùa đông về đến nhà, mẹ luôn bưng ra một bát canh gà nóng hổi khiến trong lòng cảm thấy ấm áp vô cùng."
+    },
+    "tip": "💡 Mì sợi, phở, cơm khi phục vụ trong bát đều dùng 碗 (wǎn)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 老板，来一____地道的兰州正宗牛肉拉面！",
+      "options": [
+        "碗 (wǎn)",
+        "盘 (pán)",
+        "杯 (bēi)",
+        "个 (gè)"
+      ],
+      "answer": 0,
+      "explain": "Bát mì bò Lan Châu dùng lượng từ 碗 (wǎn)."
+    }
+  },
+  {
+    "id": "clf_pan",
+    "char": "盘",
+    "pinyin": "pán",
+    "hanviet": "Bàn",
+    "meaning": "đĩa (món ăn); ván (ván cờ, ván đấu)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Món xào, đĩa hoa quả, sủi cảo, ván cờ vua, ván cờ vây...",
+    "collocations": [
+      {
+        "zh": "一盘菜",
+        "py": "yì pán cài",
+        "vi": "một đĩa thức ăn"
+      },
+      {
+        "zh": "一盘水果",
+        "py": "yì pán shuǐguǒ",
+        "vi": "một đĩa hoa quả"
+      },
+      {
+        "zh": "一盘饺子",
+        "py": "yì pán jiǎozi",
+        "vi": "một đĩa sủi cảo"
+      },
+      {
+        "zh": "下一盘棋",
+        "py": "xià yì pán qí",
+        "vi": "đánh một ván cờ"
+      }
+    ],
+    "example": {
+      "zh": "两位象棋大师在树荫下专注地下了一盘精彩纷呈的中国象棋。",
+      "py": "Liǎng wèi xiàngqí dàshī zài shùyīn xià zhuānzhù de xià le yì pán jīngcǎi-fēnchéng de Zhōngguó xiàngqí.",
+      "vi": "Hai đại sư cờ tướng dưới bóng râm tập trung chơi một ván cờ tướng Trung Hoa xuất sắc kịch tính."
+    },
+    "tip": "💡 Bẫy HSK: 盘 vừa là đĩa thức ăn, vừa là lượng từ của ván cờ (一盘棋)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 爷爷常常和老邻居在公园凉亭里下两____中国象棋。",
+      "options": [
+        "盘 (pán)",
+        "张 (zhāng)",
+        "把 (bǎ)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Ván cờ (象棋) dùng lượng từ 盘 (pán)."
+    }
+  },
+  {
+    "id": "clf_bu_device",
+    "char": "部",
+    "pinyin": "bù",
+    "hanviet": "Bộ",
+    "meaning": "chiếc (điện thoại, máy móc điện tử); bộ (phim ảnh, tiểu thuyết đồ sộ)",
+    "category": "items",
+    "categoryName": "Đồ Dùng & Vật Dụng",
+    "applicableObjects": "Điện thoại thông minh, phim điện ảnh, tiểu thuyết dài tập, xe hơi (trang trọng)...",
+    "collocations": [
+      {
+        "zh": "一部手机",
+        "py": "yí bù shǒujī",
+        "vi": "một chiếc điện thoại"
+      },
+      {
+        "zh": "一部电影",
+        "py": "yí bù diànyǐng",
+        "vi": "một bộ phim"
+      },
+      {
+        "zh": "一部小说",
+        "py": "yí bù xiǎoshuō",
+        "vi": "một bộ tiểu thuyết"
+      },
+      {
+        "zh": "一部名著",
+        "py": "yí bù míngzhù",
+        "vi": "một danh tác"
+      }
+    ],
+    "example": {
+      "zh": "这部耗资巨大的科幻电影在全球范围内引起了极其强烈的轰动。",
+      "py": "Zhè bù hàozī jùdà de kēhuàn diànyǐng zài quánqiú fànwéi nèi yǐnqǐ le jíqí qiángliè de hōngdòng.",
+      "vi": "Bộ phim khoa học viễn tưởng đầu tư khổng lồ này đã gây tiếng vang cực kỳ mạnh mẽ trên phạm vi toàn cầu."
+    },
+    "tip": "💡 Điện thoại (手机) và phim ảnh (电影) chuẩn mực dùng lượng từ 部 (bù)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 昨晚我看了一____非常感人肺腑的纪录片。",
+      "options": [
+        "部 (bù)",
+        "张 (zhāng)",
+        "本 (běn)",
+        "支 (zhī)"
+      ],
+      "answer": 0,
+      "explain": "Phim tài liệu (纪录片) dùng lượng từ 部 (bù)."
+    }
+  },
+  {
+    "id": "clf_pian",
+    "char": "片",
+    "pinyin": "piàn",
+    "hanviet": "Phiến",
+    "meaning": "mảnh, lá, lát, dải (vật dẹt mỏng, chiếc lá, viên thuốc dẹt, cảnh tượng mênh mông)",
+    "category": "shape",
+    "categoryName": "Hình Dáng & Bề Mặt",
+    "applicableObjects": "Chiếc lá, lát bánh mì, viên thuốc, bãi cỏ, tấm lòng...",
+    "collocations": [
+      {
+        "zh": "一片树叶",
+        "py": "yí piàn shùyè",
+        "vi": "một chiếc lá cây"
+      },
+      {
+        "zh": "一片面包",
+        "py": "yí piàn miànbāo",
+        "vi": "một lát bánh mì"
+      },
+      {
+        "zh": "吃两片药",
+        "py": "chī liǎng piàn yào",
+        "vi": "uống hai viên thuốc"
+      },
+      {
+        "zh": "一片森林",
+        "py": "yí piàn sēnlín",
+        "vi": "một dải rừng"
+      },
+      {
+        "zh": "一片心意",
+        "py": "yí piàn xīnyì",
+        "vi": "một tấm lòng"
+      }
+    ],
+    "example": {
+      "zh": "秋风轻轻吹拂，几片泛黄的枫树叶从枝头悄然飘落。",
+      "py": "Qiūfēng qīngqīng chuīfú, jǐ piàn fànhuáng de fēngshùyè cóng zhītóu qiǎorán piāoluò.",
+      "vi": "Gió thu thổi nhẹ, mấy chiếc lá phong ngả vàng lặng lẽ rơi xuống từ cành cây."
+    },
+    "tip": "💡 Bẫy HSK: Lá cây (树叶) và lát bánh mì (面包) dùng 片; Tấm lòng (一片心意) cũng dùng 片!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 医生叮嘱病人每次饭后温水服用两____消炎药。",
+      "options": [
+        "片 (piàn)",
+        "张 (zhāng)",
+        "根 (gēn)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Viên thuốc dạng nén dẹt dùng lượng từ 片 (piàn)."
+    }
+  },
+  {
+    "id": "clf_duì",
+    "char": "对",
+    "pinyin": "duì",
+    "hanviet": "Đối",
+    "meaning": "đôi, cặp (hai đối tượng ghép đôi hài hòa, vợ chồng, tình nhân, câu đối)",
+    "category": "sets_measures",
+    "categoryName": "Tập Hợp & Đo Lường",
+    "applicableObjects": "Vợ chồng, tình nhân, đôi chim uyên ương, câu đối, hoa tai...",
+    "collocations": [
+      {
+        "zh": "一对夫妻",
+        "py": "yí duì fūqī",
+        "vi": "một cặp vợ chồng"
+      },
+      {
+        "zh": "一对情侣",
+        "py": "yí duì qínglǚ",
+        "vi": "một đôi tình nhân"
+      },
+      {
+        "zh": "一对耳环",
+        "py": "yí duì ěrhuán",
+        "vi": "một đôi hoa tai"
+      },
+      {
+        "zh": "一对春联",
+        "py": "yí duì chūnlián",
+        "vi": "một đôi câu đối Tết"
+      }
+    ],
+    "example": {
+      "zh": "金婚纪念日上，那对白发苍苍的老夫妻手挽手微笑着接受大家的祝福。",
+      "py": "Jīnhūn jìnìanrì shang, nà duì báifà-cāngcāng de lǎo fūqī shǒu wǎn shǒu wēixiào zhe jiēshòu dàjiā de zhùfú.",
+      "vi": "Trong lễ kỷ niệm đám cưới vàng, đôi vợ chồng già tóc bạc phơ nắm chặt tay nhau mỉm cười đón nhận lời chúc phúc của mọi người."
+    },
+    "tip": "💡 Phân biệt: 双 dùng cho đồ vật tự nhiên gắn liền (giày, đũa); 对 dùng cho con người/vật biểu thị quan hệ đối xứng cặp đôi (vợ chồng, hoa tai).",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 湖面上游弋着一____形影不离的美丽黑天鹅。",
+      "options": [
+        "对 (duì)",
+        "双 (shuāng)",
+        "条 (tiáo)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Đôi chim thiên nga ghép đôi uyên ương dùng 对 (duì)."
+    }
+  },
+  {
+    "id": "clf_shu",
+    "char": "束",
+    "pinyin": "shù",
+    "hanviet": "Thúc",
+    "meaning": "bó (hoa tươi); chùm, luồng (ánh sáng)",
+    "category": "sets_measures",
+    "categoryName": "Tập Hợp & Đo Lường",
+    "applicableObjects": "Bó hoa, chùm hoa, luồng ánh sáng, tia sáng...",
+    "collocations": [
+      {
+        "zh": "一束鲜花",
+        "py": "yí shù xiānhuā",
+        "vi": "một bó hoa tươi"
+      },
+      {
+        "zh": "一束玫瑰花",
+        "py": "yí shù méigui huā",
+        "vi": "một bó hoa hồng"
+      },
+      {
+        "zh": "一束阳光",
+        "py": "yí shù yángguāng",
+        "vi": "một luồng ánh nắng"
+      },
+      {
+        "zh": "一束激光",
+        "py": "yí shù jīguāng",
+        "vi": "một chùm tia la-ze"
+      }
+    ],
+    "example": {
+      "zh": "毕业典礼上，学生们向辛勤耕耘的恩师敬献了一束芬芳四溢的鲜花。",
+      "py": "Bìyè diǎnlǐ shang, xuéshēngmen xiàng xīnqín gēngyún de ēnshī jìngxiàn le yí shù fēnfāng-sìyì de xiānhuā.",
+      "vi": "Trong lễ tốt nghiệp, các học sinh kính dâng lên người thầy tận tụy một bó hoa tươi ngát hương thơm."
+    },
+    "tip": "💡 Một bông hoa dùng 朵 (duǒ); Nhiều bông bó lại dùng 束 (shù)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 情人节那天，花店里摆满了包装精美的一____束红玫瑰。",
+      "options": [
+        "束 (shù)",
+        "朵 (duǒ)",
+        "棵 (kē)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Bó hoa gói sẵn dùng lượng từ 束 (shù)."
+    }
+  },
+  {
+    "id": "clf_chuan",
+    "char": "串",
+    "pinyin": "chuàn",
+    "hanviet": "Xuyến",
+    "meaning": "chuỗi, xâu, chùm (các vật xâu chuỗi liền nhau)",
+    "category": "sets_measures",
+    "categoryName": "Tập Hợp & Đo Lường",
+    "applicableObjects": "Chùm nho, xâu chìa khóa, xâu thịt nướng, chuỗi hạt ngọc...",
+    "collocations": [
+      {
+        "zh": "一串葡萄",
+        "py": "yí chuàn pútao",
+        "vi": "một chùm nho"
+      },
+      {
+        "zh": "一串钥匙",
+        "py": "yí chuàn yàoshi",
+        "vi": "một chùm chìa khóa"
+      },
+      {
+        "zh": "一串羊肉串",
+        "py": "yí chuàn yángròuchuàn",
+        "vi": "một xiên thịt cừu"
+      },
+      {
+        "zh": "一串项链",
+        "py": "yí chuàn xiàngliàn",
+        "vi": "một chuỗi dây chuyền"
+      }
+    ],
+    "example": {
+      "zh": "夜市小吃街弥漫着烤肉香味，摊位前排满了等待买羊肉串的食客。",
+      "py": "Yèshì xiǎochī jiē mímàn zhe kǎoròu xiāngwèi, tānwèi qián pái mǎn le děngdài mǎi yángròuchuàn de shíkè.",
+      "vi": "Phố ẩm thực chợ đêm ngào ngạt hương thơm thịt nướng, trước quầy đông nghẹt thực khách chờ mua xiên thịt cừu."
+    },
+    "tip": "💡 Nho (葡萄) chùm dùng 串; Nhiều chìa khóa xâu lại (钥匙) dùng 一串钥匙!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 门卫腰间挂着一____沉甸甸的铁制大门钥匙。",
+      "options": [
+        "串 (chuàn)",
+        "把 (bǎ)",
+        "条 (tiáo)",
+        "块 (kuài)"
+      ],
+      "answer": 0,
+      "explain": "Chùm nhiều chìa khóa xâu lại với nhau dùng 串 (chuàn)."
+    }
+  },
+  {
+    "id": "clf_qun",
+    "char": "群",
+    "pinyin": "qún",
+    "hanviet": "Quần",
+    "meaning": "đàn, bầy, đám, tốp (tập hợp số đông người hoặc động vật)",
+    "category": "sets_measures",
+    "categoryName": "Tập Hợp & Đo Lường",
+    "applicableObjects": "Đàn cừu, đàn chim, đàn cá, đám đông, tốp người...",
+    "collocations": [
+      {
+        "zh": "一群羊",
+        "py": "yì qún yáng",
+        "vi": "một đàn cừu"
+      },
+      {
+        "zh": "一群鸟",
+        "py": "yì qún niǎo",
+        "vi": "một đàn chim"
+      },
+      {
+        "zh": "一群孩子",
+        "py": "yì qún háizi",
+        "vi": "một đám trẻ con"
+      },
+      {
+        "zh": "一群游客",
+        "py": "yì qún yóukè",
+        "vi": "một đoàn khách du lịch"
+      }
+    ],
+    "example": {
+      "zh": "夕阳西下，天边飞过一群南归的大雁，队形整齐划一。",
+      "py": "Xīyáng xīxià, tiānbiān fēi guò yì qún nánguī de dàyàn, duìxíng zhěngqí huàyī.",
+      "vi": "Bóng chiều tà lặn về tây, chân trời bay qua một đàn nhạn bay về nam với đội hình tăm tắp ngay ngắn."
+    },
+    "tip": "💡 Đàn động vật hoặc tốp đông người tụ họp lại dùng 群 (qún)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 操场上一____朝气蓬勃的学生正在踢足球。",
+      "options": [
+        "群 (qún)",
+        "双 (shuāng)",
+        "把 (bǎ)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Tốp đông người (学生) dùng lượng từ 群 (qún)."
+    }
+  },
+  {
+    "id": "clf_lie",
+    "char": "列",
+    "pinyin": "liè",
+    "hanviet": "Liệt",
+    "meaning": "đoàn, chuyến (phương tiện đường sắt chạy thành hàng dài)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Đoàn tàu hỏa, đoàn tàu cao tốc đường sắt...",
+    "collocations": [
+      {
+        "zh": "一列火车",
+        "py": "yí liè huǒchē",
+        "vi": "một đoàn tàu hỏa"
+      },
+      {
+        "zh": "一列高铁",
+        "py": "yí liè gāotiě",
+        "vi": "một đoàn tàu cao tốc"
+      },
+      {
+        "zh": "一列车队",
+        "py": "yí liè chēduì",
+        "vi": "một đoàn xe"
+      }
+    ],
+    "example": {
+      "zh": "随着鸣笛声响起，一列复兴号高铁列车如银色闪电般飞驰而过。",
+      "py": "Suízhe míngdíshēng xiǎngqǐ, yí liè Fùxīnghào gāotiě lièchē rú yínsè shǎndiàn bān fēichí ér guò.",
+      "vi": "Kèm theo tiếng còi vang lên, một đoàn tàu cao tốc Phục Hưng tựa như tia chớp bạc lao vút qua."
+    },
+    "tip": "💡 Xe ô tô có bánh dùng 辆 (liàng); Tàu hỏa dài nhiều toa dùng 列 (liè)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 站台上开进了一____满载旅客的京沪高速列车。",
+      "options": [
+        "列 (liè)",
+        "辆 (liàng)",
+        "艘 (sōu)",
+        "座 (zuò)"
+      ],
+      "answer": 0,
+      "explain": "Đoàn tàu cao tốc đường sắt (列车) dùng lượng từ 列 (liè)."
+    }
+  },
+  {
+    "id": "clf_dong",
+    "char": "栋",
+    "pinyin": "dòng",
+    "hanviet": "Đống",
+    "meaning": "tòa, căn (tòa nhà biệt lập, tòa chung cư, biệt thự)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Tòa nhà dân cư, nhà chung cư, căn biệt thự, khu giảng đường...",
+    "collocations": [
+      {
+        "zh": "一栋楼",
+        "py": "yí dòng lóu",
+        "vi": "một tòa nhà"
+      },
+      {
+        "zh": "一栋别墅",
+        "py": "yí dòng biéshù",
+        "vi": "một căn biệt thự"
+      },
+      {
+        "zh": "一栋教学楼",
+        "py": "yí dòng jiàoxuélóu",
+        "vi": "một tòa nhà giảng đường"
+      }
+    ],
+    "example": {
+      "zh": "大学校园深处矗立着一栋红砖黛瓦的百年历史老建筑。",
+      "py": "Dàxué xiàoyuán shēnchù chùlì zhe yí dòng hóngzhuān-dàiwǎ de bǎi nián lìshǐ lǎo jiànzhù.",
+      "vi": "Sâu trong khuôn viên trường đại học sừng sững một tòa kiến trúc cổ kính trăm năm gạch đỏ ngói sẫm."
+    },
+    "tip": "💡 Tòa nhà lớn dùng 座 (zuò) hoặc 栋 (dòng). 栋 hay dùng cho nhà ở, biệt thự, khu nhà.",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 小区绿树环抱之中新建了一____现代化的居民住宅楼。",
+      "options": [
+        "栋 (dòng)",
+        "辆 (liàng)",
+        "条 (tiáo)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Tòa nhà cư dân (住宅楼) dùng lượng từ 栋 (dòng)."
+    }
+  },
+  {
+    "id": "clf_jia_family",
+    "char": "家",
+    "pinyin": "jiā",
+    "hanviet": "Gia",
+    "meaning": "nhà, chuỗi (cơ sở kinh doanh, doanh nghiệp, bệnh viện, nhà hàng)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Công ty, ngân hàng, nhà hàng, khách sạn, bệnh viện, hiệu sách, tiệm cà phê...",
+    "collocations": [
+      {
+        "zh": "一家公司",
+        "py": "yì jiā gōngsī",
+        "vi": "một công ty"
+      },
+      {
+        "zh": "一家饭馆",
+        "py": "yì jiā fànguǎn",
+        "vi": "một quán ăn"
+      },
+      {
+        "zh": "一家银行",
+        "py": "yì jiā yínháng",
+        "vi": "một ngân hàng"
+      },
+      {
+        "zh": "一家医院",
+        "py": "yì jiā yīyuàn",
+        "vi": "một bệnh viện"
+      },
+      {
+        "zh": "一家书店",
+        "py": "yì jiā shūdiàn",
+        "vi": "một hiệu sách"
+      }
+    ],
+    "example": {
+      "zh": "大学毕业后，他凭借卓越的综合素质成功入职了一家全球知名跨国企业。",
+      "py": "Dàxué bìyè hòu, tā píngjiè zhuóyuè de zōnghé sùzhì chénggōng rùzhí le yì jiā quánqiú zhīmíng kuàguó qǐyè.",
+      "vi": "Sau khi tốt nghiệp đại học, nhờ năng lực tổng hợp vượt trội anh ấy đã thành công đầu quân vào một doanh nghiệp đa quốc gia lừng danh toàn cầu."
+    },
+    "tip": "💡 Bẫy HSK: Cơ sở kinh doanh/doanh nghiệp bắt buộc dùng 家 (jiā), không dùng 个!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 商业街拐角处新开业了一____装修精致的手工烘焙咖啡馆。",
+      "options": [
+        "家 (jiā)",
+        "座 (zuò)",
+        "张 (zhāng)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Quán cà phê kinh doanh dùng lượng từ 家 (jiā)."
+    }
+  },
+  {
+    "id": "clf_suo",
+    "char": "所",
+    "pinyin": "suǒ",
+    "hanviet": "Sở",
+    "meaning": "ngôi (trường học, viện nghiên cứu, bệnh viện, cơ quan quy mô lớn)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Trường học, đại học, nhà trẻ, trạm y tế, viện nghiên cứu...",
+    "collocations": [
+      {
+        "zh": "一所学校",
+        "py": "yì suǒ xuéxiào",
+        "vi": "một ngôi trường"
+      },
+      {
+        "zh": "一所大学",
+        "py": "yì suǒ dàxué",
+        "vi": "một trường đại học"
+      },
+      {
+        "zh": "一所幼儿园",
+        "py": "yì suǒ yòu'éryuán",
+        "vi": "một nhà trẻ"
+      },
+      {
+        "zh": "一所医院",
+        "py": "yì suǒ yīyuàn",
+        "vi": "một bệnh viện"
+      }
+    ],
+    "example": {
+      "zh": "北京语言大学是一所以对来华留学生进行汉语和中华文化教育为特色的著名高等学府。",
+      "py": "Běijīng Yǔyán Dàxué shì yì suǒ yǐ duì lái Huá liúxuéshēng jìnxíng Hànyǔ hé Zhōnghuá wénhuà jiàoyù wéi tèsè de zhùmíng gāoděng xuéfǔ.",
+      "vi": "Đại học Ngôn ngữ Bắc Kinh là một ngôi trường đại học danh tiếng với thế mạnh đào tạo tiếng Hán và văn hóa Trung Hoa cho lưu học sinh quốc tế."
+    },
+    "tip": "💡 Trường học (学校) dùng 所 (suǒ); Bệnh viện dùng 所 hoặc 家.",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 他的终极求学目标是考进一____国内顶尖的双一流大学。",
+      "options": [
+        "所 (suǒ)",
+        "个 (gè)",
+        "座 (zuò)",
+        "把 (bǎ)"
+      ],
+      "answer": 0,
+      "explain": "Trường đại học (大学) dùng lượng từ 所 (suǒ)."
+    }
+  },
+  {
+    "id": "clf_jian_room",
+    "char": "间",
+    "pinyin": "jiān",
+    "hanviet": "Gian",
+    "meaning": "gian, căn, phòng (phòng ốc, không gian ngăn cách trong nhà)",
+    "category": "vehicles_buildings",
+    "categoryName": "Phương Tiện & Kiến Trúc",
+    "applicableObjects": "Căn phòng, phòng ngủ, phòng khách, phòng tắm, phòng làm việc...",
+    "collocations": [
+      {
+        "zh": "一间房间",
+        "py": "yì jiān fángjiān",
+        "vi": "một căn phòng"
+      },
+      {
+        "zh": "一间卧室",
+        "py": "yì jiān wòshì",
+        "vi": "một phòng ngủ"
+      },
+      {
+        "zh": "一间教室",
+        "py": "yì jiān jiàoshì",
+        "vi": "một phòng học"
+      },
+      {
+        "zh": "一间办公室",
+        "py": "yì jiān bàngōngshì",
+        "vi": "một phòng làm việc"
+      }
+    ],
+    "example": {
+      "zh": "推开门，里面是一间宽敞明亮、采光极佳的现代化办公室。",
+      "py": "Tuīkāi mén, lǐmiàn shì yì jiān kuānchǎng míngliàng, cǎiguāng jí jiā de xiàndàihuà bàngōngshì.",
+      "vi": "Đẩy cửa bước vào, bên trong là một căn phòng làm việc hiện đại rộng rãi sáng sủa và đón ánh sáng cực tốt."
+    },
+    "tip": "💡 Bẫy HSK: Phòng (房间/教室/办公室) dùng 间; Nhà (房子/住宅) dùng 套 hoặc 栋!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 留学生宿舍由两____独立卧室和一个共用客厅组成。",
+      "options": [
+        "间 (jiān)",
+        "套 (tào)",
+        "所 (suǒ)",
+        "栋 (dòng)"
+      ],
+      "answer": 0,
+      "explain": "Phòng ngủ đơn lẻ (卧室) dùng lượng từ 间 (jiān)."
+    }
+  },
+  {
+    "id": "clf_chang_match",
+    "char": "场",
+    "pinyin": "chǎng",
+    "hanviet": "Trường",
+    "meaning": "trận, buổi (trận đấu, buổi biểu diễn, cơn mưa tuyết)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Trận bóng, buổi hòa nhạc, cơn mưa, trận tuyết, vở kịch, kỳ thi...",
+    "collocations": [
+      {
+        "zh": "一场足球赛",
+        "py": "yì chǎng zúqiúsài",
+        "vi": "một trận bóng đá"
+      },
+      {
+        "zh": "一场大雨",
+        "py": "yì chǎng dàyǔ",
+        "vi": "một trận mưa to"
+      },
+      {
+        "zh": "一场大雪",
+        "py": "yì chǎng dàxuě",
+        "vi": "một trận tuyết lớn"
+      },
+      {
+        "zh": "一场音乐会",
+        "py": "yì chǎng yīnyuèhuì",
+        "vi": "một buổi hòa nhạc"
+      },
+      {
+        "zh": "一场考试",
+        "py": "yì chǎng kǎoshì",
+        "vi": "một kỳ thi"
+      }
+    ],
+    "example": {
+      "zh": "昨夜一场绵绵春雨悄然滋润了大地的每一个角落。",
+      "py": "Zuóyè yì chǎng miánmián chūnyǔ qiǎorán zīrùn le dàdì de měi yí gè jiǎoluò.",
+      "vi": "Đêm qua một trận mưa xuân lất phất lặng lẽ tưới mát từng ngóc ngách của đất mẹ."
+    },
+    "tip": "💡 Trận đấu thể thao (比赛), hòa nhạc (音乐会) và trận mưa/tuyết (雨/雪) dùng 场 (chǎng)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 昨晚鸟巢体育场举行了一____激动人心的世界杯决赛。",
+      "options": [
+        "场 (chǎng)",
+        "次 (cì)",
+        "遍 (biàn)",
+        "顿 (dùn)"
+      ],
+      "answer": 0,
+      "explain": "Trận đấu thể thao chung kết (决赛) dùng 场 (chǎng)."
+    }
+  },
+  {
+    "id": "clf_sheng",
+    "char": "声",
+    "pinyin": "shēng",
+    "hanviet": "Thanh",
+    "meaning": "tiếng (âm thanh phát ra: tiếng gọi, tiếng thở dài, tiếng cảm ơn)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Tiếng gọi, tiếng thở dài, tiếng kêu, lời chào, lời cảm ơn...",
+    "collocations": [
+      {
+        "zh": "叫一声",
+        "py": "jiào yì shēng",
+        "vi": "gọi một tiếng"
+      },
+      {
+        "zh": "叹了一口气",
+        "py": "tàn le yì shēng qì",
+        "vi": "thở dài một tiếng"
+      },
+      {
+        "zh": "说一声谢谢",
+        "py": "shuō yì shēng xièxie",
+        "vi": "nói một tiếng cảm ơn"
+      },
+      {
+        "zh": "听见一声巨响",
+        "py": "tīngjiàn yì shēng jùxiǎng",
+        "vi": "nghe thấy một tiếng nổ lớn"
+      }
+    ],
+    "example": {
+      "zh": "下车时，懂礼貌的乘客微笑着向司机师傅道了一声真诚的感谢。",
+      "py": "Xiàchē shí, dǒnglǐmào de chéngkè wēixiào zhe xiàng sījī shīfu dào le yì shēng zhēnchéng de gǎnxiè.",
+      "vi": "Lúc xuống xe, người hành khách lễ phép mỉm cười gửi tới bác tài xế một tiếng cảm ơn chân thành."
+    },
+    "tip": "💡 Âm thanh phát ra từ miệng hoặc tự nhiên thường dùng 声 (shēng: 一声巨响, 叫了一声)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 他听到屋里传出一____婴儿清脆稚嫩的啼哭声。",
+      "options": [
+        "声 (shēng)",
+        "次 (cì)",
+        "把 (bǎ)",
+        "条 (tiáo)"
+      ],
+      "answer": 0,
+      "explain": "Tiếng khóc phát ra dùng động lượng từ 声 (shēng)."
+    }
+  },
+  {
+    "id": "clf_xia",
+    "char": "下",
+    "pinyin": "xià",
+    "hanviet": "Hạ",
+    "meaning": "cái, phát (động tác ngắn diễn ra nhanh chóng, một cái vỗ, gõ, đập)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Gõ cửa, vỗ vai, hôn, lắc đầu, cắn một miếng, vẫy tay...",
+    "collocations": [
+      {
+        "zh": "敲了几下门",
+        "py": "qiāo le jǐ xià mén",
+        "vi": "gõ cửa mấy cái"
+      },
+      {
+        "zh": "拍了一下肩膀",
+        "py": "pāi le yí xià jiānbǎng",
+        "vi": "vỗ vai một cái"
+      },
+      {
+        "zh": "摇了摇头",
+        "py": "yáo le yí xià tóu",
+        "vi": "lắc đầu một cái"
+      },
+      {
+        "zh": "眨了一下眼睛",
+        "py": "zhǎ le yí xià yǎnjīng",
+        "vi": "chớp mắt một cái"
+      }
+    ],
+    "example": {
+      "zh": "他礼貌地走上前，轻轻敲了几下办公室虚掩的房门。",
+      "py": "Tā lǐmào de zǒu shàngqián, qīngqīng qiāo le jǐ xià bàngōngshì xūyǎn de fángmén.",
+      "vi": "Anh ấy lịch sự bước tới, khẽ gõ mấy cái vào cánh cửa phòng làm việc đang khép hờ."
+    },
+    "tip": "💡 Biểu thị động tác diễn ra trong chớp mắt thường dùng 一下 (gõ một cái, nhìn một cái)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 老朋友热情地上前拍了拍我的一____肩膀。",
+      "options": [
+        "下 (xià)",
+        "次 (cì)",
+        "遍 (biàn)",
+        "顿 (dùn)"
+      ],
+      "answer": 0,
+      "explain": "Hành động vỗ vai nhanh dùng động lượng từ 下 (xià)."
+    }
+  },
+  {
+    "id": "clf_fan",
+    "char": "番",
+    "pinyin": "fān",
+    "hanviet": "Phiên",
+    "meaning": "hồi, phen, phen khổ cực (hành động trải qua thời gian nỗ lực, suy nghĩ)",
+    "category": "verbal",
+    "categoryName": "Động Lượng Từ (Số Lần Hành Động)",
+    "applicableObjects": "Suy nghĩ, tranh luận, nỗ lực phấn đấu, giải thích, phong cảnh...",
+    "collocations": [
+      {
+        "zh": "思考一番",
+        "py": "sīkǎo yì fān",
+        "vi": "suy ngẫm một hồi"
+      },
+      {
+        "zh": "苦练一番",
+        "py": "kǔliàn yì fān",
+        "vi": "khổ luyện một phen"
+      },
+      {
+        "zh": "别有一番风味",
+        "py": "bié yǒu yì fān fēngwèi",
+        "vi": "mang một phong vị độc đáo riêng"
+      },
+      {
+        "zh": "经历了一番风雨",
+        "py": "jīnglì le yì fān fēngyǔ",
+        "vi": "trải qua một phen mưa gió thăng trầm"
+      }
+    ],
+    "example": {
+      "zh": "经过团队日夜兼程的一番艰苦攻关，重大科研难题终于被顺利攻破。",
+      "py": "Jīngguò tuánduì rìyè-jiānchéng de yì fān jiānkǔ gōngguān, zhòngdà kēyán nántí zhōngyú bèi shùnlì gōngpò.",
+      "vi": "Sau một phen gian khổ vượt khó ngày đêm của đội ngũ, bài toán nghiên cứu khoa học trọng điểm cuối cùng đã được giải quyết thuận lợi."
+    },
+    "tip": "💡 Bẫy HSK Cao cấp: 一番 dùng cho hành động có sự đầu tư tâm sức lớn (suy nghĩ một hồi, phấn đấu một phen)!",
+    "quiz": {
+      "question": "Điền lượng từ thích hợp: 经过专家委员会深入细致的一____论证，项目方案获批通过。",
+      "options": [
+        "番 (fān)",
+        "次 (cì)",
+        "趟 (tàng)",
+        "下 (xià)"
+      ],
+      "answer": 0,
+      "explain": "Trải qua một hồi phân tích luận chứng công phu dùng lượng từ 番 (fān)."
+    }
+  }
+]

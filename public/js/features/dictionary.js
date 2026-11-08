@@ -321,38 +321,44 @@ async function switchDictMode(mode) {
   const hskSection = document.getElementById('dictSectionHsk');
   const topicSection = document.getElementById('dictSectionTopic');
   const expSection = document.getElementById('dictSectionExpansion');
+  const clfSection = document.getElementById('dictSectionClassifier');
+  const polySection = document.getElementById('dictSectionPolyphonic');
 
   const hskBtn = document.getElementById('btn-dict-mode-hsk');
   const topicBtn = document.getElementById('btn-dict-mode-topic');
   const expBtn = document.getElementById('btn-dict-mode-expansion');
+  const clfBtn = document.getElementById('btn-dict-mode-classifier');
+  const polyBtn = document.getElementById('btn-dict-mode-polyphonic');
 
   const inactiveBtnClass = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer';
 
+  // Hide all sections first
+  if (hskSection) hskSection.classList.add('hidden');
+  if (topicSection) topicSection.classList.add('hidden');
+  if (expSection) expSection.classList.add('hidden');
+  if (clfSection) clfSection.classList.add('hidden');
+  if (polySection) polySection.classList.add('hidden');
+
+  // Reset all buttons to inactive state
+  if (hskBtn) hskBtn.className = inactiveBtnClass;
+  if (topicBtn) topicBtn.className = inactiveBtnClass;
+  if (expBtn) expBtn.className = inactiveBtnClass;
+  if (clfBtn) clfBtn.className = inactiveBtnClass;
+  if (polyBtn) polyBtn.className = inactiveBtnClass;
+
   if (mode === 'hsk') {
     if (hskSection) hskSection.classList.remove('hidden');
-    if (topicSection) topicSection.classList.add('hidden');
-    if (expSection) expSection.classList.add('hidden');
-
     if (hskBtn) {
       hskBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-md cursor-pointer border border-[#8B1E1E]';
     }
-    if (topicBtn) topicBtn.className = inactiveBtnClass;
-    if (expBtn) expBtn.className = inactiveBtnClass;
-
     if (dictRendered === 0) {
       renderDictionary(true);
     }
   } else if (mode === 'topic') {
-    if (hskSection) hskSection.classList.add('hidden');
     if (topicSection) topicSection.classList.remove('hidden');
-    if (expSection) expSection.classList.add('hidden');
-
     if (topicBtn) {
       topicBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-amber-700 via-amber-800 to-amber-900 text-amber-100 shadow-md cursor-pointer border border-amber-800';
     }
-    if (hskBtn) hskBtn.className = inactiveBtnClass;
-    if (expBtn) expBtn.className = inactiveBtnClass;
-
     if (!(await ensureTopicData())) return;
     if (currentDictMode !== 'topic') return;
     renderTopicSuperCategories();
@@ -362,21 +368,31 @@ async function switchDictMode(mode) {
       renderTopicDictionary(true);
     }
   } else if (mode === 'expansion') {
-    if (hskSection) hskSection.classList.add('hidden');
-    if (topicSection) topicSection.classList.add('hidden');
     if (expSection) expSection.classList.remove('hidden');
-
     if (expBtn) {
       expBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-rose-800 via-[#8B1E1E] to-amber-800 text-white shadow-md cursor-pointer border border-[#8B1E1E] ring-1 ring-amber-300';
     }
-    if (hskBtn) hskBtn.className = inactiveBtnClass;
-    if (topicBtn) topicBtn.className = inactiveBtnClass;
-
     if (typeof initVocabExpansion === 'function') {
       initVocabExpansion();
     }
+  } else if (mode === 'classifier') {
+    if (clfSection) clfSection.classList.remove('hidden');
+    if (clfBtn) {
+      clfBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-emerald-700 via-teal-800 to-emerald-900 text-white shadow-md cursor-pointer border border-emerald-800 ring-1 ring-emerald-300';
+    }
+    if (typeof initClassifiers === 'function') {
+      initClassifiers();
+    }
+  } else if (mode === 'polyphonic') {
+    if (polySection) polySection.classList.remove('hidden');
+    if (polyBtn) {
+      polyBtn.className = 'py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-gradient-to-r from-indigo-800 via-purple-800 to-purple-900 text-white shadow-md cursor-pointer border border-purple-800 ring-1 ring-purple-300';
+    }
+    if (typeof initPolyphonic === 'function') {
+      initPolyphonic();
+    }
   }
-  refreshIcons();
+  if (typeof refreshIcons === 'function') refreshIcons();
 }
 
 /** 1. Render Super Categories Row */

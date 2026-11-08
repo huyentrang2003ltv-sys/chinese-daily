@@ -1,0 +1,1433 @@
+[
+  {
+    "id": "poly_de",
+    "char": "得",
+    "hanviet": "Đắc",
+    "strokes": 11,
+    "radical": "彳 (Xích - bước ngắn)",
+    "summaryMnemonic": "Trợ từ sau động từ đọc \"de\"; Bắt buộc phải làm gì đọc \"děi\"; Nhận được thành tích đọc \"dé\"!",
+    "readings": [
+      {
+        "pinyin": "de",
+        "tone": "Thanh nhẹ",
+        "pos": "Trợ từ kết cấu",
+        "meaning": "dùng sau động từ/tính từ để nối bổ ngữ trạng thái, khả năng",
+        "collocations": [
+          "跑得快",
+          "说得很好",
+          "做得到",
+          "看得见"
+        ],
+        "example": {
+          "zh": "他汉语说得非常流利地道。",
+          "py": "Tā Hànyǔ shuō de fēicháng liúlì dìdào.",
+          "vi": "Anh ấy nói tiếng Trung rất lưu loát và chuẩn bản xứ."
+        }
+      },
+      {
+        "pinyin": "děi",
+        "tone": "Thanh 3 (dẩy)",
+        "pos": "Động từ năng nguyện / Phó từ",
+        "meaning": "phải, cần phải (nghĩa tương đương 必须, 需要)",
+        "collocations": [
+          "得走了",
+          "得注意安全",
+          "得花多少钱"
+        ],
+        "example": {
+          "zh": "时间不早了，我得马上赶往机场了。",
+          "py": "Shíjiān bù zǎo le, wǒ děi mǎshàng gǎn wǎng jīchǎng le.",
+          "vi": "Thời gian không còn sớm nữa, tôi phải lập tức chạy ra sân bay rồi."
+        }
+      },
+      {
+        "pinyin": "dé",
+        "tone": "Thanh 2 (đé)",
+        "pos": "Động từ",
+        "meaning": "đạt được, nhận được, mắc (bệnh)",
+        "collocations": [
+          "得到",
+          "得奖",
+          "得分",
+          "得病"
+        ],
+        "example": {
+          "zh": "通过坚持不懈的努力，他终于得到了第一名的好成绩。",
+          "py": "Tōngguò jiānchí-búxiè de nǔlì, tā zhōngyú dédào le dì-yī míng de hǎo chéngjì.",
+          "vi": "Nhờ nỗ lực không ngừng nghỉ, anh ấy cuối cùng đã giành được thành tích hạng nhất."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Trong câu \"太晚了，我们____走了。\" chữ \"得\" phát âm là gì?",
+      "options": [
+        "děi (thanh 3)",
+        "de (thanh nhẹ)",
+        "dé (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Trong ngữ cảnh biểu thị nghĩa \"phải làm gì\" (= 必须), chữ 得 bắt buộc đọc là děi."
+    }
+  },
+  {
+    "id": "poly_xing",
+    "char": "行",
+    "hanviet": "Hành / Hàng",
+    "strokes": 6,
+    "radical": "行 (Hành)",
+    "summaryMnemonic": "Đi lại, được phép đọc \"xíng\"; Ngân hàng, hàng lối, nghề nghiệp đọc \"háng\"!",
+    "readings": [
+      {
+        "pinyin": "xíng",
+        "tone": "Thanh 2 (xính)",
+        "pos": "Động từ / Tính từ",
+        "meaning": "được, được phép, đi lại, năng lực giỏi",
+        "collocations": [
+          "不行",
+          "行为",
+          "行动",
+          "步行",
+          "你真行"
+        ],
+        "example": {
+          "zh": "你看这样安排行不行？",
+          "py": "Nǐ kàn zhèyàng ānpái xíng bu xíng?",
+          "vi": "Bạn xem sắp xếp như thế này có được không?"
+        }
+      },
+      {
+        "pinyin": "háng",
+        "tone": "Thanh 2 (háng)",
+        "pos": "Danh từ / Lượng từ",
+        "meaning": "ngành nghề, hàng lối, ngân hàng",
+        "collocations": [
+          "银行",
+          "行业",
+          "行列",
+          "同行",
+          "第一行"
+        ],
+        "example": {
+          "zh": "请在申请表格的第二行工整写下您的联系电话。",
+          "py": "Qǐng zài shēnqǐng biǎogé de dì-èr háng gōngzhěng xiě xià nín de liánxì diànhuà.",
+          "vi": "Xin vui lòng viết nắn nót số điện thoại liên hệ ở hàng thứ hai của tờ đơn."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"中国银行\" (Ngân hàng Trung Quốc) chữ \"行\" phát âm là gì?",
+      "options": [
+        "háng (thanh 2)",
+        "xíng (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 银行 (ngân hàng) và 行业 (ngành nghề), chữ 行 đọc là háng."
+    }
+  },
+  {
+    "id": "poly_zhong",
+    "char": "重",
+    "hanviet": "Trọng / Trùng",
+    "strokes": 9,
+    "radical": "里 (Lý)",
+    "summaryMnemonic": "Sức nặng, quan trọng đọc \"zhòng\"; Lặp lại từ đầu đọc \"chóng\"!",
+    "readings": [
+      {
+        "pinyin": "zhòng",
+        "tone": "Thanh 4 (chuộng)",
+        "pos": "Tính từ / Danh từ",
+        "meaning": "nặng, quan trọng, nghiêm trọng",
+        "collocations": [
+          "重要",
+          "重量",
+          "严重",
+          "重点",
+          "沉重"
+        ],
+        "example": {
+          "zh": "身体健康是人一生中最重要的一笔宝贵财富。",
+          "py": "Shēntǐ jiànkāng shì rén yìshēng zhōng zuì zhòngyào de yì bǐ bǎoguì cáifù.",
+          "vi": "Sức khỏe cơ thể là khối tài sản quý báu quan trọng nhất đời người."
+        }
+      },
+      {
+        "pinyin": "chóng",
+        "tone": "Thanh 2 (chúng)",
+        "pos": "Phó từ / Động từ",
+        "meaning": "lặp lại, trùng điệp, lại một lần nữa",
+        "collocations": [
+          "重新",
+          "重复",
+          "重逢",
+          "重阳节"
+        ],
+        "example": {
+          "zh": "电脑死机了，请重新启动操作系统。",
+          "py": "Diànnǎo sǐjī le, qǐng chóngxīn qǐdòng cāozuò xìtǒng.",
+          "vi": "Máy tính bị treo rồi, vui lòng khởi động lại hệ điều hành."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"重新开始\" (Bắt đầu lại từ đầu) chữ \"重\" phát âm là gì?",
+      "options": [
+        "chóng (thanh 2)",
+        "zhòng (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Biểu thị làm lại một lần nữa (重新) đọc là chóng."
+    }
+  },
+  {
+    "id": "poly_chang",
+    "char": "长",
+    "hanviet": "Trường / Trưởng",
+    "strokes": 4,
+    "radical": "长 (Trường)",
+    "summaryMnemonic": "Độ dài, thời gian dài đọc \"cháng\"; Lớn lên, trưởng bối đọc \"zhǎng\"!",
+    "readings": [
+      {
+        "pinyin": "cháng",
+        "tone": "Thanh 2 (cháng)",
+        "pos": "Tính từ",
+        "meaning": "dài (khoảng cách, thời gian)",
+        "collocations": [
+          "长江",
+          "长城",
+          "时间很长",
+          "长短"
+        ],
+        "example": {
+          "zh": "万里长城是中华民族悠久灿烂历史的伟大象征。",
+          "py": "Wànlǐ Chángchéng shì Zhōnghuá mínzú yōujiǔ cànlàn lìshǐ de wěidà xiàngzhēng.",
+          "vi": "Vạn Lý Trường Thành là biểu tượng vĩ đại cho lịch sử lâu đời xán lạn của dân tộc Trung Hoa."
+        }
+      },
+      {
+        "pinyin": "zhǎng",
+        "tone": "Thanh 3 (trảng)",
+        "pos": "Động từ / Danh từ",
+        "meaning": "lớn lên, sinh trưởng, người đứng đầu",
+        "collocations": [
+          "长大",
+          "校长",
+          "市长",
+          "长得帅"
+        ],
+        "example": {
+          "zh": "孩子们在温馨有爱的家庭环境中健康快乐地长大。",
+          "py": "Háizimen zài wēnxīn yǒu ài de jiātíng huánjìng zhōng jiànkāng kuàilè de zhǎngdà.",
+          "vi": "Những đứa trẻ lớn lên khỏe mạnh và vui vẻ trong môi trường gia đình ấm áp yêu thương."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"校长\" (Hiệu trưởng) chữ \"长\" phát âm là gì?",
+      "options": [
+        "zhǎng (thanh 3)",
+        "cháng (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Người đứng đầu một tổ chức (校长, 院长, 班长) chữ 长 phát âm là zhǎng."
+    }
+  },
+  {
+    "id": "poly_bian_pian",
+    "char": "便",
+    "hanviet": "Tiện / Tiện",
+    "strokes": 9,
+    "radical": "亻 (Nhân đứng)",
+    "summaryMnemonic": "Thuận tiện đọc \"biàn\"; Rẻ (tiện nghi) đọc \"pián\"!",
+    "readings": [
+      {
+        "pinyin": "biàn",
+        "tone": "Thanh 4 (biện)",
+        "pos": "Tính từ / Phó từ",
+        "meaning": "thuận tiện, tiện lợi, liền / bèn",
+        "collocations": [
+          "方便",
+          "便利",
+          "便利店",
+          "便条"
+        ],
+        "example": {
+          "zh": "现代高铁网络让城市之间的通勤变得极其方便快捷。",
+          "py": "Xiàndài gāotiě wǎngluò ràng chéngshì zhījiān de tōngqín biàn de jíqí fāngbiàn kuàijié.",
+          "vi": "Mạng lưới tàu cao tốc hiện đại giúp việc đi lại giữa các thành phố trở nên cực kỳ thuận tiện và nhanh chóng."
+        }
+      },
+      {
+        "pinyin": "pián",
+        "tone": "Thanh 2 (phiền)",
+        "pos": "Tính từ",
+        "meaning": "rẻ, chiếm tiện nghi hời",
+        "collocations": [
+          "便宜",
+          "占便宜",
+          "大便宜"
+        ],
+        "example": {
+          "zh": "这家小店的商品不仅物美价廉，而且老板态度非常和善。",
+          "py": "Zhè jiā xiǎodiàn de shāngpǐn bùjǐn wùměijiàlián, érqiě lǎobǎn tàidu fēicháng héshàn.",
+          "vi": "Hàng hóa của cửa tiệm này vừa rẻ vừa đẹp, lại thêm thái độ ông chủ rất niềm nở."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"便宜\" (rẻ tiền) chữ \"便\" phát âm là gì?",
+      "options": [
+        "pián (thanh 2)",
+        "biàn (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 便宜 (piányi - rẻ), chữ 便 đọc là pián."
+    }
+  },
+  {
+    "id": "poly_hui",
+    "char": "会",
+    "hanviet": "Hội / Khoái",
+    "strokes": 6,
+    "radical": "人 (Nhân)",
+    "summaryMnemonic": "Biết, hội họp đọc \"huì\"; Kế toán tính toán đọc \"kuài\"!",
+    "readings": [
+      {
+        "pinyin": "huì",
+        "tone": "Thanh 4 (huậy)",
+        "pos": "Động từ năng nguyện / Danh từ",
+        "meaning": "biết (qua học tập), cuộc họp, cơ hội",
+        "collocations": [
+          "会说汉语",
+          "开会",
+          "会议",
+          "机会"
+        ],
+        "example": {
+          "zh": "经过半年的刻苦训练，他已经学会了游泳。",
+          "py": "Jīngguò bàn nián de kèkǔ xùnliàn, tā yǐjīng xuéhuì le yóuyǒng.",
+          "vi": "Sau nửa năm khổ luyện, anh ấy đã biết bơi lội."
+        }
+      },
+      {
+        "pinyin": "kuài",
+        "tone": "Thanh 4 (khoáy)",
+        "pos": "Danh từ",
+        "meaning": "kế toán, sổ sách tính toán",
+        "collocations": [
+          "会计",
+          "财会"
+        ],
+        "example": {
+          "zh": "她在一家跨国集团财务部门担任资深主管会计。",
+          "py": "Tā zài yì jiā kuàguó jítuán cáiwù bùmén dānrèn zīshēn zhǔguǎn kuàijì.",
+          "vi": "Cô ấy đảm nhiệm chức kế toán trưởng kỳ cựu tại bộ phận tài chính một tập đoàn đa quốc gia."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"会计师\" (kế toán viên) chữ \"会\" phát âm là gì?",
+      "options": [
+        "kuài (thanh 4)",
+        "huì (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Ngành nghề kế toán (会计) chữ 会 bắt buộc phát âm là kuài."
+    }
+  },
+  {
+    "id": "poly_le_yue",
+    "char": "乐",
+    "hanviet": "Lạc / Nhạc",
+    "strokes": 5,
+    "radical": "丿 (Phiệt)",
+    "summaryMnemonic": "Vui vẻ đọc \"lè\"; Âm nhạc đọc \"yuè\"!",
+    "readings": [
+      {
+        "pinyin": "lè",
+        "tone": "Thanh 4 (lợ)",
+        "pos": "Tính từ / Danh từ",
+        "meaning": "vui vẻ, vui sướng, niềm vui",
+        "collocations": [
+          "快乐",
+          "乐观",
+          "可乐",
+          "乐趣"
+        ],
+        "example": {
+          "zh": "祝你在崭新的一年里工作顺利、阖家幸福快乐！",
+          "py": "Zhù nǐ zài zhǎnxīn de yì nián lǐ gōngzuò shùnlì, héjiā xìngfú kuàilè!",
+          "vi": "Chúc bạn trong năm mới công việc thuận lợi, cả nhà hạnh phúc an vui!"
+        }
+      },
+      {
+        "pinyin": "yuè",
+        "tone": "Thanh 4 (duệ)",
+        "pos": "Danh từ",
+        "meaning": "âm nhạc, nhạc cụ, khúc nhạc",
+        "collocations": [
+          "音乐",
+          "乐队",
+          "乐器",
+          "交响乐"
+        ],
+        "example": {
+          "zh": "聆听优美动听的古典交响音乐能够让人身心得到彻底放松。",
+          "py": "Língtīng yōuměi dòngtīng de gǔdiǎn jiāoxiǎng yīnyuè nénggòu ràng rén shēnxīn dédào chèdǐ fàngsōng.",
+          "vi": "Lắng nghe những khúc nhạc giao hưởng cổ điển du dương có thể giúp thân tâm được thả lỏng hoàn toàn."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"听音乐\" (nghe nhạc) chữ \"乐\" phát âm là gì?",
+      "options": [
+        "yuè (thanh 4)",
+        "lè (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 音乐 (âm nhạc) chữ 乐 đọc là yuè."
+    }
+  },
+  {
+    "id": "poly_hai_huan",
+    "char": "还",
+    "hanviet": "Hoàn / Hoàn",
+    "strokes": 7,
+    "radical": "辶 (Xước)",
+    "summaryMnemonic": "Vẫn còn, vả lại đọc \"hái\"; Trả lại đọc \"huán\"!",
+    "readings": [
+      {
+        "pinyin": "hái",
+        "tone": "Thanh 2 (hái)",
+        "pos": "Phó từ",
+        "meaning": "vẫn, còn, hơn nữa",
+        "collocations": [
+          "还有",
+          "还是",
+          "还在",
+          "还可以"
+        ],
+        "example": {
+          "zh": "已经深夜十二点了，书房里的灯光还在亮着。",
+          "py": "Yǐjīng shēnyè shí'èr diǎn le, shūfáng lǐ de dēngguāng hái zài liàng zhe.",
+          "vi": "Đã 12 giờ đêm rồi, ánh đèn trong phòng sách vẫn còn đang sáng."
+        }
+      },
+      {
+        "pinyin": "huán",
+        "tone": "Thanh 2 (hoán)",
+        "pos": "Động từ",
+        "meaning": "trả lại, hoàn lại, quay về",
+        "collocations": [
+          "还书",
+          "还钱",
+          "归还",
+          "还债"
+        ],
+        "example": {
+          "zh": "借图书馆的书一定要在规定的截止日期之前按时归还。",
+          "py": "Jiè túshūguǎn de shū yídìng yào zài guīdìng de jiézhǐ rìqī zhīqián ànshí guīhuán.",
+          "vi": "Mượn sách thư viện nhất định phải trả lại đúng hạn trước ngày quy định."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"还钱\" (trả nợ tiền) chữ \"还\" phát âm là gì?",
+      "options": [
+        "huán (thanh 2)",
+        "hái (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Hành động trả lại tiền (还钱) chữ 还 đọc là huán."
+    }
+  },
+  {
+    "id": "poly_cha",
+    "char": "差",
+    "hanviet": "Sai / Sái / S差",
+    "strokes": 9,
+    "radical": "羊 (Dương)",
+    "summaryMnemonic": "Kém cỏi, thiếu đọc \"chà\"; Sai lệch, chênh lệch đọc \"chā\"; Công tác, sai bảo đọc \"chāi\"!",
+    "readings": [
+      {
+        "pinyin": "chà",
+        "tone": "Thanh 4 (tra)",
+        "pos": "Tính từ / Động từ",
+        "meaning": "kém, tồi, thiếu (thời gian)",
+        "collocations": [
+          "差不多",
+          "太差了",
+          "差十分八点",
+          "成绩差"
+        ],
+        "example": {
+          "zh": "现在是差五分九点，发布会马上就要开始了。",
+          "py": "Xiànzài shì chà wǔ fēn jiǔ diǎn, fābùhuì mǎshàng jiù yào kāishǐ le.",
+          "vi": "Bây giờ là 9 giờ kém 5 phút, buổi họp báo sắp sửa bắt đầu."
+        }
+      },
+      {
+        "pinyin": "chā",
+        "tone": "Thanh 1 (toa)",
+        "pos": "Danh từ",
+        "meaning": "sai số, chênh lệch, khác biệt",
+        "collocations": [
+          "差别",
+          "时差",
+          "差距",
+          "误差"
+        ],
+        "example": {
+          "zh": "中国与英国之间在冬季有八个小时的标准时差。",
+          "py": "Zhōngguó yǔ Yīngguó zhījiān zài dōngjì yǒu bā gè xiǎoshí de biāozhǔn shíchā.",
+          "vi": "Giữa Trung Quốc và nước Anh vào mùa đông có chênh lệch múi giờ chuẩn 8 tiếng."
+        }
+      },
+      {
+        "pinyin": "chāi",
+        "tone": "Thanh 1 (sơ-ai)",
+        "pos": "Động từ / Danh từ",
+        "meaning": "đi công tác, sai phái làm việc",
+        "collocations": [
+          "出差",
+          "兼差"
+        ],
+        "example": {
+          "zh": "经理下周需要前往广州出差参加春季中国进出口商品交易会。",
+          "py": "Jīnglǐ xià zhōu xūyào qiánwǎng Guǎngzhōu chūchāi cānjiā chūnjì Zhōngguó Jìnchūkǒu Shāngpǐn Jiāoyìhuì.",
+          "vi": "Giám đốc tuần sau cần đi Quảng Châu công tác tham dự hội chợ Canton Fair mùa xuân."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"出差\" (đi công tác) chữ \"差\" phát âm là gì?",
+      "options": [
+        "chāi (thanh 1)",
+        "chà (thanh 4)",
+        "chā (thanh 1)"
+      ],
+      "answer": 0,
+      "explain": "Đi công tác (出差) chữ 差 phát âm là chāi."
+    }
+  },
+  {
+    "id": "poly_jiao_jue",
+    "char": "觉",
+    "hanviet": "Giác / Giáo",
+    "strokes": 9,
+    "radical": "见 (Kiến)",
+    "summaryMnemonic": "Cảm giác, cảm thấy đọc \"jué\"; Ngủ một giấc đọc \"jiào\"!",
+    "readings": [
+      {
+        "pinyin": "jué",
+        "tone": "Thanh 2 (chuế)",
+        "pos": "Động từ",
+        "meaning": "cảm thấy, cảm giác, nhận thức",
+        "collocations": [
+          "觉得",
+          "感觉",
+          "自觉",
+          "知觉"
+        ],
+        "example": {
+          "zh": "今天气温骤降，出门时顿觉得有些凉意。",
+          "py": "Jīntiān qìwēn zhòujiàng, chūmén shí dùn jué de yǒuxiē liángyì.",
+          "vi": "Hôm nay nhiệt độ giảm đột ngột, ra ngoài cảm thấy có chút se lạnh."
+        }
+      },
+      {
+        "pinyin": "jiào",
+        "tone": "Thanh 4 (chiếu)",
+        "pos": "Danh từ",
+        "meaning": "giấc ngủ",
+        "collocations": [
+          "睡觉",
+          "午觉"
+        ],
+        "example": {
+          "zh": "中午小睡半个小时午觉能够迅速恢复充沛精力。",
+          "py": "Zhōngwǔ xiǎoshuì bàn gè xiǎoshí wǔjiào nénggòu xùnsù huīfù chōngpèi jīnglì.",
+          "vi": "Buổi trưa chợp mắt ngủ trưa nửa tiếng có thể hồi phục sinh lực nhanh chóng."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"睡觉\" (ngủ) chữ \"觉\" phát âm là gì?",
+      "options": [
+        "jiào (thanh 4)",
+        "jué (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 睡觉 (ngủ) và 午觉 (ngủ trưa), chữ 觉 đọc là jiào."
+    }
+  },
+  {
+    "id": "poly_zhao_zhe",
+    "char": "着",
+    "hanviet": "Trước / Trước",
+    "strokes": 11,
+    "radical": "目 (Mục)",
+    "summaryMnemonic": "Đang duy trì trạng thái đọc \"zhe\"; Ngủ say, bốc hỏa đọc \"zháo\"; Nước đi, mặc áo đọc \"zhuó\"!",
+    "readings": [
+      {
+        "pinyin": "zhe",
+        "tone": "Thanh nhẹ",
+        "pos": "Trợ từ động thái",
+        "meaning": "biểu thị động tác hoặc trạng thái đang tiếp diễn, duy trì",
+        "collocations": [
+          "站着",
+          "坐着",
+          "门开着",
+          "穿着"
+        ],
+        "example": {
+          "zh": "外面寒风呼啸，房间里的壁炉静静地燃烧着。",
+          "py": "Wàimiàn hánfēng hūxiào, fángjiān lǐ de bìlú jìngjìng de ránshāo zhe.",
+          "vi": "Bên ngoài gió lạnh gầm rít, lò sưởi trong phòng đang lặng lẽ cháy."
+        }
+      },
+      {
+        "pinyin": "zháo",
+        "tone": "Thanh 2 (tráo)",
+        "pos": "Động từ / Bổ ngữ",
+        "meaning": "đạt kết quả mong muốn, ngủ say, cháy, sốt ruột",
+        "collocations": [
+          "睡着了",
+          "着火",
+          "着急",
+          "找着了"
+        ],
+        "example": {
+          "zh": "喝了浓茶后，他躺在床上翻来覆去很久才睡着。",
+          "py": "Hē le nóngchá hòu, tā tǎng zài chuáng shang fānlái-fùqù hěn jiǔ cái shuìzháo.",
+          "vi": "Sau khi uống trà đặc, anh ấy nằm trên giường trằn trọc hồi lâu mới ngủ được."
+        }
+      },
+      {
+        "pinyin": "zhuó",
+        "tone": "Thanh 2 (chuốc)",
+        "pos": "Động từ / Danh từ",
+        "meaning": "mặc (quần áo), chạm đất, nơi nương tựa, hạ bút",
+        "collocations": [
+          "穿着",
+          "着陆",
+          "着重",
+          "着落"
+        ],
+        "example": {
+          "zh": "神舟载人飞船返回舱在内蒙古主着陆场成功着陆。",
+          "py": "Shénzhōu zàirén fēichuán fǎnhuícāng zài Nèiměnggǔ zhǔ zhuólùchǎng chénggōng zhuólù.",
+          "vi": "Khoang phi thuyền Thần Châu đã hạ cánh thành công xuống bãi đáp chính Nội Mông."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Trong câu \"太累了，他一躺下就睡____了。\" chữ \"着\" đọc là gì?",
+      "options": [
+        "zháo (thanh 2)",
+        "zhe (thanh nhẹ)",
+        "zhuó (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Ngủ thiếp đi (睡着了) chữ 着 đọc là zháo."
+    }
+  },
+  {
+    "id": "poly_di_de",
+    "char": "地",
+    "hanviet": "Địa / Đích",
+    "strokes": 6,
+    "radical": "土 (Thổ)",
+    "summaryMnemonic": "Đất đai, địa điểm đọc \"dì\"; Trợ từ trước động từ (làm gì một cách thế nào) đọc \"de\"!",
+    "readings": [
+      {
+        "pinyin": "dì",
+        "tone": "Thanh 4 (đị)",
+        "pos": "Danh từ",
+        "meaning": "đất đai, mặt đất, địa cầu, nơi chốn",
+        "collocations": [
+          "地球",
+          "地方",
+          "地面",
+          "土地",
+          "目的地"
+        ],
+        "example": {
+          "zh": "保护我们赖以生存的地球家园是全人类共同的责任。",
+          "py": "Bǎohù wǒmen làiyǐshēngcún de Dìqiú jiāyuán shì quán rénlèi gòngtóng de zérèn.",
+          "vi": "Bảo vệ mái nhà Trái Đất nơi chúng ta nương tựa sinh sống là trách nhiệm chung của toàn nhân loại."
+        }
+      },
+      {
+        "pinyin": "de",
+        "tone": "Thanh nhẹ",
+        "pos": "Trợ từ kết cấu",
+        "meaning": "nối trạng ngữ với động từ (Tính từ + 地 + Động từ: làm gì một cách...)",
+        "collocations": [
+          "慢慢地走",
+          "高兴地说",
+          "认真地听",
+          "飞快地跑"
+        ],
+        "example": {
+          "zh": "同学们在课堂上全神贯注地听老师讲课。",
+          "py": "Tóngxuémen zài kètáng shang quánshén-guànzhù de tīng lǎoshī jiǎngkè.",
+          "vi": "Các bạn học sinh trên lớp chăm chú lắng nghe thầy giáo giảng bài."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Trong cụm \"高兴____笑了\", chữ \"地\" đọc là gì?",
+      "options": [
+        "de (thanh nhẹ)",
+        "dì (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Đứng trước động từ bổ nghĩa cho hành động (vui vẻ cười), chữ 地 đóng vai trò trợ từ kết cấu đọc là de."
+    }
+  },
+  {
+    "id": "poly_wei",
+    "char": "为",
+    "hanviet": "Vi / Vị",
+    "strokes": 4,
+    "radical": "丶 (Chủ)",
+    "summaryMnemonic": "Làm, trở thành đọc \"wéi\"; Vì, để, cho đọc \"wèi\"!",
+    "readings": [
+      {
+        "pinyin": "wéi",
+        "tone": "Thanh 2 (uấy)",
+        "pos": "Động từ",
+        "meaning": "làm, trở thành, bị (câu chữ 为)",
+        "collocations": [
+          "成为",
+          "认为",
+          "作为",
+          "行为"
+        ],
+        "example": {
+          "zh": "他立志经过刻苦学习成为一名救死扶伤的白衣天使。",
+          "py": "Tā lìzhì jīngguò kèkǔ xuéxí chéngwéi yì míng jiùsǐ-fúshāng de báiyī tiānshǐ.",
+          "vi": "Anh ấy lập chí khổ học để trở thành một thiên thần áo trắng cứu người giúp đời."
+        }
+      },
+      {
+        "pinyin": "wèi",
+        "tone": "Thanh 4 (uậy)",
+        "pos": "Giới từ",
+        "meaning": "vì, để, cho (biểu thị mục đích, nguyên nhân, đối tượng phục vụ)",
+        "collocations": [
+          "为了",
+          "为什么",
+          "为人民服务",
+          "为你高兴"
+        ],
+        "example": {
+          "zh": "为了早日实现美好梦想，我们必须争分夺秒努力拼搏。",
+          "py": "Wèile zǎorì shíxiàn měihǎo mèngxiǎng, wǒmen bìxū zhēngfēn-duómiǎo nǔlì pīnbó.",
+          "vi": "Để sớm ngày hiện thực hóa ước mơ tươi đẹp, chúng ta phải tranh thủ từng phút giây nỗ lực phấn đấu."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"为什么\" (tại sao) chữ \"为\" phát âm là gì?",
+      "options": [
+        "wèi (thanh 4)",
+        "wéi (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 为什么 và 为了 chỉ mục đích/nguyên nhân, chữ 为 đọc là wèi."
+    }
+  },
+  {
+    "id": "poly_hao",
+    "char": "好",
+    "hanviet": "Hảo / Háo",
+    "strokes": 6,
+    "radical": "女 (Nữ)",
+    "summaryMnemonic": "Tốt, đẹp, khỏe đọc \"hǎo\"; Sở thích, yêu thích đọc \"hào\"!",
+    "readings": [
+      {
+        "pinyin": "hǎo",
+        "tone": "Thanh 3 (hảo)",
+        "pos": "Tính từ / Phó từ",
+        "meaning": "tốt, đẹp, rất, xong rồi",
+        "collocations": [
+          "你好",
+          "好朋友",
+          "很好",
+          "做好"
+        ],
+        "example": {
+          "zh": "阅读经典名著是开阔人生眼界的一种好方法。",
+          "py": "Yuèdú jīngdiǎn míngzhù shì kāikuò rénshēng yǎnjiè de yì zhǒng hǎo fāngfǎ.",
+          "vi": "Đọc danh tác kinh điển là một phương pháp tốt để mở rộng tầm mắt nhân sinh."
+        }
+      },
+      {
+        "pinyin": "hào",
+        "tone": "Thanh 4 (hạo)",
+        "pos": "Động từ / Danh từ",
+        "meaning": "thích, yêu chuộng, ham muốn",
+        "collocations": [
+          "爱好",
+          "好奇",
+          "好客",
+          "好学"
+        ],
+        "example": {
+          "zh": "他最大的业余兴趣爱好就是利用周末时间钻研计算机编程。",
+          "py": "Tā zuì dà de yèyú xìngqù àihào jiùshì lìyòng zhōumò shíjiān zuānyán jìsuànjī biānchéng.",
+          "vi": "Sở thích hứng thú lớn nhất ngoài giờ của anh ấy là tận dụng thời gian cuối tuần nghiên cứu lập trình máy tính."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"爱好\" (sở thích) chữ \"好\" phát âm là gì?",
+      "options": [
+        "hào (thanh 4)",
+        "hǎo (thanh 3)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 爱好 (sở thích) và 好奇 (hiếu kỳ), chữ 好 phát âm là hào."
+    }
+  },
+  {
+    "id": "poly_dou_du",
+    "char": "都",
+    "hanviet": "Đô / Đô",
+    "strokes": 10,
+    "radical": "阝 (Ấp)",
+    "summaryMnemonic": "Đều, tất cả đọc \"dōu\"; Thủ đô, thành đô đọc \"dū\"!",
+    "readings": [
+      {
+        "pinyin": "dōu",
+        "tone": "Thanh 1 (đâu)",
+        "pos": "Phó từ",
+        "meaning": "đều, tất cả, đã",
+        "collocations": [
+          "我们都",
+          "都很好",
+          "都会",
+          "都几点了"
+        ],
+        "example": {
+          "zh": "我们班的每一位同学都非常热爱学习中国古代文学。",
+          "py": "Wǒmen bān de měi yí wèi tóngxué dōu fēicháng rè'ài xuéxí Zhōngguó gǔdài wénxué.",
+          "vi": "Mỗi một bạn học sinh lớp chúng tôi đều rất đam mê học tập văn học cổ đại Trung Quốc."
+        }
+      },
+      {
+        "pinyin": "dū",
+        "tone": "Thanh 1 (đu)",
+        "pos": "Danh từ",
+        "meaning": "thủ đô, thành phố lớn, đô thị",
+        "collocations": [
+          "首都",
+          "都市",
+          "故都",
+          "魔都"
+        ],
+        "example": {
+          "zh": "北京作为中华人民共和国的首都，是全国政治与文化交往的中心。",
+          "py": "Běijīng zuòwéi Zhōnghuá Rénmín Gònghéguó de shǒudū, shì quánguó zhèngzhì yǔ wénhuà jiāowǎng de zhōngxīn.",
+          "vi": "Bắc Kinh với tư cách là thủ đô của CHND Trung Hoa, là trung tâm chính trị và giao lưu văn hóa của cả nước."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"首都\" (thủ đô) chữ \"都\" phát âm là gì?",
+      "options": [
+        "dū (thanh 1)",
+        "dōu (thanh 1)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 首都 (thủ đô) và 都市 (đô thị), chữ 都 phát âm là dū."
+    }
+  },
+  {
+    "id": "poly_zhi",
+    "char": "只",
+    "hanviet": "Chỉ / Chích",
+    "strokes": 5,
+    "radical": "口 (Khẩu)",
+    "summaryMnemonic": "Phó từ \"chỉ có\" đọc \"zhǐ\" (thanh 3); Lượng từ con vật, chiếc đơn lẻ đọc \"zhī\" (thanh 1)!",
+    "readings": [
+      {
+        "pinyin": "zhǐ",
+        "tone": "Thanh 3 (chỉ)",
+        "pos": "Phó từ",
+        "meaning": "chỉ, chỉ có, chỉ là",
+        "collocations": [
+          "只要",
+          "只有",
+          "只是",
+          "只不过"
+        ],
+        "example": {
+          "zh": "只要坚持每天练习口语，就一定能说一口纯正流利的汉语。",
+          "py": "Zhǐyào jiānchí měitiān liànxí kǒuyǔ, jiù yídìng néng shuō yì kǒu chúnzhèng liúlì de Hànyǔ.",
+          "vi": "Chỉ cần kiên trì luyện khẩu ngữ mỗi ngày thì nhất định có thể nói một giọng tiếng Trung chuẩn xác và lưu loát."
+        }
+      },
+      {
+        "pinyin": "zhī",
+        "tone": "Thanh 1 (chi)",
+        "pos": "Lượng từ",
+        "meaning": "con (động vật), chiếc/cái (một bên trong cặp đối xứng hoặc vật hình que)",
+        "collocations": [
+          "一只猫",
+          "一只鸟",
+          "一只手",
+          "一只鞋"
+        ],
+        "example": {
+          "zh": "树枝上停着一只羽毛极其鲜艳的小鸟。",
+          "py": "Shùzhī shang tíng zhe yì zhī yǔmáo jíqí xiānyàn de xiǎoniǎo.",
+          "vi": "Trên cành cây có một chú chim nhỏ với bộ lông vô cùng sặc sỡ đang đậu."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Trong câu \"我家里养了一____可爱的小花猫。\" chữ \"只\" phát âm là gì?",
+      "options": [
+        "zhī (thanh 1)",
+        "zhǐ (thanh 3)"
+      ],
+      "answer": 0,
+      "explain": "Khi làm lượng từ chỉ con vật (chú mèo), \"只\" phát âm thanh 1: zhī."
+    }
+  },
+  {
+    "id": "poly_fa",
+    "char": "发",
+    "hanviet": "Phát / Phát",
+    "strokes": 5,
+    "radical": "又 (Hựu)",
+    "summaryMnemonic": "Mái tóc (头发) đọc \"fà\" (thanh 4); Phát sinh, xuất phát, phát triển đọc \"fā\" (thanh 1)!",
+    "readings": [
+      {
+        "pinyin": "fā",
+        "tone": "Thanh 1 (pha)",
+        "pos": "Động từ",
+        "meaning": "xuất phát, phát biểu, phát triển, gửi đi",
+        "collocations": [
+          "出发",
+          "发生",
+          "发展",
+          "发电子邮件",
+          "发现"
+        ],
+        "example": {
+          "zh": "随着现代科技的飞速发展，人工智能正在深刻改变世界。",
+          "py": "Suízhe xiàndài kējì de fēisù fāzhǎn, réngōng zhìnéng zhèngzài shēnkè gǎibiàn shìjiè.",
+          "vi": "Cùng với sự phát triển thần tốc của khoa học kỹ thuật hiện đại, trí tuệ nhân tạo đang thay đổi sâu sắc thế giới."
+        }
+      },
+      {
+        "pinyin": "fà",
+        "tone": "Thanh 4 (phạ)",
+        "pos": "Danh từ",
+        "meaning": "tóc, mái tóc",
+        "collocations": [
+          "头发",
+          "理发",
+          "白发",
+          "假发"
+        ],
+        "example": {
+          "zh": "为了准备明天的面试，他特意去理发店修剪了头发。",
+          "py": "Wèile zhǔnbèi míngtiān de miànshì, tā tèyì qù lǐfàdiàn xiūjiǎn le tóufa.",
+          "vi": "Để chuẩn bị cho buổi phỏng vấn ngày mai, anh ấy đặc ý đi tiệm cắt tóc để tỉa tót mái tóc."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"理发\" (cắt tóc) chữ \"发\" phát âm là gì?",
+      "options": [
+        "fà (thanh 4)",
+        "fā (thanh 1)"
+      ],
+      "answer": 0,
+      "explain": "Khi chỉ tóc (\"tóc\" trong 理发, 头发, 白发), \"发\" đọc thanh 4 là fà."
+    }
+  },
+  {
+    "id": "poly_dao",
+    "char": "倒",
+    "hanviet": "Đảo / Đảo",
+    "strokes": 10,
+    "radical": "亻 (Nhân đứng)",
+    "summaryMnemonic": "Ngã xuống, đổ sập đọc \"dǎo\" (thanh 3); Rót nước, đảo ngược, lùi xe đọc \"dào\" (thanh 4)!",
+    "readings": [
+      {
+        "pinyin": "dǎo",
+        "tone": "Thanh 3 (đảo)",
+        "pos": "Động từ",
+        "meaning": "ngã, đổ, sập, phá sản",
+        "collocations": [
+          "跌倒",
+          "倒下",
+          "倒闭",
+          "摔倒"
+        ],
+        "example": {
+          "zh": "狂风大作把路旁的一棵大树吹倒了。",
+          "py": "Kuángfēng dàzuò bǎ lùpáng de yì kē dàshù chuīdǎo le.",
+          "vi": "Gió giật mạnh đã thổi ngã rạp một cái cây to bên lề đường."
+        }
+      },
+      {
+        "pinyin": "dào",
+        "tone": "Thanh 4 (đáo)",
+        "pos": "Động từ / Phó từ",
+        "meaning": "rót (chất lỏng), lùi xe, đảo ngược, ngược lại",
+        "collocations": [
+          "倒水",
+          "倒车",
+          "倒立",
+          "反倒"
+        ],
+        "example": {
+          "zh": "有客人进门时，按照礼节应该先给他倒上一杯热茶。",
+          "py": "Yǒu kèrén jìnmén shí, ànzhào lǐjié yīnggāi xiān gěi tā dào shàng yì bēi rèchá.",
+          "vi": "Khi có khách vào nhà, theo phép lịch sự nên rót cho khách một chén trà nóng trước."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Trong câu \"司机正在小心翼翼地把卡车往后____车。\" chữ \"倒\" phát âm là gì?",
+      "options": [
+        "dào (thanh 4)",
+        "dǎo (thanh 3)"
+      ],
+      "answer": 0,
+      "explain": "Trong cụm \"倒车\" (lùi xe, đảo chiều xe), \"倒\" đọc thanh 4 là dào."
+    }
+  },
+  {
+    "id": "poly_jiao",
+    "char": "教",
+    "hanviet": "Giáo / Giao",
+    "strokes": 11,
+    "radical": "攵 (Phác)",
+    "summaryMnemonic": "Động từ dạy học đọc \"jiāo\" (thanh 1); Giáo dục, phòng học, tôn giáo đọc \"jiào\" (thanh 4)!",
+    "readings": [
+      {
+        "pinyin": "jiāo",
+        "tone": "Thanh 1 (giao)",
+        "pos": "Động từ",
+        "meaning": "dạy, truyền thụ kiến thức kỹ năng",
+        "collocations": [
+          "教书",
+          "教汉语",
+          "教唱歌",
+          "教我做菜"
+        ],
+        "example": {
+          "zh": "王老师在这所重点中学教了三十年高中语文。",
+          "py": "Wáng lǎoshī zài zhè suǒ zhòngdiǎn zhōngxué jiāo le sānshí nián gāozhōng yǔwén.",
+          "vi": "Thầy Vương đã dạy ngữ văn cấp ba ở ngôi trường trọng điểm này suốt ba mươi năm."
+        }
+      },
+      {
+        "pinyin": "jiào",
+        "tone": "Thanh 4 (giáo)",
+        "pos": "Danh từ",
+        "meaning": "giáo dục, phòng học, tôn giáo, giáo viên",
+        "collocations": [
+          "教育",
+          "教室",
+          "教师",
+          "宗教"
+        ],
+        "example": {
+          "zh": "父母的言传身教对孩子的品格养成有着深远的教育意义。",
+          "py": "Fùmǔ de yánchuán-shēnjiào duì háizi de pǐngé yǎngchéng yǒu zhe shēnyuǎn de jiàoyù yìyì.",
+          "vi": "Lời nói và việc làm làm gương của cha mẹ có ý nghĩa giáo dục sâu sắc đối với sự hình thành phẩm cách của con cái."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"教室\" (phòng học) chữ \"教\" phát âm là gì?",
+      "options": [
+        "jiào (thanh 4)",
+        "jiāo (thanh 1)"
+      ],
+      "answer": 0,
+      "explain": "Trong danh từ \"教室\" (phòng học) và \"教育\" (giáo dục), \"教\" phát âm là jiào."
+    }
+  },
+  {
+    "id": "poly_kan",
+    "char": "看",
+    "hanviet": "Khán",
+    "strokes": 9,
+    "radical": "目 (Mục)",
+    "summaryMnemonic": "Nhìn, xem, đọc sách đọc \"kàn\" (thanh 4); Trông nom, canh gác, coi giữ đọc \"kān\" (thanh 1)!",
+    "readings": [
+      {
+        "pinyin": "kàn",
+        "tone": "Thanh 4 (khán)",
+        "pos": "Động từ",
+        "meaning": "nhìn, xem, đọc, thăm hỏi, nhận định",
+        "collocations": [
+          "看书",
+          "看电影",
+          "看病",
+          "看法"
+        ],
+        "example": {
+          "zh": "周末在阳光明媚的阳台上看一本好书是最惬意的事。",
+          "py": "Zhōumò zài yángguāng míngmèi de yángtái shang kàn yì běn hǎo shū shì zuì qièyì de shì.",
+          "vi": "Cuối tuần đọc một cuốn sách hay trên ban công tràn ngập ánh nắng là điều khoan khoái nhất."
+        }
+      },
+      {
+        "pinyin": "kān",
+        "tone": "Thanh 1 (khan)",
+        "pos": "Động từ",
+        "meaning": "trông nom, canh giữ, coi sóc, bảo quản",
+        "collocations": [
+          "看守",
+          "看门",
+          "看护",
+          "照看"
+        ],
+        "example": {
+          "zh": "爷爷退休后在社区里义务帮忙照看孩子们放学后的安全。",
+          "py": "Yéye tuìxiū hòu zài shèqū lǐ yìwù bāngmáng zhàokān háizimen fàngxué hòu de ānquán.",
+          "vi": "Sau khi nghỉ hưu, ông nội tình nguyện giúp chăm nom sự an toàn của lũ trẻ sau giờ tan học trong khu dân cư."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Trong từ \"看门\" (trông cửa, gác cổng) chữ \"看\" phát âm là gì?",
+      "options": [
+        "kān (thanh 1)",
+        "kàn (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Nghĩa canh gác, trông nom (看门, 看守, 照看) phát âm là kān."
+    }
+  },
+  {
+    "id": "poly_shu",
+    "char": "数",
+    "hanviet": "Số / Sổ",
+    "strokes": 13,
+    "radical": "攵 (Phác)",
+    "summaryMnemonic": "Danh từ con số, toán học đọc \"shù\" (thanh 4); Động từ đếm, liệt kê đọc \"shǔ\" (thanh 3)!",
+    "readings": [
+      {
+        "pinyin": "shù",
+        "tone": "Thanh 4 (thú)",
+        "pos": "Danh từ",
+        "meaning": "con số, số lượng, toán học",
+        "collocations": [
+          "数学",
+          "数字",
+          "数量",
+          "数据"
+        ],
+        "example": {
+          "zh": "现代大数据分析需要扎实的数学理论功底。",
+          "py": "Xiàndài dàshùjù fēnxī xūyào zhāshi de shùxué lǐlùn gōngdǐ.",
+          "vi": "Phân tích dữ liệu lớn hiện đại đòi hỏi nền tảng lý thuyết toán học vững chắc."
+        }
+      },
+      {
+        "pinyin": "shǔ",
+        "tone": "Thanh 3 (thủ)",
+        "pos": "Động từ",
+        "meaning": "đếm, tính toán lần lượt, xếp vào hàng",
+        "collocations": [
+          "数数",
+          "数不清",
+          "倒数",
+          "数一数二"
+        ],
+        "example": {
+          "zh": "夏天的夜空晴朗清澈，满天繁星数也数不清。",
+          "py": "Xiàtiān de yèkōng qínglǎng qīngchè, mǎntiān fánxīng shǔ yě shǔ bù qīng.",
+          "vi": "Bầu trời đêm mùa hè trong vắt, ngàn vì sao sáng đếm mãi không xuể."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Thành ngữ \"数一数二\" (thuộc hàng nhất nhì) hai chữ \"数\" phát âm là gì?",
+      "options": [
+        "shǔ (thanh 3)",
+        "shù (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Trong thành ngữ 数一数二 nghĩa là đếm từ trên xuống thì đứng thứ nhất thứ nhì, đọc là shǔ."
+    }
+  },
+  {
+    "id": "poly_luo",
+    "char": "落",
+    "hanviet": "Lạc",
+    "strokes": 12,
+    "radical": "艹 (Thảo)",
+    "summaryMnemonic": "Rơi rụng, hạ xuống đọc \"luò\"; Bỏ quên, bỏ sót đọc \"là\" (trong 丢三落四)!",
+    "readings": [
+      {
+        "pinyin": "luò",
+        "tone": "Thanh 4 (loạc)",
+        "pos": "Động từ",
+        "meaning": "rơi, rụng, hạ xuống, lắng xuống",
+        "collocations": [
+          "落下",
+          "降落",
+          "秋风落叶",
+          "落后"
+        ],
+        "example": {
+          "zh": "秋天到了，金黄的树叶纷纷从枝头随风飘落。",
+          "py": "Qiūtiān dào le, jīnhuáng de shùyè fēnfēn cóng zhītóu suí fēng piāoluò.",
+          "vi": "Mùa thu đã đến, những chiếc lá vàng óng ả đua nhau theo gió bay rụng khỏi cành."
+        }
+      },
+      {
+        "pinyin": "là",
+        "tone": "Thanh 4 (lạ)",
+        "pos": "Động từ",
+        "meaning": "bỏ quên, bỏ sót lại phía sau",
+        "collocations": [
+          "丢三落四",
+          "落下东西",
+          "别落下"
+        ],
+        "example": {
+          "zh": "他出门总是丢三落四，不是忘了钥匙就是忘了带手机。",
+          "py": "Tā chūmén zǒngshì diūsān-làsì, búshì wàng le yàoshi jiùshì wàng le dài shǒujī.",
+          "vi": "Anh ấy ra khỏi cửa toàn hay đãng trí bỏ quên đồ, không phải quên chìa khóa thì cũng là quên mang điện thoại."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Thành ngữ \"丢三落四\" (hay quên, đãng trí) chữ \"落\" phát âm chuẩn là gì?",
+      "options": [
+        "là (thanh 4)",
+        "luò (thanh 4)",
+        "lào (thanh 4)"
+      ],
+      "answer": 0,
+      "explain": "Khi mang nghĩa bỏ quên, bỏ sót lại (đặc biệt trong thành ngữ 丢三落四), chữ 落 phát âm là là."
+    }
+  },
+  {
+    "id": "poly_shao",
+    "char": "少",
+    "hanviet": "Thiểu / Thiếu",
+    "strokes": 4,
+    "radical": "小 (Tiểu)",
+    "summaryMnemonic": "Ít ỏi, thiếu hụt đọc \"shǎo\" (thanh 3); Tuổi trẻ, thanh thiếu niên đọc \"shào\" (thanh 4)!",
+    "readings": [
+      {
+        "pinyin": "shǎo",
+        "tone": "Thanh 3 (thảo)",
+        "pos": "Tính từ / Động từ",
+        "meaning": "ít, số lượng ít, thiếu thốn",
+        "collocations": [
+          "很少",
+          "多少",
+          "减少",
+          "少见"
+        ],
+        "example": {
+          "zh": "每天多走步锻炼，少吃高糖油腻食物，有益身体健康。",
+          "py": "Měitiān duō zǒubù duànliàn, shǎo chī gāotáng yóunì shíwù, yǒuyì shēntǐ jiànkāng.",
+          "vi": "Mỗi ngày đi bộ nhiều hơn để rèn luyện, ăn ít đồ ngọt dầu mỡ sẽ rất tốt cho sức khỏe."
+        }
+      },
+      {
+        "pinyin": "shào",
+        "tone": "Thanh 4 (thạo)",
+        "pos": "Danh từ / Tính từ",
+        "meaning": "trẻ tuổi, thanh thiếu niên, thiếu gia",
+        "collocations": [
+          "少年",
+          "青少年",
+          "少女",
+          "少爷"
+        ],
+        "example": {
+          "zh": "青少年时期是树立崇高理想与形成正确世界观的关键阶段。",
+          "py": "Qīngshàonián shíqī shì shùlì chónggāo lǐxiǎng yǔ xíngchéng zhèngquè shìjièguān de guānjiàn jiēduàn.",
+          "vi": "Thời kỳ thanh thiếu niên là giai đoạn then chốt để xây dựng lý tưởng cao đẹp và hình thành thế giới quan đúng đắn."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Từ \"少年\" (thanh thiếu niên) chữ \"少\" phát âm là gì?",
+      "options": [
+        "shào (thanh 4)",
+        "shǎo (thanh 3)"
+      ],
+      "answer": 0,
+      "explain": "Chỉ lứa tuổi trẻ nhỏ (少年, 青少年, 少女) đọc thanh 4 là shào."
+    }
+  },
+  {
+    "id": "poly_jie",
+    "char": "结",
+    "hanviet": "Kết",
+    "strokes": 9,
+    "radical": "纟 (Mịch)",
+    "summaryMnemonic": "Kết hôn, kết quả, thắt nút đọc \"jié\" (thanh 2); Ra hoa kết quả, chắc nịch rắn rỏi đọc \"jiē\" (thanh 1)!",
+    "readings": [
+      {
+        "pinyin": "jié",
+        "tone": "Thanh 2 (kiệt)",
+        "pos": "Động từ / Danh từ",
+        "meaning": "thắt nút, liên kết, kết thúc, kết quả",
+        "collocations": [
+          "结婚",
+          "结果 (thành quả)",
+          "结束",
+          "总结"
+        ],
+        "example": {
+          "zh": "他们携手经历了许多生活风雨，终于在上周登记结婚了。",
+          "py": "Tāmen xiéshǒu jīnglì le xǔduō shēnghuó fēngyǔ, zhōngyú zài shàng zhōu dēngjì jiéhūn le.",
+          "vi": "Họ nắm tay cùng trải qua bao sóng gió cuộc đời, cuối cùng tuần trước đã đăng ký kết hôn."
+        }
+      },
+      {
+        "pinyin": "jiē",
+        "tone": "Thanh 1 (khe)",
+        "pos": "Động từ / Tính từ",
+        "meaning": "ra trái, đơm hoa kết quả; chắc chắn, rắn chắc (结实)",
+        "collocations": [
+          "结果 (cây kết trái)",
+          "结实",
+          "开花结果"
+        ],
+        "example": {
+          "zh": "院子里的那棵苹果树今年秋天结满了红彤彤的果实。",
+          "py": "Yuànzi lǐ de nà kē píngguǒshù jīnnián qiūtiān jiē mǎn le hóngtōngtōng de guǒshí.",
+          "vi": "Cây táo trong sân mùa thu năm nay đã kết đầy những quả đỏ mọng."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Khi khen ai đó có cơ thể cường tráng, rắn chắc (\"身体很结实\"), chữ \"结\" phát âm là gì?",
+      "options": [
+        "jiē (thanh 1)",
+        "jié (thanh 2)"
+      ],
+      "answer": 0,
+      "explain": "Trong từ 结实 (chắc chắn, vạm vỡ, bền bỉ) và nghĩa cây cối ra trái, 结 phát âm thanh 1: jiē."
+    }
+  },
+  {
+    "id": "poly_kong",
+    "char": "空",
+    "hanviet": "Không",
+    "strokes": 8,
+    "radical": "穴 (Huyệt)",
+    "summaryMnemonic": "Không gian, bầu trời, trống rỗng đọc \"kōng\" (thanh 1); Thời gian rảnh, chỗ trống đọc \"kòng\" (thanh 4)!",
+    "readings": [
+      {
+        "pinyin": "kōng",
+        "tone": "Thanh 1 (khung)",
+        "pos": "Danh từ / Tính từ",
+        "meaning": "bầu trời, không gian, trống rỗng, hư ảo",
+        "collocations": [
+          "天空",
+          "空间",
+          "空调",
+          "空气",
+          "空虚"
+        ],
+        "example": {
+          "zh": "雨后的天空呈现出一抹绚丽多彩的七色彩虹。",
+          "py": "Yǔ hòu de tiānkōng chéngxiàn chū yì mǒ xuànlì-duōcǎi de qīsè cǎihóng.",
+          "vi": "Bầu trời sau cơn mưa hiện ra một dải cầu vồng bảy sắc rực rỡ tuyệt đẹp."
+        }
+      },
+      {
+        "pinyin": "kòng",
+        "tone": "Thanh 4 (khộng)",
+        "pos": "Danh từ / Động từ",
+        "meaning": "thời gian rảnh rỗi, vị trí còn trống, để trống",
+        "collocations": [
+          "有空",
+          "没空",
+          "空闲",
+          "空白",
+          "空地"
+        ],
+        "example": {
+          "zh": "要是你今晚有空的话，不妨来我家品尝地道的四川火锅。",
+          "py": "Yàoshi nǐ jīnwǎn yǒu kòng dehuà, bùfáng lái wǒ jiā pǐncháng dìdào de Sìchuān huǒguō.",
+          "vi": "Nếu tối nay bạn rảnh rỗi, chi bằng ghé qua nhà tôi thưởng thức món lẩu Tứ Xuyên chính gốc."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Trong câu hỏi lịch sự \"请问你明天有____吗？\" chữ \"空\" phát âm là gì?",
+      "options": [
+        "kòng (thanh 4)",
+        "kōng (thanh 1)"
+      ],
+      "answer": 0,
+      "explain": "Khi mang nghĩa có thời gian rảnh rỗi (\"有空\"), chữ 空 đọc là kòng."
+    }
+  },
+  {
+    "id": "poly_jia",
+    "char": "假",
+    "hanviet": "Giả / Giá",
+    "strokes": 11,
+    "radical": "亻 (Nhân đứng)",
+    "summaryMnemonic": "Giả dối, nếu như đọc \"jiǎ\" (thanh 3); Nghỉ phép, kỳ nghỉ đọc \"jià\" (thanh 4)!",
+    "readings": [
+      {
+        "pinyin": "jiǎ",
+        "tone": "Thanh 3 (giả)",
+        "pos": "Tính từ / Liên từ",
+        "meaning": "giả, không thật, nếu như",
+        "collocations": [
+          "假装",
+          "真假",
+          "假话",
+          "假如"
+        ],
+        "example": {
+          "zh": "做人应当襟怀坦白，绝不能说虚伪敷衍的假话。",
+          "py": "Zuòrén yīngdāng jīnhuái-tǎnbái, jué bù néng shuō xūwěi fūyǎn de jiǎhuà.",
+          "vi": "Làm người nên quang minh chính đại, tuyệt đối không được nói những lời dối trá qua loa."
+        }
+      },
+      {
+        "pinyin": "jià",
+        "tone": "Thanh 4 (giá)",
+        "pos": "Danh từ",
+        "meaning": "kỳ nghỉ, ngày nghỉ, phép nghỉ",
+        "collocations": [
+          "放假",
+          "假期",
+          "暑假",
+          "寒假",
+          "请假"
+        ],
+        "example": {
+          "zh": "今年暑假，我打算同全家人一起前往云南丽江旅游度假。",
+          "py": "Jīnnián shǔjià, wǒ dǎsuàn tóng quán jiārén yìqǐ qiánwǎng Yúnnán Lìjiāng lǚyóu dùjià.",
+          "vi": "Kỳ nghỉ hè năm nay, tôi dự định cùng cả gia đình đến Lệ Giang Vân Nam du lịch nghỉ dưỡng."
+        }
+      }
+    ],
+    "quiz": {
+      "question": "Cụm từ \"暑假\" (kỳ nghỉ hè) chữ \"假\" phát âm là gì?",
+      "options": [
+        "jià (thanh 4)",
+        "jiǎ (thanh 3)"
+      ],
+      "answer": 0,
+      "explain": "Khi chỉ kỳ nghỉ (放假, 假期, 暑假, 寒假, 请假), chữ 假 phát âm là jià."
+    }
+  }
+]

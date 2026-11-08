@@ -25,6 +25,8 @@ let hanziDecompositionsData = {};
 let multidimensionalWordsData = {};
 let pinyinGuideData = null;
 let vocabExpansionData = [];
+let classifiersData = [];
+let polyphonicWordsData = [];
 
 const DATASETS = {
   dictionary: { url: 'data/dictionary.json', set: v => { dictionaryData = v || []; } },
@@ -52,7 +54,10 @@ const DATASETS = {
   multidimensional_words: { url: 'data/multidimensional_words.json', set: v => { multidimensionalWordsData = v || {}; } },
   pinyinData: { url: 'data/pinyin_guide.json', set: v => { pinyinGuideData = v || null; } },
   pinyinGuide: { url: 'data/pinyin_guide.json', set: v => { pinyinGuideData = v || null; } },
-  vocabExpansion: { url: 'data/vocab_expansion.json', set: v => { vocabExpansionData = v || []; } }
+  vocabExpansion: { url: 'data/vocab_expansion.json', set: v => { vocabExpansionData = v || []; } },
+  classifiers: { url: 'data/classifiers.json', set: v => { classifiersData = v || []; } },
+  polyphonicWords: { url: 'data/polyphonic_words.json', set: v => { polyphonicWordsData = v || []; } },
+  polyphonic: { url: 'data/polyphonic_words.json', set: v => { polyphonicWordsData = v || []; } }
 };
 
 const dataPromises = new Map();

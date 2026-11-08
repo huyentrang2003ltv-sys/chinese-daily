@@ -920,6 +920,75 @@
         </div>
       </div>
 
+      <!-- ==================== DUAL SCHOLARLY HUBS: LƯỢNG TỪ & CHỮ ĐA ÂM ==================== -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <!-- Card 1: Bách Khoa Lượng Từ Thực Chiến -->
+        <div onclick="switchDictMode('classifier')" class="glass-card rounded-3xl p-5 bg-gradient-to-r from-emerald-900 via-teal-900 to-emerald-950 border-2 border-emerald-400/80 shadow-xl cursor-pointer hover:border-emerald-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white flex flex-col justify-between">
+          <div class="absolute -right-4 -bottom-6 w-32 h-32 rounded-full border-4 border-emerald-400/20 pointer-events-none select-none flex items-center justify-center">
+            <span class="font-hanzi text-6xl text-emerald-300/20 font-black">量</span>
+          </div>
+          <div class="relative z-10 flex items-start gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 border-2 border-emerald-200 text-stone-950 flex items-center justify-center text-2xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
+              📦
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-emerald-300 to-teal-300 text-stone-950 uppercase">
+                  BÁCH KHOA LƯỢNG TỪ
+                </span>
+                <span class="text-xs text-emerald-200 font-bold">45+ Lượng Từ Trọng Tâm</span>
+              </div>
+              <h4 class="text-base lg:text-lg font-black font-serif-luxury text-emerald-100 mt-1">
+                Bách Khoa Lượng Từ Thực Chiến (量词宝典)
+              </h4>
+              <p class="text-xs text-emerald-100/80 mt-1 leading-relaxed">
+                6 nhóm phân loại chuẩn xác, giải quyết triệt để thói quen lạm dụng "个" với bẫy HSK và câu ví dụ song ngữ.
+              </p>
+            </div>
+          </div>
+          <div class="relative z-10 mt-4 flex items-center justify-between pt-2 border-t border-emerald-800/60 text-xs">
+            <span class="text-emerald-300 font-medium">Bao gồm 45 mini-quiz phản xạ</span>
+            <span class="flex items-center gap-1 text-emerald-300 font-bold group-hover:translate-x-1 transition-transform">
+              <span>Học Ngay</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- Card 2: Chữ Đa Âm Đa Nghĩa -->
+        <div onclick="switchDictMode('polyphonic')" class="glass-card rounded-3xl p-5 bg-gradient-to-r from-purple-900 via-indigo-950 to-slate-900 border-2 border-purple-400/80 shadow-xl cursor-pointer hover:border-purple-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white flex flex-col justify-between">
+          <div class="absolute -right-4 -bottom-6 w-32 h-32 rounded-full border-4 border-purple-400/20 pointer-events-none select-none flex items-center justify-center">
+            <span class="font-hanzi text-6xl text-purple-300/20 font-black">音</span>
+          </div>
+          <div class="relative z-10 flex items-start gap-3.5">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-purple-400 to-indigo-400 border-2 border-purple-200 text-stone-950 flex items-center justify-center text-2xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
+              🎯
+            </div>
+            <div>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-purple-300 to-indigo-300 text-stone-950 uppercase">
+                  BIẾN ÂM HSK CỐT LÕI
+                </span>
+                <span class="text-xs text-purple-200 font-bold">26+ Chữ Đa Âm Tiêu Biểu</span>
+              </div>
+              <h4 class="text-base lg:text-lg font-black font-serif-luxury text-purple-100 mt-1">
+                Cẩm Nang Chữ Đa Âm Đa Nghĩa (多音多义字)
+              </h4>
+              <p class="text-xs text-purple-100/80 mt-1 leading-relaxed">
+                Khẩu quyết phân biệt 得, 行, 重, 长, 便, 会, 乐, 还... theo từ loại và ngữ cảnh kèm kiểm tra tức thì.
+              </p>
+            </div>
+          </div>
+          <div class="relative z-10 mt-4 flex items-center justify-between pt-2 border-t border-purple-800/60 text-xs">
+            <span class="text-purple-300 font-medium">Khẩu quyết + Bẫy ngữ cảnh HSK</span>
+            <span class="flex items-center gap-1 text-purple-300 font-bold group-hover:translate-x-1 transition-transform">
+              <span>Học Ngay</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+
       <!-- ==================== FEATURED GAME 1: XẾP KHỐI GỖ (HÁN NGỮ TÍCH MỘC) ==================== -->
       <div onclick="switchTab('woodblock')" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-r from-[#78350F] via-[#92400E] to-[#451A03] border-2 border-amber-400/80 shadow-xl cursor-pointer hover:border-amber-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white mb-4">
         <!-- Background decorative wood pattern -->
@@ -2639,9 +2708,9 @@
     <!-- TAB 6: KHO TỪ ĐIỂN CHUẨN HSK 1 - HSK 6 & THEO CHỦ ĐỀ -->
     <section id="tab-dictionary" class="hidden space-y-6">
       
-      <!-- Top Segmented Switcher: Mục 1 HSK 1-6 vs Mục 2 Theo Chủ Đề vs Mục 3 Cẩm Nang Mở Rộng Từ Vựng (Sơ Đồ Tư Duy) -->
-      <div class="glass-card rounded-2xl p-1.5 sm:p-2 bg-gradient-to-r from-amber-50/90 via-stone-50 to-orange-50/90 border border-amber-300/60 shadow-xs max-w-4xl mx-auto">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+      <!-- Top Segmented Switcher: 5 Chuyên Đề Học Thuật Toàn Diện -->
+      <div class="glass-card rounded-2xl p-1.5 sm:p-2 bg-gradient-to-r from-amber-50/90 via-stone-50 to-orange-50/90 border border-amber-300/60 shadow-xs max-w-6xl mx-auto">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
           <button 
             id="btn-dict-mode-hsk" 
             onclick="switchDictMode('hsk')" 
@@ -2661,7 +2730,21 @@
             onclick="switchDictMode('expansion')" 
             class="py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer">
             <i data-lucide="git-fork" class="w-4 h-4 text-[#8B1E1E]"></i>
-            <span>Mục 3: Cẩm Nang Mở Rộng (Sơ Đồ Tư Duy)</span>
+            <span>Mục 3: Sơ Đồ Mở Rộng Từ</span>
+          </button>
+          <button 
+            id="btn-dict-mode-classifier" 
+            onclick="switchDictMode('classifier')" 
+            class="py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer">
+            <i data-lucide="boxes" class="w-4 h-4 text-emerald-700"></i>
+            <span>Mục 4: Lượng Từ Thực Chiến</span>
+          </button>
+          <button 
+            id="btn-dict-mode-polyphonic" 
+            onclick="switchDictMode('polyphonic')" 
+            class="py-2.5 sm:py-3 px-3 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-2 bg-white/80 hover:bg-white text-stone-700 hover:text-stone-900 border border-stone-200 transition-all cursor-pointer">
+            <i data-lucide="split" class="w-4 h-4 text-purple-700"></i>
+            <span>Mục 5: Chữ Đa Âm Đa Nghĩa</span>
           </button>
         </div>
       </div>
@@ -3035,6 +3118,102 @@
         <!-- Main Dynamic Content Area (Mindmap / Grid + Example Sentences) -->
         <div id="vocabExpContentArea" class="space-y-6">
           <!-- Dynamically populated by JS -->
+        </div>
+      </div>
+
+      <!-- ==================== MỤC 4: BÁCH KHOA LƯỢNG TỪ THỰC CHIẾN (汉语量词宝典) ==================== -->
+      <div id="dictSectionClassifier" class="hidden space-y-6">
+        <!-- Hero Header -->
+        <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-emerald-50/80 via-[#FAF7F2] to-teal-50/70 border border-emerald-300/40 dark:from-stone-900 dark:via-stone-900/90 dark:to-stone-900 dark:border-stone-800">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/80 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-300/60 text-xs font-bold mb-3">
+                <i data-lucide="boxes" class="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400"></i>
+                <span>Chuyên Đề Học Thuật: Chuẩn Hóa Lượng Từ Tiếng Hán (量词用法大全)</span>
+              </div>
+              <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 dark:text-white tracking-tight mb-2">
+                Bách Khoa Lượng Từ Thực Chiến (汉语量词宝典)
+              </h2>
+              <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+                Khắc phục triệt để thói quen lạm dụng chữ "个" (gè) của người học Việt Nam. Tổng hợp 45+ lượng từ trọng tâm phân loại khoa học theo hình dáng, vật dụng, sinh vật, xe cộ kiến trúc, tập hợp đo lường và động lượng từ kèm cụm từ kết hợp và trắc nghiệm phản xạ.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 self-start md:self-auto">
+              <span id="classifierFilteredCount" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-stone-800 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-stone-700 text-xs font-bold shadow-2xs">
+                Hiển thị 45 / 45 lượng từ
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-emerald-200 dark:border-stone-800 shadow-xs space-y-3">
+          <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+            <!-- Search Bar -->
+            <div class="relative flex-1">
+              <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input 
+                id="classifierSearchInput" 
+                type="text" 
+                oninput="handleClassifierSearch(this.value)" 
+                placeholder="Tìm lượng từ theo chữ Hán, Pinyin, nghĩa hoặc danh từ đi kèm (ví dụ: 张, zhāng, 帽子, 纸, xe, sách, con, chiếc)..." 
+                class="w-full pl-9 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div id="classifierCategoryTabs" class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 md:pb-0">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Classifiers Grid Container -->
+        <div id="classifierGridContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- ==================== MỤC 5: CẨM NANG CHỮ ĐA ÂM ĐA NGHĨA (多音多义字) ==================== -->
+      <div id="dictSectionPolyphonic" class="hidden space-y-6">
+        <!-- Hero Header -->
+        <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-purple-50/80 via-[#FAF7F2] to-indigo-50/70 border border-purple-300/40 dark:from-stone-900 dark:via-stone-900/90 dark:to-stone-900 dark:border-stone-800">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-100/80 text-purple-900 dark:bg-purple-950/40 dark:text-purple-300 border border-purple-300/60 text-xs font-bold mb-3">
+                <i data-lucide="split" class="w-3.5 h-3.5 text-purple-700 dark:text-purple-400"></i>
+                <span>Chuyên Đề Học Thuật: Phá Vỡ Điểm Nghẽn Biến Âm (多音多义字手册)</span>
+              </div>
+              <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 dark:text-white tracking-tight mb-2">
+                Cẩm Nang Chữ Đa Âm Đa Nghĩa (多音多义字)
+              </h2>
+              <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+                Giải mã 26+ chữ Hán có nhiều cách đọc và biến đổi ngữ nghĩa phức tạp nhất trong HSK và giao tiếp (得, 行, 重, 长, 便, 会, 乐, 还, 差, 觉, 着, 地, 为, 好, 都...). Cung cấp khẩu quyết ghi nhớ độc quyền, câu ví dụ chuẩn bản xứ và bẫy đề thi.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 self-start md:self-auto">
+              <span id="polyphonicFilteredCount" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-stone-800 text-purple-800 dark:text-purple-300 border border-purple-200 dark:border-stone-700 text-xs font-bold shadow-2xs">
+                Hiển thị 26 / 26 chữ đa âm
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-purple-200 dark:border-stone-800 shadow-xs">
+          <div class="relative">
+            <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <input 
+              id="polyphonicSearchInput" 
+              type="text" 
+              oninput="handlePolyphonicSearch(this.value)" 
+              placeholder="Tìm theo chữ Hán, Pinyin, âm Hán Việt hoặc nghĩa (ví dụ: 得, de, dei, 行, xing, hang, 重, zhong, chong, 便, 差)..." 
+              class="w-full pl-9 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-purple-400">
+          </div>
+        </div>
+
+        <!-- Polyphonic Grid Container -->
+        <div id="polyphonicGridContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <!-- Populated by JS -->
         </div>
       </div>
       </section>
@@ -5576,7 +5755,9 @@
   <script defer src="js/features/practice.js"></script>
   <script defer src="js/features/flashcards.js"></script>
   <script defer src="js/features/dictionary.js"></script>
-<script defer src="js/features/vocab_expansion.js"></script>
+  <script defer src="js/features/vocab_expansion.js"></script>
+  <script defer src="js/features/classifiers.js"></script>
+  <script defer src="js/features/polyphonic.js"></script>
   <script defer src="js/features/search.js"></script>
   <script defer src="js/features/writing.js"></script>
   <script defer src="js/features/aichat.js"></script>
