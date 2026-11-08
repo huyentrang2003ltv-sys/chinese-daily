@@ -1547,15 +1547,19 @@
             </p>
           </div>
 
-          <!-- Dual Mode Switcher -->
-          <div class="flex items-center gap-1.5 p-1.5 rounded-2xl bg-amber-100/70 border border-amber-300/80 shadow-2xs shrink-0">
-            <button onclick="setGrammarViewMode('mindmap')" id="btn-grammar-view-mindmap" class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer">
+          <!-- Tri-Mode Switcher -->
+          <div class="flex items-center gap-1.5 p-1.5 rounded-2xl bg-amber-100/70 border border-amber-300/80 shadow-2xs shrink-0 flex-wrap">
+            <button onclick="setGrammarViewMode('mindmap')" id="btn-grammar-view-mindmap" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer">
               <i data-lucide="git-fork" class="w-4 h-4"></i>
               <span>🌳 Bản Đồ Cây Tư Duy</span>
             </button>
-            <button onclick="setGrammarViewMode('compendium')" id="btn-grammar-view-compendium" class="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer">
+            <button onclick="setGrammarViewMode('compendium')" id="btn-grammar-view-compendium" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer">
               <i data-lucide="book-open" class="w-4 h-4"></i>
-              <span>📚 Cẩm Nang Chuyên Đề</span>
+              <span>📚 50 Bài Học Toàn Thư</span>
+            </button>
+            <button onclick="setGrammarViewMode('complements')" id="btn-grammar-view-complements" class="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer">
+              <i data-lucide="layers" class="w-4 h-4 text-emerald-700"></i>
+              <span>🎯 Bách Khoa Bổ Ngữ (33 Chuyên Đề)</span>
             </button>
           </div>
         </div>
@@ -1695,6 +1699,58 @@
 
         <!-- Grammar Compendium Cards Container -->
         <div id="grammarGridContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+      </div>
+
+      <!-- SUB-VIEW 3: BÁCH KHOA BỔ NGỮ TIẾNG HÁN (汉语补语宝典) -->
+      <div id="grammar-view-complements" class="hidden space-y-6">
+        <!-- Hero Header -->
+        <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-emerald-50/80 via-[#FAF7F2] to-teal-50/70 border border-emerald-300/40 dark:from-stone-900 dark:via-stone-900/90 dark:to-stone-900 dark:border-stone-800">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100/80 text-emerald-900 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-300/60 text-xs font-bold mb-3">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-emerald-700 dark:text-emerald-400"></i>
+                <span>Chuyên Đề Đột Phá Ngữ Pháp: 7 Bổ Ngữ Cốt Lõi Hán Ngữ (汉语补语大全)</span>
+              </div>
+              <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 dark:text-white tracking-tight mb-2">
+                Bách Khoa Bổ Ngữ Tiếng Hán Toàn Diện (汉语补语宝典)
+              </h2>
+              <p class="text-stone-600 dark:text-stone-300 text-xs sm:text-sm max-w-2xl leading-relaxed">
+                Giải quyết triệt để "ngọn núi khó nhất" trong ngữ pháp tiếng Trung: Bổ ngữ kết quả, xu hướng (kèm nghĩa phái sinh), khả năng, trạng thái & trình độ, thời lượng, động lượng và giới từ. Hệ thống hóa công thức chuẩn, quy tắc phủ định, bẫy HSK và trắc nghiệm phản xạ ngay trên thẻ.
+              </p>
+            </div>
+            <div class="flex items-center gap-2 self-start md:self-auto">
+              <span id="complementFilteredCount" class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-stone-800 text-emerald-800 dark:text-emerald-300 border border-emerald-200 dark:border-stone-700 text-xs font-bold shadow-2xs">
+                Hiển thị 33 / 33 bổ ngữ
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-emerald-200 dark:border-stone-800 shadow-xs space-y-3">
+          <div class="flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
+            <!-- Search Bar -->
+            <div class="relative flex-1">
+              <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+              <input 
+                id="complementSearchInput" 
+                type="text" 
+                oninput="handleComplementSearch(this.value)" 
+                placeholder="Tìm theo tên bổ ngữ, ký hiệu hoặc ví dụ (ví dụ: 完, 懂, 起来, 出来, 下去, 听得懂, 极了, 三天, 次, 遍)..." 
+                class="w-full pl-9 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-emerald-400">
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div id="complementCategoryTabs" class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 md:pb-0">
+              <!-- Populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Complements Grid Container -->
+        <div id="complementGridContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <!-- Populated by JS -->
+        </div>
       </div>
     </section>
     <section id="tab-culture" class="hidden space-y-6">
@@ -5758,6 +5814,7 @@
   <script defer src="js/features/vocab_expansion.js"></script>
   <script defer src="js/features/classifiers.js"></script>
   <script defer src="js/features/polyphonic.js"></script>
+  <script defer src="js/features/complements.js"></script>
   <script defer src="js/features/search.js"></script>
   <script defer src="js/features/writing.js"></script>
   <script defer src="js/features/aichat.js"></script>

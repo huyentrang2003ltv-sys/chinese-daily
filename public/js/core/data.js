@@ -27,6 +27,7 @@ let pinyinGuideData = null;
 let vocabExpansionData = [];
 let classifiersData = [];
 let polyphonicWordsData = [];
+let complementsData = [];
 
 const DATASETS = {
   dictionary: { url: 'data/dictionary.json', set: v => { dictionaryData = v || []; } },
@@ -57,7 +58,8 @@ const DATASETS = {
   vocabExpansion: { url: 'data/vocab_expansion.json', set: v => { vocabExpansionData = v || []; } },
   classifiers: { url: 'data/classifiers.json', set: v => { classifiersData = v || []; } },
   polyphonicWords: { url: 'data/polyphonic_words.json', set: v => { polyphonicWordsData = v || []; } },
-  polyphonic: { url: 'data/polyphonic_words.json', set: v => { polyphonicWordsData = v || []; } }
+  polyphonic: { url: 'data/polyphonic_words.json', set: v => { polyphonicWordsData = v || []; } },
+  complements: { url: 'data/complements.json', set: v => { complementsData = v || []; } }
 };
 
 const dataPromises = new Map();

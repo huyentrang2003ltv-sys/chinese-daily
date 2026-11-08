@@ -21,7 +21,7 @@ const TABS = {
   confusions: { label: 'Từ dễ lẫn', icon: 'split', data: ['confusions'], init: () => renderConfusions() },
   chengyu: { label: 'Thành ngữ', icon: 'scroll', data: ['chengyu'], init: () => { renderChengyu(); setupChengyuSearch(); } },
   grammar: {
-    label: 'Ngữ pháp', icon: 'compass', data: ['grammar', 'mindmap'],
+    label: 'Ngữ pháp', icon: 'compass', data: ['grammar', 'mindmap', 'complements'],
     init: () => {
       renderGrammarCompendium();
       setupGrammarSearch();
@@ -57,6 +57,9 @@ const NAV_GROUPS = [
 const DEFAULT_TAB = 'home';
 const TAB_ALIASES = {
   mindmap: 'grammar',
+  complements: 'grammar',
+  complement: 'grammar',
+  bongu: 'grammar',
   today: 'home',
   pinyin: 'pinyin',
   nguam: 'pinyin',

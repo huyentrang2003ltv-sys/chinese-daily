@@ -8,32 +8,52 @@ let grammarSearchQuery = '';
 // 5. CẨM NANG NGỮ PHÁP TIẾNG TRUNG CHUYÊN SÂU (GRAMMAR)
 // =========================================================================
 function setGrammarViewMode(mode) {
+  // If user calls setGrammarViewMode when activeTab is not grammar, switch tab first
+  if (typeof activeTab !== 'undefined' && activeTab !== 'grammar' && typeof switchTab === 'function') {
+    switchTab('grammar');
+  }
+
   activeGrammarViewMode = mode;
   const mindmapView = document.getElementById('grammar-view-mindmap');
   const compendiumView = document.getElementById('grammar-view-compendium');
+  const complementsView = document.getElementById('grammar-view-complements');
+
   const btnMindmap = document.getElementById('btn-grammar-view-mindmap');
   const btnCompendium = document.getElementById('btn-grammar-view-compendium');
+  const btnComplements = document.getElementById('btn-grammar-view-complements');
+
+  const inactiveBtnClass = 'flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer';
+
+  // Hide all views first
+  if (mindmapView) mindmapView.classList.add('hidden');
+  if (compendiumView) compendiumView.classList.add('hidden');
+  if (complementsView) complementsView.classList.add('hidden');
+
+  // Reset button styles
+  if (btnMindmap) btnMindmap.className = inactiveBtnClass;
+  if (btnCompendium) btnCompendium.className = inactiveBtnClass;
+  if (btnComplements) btnComplements.className = inactiveBtnClass;
 
   if (mode === 'mindmap') {
     if (mindmapView) mindmapView.classList.remove('hidden');
-    if (compendiumView) compendiumView.classList.add('hidden');
     if (btnMindmap) {
-      btnMindmap.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer';
-    }
-    if (btnCompendium) {
-      btnCompendium.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer';
+      btnMindmap.className = 'flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer';
     }
     if (typeof renderMindmap === 'function') renderMindmap();
-  } else {
-    if (mindmapView) mindmapView.classList.add('hidden');
+  } else if (mode === 'compendium') {
     if (compendiumView) compendiumView.classList.remove('hidden');
     if (btnCompendium) {
-      btnCompendium.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer';
-    }
-    if (btnMindmap) {
-      btnMindmap.className = 'flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all text-stone-700 hover:text-stone-900 hover:bg-white/80 cursor-pointer';
+      btnCompendium.className = 'flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-[#4A306D] to-[#613D8F] text-white shadow-xs cursor-pointer';
     }
     renderGrammarCompendium();
+  } else if (mode === 'complements') {
+    if (complementsView) complementsView.classList.remove('hidden');
+    if (btnComplements) {
+      btnComplements.className = 'flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold transition-all bg-gradient-to-r from-emerald-800 to-teal-800 text-white shadow-xs cursor-pointer';
+    }
+    if (typeof initComplements === 'function') {
+      initComplements();
+    }
   }
   const tabGrammar = document.getElementById('tab-grammar');
   if (tabGrammar && typeof refreshIcons === 'function') refreshIcons(tabGrammar);
