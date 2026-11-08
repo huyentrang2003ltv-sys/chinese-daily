@@ -1,0 +1,1454 @@
+{
+  "overview": {
+    "title": "Lộ Trình Gia Tốc 90 Ngày Chinh Phục HSK 3",
+    "subtitle": "Chương trình đào tạo sư phạm chuẩn quốc tế CTI: Đi từ số 0 đến HSK 3 trong 3 tháng",
+    "duration": "90 Ngày (12 Tuần)",
+    "targetVocab": "900+ Từ vựng chuẩn HSK 3.0",
+    "targetScore": "240+ / 300 điểm HSK 3 CTI iBT",
+    "dailyCommitment": "45 - 60 phút mỗi ngày",
+    "methodology": "Dual-Coding (Mã hóa kép) • Chiết tự Logic • Công thức hóa Ngữ pháp • Dictation Lab • Phản xạ AI",
+    "strategyPhases": [
+      {
+        "phase": 1,
+        "name": "Chặng 1: Xây Móng",
+        "range": "Ngày 1 - 30 (Tuần 1 - 4)",
+        "icon": "🌱",
+        "theme": "Ngữ Âm Pinyin, 100 Bộ Thủ & Nền Tảng HSK 1",
+        "vocabTarget": "150 - 200 từ cốt lõi",
+        "summary": "Chuẩn hóa phát âm 4 thanh điệu, giải mã logic chữ Hán qua 100 bộ thủ, nắm chắc trật tự câu SVO và đạt chuẩn HSK 1."
+      },
+      {
+        "phase": 2,
+        "name": "Chặng 2: Đột Phá",
+        "range": "Ngày 31 - 60 (Tuần 5 - 8)",
+        "icon": "⚡",
+        "theme": "Vốn Từ HSK 2 & 7 Loại Bổ Ngữ Thực Chiến",
+        "vocabTarget": "500 - 600 từ vựng",
+        "summary": "Mở rộng vốn từ đời sống, gỡ bỏ dần Pinyin, làm chủ 7 loại bổ ngữ, câu so sánh 比 và rèn phản xạ nghe chép chính tả."
+      },
+      {
+        "phase": 3,
+        "name": "Chặng 3: Chiến Giáp",
+        "range": "Ngày 61 - 90 (Tuần 9 - 12)",
+        "icon": "🏆",
+        "theme": "HSK 3 Chuyên Sâu & Chiến Thuật Khảo Thí CTI",
+        "vocabTarget": "900+ từ vựng hoàn chỉnh",
+        "summary": "Làm chủ tuyệt kỹ câu chữ 把, câu bị động 被, cặp liên từ phức, luyện 10 đề thi thử iBT bấm giờ và tự tin đạt 240+ điểm."
+      }
+    ]
+  },
+  "modules": [
+    {
+      "weekNumber": 1,
+      "phase": 1,
+      "dayRange": "Ngày 1 - 7",
+      "title": "Khởi Đầu Ngữ Âm Pinyin & Chào Hỏi Căn Bản",
+      "themeZh": "语音与基础问候",
+      "icon": "🎙️",
+      "objectives": [
+        "Làm chủ 21 thanh mẫu, 36 vận mẫu và 4 thanh điệu",
+        "Hiểu quy tắc biến điệu hai thanh 3 đi liền nhau và biến điệu chữ 不, 一",
+        "Nắm chắc cấu trúc câu phán đoán cơ bản: S + 是 + O"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Lần đầu gặp mặt (初次见面)",
+          "lines": [
+            {
+              "speaker": "王老师 (Nam)",
+              "hanzi": "你好！请问你叫什么名字？",
+              "pinyin": "Nǐ hǎo! Qǐngwèn nǐ jiào shénme míngzi?",
+              "vi": "Chào bạn! Xin hỏi bạn tên là gì?"
+            },
+            {
+              "speaker": "安妮 (Nữ)",
+              "hanzi": "王老师好！我叫安妮，我是留学生。",
+              "pinyin": "Wáng lǎoshī hǎo! Wǒ jiào Ānnī, wǒ shì liúxuéshēng.",
+              "vi": "Chào thầy Vương! Em tên là Annie, em là du học sinh."
+            },
+            {
+              "speaker": "王老师 (Nam)",
+              "hanzi": "很高兴认识你！你是哪国人？",
+              "pinyin": "Hěn gāoxìng rènshi nǐ! Nǐ shì nǎ guó rén?",
+              "vi": "Rất vui được biết em! Em là người nước nào?"
+            },
+            {
+              "speaker": "安妮 (Nữ)",
+              "hanzi": "我是越南人。谢谢老师！",
+              "pinyin": "Wǒ shì Yuènán rén. Xièxie lǎoshī!",
+              "vi": "Em là người Việt Nam. Cảm ơn thầy!"
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "你",
+            "pinyin": "nǐ",
+            "meaning": "Bạn, anh, chị (ngôi thứ 2)",
+            "breakdown": "Bộ Nhân đứng (亻: con người) + chữ Nhĩ (尔: đại từ xưng hô). Người đứng đối diện trò chuyện cùng ta chính là 'Bạn'."
+          },
+          {
+            "hanzi": "好",
+            "pinyin": "hǎo",
+            "meaning": "Tốt, đẹp, chào",
+            "breakdown": "Bộ Nữ (女: người phụ nữ/người mẹ) + Bộ Tử (子: đứa con). Người mẹ bế con âu yếm là biểu tượng của điều 'Tốt lành, hạnh phúc'."
+          },
+          {
+            "hanzi": "谢",
+            "pinyin": "xiè",
+            "meaning": "Cảm ơn",
+            "breakdown": "Bộ Ngôn (讠: lời nói) + Thân (身: cơ thể) + Thốn (寸: tấc/khoảng cách). Lời nói bày tỏ lòng biết ơn, thân mình cúi chào cung kính."
+          }
+        ],
+        "grammar": {
+          "formula": "Chủ ngữ (S) + 是 + Tân ngữ (O) | Phủ định: S + 不是 + O",
+          "explanation": "Câu chữ 是 tương đương với động từ 'to be' trong tiếng Anh hay 'là' trong tiếng Việt. Lưu ý: Phó từ phủ định 不 (bù) khi đứng trước 是 (shì - thanh 4) sẽ tự động biến điệu đọc thành thanh 2: bú shì.",
+          "examples": [
+            {
+              "zh": "我是越南人，不是中国人。",
+              "pinyin": "Wǒ shì Yuènán rén, bú shì Zhōngguó rén.",
+              "vi": "Tôi là người Việt Nam, không phải người Trung Quốc."
+            },
+            {
+              "zh": "他是我们的汉语老师。",
+              "pinyin": "Tā shì wǒmen de Hànyǔ lǎoshī.",
+              "vi": "Thầy ấy là giáo viên tiếng Trung của chúng tôi."
+            }
+          ]
+        },
+        "examTips": "Bẫy Pinyin trong đề HSK 1: Rất nhiều học viên nghe nhầm giữa âm bật hơi 'p, t, k, q, c, ch' và không bật hơi 'b, d, g, j, z, zh'. Khi nghe bài thi, hãy đặt một tờ giấy nhỏ trước miệng: phát âm có gió bật làm bay giấy là đúng!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Trong câu '我___学生，他___老师。', từ điền vào chỗ trống lần lượt là:",
+          "options": [
+            "(Recommended) 是 / 也是 (Tôi là học sinh, anh ấy cũng là giáo viên)",
+            "不 / 是 (Tôi không học sinh, anh ấy là giáo viên)",
+            "是 / 都 (Tôi là học sinh, anh ấy đều giáo viên)",
+            "在 / 是 (Tôi ở học sinh, anh ấy là giáo viên)"
+          ],
+          "answer": 0,
+          "explanation": "Câu phán đoán chỉ nghề nghiệp/danh phận bắt buộc dùng động từ '是'. Phó từ '也' (cũng) đứng trước động từ: '也是老师'."
+        },
+        "dictation": {
+          "prompt": "Nghe câu sau và gõ lại bằng chữ Hán hoặc Pinyin chuẩn:",
+          "audioText": "你好！很高兴认识你！",
+          "expectedPinyin": "Ni hao! Hen gaoxing renshi ni!",
+          "meaning": "Chào bạn! Rất vui được quen biết bạn!"
+        },
+        "reorder": {
+          "prompt": "Sắp xếp các khối từ sau thành câu hoàn chỉnh đúng ngữ pháp:",
+          "tokens": [
+            "我是",
+            "留学生",
+            "中国",
+            "的",
+            "不是"
+          ],
+          "correctOrder": [
+            "我",
+            "不是",
+            "中国",
+            "的",
+            "留学生"
+          ],
+          "resultSentence": "我不是中国的留学生。(Tôi không phải là du học sinh của Trung Quốc.)"
+        },
+        "production": {
+          "prompt": "Vận dụng mẫu câu 'S + 是/不是 + O', hãy tự viết 1 câu giới thiệu tên và quốc tịch của bạn:",
+          "sampleAnswer": "你好，我是越南人，我叫 Minh。(Chào bạn, tôi là người Việt Nam, tôi tên là Minh.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 2,
+      "phase": 1,
+      "dayRange": "Ngày 8 - 14",
+      "title": "100 Bộ Thủ Cốt Lõi & Giải Mã Logic Chữ Hán",
+      "themeZh": "核心部首与汉字逻辑",
+      "icon": "🧠",
+      "objectives": [
+        "Thuộc nằm lòng 20 bộ thủ có tần suất xuất hiện cao nhất (亻, 氵, 扌, 口, 心/忄, 木, 宀...)",
+        "Nắm chắc nguyên lý chiết tự: Chữ Hán = Ý nghĩa (bộ thủ) + Âm đọc (thanh bàng)",
+        "Làm chủ trật tự câu không gian: S + 在 + Địa điểm + Động từ + Tân ngữ"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Bạn đang ở đâu? (你在哪儿？)",
+          "lines": [
+            {
+              "speaker": "大卫 (Nam)",
+              "hanzi": "家月，你在哪儿？今天去图书馆看书吗？",
+              "pinyin": "Jiāyuè, nǐ zài nǎr? Jīntiān qù túshūguǎn kàn shū ma?",
+              "vi": "Jiayue, cậu đang ở đâu? Hôm nay có đi thư viện đọc sách không?"
+            },
+            {
+              "speaker": "白家月 (Nữ)",
+              "hanzi": "我在宿舍休息呢。下午我和朋友在咖啡馆喝茶。",
+              "pinyin": "Wǒ zài sùshè xiūxi ne. Xiàwǔ wǒ hé péngyou zài kāfēiguǎn hē chá.",
+              "vi": "Tớ đang nghỉ ngơi ở ký túc xá. Chiều nay tớ cùng bạn uống trà ở quán cà phê."
+            },
+            {
+              "speaker": "大卫 (Nam)",
+              "hanzi": "太好了！明天我们在学校门口见。",
+              "pinyin": "Tài hǎo le! Míngtiān wǒmen zài xuéxiào ménkǒu jiàn.",
+              "vi": "Tuyệt quá! Ngày mai chúng mình gặp nhau ở cổng trường nhé."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "休",
+            "pinyin": "xiū",
+            "meaning": "Nghỉ ngơi",
+            "breakdown": "Bộ Nhân đứng (亻: con người) + Bộ Mộc (木: gốc cây). Con người đi làm đồng mệt mỏi, ngồi tựa vào gốc cây râm mát để nghỉ ngơi."
+          },
+          {
+            "hanzi": "明",
+            "pinyin": "míng",
+            "meaning": "Sáng sủa, ngày mai",
+            "breakdown": "Bộ Nhật (日: mặt trời) + Bộ Nguyệt (月: mặt trăng). Hai vật thể phát ra ánh sáng rực rỡ nhất bầu trời kết hợp lại tạo thành chữ 'Minh' (sáng)."
+          },
+          {
+            "hanzi": "喝",
+            "pinyin": "hē",
+            "meaning": "Uống (nước, trà, cà phê)",
+            "breakdown": "Bộ Khẩu (口: cái miệng) + chữ Hạt (曷). Hành động dùng miệng nuốt chất lỏng thì chữ Hán phải có bộ Khẩu."
+          }
+        ],
+        "grammar": {
+          "formula": "Chủ ngữ (S) + 在 + Địa điểm + Động từ (V) + Tân ngữ (O)",
+          "explanation": "Tư duy ngôn ngữ người Trung Quốc là 'Đi đến nơi đó trước rồi mới thực hiện hành động'. Do đó cụm [在 + Địa điểm] bắt buộc phải đứng TRƯỚC động từ, không được nói ngược kiểu tiếng Việt 'Tôi đọc sách ở thư viện'.",
+          "examples": [
+            {
+              "zh": "我们在图书馆看书。(ĐÚNG)",
+              "pinyin": "Wǒmen zài túshūguǎn kàn shū.",
+              "vi": "Chúng tôi đọc sách ở thư viện."
+            },
+            {
+              "zh": "我们看书在图书馆。(SAI - Lỗi phổ biến của người Việt)",
+              "pinyin": "Wǒmen kàn shū zài túshūguǎn. (LỖI)",
+              "vi": "Sai trật tự ngữ pháp tiếng Hán."
+            }
+          ]
+        },
+        "examTips": "Mẹo phần Đọc HSK 1 & 2: Khi thấy chữ '在', hãy lập tức quét mắt tìm từ chỉ địa điểm ngay phía sau (như 学校, 家, 商店, 医院, 饭馆). Điều này giúp bạn xử lý câu hỏi nơi chốn chỉ trong 3 giây!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Chọn câu có trật tự từ đúng chuẩn ngữ pháp tiếng Trung:",
+          "options": [
+            "(Recommended) 妈妈在家做饭。(Mẹ ở nhà nấu cơm.)",
+            "妈妈做饭在家。(Mẹ nấu cơm ở nhà.)",
+            "在家妈妈做饭。(Ở nhà mẹ nấu cơm - khẩu ngữ không chuẩn)",
+            "做饭妈妈在家。(Nấu cơm mẹ ở nhà.)"
+          ],
+          "answer": 0,
+          "explanation": "Quy tắc ngữ pháp cố định: S (妈妈) + 在 + Địa điểm (家) + V + O (做饭)."
+        },
+        "dictation": {
+          "prompt": "Nghe câu sau và gõ lại đúng vị trí địa điểm:",
+          "audioText": "我和朋友在咖啡馆喝茶。",
+          "expectedPinyin": "Wo he pengyou zai kafeiguan he cha.",
+          "meaning": "Tôi cùng bạn bè uống trà ở quán cà phê."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp thành câu đúng chuẩn vị trí hành động:",
+          "tokens": [
+            "学习汉语",
+            "在学校",
+            "大卫",
+            "每天"
+          ],
+          "correctOrder": [
+            "大卫",
+            "每天",
+            "在学校",
+            "学习汉语"
+          ],
+          "resultSentence": "大卫每天在学校学习汉语。(David mỗi ngày đều học tiếng Trung ở trường.)"
+        },
+        "production": {
+          "prompt": "Dùng cấu trúc 'S + 在 + Địa điểm + V + O', hãy viết 1 câu về hoạt động bạn làm tại nhà hôm nay:",
+          "sampleAnswer": "今天我在家听音乐。(Hôm nay tôi ở nhà nghe nhạc.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 3,
+      "phase": 1,
+      "dayRange": "Ngày 15 - 21",
+      "title": "Gia Đình, Sở Hữu & Trợ Từ Cốt Lõi '的'",
+      "themeZh": "家庭关系与结构助词'的'",
+      "icon": "👨‍👩‍👧",
+      "objectives": [
+        "Nắm chắc từ vựng xưng hô gia đình và nghề nghiệp căn bản",
+        "Làm chủ 3 cách dùng của trợ từ kết cấu '的' (sở hữu, định ngữ miêu tả, lược bỏ danh từ)",
+        "Biết cách diễn đạt cụm danh từ ngược so với tiếng Việt"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Xem ảnh gia đình (看家庭照片)",
+          "lines": [
+            {
+              "speaker": "李文 (Nam)",
+              "hanzi": "安妮，这张照片上的人是谁？",
+              "pinyin": "Ānnī, zhè zhāng zhàopiàn shang de rén shì shéi?",
+              "vi": "Annie, người trên bức ảnh này là ai thế?"
+            },
+            {
+              "speaker": "安妮 (Nữ)",
+              "hanzi": "这是我爸爸和我妈妈。我爸爸是医生，妈妈是老师。",
+              "pinyin": "Zhè shì wǒ bàba hé wǒ māma. Wǒ bàba shì yīshēng, māma shì lǎoshī.",
+              "vi": "Đây là bố và mẹ của tớ. Bố tớ là bác sĩ, mẹ là giáo viên."
+            },
+            {
+              "speaker": "李文 (Nam)",
+              "hanzi": "你妈妈真年轻！这个可爱的孩子是你吗？",
+              "pinyin": "Nǐ māma zhēn niánqīng! Zhè ge kě'ài de háizi shì nǐ ma?",
+              "vi": "Mẹ cậu trẻ thật đấy! Đứa bé đáng yêu này là cậu à?"
+            },
+            {
+              "speaker": "安妮 (Nữ)",
+              "hanzi": "对，那是我小时候的照片。",
+              "pinyin": "Duì, nà shì wǒ xiǎoshíhou de zhàopiàn.",
+              "vi": "Đúng rồi, đó là bức ảnh hồi nhỏ của tớ đấy."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "爸",
+            "pinyin": "bà",
+            "meaning": "Bố, cha",
+            "breakdown": "Phía trên là bộ Phụ (父: người cha cầm roi răn dạy) + phía dưới là chữ Ba (巴: tượng thanh đọc là ba)."
+          },
+          {
+            "hanzi": "妈",
+            "pinyin": "mā",
+            "meaning": "Mẹ",
+            "breakdown": "Phía bên trái là bộ Nữ (女: phụ nữ) + phía bên phải là chữ Mã (马: con ngựa, mượn âm đọc là ma)."
+          },
+          {
+            "hanzi": "家",
+            "pinyin": "jiā",
+            "meaning": "Nhà, gia đình",
+            "breakdown": "Phía trên là bộ Miên (宀: mái nhà) + phía dưới là chữ Thỉ (豕: con heo/lợn). Thời cổ đại, dưới mái nhà có nuôi gia súc mới được coi là một mái ấm gia đình no đủ."
+          }
+        ],
+        "grammar": {
+          "formula": "Định ngữ (Thuộc tính/Sở hữu) + 的 + Trung tâm ngữ (Danh từ chính)",
+          "explanation": "Trong tiếng Trung, cái gì bổ nghĩa thì luôn đứng TRƯỚC, danh từ chính đứng SAU (ngược với tiếng Việt). Ví dụ: 'sách của tôi' ➔ 'của tôi sách' (我的书); 'cô gái xinh đẹp' ➔ 'xinh đẹp cô gái' (漂亮的女孩). Chú ý: Khi nói về người thân ruột thịt hoặc quan hệ thân thiết, có thể lược bỏ chữ '的' (ví dụ: 我爸爸, 我朋友).",
+          "examples": [
+            {
+              "zh": "这是我买的新电脑。",
+              "pinyin": "Zhè shì wǒ mǎi de xīn diànnǎo.",
+              "vi": "Đây là chiếc máy tính mới mà tôi mua."
+            },
+            {
+              "zh": "他的汉语说得非常流利。",
+              "pinyin": "Tā de Hànyǔ shuō de fēicháng liúlì.",
+              "vi": "Tiếng Trung của anh ấy nói rất lưu loát."
+            }
+          ]
+        },
+        "examTips": "Bẫy phần Viết HSK: Khi gặp bài tập sắp xếp từ có chữ '的', hãy luôn nhớ công thức: 'Tính từ/Ai đó + 的 + Danh từ'. Chữ '的' đóng vai trò như cây cầu nối thuộc tính với vật thể!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Dịch cụm từ 'Chiếc áo màu trắng của giáo viên Vương' sang tiếng Trung:",
+          "options": [
+            "(Recommended) 王老师的白色衣服",
+            "王老师衣服的白色",
+            "白色衣服王老师的",
+            "衣服的王老师白色"
+          ],
+          "answer": 0,
+          "explanation": "Quy tắc tầng định ngữ: Sở hữu (王老师) + 的 + Tính chất (白色) + Danh từ trung tâm (衣服)."
+        },
+        "dictation": {
+          "prompt": "Nghe và chép lại câu sau:",
+          "audioText": "这是我妈妈做的中国菜。",
+          "expectedPinyin": "Zhe shi wo mama zuo de Zhongguo cai.",
+          "meaning": "Đây là món ăn Trung Quốc do mẹ tôi nấu."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp các từ thành câu hoàn chỉnh:",
+          "tokens": [
+            "非常漂亮",
+            "的",
+            "那件",
+            "衣服"
+          ],
+          "correctOrder": [
+            "那件",
+            "衣服",
+            "非常漂亮"
+          ],
+          "resultSentence": "那件衣服非常漂亮。(Bộ quần áo đó vô cùng đẹp.)"
+        },
+        "production": {
+          "prompt": "Hãy viết 1 câu giới thiệu về một đồ vật mà bạn yêu thích nhất, có sử dụng trợ từ '的':",
+          "sampleAnswer": "这是我爸爸送的生日礼物。(Đây là món quà sinh nhật mà bố tôi tặng.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 4,
+      "phase": 1,
+      "dayRange": "Ngày 22 - 30",
+      "title": "Thời Gian, Lịch Trình & Cán Mốc Chuẩn HSK 1",
+      "themeZh": "时间表达与HSK 1达标",
+      "icon": "⏰",
+      "objectives": [
+        "Nắm chắc cách nói giờ giấc, ngày tháng năm, các buổi trong ngày",
+        "Hiểu và sử dụng thành thạo trợ từ ngữ khí '了' (biểu thị biến đổi hoặc hoàn thành)",
+        "Đạt 180+ / 200 điểm bài thi HSK 1 Benchmark, sẵn sàng bước sang Chặng 2"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Hẹn giờ đi xem phim (约时间看电影)",
+          "lines": [
+            {
+              "speaker": "李文 (Nam)",
+              "hanzi": "安妮，明天星期六，晚上你想去看电影吗？",
+              "pinyin": "Ānnī, míngtiān xīngqīliù, wǎnshang nǐ xiǎng qù kàn diànyǐng ma?",
+              "vi": "Annie, ngày mai thứ Bảy, buổi tối cậu có muốn đi xem phim không?"
+            },
+            {
+              "speaker": "安妮 (Nữ)",
+              "hanzi": "好啊！电影几点开始？",
+              "pinyin": "Hǎo a! Diànyǐng jǐ diǎn kāishǐ?",
+              "vi": "Được chứ! Phim mấy giờ bắt đầu vậy?"
+            },
+            {
+              "speaker": "李文 (Nam)",
+              "hanzi": "晚上七点半。我们六点四十五分在电影院门口见吧。",
+              "pinyin": "Wǎnshang qī diǎn bàn. Wǒmen liù diǎn sìshíwǔ fēn zài diànyǐngyuàn ménkǒu jiàn ba.",
+              "vi": "7 rưỡi tối. Bọn mình gặp nhau ở cửa rạp lúc 6 giờ 45 phút nhé."
+            },
+            {
+              "speaker": "安妮 (Nữ)",
+              "hanzi": "没问题！我已经买好电影票了。",
+              "pinyin": "Méi wèntí! Wǒ yǐjīng mǎi hǎo diànyǐng piào le.",
+              "vi": "Không thành vấn đề! Tớ đã mua xong vé xem phim rồi."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "点",
+            "pinyin": "diǎn",
+            "meaning": "Chấm, điểm, giờ",
+            "breakdown": "Phía trên là chữ Chiêm (占) + phía dưới là 4 chấm hỏa (灬). Nghĩa gốc là chấm lửa nhỏ, sau mở rộng chỉ dấu chấm trên mặt đồng hồ ➔ 'giờ'."
+          },
+          {
+            "hanzi": "分",
+            "pinyin": "fēn",
+            "meaning": "Chia nhỏ, phút",
+            "breakdown": "Bộ Bát (八: chia ra 2 bên) + Bộ Đao (刀: con dao). Dùng dao chia vật thể ra thành từng phần nhỏ ➔ 'phút'."
+          },
+          {
+            "hanzi": "半",
+            "pinyin": "bàn",
+            "meaning": "Nửa, rưỡi",
+            "breakdown": "Bộ Bát (八) + chữ Ngưu (牛: con trâu). Thời xưa xẻ đôi con trâu chia đều cho 2 bên ➔ nghĩa là 'một nửa'."
+          }
+        ],
+        "grammar": {
+          "formula": "Từ chỉ thời gian (Năm ➔ Tháng ➔ Ngày ➔ Buổi ➔ Giờ ➔ Phút) + S + V + O",
+          "explanation": "Quy tắc thời gian của người Trung Quốc tuân thủ tuyệt đối: 'Cái lớn đi trước, cái nhỏ đi sau' (Ngược hoàn toàn với tiếng Việt). Ví dụ: 7 giờ 30 tối ngày 15 tháng 8 ➔ 8月15日晚上七点半. Trợ từ '了' cuối câu biểu thị sự xuất hiện của tình huống mới hoặc biến đổi.",
+          "examples": [
+            {
+              "zh": "下雨了，我们别出去了。",
+              "pinyin": "Xià yǔ le, wǒmen bié chūqu le.",
+              "vi": "Trời mưa rồi, chúng ta đừng ra ngoài nữa."
+            },
+            {
+              "zh": "我明天上午八点去机场接他。",
+              "pinyin": "Wǒ míngtiān shàngwǔ bā diǎn qù jīchǎng jiē tā.",
+              "vi": "8 giờ sáng mai tôi sẽ ra sân bay đón anh ấy."
+            }
+          ]
+        },
+        "examTips": "Bẫy Nghe HSK 1 & 2: Băng nghe thường đọc giờ kèm từ '差' (kém), ví dụ: '差十分八点' (8 giờ kém 10 = 7h50). Đừng vội nghe thấy số 'bā' (8) mà vội vàng chọn 8:00!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Cách diễn đạt '9 giờ kém 15 phút sáng mai' trong tiếng Trung là:",
+          "options": [
+            "(Recommended) 明天上午差一刻九点",
+            "明天九点差一刻上午",
+            "上午明天九点差一刻",
+            "差一刻九点明天上午"
+          ],
+          "answer": 0,
+          "explanation": "Quy tắc thứ tự thời gian lớn đến bé: Ngày (明天) ➔ Buổi (上午) ➔ Giờ kém (差一刻九点)."
+        },
+        "dictation": {
+          "prompt": "Nghe và ghi lại câu sau:",
+          "audioText": "电影晚上七点半开始。",
+          "expectedPinyin": "Dianying wanshang qi dian ban kaishi.",
+          "meaning": "Bộ phim bắt đầu lúc 7 giờ rưỡi tối."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp trật tự các từ chỉ thời gian thành câu chuẩn:",
+          "tokens": [
+            "去北京",
+            "明天上午",
+            "我们",
+            "坐高铁"
+          ],
+          "correctOrder": [
+            "我们",
+            "明天上午",
+            "坐高铁",
+            "去北京"
+          ],
+          "resultSentence": "我们明天上午坐高铁去北京。(Sáng mai chúng tôi đi tàu cao tốc đến Bắc Kinh.)"
+        },
+        "production": {
+          "prompt": "Hãy viết 1 câu kể về giờ thức dậy hoặc giờ đi làm/đi học của bạn mỗi ngày:",
+          "sampleAnswer": "我每天早上七点起床，八点去上班。(Tôi mỗi ngày thức dậy lúc 7 giờ sáng, 8 giờ đi làm.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 5,
+      "phase": 2,
+      "dayRange": "Ngày 31 - 37",
+      "title": "Mua Sắm, Giá Cả & Phân Biệt '一点儿' vs '有点儿'",
+      "themeZh": "购物议价与程度副词",
+      "icon": "🛍️",
+      "objectives": [
+        "Nắm chắc từ vựng mua sắm, giá cả, đơn vị tiền tệ (块, 毛, 分)",
+        "Giải quyết dứt điểm cặp từ dễ nhầm lẫn: 一点儿 (sau tính từ) vs 有点儿 (trước tính từ tiêu cực)",
+        "Biết cách mặc cả và hỏi kích cỡ quần áo"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Mua sắm quần áo (买衣服议价)",
+          "lines": [
+            {
+              "speaker": "服务员 (Nữ)",
+              "hanzi": "您好！想买点儿什么？这件黑色毛衣很适合您。",
+              "pinyin": "Nín hǎo! Xiǎng mǎi diǎnr shénme? Zhè jiàn hēisè máoyī hěn shìhé nín.",
+              "vi": "Chào quý khách! Chị muốn mua gì ạ? Chiếc áo len đen này rất hợp với chị đấy."
+            },
+            {
+              "speaker": "白家月 (Nữ)",
+              "hanzi": "这件衣服有点儿贵，能便宜一点儿吗？",
+              "pinyin": "Zhè jiàn yīfu yǒudiǎnr guì, néng piányi yìdiǎnr ma?",
+              "vi": "Chiếc áo này hơi đắt một chút, có thể rẻ hơn một chút được không?"
+            },
+            {
+              "speaker": "服务员 (Nữ)",
+              "hanzi": "如果您真想要，给您打八折，一百六十块。",
+              "pinyin": "Rúguǒ nín zhēn xiǎng yào, gěi nín dǎ bā zhé, yìbǎi liùshí kuài.",
+              "vi": "Nếu chị thật sự muốn mua, em giảm giá 20% cho chị, còn 160 tệ ạ."
+            },
+            {
+              "speaker": "白家月 (Nữ)",
+              "hanzi": "太好了，我买了！",
+              "pinyin": "Tài hǎo le, wǒ mǎi le!",
+              "vi": "Tuyệt quá, tôi mua chiếc này nhé!"
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "买",
+            "pinyin": "mǎi",
+            "meaning": "Mua",
+            "breakdown": "Phía trên là cái lưới chụp gom đồ về nhà. Người mua thì mang hàng về."
+          },
+          {
+            "hanzi": "卖",
+            "pinyin": "mài",
+            "meaning": "Bán",
+            "breakdown": "Có chữ Thập (十: chữ thập đại diện cho hàng hóa đưa ra ngoài bán) đội trên đầu chữ Mãi (买). Mẹo nhớ: 'Có chữ Thập trên đầu là Bán, không có là Mua'."
+          },
+          {
+            "hanzi": "贵",
+            "pinyin": "guì",
+            "meaning": "Đắt, quý giá",
+            "breakdown": "Phía dưới là bộ Bối (贝: vỏ sò thời cổ đại dùng làm tiền tệ). Vật có nhiều tiền vỏ sò chứng tỏ rất 'Đắt đỏ'."
+          }
+        ],
+        "grammar": {
+          "formula": "有点儿 + Tính từ (ý phàn nàn, tiêu cực) | Tính từ + 一点儿 (mong muốn/so sánh)",
+          "explanation": "Cặp từ 'tử huyệt' của học viên HSK 2 & 3:\n- 有点儿 đứng TRƯỚC tính từ biểu thị sự không hài lòng: 这件有点儿大 (Hơi to quá), 今天有点儿冷 (Hơi lạnh quá).\n- 一点儿 đứng SAU tính từ biểu thị mong muốn so sánh: 便宜一点儿 (Rẻ hơn một chút), 快一点儿 (Nhanh hơn một chút).",
+          "examples": [
+            {
+              "zh": "这双鞋有点儿小，有没有大一点儿的？",
+              "pinyin": "Zhè shuāng xié yǒudiǎnr xiǎo, yǒu méiyǒu dà yìdiǎnr de?",
+              "vi": "Đôi giày này hơi chật một chút, có đôi to hơn một chút không?"
+            },
+            {
+              "zh": "我今天有点儿累，想多睡一点儿。",
+              "pinyin": "Wǒ jīntiān yǒudiǎnr lèi, xiǎng duō shuì yìdiǎnr.",
+              "vi": "Hôm nay tôi hơi mệt, muốn ngủ nhiều hơn một chút."
+            }
+          ]
+        },
+        "examTips": "Bẫy chiết khấu trong đề thi: Người Trung Quốc nói '打八折' nghĩa là giảm còn 80% (tức là giảm 20%), không phải giảm 80%! '打五折' là giảm một nửa (50%). Cẩn thận tính nhầm tiền trong bài thi Nghe!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Điền từ thích hợp vào câu: '这件衣服____贵，请便宜____吧。'",
+          "options": [
+            "(Recommended) 有点儿 / 一点儿",
+            "一点儿 / 有点儿",
+            "有点儿 / 有点儿",
+            "一点儿 / 一点儿"
+          ],
+          "answer": 0,
+          "explanation": "Đứng trước tính từ tiêu cực dùng '有点儿贵' (hơi đắt), đứng sau tính từ mong muốn giảm giá dùng '便宜一点儿' (rẻ hơn chút)."
+        },
+        "dictation": {
+          "prompt": "Nghe và chép lại câu đàm phán giá cả:",
+          "audioText": "能便宜一点儿吗？",
+          "expectedPinyin": "Neng pianyi yidianr ma?",
+          "meaning": "Có thể rẻ hơn một chút được không?"
+        },
+        "reorder": {
+          "prompt": "Sắp xếp các từ thành câu đúng:",
+          "tokens": [
+            "太贵了",
+            "两百块",
+            "这件衬衫",
+            "卖"
+          ],
+          "correctOrder": [
+            "这件衬衫",
+            "卖",
+            "两百块",
+            "太贵了"
+          ],
+          "resultSentence": "这件衬衫卖两百块太贵了。(Chiếc áo sơ mi này bán 200 tệ đắt quá rồi.)"
+        },
+        "production": {
+          "prompt": "Hãy viết 1 câu phàn nàn về một món đồ bị chật/rộng hoặc đắt và đề nghị đổi món khác:",
+          "sampleAnswer": "这件衣服有点儿大，请给我小一点儿的。(Chiếc áo này hơi rộng một chút, xin đổi cho tôi chiếc nhỏ hơn một chút.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 6,
+      "phase": 2,
+      "dayRange": "Ngày 38 - 44",
+      "title": "Phương Hướng, Vị Trí & Giới Từ Cốt Lõi 在 / 从 / 往",
+      "themeZh": "方位、问路与介词用法",
+      "icon": "🧭",
+      "objectives": [
+        "Làm chủ các từ chỉ phương vị (东, 南, 西, 北, 前, 后, 左, 右, 旁边, 对面)",
+        "Thành thạo cấu trúc chỉ đường: Từ A đi về phía B (从 A 往 B 走)",
+        "Phân biệt câu tồn hiện chỉ vị trí: Địa điểm + Có/Đứng + Danh từ (桌子上有一本书)"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Hỏi đường đến ga tàu điện ngầm (问路去地铁站)",
+          "lines": [
+            {
+              "speaker": "张伟 (Nam)",
+              "hanzi": "请问，去地铁站怎么走？",
+              "pinyin": "Qǐngwèn, qù dìtiězhàn zěnme zǒu?",
+              "vi": "Xin hỏi, đi đến ga tàu điện ngầm đi thế nào?"
+            },
+            {
+              "speaker": "路人 (Nữ)",
+              "hanzi": "你从这儿往前走，到十字路口往右拐就到了。",
+              "pinyin": "Nǐ cóng zhèr wǎng qián zǒu, dào shízìlùkǒu wǎng yòu guǎi jiù dào le.",
+              "vi": "Bạn từ đây đi thẳng về phía trước, đến ngã tư rẽ phải là tới."
+            },
+            {
+              "speaker": "张伟 (Nam)",
+              "hanzi": "离这儿远不远？需要坐公交车吗？",
+              "pinyin": "Lí zhèr yuǎn bu yuǎn? Xūyào zuò gōngjiāochē ma?",
+              "vi": "Cách đây xa không? Có cần đi xe buýt không?"
+            },
+            {
+              "speaker": "路人 (Nữ)",
+              "hanzi": "不远，走路大概五分钟。地铁站就在超市对面。",
+              "pinyin": "Bù yuǎn, zǒulù dàgài wǔ fēnzhōng. Dìtiězhàn jiù zài chāoshì duìmiàn.",
+              "vi": "Không xa, đi bộ khoảng 5 phút. Ga tàu điện nằm ngay đối diện siêu thị."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "往",
+            "pinyin": "wǎng",
+            "meaning": "Hướng về, đi về phía",
+            "breakdown": "Bộ Xích (彳: bước chân đi) + chữ Chủ (主: chủ đích). Bước chân có phương hướng, chủ đích đi về một phía."
+          },
+          {
+            "hanzi": "拐",
+            "pinyin": "guǎi",
+            "meaning": "Rẽ, quẹo",
+            "breakdown": "Bộ Thủ (扌: bàn tay lái/chuyển hướng) + Khẩu (口) + Đao (刀). Chuyển hướng gấp khúc như đường rẽ."
+          },
+          {
+            "hanzi": "远",
+            "pinyin": "yuǎn",
+            "meaning": "Xa xôi",
+            "breakdown": "Bộ Quai xước (辶: hành trình bước đi) + Viên (元: bắt đầu). Con đường dài miên man cách xa điểm xuất phát."
+          }
+        ],
+        "grammar": {
+          "formula": "Chỉ đường: 从 + Điểm A + 往 + Hướng + 走/拐 | Khoảng cách: A + 离 + B + (不) 远 / 近",
+          "explanation": "Giới từ 从 chỉ điểm xuất phát, 往 chỉ phương hướng chuyển động, 离 chỉ khoảng cách giữa hai địa điểm. Lưu ý: Không dùng 到 khi chỉ hướng rẽ (nói 往左拐 chứ không nói 到左拐).",
+          "examples": [
+            {
+              "zh": "我家离学校很近，走路只要十分钟。",
+              "pinyin": "Wǒ jiā lí xuéxiào hěn jìn, zǒulù zhǐ yào shí fēnzhōng.",
+              "vi": "Nhà tôi cách trường rất gần, đi bộ chỉ mất 10 phút."
+            },
+            {
+              "zh": "从这个路口往左拐，就是中国银行。",
+              "pinyin": "Cóng zhège lùkǒu wǎng zuǒ guǎi, jiù shì Zhōngguó Yínháng.",
+              "vi": "Từ ngã tư này rẽ trái, chính là Ngân hàng Trung Quốc."
+            }
+          ]
+        },
+        "examTips": "Trong bài nghe HSK 2 & 3, bẫy vị trí hay lừa học viên ở cặp từ đối lập: 往左拐 (rẽ trái) vs 往右拐 (rẽ phải), hoặc 对面 (đối diện) vs 旁边 (bên cạnh). Hãy vẽ nhanh mũi tên phác thảo hướng đi khi nghe!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Điền giới từ thích hợp: Từ đây đi thẳng về phía trước (从这儿____前走):",
+          "options": [
+            "(Recommended) 往 (Hướng về phía)",
+            "在 (Ở tại)",
+            "离 (Cách ly)",
+            "到 (Đến nơi)"
+          ],
+          "answer": 0,
+          "explanation": "Cấu trúc chỉ phương hướng di chuyển luôn dùng giới từ 往 (往 + phương vị + 走)."
+        },
+        "dictation": {
+          "prompt": "Nghe câu chỉ đường sau và gõ lại bằng chữ Hán hoặc Pinyin:",
+          "audioText": "从这儿往前走，图书馆就在超市对面。",
+          "expectedPinyin": "Cong zher wang qian zou, tushuguan jiu zai chaoshi duimian.",
+          "meaning": "Từ đây đi thẳng về phía trước, thư viện nằm ngay đối diện siêu thị."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp câu chỉ khoảng cách và phương hướng:",
+          "tokens": [
+            "我家",
+            "很远",
+            "离",
+            "公司",
+            "不"
+          ],
+          "correctOrder": [
+            "我家",
+            "离",
+            "公司",
+            "不",
+            "很远"
+          ],
+          "resultSentence": "我家离公司不是很远。(Nhà tôi cách công ty không xa lắm.)"
+        },
+        "production": {
+          "prompt": "Dùng cấu trúc A 离 B 很近/很远 để viết 1 câu mô tả khoảng cách từ nhà bạn đến công ty/trường học:",
+          "sampleAnswer": "我家离公司很近，每天走路去上班。(Nhà tôi cách công ty rất gần, mỗi ngày đi bộ đi làm.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 7,
+      "phase": 2,
+      "dayRange": "Ngày 45 - 51",
+      "title": "Bổ Ngữ Kết Quả & Tuyệt Kỹ Câu So Sánh '比'",
+      "themeZh": "结果补语与'比'字句",
+      "icon": "⚖️",
+      "objectives": [
+        "Làm chủ 6 Bổ ngữ kết quả then chốt nhất: 好, 完, 懂, 见, 到, 错",
+        "Nắm chắc cấu trúc so sánh hơn 比 và so sánh phủ định 没有",
+        "Biết cách diễn đạt mức độ sai biệt cụ thể trong câu so sánh"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Kết quả bài kiểm tra (考试结果)",
+          "lines": [
+            {
+              "speaker": "李文 (Nam)",
+              "hanzi": "家月，昨天的听力题你做完了吗？听懂了吗？",
+              "pinyin": "Jiāyuè, zuótiān de tīnglì tí nǐ zuò wán le ma? Tīng dǒng le ma?",
+              "vi": "Jiayue, bài tập nghe hôm qua cậu làm xong chưa? Nghe hiểu không?"
+            },
+            {
+              "speaker": "白家月 (Nữ)",
+              "hanzi": "我都做完了，也都听懂了。这次的题比上次容易多了。",
+              "pinyin": "Wǒ dōu zuò wán le, yě dōu tīng dǒng le. Zhè cì de tí bǐ shàng cì róngyì duō le.",
+              "vi": "Tớ làm xong hết rồi, cũng nghe hiểu hết. Đề thi lần này dễ hơn lần trước nhiều."
+            },
+            {
+              "speaker": "李文 (Nam)",
+              "hanzi": "真羡慕你！我的成绩没有你好，错了几道题。",
+              "pinyin": "Zhēn xiànmù nǐ! Wǒ de chéngjì méiyǒu nǐ hǎo, cuò le jǐ dào tí.",
+              "vi": "Ngưỡng mộ cậu thật đấy! Điểm của tớ không bằng cậu, làm sai mất mấy câu."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "完",
+            "pinyin": "wán",
+            "meaning": "Xong, hoàn thành",
+            "breakdown": "Phía trên là bộ Miên (宀: mái nhà) + phía dưới là chữ Nguyên (元: toàn vẹn). Xây dựng xong mái nhà hoàn chỉnh ➔ 'Hoàn tất, xong xuôi'."
+          },
+          {
+            "hanzi": "懂",
+            "pinyin": "dǒng",
+            "meaning": "Hiểu, thấu hiểu",
+            "breakdown": "Bộ Tâm đứng (忄: trái tim, tâm trí) + chữ Đổng (董: đốc thúc). Khi tâm trí đã thông suốt, nắm bắt được cốt lõi ➔ 'Hiểu'."
+          },
+          {
+            "hanzi": "错",
+            "pinyin": "cuò",
+            "meaning": "Sai, lỗi sai",
+            "breakdown": "Bộ Kim (钅: kim loại) + chữ Tích (昔: ngày xưa). Đẽo gọt kim loại không cẩn thận bị mẻ lỗi ➔ 'Sai sót'."
+          }
+        ],
+        "grammar": {
+          "formula": "1. Bổ ngữ kết quả: S + V + [完/好/到/见/懂/错] + (O)\n2. Câu chữ 比: A + 比 + B + Adj + [Mức độ: 一点儿 / 多了 / 得多 / Số lượng]",
+          "explanation": "Bổ ngữ kết quả đi liền ngay sau động từ để biểu thị kết quả của hành động đó. Ví dụ: 看见 (nhìn thấy), 听懂 (nghe hiểu), 做完 (làm xong). Trong câu chữ 比, tuyệt đối KHÔNG được chèn phó từ '很, 非常, 极了' vào trước tính từ!",
+          "examples": [
+            {
+              "zh": "哥哥比我高五厘米。(ĐÚNG)",
+              "pinyin": "Gēge bǐ wǒ gāo wǔ límǐ.",
+              "vi": "Anh trai cao hơn tôi 5 cm."
+            },
+            {
+              "zh": "哥哥比我很高。(SAI)",
+              "pinyin": "Gēge bǐ wǒ hěn gāo. (LỖI)",
+              "vi": "Sai nghiêm trọng: Trong câu chữ 比 cấm dùng '很'."
+            }
+          ]
+        },
+        "examTips": "Bẫy kinh điển đề thi HSK 3: Nếu thấy đề bài có 'A 比 B ___ 高', đáp án có '很', '非常', '得多' ➔ lập tức chọn '得多' hoặc '多了', tuyệt đối loại bỏ ngay các đáp án '很', '非常'!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Câu nào sau đây sai ngữ pháp câu so sánh:",
+          "options": [
+            "(Recommended) 今天比昨天很热。(Hôm nay so với hôm qua rất nóng - SAI vì có 很)",
+            "今天比昨天热多了。(Hôm nay nóng hơn hôm qua nhiều - ĐÚNG)",
+            "今天没有昨天热。(Hôm nay không nóng bằng hôm qua - ĐÚNG)",
+            "今天比昨天热五度。(Hôm nay nóng hơn hôm qua 5 độ - ĐÚNG)"
+          ],
+          "answer": 0,
+          "explanation": "Quy tắc cấm kỵ: Câu chữ '比' không bao giờ đi kèm phó từ chỉ mức độ tuyệt đối như '很, 非常, 太'."
+        },
+        "dictation": {
+          "prompt": "Nghe và chép lại câu sau:",
+          "audioText": "今天的考试比上次容易多了。",
+          "expectedPinyin": "Jintian de kaoshi bi shang ci rongyi duo le.",
+          "meaning": "Kỳ thi hôm nay dễ hơn lần trước nhiều."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp các từ thành câu so sánh hoàn chỉnh:",
+          "tokens": [
+            "做完",
+            "我",
+            "把作业",
+            "已经",
+            "了"
+          ],
+          "correctOrder": [
+            "我",
+            "已经",
+            "把作业",
+            "做完",
+            "了"
+          ],
+          "resultSentence": "我已经把作业做完了。(Tôi đã làm xong bài tập về nhà rồi.)"
+        },
+        "production": {
+          "prompt": "Hãy viết 1 câu so sánh thời tiết hôm nay với ngày hôm qua hoặc so sánh bạn với một người bạn:",
+          "sampleAnswer": "北京的冬天天比越南冷得多。(Mùa đông ở Bắc Kinh lạnh hơn ở Việt Nam rất nhiều.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 8,
+      "phase": 2,
+      "dayRange": "Ngày 52 - 60",
+      "title": "Trợ Từ Động Thái 了 & Câu Liên Động Cán Mốc HSK 2",
+      "themeZh": "动态助词“了”与连动句",
+      "icon": "🎯",
+      "objectives": [
+        "Phân biệt rạch ròi 了 động thái (sau V: V+了) và 了 ngữ khí (cuối câu: đổi thay trạng thái)",
+        "Nắm chắc cấu trúc câu liên động (Hai hành động diễn ra liên tiếp: V1 + V2)",
+        "Tổng ôn toàn bộ vốn từ vựng HSK 2 (cán mốc 300 từ vựng và tự tin thi đỗ HSK 2)"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Kể lại chuyến đi du lịch (旅行归来)",
+          "lines": [
+            {
+              "speaker": "大卫 (Nam)",
+              "hanzi": "你上个周末去哪儿玩了？",
+              "pinyin": "Nǐ shàng gè zhōumò qù nǎr wán le?",
+              "vi": "Cuối tuần trước bạn đã đi đâu chơi thế?"
+            },
+            {
+              "speaker": "美玲 (Nữ)",
+              "hanzi": "我去北京爬长城了，还买了很多好吃的烤鸭。",
+              "pinyin": "Wǒ qù Běijīng pá Chángchéng le, hái mǎi le hěn duō hǎochī de kǎoyā.",
+              "vi": "Tôi đi Bắc Kinh leo Vạn Lý Trường Thành rồi, còn mua rất nhiều vịt quay ngon."
+            },
+            {
+              "speaker": "大卫 (Nam)",
+              "hanzi": "太棒了！天气怎么样？冷不冷？",
+              "pinyin": "Tài bàng le! Tiānqì zěnmeyàng? Lěng bu lěng?",
+              "vi": "Tuyệt quá! Thời tiết thế nào? Lạnh không?"
+            },
+            {
+              "speaker": "美玲 (Nữ)",
+              "hanzi": "天气变暖和了，一点儿也不冷。",
+              "pinyin": "Tiānqì biàn nuǎnhuo le, yìdiǎnr yě bù lěng.",
+              "vi": "Thời tiết ấm áp lên rồi, chẳng lạnh chút nào."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "爬",
+            "pinyin": "pá",
+            "meaning": "Leo, bò, trèo",
+            "breakdown": "Bộ Trảo (爪: móng vuốt tay/chân bám vào) + Ba (巴: đuôi bám chắc). Tay chân bám chặt leo dốc đứng."
+          },
+          {
+            "hanzi": "变",
+            "pinyin": "biàn",
+            "meaning": "Thay đổi, biến hóa",
+            "breakdown": "Bộ Diệc (亦) + Cản (攵: gõ nhẹ tạo chuyển động). Sự vật chuyển biến sang trạng thái mới."
+          },
+          {
+            "hanzi": "暖",
+            "pinyin": "nuǎn",
+            "meaning": "Ấm áp",
+            "breakdown": "Bộ Nhật (日: mặt trời) + Viên (爰: giơ tay đón ánh sáng). Ánh nắng mặt trời lan tỏa sưởi ấm vạn vật."
+          }
+        ],
+        "grammar": {
+          "formula": "Câu liên động: S + V1 + (O1) + V2 + (O2) | Đổi thay trạng thái: Tính từ/Danh từ + 了",
+          "explanation": "Câu liên động diễn tả hành động thứ nhất làm tiền đề hoặc mục đích cho hành động thứ hai (Ví dụ: 去超市买菜). Trợ từ 了 cuối câu biểu thị một trạng thái mới bắt đầu xảy ra (下雨了 = Trời bắt đầu đổ mưa rồi).",
+          "examples": [
+            {
+              "zh": "我打算坐飞机去上海看朋友。",
+              "pinyin": "Wǒ dǎsuàn zuò fēijī qù Shànghǎi kàn péngyou.",
+              "vi": "Tôi dự định đi máy bay đến Thượng Hải thăm bạn bè."
+            },
+            {
+              "zh": "春天来了，天气变暖和了。",
+              "pinyin": "Chūntiān lái le, tiānqì biàn nuǎnhuo le.",
+              "vi": "Mùa xuân đến rồi, thời tiết đã trở nên ấm áp."
+            }
+          ]
+        },
+        "examTips": "Trong bài đọc HSK 2, khi thấy 了 ở cuối câu, câu hỏi thường kiểm tra về trạng thái hiện tại đã khác trước. Không dịch thô sơ 了 là quá khứ đã làm, mà phải nắm bắt sự thay đổi ngữ cảnh!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Chọn câu diễn đạt đúng ngữ pháp có nghĩa Thời tiết ấm lên rồi, tôi không cần mặc áo khoác dày nữa:",
+          "options": [
+            "(Recommended) 天气暖和了，我不用穿厚外套了。",
+            "天气暖和，我穿了厚外套。",
+            "天气有暖和，我不穿厚外套。",
+            "暖和天气了，我不用穿厚外套。"
+          ],
+          "answer": 0,
+          "explanation": "Trợ từ 了 đặt cuối vế câu biểu thị trạng thái thời tiết đã ấm lên và sự chuyển biến không cần mặc áo dày nữa."
+        },
+        "dictation": {
+          "prompt": "Nghe câu liên động sau và gõ lại bằng chữ Hán hoặc Pinyin:",
+          "audioText": "明天我们一起去中国超市买东西吧。",
+          "expectedPinyin": "Mingtian women yiqi qu Zhongguo chaoshi mai dongxi ba.",
+          "meaning": "Ngày mai chúng ta cùng nhau đi siêu thị Trung Quốc mua đồ nhé."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp câu liên động chỉ hành động liên tiếp:",
+          "tokens": [
+            "去图书馆",
+            "借书",
+            "明天下午",
+            "我想"
+          ],
+          "correctOrder": [
+            "明天下午",
+            "我想",
+            "去图书馆",
+            "借书"
+          ],
+          "resultSentence": "明天下午我想去图书馆借书。(Chiều mai tôi muốn đi thư viện mượn sách.)"
+        },
+        "production": {
+          "prompt": "Hãy viết 1 câu liên động dùng động từ 去 + Nơi chốn + Động từ 2 để kể về kế hoạch ngày mai của bạn:",
+          "sampleAnswer": "明天我要去咖啡馆喝咖啡看书。(Ngày mai tôi sẽ đi quán cà phê uống cà phê và đọc sách.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 9,
+      "phase": 3,
+      "dayRange": "Ngày 61 - 67",
+      "title": "Đỉnh Cao Ngữ Pháp — Tuyệt Kỹ Câu Chữ '把'",
+      "themeZh": "HSK 3重点语法：'把'字句",
+      "icon": "⚡",
+      "objectives": [
+        "Hiểu thấu đáo bản chất của câu chữ 把: xử lý, dịch chuyển hoặc làm thay đổi tân ngữ",
+        "Nắm chắc công thức: S + 把 + O + V + Thành phần khác",
+        "Nhận diện 5 loại động từ tuyệt đối KHÔNG được dùng câu chữ 把 (有, 是, 喜欢, 知道, 看见)"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Dọn dẹp phòng ốc (打扫房间)",
+          "lines": [
+            {
+              "speaker": "妈妈 (Nữ)",
+              "hanzi": "儿子，快把你的脏衣服放进洗衣机里！",
+              "pinyin": "Érzi, kuài bǎ nǐ de zāng yīfu fàng jìn xǐyījī lǐ!",
+              "vi": "Con trai, mau bỏ quần áo bẩn của con vào trong máy giặt đi!"
+            },
+            {
+              "speaker": "儿子 (Nam)",
+              "hanzi": "妈，我已经把衣服洗好了，还把桌子擦干净了。",
+              "pinyin": "Mā, wǒ yǐjīng bǎ yīfu xǐ hǎo le, hái bǎ zhuōzi cā gānjìng le.",
+              "vi": "Mẹ, con đã giặt xong quần áo rồi, còn lau sạch bàn nữa rồi ạ."
+            },
+            {
+              "speaker": "妈妈 (Nữ)",
+              "hanzi": "太棒了！那你记得把空调关上再出门。",
+              "pinyin": "Tài bàng le! Nà nǐ jìde bǎ kōngtiáo guān shang zài chūmén.",
+              "vi": "Tuyệt quá! Thế thì con nhớ tắt điều hòa đi rồi hãy ra ngoài nhé."
+            },
+            {
+              "speaker": "儿子 (Nam)",
+              "hanzi": "好嘞，我这就关。",
+              "pinyin": "Hǎo lei, wǒ zhè jiù guān.",
+              "vi": "Dạ vâng, con tắt ngay đây ạ."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "把",
+            "pinyin": "bǎ",
+            "meaning": "Cầm, nắm, giữ; chữ 把 trong ngữ pháp",
+            "breakdown": "Bộ Thủ (扌: bàn tay cầm nắm) + chữ Ba (巴: đuôi sam/dính chặt). Nghĩa gốc là bàn tay túm lấy vật gì đó để xử lý."
+          },
+          {
+            "hanzi": "放",
+            "pinyin": "fàng",
+            "meaning": "Đặt, để, buông tha",
+            "breakdown": "Phía bên trái là chữ Phương (方: hướng) + Phộc (攵: roi gõ/thao tác). Điều hướng và đặt vật thể vào một vị trí cụ thể."
+          },
+          {
+            "hanzi": "净",
+            "pinyin": "jìng",
+            "meaning": "Sạch sẽ",
+            "breakdown": "Bộ Băng (冫: hai giọt nước đóng băng tinh khiết) + chữ Tranh (争). Nước băng sạch sẽ không tì vết ➔ 'Càn tịnh' (干净: sạch sẽ)."
+          }
+        ],
+        "grammar": {
+          "formula": "Chủ ngữ (S) + (Phó từ/Năng nguyện) + 把 + Tân ngữ (O) + Động từ (V) + Thành phần khác (Bổ ngữ / 了 / Lặp từ / 在/到...)",
+          "explanation": "Quy tắc sống còn của câu chữ 把:\n1. Tân ngữ sau 把 bắt buộc phải là đối tượng xác định (đã biết).\n2. Động từ không bao giờ được đứng trơ trọi một mình, sau động từ BẮT BUỘC phải có thành phần khác (ví dụ: 了, 在桌子上, 进房间里, 干净, 完).\n3. Phó từ phủ định (没/没有) và trợ động từ (想, 要, 能) bắt buộc phải đứng TRƯỚC chữ 把 (ví dụ: 我没把手机弄丢).",
+          "examples": [
+            {
+              "zh": "请你把这本书还给图书馆。",
+              "pinyin": "Qǐng nǐ bǎ zhè běn shū huán gěi túshūguǎn.",
+              "vi": "Xin bạn hãy đem quyển sách này trả lại cho thư viện."
+            },
+            {
+              "zh": "他把我的电脑弄坏了。",
+              "pinyin": "Tā bǎ wǒ de diànnǎo nòng huài le.",
+              "vi": "Anh ta đã làm hỏng máy tính của tôi rồi."
+            }
+          ]
+        },
+        "examTips": "Cực phẩm mẹo thi Viết HSK 3: Nếu trong các mảnh từ cần sắp xếp có chữ '把', việc đầu tiên bạn làm là: Tìm đối tượng bị tác động đặt sau '把', tìm động từ đặt phía sau đối tượng, và gom cụm bổ ngữ đặt cuối cùng!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Câu nào sau đây sử dụng câu chữ '把' đúng ngữ pháp nhất:",
+          "options": [
+            "(Recommended) 请把你的护照给我看一下。(Xin hãy đưa hộ chiếu của bạn cho tôi xem một chút.)",
+            "请把护照给我看。(SAI: động từ trơ trọi, thiếu thành phần khác)",
+            "我把喜欢他。(SAI: động từ tâm lý '喜欢' không dùng câu chữ 把)",
+            "他把昨天的事情知道。(SAI: động từ nhận thức '知道' không dùng câu chữ 把)"
+          ],
+          "answer": 0,
+          "explanation": "Sau động từ phải có thành phần khác ('一下'), và động từ phải mang tính thao tác xử lý."
+        },
+        "dictation": {
+          "prompt": "Nghe và viết lại câu chữ 把 sau:",
+          "audioText": "请把空调关上再出门。",
+          "expectedPinyin": "Qing ba kongtiao guan shang zai chumen.",
+          "meaning": "Xin hãy tắt điều hòa rồi hãy ra ngoài."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp các khối từ thành câu chữ 把 hoàn chỉnh:",
+          "tokens": [
+            "把药",
+            "吃了",
+            "快",
+            "你"
+          ],
+          "correctOrder": [
+            "你",
+            "快",
+            "把药",
+            "吃了"
+          ],
+          "resultSentence": "你快把药吃了。(Cậu mau uống thuốc đi.)"
+        },
+        "production": {
+          "prompt": "Hãy tự viết 1 câu chữ 把 về việc đóng cửa, tắt đèn hoặc đặt một món đồ vào nơi nào đó:",
+          "sampleAnswer": "出门前请把门关好。(Trước khi ra ngoài xin hãy đóng chặt cửa.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 10,
+      "phase": 3,
+      "dayRange": "Ngày 68 - 74",
+      "title": "Câu Bị Động '被' & Bổ Ngữ Khả Năng (得/不)",
+      "themeZh": "'被'字句与可能补语",
+      "icon": "🛡️",
+      "objectives": [
+        "Nắm chắc câu bị động chữ 被: Đối tượng chịu tác động + 被 + Tác nhân + V + Thành phần khác",
+        "Hiểu sâu Bổ ngữ khả năng: V + 得/不 + Bổ ngữ kết quả/xu hướng",
+        "Phân biệt rõ ràng: 能 + V (khả năng chung) vs V + 得/不了 (năng lực cụ thể trong tình huống)"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Chiếc bánh kem biến mất (蛋糕被吃了)",
+          "lines": [
+            {
+              "speaker": "妹妹 (Nữ)",
+              "hanzi": "哥，我放在冰箱里的草莓蛋糕怎么不见了？",
+              "pinyin": "Gē, wǒ fàng zài bīngxiāng lǐ de cǎoméi dàngāo zěnme bú jiàn le?",
+              "vi": "Anh ơi, chiếc bánh kem dâu tây em để trong tủ lạnh sao lại biến mất rồi?"
+            },
+            {
+              "speaker": "哥哥 (Nam)",
+              "hanzi": "哎呀，不好意思，刚才我太饿了，蛋糕被我吃掉了！",
+              "pinyin": "Àiyā, bù hǎoyìsi, gāngcái wǒ tài è le, dàngāo bèi wǒ chī diào le!",
+              "vi": "Ái chà, ngại quá, lúc nãy anh đói quá nên bánh bị anh ăn mất rồi!"
+            },
+            {
+              "speaker": "妹妹 (Nữ)",
+              "hanzi": "你真讨厌！晚上你得买一个新的赔给我。",
+              "pinyin": "Nǐ zhēn tǎoyàn! Wǎnshang nǐ děi mǎi yí ge xīn de péi gěi wǒ.",
+              "vi": "Anh đáng ghét thật! Tối nay anh phải mua cái mới đền cho em đấy."
+            },
+            {
+              "speaker": "哥哥 (Nam)",
+              "hanzi": "行行行，我今天下班回得早，一定买给你！",
+              "pinyin": "Xíng xíng xíng, wǒ jīntiān xiàbān huí de zǎo, yídìng mǎi gěi nǐ!",
+              "vi": "Được được, hôm nay anh tan làm về sớm, nhất định sẽ mua đền cho em!"
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "被",
+            "pinyin": "bèi",
+            "meaning": "Bị, được; cái chăn",
+            "breakdown": "Bộ Y (衤: quần áo, vải vóc) + chữ Bì (皮: lớp da bên ngoài). Nghĩa gốc là tấm chăn đắp phủ lên người, sau mở rộng thành bị vật thể khác tác động phủ lên ➔ 'Bị/Được'."
+          },
+          {
+            "hanzi": "掉",
+            "pinyin": "diào",
+            "meaning": "Rơi, mất, rụng; bổ ngữ kết quả 'mất đi'",
+            "breakdown": "Bộ Thủ (扌: bàn tay) + chữ Trác (卓). Đồ vật từ bàn tay rơi mất ➔ bổ ngữ 吃掉 (ăn mất), 扔掉 (vứt bỏ)."
+          }
+        ],
+        "grammar": {
+          "formula": "1. Câu chữ 被: S (chịu tác động) + 被 + (Tác nhân) + V + Thành phần khác\n2. Bổ ngữ khả năng: V + 得 + C (Làm được) | V + 不 + C (Không làm được)",
+          "explanation": "Câu chữ 被 thường mang sắc thái không may mắn, bị tác động tiêu cực (như bị mất, bị hỏng, bị phê bình). Trong khẩu ngữ có thể lược bỏ tác nhân: 蛋糕被吃掉了 (Bánh bị ăn mất rồi - không nói ai ăn). Bổ ngữ khả năng dùng: 看得懂 (đọc hiểu được), 看不懂 (đọc không hiểu), 买得到 (mua được), 买不到 (không mua được).",
+          "examples": [
+            {
+              "zh": "我的自行车被小偷偷走了。",
+              "pinyin": "Wǒ de zìxíngchē bèi xiǎotōu tōu zǒu le.",
+              "vi": "Xe đạp của tôi đã bị kẻ trộm lấy cắp mất rồi."
+            },
+            {
+              "zh": "这本小说太难了，我看不懂。",
+              "pinyin": "Zhè běn xiǎoshuō tài nán le, wǒ kàn bu dǒng.",
+              "vi": "Cuốn tiểu thuyết này khó quá, tôi đọc không hiểu."
+            }
+          ]
+        },
+        "examTips": "Bẫy đề thi Đọc HSK 3: Từ '被' trong văn viết đôi khi được thay thế bằng từ '叫' hoặc '让' trong khẩu ngữ đời sống, ví dụ: '自行车叫人骑走了' = '自行车让人骑走了' = '自行车被骑走了'. Đừng để bị lừa khi gặp '叫' và '让' mang nghĩa bị động!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Chọn câu bị động viết đúng ngữ pháp nhất:",
+          "options": [
+            "(Recommended) 苹果被弟弟吃完了。(Quả táo bị em trai ăn hết rồi.)",
+            "弟弟被苹果吃完了。(Em trai bị quả táo ăn hết - SAI logic)",
+            "苹果被弟弟吃。(SAI: động từ trơ trọi)",
+            "弟弟被吃苹果。(SAI cấu trúc)"
+          ],
+          "answer": 0,
+          "explanation": "Vật chịu tác động (苹果) đứng đầu câu, sau động từ phải có bổ ngữ kết quả '完' và trợ từ '了'."
+        },
+        "dictation": {
+          "prompt": "Nghe và chép lại câu bổ ngữ khả năng sau:",
+          "audioText": "他说得太快了，我听不懂。",
+          "expectedPinyin": "Ta shuo de tai kuai le, wo ting bu dong.",
+          "meaning": "Anh ấy nói nhanh quá, tôi nghe không hiểu."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp thành câu chữ 被 hoàn chỉnh:",
+          "tokens": [
+            "打碎了",
+            "茶杯",
+            "被",
+            "猫"
+          ],
+          "correctOrder": [
+            "茶杯",
+            "被",
+            "猫",
+            "打碎了"
+          ],
+          "resultSentence": "茶杯被猫打碎了。(Tách trà đã bị con mèo làm vỡ rồi.)"
+        },
+        "production": {
+          "prompt": "Hãy viết 1 câu dùng '看得懂/看不懂' hoặc '听得懂/听不懂' về việc học tiếng Trung của bạn:",
+          "sampleAnswer": "现在的中国电影我能听懂一部分了。(Phim Trung Quốc hiện giờ tôi đã có thể nghe hiểu được một phần rồi.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 11,
+      "phase": 3,
+      "dayRange": "Ngày 75 - 82",
+      "title": "Cặp Liên Từ Phức HSK 3 & Bổ Ngữ Thời Lượng",
+      "themeZh": "复合关联词与时量补语",
+      "icon": "🔗",
+      "objectives": [
+        "Nắm vững các cặp liên từ ghi điểm vàng HSK 3: 虽然...但是..., 不但...而且..., 只要...就..., 因为...所以...",
+        "Làm chủ bổ ngữ thời lượng: Động từ + (O) + Động từ + 了 + Thời lượng (学汉语学了两年)",
+        "Kỹ thuật quét từ khóa (Skimming & Scanning) đọc hiểu đoạn văn dài 100 chữ HSK 3 trong 45 giây"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Chia sẻ kinh nghiệm học tập (交流学习经验)",
+          "lines": [
+            {
+              "speaker": "老师 (Nữ)",
+              "hanzi": "你学中文学了多长时间了？进步真快！",
+              "pinyin": "Nǐ xué Zhōngwén xué le duō cháng shíjiān le? Jìnbù zhēn kuài!",
+              "vi": "Em học tiếng Trung được bao lâu rồi? Tiến bộ nhanh thật!"
+            },
+            {
+              "speaker": "小林 (Nam)",
+              "hanzi": "老师，我学了两个半月了。虽然每天很忙，但我坚持每天学一小时。",
+              "pinyin": "Lǎoshī, wǒ xué le liǎng gè bàn yuè le. Suīrán měitiān hěn máng, dàn wǒ jiānchí měitiān xué yì xiǎoshí.",
+              "vi": "Thưa cô, em học được 2 tháng rưỡi rồi. Tuy mỗi ngày rất bận, nhưng em kiên trì học một tiếng mỗi ngày."
+            },
+            {
+              "speaker": "老师 (Nữ)",
+              "hanzi": "难怪你不但听力很好，而且发音也很标准！",
+              "pinyin": "Nánguài nǐ búdàn tīnglì hěn hǎo, érqiě fāyīn yě hěn biāozhǔn!",
+              "vi": "Thảo nào em không những nghe rất tốt mà phát âm cũng rất chuẩn!"
+            },
+            {
+              "speaker": "小林 (Nam)",
+              "hanzi": "谢谢老师鼓励！只要努力，我相信一定能通过 HSK 3。",
+              "pinyin": "Xièxie lǎoshī gǔlì! Zhǐyào nǔlì, wǒ xiāngxìn yídìng néng tōngguò HSK 3.",
+              "vi": "Cảm ơn cô đã khích lệ! Chỉ cần nỗ lực, em tin chắc chắn sẽ đỗ HSK 3."
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "坚",
+            "pinyin": "jiān",
+            "meaning": "Kiên định, bền chặt",
+            "breakdown": "Bộ Hựu (又: tay nắm chặt) + Thổ (土: đất đá vững chãi). Nắm chặt ý chí vững vàng như đá tảng."
+          },
+          {
+            "hanzi": "难",
+            "pinyin": "nán",
+            "meaning": "Khó khăn, nan giải",
+            "breakdown": "Bộ Hựu (又) + Chuy (隹: chim non trong bão gió). Cánh chim vượt qua nghịch cảnh gian nan."
+          },
+          {
+            "hanzi": "准",
+            "pinyin": "zhǔn",
+            "meaning": "Chuẩn xác, tiêu chuẩn",
+            "breakdown": "Bộ Băng (冫: nước đóng băng phẳng) + Chuẩn (隼: chim ưng nhắm trúng con mồi). Chuẩn mực chính xác tuyệt đối."
+          }
+        ],
+        "grammar": {
+          "formula": "Bổ ngữ thời lượng: V + Tân ngữ + V + 了 + Thời gian | Cặp liên từ tăng tiến: 不但……而且……",
+          "explanation": "Bổ ngữ thời lượng diễn tả hành động kéo dài trong bao lâu. Khi động từ mang tân ngữ, ta lặp lại động từ (Ví dụ: 学汉语学了两年). Cặp liên từ 不不但...而且... nối hai vế mang tính chất tăng tiến bậc thang.",
+          "examples": [
+            {
+              "zh": "他学汉语学了三年，不但会说，而且能写汉字。",
+              "pinyin": "Tā xué Hànyǔ xué le sān nián, búdàn huì shuō, érqiě néng xiě hànzì.",
+              "vi": "Anh ấy học tiếng Trung được 3 năm rồi, không những biết nói mà còn có thể viết chữ Hán."
+            },
+            {
+              "zh": "只要你每天坚持练习，就一定能考好。",
+              "pinyin": "Zhǐyào nǐ měitiān jiānchí liànxí, jiù yídìng néng kǎo hǎo.",
+              "vi": "Chỉ cần bạn mỗi ngày kiên trì luyện tập, thì nhất định sẽ thi tốt."
+            }
+          ]
+        },
+        "examTips": "Trong phần Đọc hiểu HSK 3, khi thấy vế 1 có 虽然 hãy lập tức quét tìm 但是/但; thấy 不但 quét ngay 而且/也; thấy 只要 quét ngay 就. Kỹ thuật này giúp giải quyết câu hỏi trong 3 giây mà không cần đọc hết đoạn!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Chọn cặp liên từ thích hợp: Quán ăn này đồ ăn ____ rẻ, ____ lại rất ngon:",
+          "options": [
+            "(Recommended) 不但……而且…… (Không những... mà còn...)",
+            "虽然……因为…… (Tuy rằng... bởi vì...)",
+            "只要……但是…… (Chỉ cần... nhưng mà...)",
+            "因为……所以…… (Bởi vì... cho nên...)"
+          ],
+          "answer": 0,
+          "explanation": "Vế sau tăng tiến bổ sung tính chất tốt đẹp cho vế trước nên phải dùng cặp liên từ tăng tiến: 不但...而且... (Vừa rẻ lại vừa ngon)."
+        },
+        "dictation": {
+          "prompt": "Nghe câu có cặp liên từ sau và gõ lại bằng chữ Hán hoặc Pinyin:",
+          "audioText": "虽然学习汉语很难，但是我觉得很有意思。",
+          "expectedPinyin": "Suiran xuexi Hanyu hen nan, danshi wo juede hen youyisi.",
+          "meaning": "Tuy học tiếng Hán rất khó, nhưng tôi cảm thấy rất thú vị."
+        },
+        "reorder": {
+          "prompt": "Sắp xếp câu chứa bổ ngữ thời lượng lặp động từ:",
+          "tokens": [
+            "我看电视",
+            "看了",
+            "两个小时",
+            "昨天晚上"
+          ],
+          "correctOrder": [
+            "昨天晚上",
+            "我看电视",
+            "看了",
+            "两个小时"
+          ],
+          "resultSentence": "昨天晚上我看电视看了两个小时。(Tối hôm qua tôi đã xem ti vi suốt hai tiếng đồng hồ.)"
+        },
+        "production": {
+          "prompt": "Hãy dùng cặp liên từ 不但...而且... hoặc 虽然...但是... để viết 1 câu giới thiệu về bản thân hoặc công việc của bạn:",
+          "sampleAnswer": "我虽然每天工作很忙，但是每天都坚持学习汉语。(Tuy mỗi ngày công việc của tôi rất bận, nhưng ngày nào tôi cũng kiên trì học tiếng Trung.)"
+        }
+      }
+    },
+    {
+      "weekNumber": 12,
+      "phase": 3,
+      "dayRange": "Ngày 83 - 90",
+      "title": "Mô Phỏng Phòng Thi iBT CTI Chuẩn Quốc Tế & Về Đích",
+      "themeZh": "全真模拟机考与冲刺满分",
+      "icon": "🏅",
+      "objectives": [
+        "Tổng duyệt toàn bộ 900+ từ vựng và 48 cấu trúc ngữ pháp HSK 1 - 3",
+        "Làm chủ chiến thuật phân bổ thời gian bài thi máy iBT: Nghe (35p), Đọc (30p), Viết (15p)",
+        "Thực chiến đề thi mô phỏng và nhận Báo cáo Phân tích Điểm số Radar Chart 5 trục CTI"
+      ],
+      "lecture": {
+        "dialogue": {
+          "title": "Đối thoại: Nhận kết quả kỳ thi HSK 3 (查HSK成绩)",
+          "lines": [
+            {
+              "speaker": "王老师 (Nam)",
+              "hanzi": "安妮，祝贺你！你的HSK三级考了275分，听力拿了满分！",
+              "pinyin": "Ānnī, zhùhè nǐ! Nǐ de HSK sān jí kǎo le 275 fēn, tīnglì ná le mǎnfēn!",
+              "vi": "Annie, chúc mừng em! Kỳ thi HSK 3 của em đạt 275 điểm, phần Nghe đạt điểm tối đa!"
+            },
+            {
+              "speaker": "安妮 (Nữ)",
+              "hanzi": "真的吗？太感谢老师这三个月来的悉心指导了！",
+              "pinyin": "Zhēn de ma? Tài gǎnxiè lǎoshī zhè sān ge yuè lái de xīxīn zhǐdǎo le!",
+              "vi": "Thật vậy sao ạ? Em cảm ơn sự chỉ dạy tận tình của thầy trong suốt 3 tháng qua rất nhiều!"
+            },
+            {
+              "speaker": "王老师 (Nam)",
+              "hanzi": "这是你每天坚持练习、听写和做题的成果。继续加油，冲刺HSK四级！",
+              "pinyin": "Zhè shì nǐ měitiān jiānchí liànxí, tīngxiě hé zuòtí de chéngguǒ. Jìxù jiāyóu, chōngcì HSK sì jí!",
+              "vi": "Đây là thành quả của việc em kiên trì luyện tập, nghe chép và làm bài mỗi ngày. Tiếp tục cố gắng để chinh phục HSK 4 nhé!"
+            }
+          ]
+        },
+        "etymology": [
+          {
+            "hanzi": "考",
+            "pinyin": "kǎo",
+            "meaning": "Thi cử, kiểm tra",
+            "breakdown": "Bộ Lão (耂: người già có kinh nghiệm) + chữ Khảo (丂). Người có tri thức kinh nghiệm đặt câu hỏi sát hạch hậu bối ➔ 'Thi cử, khảo hạch'."
+          },
+          {
+            "hanzi": "试",
+            "pinyin": "shì",
+            "meaning": "Thử nghiệm, kỳ thi",
+            "breakdown": "Bộ Ngôn (讠: lời nói, câu hỏi) + chữ Thức (式: khuôn mẫu chuẩn mực). Dùng lời nói kiểm tra kiến thức theo khuôn mẫu chuẩn ➔ 'Khảo thí, thi cử'."
+          }
+        ],
+        "grammar": {
+          "formula": "Chiến Thuật Phân Bổ Thời Gian Chuẩn Khảo Thí CTI iBT:\n1. Nghe (35 phút - 40 câu): Dành 5 giây trước mỗi câu đọc lướt 3 đáp án để bắt từ khóa.\n2. Đọc (30 phút - 30 câu): Áp dụng kỹ thuật Skimming tìm chủ ngữ, tân ngữ; làm bài nối trước, bài đọc đoạn văn sau.\n3. Viết (15 phút - 10 câu): 5 câu sắp xếp chữ (10 phút) + 5 câu điền chữ Hán Pinyin (5 phút).",
+          "explanation": "Trong phần Viết, lỗi trừ điểm nặng nhất không phải là từ vựng mà là QUÊN DẤU CHẤM CÂU (。) hoặc dấu chấm hỏi (？). Luôn để lại 2 phút cuối cùng rà soát lại dấu chấm câu của cả 5 câu sắp xếp!",
+          "examples": [
+            {
+              "zh": "我们每天都应该努力学习。(BẮT BUỘC có dấu chấm tròn 。)",
+              "pinyin": "Wǒmen měitiān dōu yīnggāi nǔlì xuéxí.",
+              "vi": "Chúng ta mỗi ngày đều nên chăm chỉ học tập."
+            }
+          ]
+        },
+        "examTips": "Bí kíp đạt điểm tối đa phần Viết HSK 3: Với bài điền chữ Hán nhìn Pinyin, luôn nhìn cả câu trước và sau để xác định từ loại và ngữ cảnh. Ví dụ: Pinyin cho là 'yī', nếu trước đó có chữ '第' thì chắc chắn là '第一' (thứ nhất), nếu có '穿' thì chắc chắn là '衣服' (quần áo)!"
+      },
+      "practice": {
+        "quiz": {
+          "question": "Trong bài thi Viết HSK 3, quy tắc nào sau đây quan trọng nhất để không bị trừ điểm oan:",
+          "options": [
+            "(Recommended) Sau khi sắp xếp xong câu, bắt buộc phải viết đúng dấu chấm câu (。hoặc ？) ở cuối",
+            "Không cần viết dấu chấm câu cũng được tính điểm tối đa",
+            "Có thể dùng dấu chấm tiếng Việt (.) thay cho dấu tròn tiếng Hán (。)",
+            "Chỉ cần ghép đúng chữ Hán đầu tiên là được điểm"
+          ],
+          "answer": 0,
+          "explanation": "Quy chế chấm thi CTI trừ từ 1 đến 2 điểm cho mỗi câu thiếu dấu chấm câu tiếng Hán chuẩn (。)."
+        },
+        "dictation": {
+          "prompt": "Nghe và chép lại câu chúc mừng thi đỗ:",
+          "audioText": "祝贺你在HSK三级考试中取得好成绩！",
+          "expectedPinyin": "Zhuhe ni zai HSK san ji kaoshi zhong qude hao chengji!",
+          "meaning": "Chúc mừng bạn đã đạt thành tích xuất sắc trong kỳ thi HSK 3!"
+        },
+        "reorder": {
+          "prompt": "Sắp xếp thành câu thi thật HSK 3:",
+          "tokens": [
+            "取得好成绩",
+            "努力学习",
+            "一定能",
+            "只要",
+            "就"
+          ],
+          "correctOrder": [
+            "只要",
+            "努力学习",
+            "就",
+            "一定能",
+            "取得好成绩"
+          ],
+          "resultSentence": "只要努力学习，就一定能取得好成绩。(Chỉ cần chăm chỉ học tập, ắt sẽ đạt được thành tích tốt.)"
+        },
+        "production": {
+          "prompt": "Hãy viết 1 câu thể hiện quyết tâm chinh phục HSK 3 hoặc mục tiêu du học/công việc của bạn:",
+          "sampleAnswer": "我一定会在三个月内通过HSK三级考试！(Tôi nhất định sẽ vượt qua kỳ thi HSK 3 trong vòng 3 tháng!)"
+        }
+      }
+    }
+  ]
+}
