@@ -50,7 +50,7 @@
   }
 
   function getCurriculumData() {
-    return window.hsk90CurriculumData || null;
+    return window.hsk90CurriculumData || (typeof hsk90CurriculumData !== 'undefined' ? hsk90CurriculumData : null);
   }
 
   function selectPhase(phaseNum) {
@@ -122,11 +122,27 @@
   }
 
   // --- Main Render Function ---
-  function renderHsk90Tab() {
+  async function renderHsk90Tab() {
     const container = document.getElementById('tab-hsk90');
     if (!container) return;
 
-    const cur = getCurriculumData();
+    let cur = getCurriculumData();
+    if (!cur && typeof window.loadData === 'function') {
+      try {
+        cur = await window.loadData('hsk90Curriculum');
+        if (cur) window.hsk90CurriculumData = cur;
+      } catch (e) {
+        console.warn('Could not load hsk90Curriculum dynamically', e);
+      }
+    } else if (!cur && typeof loadData === 'function') {
+      try {
+        cur = await loadData('hsk90Curriculum');
+        if (cur) window.hsk90CurriculumData = cur;
+      } catch (e) {
+        console.warn('Could not load hsk90Curriculum', e);
+      }
+    }
+
     if (!cur || !cur.modules) {
       container.innerHTML = `
         <div class="p-8 text-center bg-white dark:bg-[#161B22] rounded-3xl border border-amber-200 dark:border-stone-800 shadow-sm">

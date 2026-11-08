@@ -205,7 +205,7 @@ let dictationData = [];
 let hsk90CurriculumData = null;
 
 const DATASETS = {
-  hsk90Curriculum: { url: 'data/hsk90_curriculum.json', set: v => { hsk90CurriculumData = v || null; } },
+  hsk90Curriculum: { url: 'data/hsk90_curriculum.json', set: v => { hsk90CurriculumData = v || null; window.hsk90CurriculumData = v || null; } },
   dictionary: { url: 'data/dictionary.json', set: v => { dictionaryData = v || []; } },
   lessons: { url: 'data/lessons.json', set: v => { lessonsData = v || []; } },
   etymology: { url: 'data/etymology.json', set: v => { etymologyData = v || []; } },
@@ -272,6 +272,11 @@ function loadData(name) {
 
 function loadDatasets(names) {
   return Promise.all((names || []).map(loadData));
+}
+
+if (typeof window !== 'undefined') {
+  window.loadData = loadData;
+  window.loadDatasets = loadDatasets;
 }
 
 })();
@@ -4228,7 +4233,7 @@ function renderPinyinQuizView(container) {
   }
 
   function getCurriculumData() {
-    return window.hsk90CurriculumData || null;
+    return window.hsk90CurriculumData || (typeof hsk90CurriculumData !== 'undefined' ? hsk90CurriculumData : null);
   }
 
   function selectPhase(phaseNum) {
@@ -4300,11 +4305,27 @@ function renderPinyinQuizView(container) {
   }
 
   // --- Main Render Function ---
-  function renderHsk90Tab() {
+  async function renderHsk90Tab() {
     const container = document.getElementById('tab-hsk90');
     if (!container) return;
 
-    const cur = getCurriculumData();
+    let cur = getCurriculumData();
+    if (!cur && typeof window.loadData === 'function') {
+      try {
+        cur = await window.loadData('hsk90Curriculum');
+        if (cur) window.hsk90CurriculumData = cur;
+      } catch (e) {
+        console.warn('Could not load hsk90Curriculum dynamically', e);
+      }
+    } else if (!cur && typeof loadData === 'function') {
+      try {
+        cur = await loadData('hsk90Curriculum');
+        if (cur) window.hsk90CurriculumData = cur;
+      } catch (e) {
+        console.warn('Could not load hsk90Curriculum', e);
+      }
+    }
+
     if (!cur || !cur.modules) {
       container.innerHTML = `
         <div class="p-8 text-center bg-white dark:bg-[#161B22] rounded-3xl border border-amber-200 dark:border-stone-800 shadow-sm">

@@ -32,7 +32,7 @@ let dictationData = [];
 let hsk90CurriculumData = null;
 
 const DATASETS = {
-  hsk90Curriculum: { url: 'data/hsk90_curriculum.json', set: v => { hsk90CurriculumData = v || null; } },
+  hsk90Curriculum: { url: 'data/hsk90_curriculum.json', set: v => { hsk90CurriculumData = v || null; window.hsk90CurriculumData = v || null; } },
   dictionary: { url: 'data/dictionary.json', set: v => { dictionaryData = v || []; } },
   lessons: { url: 'data/lessons.json', set: v => { lessonsData = v || []; } },
   etymology: { url: 'data/etymology.json', set: v => { etymologyData = v || []; } },
@@ -99,4 +99,9 @@ function loadData(name) {
 
 function loadDatasets(names) {
   return Promise.all((names || []).map(loadData));
+}
+
+if (typeof window !== 'undefined') {
+  window.loadData = loadData;
+  window.loadDatasets = loadDatasets;
 }
