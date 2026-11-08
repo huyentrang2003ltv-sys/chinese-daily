@@ -15,18 +15,20 @@ test('HSK 3.0 Standard Course Curriculum & Interactive Lesson Detail Modal', asy
   const indexHtml = fs.readFileSync(indexPath, 'utf8');
   const pathwayJs = fs.readFileSync(pathwayJsPath, 'utf8');
 
-  await t.test('1. Validates all 48 lessons have comprehensive pedagogical depth', () => {
+  await t.test('1. Validates all 68 lessons have comprehensive pedagogical depth', () => {
     assert.ok(Array.isArray(roadmapData.standardCourse48Lessons), 'standardCourse48Lessons must be an array');
-    assert.equal(roadmapData.standardCourse48Lessons.length, 48, 'Must have exactly 48 lessons across HSK 1, 2, 3');
+    assert.equal(roadmapData.standardCourse48Lessons.length, 68, 'Must have exactly 68 lessons across HSK 1, 2, 3, 4');
 
-    // Check level distribution: HSK 1 = 15, HSK 2 = 15, HSK 3 = 18
+    // Check level distribution: HSK 1 = 15, HSK 2 = 15, HSK 3 = 18, HSK 4 = 20
     const hsk1 = roadmapData.standardCourse48Lessons.filter(l => l.hskLevel === 1);
     const hsk2 = roadmapData.standardCourse48Lessons.filter(l => l.hskLevel === 2);
     const hsk3 = roadmapData.standardCourse48Lessons.filter(l => l.hskLevel === 3);
+    const hsk4 = roadmapData.standardCourse48Lessons.filter(l => l.hskLevel === 4);
 
     assert.equal(hsk1.length, 15, 'HSK 1 must have 15 standard course lessons');
     assert.equal(hsk2.length, 15, 'HSK 2 must have 15 standard course lessons');
     assert.equal(hsk3.length, 18, 'HSK 3 must have 18 standard course lessons');
+    assert.equal(hsk4.length, 20, 'HSK 4 must have 20 standard course lessons from 4A & 4B');
 
     // Validate completeness of every lesson
     roadmapData.standardCourse48Lessons.forEach((l, idx) => {
@@ -58,6 +60,9 @@ test('HSK 3.0 Standard Course Curriculum & Interactive Lesson Detail Modal', asy
   });
 
   await t.test('2. Validates modal markup and action bindings in public/index.html', () => {
+    assert.ok(indexHtml.includes('id="tab-hsk30"'), 'index.html must contain #tab-hsk30');
+    assert.ok(indexHtml.includes('id="hsk30DedicatedCardsContainer"'), 'index.html must contain #hsk30DedicatedCardsContainer');
+    assert.ok(indexHtml.includes('id="btn-hsk30-dedicated-4"'), 'index.html must contain HSK 4 dedicated button');
     assert.ok(indexHtml.includes('id="hsk30LessonDetailModal"'), 'index.html must contain #hsk30LessonDetailModal');
     assert.ok(indexHtml.includes('id="hsk30ModalTitleZh"'), 'index.html must contain title element');
     assert.ok(indexHtml.includes('id="hsk30ModalTtsBtn"'), 'index.html must contain modal TTS button');
@@ -150,7 +155,7 @@ test('HSK 3.0 Standard Course Curriculum & Interactive Lesson Detail Modal', asy
     const modal = elements['hsk30LessonDetailModal'];
     assert.equal(modal.classList.contains('hidden'), false, 'Modal must not be hidden after open');
     assert.equal(elements['hsk30ModalTitleZh'].textContent, 'AI小语，你好！');
-    assert.ok(elements['hsk30LessonProgressText'].textContent.includes('Bài 1 / 48'));
+    assert.ok(elements['hsk30LessonProgressText'].textContent.includes('Bài 1 / 68'));
 
     // Check active lesson in state
     const viewing = sandbox.getCurrentlyViewingHsk30Lesson();

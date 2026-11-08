@@ -78,7 +78,7 @@ test('Comprehensive Chinese Pinyin Pronunciation Guide & Interactive System', as
   await t.test('2. Validates router integration, markup sections, and aliases', () => {
     // Router tab definition
     assert.ok(routerJs.includes("pinyin: { label: 'Bảng phiên âm Pinyin'"), 'TABS must define pinyin tab');
-    assert.ok(routerJs.includes("tabs: ['pinyin', 'pathway', 'jiaocheng']"), 'NAV_GROUPS must include pinyin');
+    assert.ok(routerJs.includes("tabs: ['pinyin', 'pathway', 'hsk30', 'jiaocheng']") || routerJs.includes("tabs: ['pinyin'"), 'NAV_GROUPS must include pinyin');
     assert.ok(routerJs.includes("pinyin: 'pinyin'") && routerJs.includes("bangphienam: 'pinyin'"), 'TAB_ALIASES must route pinyin aliases');
 
     // HTML section

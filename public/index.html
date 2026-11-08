@@ -1309,6 +1309,80 @@
       <div id="activeEtymologyContainer" class="space-y-6"></div>
     </section>
 
+    <!-- TAB: GIÁO TRÌNH CHUẨN HSK 3.0 TOÀN TẬP (68 BÀI HSK 1 - 4) -->
+    <section id="tab-hsk30" class="hidden space-y-6">
+      <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-red-50/80 via-[#FFFDF9] to-amber-50/50 border border-amber-300/80 shadow-xs">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-red-100 text-[#8B1E1E] border border-red-300 text-xs font-bold mb-3">
+              <i data-lucide="graduation-cap" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+              <span>Tiêu Chuẩn Mới FLTRP Ngoại Văn Ngoại Ngữ & CTI Hanban Quốc Tế</span>
+            </div>
+            <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
+              Giáo Trình Chuẩn HSK 3.0 Toàn Tập (新HSK教程 1-4 全套 68 Bài)
+            </h2>
+            <p class="text-sm text-stone-600 max-w-3xl leading-relaxed">
+              Hệ thống hóa toàn diện 68 bài học chính thức từ các tập sách 《新HSK教程》 (HSK 1, HSK 2, HSK 3, HSK 4A & 4B) xuất bản bởi Ngoại văn Ngoại ngữ Nghiên cứu & Giảng dạy (外研社 FLTRP) phối hợp cùng CTI (汉考国际). Tích hợp AI Trợ giảng Xiaoyu (小语), hội thoại ngữ cảnh đời sống thực tế, từ vựng chuẩn khung 3 Cấp 9 Bậc, trọng điểm ngữ pháp, ứng dụng văn hóa và trắc nghiệm tương tác chấm điểm tự động.
+            </p>
+          </div>
+
+          <div class="flex items-center gap-3 bg-white/90 p-3.5 rounded-2xl border border-amber-200/90 shadow-2xs shrink-0">
+            <div class="text-center px-2">
+              <span class="block text-2xl font-black text-[#8B1E1E] font-serif-luxury" id="hsk30DedicatedTotalCount">68</span>
+              <span class="text-[11px] text-stone-500 font-bold uppercase tracking-wider">Bài Chuẩn HSK</span>
+            </div>
+            <div class="w-px h-10 bg-amber-200"></div>
+            <div class="text-center px-2">
+              <span class="block text-2xl font-black text-amber-700 font-serif-luxury">4</span>
+              <span class="text-[11px] text-stone-500 font-bold uppercase tracking-wider">Cấp Độ 1 – 4</span>
+            </div>
+            <div class="w-px h-10 bg-amber-200"></div>
+            <div class="text-center px-2">
+              <span class="block text-2xl font-black text-emerald-700 font-serif-luxury">100%</span>
+              <span class="text-[11px] text-stone-500 font-bold uppercase tracking-wider">Chuẩn FLTRP</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filter & Search Toolbar -->
+        <div class="pt-6 border-t border-amber-200/60 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="flex items-center gap-1.5 overflow-x-auto pb-1 no-scrollbar">
+            <span class="text-xs font-bold text-stone-500 whitespace-nowrap">Cấp độ HSK:</span>
+            <button onclick="filterHsk30DedicatedLevel(0)" id="btn-hsk30-dedicated-0" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer">
+              🌟 Tất cả 68 Bài
+            </button>
+            <button onclick="filterHsk30DedicatedLevel(1)" id="btn-hsk30-dedicated-1" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-blue-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+              📘 HSK 1 (15 Bài)
+            </button>
+            <button onclick="filterHsk30DedicatedLevel(2)" id="btn-hsk30-dedicated-2" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-emerald-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+              📗 HSK 2 (15 Bài)
+            </button>
+            <button onclick="filterHsk30DedicatedLevel(3)" id="btn-hsk30-dedicated-3" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-rose-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+              📕 HSK 3 (18 Bài)
+            </button>
+            <button onclick="filterHsk30DedicatedLevel(4)" id="btn-hsk30-dedicated-4" class="px-3 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer">
+              📙 HSK 4 (20 Bài · 4A & 4B)
+            </button>
+          </div>
+
+          <!-- Search Input -->
+          <div class="relative w-full md:w-80">
+            <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+            <input 
+              type="text" 
+              id="hsk30DedicatedSearchInput"
+              placeholder="Tìm bài học, chủ đề, ngữ pháp HSK..." 
+              oninput="searchHsk30DedicatedLessons(this.value)"
+              class="w-full pl-9 pr-3 py-2 text-xs rounded-xl bg-white/90 border border-amber-300 text-stone-900 focus:outline-none focus:ring-2 focus:ring-[#8B1E1E] shadow-2xs"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Lesson Cards Grid -->
+      <div id="hsk30DedicatedCardsContainer"></div>
+    </section>
+
     <!-- TAB: GIÁO TRÌNH HÁN NGỮ 6 QUYỂN (BÁCH KHOA TOÀN THƯ) -->
     <section id="tab-jiaocheng" class="hidden space-y-6">
       <div class="glass-card rounded-2xl p-6 lg:p-8 relative overflow-hidden bg-gradient-to-r from-red-50/80 via-[#FFFDF9] to-amber-50/50 border border-amber-300/80 shadow-xs">

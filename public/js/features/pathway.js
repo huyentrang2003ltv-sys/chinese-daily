@@ -760,7 +760,7 @@ function renderPathwayLessonsView(container) {
             id="btn-sublesson-standard48" 
             class="px-4 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${currentPathwayLessonsTab === 'standard48' ? 'bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm' : 'bg-white dark:bg-[#161B22] text-stone-700 dark:text-stone-300 hover:bg-amber-100 border border-stone-200 dark:border-stone-700'}"
           >
-            <span>📘 Giáo Trình Chuẩn HSK 3.0 (48 Bài Sơ Cấp)</span>
+            <span>📘 Giáo Trình Chuẩn HSK 3.0 (68 Bài Học HSK 1 - 4)</span>
           </button>
           <button 
             onclick="switchPathwayLessonsTab('all1040')" 
@@ -772,7 +772,7 @@ function renderPathwayLessonsView(container) {
         </div>
 
         <div class="text-2xs text-stone-500 dark:text-stone-400">
-          ${currentPathwayLessonsTab === 'standard48' ? 'Đầy đủ HSK 1 (15 bài), HSK 2 (15 bài) & HSK 3 (18 bài)' : 'Lọc từ vựng thực chiến HSK 1 – 6'}
+          ${currentPathwayLessonsTab === 'standard48' ? 'Đầy đủ HSK 1 (15 bài), HSK 2 (15 bài), HSK 3 (18 bài) & HSK 4 (20 bài)' : 'Lọc từ vựng thực chiến HSK 1 – 6'}
         </div>
       </div>
 
@@ -785,7 +785,7 @@ function renderPathwayLessonsView(container) {
               onclick="filterHsk30CourseLevel(0)" 
               class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 0 ? 'bg-[#8B1E1E] text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-100'}"
             >
-              Tất Cả 48 Bài
+              Tất Cả 68 Bài
             </button>
             <button 
               onclick="filterHsk30CourseLevel(1)" 
@@ -917,7 +917,7 @@ function renderHsk30StandardCourseCards(container) {
         <div onclick="openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3 hover:border-amber-400 hover:shadow-md transition-all cursor-pointer group">
           <div class="space-y-2">
             <div class="flex items-center justify-between">
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${l.hskLevel === 1 ? 'bg-blue-100 text-blue-800' : (l.hskLevel === 2 ? 'bg-emerald-100 text-emerald-800' : 'bg-rose-100 text-rose-800')}">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${l.hskLevel === 1 ? 'bg-blue-100 text-blue-800' : (l.hskLevel === 2 ? 'bg-emerald-100 text-emerald-800' : (l.hskLevel === 3 ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'))}">
                 HSK ${l.hskLevel} · Bài ${l.lessonNumber}
               </span>
               <button onclick="event.stopPropagation(); playChineseTTS(${jsArg(l.titleZh)})" class="p-1 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" title="Nghe tiêu đề">
@@ -1573,4 +1573,118 @@ function renderPathwayResources(container) {
   `;
 
   container.innerHTML = html;
+}
+
+
+// =========================================================================
+// TAB: GIÁO TRÌNH CHUẨN HSK 3.0 TOÀN TẬP (DEDICATED TOP-LEVEL VIEW)
+// =========================================================================
+let currentHsk30DedicatedFilter = 0;
+let currentHsk30DedicatedSearchQuery = '';
+
+async function renderHsk30DedicatedTab() {
+  if (!hsk30RoadmapData && typeof loadData === 'function') {
+    await loadData('hsk30Roadmap');
+  }
+  const container = document.getElementById('hsk30DedicatedCardsContainer');
+  if (!container) return;
+  renderHsk30DedicatedCards(container);
+  if (window.lucide) lucide.createIcons();
+}
+
+function filterHsk30DedicatedLevel(level) {
+  currentHsk30DedicatedFilter = level;
+  const levels = [0, 1, 2, 3, 4];
+  levels.forEach(lvl => {
+    const btn = document.getElementById(`btn-hsk30-dedicated-${lvl}`);
+    if (!btn) return;
+    if (lvl === level) {
+      btn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer';
+    } else {
+      btn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer';
+    }
+  });
+  const container = document.getElementById('hsk30DedicatedCardsContainer');
+  if (container) renderHsk30DedicatedCards(container);
+}
+
+function searchHsk30DedicatedLessons(query) {
+  currentHsk30DedicatedSearchQuery = (query || '').trim().toLowerCase();
+  const container = document.getElementById('hsk30DedicatedCardsContainer');
+  if (container) renderHsk30DedicatedCards(container);
+}
+
+function renderHsk30DedicatedCards(container) {
+  if (!container || !hsk30RoadmapData) return;
+  const allLessons = hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons || hsk30RoadmapData.standardCourse48Lessons || [];
+
+  const filtered = allLessons.filter(l => {
+    const matchLevel = (currentHsk30DedicatedFilter === 0) || (Number(l.hskLevel) === Number(currentHsk30DedicatedFilter));
+    if (!matchLevel) return false;
+    if (!currentHsk30DedicatedSearchQuery) return true;
+    const q = currentHsk30DedicatedSearchQuery;
+    return (l.titleZh && l.titleZh.toLowerCase().includes(q)) ||
+           (l.titleVi && l.titleVi.toLowerCase().includes(q)) ||
+           (l.grammar && l.grammar.toLowerCase().includes(q)) ||
+           (l.vocabTheme && l.vocabTheme.toLowerCase().includes(q));
+  });
+
+  const totalEl = document.getElementById('hsk30DedicatedTotalCount');
+  if (totalEl) totalEl.textContent = allLessons.length;
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="glass-card rounded-2xl p-8 text-center text-stone-500">
+        Không tìm thấy bài học nào phù hợp với bộ lọc "${currentHsk30DedicatedSearchQuery}".
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      ${filtered.map(l => `
+        <div onclick="openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3 hover:border-amber-400 hover:shadow-md transition-all cursor-pointer group">
+          <div class="space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${l.hskLevel === 1 ? 'bg-blue-100 text-blue-800' : (l.hskLevel === 2 ? 'bg-emerald-100 text-emerald-800' : (l.hskLevel === 3 ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'))}">
+                HSK ${l.hskLevel} · Bài ${l.lessonNumber}
+              </span>
+              <button onclick="event.stopPropagation(); playChineseTTS(${jsArg(l.titleZh)})" class="p-1 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" title="Nghe tiêu đề">
+                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+              </button>
+            </div>
+            <div>
+              <h5 class="font-hanzi font-black text-base text-stone-900 dark:text-stone-100 group-hover:text-[#8B1E1E] dark:group-hover:text-amber-400 transition-colors">${l.titleZh}</h5>
+              <p class="text-xs text-stone-500 dark:text-stone-400 italic">${l.titlePinyin || ''}</p>
+              <p class="text-xs font-medium text-stone-700 dark:text-stone-300 mt-0.5">${l.titleVi}</p>
+            </div>
+            <div class="p-2 rounded-xl bg-amber-50/60 dark:bg-stone-800/60 border border-amber-200/60 dark:border-stone-700 text-2xs space-y-1">
+              <p><strong>Ngữ pháp:</strong> ${l.grammar || l.focus || 'Trọng điểm ngữ pháp'}</p>
+              <p><strong>Chủ đề từ:</strong> ${l.vocabTheme || l.vocabularyTheme || 'Từ vựng giao tiếp'}</p>
+            </div>
+            ${l.dialogueZh ? `
+              <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-2xs space-y-1">
+                <p class="font-hanzi font-bold text-stone-800 dark:text-stone-200 whitespace-pre-line leading-relaxed">${l.dialogueZh}</p>
+                <p class="text-stone-500 dark:text-stone-400 whitespace-pre-line">${l.dialogueVi}</p>
+              </div>
+            ` : ''}
+          </div>
+          
+          <div class="space-y-2 pt-2 border-t border-stone-100 dark:border-stone-800">
+            ${l.tip ? `
+              <div class="text-[11px] text-amber-800 dark:text-amber-400 italic leading-snug">
+                💡 ${l.tip}
+              </div>
+            ` : ''}
+            <button onclick="event.stopPropagation(); openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="w-full py-2 px-3 rounded-xl text-xs font-bold bg-amber-100/80 hover:bg-gradient-to-r hover:from-amber-600 hover:to-amber-700 hover:text-white text-stone-800 dark:bg-stone-800 dark:hover:bg-amber-600 dark:text-stone-200 dark:hover:text-white border border-amber-300/80 dark:border-stone-700 shadow-2xs flex items-center justify-center gap-1.5 transition-all cursor-pointer">
+              <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+              <span>Xem Chi Tiết Bài Học →</span>
+            </button>
+          </div>
+        </div>
+      `).join('')}
+    </div>
+  `;
+  if (window.lucide) lucide.createIcons();
 }
