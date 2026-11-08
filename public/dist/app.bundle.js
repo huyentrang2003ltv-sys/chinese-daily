@@ -5146,7 +5146,7 @@ async function openHsk30LessonModal(level, lessonNumber) {
     await loadData('hsk30Roadmap');
   }
   if (!hsk30RoadmapData) return;
-  const allLessons = hsk30RoadmapData.standardCourse48Lessons || [];
+  const allLessons = hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons || hsk30RoadmapData.standardCourse48Lessons || [];
   const lesson = allLessons.find(l => Number(l.hskLevel) === Number(level) && Number(l.lessonNumber) === Number(lessonNumber));
   if (!lesson) {
     if (typeof showToast === 'function') showToast('Không tìm thấy thông tin bài học.');
@@ -5181,6 +5181,9 @@ async function openHsk30LessonModal(level, lessonNumber) {
   updateHsk30LessonModalFooter();
   switchHsk30LessonTab('dialogues');
 
+  const container = document.getElementById('hsk30LessonModalBody');
+  if (container) container.scrollTop = 0;
+
   modal.classList.remove('hidden');
   refreshIcons(modal);
 }
@@ -5192,7 +5195,7 @@ function closeHsk30LessonModal() {
 
 function updateHsk30LessonModalFooter() {
   if (!currentViewingHsk30Lesson || !hsk30RoadmapData) return;
-  const all = hsk30RoadmapData.standardCourse48Lessons || [];
+  const all = hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons || hsk30RoadmapData.standardCourse48Lessons || [];
   const idx = all.findIndex(l => Number(l.hskLevel) === Number(currentViewingHsk30Lesson.hskLevel) && Number(l.lessonNumber) === Number(currentViewingHsk30Lesson.lessonNumber));
 
   const progressEl = document.getElementById('hsk30LessonProgressText');
@@ -5215,7 +5218,7 @@ function updateHsk30LessonModalFooter() {
 
 function navigateHsk30Lesson(direction) {
   if (!currentViewingHsk30Lesson || !hsk30RoadmapData) return;
-  const all = hsk30RoadmapData.standardCourse48Lessons || [];
+  const all = hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons || hsk30RoadmapData.standardCourse48Lessons || [];
   const idx = all.findIndex(l => Number(l.hskLevel) === Number(currentViewingHsk30Lesson.hskLevel) && Number(l.lessonNumber) === Number(currentViewingHsk30Lesson.lessonNumber));
   if (idx < 0) return;
 
@@ -5235,11 +5238,14 @@ function switchHsk30LessonTab(tabName) {
     const btn = document.getElementById(`hsk30TabBtn-${t}`);
     if (!btn) return;
     if (t === tabName) {
-      btn.className = 'px-4 py-3 text-xs font-bold border-b-2 border-[#8B1E1E] dark:border-amber-400 text-[#8B1E1E] dark:text-amber-400 whitespace-nowrap flex items-center gap-1.5 cursor-pointer';
+      btn.className = 'h-12 px-4 py-2 text-xs font-bold border-b-2 border-[#8B1E1E] dark:border-amber-400 text-[#8B1E1E] dark:text-amber-400 whitespace-nowrap flex items-center gap-1.5 cursor-pointer';
     } else {
-      btn.className = 'px-4 py-3 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-1.5 cursor-pointer';
+      btn.className = 'h-12 px-4 py-2 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-1.5 cursor-pointer';
     }
   });
+
+  const container = document.getElementById('hsk30LessonModalBody');
+  if (container) container.scrollTop = 0;
 
   renderHsk30LessonDetailContent();
 }
