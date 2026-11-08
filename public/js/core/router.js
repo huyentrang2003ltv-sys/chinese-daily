@@ -32,7 +32,13 @@ const TABS = {
   },
   readings: { label: 'Đọc hiểu song ngữ', icon: 'book-open-check', data: ['readings'], init: () => { initReadingsModule(); setupReadingSearch(); } },
   culture: { label: 'Văn hóa & Lịch sử', icon: 'landmark', data: ['culture'], init: () => { renderCultureCards(); setupCultureSearch(); } },
-  practice: { label: 'Luyện 4 kỹ năng', icon: 'check-square', data: ['practice'], init: () => renderPractice() },
+  practice: {
+    label: 'Luyện 4 kỹ năng', icon: 'check-square', data: ['practice', 'dictation'],
+    init: () => {
+      renderPractice();
+      if (typeof initDictationLab === 'function') initDictationLab();
+    }
+  },
   translation: {
     label: 'Luyện dịch', icon: 'languages', data: ['lessons'],
     init: () => { renderTranslationLessonList(); renderTranslationStage(); }
@@ -76,7 +82,11 @@ const TAB_ALIASES = {
   scenario: 'aichat',
   scenarios: 'aichat',
   dialogue: 'aichat',
-  dialogues: 'aichat'
+  dialogues: 'aichat',
+  dictation: 'practice',
+  shadowing: 'practice',
+  chepchinhta: 'practice',
+  nghenhai: 'practice'
 };
 const LAST_TAB_PER_GROUP_KEY = 'yuhan_last_tab_per_group';
 const RECENT_TABS_KEY = 'yuhan_recent_tabs';

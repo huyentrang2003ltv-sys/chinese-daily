@@ -28,6 +28,7 @@ let vocabExpansionData = [];
 let classifiersData = [];
 let polyphonicWordsData = [];
 let complementsData = [];
+let dictationData = [];
 
 const DATASETS = {
   dictionary: { url: 'data/dictionary.json', set: v => { dictionaryData = v || []; } },
@@ -59,7 +60,8 @@ const DATASETS = {
   classifiers: { url: 'data/classifiers.json', set: v => { classifiersData = v || []; } },
   polyphonicWords: { url: 'data/polyphonic_words.json', set: v => { polyphonicWordsData = v || []; } },
   polyphonic: { url: 'data/polyphonic_words.json', set: v => { polyphonicWordsData = v || []; } },
-  complements: { url: 'data/complements.json', set: v => { complementsData = v || []; } }
+  complements: { url: 'data/complements.json', set: v => { complementsData = v || []; } },
+  dictation: { url: 'data/dictation_sentences.json', set: v => { dictationData = v || []; } }
 };
 
 const dataPromises = new Map();
