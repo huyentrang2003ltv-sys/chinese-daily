@@ -3,309 +3,2857 @@
     "id": "hsk5_mock_1",
     "level": 5,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 5 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 5 Chuẩn Hanban CTI Quốc Tế (100 Câu Chuẩn Hóa)",
     "durationMinutes": 120,
     "passScore": 180,
     "totalScore": 300,
-    "description": "Đề thi HSK 5 cao cấp: Khảo sát 2.500 từ vựng chuyên ngành, ngữ pháp phức hợp, tư duy phân tích văn bản dài và kỹ năng hành văn học thuật.",
+    "questionCount": 100,
+    "description": "Đề thi mô phỏng định dạng khảo thí CTI Hanban: 45 câu Nghe, 45 câu Đọc và 10 câu Viết (gồm 2 bài viết tự luận 80 chữ).",
     "questions": [
       {
-        "id": "hsk5_e1_q1",
-        "section": "Phần 1: Nghe hiểu - Phỏng vấn chuyên sâu (听力访谈理解)",
-        "type": "listening_choice",
-        "prompt": "Theo chuyên gia kinh tế trong bài nói, chìa khóa để doanh nghiệp duy trì năng lực cạnh tranh cốt lõi là gì?",
-        "audioText": "女：在数字化转型的大背景下，传统企业应当如何破局？\n男：我认为核心在于持续的技术研发投入与敏捷的组织变革，唯有将数据资产转化为实际业务赋能，企业才能在风云变幻的市场中立于不败之地。",
+        "id": "hsk5_bench_l_1",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 1/100] Nghe đoạn đối thoại số 1 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
         "options": [
           {
             "key": "A",
-            "text": "盲目扩张线下实体门店规模 (Mở rộng mù quáng cửa hàng thực tế)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "持续研发投入与数据赋能组织变革 (Đầu tư R&D liên tục và chuyển đổi dữ liệu)",
-            "isCorrect": true
-          },
-          {
-            "key": "C",
-            "text": "大幅度削减员工薪资福利 (Cắt giảm lương phúc lợi của nhân viên)",
-            "isCorrect": false
-          },
-          {
-            "key": "D",
-            "text": "停止所有新兴数字领域的探索 (Dừng mọi tìm tòi số hóa)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Chuyên gia khẳng định: '核心在于持续的技术研发投入与敏捷的组织变革，唯有将数据资产转化为实际业务赋能'. Đáp án B.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk5_e1_q2",
-        "section": "Phần 1: Nghe hiểu - Bài thuyết trình khoa học (听力报告理解)",
-        "type": "listening_choice",
-        "prompt": "Báo cáo khoa học chỉ ra hiện tượng tâm lý nào?",
-        "audioText": "现代心理学研究表明，适度的认知焦虑反而能激发个体的大脑潜能，提高应对复杂任务时的专注度与执行力；然而，过度的心理负荷则会导致判断力下降与决策失误。",
-        "options": [
-          {
-            "key": "A",
-            "text": "完全没有焦虑才是最佳工作状态 (Không lo lắng chút nào mới là tốt nhất)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "适度焦虑激发潜能，过度负荷损伤决策 (Lo âu vừa phải kích phát tiềm năng, quá tải tổn hại quyết sách)",
-            "isCorrect": true
-          },
-          {
-            "key": "C",
-            "text": "心理压力对智商没有任何影响 (Áp lực tâm lý không ảnh hưởng IQ)",
-            "isCorrect": false
-          },
-          {
-            "key": "D",
-            "text": "焦虑感越强工作效率永远越高 (Lo âu càng cao hiệu suất luôn càng tăng)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Nghiên cứu nêu rõ quy luật hình chữ U đảo ngược: 适度焦虑激发潜能，过度则导致失误. Đáp án B.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk5_e1_q3",
-        "section": "Phần 1: Nghe hiểu - Đối thoại đàm phán (听商务谈判对话)",
-        "type": "listening_choice",
-        "prompt": "Hai bên đã đạt được đồng thuận về phương diện nào?",
-        "audioText": "男：关于这批设备的交货周期，我方原则上同意缩短至四十五天，但贵方需相应提高预付款比例。\n女：成交！只要能确保质量按期交付，首付款比例由原先的百分之二十调整为百分之三十五。",
-        "options": [
-          {
-            "key": "A",
-            "text": "缩短交货期并提高首付款比例 (Rút ngắn thời hạn giao hàng và tăng tỷ lệ đặt cọc)",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "取消全部设备售后服务 (Hủy toàn bộ dịch vụ hậu mãi)",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "延长交货期至半年 (Kéo dài thời hạn giao hàng nửa năm)",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "完全终止商业合作 (Chấm dứt hoàn toàn hợp tác)",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
             "isCorrect": false
           }
         ],
-        "explanation": "Hai bên đồng ý: '缩短至四十五天' (rút ngắn hạn giao) và '首付款比例调整为百分之三十五'. Đáp án A.",
-        "skill": "listening"
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
       },
       {
-        "id": "hsk5_e1_q4",
-        "section": "Phần 1: Nghe hiểu - Đối thoại đàm thoại văn hóa (听文化生活对话)",
-        "type": "listening_choice",
-        "prompt": "Người phụ nữ đánh giá tác phẩm hội họa cổ điển như thế nào?",
-        "audioText": "男：你觉得这幅宋代山水画怎么样？\n女：其意境极为深邃，画家运用极其简约的留白艺术，却勾勒出无尽的天地气韵，真可谓'言有尽而意无穷'！",
+        "id": "hsk5_bench_l_2",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 2/100] Nghe đoạn đối thoại số 2 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
         "options": [
           {
             "key": "A",
-            "text": "色彩浓艳但缺乏意境 (Màu sắc đậm đặc nhưng thiếu ý cảnh)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "运用留白艺术呈现深邃深远的天地气韵 (Vận dụng nghệ thuật để khoảng trống diễn tả khí vận sâu thẳm)",
-            "isCorrect": true
-          },
-          {
-            "key": "C",
-            "text": "技法稚嫩毫无观赏价值 (Kỹ pháp non nớt không giá trị)",
-            "isCorrect": false
-          },
-          {
-            "key": "D",
-            "text": "画幅过于繁杂杂乱无章 (Tranh quá rối rắm bừa bãi)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Người nữ khen ngợi: '意境极为深邃... 简约的留白艺术，勾勒出无尽的天地气韵'. Đáp án B.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk5_e1_q5",
-        "section": "Phần 2: Đọc hiểu - Điền từ học thuật (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn từ thích hợp điền vào đoạn văn: 任何一门博大精深的学问，若不经过长期的积累与______，便很难领会其真正的精髓所在。",
-        "options": [
-          {
-            "key": "A",
-            "text": "沉淀 (chéndiàn - lắng đọng, tích lũy sâu)",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "耽误 (dānwu - chậm trễ)",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "讽刺 (fěngcì - châm biếm)",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "虚伪 (xūwěi - giả tạo)",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
             "isCorrect": false
           }
         ],
-        "explanation": "Từ '积累与沉淀' (tích lũy và lắng đọng) là cặp từ kết hợp tri thức kinh điển trong văn phong HSK 5. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
       },
       {
-        "id": "hsk5_e1_q6",
-        "section": "Phần 2: Đọc hiểu - Điền từ thành ngữ (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn thành ngữ thích hợp: 做学问切忌浮躁冒进、______，必须脚踏实地一步一个脚印。",
+        "id": "hsk5_bench_l_3",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 3/100] Nghe đoạn đối thoại số 3 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
         "options": [
           {
             "key": "A",
-            "text": "急于求成 (jíyúqiúchéng - nôn nóng muốn thành công ngay)",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "大公无私 (dàgōngwúsī - chí công vô tư)",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "见义勇为 (jiànyìyǒngwéi - thấy việc nghĩa xông vào làm)",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "风俗习惯 (fēngsú xíguàn - phong tục tập quán)",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
             "isCorrect": false
           }
         ],
-        "explanation": "Thành ngữ '急于求成' (nôn nóng đốt cháy giai đoạn) tương đồng với '浮躁冒进'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
       },
       {
-        "id": "hsk5_e1_q7",
-        "section": "Phần 2: Đọc hiểu - Đọc hiểu đoạn văn triết lý (阅读短文)",
-        "type": "reading_choice",
-        "prompt": "Đọc đoạn văn sau: '古希腊哲学家苏格拉底曾说：'未经审视的人生是不值得过的。'现代人在被海量碎片化信息裹挟前行的同时，更需要定期的独处与自省，唯有认清内心真正的追求，才不至于在喧嚣的物质洪流中迷失自我。'\nCâu hỏi: Tác giả nhấn mạnh điều gì đối với con người thời hiện đại?",
+        "id": "hsk5_bench_l_4",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 4/100] Nghe đoạn đối thoại số 4 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
         "options": [
           {
             "key": "A",
-            "text": "独处自省与认清内心真正追求的重要性 (Tầm quan trọng của sự tĩnh lặng tự soi chiếu và nhận rõ hoài bão nội tâm)",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "每天浏览尽可能多的网络碎片资讯 (Hàng ngày lướt càng nhiều tin rác mạng càng tốt)",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "将物质财富积累视为人生的终极标尺 (Coi tích lũy vật chất là thước đo tối hậu)",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "完全切断与外界社会的任何联系 (Cắt đứt hoàn toàn quan hệ xã hội)",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
             "isCorrect": false
           }
         ],
-        "explanation": "Đoạn văn nhấn mạnh: '更需要定期的独处与自省，唯有认清内心真正的追求，才不至于...迷失自我'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
       },
       {
-        "id": "hsk5_e1_q8",
-        "section": "Phần 2: Đọc hiểu - Đọc hiểu đoạn văn khoa học xã hội (阅读短文)",
-        "type": "reading_choice",
-        "prompt": "Đọc đoạn văn sau: '生态文明建设绝非单纯的绿化工程，其深层本质是经济发展范式与社会价值取向的深刻重塑。唯有把生态优势转化为产业动能，才能实现人与自然的长期和谐共生。'\nCâu hỏi: Cốt lõi sâu xa của xây dựng văn minh sinh thái là gì?",
+        "id": "hsk5_bench_l_5",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 5/100] Nghe đoạn đối thoại số 5 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
         "options": [
           {
             "key": "A",
-            "text": "重塑发展范式并促进人与自然和谐共生 (Tái định hình mô hình phát triển và cộng sinh hài hòa giữa con người với tự nhiên)",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "彻底停止一切工业生产活动 (Ngừng hoàn toàn mọi hoạt động sản xuất công nghiệp)",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "仅仅在公园里多种花草树木 (Chỉ đơn thuần trồng thêm hoa cỏ ở công viên)",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "完全依赖进口资源替代本土消耗 (Phụ thuộc hoàn toàn nhập khẩu)",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
             "isCorrect": false
           }
         ],
-        "explanation": "Tác giả chỉ rõ bản chất: '经济发展范式与社会价值取向的深刻重塑... 实现人与自然长期和谐共生'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
       },
       {
-        "id": "hsk5_e1_q9",
-        "section": "Phần 2: Đọc hiểu - Đọc hiểu văn bản dài (阅读综合分析)",
-        "type": "reading_choice",
-        "prompt": "Đọc trích đoạn sau: '真正的大家风范，在于博采众长而不失本色，虚怀若谷而不自命清高。他们在学海无涯中始终怀揣求索之初心，既尊重前人典范，又勇于破除陈规壁垒。'\nCâu hỏi: Phẩm chất của '真正的大家' (bậc đại sư chân chính) là gì?",
+        "id": "hsk5_bench_l_6",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 6/100] Nghe đoạn đối thoại số 6 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
         "options": [
           {
             "key": "A",
-            "text": "兼收并蓄、虚怀若谷并勇于开拓创新 (Bao dung tiếp thu, khiêm cung và dũng cảm đổi mới sáng tạo)",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "固步自封只盲目崇拜古代大师 (Bảo thủ tự tôn chỉ sùng bái cổ nhân)",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "自视甚高拒绝一切批评意见 (Tự cao tự đại chối từ phê bình)",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "为迎合大众趣味彻底放弃治学原则 (Bỏ nguyên tắc học thuật để chiều thị hiếu)",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
             "isCorrect": false
           }
         ],
-        "explanation": "Đoạn văn nêu: '博采众长而不失本色，虚怀若谷... 勇于破除陈规壁垒'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
       },
       {
-        "id": "hsk5_e1_q10",
-        "section": "Phần 3: Viết - Sắp xếp câu phức (书写 - 排列词语)",
-        "type": "reorder",
-        "prompt": "Sắp xếp các cụm từ sau thành câu văn biểu đạt mạch lạc chuẩn HSK 5:",
+        "id": "hsk5_bench_l_7",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 7/100] Nghe đoạn đối thoại số 7 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_8",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 8/100] Nghe đoạn đối thoại số 8 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_9",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 9/100] Nghe đoạn đối thoại số 9 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_10",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 10/100] Nghe đoạn đối thoại số 10 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_11",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 11/100] Nghe đoạn đối thoại số 11 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_12",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 12/100] Nghe đoạn đối thoại số 12 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_13",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 13/100] Nghe đoạn đối thoại số 13 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_14",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 14/100] Nghe đoạn đối thoại số 14 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_15",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 15/100] Nghe đoạn đối thoại số 15 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_16",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 16/100] Nghe đoạn đối thoại số 16 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_17",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 17/100] Nghe đoạn đối thoại số 17 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_18",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 18/100] Nghe đoạn đối thoại số 18 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_19",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 19/100] Nghe đoạn đối thoại số 19 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_20",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 20/100] Nghe đoạn đối thoại số 20 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_21",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 21/100] Nghe đoạn đối thoại số 21 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_22",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 22/100] Nghe đoạn đối thoại số 22 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_23",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 23/100] Nghe đoạn đối thoại số 23 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_24",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 24/100] Nghe đoạn đối thoại số 24 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_25",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 25/100] Nghe đoạn đối thoại số 25 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_26",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 26/100] Nghe đoạn đối thoại số 26 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_27",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 27/100] Nghe đoạn đối thoại số 27 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_28",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 28/100] Nghe đoạn đối thoại số 28 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_29",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 29/100] Nghe đoạn đối thoại số 29 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_30",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 30/100] Nghe đoạn đối thoại số 30 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_31",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 31/100] Nghe đoạn đối thoại số 31 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_32",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 32/100] Nghe đoạn đối thoại số 32 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_33",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 33/100] Nghe đoạn đối thoại số 33 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_34",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 34/100] Nghe đoạn đối thoại số 34 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_35",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 35/100] Nghe đoạn đối thoại số 35 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_36",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 36/100] Nghe đoạn đối thoại số 36 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_37",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 37/100] Nghe đoạn đối thoại số 37 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_38",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 38/100] Nghe đoạn đối thoại số 38 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_39",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 39/100] Nghe đoạn đối thoại số 39 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_40",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 40/100] Nghe đoạn đối thoại số 40 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_41",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 41/100] Nghe đoạn đối thoại số 41 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_42",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 42/100] Nghe đoạn đối thoại số 42 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_43",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 43/100] Nghe đoạn đối thoại số 43 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_44",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 44/100] Nghe đoạn đối thoại số 44 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_l_45",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu HSK 5 (听力 45 Câu • Độc Thoại & Đối Thoại)",
+        "audioText": "男：关于这个环保项目，你们团队目前的进展如何？\n女：我们已经完成了第一阶段的市场调研，下周将向董事会提交可行性报告。",
+        "prompt": "[Câu 45/100] Nghe đoạn đối thoại số 45 và cho biết nhóm nghiên cứu chuẩn bị làm gì vào tuần tới?",
+        "options": [
+          {
+            "key": "A",
+            "text": "提交可行性报告 (Nộp báo cáo tính khả thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "开始市场调研 (Bắt đầu khảo sát thị trường)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "申请研发资金 (Xin cấp vốn nghiên cứu)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "解散项目团队 (Giải tán nhóm dự án)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người nữ nói rõ: '下周将向董事会提交可行性报告' (Tuần tới sẽ nộp báo cáo tính khả thi cho hội đồng quản trị)."
+      },
+      {
+        "id": "hsk5_bench_r_1",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 46/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_2",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 47/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_3",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 48/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_4",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 49/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_5",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 50/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_6",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 51/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_7",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 52/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_8",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 53/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_9",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 54/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_10",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 55/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_11",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 56/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_12",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 57/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_13",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 58/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_14",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 59/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_15",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 60/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_16",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 61/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_17",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 62/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_18",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 63/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_19",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 64/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_20",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 65/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_21",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 66/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_22",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 67/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_23",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 68/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_24",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 69/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_25",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 70/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_26",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 71/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_27",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 72/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_28",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 73/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_29",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 74/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_30",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 75/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_31",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 76/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_32",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 77/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_33",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 78/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_34",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 79/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_35",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 80/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_36",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 81/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_37",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 82/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_38",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 83/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_39",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 84/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_40",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 85/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_41",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 86/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_42",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 87/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_43",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 88/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_44",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 89/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_r_45",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Luận Văn & Báo Chí (阅读 45 Câu)",
+        "prompt": "[Câu 90/100] Chọn từ có khả năng kết hợp ngữ nghĩa chính xác nhất: 这项科研成果填补了国内该领域的空白，具有重大的学术______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "价值 (jiàzhí - giá trị học thuật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "价钱 (jiàqian - giá tiền)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "代价 (dàijià - cái giá phải trả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "价格 (jiàgé - mức giá)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Kết hợp từ cố định mang tính học thuật: '具有学术价值' (có giá trị học thuật)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_1",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 91/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
         "words": [
-          "这场突如其来的",
-          "给",
-          "暴风雨",
-          "当地交通",
-          "造成了",
-          "巨大的困扰"
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
         ],
         "correctOrder": [
-          "这场突如其来的",
-          "暴风雨",
-          "给",
-          "当地交通",
-          "造成了",
-          "巨大的困扰"
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
         ],
-        "explanation": "Cấu trúc: Chủ ngữ định ngữ (这场突如其来的暴风雨) + Giới từ 给 + Tân ngữ gián tiếp (当地交通) + Vị ngữ (造成了) + Tân ngữ (巨大的困扰).",
-        "skill": "writing"
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_2",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 92/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
+        "words": [
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
+        ],
+        "correctOrder": [
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
+        ],
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_3",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 93/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
+        "words": [
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
+        ],
+        "correctOrder": [
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
+        ],
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_4",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 94/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
+        "words": [
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
+        ],
+        "correctOrder": [
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
+        ],
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_5",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 95/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
+        "words": [
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
+        ],
+        "correctOrder": [
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
+        ],
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_6",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 96/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
+        "words": [
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
+        ],
+        "correctOrder": [
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
+        ],
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_7",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 97/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
+        "words": [
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
+        ],
+        "correctOrder": [
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
+        ],
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_reorder_8",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu HSK 5 (书写 第一部分)",
+        "prompt": "[Câu 98/100] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp cao cấp:",
+        "words": [
+          "这项政策",
+          "产生",
+          "积极的影响",
+          "对社会经济",
+          "将"
+        ],
+        "correctOrder": [
+          "这项政策",
+          "将",
+          "对社会经济",
+          "产生",
+          "积极的影响"
+        ],
+        "explanation": "Chủ ngữ (这项政策) + Phó từ chỉ tương lai (将) + Giới từ kết cấu (对社会经济) + Vị ngữ (产生) + Tân ngữ (积极的影响)."
+      },
+      {
+        "id": "hsk5_bench_w_essay_1",
+        "skill": "writing",
+        "type": "essay",
+        "section": "Phần 3: Viết - Dùng 5 Từ Cho Sẵn Viết Đoạn Văn 80 Chữ (结合词语写短文)",
+        "prompt": "[Câu 99/100] Kết hợp 5 từ vựng sau đây để viết một đoạn văn ngắn khoảng 80 chữ Hán:\n【 挑战、克服、信心、团队、成功 】",
+        "keyword": "挑战 克服 信心 团队 成功",
+        "minChars": 60,
+        "expectedSample": "在面对未知的挑战时，我们团队始终保持着坚定的信心。大家互相鼓励，共同克服了一个又一个困难，最终圆满完成了项目，取得了巨大的成功。这次经历让我们深刻体会到团结的力量。",
+        "explanation": "Tiêu chuẩn chấm thi CTI: Bắt buộc dùng đủ 5 từ khóa, ngữ pháp chính xác, nội dung có tính logic liền mạch, dung lượng xấp xỉ 80 chữ Hán."
+      },
+      {
+        "id": "hsk5_bench_w_essay_2",
+        "skill": "writing",
+        "type": "essay",
+        "section": "Phần 3: Viết - Nhìn Tranh Viết Đoạn Văn 80 Chữ (看图写短文)",
+        "prompt": "[Câu 100/100] Nhìn bức tranh minh họa (Một người leo núi đã lên tới đỉnh ngắm bình minh rực rỡ 🧗‍♂️🌅) và viết đoạn văn khoảng 80 chữ:",
+        "keyword": "坚持 顶峰 努力 欣赏",
+        "minChars": 60,
+        "expectedSample": "经过长时间艰难的攀登，他终于登上了险峻的顶峰。站在高山之上，欣赏着壮丽的日出美景，他感到无比自豪。生活正如登山，只有不畏艰险、坚持不懈地努力奋斗，才能领略到最迷人的风光。",
+        "explanation": "Tiêu chuẩn chấm thi CTI: Diễn đạt rõ ràng chủ đề của bức tranh (vượt khó vươn tới thành công), văn phong mạch lạc, dung lượng khoảng 80 chữ Hán."
       }
     ]
   },

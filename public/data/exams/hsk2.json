@@ -3,125 +3,733 @@
     "id": "hsk2_mock_1",
     "level": 2,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 2 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 2 Chuẩn Hanban CTI Quốc Tế (60 Câu Chuẩn Hóa)",
     "durationMinutes": 50,
     "passScore": 120,
     "totalScore": 200,
-    "description": "Đề thi HSK 2 tiêu chuẩn gồm Nghe hiểu (听力) và Đọc hiểu (阅读): Khảo sát 300 từ vựng và cấu trúc câu thông dụng.",
+    "questionCount": 60,
+    "description": "Đề thi mô phỏng định dạng khảo thí CTI Hanban: Đầy đủ 60 câu gồm Nghe hiểu (35 câu) và Đọc hiểu (25 câu).",
     "questions": [
       {
-        "id": "hsk2_e1_q1",
-        "section": "Phần 1: Nghe hiểu - Phán đoán Đúng/Sai (听力判断)",
-        "type": "listening_tf",
-        "prompt": "Nghe câu phát âm và phán đoán nhận định:",
-        "audioText": "外面下着大雪，天气非常冷，出门一定要多穿衣服。",
-        "pinyin": "Wàimiàn xiàzhe dàxuě, tiānqì fēicháng lěng, chūmén yídìng yào duō chuān yīfu.",
-        "statement": "Bên ngoài trời đang mưa rào mùa hạ mát mẻ.",
+        "id": "hsk2_bench_l1_1",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "他每天早上都跑步半个小时。",
+        "prompt": "[Câu 1/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Anh ấy có thói quen chạy bộ mỗi sáng.",
         "options": [
           {
             "key": "A",
-            "text": "Đúng (对)",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'每天早上都跑步' là thói quen chạy bộ mỗi sáng."
+      },
+      {
+        "id": "hsk2_bench_l1_2",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "哥哥在医院工作，他是一位医生。",
+        "prompt": "[Câu 2/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Anh trai làm việc ở công ty máy tính.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
             "isCorrect": false
           },
           {
             "key": "B",
-            "text": "Sai (错)",
+            "text": "Sai (错误 ✘)",
             "isCorrect": true
           }
         ],
-        "explanation": "Câu nghe là '下着大雪' (tuyết rơi lớn) và '非常冷' (rất lạnh), đối lập với nhận định trời mưa rào mùa hạ.",
-        "skill": "listening"
+        "explanation": "Anh trai làm ở '医院' (bệnh viện) và là '医生' (bác sĩ)."
       },
       {
-        "id": "hsk2_e1_q2",
-        "section": "Phần 1: Nghe hiểu - Phán đoán Đúng/Sai (听力判断)",
-        "type": "listening_tf",
-        "prompt": "Nghe câu phát âm và phán đoán nhận định:",
-        "audioText": "我每天早上七点起床，然后去公园慢跑半个小时。",
-        "pinyin": "Wǒ měitiān zǎoshang qī diǎn qǐchuáng, ránhòu qù gōngyuán mànpǎo bàn gè xiǎoshí.",
-        "statement": "Người nói có thói quen tập chạy bộ vào mỗi buổi sáng.",
+        "id": "hsk2_bench_l1_3",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "这件黑色的衣服比那件红色的贵一点儿。",
+        "prompt": "[Câu 3/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Áo màu đen đắt hơn áo màu đỏ một chút.",
         "options": [
           {
             "key": "A",
-            "text": "Đúng (对)",
+            "text": "Đúng (正确 ✔)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "Sai (错)",
+            "text": "Sai (错误 ✘)",
             "isCorrect": false
           }
         ],
-        "explanation": "Câu nghe xác nhận '去公园慢跑半个小时' (chạy bộ 30 phút ở công viên mỗi sáng).",
-        "skill": "listening"
+        "explanation": "Cấu trúc so sánh: 黑色比红色贵."
       },
       {
-        "id": "hsk2_e1_q3",
-        "section": "Phần 1: Nghe hiểu - Đối thoại chọn đáp án (听对话选答案)",
-        "type": "listening_choice",
-        "prompt": "Nghe đối thoại và cho biết người phụ nữ sẽ đi bằng phương tiện gì?",
-        "audioText": "男：今天去火车站坐公共汽车太慢了，路上车很多。\n女：那我们一起坐出租车去吧，这样不会迟到。",
+        "id": "hsk2_bench_l1_4",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "外面下大雪了，天气非常冷。",
+        "prompt": "[Câu 4/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Thời tiết bên ngoài rất nóng nực.",
         "options": [
           {
             "key": "A",
-            "text": "坐出租车 (Đi taxi)",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": true
+          }
+        ],
+        "explanation": "'下大雪' (tuyết rơi dày) và '非常冷' (rất lạnh)."
+      },
+      {
+        "id": "hsk2_bench_l1_5",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "我买了两张今天晚上的电影票。",
+        "prompt": "[Câu 5/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Tối nay tôi sẽ đi xem phim.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "坐公共汽车 (Đi xe buýt)",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đã mua vé xem phim tối nay."
+      },
+      {
+        "id": "hsk2_bench_l1_6",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "小猫在椅子下面睡觉呢。",
+        "prompt": "[Câu 6/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Con mèo đang chơi trên bàn.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": true
+          }
+        ],
+        "explanation": "'椅子下面睡觉' (ngủ dưới ghế)."
+      },
+      {
+        "id": "hsk2_bench_l1_7",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "欢迎你来我家做客！",
+        "prompt": "[Câu 7/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Chủ nhà hoan nghênh khách đến chơi.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'欢迎做客' là lời chào mừng khách."
+      },
+      {
+        "id": "hsk2_bench_l1_8",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "他生病了，今天不能去学校上课。",
+        "prompt": "[Câu 8/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Anh ấy đi học bình thường hôm nay.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": true
+          }
+        ],
+        "explanation": "'生病' (bị ốm) nên '不能去' (không thể đi)."
+      },
+      {
+        "id": "hsk2_bench_l1_9",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "我想喝一杯热咖啡，不要糖。",
+        "prompt": "[Câu 9/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Tôi muốn uống một cốc cà phê nóng không đường.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'热咖啡' và '不要糖' (không lấy đường)."
+      },
+      {
+        "id": "hsk2_bench_l1_10",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Nhận Định Đúng/Sai (听力第一部分)",
+        "audioText": "火车站离这里很远，我们要坐公共汽车去。",
+        "prompt": "[Câu 10/60] Nghe câu nói và phán đoán tính chính xác của nhận định sau:",
+        "statement": "Ga tàu hỏa ở rất gần đây.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": true
+          }
+        ],
+        "explanation": "'离这里很远' nghĩa là cách đây rất xa."
+      },
+      {
+        "id": "hsk2_bench_l2_1",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：请问，去机场怎么走？\n女：你可以坐地铁，也可以坐出租车。",
+        "prompt": "[Câu 11/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nam muốn đi đâu?",
+        "options": [
+          {
+            "key": "A",
+            "text": "机场 (Sân bay)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "火车站 (Ga xe lửa)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "骑自行车 (Đi xe đạp)",
+            "text": "宾馆 (Khách sạn)",
             "isCorrect": false
           }
         ],
-        "explanation": "Người nữ đề nghị: '那我们一起坐出租车去吧' để không bị muộn. Đáp án A.",
-        "skill": "listening"
+        "explanation": "Nam hỏi đường đi '去机场'."
       },
       {
-        "id": "hsk2_e1_q4",
-        "section": "Phần 1: Nghe hiểu - Đối thoại chọn đáp án (听对话选答案)",
-        "type": "listening_choice",
-        "prompt": "Nghe đối thoại và cho biết người nam cảm thấy món ăn thế nào?",
-        "audioText": "女：这家饭馆的羊肉做得很不错，你觉得怎么样？\n男：确实非常非常好吃，比我妈妈做的还要香！",
+        "id": "hsk2_bench_l2_2",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：你现在感觉怎么样？头还疼吗？\n男：吃了药，好多了，谢谢你。",
+        "prompt": "[Câu 12/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nam hiện tại thế nào?",
         "options": [
           {
             "key": "A",
-            "text": "很难吃 (Rất khó ăn)",
+            "text": "头很疼 (Đầu rất đau)",
             "isCorrect": false
           },
           {
             "key": "B",
-            "text": "非常美味好吃 (Rất ngon miệng)",
+            "text": "好多了 (Đã đỡ nhiều)",
             "isCorrect": true
           },
           {
             "key": "C",
-            "text": "太辣了 (Quá cay)",
+            "text": "不想吃药 (Không muốn uống thuốc)",
             "isCorrect": false
           }
         ],
-        "explanation": "Người nam nhận xét: '确实非常非常好吃'. Đáp án B.",
-        "skill": "listening"
+        "explanation": "Nam đáp: '好多了' (đã đỡ nhiều)."
       },
       {
-        "id": "hsk2_e1_q5",
-        "section": "Phần 1: Nghe hiểu - Đối thoại chọn đáp án (听对话选答案)",
-        "type": "listening_choice",
-        "prompt": "Người phụ nữ dự định tặng món quà gì cho bạn?",
-        "audioText": "男：明天是小王的生日，你买好礼物了吗？\n女：我已经买了一只漂亮的手表，他一定会很喜欢。",
+        "id": "hsk2_bench_l2_3",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：今天的西瓜真甜！\n女：是啊，我很喜欢吃。",
+        "prompt": "[Câu 13/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Hai người đang nói về món gì?",
         "options": [
           {
             "key": "A",
-            "text": "手表 (Đồng hồ đeo tay)",
+            "text": "苹果 (Quả táo)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "西瓜 (Dưa hấu)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "米饭 (Cơm)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nhắc đến '西瓜' (dưa hấu)."
+      },
+      {
+        "id": "hsk2_bench_l2_4",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：你看见我的手机了吗？\n男：就在桌子上，在书的旁边。",
+        "prompt": "[Câu 14/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Điện thoại ở vị trí nào?",
+        "options": [
+          {
+            "key": "A",
+            "text": "在椅子上 (Trên ghế)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "在书的旁边 (Bên cạnh cuốn sách)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "在包里 (Trong túi)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam đáp '在书的旁边'."
+      },
+      {
+        "id": "hsk2_bench_l2_5",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：明天是星期六，你想去哪儿玩？\n女：我想去动物园看熊猫。",
+        "prompt": "[Câu 15/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người phụ nữ muốn xem con gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "熊猫 (Gấu trúc)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "新衣服 (Quần áo mới)",
+            "text": "小狗 (Chó con)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "鸟 (Chim)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nữ nói: '看熊猫'."
+      },
+      {
+        "id": "hsk2_bench_l2_6",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：这件衣服是一百八十块钱。\n男：太贵了，可以便宜一点儿吗？",
+        "prompt": "[Câu 16/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nam cảm thấy bộ quần áo thế nào?",
+        "options": [
+          {
+            "key": "A",
+            "text": "太贵了 (Quá đắt)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "很便宜 (Rất rẻ)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "不好看 (Không đẹp)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam kêu: '太贵了'."
+      },
+      {
+        "id": "hsk2_bench_l2_7",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：你学汉语学了多长时间了？\n女：我已经学了一年多了。",
+        "prompt": "[Câu 17/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người phụ nữ học tiếng Hán bao lâu rồi?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一个月 (1 tháng)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "一年多 (Hơn 1 năm)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "三年 (3 năm)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nữ nói '一年多了'."
+      },
+      {
+        "id": "hsk2_bench_l2_8",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：我们一起去打篮球吧！\n男：对不起，我太累了，想休息一会儿。",
+        "prompt": "[Câu 18/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nam muốn làm gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "打篮球 (Đánh bóng rổ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "休息 (Nghỉ ngơi)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "去跑步 (Đi chạy bộ)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam nói '想休息一会儿'."
+      },
+      {
+        "id": "hsk2_bench_l2_9",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：服务员，我想再要两双筷子。\n女：好的先生，马上来。",
+        "prompt": "[Câu 19/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Họ đang ở địa điểm nào?",
+        "options": [
+          {
+            "key": "A",
+            "text": "饭馆 (Nhà hàng / Quán ăn)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "学校 (Trường học)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "医院 (Bệnh viện)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Gọi '服务员' và xin thêm '筷子' (đũa)."
+      },
+      {
+        "id": "hsk2_bench_l2_10",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：听说你买新自行车了？\n男：是的，蓝色的，骑起来很快。",
+        "prompt": "[Câu 20/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Chiếc xe đạp mới màu gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "红色的 (Màu đỏ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "蓝色的 (Màu xanh lam)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "黑色的 (Màu đen)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam đáp '蓝色的'."
+      },
+      {
+        "id": "hsk2_bench_l2_11",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：外面下雨了，你带雨伞了吗？\n女：没有，我跑步去地铁站吧。",
+        "prompt": "[Câu 21/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Thời tiết bên ngoài thế nào?",
+        "options": [
+          {
+            "key": "A",
+            "text": "下雨了 (Đang mưa)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "出太阳 (Có nắng)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "刮大风 (Gió to)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam nói: '外面下雨了'."
+      },
+      {
+        "id": "hsk2_bench_l2_12",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：请问王经理在办公室吗？\n男：他在开会，请您等十分钟。",
+        "prompt": "[Câu 22/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Giám đốc Vương đang làm gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "在开会 (Đang họp)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "在睡觉 (Đang ngủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "在打电话 (Đang gọi điện)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam nói '他在开会'."
+      },
+      {
+        "id": "hsk2_bench_l2_13",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：你什么时候去北京？\n女：下个星期三上午九点。",
+        "prompt": "[Câu 23/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Khi nào người nữ đi Bắc Kinh?",
+        "options": [
+          {
+            "key": "A",
+            "text": "明天 (Ngày mai)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "下星期三 (Thứ tư tuần sau)",
+            "isCorrect": true
+          },
+          {
+            "key": "C",
+            "text": "下个月 (Tháng sau)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nữ nói '下个星期三'."
+      },
+      {
+        "id": "hsk2_bench_l2_14",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：你今天怎么起得这么早？\n男：因为今天早上八点有中文考试。",
+        "prompt": "[Câu 24/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Tại sao người nam dậy sớm?",
+        "options": [
+          {
+            "key": "A",
+            "text": "有考试 (Có bài thi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去旅游 (Đi du lịch)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "去跑步 (Đi chạy bộ)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam giải thích '有中文考试'."
+      },
+      {
+        "id": "hsk2_bench_l2_15",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：这只小狗真可爱，是谁的？\n女：是我妹妹昨天买的。",
+        "prompt": "[Câu 25/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Con chó nhỏ này là của ai?",
+        "options": [
+          {
+            "key": "A",
+            "text": "妹妹的 (Của em gái)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "哥哥的 (Của anh trai)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "妈妈的 (Của mẹ)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nữ nói '是我妹妹昨天买的'."
+      },
+      {
+        "id": "hsk2_bench_l2_16",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：这道题你懂了吗？\n男：老师讲得很清楚，我已经懂了。",
+        "prompt": "[Câu 26/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nam đã hiểu bài chưa?",
+        "options": [
+          {
+            "key": "A",
+            "text": "懂了 (Đã hiểu)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "还没懂 (Chưa hiểu)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "不想学 (Không muốn học)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam đáp '我已经懂了'."
+      },
+      {
+        "id": "hsk2_bench_l2_17",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：请问这附近有洗手间吗？\n女：往前走一百米，右边就是。",
+        "prompt": "[Câu 27/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Nhà vệ sinh ở đâu?",
+        "options": [
+          {
+            "key": "A",
+            "text": "往前走一百米右边 (Đi thẳng 100m bên phải)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "在左边 (Ở bên trái)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "在后面 (Ở phía sau)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nữ chỉ đường: 往前走一百米，右边就是."
+      },
+      {
+        "id": "hsk2_bench_l2_18",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：这个西瓜多少钱一斤？\n男：三块钱一斤，很甜。",
+        "prompt": "[Câu 28/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Giá dưa hấu là bao nhiêu một cân?",
+        "options": [
+          {
+            "key": "A",
+            "text": "三块 (3 tệ)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "五块 (5 tệ)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "十块 (10 tệ)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nam nói '三块钱一斤'."
+      },
+      {
+        "id": "hsk2_bench_l2_19",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：今天晚上你想吃什么？\n女：我们去吃羊肉火锅吧。",
+        "prompt": "[Câu 29/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nữ muốn ăn gì tối nay?",
+        "options": [
+          {
+            "key": "A",
+            "text": "羊肉火锅 (Lẩu thịt cừu)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "饺子 (Sủi cảo)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "面条 (Mì sợi)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Nữ đề xuất: '羊肉火锅'."
+      },
+      {
+        "id": "hsk2_bench_l2_20",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：我找不到我的钥匙了！\n男：看看你的大衣口袋里有没有。",
+        "prompt": "[Câu 30/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nữ đang tìm đồ vật gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "钥匙 (Chìa khóa)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "钱包 (Ví tiền)",
             "isCorrect": false
           },
           {
@@ -130,139 +738,717 @@
             "isCorrect": false
           }
         ],
-        "explanation": "Người nữ nói: '买了一只漂亮的手表'. Đáp án A.",
-        "skill": "listening"
+        "explanation": "Nữ nói '找不到我的钥匙'."
       },
       {
-        "id": "hsk2_e1_q6",
-        "section": "Phần 2: Đọc hiểu - Nhận định ngữ cảnh (阅读判断)",
-        "type": "reading_tf",
-        "prompt": "Chủ đề bài đọc: 'Kế hoạch đi du lịch Bắc Kinh'. Hãy xác định nhận định sau:",
-        "statement": "Trong giao tiếp HSK 2, '旅游 (lǚyóu)' là cấu trúc từ vựng chỉ hoạt động quan trọng thường ngày.",
+        "id": "hsk2_bench_l2_21",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：你喜欢游泳还是跑步？\n女：我都喜欢，但是更喜欢游泳。",
+        "prompt": "[Câu 31/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nữ thích môn thể thao nào hơn?",
         "options": [
           {
             "key": "A",
-            "text": "Đúng (对)",
+            "text": "游泳 (Bơi lội)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "Sai (错)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Từ '旅游 (lǚyóu)' xuất hiện với tần suất rất cao trong giáo trình HSK 2 chuẩn.",
-        "skill": "reading"
-      },
-      {
-        "id": "hsk2_e1_q7",
-        "section": "Phần 2: Đọc hiểu - Điền từ vào chỗ trống (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn từ thích hợp điền vào câu: 这件红色的衣服比那件黑色的______五十块钱。",
-        "options": [
-          {
-            "key": "A",
-            "text": "便宜 (piányi - rẻ hơn)",
-            "isCorrect": true
-          },
-          {
-            "key": "B",
-            "text": "高 (gāo - cao)",
+            "text": "跑步 (Chạy bộ)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "长 (cháng - dài)",
-            "isCorrect": false
-          },
-          {
-            "key": "D",
-            "text": "远 (yuǎn - xa)",
+            "text": "唱歌 (Hát)",
             "isCorrect": false
           }
         ],
-        "explanation": "So sánh giá cả quần áo rẻ hơn '便宜五十块钱'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Nữ nói '更喜欢游泳'."
       },
       {
-        "id": "hsk2_e1_q8",
-        "section": "Phần 2: Đọc hiểu - Điền từ vào chỗ trống (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn từ thích hợp điền vào câu: 明天有中文考试，今天晚上大家要好好______复习。",
+        "id": "hsk2_bench_l2_22",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：你的脚怎么了？\n男：昨天踢足球的时候不小心踢伤了。",
+        "prompt": "[Câu 32/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Chân của người nam bị sao?",
         "options": [
           {
             "key": "A",
-            "text": "准备 (zhǔnbèi - chuẩn bị)",
+            "text": "踢足球踢伤了 (Đá bóng bị thương)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "玩儿 (wánr - đi chơi)",
+            "text": "跑步摔倒 (Chạy bộ ngã)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "唱歌 (chànggē - ca hát)",
-            "isCorrect": false
-          },
-          {
-            "key": "D",
-            "text": "送 (sòng - tặng)",
+            "text": "没事情 (Không sao)",
             "isCorrect": false
           }
         ],
-        "explanation": "Cụm từ '好好准备' (chuẩn bị chu đáo). Đáp án A.",
-        "skill": "reading"
+        "explanation": "Nam giải thích: 踢足球踢伤了."
       },
       {
-        "id": "hsk2_e1_q9",
-        "section": "Phần 2: Đọc hiểu - Ghép câu logic (读句子选配对)",
-        "type": "reading_choice",
-        "prompt": "Chọn câu trả lời phù hợp nhất với câu hỏi: '你为什么喜欢打篮球？'",
+        "id": "hsk2_bench_l2_23",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：我们坐出租车去还是坐地铁？\n女：现在路上堵车，坐地铁更快。",
+        "prompt": "[Câu 33/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Người nữ khuyên nên đi phương tiện gì?",
         "options": [
           {
             "key": "A",
-            "text": "因为运动能让我身体健康，心情愉快。(Bởi vì vận động giúp tôi khỏe mạnh, tâm trạng vui vẻ.)",
+            "text": "坐地铁 (Đi tàu điện ngầm)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "我昨天上午去医院了。(Hôm qua tôi đi viện rồi.)",
+            "text": "坐出租车 (Đi taxi)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "这是一本新买的书。(Đây là cuốn sách mới mua.)",
+            "text": "走路 (Đi bộ)",
             "isCorrect": false
           }
         ],
-        "explanation": "Câu hỏi nguyên nhân '为什么' đối đáp với '因为...'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Nữ nói '坐地铁更快'."
       },
       {
-        "id": "hsk2_e1_q10",
-        "section": "Phần 2: Đọc hiểu - Đọc hiểu đoạn văn ngắn (阅读短文)",
-        "type": "reading_choice",
-        "prompt": "Đọc đoạn văn sau: '我哥哥在一家大公司工作，他工作非常认真，每天都帮助新同事解决问题，大家都很喜欢他。'\nCâu hỏi: Mọi người yêu quý người anh trai vì lý do gì?",
+        "id": "hsk2_bench_l2_24",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "女：今天的西瓜真便宜！\n男：那我们多买两个吧。",
+        "prompt": "[Câu 34/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Họ quyết định thế nào?",
         "options": [
           {
             "key": "A",
-            "text": "他工作认真且热心帮助同事 (Làm việc nghiêm túc, nhiệt tình giúp đồng nghiệp)",
+            "text": "多买两个 (Mua thêm 2 quả)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "他经常请大家吃饭 (Thường xuyên bao ăn)",
+            "text": "不买了 (Không mua)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "他会说四种外国语言 (Biết 4 ngoại ngữ)",
+            "text": "去买苹果 (Đi mua táo)",
             "isCorrect": false
           }
         ],
-        "explanation": "Đoạn văn nêu rõ: '工作非常认真，每天都帮助新同事'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Nam bảo: '多买两个吧'."
+      },
+      {
+        "id": "hsk2_bench_l2_25",
+        "skill": "listening",
+        "section": "Phần 2 & 3: Nghe Đối Thoại Chọn Đáp Án (听力第二、三部分)",
+        "audioText": "男：李老师，这道题怎么读？\n女：这个字读“笑”，微笑着说话的笑。",
+        "prompt": "[Câu 35/60] Nghe đoạn đối thoại và trả lời câu hỏi:",
+        "statement": "Chữ Hán đang được hỏi đọc là gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "笑 (xiào)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "哭 (kū)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "叫 (jiào)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cô giáo giải thích chữ '笑'."
+      },
+      {
+        "id": "hsk2_bench_r_1",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 36/60] Chọn từ thích hợp điền vào chỗ trống: 他走得太快了，我______不上他。",
+        "options": [
+          {
+            "key": "A",
+            "text": "跟 (gēn - theo)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "问 (wèn)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "玩 (wán)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'跟不上' là cụm từ bổ ngữ cố định nghĩa là không theo kịp."
+      },
+      {
+        "id": "hsk2_bench_r_2",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 37/60] Điền từ: 医生说这个药每天吃三次，每次吃两______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "片 (piàn - viên thuốc)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "本 (běn)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "件 (jiàn)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Lượng từ cho thuốc viên là '片'."
+      },
+      {
+        "id": "hsk2_bench_r_3",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 38/60] Điền từ: 我姐姐的生______是五月十二号。",
+        "options": [
+          {
+            "key": "A",
+            "text": "日 (rì - sinh nhật)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "月 (yuè)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "年 (nián)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'生日' là ngày sinh nhật."
+      },
+      {
+        "id": "hsk2_bench_r_4",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 39/60] Điền từ: 妈妈做的菜非常______吃，我都吃完了。",
+        "options": [
+          {
+            "key": "A",
+            "text": "好 (hǎo - ngon)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "坏 (huài)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "多 (duō)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'好吃' là ngon miệng."
+      },
+      {
+        "id": "hsk2_bench_r_5",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 40/60] Điền từ: 教室里有很______学生正在安静地复习考试。",
+        "options": [
+          {
+            "key": "A",
+            "text": "多 (duō - nhiều)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "少 (shǎo)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "贵 (guì)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'很多学生' nghĩa là rất nhiều học sinh."
+      },
+      {
+        "id": "hsk2_bench_r_6",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 41/60] Nhận định: “哥哥每天早上六点起床跑步，然后去上班。” -> 哥哥的生活习惯很好。",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Thói quen dậy 6h chạy bộ là thói quen sống lành mạnh."
+      },
+      {
+        "id": "hsk2_bench_r_7",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 42/60] Nhận định: “外面下着很大的雪，大家都在屋里烤火。” -> 今天的天气很热。",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": true
+          }
+        ],
+        "explanation": "Tuyết rơi và sưởi lửa thì trời rất lạnh, nhận định 'rất nóng' là sai."
+      },
+      {
+        "id": "hsk2_bench_r_8",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 43/60] Điền từ: 这件黑色的衣服只要一百块，真______！",
+        "options": [
+          {
+            "key": "A",
+            "text": "便宜 (piányi - rẻ)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "贵 (guì - đắt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "高 (gāo)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "100 tệ cho áo khoác là '便宜' (rẻ)."
+      },
+      {
+        "id": "hsk2_bench_r_9",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 44/60] Điền từ: 请大家把书______开，翻到第三十页。",
+        "options": [
+          {
+            "key": "A",
+            "text": "打 (dǎ - mở ra)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "看 (kàn)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "叫 (jiào)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'打开书' nghĩa là mở sách ra."
+      },
+      {
+        "id": "hsk2_bench_r_10",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 45/60] Chọn nghĩa đúng của câu: “离这儿不远有一家中国饭馆。”",
+        "options": [
+          {
+            "key": "A",
+            "text": "Gần đây có một nhà hàng Trung Quốc",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "Nhà hàng ở rất xa đây",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "Không có nhà hàng nào gần đây",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'离这儿不远' nghĩa là cách đây không xa (gần đây)."
+      },
+      {
+        "id": "hsk2_bench_r_11",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 46/60] Điền từ: 你喜欢吃米饭______吃面条？",
+        "options": [
+          {
+            "key": "A",
+            "text": "还是 (háishì - hay là)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "或者 (huòzhě)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "因为 (yīnwèi)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Trong câu hỏi lựa chọn dùng '还是'."
+      },
+      {
+        "id": "hsk2_bench_r_12",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 47/60] Điền từ: 今天天气阴沉沉的，可能要______雨了。",
+        "options": [
+          {
+            "key": "A",
+            "text": "下 (xià - rơi, đổ mưa)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "打 (dǎ)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "做 (zuò)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'下雨' nghĩa là trời đổ mưa."
+      },
+      {
+        "id": "hsk2_bench_r_13",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 48/60] Chọn phản xạ phù hợp: “对不起，让你久等了！”",
+        "options": [
+          {
+            "key": "A",
+            "text": "没关系，我也刚到 (Không sao, tôi cũng vừa đến)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "谢谢你 (Cảm ơn bạn)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "不客气 (Đừng khách khí)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đáp lại lời xin lỗi dùng '没关系'."
+      },
+      {
+        "id": "hsk2_bench_r_14",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 49/60] Điền từ: 妈妈买了一个大西瓜，非常______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "甜 (tián - ngọt)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "苦 (kǔ)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "辣 (là)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Dưa hấu có vị '甜' (ngọt)."
+      },
+      {
+        "id": "hsk2_bench_r_15",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 50/60] Điền từ: 他生病了，医生让他多______水。",
+        "options": [
+          {
+            "key": "A",
+            "text": "喝 (hē - uống)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "吃 (chī)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "洗 (xǐ)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Uống nước là '喝水'."
+      },
+      {
+        "id": "hsk2_bench_r_16",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 51/60] Nhận định: “小王每天骑自行车上班，路上要花半个小时。” -> 小王坐地铁上班。",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": true
+          }
+        ],
+        "explanation": "Tiểu Vương đi xe đạp '骑自行车', không phải đi tàu điện '坐地铁'."
+      },
+      {
+        "id": "hsk2_bench_r_17",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 52/60] Điền từ: 姐姐比我大两______，今年读大学三年级。",
+        "options": [
+          {
+            "key": "A",
+            "text": "岁 (suì - tuổi)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "年 (nián)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "本 (běn)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Chị lớn hơn tôi 2 tuổi dùng '两岁'."
+      },
+      {
+        "id": "hsk2_bench_r_18",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 53/60] Điền từ: 这个问题太难了，谁______不会做。",
+        "options": [
+          {
+            "key": "A",
+            "text": "都 (dōu - đều)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "就 (jiù)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "再 (zài)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cấu trúc phiếm chỉ '谁都不会做' (ai cũng không biết làm)."
+      },
+      {
+        "id": "hsk2_bench_r_19",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 54/60] Chọn câu đúng ngữ pháp:",
+        "options": [
+          {
+            "key": "A",
+            "text": "我有一只白色的猫 (Tôi có một con mèo trắng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "我有白色的猫一只",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "一只我有的猫白色",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Trật tự danh ngữ: Số lượng từ + định ngữ + trung tâm ngữ."
+      },
+      {
+        "id": "hsk2_bench_r_20",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 55/60] Điền từ: 你看见我的______行车了吗？停在门外。",
+        "options": [
+          {
+            "key": "A",
+            "text": "自 (zì - 自行车)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "目 (mù)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "白 (bái)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Từ vựng '自行车' (xe đạp)."
+      },
+      {
+        "id": "hsk2_bench_r_21",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 56/60] Nhận định: “虽然今天很冷，但是我们都觉得很高兴。” -> Mọi người cảm thấy rất vui vẻ.",
+        "options": [
+          {
+            "key": "A",
+            "text": "Đúng (正确 ✔)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "Sai (错误 ✘)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Vế sau khẳng định '很高兴' (rất vui vẻ)."
+      },
+      {
+        "id": "hsk2_bench_r_22",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 57/60] Điền từ: 我在图书馆看书看了一个______期天。",
+        "options": [
+          {
+            "key": "A",
+            "text": "星 (xīng - 星期天)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "晴 (qíng)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "明 (míng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Từ '星期天' là chủ nhật."
+      },
+      {
+        "id": "hsk2_bench_r_23",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 58/60] Điền từ: 时间不早了，我们快______走吧！",
+        "options": [
+          {
+            "key": "A",
+            "text": "点儿 (diǎnr - nhanh lên chút)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "很 (hěn)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "极 (jí)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cụm '快点儿' nghĩa là nhanh lên một chút."
+      },
+      {
+        "id": "hsk2_bench_r_24",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 59/60] Chọn phản xạ phù hợp: “祝你生日快乐！”",
+        "options": [
+          {
+            "key": "A",
+            "text": "谢谢你的祝福！ (Cảm ơn lời chúc của bạn!)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "对不起 (Xin lỗi)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "没关系 (Không sao)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đáp lại lời chúc mừng sinh nhật bằng lời cảm ơn."
+      },
+      {
+        "id": "hsk2_bench_r_25",
+        "skill": "reading",
+        "section": "Phần 4: Đọc Hiểu & Từ Vựng Cốt Lõi (阅读第四部分)",
+        "prompt": "[Câu 60/60] Điền từ: 这杯茶已经______了，我给你换一杯热的。",
+        "options": [
+          {
+            "key": "A",
+            "text": "凉 (liáng - nguội)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "热 (rè)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "高 (gāo)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Trà bị nguội là '凉了'."
       }
     ]
   },

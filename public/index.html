@@ -2448,6 +2448,62 @@
           </div>
         </div>
 
+        <!-- Mode Switcher (Practice vs iBT Strict) & HSKK Oral Trigger -->
+        <div class="pt-4 border-t border-amber-200/60 mt-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="inline-flex items-center gap-1.5 p-1 rounded-2xl bg-amber-100/70 dark:bg-stone-850 border border-amber-300 dark:border-stone-700">
+            <button 
+              id="btnExamModePractice" 
+              type="button" 
+              onclick="toggleExamMode('practice')" 
+              class="px-4 py-1.5 rounded-xl text-xs font-black bg-[#8B1E1E] text-white shadow-2xs cursor-pointer transition-all"
+            >
+              ⚡ Luyện Nhanh (Tự Do)
+            </button>
+            <button 
+              id="btnExamModeIbt" 
+              type="button" 
+              onclick="toggleExamMode('ibt')" 
+              class="px-4 py-1.5 rounded-xl text-xs font-bold text-stone-700 dark:text-stone-300 hover:bg-amber-100/60 cursor-pointer transition-all flex items-center gap-1.5"
+            >
+              🏛️ Phòng Thi Chuẩn iBT (Khóa Phân Đoạn)
+            </button>
+          </div>
+
+          <div class="flex items-center gap-2">
+            <!-- HSKK Oral Lab Button -->
+            <button 
+              type="button" 
+              onclick="openHskkExamModal()" 
+              class="px-4 py-2 rounded-xl bg-gradient-to-r from-rose-700 via-[#8B1E1E] to-amber-700 hover:opacity-95 text-white font-black text-xs shadow-xs hover:scale-105 active:scale-95 transition-all flex items-center gap-2 cursor-pointer ring-1 ring-amber-300"
+              title="Mở phòng thi khẩu ngữ HSKK (Thu âm trực tiếp, AI chấm điểm chuẩn Hanban)"
+            >
+              <i data-lucide="mic" class="w-4 h-4 text-amber-200 animate-pulse"></i>
+              <span>Khảo Thí Khẩu Ngữ HSKK (Mới) 🎙️</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- iBT Strict Phase Indicator Banner -->
+        <div id="examIbtBanner" class="hidden mt-3 p-3.5 rounded-2xl bg-gradient-to-r from-red-950 via-stone-900 to-[#8B1E1E] text-white border border-amber-500/50 shadow-md flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div class="flex items-center gap-3">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping shrink-0"></span>
+            <div>
+              <div class="flex items-center gap-2">
+                <span id="examIbtPhaseBadge" class="font-black font-mono text-amber-300 uppercase tracking-wide">iBT CTI • Phần 1: Nghe Hiểu (听力)</span>
+                <span class="px-2 py-0.5 rounded-full bg-rose-500/30 text-rose-200 border border-rose-400/40 text-[10px] font-bold">KỶ LUẬT PHÒNG THI</span>
+              </div>
+              <p id="examIbtPhaseDesc" class="text-stone-300 text-[11px] mt-0.5">HSK quốc tế: Nghe phát đúng 1 lần (hoặc 2 lần với HSK 1-3), khóa vĩnh viễn khi hết giờ phân đoạn.</p>
+            </div>
+          </div>
+          <button 
+            type="button" 
+            onclick="nextIbtSection()" 
+            class="px-3.5 py-1.5 rounded-xl bg-amber-400 hover:bg-amber-300 text-stone-950 font-black text-xs shrink-0 shadow-xs cursor-pointer transition-all flex items-center gap-1"
+          >
+            <span>Chuyển Phần Tiếp Theo ➔</span>
+          </button>
+        </div>
+
         <!-- Level Selector Toolbar -->
         <div class="pt-6 border-t border-amber-200/60 mt-6 flex flex-col md:flex-row md:items-center justify-between gap-3">
           <div class="flex items-center gap-2 overflow-x-auto pb-1">
@@ -5373,6 +5429,77 @@
     </div>
   </div>
 
+  <!-- MODAL: PHIẾU ĐIỂM KHẢO THÍ CTI ĐIỆN TỬ & RADAR NĂNG LỰC -->
+  <div id="officialCtiScoreModal" onclick="if(event.target === this) closeOfficialCtiCertificateModal()" class="hidden fixed inset-0 z-100 flex items-center justify-center p-3 md:p-6 bg-slate-950/85 backdrop-blur-md animate-fade-in cursor-pointer">
+    <div class="bg-white dark:bg-stone-900 w-full max-w-4xl rounded-3xl border-2 border-amber-400 shadow-2xl relative flex flex-col max-h-[92vh] overflow-y-auto text-stone-800 dark:text-stone-100 cursor-default" onclick="event.stopPropagation()">
+      <div id="officialCtiScoreContainer" class="p-4 sm:p-6">
+        <!-- Rendered by renderOfficialCtiCertificateContent() in mockexam.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: PHÒNG KHẢO THÍ KHẨU NGỮ HSKK CHUẨN CTI -->
+  <div id="hskkExamModal" onclick="if(event.target === this) closeHskkExamModal()" class="hidden fixed inset-0 z-100 flex items-center justify-center p-3 md:p-6 bg-slate-950/85 backdrop-blur-md animate-fade-in cursor-pointer">
+    <div class="bg-white dark:bg-stone-900 w-full max-w-4xl rounded-3xl border-2 border-amber-300 shadow-2xl relative flex flex-col max-h-[92vh] overflow-hidden text-stone-800 dark:text-stone-100 cursor-default" onclick="event.stopPropagation()">
+      
+      <!-- HSKK Header -->
+      <div class="p-4 sm:p-5 bg-gradient-to-r from-red-900/15 via-[#FAF7F2] to-amber-50/90 dark:from-stone-900 dark:via-stone-850 dark:to-stone-900 border-b border-amber-200/80 shrink-0 flex items-center justify-between gap-3">
+        <div>
+          <div class="flex items-center gap-2 flex-wrap">
+            <span class="px-3 py-1 rounded-full text-xs font-black bg-[#8B1E1E] text-white">
+              HSKK 口语考场
+            </span>
+            <h3 id="hskkModalTitle" class="text-base sm:text-lg font-bold font-serif-luxury text-stone-900 dark:text-stone-100">
+              HSKK Trung Cấp (中级)
+            </h3>
+            <span id="hskkTargetHskBadge" class="text-xs font-bold px-2.5 py-0.5 rounded-lg bg-amber-100 text-amber-900 border border-amber-300">
+              Tương ứng HSK 3 - 4
+            </span>
+            <span id="hskkDurationBadge" class="text-xs font-mono text-stone-500">
+              23 phút (Gồm 10p chuẩn bị)
+            </span>
+          </div>
+          <p class="text-xs text-stone-500 dark:text-stone-400 mt-1">
+            Phòng thi nói mô phỏng khảo thí CTI: Thu âm qua Micro trực tiếp, đồng hồ đếm ngược, trợ lý AI chấm điểm khẩu ngữ 4 tiêu chí.
+          </p>
+        </div>
+
+        <button 
+          type="button" 
+          onclick="closeHskkExamModal()" 
+          class="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-gradient-to-br from-[#8B1E1E] via-[#A52A2A] to-rose-950 flex items-center justify-center text-amber-200 border border-amber-300/80 shadow-md hover:scale-105 active:scale-95 transition-all cursor-pointer shrink-0" 
+          title="Đóng phòng thi nói HSKK"
+        >
+          <i data-lucide="x" class="w-4 h-4 sm:w-5 sm:h-5 text-amber-200"></i>
+        </button>
+      </div>
+
+      <!-- HSKK Level Switcher Tabs -->
+      <div class="p-3 bg-stone-50 dark:bg-stone-850 border-b border-stone-200 dark:border-stone-800 flex items-center justify-between gap-3 flex-wrap">
+        <div class="flex items-center gap-2">
+          <span class="text-xs font-bold text-stone-500">Cấp độ HSKK:</span>
+          <button id="btn-hskk-lvl-elementary" onclick="switchHskkLevel('elementary')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold cursor-pointer">
+            Sơ Cấp (初级)
+          </button>
+          <button id="btn-hskk-lvl-intermediate" onclick="switchHskkLevel('intermediate')" class="px-3.5 py-1.5 rounded-xl text-xs font-black bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs cursor-pointer">
+            Trung Cấp (中级)
+          </button>
+          <button id="btn-hskk-lvl-advanced" onclick="switchHskkLevel('advanced')" class="px-3.5 py-1.5 rounded-xl text-xs font-bold cursor-pointer">
+            Cao Cấp (高级)
+          </button>
+        </div>
+        <div id="hskkQuestionProgress" class="text-xs font-bold text-stone-500 font-mono">
+          Câu 1 / 14
+        </div>
+      </div>
+
+      <!-- Question Card Body -->
+      <div id="hskkQuestionCard" class="flex-1 overflow-y-auto p-4 sm:p-6 custom-scrollbar">
+        <!-- Rendered by renderHskkWorkbench() in hskk_exam.js -->
+      </div>
+    </div>
+  </div>
+
   <!-- MODAL XÁC NHẬN HỦY / THOÁT TÁC VỤ DỞ DANG (ORIENTAL LUXURY CONFIRMATION) -->
   <div 
     id="confirmExitTaskModal" 
@@ -6179,6 +6306,7 @@
   <script defer src="js/features/assistant.js"></script>
   <script defer src="js/features/support.js"></script>
   <script defer src="js/features/mockexam.js"></script>
+  <script defer src="js/features/hskk_exam.js"></script>
   <script defer src="js/features/radicals.js"></script>
   <script defer src="js/features/chengyu.js"></script>
   <script defer src="js/features/readings.js"></script>

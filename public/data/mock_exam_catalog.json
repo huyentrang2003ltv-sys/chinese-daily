@@ -663,11 +663,11 @@
     "id": "hsk2_mock_1",
     "level": 2,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 2 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 2 Chuẩn Hanban CTI Quốc Tế (60 Câu Chuẩn Hóa)",
     "durationMinutes": 50,
     "passScore": 120,
     "totalScore": 200,
-    "questionCount": 10,
+    "questionCount": 60,
     "description": "Đề thi HSK 2 tiêu chuẩn gồm Nghe hiểu (听力) và Đọc hiểu (阅读): Khảo sát 300 từ vựng và cấu trúc câu thông dụng."
   },
   {
@@ -1323,11 +1323,11 @@
     "id": "hsk3_mock_1",
     "level": 3,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 3 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 3 Chuẩn Hanban CTI Quốc Tế (80 Câu Chuẩn Hóa)",
     "durationMinutes": 85,
     "passScore": 180,
     "totalScore": 300,
-    "questionCount": 10,
+    "questionCount": 80,
     "description": "Đề thi HSK 3 chuẩn gồm 3 kỹ năng Nghe hiểu (听力), Đọc hiểu (阅读) và Viết (书写 - 排列词语): Khảo thí 600 từ vựng và ngữ pháp trung cấp."
   },
   {
@@ -1983,11 +1983,11 @@
     "id": "hsk4_mock_1",
     "level": 4,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 4 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 4 Chuẩn Hanban CTI Quốc Tế (100 Câu Chuẩn Hóa)",
     "durationMinutes": 100,
     "passScore": 180,
     "totalScore": 300,
-    "questionCount": 10,
+    "questionCount": 100,
     "description": "Đề thi HSK 4 chuẩn quốc tế: Gồm Nghe hiểu (听力), Đọc hiểu (排列顺序 & 阅读), và Viết (书写排列句子)."
   },
   {
@@ -2643,11 +2643,11 @@
     "id": "hsk5_mock_1",
     "level": 5,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 5 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 5 Chuẩn Hanban CTI Quốc Tế (100 Câu Chuẩn Hóa)",
     "durationMinutes": 120,
     "passScore": 180,
     "totalScore": 300,
-    "questionCount": 10,
+    "questionCount": 100,
     "description": "Đề thi HSK 5 cao cấp: Khảo sát 2.500 từ vựng chuyên ngành, ngữ pháp phức hợp, tư duy phân tích văn bản dài và kỹ năng hành văn học thuật."
   },
   {
@@ -3303,11 +3303,11 @@
     "id": "hsk6_mock_1",
     "level": 6,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 6 Đỉnh Cao Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 6 Chuẩn Hanban CTI Quốc Tế (101 Câu Chuẩn Hóa)",
     "durationMinutes": 135,
     "passScore": 180,
     "totalScore": 300,
-    "questionCount": 10,
+    "questionCount": 101,
     "description": "Đề thi HSK 6 cấp độ cao nhất: Đo lường hơn 5.000 từ vựng và thành ngữ, kiểm tra dạng bài kinh điển '找病句' (tìm câu sai ngữ pháp), đọc hiểu triết học - chính luận và tư duy ngôn ngữ bản ngữ sâu sắc."
   },
   {

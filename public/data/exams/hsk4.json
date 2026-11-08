@@ -3,291 +3,2816 @@
     "id": "hsk4_mock_1",
     "level": 4,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 4 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 4 Chuẩn Hanban CTI Quốc Tế (100 Câu Chuẩn Hóa)",
     "durationMinutes": 100,
     "passScore": 180,
     "totalScore": 300,
-    "description": "Đề thi HSK 4 chuẩn quốc tế: Gồm Nghe hiểu (听力), Đọc hiểu (排列顺序 & 阅读), và Viết (书写排列句子).",
+    "questionCount": 100,
+    "description": "Đề thi mô phỏng định dạng khảo thí CTI Hanban: 45 câu Nghe (nghe 1 lần), 40 câu Đọc (gồm Sắp xếp câu A-B-C) và 15 câu Viết (gồm Nhìn tranh đặt câu).",
     "questions": [
       {
-        "id": "hsk4_e1_q1",
-        "section": "Phần 1: Nghe hiểu - Đoạn văn phán đoán (听力短文判断)",
-        "type": "listening_tf",
-        "prompt": "Nghe đoạn phát thanh bản ngữ và phán đoán nhận định:",
-        "audioText": "很多成功人士之所以能在激烈的竞争中脱颖而出，不仅仅是因为他们拥有卓越的才华，更在于他们拥有坚持不懈的毅力和良好的抗压心态。",
-        "pinyin": "Hěn duō chénggōng rénshì zhī suǒyǐ néng zài jīliè de jìngzhēng zhōng...",
-        "statement": "Nghị lực kiên trì và tâm lý vững vàng là yếu tố cốt lõi tạo nên sự bứt phá của người thành công.",
+        "id": "hsk4_bench_l_1",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 1/100] Nghe đoạn đối thoại số 1 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
         "options": [
           {
             "key": "A",
-            "text": "Đúng (对)",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "Sai (错)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Bài nghe khẳng định: '更在于他们拥有坚持不懈的毅力和良好的抗压心态'. Nhận định hoàn toàn chuẩn xác.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk4_e1_q2",
-        "section": "Phần 1: Nghe hiểu - Đoạn văn phán đoán (听力短文判断)",
-        "type": "listening_tf",
-        "prompt": "Nghe đoạn phát thanh bản ngữ và phán đoán nhận định:",
-        "audioText": "随着手机移动支付的全面普及，如今在绝大部分中国城市，现金消费已经变得极为少见。",
-        "pinyin": "Suízhe shǒujī yídòng zhīfù de quánmiàn pǔjí...",
-        "statement": "Thanh toán bằng tiền mặt hiện nay vẫn là hình thức giao dịch chiếm ưu thế áp đảo tại các thành phố Trung Quốc.",
-        "options": [
-          {
-            "key": "A",
-            "text": "Đúng (对)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "Sai (错)",
-            "isCorrect": true
-          }
-        ],
-        "explanation": "Bài nghe nêu: '现金消费已经变得极为少见' (tiêu dùng tiền mặt đã trở nên rất hiếm), nhận định ngược lại là sai.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk4_e1_q3",
-        "section": "Phần 1: Nghe hiểu - Đối thoại chọn đáp án (听对话选答案)",
-        "type": "listening_choice",
-        "prompt": "Theo đối thoại, công ty đang gặp phải thách thức gì?",
-        "audioText": "男：这份新产品的市场调研报告出来了，数据不太乐观。\n女：是的，竞争对手上周大幅降价促销，导致我们的市场份额明显被挤压了。",
-        "options": [
-          {
-            "key": "A",
-            "text": "技术人员短缺 (Thiếu hụt nhân sự kỹ thuật)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "市场份额受到竞争对手降价挤压 (Thị phần bị đối thủ giảm giá chèn ép)",
-            "isCorrect": true
-          },
-          {
-            "key": "C",
-            "text": "工厂设备老化 (Thiết bị nhà máy già cỗi)",
-            "isCorrect": false
-          },
-          {
-            "key": "D",
-            "text": "原材料价格暴涨 (Giá nguyên liệu thô tăng vọt)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Người nữ giải thích: '竞争对手上周大幅降价促销，导致我们的市场份额明显被挤压'. Đáp án B.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk4_e1_q4",
-        "section": "Phần 1: Nghe hiểu - Đối thoại chọn đáp án (听对话选答案)",
-        "type": "listening_choice",
-        "prompt": "Người nam có thái độ như thế nào đối với đề xuất của người nữ?",
-        "audioText": "女：李总，我认为我们有必要增加在新媒体平台上的广告投放预算。\n男：这个想法很有前瞻性，你先写一份详细的可行性分析方案，周一开会讨论。",
-        "options": [
-          {
-            "key": "A",
-            "text": "完全否定并批评 (Phủ định hoàn toàn và phê bình)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "表示赞同并要求提交详细方案 (Đồng tình và yêu cầu nộp phương án chi tiết)",
-            "isCorrect": true
-          },
-          {
-            "key": "C",
-            "text": "毫不关心 (Hoàn toàn không quan tâm)",
-            "isCorrect": false
-          },
-          {
-            "key": "D",
-            "text": "立刻全面执行无需讨论 (Thực thi ngay không cần bàn)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Người nam nhận xét: '这个想法很有前瞻性，你先写一份详细的可行性分析方案'. Đáp án B.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk4_e1_q5",
-        "section": "Phần 2: Đọc hiểu - Điền từ học thuật (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn từ thích hợp điền vào câu: 随着现代社会节奏的不断加快，人们的工作和心理______也随之日益加重。",
-        "options": [
-          {
-            "key": "A",
-            "text": "负担 (fùdān - gánh nặng, áp lực)",
-            "isCorrect": true
-          },
-          {
-            "key": "B",
-            "text": "关键 (guānjiàn - then chốt)",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "礼貌 (lǐmào - lễ phép)",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "标准 (biāozhǔn - tiêu chuẩn)",
+            "text": "去出差 (Đi công tác)",
             "isCorrect": false
           }
         ],
-        "explanation": "Cụm danh từ '心理负担' (gánh nặng tâm lý) hoặc '工作负担'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
       },
       {
-        "id": "hsk4_e1_q6",
-        "section": "Phần 2: Đọc hiểu - Điền từ liên từ (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn liên từ thích hợp: ______面对怎样艰苦卓绝的恶劣环境，他______始终保持着顽强的乐观信念。",
+        "id": "hsk4_bench_l_2",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 2/100] Nghe đoạn đối thoại số 2 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
         "options": [
           {
             "key": "A",
-            "text": "无论...都... (Bất luận... đều...)",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "因为...所以... (Bởi vì... cho nên...)",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "既然...就... (Đã... thì...)",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "不仅...而且... (Không những... mà còn...)",
+            "text": "去出差 (Đi công tác)",
             "isCorrect": false
           }
         ],
-        "explanation": "Cấu trúc '无论 [nghi vấn/từ phiếm chỉ 怎样]... 都...' (Bất kể đối mặt với môi trường thế nào, đều kiên trì). Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
       },
       {
-        "id": "hsk4_e1_q7",
-        "section": "Phần 2: Đọc hiểu - Sắp xếp trật tự đoạn văn (排列顺序题)",
-        "type": "reading_choice",
-        "prompt": "Sắp xếp 3 vế câu sau thành đoạn văn mạch lạc:\nA. 只有通过不断的反思与总结\nB. 失败并不可怕\nC. 才能真正从挫折中吸取宝贵经验",
+        "id": "hsk4_bench_l_3",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 3/100] Nghe đoạn đối thoại số 3 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
         "options": [
           {
             "key": "A",
-            "text": "B - A - C",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "A - C - B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "C - B - A",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "B - C - A",
+            "text": "去出差 (Đi công tác)",
             "isCorrect": false
           }
         ],
-        "explanation": "Mở đầu nêu luận điểm 'B. 失败并不可怕' (Thất bại không đáng sợ), tiếp theo điều kiện duy nhất 'A. 只有通过...' kết hợp với 'C. 才能...'. Thứ tự đúng: B - A - C.",
-        "skill": "reading"
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
       },
       {
-        "id": "hsk4_e1_q8",
-        "section": "Phần 2: Đọc hiểu - Sắp xếp trật tự đoạn văn (排列顺序题)",
-        "type": "reading_choice",
-        "prompt": "Sắp xếp 3 vế câu sau thành đoạn văn mạch lạc:\nA. 从而引起了全球环保专家的广泛关注\nB. 近年来由于温室气体的大量排放\nC. 极地冰川融化的速度正在明显加快",
+        "id": "hsk4_bench_l_4",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 4/100] Nghe đoạn đối thoại số 4 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
         "options": [
           {
             "key": "A",
-            "text": "B - C - A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "C - A - B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "A - B - C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "B - A - C",
+            "text": "去出差 (Đi công tác)",
             "isCorrect": false
           }
         ],
-        "explanation": "Nguyên nhân 'B. 近年来由于...' dẫn tới hiện tượng 'C. 极地冰川融化...' và kết quả 'A. 从而引起...'. Thứ tự đúng: B - C - A.",
-        "skill": "reading"
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
       },
       {
-        "id": "hsk4_e1_q9",
-        "section": "Phần 2: Đọc hiểu - Đọc hiểu đoạn văn nghị luận (阅读短文)",
-        "type": "reading_choice",
-        "prompt": "Đọc đoạn văn sau: '在人际交往中，倾听往往比表达更为重要。一个懂得耐心倾听他人诉说的人，不仅能赢得同伴的信任与尊重，还能在倾听的过程中发现很多自己未曾注意到的关键细节。'\nCâu hỏi: Tác giả muốn truyền tải thông điệp gì?",
+        "id": "hsk4_bench_l_5",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 5/100] Nghe đoạn đối thoại số 5 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
         "options": [
           {
             "key": "A",
-            "text": "善于倾听能带来信任与洞察力 (Biết lắng nghe mang lại sự tin cậy và hiểu biết thấu suốt)",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "表达能力决定一切 (Khả năng ăn nói quyết định tất cả)",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "人际交往应尽量保持沉默 (Giao tiếp nên cố gắng im lặng hoàn toàn)",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "不应该与他人分享细节 (Không nên chia sẻ chi tiết với người khác)",
+            "text": "去出差 (Đi công tác)",
             "isCorrect": false
           }
         ],
-        "explanation": "Đoạn văn nhấn mạnh: '倾听往往比表达更为重要... 赢得同伴的信任与尊重... 发现关键细节'. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
       },
       {
-        "id": "hsk4_e1_q10",
-        "section": "Phần 3: Viết - Sắp xếp từ thành câu (书写 - 排列词语)",
-        "type": "reorder",
-        "prompt": "Sắp xếp các từ sau thành câu bị động (chữ 被) đúng ngữ pháp HSK 4:",
-        "words": [
-          "桌上的",
-          "重要文件",
-          "被",
-          "大风",
-          "吹跑了"
+        "id": "hsk4_bench_l_6",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 6/100] Nghe đoạn đối thoại số 6 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_7",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 7/100] Nghe đoạn đối thoại số 7 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_8",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 8/100] Nghe đoạn đối thoại số 8 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_9",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 9/100] Nghe đoạn đối thoại số 9 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_10",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 10/100] Nghe đoạn đối thoại số 10 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_11",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 11/100] Nghe đoạn đối thoại số 11 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_12",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 12/100] Nghe đoạn đối thoại số 12 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_13",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 13/100] Nghe đoạn đối thoại số 13 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_14",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 14/100] Nghe đoạn đối thoại số 14 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_15",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 15/100] Nghe đoạn đối thoại số 15 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_16",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 16/100] Nghe đoạn đối thoại số 16 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_17",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 17/100] Nghe đoạn đối thoại số 17 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_18",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 18/100] Nghe đoạn đối thoại số 18 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_19",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 19/100] Nghe đoạn đối thoại số 19 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_20",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 20/100] Nghe đoạn đối thoại số 20 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_21",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 21/100] Nghe đoạn đối thoại số 21 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_22",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 22/100] Nghe đoạn đối thoại số 22 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_23",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 23/100] Nghe đoạn đối thoại số 23 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_24",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 24/100] Nghe đoạn đối thoại số 24 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_25",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 25/100] Nghe đoạn đối thoại số 25 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_26",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 26/100] Nghe đoạn đối thoại số 26 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_27",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 27/100] Nghe đoạn đối thoại số 27 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_28",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 28/100] Nghe đoạn đối thoại số 28 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_29",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 29/100] Nghe đoạn đối thoại số 29 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_30",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 30/100] Nghe đoạn đối thoại số 30 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_31",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 31/100] Nghe đoạn đối thoại số 31 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_32",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 32/100] Nghe đoạn đối thoại số 32 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_33",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 33/100] Nghe đoạn đối thoại số 33 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_34",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 34/100] Nghe đoạn đối thoại số 34 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_35",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 35/100] Nghe đoạn đối thoại số 35 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_36",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 36/100] Nghe đoạn đối thoại số 36 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_37",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 37/100] Nghe đoạn đối thoại số 37 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_38",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 38/100] Nghe đoạn đối thoại số 38 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_39",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 39/100] Nghe đoạn đối thoại số 39 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_40",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 40/100] Nghe đoạn đối thoại số 40 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_41",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 41/100] Nghe đoạn đối thoại số 41 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_42",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 42/100] Nghe đoạn đối thoại số 42 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_43",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 43/100] Nghe đoạn đối thoại số 43 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_44",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 44/100] Nghe đoạn đối thoại số 44 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_l_45",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuyên Sâu HSK 4 (听力 45 Câu • Nghe 1 Lần)",
+        "audioText": "男：经理，这份合同我已经按照您的要求重新修改了，您看一下行不行？\n女：好的，先放我桌上吧，等下午开完会我仔细看看。",
+        "prompt": "[Câu 45/100] Nghe đoạn đối thoại số 45 và cho biết người phụ nữ sẽ làm gì vào buổi chiều?",
+        "options": [
+          {
+            "key": "A",
+            "text": "仔细看合同 (Xem kỹ hợp đồng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "去银行办业务 (Đi ngân hàng làm thủ tục)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "给客户打电话 (Gọi điện thoại cho khách)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "去出差 (Đi công tác)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '等下午开完会我仔细看看' (Đợi chiều họp xong tôi sẽ xem kỹ)."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_1",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 46/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_2",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 47/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_3",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 48/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_4",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 49/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_5",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 50/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_6",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 51/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_7",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 52/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_8",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 53/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_9",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 54/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_cloze_10",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Điền Từ Vào Đoạn Văn (选词填空)",
+        "prompt": "[Câu 55/100] Chọn từ thích hợp điền vào chỗ trống: 人生就像一场旅行，最重要的不是目的地，而是沿途的______。",
+        "options": [
+          {
+            "key": "A",
+            "text": "风景 (fēngjǐng - phong cảnh)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "脾气 (píqi - tính khí)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "价格 (jiàgé - giá cả)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "钥匙 (yàoshi - chìa khóa)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "'沿途的风景' nghĩa là phong cảnh dọc đường đi, phù hợp ẩn dụ cuộc sống."
+      },
+      {
+        "id": "hsk4_bench_r_segment_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 56/100] Sắp xếp 3 vế câu A, B, C sau theo trật tự logic mạch lạc:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
         ],
         "correctOrder": [
-          "桌上的",
-          "重要文件",
-          "被",
-          "大风",
-          "吹跑了"
+          "C",
+          "A",
+          "B"
         ],
-        "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
-        "skill": "writing"
+        "explanation": "Logic nhân quả: Nêu hiện thực (C: Nhiều việc xảy ra không thể làm lại) -> Đưa ra hệ quả (A: Cho nên trước khi quyết định) -> Giải pháp (B: Nhất định phải nghĩ kỹ hậu quả). Thứ tự: C - A - B."
+      },
+      {
+        "id": "hsk4_bench_r_segment_2",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 57/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "只有坚持每天练习"
+          },
+          {
+            "key": "B",
+            "text": "才能真正学好一门外语"
+          },
+          {
+            "key": "C",
+            "text": "三天打鱼两天晒网是不行的"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "C (Bữa đực bữa cái là không được) -> Cặp liên từ điều kiện duy nhất A (Chỉ có kiên trì luyện tập) -> B (Mới có thể học giỏi ngoại ngữ). Thứ tự: C - A - B."
+      },
+      {
+        "id": "hsk4_bench_r_segment_3",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 58/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "不仅能锻炼身体"
+          },
+          {
+            "key": "B",
+            "text": "每天散步半小时"
+          },
+          {
+            "key": "C",
+            "text": "还能缓解工作压力"
+          }
+        ],
+        "correctSegmentOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "correctOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "explanation": "Chủ đề (B: Mỗi ngày đi dạo nửa tiếng) -> Kết cấu tăng tiến 不仅...还... (A: Không chỉ rèn luyện thân thể -> C: Mà còn giải tỏa áp lực). Thứ tự: B - A - C."
+      },
+      {
+        "id": "hsk4_bench_r_segment_4",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 59/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "如果遇到困难就放弃"
+          },
+          {
+            "key": "B",
+            "text": "那么任何事情都很难成功"
+          },
+          {
+            "key": "C",
+            "text": "做事情最重要的是坚持"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Khẳng định luận điểm (C: Làm việc quan trọng nhất là kiên trì) -> Giả thiết (A: Nếu gặp khó liền từ bỏ) -> Kết quả (B: Thì bất cứ việc gì cũng khó thành công). Thứ tự: C - A - B."
+      },
+      {
+        "id": "hsk4_bench_r_segment_5",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 60/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "李老师讲课非常幽默"
+          },
+          {
+            "key": "B",
+            "text": "所以他的课总是受到大家的欢迎"
+          },
+          {
+            "key": "C",
+            "text": "而且常常举生动的例子"
+          }
+        ],
+        "correctSegmentOrder": [
+          "A",
+          "C",
+          "B"
+        ],
+        "correctOrder": [
+          "A",
+          "C",
+          "B"
+        ],
+        "explanation": "Đặc điểm 1 (A: Thầy Lý giảng rất hài hước) -> Bổ sung đặc điểm 2 (C: Hơn nữa thường nêu ví dụ sinh động) -> Kết quả (B: Cho nên tiết học luôn được yêu thích). Thứ tự: A - C - B."
+      },
+      {
+        "id": "hsk4_bench_r_segment_6",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 61/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "它能拉近人与人之间的距离"
+          },
+          {
+            "key": "B",
+            "text": "微笑是世界上最通用的语言"
+          },
+          {
+            "key": "C",
+            "text": "给人带来温暖与力量"
+          }
+        ],
+        "correctSegmentOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "correctOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "explanation": "Định nghĩa (B: Nụ cười là ngôn ngữ phổ biến nhất) -> Tác dụng 1 (A: Kéo gần khoảng cách) -> Tác dụng 2 (C: Mang lại ấm áp và sức mạnh). Thứ tự: B - A - C."
+      },
+      {
+        "id": "hsk4_bench_r_segment_7",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 62/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "因为平时工作太忙"
+          },
+          {
+            "key": "B",
+            "text": "我们应该多抽时间陪陪父母"
+          },
+          {
+            "key": "C",
+            "text": "我们常常忽略了对家人的关心"
+          }
+        ],
+        "correctSegmentOrder": [
+          "A",
+          "C",
+          "B"
+        ],
+        "correctOrder": [
+          "A",
+          "C",
+          "B"
+        ],
+        "explanation": "Nguyên nhân (A: Do bình thường quá bận) -> Thực trạng (C: Chúng ta thường bỏ quên sự quan tâm gia đình) -> Kêu gọi (B: Chúng ta nên dành thêm thời gian bên cha mẹ). Thứ tự: A - C - B."
+      },
+      {
+        "id": "hsk4_bench_r_segment_8",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 63/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "只要平时多加积累"
+          },
+          {
+            "key": "B",
+            "text": "汉语水平考试其实并不难"
+          },
+          {
+            "key": "C",
+            "text": "取得好成绩就是水到渠成的事"
+          }
+        ],
+        "correctSegmentOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "correctOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "explanation": "Nhận định chung (B: Thi HSK thực ra không khó) -> Điều kiện 只要 (A: Chỉ cần tích lũy) -> Kết quả (C: Đạt điểm cao là điều tất yếu). Thứ tự: B - A - C."
+      },
+      {
+        "id": "hsk4_bench_r_segment_9",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 64/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "既节约了开支"
+          },
+          {
+            "key": "B",
+            "text": "选择公共交通出行"
+          },
+          {
+            "key": "C",
+            "text": "又减少了环境污染"
+          }
+        ],
+        "correctSegmentOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "correctOrder": [
+          "B",
+          "A",
+          "C"
+        ],
+        "explanation": "Hành động (B: Lựa chọn giao thông công cộng) -> Kết cấu sóng đôi 既...又... (A: Vừa tiết kiệm chi phí -> C: Lại giảm ô nhiễm môi trường). Thứ tự: B - A - C."
+      },
+      {
+        "id": "hsk4_bench_r_segment_10",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Đọc Hiểu - Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "[Câu 65/100] Sắp xếp 3 vế câu sau:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "即使遇到了失败"
+          },
+          {
+            "key": "B",
+            "text": "也不要轻易失去信心"
+          },
+          {
+            "key": "C",
+            "text": "因为失败是成功之母"
+          }
+        ],
+        "correctSegmentOrder": [
+          "A",
+          "B",
+          "C"
+        ],
+        "correctOrder": [
+          "A",
+          "B",
+          "C"
+        ],
+        "explanation": "Liên từ nhượng bộ 即使...也... (A: Cho dù gặp thất bại -> B: Cũng đừng đánh mất niềm tin) -> Giải thích lí do 因为 (C: Vì thất bại là mẹ thành công). Thứ tự: A - B - C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_1",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 66/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_2",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 67/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_3",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 68/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_4",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 69/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_5",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 70/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_6",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 71/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_7",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 72/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_8",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 73/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_9",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 74/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_10",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 75/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_11",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 76/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_12",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 77/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_13",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 78/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_14",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 79/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_15",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 80/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_16",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 81/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_17",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 82/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_18",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 83/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_19",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 84/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_r_comp_20",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu - Đọc Đoạn Văn Chọn Đáp Án (阅读理解)",
+        "prompt": "[Câu 85/100] Đọc đoạn văn sau và trả lời câu hỏi:\n“现代人的生活节奏越来越快，许多人常常感到压力很大。专家建议，养成健康的生活习惯，比如保证充足的睡眠、坚持适量的运动，并学会与朋友倾诉，这些都是有效缓解心理压力的好方法。”\n-> Theo đoạn văn, phương pháp nào KHÔNG được chuyên gia đề xuất để giải tỏa áp lực?",
+        "options": [
+          {
+            "key": "A",
+            "text": "保证充足的睡眠 (Đảm bảo giấc ngủ đầy đủ)",
+            "isCorrect": false
+          },
+          {
+            "key": "B",
+            "text": "坚持适量运动 (Kiên trì vận động thích hợp)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "经常熬夜加班 (Thường xuyên thức đêm tăng ca)",
+            "isCorrect": true
+          },
+          {
+            "key": "D",
+            "text": "学会向朋友倾诉 (Biết tâm sự với bạn bè)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Đoạn văn khuyên ngủ đủ giấc, vận động và tâm sự với bạn bè. '经常熬夜加班' (thường xuyên thức khuya) là hành vi gây hại, không được đề xuất. Đáp án C."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_1",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 86/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "对",
+          "印象",
+          "经理",
+          "我的",
+          "很好"
+        ],
+        "correctOrder": [
+          "经理",
+          "对",
+          "我的",
+          "印象",
+          "很好"
+        ],
+        "explanation": "Cấu trúc: A 对 B 的印象很好 (Giám đốc có ấn tượng rất tốt về tôi)."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_2",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 87/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "这台电脑",
+          "修好了",
+          "已经被",
+          "工程师"
+        ],
+        "correctOrder": [
+          "这台电脑",
+          "已经被",
+          "工程师",
+          "修好了"
+        ],
+        "explanation": "Câu bị động chữ 被: Chủ ngữ (这台电脑) + 已经被 + Tác nhân (工程师) + Động từ (修好了)."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_3",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 88/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "到底",
+          "发生了",
+          "这里",
+          "什么事情"
+        ],
+        "correctOrder": [
+          "这里",
+          "到底",
+          "发生了",
+          "什么事情"
+        ],
+        "explanation": "Phó từ nhấn mạnh '到底' (rốt cuộc) đứng trước vị ngữ biểu thị nghi vấn sâu."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_4",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 89/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "无论",
+          "坚持",
+          "多么困难",
+          "他都"
+        ],
+        "correctOrder": [
+          "无论",
+          "多么困难",
+          "他都",
+          "坚持"
+        ],
+        "explanation": "Cặp liên từ: 无论...都... (Bất luận khó khăn thế nào anh ấy đều kiên trì)."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_5",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 90/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "把",
+          "整理",
+          "请",
+          "这份材料",
+          "一下"
+        ],
+        "correctOrder": [
+          "请",
+          "把",
+          "这份材料",
+          "整理",
+          "一下"
+        ],
+        "explanation": "Câu cầu khiến chữ 把: 请 + 把 + Tân ngữ + Động từ + 一下."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_6",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 91/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "更加",
+          "变得",
+          "城市",
+          "美丽了"
+        ],
+        "correctOrder": [
+          "城市",
+          "变得",
+          "更加",
+          "美丽了"
+        ],
+        "explanation": "Động từ chuyển biến: 变得 + Phó từ 更加 + Tính từ."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_7",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 92/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "积累了",
+          "他",
+          "丰富的工作经验"
+        ],
+        "correctOrder": [
+          "他",
+          "积累了",
+          "丰富的工作经验"
+        ],
+        "explanation": "Động từ '积累' (tích lũy) kết hợp danh từ '工作经验' (kinh nghiệm làm việc)."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_8",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 93/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "不仅",
+          "而且",
+          "这道菜",
+          "很好吃",
+          "很健康"
+        ],
+        "correctOrder": [
+          "这道菜",
+          "不仅",
+          "很好吃",
+          "而且",
+          "很健康"
+        ],
+        "explanation": "Liên từ tăng tiến: 不仅...而且... (Món này không chỉ ngon mà còn lành mạnh)."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_9",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 94/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "准时",
+          "必须",
+          "参加会议",
+          "大家"
+        ],
+        "correctOrder": [
+          "大家",
+          "必须",
+          "准时",
+          "参加会议"
+        ],
+        "explanation": "Năng nguyện từ 必须 + Phó từ 准时 + Vị ngữ."
+      },
+      {
+        "id": "hsk4_bench_w_reorder_10",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Trật Tự Câu (书写 第一部分)",
+        "prompt": "[Câu 95/100] Sắp xếp các từ sau thành câu HSK 4 hoàn chỉnh:",
+        "words": [
+          "由于",
+          "飞机",
+          "天气原因",
+          "推迟起飞了"
+        ],
+        "correctOrder": [
+          "由于",
+          "天气原因",
+          "飞机",
+          "推迟起飞了"
+        ],
+        "explanation": "Cấu trúc chỉ nguyên nhân: 由于... (Do nguyên nhân thời tiết nên máy bay hoãn cất cánh)."
+      },
+      {
+        "id": "hsk4_bench_w_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Viết - Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "[Câu 96/100] Sử dụng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh đúng ngữ pháp:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "那个年轻的女孩正在房间里弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt 1 câu hoàn chỉnh có chủ vị, bắt buộc chứa từ khóa '弹钢琴'. Câu mẫu tham khảo: “那个年轻的女孩正在房间里弹钢琴。”"
+      },
+      {
+        "id": "hsk4_bench_w_lookwrite_2",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Viết - Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "[Câu 97/100] Sử dụng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh đúng ngữ pháp:",
+        "keyword": "礼貌",
+        "pinyin": "lǐmào",
+        "meaning": "lễ phép, lịch sự",
+        "imageEmoji": "🤝",
+        "expectedSample": "对别人有礼貌是一种良好的品质。",
+        "minChars": 8,
+        "explanation": "Dùng từ '礼貌' để tạo thành câu hoàn chỉnh đúng ngữ cảnh xã giao. Câu mẫu tham khảo: “对别人有礼貌是一种良好的品质。”"
+      },
+      {
+        "id": "hsk4_bench_w_lookwrite_3",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Viết - Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "[Câu 98/100] Sử dụng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh đúng ngữ pháp:",
+        "keyword": "流血",
+        "pinyin": "liúxuè",
+        "meaning": "chảy máu",
+        "imageEmoji": "🩹",
+        "expectedSample": "他的手指不小心划破了，流了很多血。",
+        "minChars": 8,
+        "explanation": "Dùng động từ ly hợp '流血' hoặc cụm vị ngữ miêu tả vết thương. Câu mẫu tham khảo: “他的手指不小心划破了，流了很多血。”"
+      },
+      {
+        "id": "hsk4_bench_w_lookwrite_4",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Viết - Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "[Câu 99/100] Sử dụng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh đúng ngữ pháp:",
+        "keyword": "擦",
+        "pinyin": "cā",
+        "meaning": "lau, chùi",
+        "imageEmoji": "🧽",
+        "expectedSample": "服务员正在用毛巾把桌子擦干净。",
+        "minChars": 8,
+        "explanation": "Dùng động từ '擦' kết hợp câu chữ 把 hoặc động bổ: 擦干净. Câu mẫu tham khảo: “服务员正在用毛巾把桌子擦干净。”"
+      },
+      {
+        "id": "hsk4_bench_w_lookwrite_5",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Viết - Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "[Câu 100/100] Sử dụng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh đúng ngữ pháp:",
+        "keyword": "陪",
+        "pinyin": "péi",
+        "meaning": "đồng hành, đi cùng",
+        "imageEmoji": "🧑‍🤝‍🧑",
+        "expectedSample": "周末我常常留在家里陪爸爸妈妈聊天。",
+        "minChars": 8,
+        "explanation": "Cấu trúc: A 陪 B + Hành động (A đi cùng / ở bên cạnh B). Câu mẫu tham khảo: “周末我常常留在家里陪爸爸妈妈聊天。”"
       }
     ]
   },
@@ -580,6 +3105,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_2_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_2_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -872,6 +3443,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_3_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_3_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -1164,6 +3781,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_4_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_4_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -1456,6 +4119,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_5_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_5_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -1748,6 +4457,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_6_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_6_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -2040,6 +4795,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_7_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_7_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -2332,6 +5133,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_8_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_8_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -2624,6 +5471,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_9_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_9_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -2916,6 +5809,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_10_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_10_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -3208,6 +6147,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_11_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_11_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -3500,6 +6485,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_12_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_12_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -3792,6 +6823,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_13_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_13_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -4084,6 +7161,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_14_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_14_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -4376,6 +7499,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_15_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_15_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -4668,6 +7837,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_16_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_16_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -4960,6 +8175,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_17_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_17_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -5252,6 +8513,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_18_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_18_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -5544,6 +8851,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_19_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_19_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -5836,6 +9189,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_20_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_20_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -6128,6 +9527,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_21_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_21_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -6420,6 +9865,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_22_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_22_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -6712,6 +10203,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_23_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_23_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -7004,6 +10541,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_24_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_24_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -7296,6 +10879,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_25_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_25_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -7588,6 +11217,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_26_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_26_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -7880,6 +11555,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_27_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_27_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -8172,6 +11893,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_28_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_28_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -8464,6 +12231,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_29_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_29_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -8756,6 +12569,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_30_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_30_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -9048,6 +12907,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_31_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_31_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -9340,6 +13245,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_32_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_32_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -9632,6 +13583,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_33_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_33_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -9924,6 +13921,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_34_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_34_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -10216,6 +14259,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_35_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_35_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -10508,6 +14597,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_36_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_36_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -10800,6 +14935,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_37_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_37_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -11092,6 +15273,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_38_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_38_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -11384,6 +15611,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_39_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_39_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -11676,6 +15949,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_40_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_40_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -11968,6 +16287,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_41_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_41_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -12260,6 +16625,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_42_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_42_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -12552,6 +16963,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_43_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_43_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -12844,6 +17301,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_44_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_44_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -13136,6 +17639,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_45_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_45_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -13428,6 +17977,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_46_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_46_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -13720,6 +18315,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_47_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_47_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -14012,6 +18653,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_48_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_48_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -14304,6 +18991,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_49_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_49_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -14596,6 +19329,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_50_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_50_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -14888,6 +19667,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_51_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_51_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -15180,6 +20005,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_52_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_52_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -15472,6 +20343,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_53_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_53_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -15764,6 +20681,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_54_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_54_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -16056,6 +21019,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_55_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_55_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -16348,6 +21357,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_56_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_56_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -16640,6 +21695,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_57_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_57_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -16932,6 +22033,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_58_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_58_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -17224,6 +22371,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_59_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_59_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   },
@@ -17516,6 +22709,52 @@
         ],
         "explanation": "Cấu trúc câu chữ 被: Chủ ngữ chịu tác động (桌上的重要文件) + 被 + Chủ thể tác động (大风) + Động từ (吹跑了).",
         "skill": "writing"
+      },
+      {
+        "id": "hsk4_mock_60_seg_1",
+        "skill": "reading",
+        "type": "reorder_segments",
+        "section": "Phần 2: Sắp Xếp Vế Câu A-B-C (排列顺序)",
+        "prompt": "Sắp xếp 3 vế câu sau theo logic đúng:",
+        "segments": [
+          {
+            "key": "A",
+            "text": "所以在做重要决定之前"
+          },
+          {
+            "key": "B",
+            "text": "一定要先考虑清楚后果"
+          },
+          {
+            "key": "C",
+            "text": "很多事情发生了就无法重来"
+          }
+        ],
+        "correctSegmentOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "correctOrder": [
+          "C",
+          "A",
+          "B"
+        ],
+        "explanation": "Thứ tự logic nhân quả chuẩn: C -> A -> B."
+      },
+      {
+        "id": "hsk4_mock_60_lookwrite_1",
+        "skill": "writing",
+        "type": "look_and_write",
+        "section": "Phần 3: Nhìn Tranh / Từ Gợi Ý Đặt Câu (看图造句)",
+        "prompt": "Dùng từ khóa quy định để viết 1 câu tiếng Hán hoàn chỉnh:",
+        "keyword": "弹钢琴",
+        "pinyin": "tán gāngqín",
+        "meaning": "đánh đàn piano",
+        "imageEmoji": "🎹",
+        "expectedSample": "小女孩正在房间里认真地弹钢琴。",
+        "minChars": 8,
+        "explanation": "Đặt câu đúng ngữ pháp có chủ ngữ và vị ngữ chứa từ 弹钢琴."
       }
     ]
   }

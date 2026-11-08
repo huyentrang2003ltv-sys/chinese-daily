@@ -3,263 +3,2037 @@
     "id": "hsk3_mock_1",
     "level": 3,
     "testNumber": 1,
-    "title": "Đề Thi Thử HSK 3 Chuẩn Hanban - Đề Số 01",
+    "title": "Đề Thi Thử HSK 3 Chuẩn Hanban CTI Quốc Tế (80 Câu Chuẩn Hóa)",
     "durationMinutes": 85,
     "passScore": 180,
     "totalScore": 300,
-    "description": "Đề thi HSK 3 chuẩn gồm 3 kỹ năng Nghe hiểu (听力), Đọc hiểu (阅读) và Viết (书写 - 排列词语): Khảo thí 600 từ vựng và ngữ pháp trung cấp.",
+    "questionCount": 80,
+    "description": "Đề thi mô phỏng định dạng chuẩn CTI Hanban: Gồm 3 phần Nghe hiểu (40 câu), Đọc hiểu (30 câu) và Viết (10 câu).",
     "questions": [
       {
-        "id": "hsk3_e1_q1",
-        "section": "Phần 1: Nghe hiểu - Phán đoán đoạn văn (听力短文判断)",
-        "type": "listening_tf",
-        "prompt": "Nghe đoạn ghi âm và phán đoán nhận định:",
-        "audioText": "现在很多年轻人喜欢在网上购物，因为网上不仅商品种类丰富，而且价格往往比商场更便宜，足不出户就能送到家。",
-        "pinyin": "Xiànzài hěn duō niánqīngrén xǐhuan zài wǎngshang gòuwù...",
-        "statement": "Mua sắm trực tuyến được người trẻ ưa chuộng vì vừa đa dạng mẫu mã vừa tiện lợi và rẻ hơn.",
+        "id": "hsk3_bench_l_1",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 1/80] Nghe đoạn hội thoại số 1 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
         "options": [
           {
             "key": "A",
-            "text": "Đúng (对)",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "Sai (错)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Đoạn văn khẳng định: '商品种类丰富，而且价格往往比商场更便宜'. Nhận định hoàn toàn chính xác.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk3_e1_q2",
-        "section": "Phần 1: Nghe hiểu - Phán đoán đoạn văn (听力短文判断)",
-        "type": "listening_tf",
-        "prompt": "Nghe đoạn ghi âm và phán đoán nhận định:",
-        "audioText": "由于今天下午突降暴雨，原定在操场举行的足球比赛只能推迟到下周末进行。",
-        "pinyin": "Yóuyú jīntiān xiàwǔ tū jiàng bàoyǔ...",
-        "statement": "Trận đấu bóng đá vẫn diễn ra đúng lịch chiều nay dưới trời mưa lớn.",
-        "options": [
-          {
-            "key": "A",
-            "text": "Đúng (对)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "Sai (错)",
-            "isCorrect": true
-          }
-        ],
-        "explanation": "Đoạn văn nói rõ '推迟到下周末进行' (hoãn đến cuối tuần sau), nhận định nói vẫn diễn ra chiều nay là sai.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk3_e1_q3",
-        "section": "Phần 1: Nghe hiểu - Đối thoại chọn đáp án (听对话选答案)",
-        "type": "listening_choice",
-        "prompt": "Theo đối thoại, người phụ nữ khuyên người nam điều gì?",
-        "audioText": "男：最近工作压力特别大，每天都感觉头疼失眠。\n女：你平时太拼了，周末应该多去大自然走走，放松一下心情。",
-        "options": [
-          {
-            "key": "A",
-            "text": "换一份新工作 (Đổi việc mới)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "多去大自然放松身心 (Hòa mình vào thiên nhiên thư giãn)",
-            "isCorrect": true
-          },
-          {
-            "key": "C",
-            "text": "喝更多咖啡提神 (Uống thêm cà phê)",
-            "isCorrect": false
-          }
-        ],
-        "explanation": "Người nữ khuyên: '周末应该多去大自然走走，放松一下心情'. Đáp án B.",
-        "skill": "listening"
-      },
-      {
-        "id": "hsk3_e1_q4",
-        "section": "Phần 1: Nghe hiểu - Đối thoại chọn đáp án (听对话选答案)",
-        "type": "listening_choice",
-        "prompt": "Hai người đang ở đâu?",
-        "audioText": "男：服务员，请问这道水煮鱼可以少放一点辣椒吗？\n女：没问题先生，我们厨房会特意为您少放辣。",
-        "options": [
-          {
-            "key": "A",
-            "text": "在饭馆餐厅 (Tại nhà hàng / quán ăn)",
-            "isCorrect": true
-          },
-          {
-            "key": "B",
-            "text": "在火车站 (Tại nhà ga xe lửa)",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "在银行 (Tại ngân hàng)",
+            "text": "两瓶啤酒 (Hai chai bia)",
             "isCorrect": false
           }
         ],
-        "explanation": "Xưng hô '服务员' và yêu cầu '少放一点辣椒' (cho ít ớt vào món cá) diễn ra ở nhà hàng. Đáp án A.",
-        "skill": "listening"
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
       },
       {
-        "id": "hsk3_e1_q5",
-        "section": "Phần 2: Đọc hiểu - Điền từ vào câu (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn từ thích hợp điền vào câu: 经过大家的共同努力，这次环保活动办得非常______。",
+        "id": "hsk3_bench_l_2",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 2/80] Nghe đoạn hội thoại số 2 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
         "options": [
           {
             "key": "A",
-            "text": "成功 (chénggōng - thành công)",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "着急 (zháojí - sốt ruột)",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "奇怪 (qíguài - kỳ lạ)",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_3",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 3/80] Nghe đoạn hội thoại số 3 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_4",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 4/80] Nghe đoạn hội thoại số 4 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_5",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 5/80] Nghe đoạn hội thoại số 5 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_6",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 6/80] Nghe đoạn hội thoại số 6 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_7",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 7/80] Nghe đoạn hội thoại số 7 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_8",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 8/80] Nghe đoạn hội thoại số 8 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_9",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 9/80] Nghe đoạn hội thoại số 9 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_10",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 10/80] Nghe đoạn hội thoại số 10 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_11",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 11/80] Nghe đoạn hội thoại số 11 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_12",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 12/80] Nghe đoạn hội thoại số 12 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_13",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 13/80] Nghe đoạn hội thoại số 13 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_14",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 14/80] Nghe đoạn hội thoại số 14 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_15",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 15/80] Nghe đoạn hội thoại số 15 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_16",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 16/80] Nghe đoạn hội thoại số 16 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_17",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 17/80] Nghe đoạn hội thoại số 17 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_18",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 18/80] Nghe đoạn hội thoại số 18 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_19",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 19/80] Nghe đoạn hội thoại số 19 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_20",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 20/80] Nghe đoạn hội thoại số 20 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_21",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 21/80] Nghe đoạn hội thoại số 21 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_22",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 22/80] Nghe đoạn hội thoại số 22 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_23",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 23/80] Nghe đoạn hội thoại số 23 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_24",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 24/80] Nghe đoạn hội thoại số 24 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_25",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 25/80] Nghe đoạn hội thoại số 25 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_26",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 26/80] Nghe đoạn hội thoại số 26 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_27",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 27/80] Nghe đoạn hội thoại số 27 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_28",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 28/80] Nghe đoạn hội thoại số 28 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_29",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 29/80] Nghe đoạn hội thoại số 29 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_30",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 30/80] Nghe đoạn hội thoại số 30 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_31",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 31/80] Nghe đoạn hội thoại số 31 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_32",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 32/80] Nghe đoạn hội thoại số 32 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_33",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 33/80] Nghe đoạn hội thoại số 33 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_34",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 34/80] Nghe đoạn hội thoại số 34 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_35",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 35/80] Nghe đoạn hội thoại số 35 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_36",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 36/80] Nghe đoạn hội thoại số 36 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_37",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 37/80] Nghe đoạn hội thoại số 37 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_38",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 38/80] Nghe đoạn hội thoại số 38 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_39",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 39/80] Nghe đoạn hội thoại số 39 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_l_40",
+        "skill": "listening",
+        "section": "Phần 1: Nghe Hiểu Chuẩn CTI (听力 40 Câu)",
+        "audioText": "男：请问您需要喝点儿什么？\n女：给我一杯绿茶，再来一盘水果，谢谢。",
+        "prompt": "[Câu 40/80] Nghe đoạn hội thoại số 40 và chọn đáp án chính xác: Người phụ nữ muốn gọi đồ gì?",
+        "options": [
+          {
+            "key": "A",
+            "text": "一杯绿茶和一盘水果 (Một tách trà xanh và đĩa hoa quả)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "一杯咖啡和蛋糕 (Một cốc cà phê và bánh ngọt)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "两瓶啤酒 (Hai chai bia)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Người phụ nữ nói rõ: '给我一杯绿茶，再来一盘水果' (Cho tôi một tách trà xanh và một đĩa hoa quả)."
+      },
+      {
+        "id": "hsk3_bench_r_1",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 41/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "简单 (jiǎndān - đơn giản)",
+            "text": "虽然 (suīrán - tuy rằng)",
             "isCorrect": false
           }
         ],
-        "explanation": "Sau phó từ '非常' và bổ nghĩa cho '办得' cần tính từ '成功' (thành công tốt đẹp). Đáp án A.",
-        "skill": "reading"
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
       },
       {
-        "id": "hsk3_e1_q6",
-        "section": "Phần 2: Đọc hiểu - Điền từ liên từ (选词填空)",
-        "type": "reading_choice",
-        "prompt": "Chọn cặp liên từ thích hợp: ______明天不下大雨，我们______按原计划去爬香山。",
+        "id": "hsk3_bench_r_2",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 42/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
         "options": [
           {
             "key": "A",
-            "text": "只要...就... (Chỉ cần... thì...)",
+            "text": "但是 (dànshì - nhưng)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "虽然...但是... (Tuy... nhưng...)",
+            "text": "因为 (yīnwèi - bởi vì)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "因为...所以... (Vì... nên...)",
+            "text": "所以 (suǒyǐ - cho nên)",
             "isCorrect": false
           },
           {
             "key": "D",
-            "text": "不但...而且... (Không những... mà còn...)",
+            "text": "虽然 (suīrán - tuy rằng)",
             "isCorrect": false
           }
         ],
-        "explanation": "Cặp liên từ điều kiện đầy đủ '只要...就...' (Chỉ cần ngày mai không mưa lớn thì chúng ta sẽ đi). Đáp án A.",
-        "skill": "reading"
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
       },
       {
-        "id": "hsk3_e1_q7",
-        "section": "Phần 2: Đọc hiểu - Đọc hiểu đoạn văn (阅读短文回答问题)",
-        "type": "reading_choice",
-        "prompt": "Đọc đoạn văn sau: '微笑是世界上最通用的语言。当我们对别人微笑时，不仅能让对方感到温暖，也能让自己保持乐观积极的心态。'\nCâu hỏi: Đoạn văn khuyên chúng ta điều gì?",
+        "id": "hsk3_bench_r_3",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 43/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
         "options": [
           {
             "key": "A",
-            "text": "保持微笑，传递善意与乐观 (Luôn mỉm cười, lan tỏa sự thiện chí và lạc quan)",
+            "text": "但是 (dànshì - nhưng)",
             "isCorrect": true
           },
           {
             "key": "B",
-            "text": "学习更多外国语言 (Học thêm nhiều ngoại ngữ)",
+            "text": "因为 (yīnwèi - bởi vì)",
             "isCorrect": false
           },
           {
             "key": "C",
-            "text": "减少与别人的交谈 (Hạn chế trò chuyện với người khác)",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
             "isCorrect": false
           }
         ],
-        "explanation": "Đoạn văn nhấn mạnh nụ cười đem lại ấm áp và thái độ lạc quan tích cực. Đáp án A.",
-        "skill": "reading"
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
       },
       {
-        "id": "hsk3_e1_q8",
-        "section": "Phần 2: Đọc hiểu - Đọc hiểu đoạn văn (阅读短文回答问题)",
-        "type": "reading_choice",
-        "prompt": "Đọc đoạn văn sau: '学好汉语最关键的不是背诵多少生词，而是要把学到的词汇积极运用到日常实际交际中去。'\nCâu hỏi: Yếu tố then chốt nhất để học tốt tiếng Hán là gì?",
+        "id": "hsk3_bench_r_4",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 44/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
         "options": [
           {
             "key": "A",
-            "text": "死记硬背所有生词 (Học vẹt thuộc lòng từ mới)",
-            "isCorrect": false
-          },
-          {
-            "key": "B",
-            "text": "积极在实际交际中运用 (Chủ động áp dụng vào giao tiếp thực tế)",
+            "text": "但是 (dànshì - nhưng)",
             "isCorrect": true
           },
           {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
             "key": "C",
-            "text": "每天买很多教科书 (Mua nhiều sách giáo khoa)",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
             "isCorrect": false
           }
         ],
-        "explanation": "Bài viết nêu: '最关键的...是把学到的词汇积极运用到日常实际交际中去'. Đáp án B.",
-        "skill": "reading"
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
       },
       {
-        "id": "hsk3_e1_q9",
-        "section": "Phần 3: Viết - Sắp xếp từ thành câu (书写 - 排列词语)",
-        "type": "reorder",
-        "prompt": "Sắp xếp các từ ngữ sau thành câu hoàn chỉnh đúng ngữ pháp HSK 3:",
-        "words": [
-          "请",
-          "把",
-          "窗户",
-          "打开",
-          "吧"
+        "id": "hsk3_bench_r_5",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 45/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
         ],
-        "correctOrder": [
-          "请",
-          "把",
-          "窗户",
-          "打开",
-          "吧"
-        ],
-        "explanation": "Câu chữ 把 (Bǎ): Chủ ngữ + 把 + Tân ngữ + Động từ + Thành phần khác. '请把窗户打开吧' (Xin hãy mở cửa sổ ra nhé).",
-        "skill": "writing"
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
       },
       {
-        "id": "hsk3_e1_q10",
-        "section": "Phần 3: Viết - Sắp xếp từ thành câu (书写 - 排列词语)",
-        "type": "reorder",
-        "prompt": "Sắp xếp các từ ngữ sau thành câu so sánh đúng trật tự:",
+        "id": "hsk3_bench_r_6",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 46/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_7",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 47/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_8",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 48/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_9",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 49/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_10",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 50/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_11",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 51/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_12",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 52/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_13",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 53/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_14",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 54/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_15",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 55/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_16",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 56/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_17",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 57/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_18",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 58/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_19",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 59/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_20",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 60/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_21",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 61/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_22",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 62/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_23",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 63/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_24",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 64/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_25",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 65/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_26",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 66/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_27",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 67/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_28",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 68/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_29",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 69/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_r_30",
+        "skill": "reading",
+        "section": "Phần 2: Đọc Hiểu Ngữ Đoạn (阅读 30 Câu)",
+        "prompt": "[Câu 70/80] Chọn từ thích hợp điền vào chỗ trống: 虽然这项工作很辛苦，______他从来没有抱怨过。",
+        "options": [
+          {
+            "key": "A",
+            "text": "但是 (dànshì - nhưng)",
+            "isCorrect": true
+          },
+          {
+            "key": "B",
+            "text": "因为 (yīnwèi - bởi vì)",
+            "isCorrect": false
+          },
+          {
+            "key": "C",
+            "text": "所以 (suǒyǐ - cho nên)",
+            "isCorrect": false
+          },
+          {
+            "key": "D",
+            "text": "虽然 (suīrán - tuy rằng)",
+            "isCorrect": false
+          }
+        ],
+        "explanation": "Cặp liên từ nhượng bộ biểu thị tương phản: 虽然...但是... (Tuy... nhưng...)."
+      },
+      {
+        "id": "hsk3_bench_w_reorder_1",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu Hoàn Chỉnh (书写 第一部分)",
+        "prompt": "[Câu 71/80] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp HSK 3:",
         "words": [
-          "他的汉语水平",
-          "比",
-          "我",
-          "高",
-          "得多"
+          "把",
+          "弟弟",
+          "作业",
+          "写完了"
         ],
         "correctOrder": [
-          "他的汉语水平",
-          "比",
-          "我",
-          "高",
-          "得多"
+          "弟弟",
+          "把",
+          "作业",
+          "写完了"
         ],
-        "explanation": "Cấu trúc câu so sánh 比 (Bǐ): A + 比 + B + Tính từ + 得多/得多啦. 'Trình độ tiếng Hán của anh ấy cao hơn tôi rất nhiều'.",
-        "skill": "writing"
+        "explanation": "Câu chữ 把: Chủ ngữ (弟弟) + 把 + Tân ngữ (作业) + Động từ kèm kết quả (写完了)."
+      },
+      {
+        "id": "hsk3_bench_w_reorder_2",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu Hoàn Chỉnh (书写 第一部分)",
+        "prompt": "[Câu 72/80] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp HSK 3:",
+        "words": [
+          "这本小说",
+          "借给",
+          "我",
+          "老师"
+        ],
+        "correctOrder": [
+          "老师",
+          "借给",
+          "我",
+          "这本小说"
+        ],
+        "explanation": "Cấu trúc song tân ngữ: Chủ ngữ (老师) + 借给 + Tân ngữ gián tiếp (我) + Tân ngữ trực tiếp (这本小说)."
+      },
+      {
+        "id": "hsk3_bench_w_reorder_3",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu Hoàn Chỉnh (书写 第一部分)",
+        "prompt": "[Câu 73/80] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp HSK 3:",
+        "words": [
+          "非常",
+          "今天",
+          "高兴",
+          "大家"
+        ],
+        "correctOrder": [
+          "今天",
+          "大家",
+          "非常",
+          "高兴"
+        ],
+        "explanation": "Trạng ngữ thời gian (今天) + Chủ ngữ (大家) + Phó từ mức độ (非常) + Tính từ (高兴)."
+      },
+      {
+        "id": "hsk3_bench_w_reorder_4",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu Hoàn Chỉnh (书写 第一部分)",
+        "prompt": "[Câu 74/80] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp HSK 3:",
+        "words": [
+          "越来越",
+          "中文水平",
+          "高",
+          "他的"
+        ],
+        "correctOrder": [
+          "他的",
+          "中文水平",
+          "越来越",
+          "高"
+        ],
+        "explanation": "Chủ ngữ (他的中文水平) + Cấu trúc tiến triển (越来越) + Tính từ (高)."
+      },
+      {
+        "id": "hsk3_bench_w_reorder_5",
+        "skill": "writing",
+        "section": "Phần 3: Viết - Sắp Xếp Câu Hoàn Chỉnh (书写 第一部分)",
+        "prompt": "[Câu 75/80] Sắp xếp các cụm từ sau thành câu đúng ngữ pháp HSK 3:",
+        "words": [
+          "在教室里",
+          "学生们",
+          "安静地",
+          "看书"
+        ],
+        "correctOrder": [
+          "学生们",
+          "在教室里",
+          "安静地",
+          "看书"
+        ],
+        "explanation": "Chủ ngữ + Trạng ngữ nơi chốn + Trạng ngữ phương thức + Vị ngữ."
+      },
+      {
+        "id": "hsk3_bench_w_char_1",
+        "skill": "writing",
+        "type": "hanzi_completion",
+        "section": "Phần 3: Viết - Viết Chữ Hán Theo Pinyin (书写 第二部分)",
+        "prompt": "[Câu 76/80] Nhìn phiên âm Pinyin và điền chữ Hán chính xác vào chỗ trống:",
+        "statement": "今天的天气______热了，我想去游泳。",
+        "pinyin": "tài",
+        "targetChar": "太",
+        "expectedAnswer": "太",
+        "explanation": "Phó từ mức độ '太' trong cấu trúc '太...了' (quá... rồi)."
+      },
+      {
+        "id": "hsk3_bench_w_char_2",
+        "skill": "writing",
+        "type": "hanzi_completion",
+        "section": "Phần 3: Viết - Viết Chữ Hán Theo Pinyin (书写 第二部分)",
+        "prompt": "[Câu 77/80] Nhìn phiên âm Pinyin và điền chữ Hán chính xác vào chỗ trống:",
+        "statement": "外面下大雨了，风______大。",
+        "pinyin": "yòu",
+        "targetChar": "又",
+        "expectedAnswer": "又",
+        "explanation": "Phó từ '又' trong kết cấu '又...又...' (vừa... lại vừa...)."
+      },
+      {
+        "id": "hsk3_bench_w_char_3",
+        "skill": "writing",
+        "type": "hanzi_completion",
+        "section": "Phần 3: Viết - Viết Chữ Hán Theo Pinyin (书写 第二部分)",
+        "prompt": "[Câu 78/80] Nhìn phiên âm Pinyin và điền chữ Hán chính xác vào chỗ trống:",
+        "statement": "地上落满了______色的雪花。",
+        "pinyin": "bái",
+        "targetChar": "白",
+        "expectedAnswer": "白",
+        "explanation": "Từ '白' (màu trắng) trong '白色的雪花'."
+      },
+      {
+        "id": "hsk3_bench_w_char_4",
+        "skill": "writing",
+        "type": "hanzi_completion",
+        "section": "Phần 3: Viết - Viết Chữ Hán Theo Pinyin (书写 第二部分)",
+        "prompt": "[Câu 79/80] Nhìn phiên âm Pinyin và điền chữ Hán chính xác vào chỗ trống:",
+        "statement": "请往前走，洗手间在______边。",
+        "pinyin": "zuǒ",
+        "targetChar": "左",
+        "expectedAnswer": "左",
+        "explanation": "Phương vị từ '左' (bên trái) trong '左边'."
+      },
+      {
+        "id": "hsk3_bench_w_char_5",
+        "skill": "writing",
+        "type": "hanzi_completion",
+        "section": "Phần 3: Viết - Viết Chữ Hán Theo Pinyin (书写 第二部分)",
+        "prompt": "[Câu 80/80] Nhìn phiên âm Pinyin và điền chữ Hán chính xác vào chỗ trống:",
+        "statement": "王老师在学校______数学。",
+        "pinyin": "jiāo",
+        "targetChar": "教",
+        "expectedAnswer": "教",
+        "explanation": "Động từ '教' (dạy học)."
       }
     ]
   },
