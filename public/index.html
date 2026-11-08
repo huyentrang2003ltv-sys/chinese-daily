@@ -1865,17 +1865,37 @@
     <!-- TAB 3: PHÂN BIỆT TỪ DỄ LẪN -->
     <section id="tab-confusions" class="hidden space-y-6">
       <div class="glass-card rounded-2xl p-6 lg:p-8 bg-gradient-to-r from-amber-50/80 via-[#FAF7F2] to-white border border-amber-300/40">
-        <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/70 text-amber-900 border border-amber-200 text-xs font-bold mb-3">
-            <i data-lucide="scale" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
-            <span>Ma Trận So Sánh Từ Đồng Nghĩa & Dễ Nhầm Lẫn</span>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/70 text-amber-900 border border-amber-200 text-xs font-bold mb-3">
+              <i data-lucide="scale" class="w-3.5 h-3.5 text-[#8B1E1E]"></i>
+              <span>Ma Trận So Sánh Từ Đồng Nghĩa & Dễ Nhầm Lẫn (近义词辨析)</span>
+            </div>
+            <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
+              Cẩm Nang Phân Biệt Các Cặp Từ Gần Nghĩa HSK
+            </h2>
+            <p class="text-sm lg:text-base text-stone-600 leading-relaxed">
+              Giải quyết triệt để 90% lỗi mất điểm trong các kỳ thi HSK 3 - 6 và giao tiếp bản xứ: 二 vs 两, 刚 vs 刚才, 常常 vs 往往 vs 经常, 以为 vs 认为, 表达 vs 表现 vs 表示, 临时 vs 暂时, 适合 vs 合适... Kèm ma trận phân tích đa chiều và bài tập trắc nghiệm phản xạ tức thì.
+            </p>
           </div>
-          <h2 class="text-2xl lg:text-3xl font-serif-luxury font-black text-stone-900 tracking-tight mb-2">
-            Phân Biệt Các Cặp Từ Kinh Điển
-          </h2>
-          <p class="text-sm lg:text-base text-stone-600 leading-relaxed">
-            Giải quyết triệt để 90% lỗi sai của người học khi đối diện với các cặp từ như: 二 vs 两, 刚 vs 刚才, 常常 vs 往往, 差不多 vs 几乎, 以为 vs 认为, 突然 vs 忽然... Kèm bài test trắc nghiệm phản xạ 5 giây!
-          </p>
+          <div class="flex items-center gap-2 self-start md:self-auto shrink-0">
+            <span id="confusionsFilteredCount" class="px-3.5 py-1.5 rounded-xl bg-amber-50 text-amber-900 border border-amber-200 text-xs font-bold shadow-2xs">
+              Hiển thị 36 / 36 cặp từ
+            </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Filter Toolbar -->
+      <div class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-amber-200 dark:border-stone-800 shadow-xs">
+        <div class="relative">
+          <i data-lucide="search" class="w-4 h-4 text-stone-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+          <input 
+            id="confusionsSearchInput" 
+            type="text" 
+            oninput="handleConfusionsSearch(this.value)" 
+            placeholder="Tìm kiếm cặp từ (ví dụ: 刚, 刚才, 表达, 表现, 表示, 以为, 认为, 适合, 合适, 临时, 暂时, 渡过, 度过)..." 
+            class="w-full pl-9 pr-4 py-2.5 rounded-xl text-xs sm:text-sm bg-stone-50 dark:bg-stone-800 border border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-400">
         </div>
       </div>
 
