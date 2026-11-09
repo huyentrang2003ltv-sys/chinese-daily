@@ -204,6 +204,7 @@ const routes = {
       ...accounts.publicUser(u),
       progress: undefined,
       exp: (u.progress && u.progress.exp) || 0,
+      streak: (u.progress && u.progress.streak) || 0,
       vipRequest: u.vipRequest || null,
       needsPasswordReset: !u.passwordHash
     }));
@@ -240,6 +241,37 @@ const routes = {
       message: `Đã mở khóa tài khoản thành công cho học viên ${target.name}.`,
       user: accounts.publicUser(target)
     });
+  },
+
+  'POST /api/admin/reset-password': async (req, res) => {
+    requireAdmin(req);
+    const body = await readJson(req);
+    const target = accounts.findByEmail(body.email) || accounts.findById(body.userId);
+    if (!target) throw new HttpError(404, 'Không tìm thấy tài khoản học viên.');
+    const newPass = str(body.newPassword, 100);
+    if (!newPass || newPass.length < 8) {
+      throw new HttpError(400, 'Mật khẩu mới phải có ít nhất 8 ký tự.');
+    }
+    accounts.setPassword(target, newPass);
+    sendJson(res, 200, {
+      ok: true,
+      message: `Đã cập nhật mật khẩu mới cho học viên ${target.name}.`
+    });
+  },
+
+  'GET /api/system/broadcast': async (req, res) => {
+    sendJson(res, 200, { ok: true, broadcast: accounts.getBroadcast() });
+  },
+
+  'POST /api/admin/broadcast': async (req, res) => {
+    requireAdmin(req);
+    const body = await readJson(req);
+    const broadcast = accounts.setBroadcast({
+      enabled: Boolean(body.enabled),
+      message: str(body.message, 500),
+      type: body.type
+    });
+    sendJson(res, 200, { ok: true, broadcast, message: 'Đã cập nhật thông báo toàn hệ thống.' });
   },
 
   'POST /api/admin/test-notify': async (req, res) => {

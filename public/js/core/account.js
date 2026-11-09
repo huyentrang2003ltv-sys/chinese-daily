@@ -30,6 +30,9 @@ async function apiRequest(url, { method = 'GET', body } = {}) {
 }
 
 const isAdmin = () => Boolean(currentUser && currentUser.role === 'admin');
+window.isAdmin = isAdmin;
+window.getCurrentUser = () => currentUser;
+window.apiRequest = apiRequest;
 
 async function initAccount() {
   try {
@@ -110,6 +113,7 @@ function mergeServerProgress(remote) {
 
 function applySignedInUser(user, { merge = false } = {}) {
   currentUser = user;
+  window.currentUser = user;
   if (!userProfile.name) userProfile.name = user.name;
   userProfile.name = user.name;
   if (merge) mergeServerProgress(user.progress);
@@ -149,6 +153,7 @@ function renderAccountUi() {
   show('headerUserBtn', signedIn);
   show('headerLoginBtn', !signedIn);
   show('headerAdminCrown', isAdmin(), 'inline');
+  show('headerAdminLink', isAdmin(), 'inline-flex');
   show('dropdownCrownIcon', isAdmin(), 'inline');
   const adminBtn = document.getElementById('dropdownAdminPanelBtn');
   if (adminBtn) adminBtn.hidden = !isAdmin();
@@ -166,6 +171,7 @@ function renderAccountUi() {
   }
   renderVipBadge();
   if (activeTab === 'home' && typeof renderHomeDashboard === 'function') renderHomeDashboard();
+  if (activeTab === 'admin' && typeof renderAdminPortal === 'function') renderAdminPortal();
 }
 
 function toggleUserDropdown() {
@@ -331,6 +337,7 @@ async function handleLogout() {
     // Cookie is cleared server-side; nothing else to do offline.
   }
   currentUser = null;
+  window.currentUser = null;
   renderAccountUi();
   showToast('Đã đăng xuất. Tiến độ trên máy này vẫn được giữ lại.', 'info');
 }

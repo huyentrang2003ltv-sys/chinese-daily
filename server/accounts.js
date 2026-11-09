@@ -316,6 +316,32 @@ function sessionCookie(token, { secure, clear = false } = {}) {
   return parts.join('; ');
 }
 
+// ---------------------------------------------------------------------------
+// System Broadcast Announcement Store
+// ---------------------------------------------------------------------------
+const broadcastStore = createJsonStore('broadcast.json', {
+  enabled: false,
+  message: '',
+  type: 'info',
+  updatedAt: null
+});
+
+function getBroadcast() {
+  return broadcastStore.get() || { enabled: false, message: '', type: 'info', updatedAt: null };
+}
+
+function setBroadcast({ enabled, message, type }) {
+  const data = {
+    enabled: Boolean(enabled),
+    message: String(message || '').trim(),
+    type: ['info', 'warning', 'success', 'promo'].includes(type) ? type : 'info',
+    updatedAt: new Date().toISOString()
+  };
+  broadcastStore.set(data);
+  broadcastStore.flush();
+  return data;
+}
+
 module.exports = {
   SESSION_COOKIE,
   VIP_TIERS,
@@ -338,5 +364,7 @@ module.exports = {
   touchUserActivity,
   createSessionToken,
   userFromSessionToken,
-  sessionCookie
+  sessionCookie,
+  getBroadcast,
+  setBroadcast
 };

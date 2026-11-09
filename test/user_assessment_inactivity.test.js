@@ -59,5 +59,13 @@ test('Account & Inactivity Logic', async (t) => {
 
     const pubAfterUnlock = accounts.publicUser(student);
     assert.equal(pubAfterUnlock.isLocked, false);
+
+    // Clean up test users to prevent polluting storage
+    const list = accounts.users();
+    for (let i = list.length - 1; i >= 0; i--) {
+      if (list[i].email && list[i].email.endsWith('@example.com')) {
+        list.splice(i, 1);
+      }
+    }
   });
 });

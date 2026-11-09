@@ -55,7 +55,15 @@ const TABS = {
   mockexam: { label: 'Thi thử HSK', icon: 'file-check-2', data: ['mockExam'], init: () => initMockExamModule() },
   woodblock: { label: 'Xếp khối gỗ', icon: 'puzzle', data: ['woodBlock'], init: () => initWoodBlockGame() },
   flipcard: { label: 'Lật thẻ tìm từ', icon: 'layers', data: ['flipCard'], init: () => initFlipCardGame() },
-  classroom: { label: 'Lớp học thông minh', icon: 'school', data: ['dictionary', 'mockExam'], init: () => initClassroom() }
+  classroom: { label: 'Lớp học thông minh', icon: 'school', data: ['dictionary', 'mockExam'], init: () => initClassroom() },
+  admin: {
+    label: 'Quản trị hệ thống',
+    icon: 'shield-check',
+    data: [],
+    init: () => {
+      if (typeof renderAdminPortal === 'function') renderAdminPortal();
+    }
+  }
 };
 
 /** Top-level groups shown in the main nav (bottom bar on mobile). */
@@ -70,6 +78,10 @@ const NAV_GROUPS = [
 
 const DEFAULT_TAB = 'home';
 const TAB_ALIASES = {
+  admin: 'admin',
+  'admin-portal': 'admin',
+  quantri: 'admin',
+  'quan-tri': 'admin',
   hsk90: 'hsk90',
   '90ngay': 'hsk90',
   lotrinh90: 'hsk90',
