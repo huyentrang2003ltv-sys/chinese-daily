@@ -1472,6 +1472,21 @@ function openSocialQuickModal(provider = 'google') {
             <span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-amber-500 text-amber-950 shrink-0">ADMIN</span>
           </button>
 
+          <button 
+            type="button"
+            onclick="submitSocialQuickAuth('google', 'huyentrang2003ltv@gmail.com', 'Huyền Trang', '')" 
+            class="w-full p-2.5 rounded-2xl bg-amber-50/80 hover:bg-amber-100 border border-amber-300/80 dark:bg-stone-800 dark:hover:bg-stone-700 dark:border-stone-700 flex items-center justify-between text-left transition-all cursor-pointer group"
+          >
+            <div class="flex items-center gap-2.5 min-w-0">
+              <div class="w-8 h-8 rounded-full bg-rose-600 text-white font-bold flex items-center justify-center shrink-0">T</div>
+              <div class="min-w-0">
+                <p class="font-bold text-xs text-stone-900 dark:text-stone-100 truncate">Huyền Trang</p>
+                <p class="text-[10px] text-stone-500 font-mono truncate">huyentrang2003ltv@gmail.com</p>
+              </div>
+            </div>
+            <span class="text-[9px] font-black px-1.5 py-0.5 rounded bg-amber-500 text-amber-950 shrink-0">ADMIN</span>
+          </button>
+
           <div class="pt-2 border-t border-stone-200 dark:border-stone-800 space-y-2">
             <label class="block font-bold text-stone-700 dark:text-stone-300 text-[11px]">Hoặc nhập địa chỉ Gmail của bạn:</label>
             <div class="flex items-center gap-2">
@@ -28001,7 +28016,7 @@ if (typeof module !== 'undefined' && module.exports) {
 // =========================================================================
 // Hi HSK - Hệ Thống Quản Trị Hệ Thống & Bảng Điều Khiển (Admin Portal)
 // Route: #/admin (hoặc #/admin-portal, #/quantri)
-// Quyền hạn: Chỉ tài khoản Admin (hoangpham1618@gmail.com) mới có thể truy cập
+// Quyền hạn: Chỉ tài khoản Admin (hoangpham1618@gmail.com, huyentrang2003ltv@gmail.com) mới có thể truy cập
 // =========================================================================
 
 (function(window) {
@@ -28171,7 +28186,7 @@ if (typeof module !== 'undefined' && module.exports) {
             Khu Vực Quản Trị Hệ Thống Hi HSK
           </h2>
           <p class="text-sm text-stone-600 dark:text-stone-400 max-w-lg mx-auto leading-relaxed">
-            Đường dẫn <code class="font-mono bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded text-rose-600 font-bold">#/admin</code> chỉ dành riêng cho Ban Quản trị (<strong class="text-amber-800 dark:text-amber-400 font-mono">hoangpham1618@gmail.com</strong>) để quản lý danh sách học viên, kích hoạt VIP và vận hành máy chủ.
+            Đường dẫn <code class="font-mono bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded text-rose-600 font-bold">#/admin</code> chỉ dành riêng cho Ban Quản trị (<strong class="text-amber-800 dark:text-amber-400 font-mono">hoangpham1618@gmail.com, huyentrang2003ltv@gmail.com</strong>) để quản lý danh sách học viên, kích hoạt VIP và vận hành máy chủ.
           </p>
         </div>
 

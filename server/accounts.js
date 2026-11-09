@@ -4,7 +4,7 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
-const { ROOT, SESSION_SECRET } = require('./config');
+const { ROOT, SESSION_SECRET, ADMIN_EMAILS: CONFIG_ADMIN_EMAILS } = require('./config');
 const { createJsonStore, readJsonFile, storagePath } = require('./store');
 const { syncUser } = require('./db');
 
@@ -52,6 +52,43 @@ function verifyPassword(password, stored) {
 }
 
 // ---------------------------------------------------------------------------
+
+// ---------------------------------------------------------------------------
+// Designated System Administrator Accounts
+// ---------------------------------------------------------------------------
+const ADMIN_EMAILS = new Set(
+  (Array.isArray(CONFIG_ADMIN_EMAILS) && CONFIG_ADMIN_EMAILS.length ? CONFIG_ADMIN_EMAILS : ['hoangpham1618@gmail.com', 'huyentrang2003ltv@gmail.com'])
+    .map(e => String(e).trim().toLowerCase())
+);
+
+function isSystemAdminEmail(email) {
+  if (!email || typeof email !== 'string') return false;
+  return ADMIN_EMAILS.has(email.trim().toLowerCase());
+}
+
+function ensureAdminAccounts() {
+  const allUsers = store.get() || [];
+  let modified = false;
+  for (const u of allUsers) {
+    if (isSystemAdminEmail(u.email)) {
+      if (u.role !== 'admin' || u.isLocked || u.vipTier !== 'lifetime') {
+        u.role = 'admin';
+        u.isLocked = false;
+        u.lockReason = null;
+        u.lockedAt = null;
+        u.vipTier = 'lifetime';
+        syncUser(u);
+        modified = true;
+      }
+    }
+  }
+  if (modified) {
+    store.save();
+    console.log('[accounts] Đã kích hoạt quyền Quản Trị Viên & VIP trọn đời cho Ban Quản Trị:', Array.from(ADMIN_EMAILS).join(', '));
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Users store (+ one-time import of the old data/users.json)
 // ---------------------------------------------------------------------------
 const store = createJsonStore('users.json', null);
@@ -93,6 +130,7 @@ if (!Array.isArray(store.get())) {
 }
 if (Array.isArray(store.get())) {
   store.get().forEach(u => syncUser(u));
+  ensureAdminAccounts();
 }
 
 const users = () => store.get();
@@ -153,13 +191,14 @@ function newId() {
 
 function createUser({ username, name, email, password, language, profession, purpose, progress }) {
   const now = new Date().toISOString();
+  const isAdmin = isSystemAdminEmail(email);
   const user = {
     id: newId(),
     username: username || name,
     name: name || username,
     email: email.toLowerCase(),
     passwordHash: hashPassword(password),
-    role: 'student',
+    role: isAdmin ? 'admin' : 'student',
     language,
     profession,
     purpose,
@@ -169,7 +208,7 @@ function createUser({ username, name, email, password, language, profession, pur
     lockReason: null,
     lockedAt: null,
     trialStartedAt: now,
-    vipTier: null,
+    vipTier: isAdmin ? 'lifetime' : null,
     vipExpiresAt: null,
     sessionVersion: 1,
     progress: progress || { exp: 0, streak: 1, savedWords: [] }
@@ -239,8 +278,16 @@ function findOrCreateSocialUser({ email, name, provider = 'google', providerId, 
   if (!email) throw new Error('Email từ nhà cung cấp không hợp lệ.');
   email = String(email).trim().toLowerCase();
   let user = findByEmail(email);
+  const isAdmin = isSystemAdminEmail(email);
 
   if (user) {
+    if (isAdmin && (user.role !== 'admin' || user.isLocked || user.vipTier !== 'lifetime')) {
+      user.role = 'admin';
+      user.isLocked = false;
+      user.lockReason = null;
+      user.lockedAt = null;
+      user.vipTier = 'lifetime';
+    }
     user.authProvider = provider;
     if (providerId) user.providerId = providerId;
     if (avatar && !user.avatar) user.avatar = avatar;
@@ -260,7 +307,6 @@ function findOrCreateSocialUser({ email, name, provider = 'google', providerId, 
   }
 
   const now = new Date().toISOString();
-  const isAdmin = email === 'hoangpham1618@gmail.com';
   user = {
     id: newId(),
     username: uniqueUsername,
@@ -427,5 +473,8 @@ module.exports = {
   sessionCookie,
   getBroadcast,
   setBroadcast,
-  findOrCreateSocialUser
+  findOrCreateSocialUser,
+  ADMIN_EMAILS,
+  isSystemAdminEmail,
+  ensureAdminAccounts
 };

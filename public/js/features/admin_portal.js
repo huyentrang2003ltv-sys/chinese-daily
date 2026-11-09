@@ -1,7 +1,7 @@
 // =========================================================================
 // Hi HSK - Hệ Thống Quản Trị Hệ Thống & Bảng Điều Khiển (Admin Portal)
 // Route: #/admin (hoặc #/admin-portal, #/quantri)
-// Quyền hạn: Chỉ tài khoản Admin (hoangpham1618@gmail.com) mới có thể truy cập
+// Quyền hạn: Chỉ tài khoản Admin (hoangpham1618@gmail.com, huyentrang2003ltv@gmail.com) mới có thể truy cập
 // =========================================================================
 
 (function(window) {
@@ -171,7 +171,7 @@
             Khu Vực Quản Trị Hệ Thống Hi HSK
           </h2>
           <p class="text-sm text-stone-600 dark:text-stone-400 max-w-lg mx-auto leading-relaxed">
-            Đường dẫn <code class="font-mono bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded text-rose-600 font-bold">#/admin</code> chỉ dành riêng cho Ban Quản trị (<strong class="text-amber-800 dark:text-amber-400 font-mono">hoangpham1618@gmail.com</strong>) để quản lý danh sách học viên, kích hoạt VIP và vận hành máy chủ.
+            Đường dẫn <code class="font-mono bg-stone-100 dark:bg-stone-800 px-2 py-0.5 rounded text-rose-600 font-bold">#/admin</code> chỉ dành riêng cho Ban Quản trị (<strong class="text-amber-800 dark:text-amber-400 font-mono">hoangpham1618@gmail.com, huyentrang2003ltv@gmail.com</strong>) để quản lý danh sách học viên, kích hoạt VIP và vận hành máy chủ.
           </p>
         </div>
 

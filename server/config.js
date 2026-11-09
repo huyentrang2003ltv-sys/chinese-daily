@@ -43,6 +43,10 @@ module.exports = {
   VIP_PRICES: { monthly: 99000, yearly: 499000, lifetime: 899000 },
   TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN || '',
   TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID || '',
+  ADMIN_EMAILS: (process.env.ADMIN_EMAILS || 'hoangpham1618@gmail.com,huyentrang2003ltv@gmail.com')
+    .split(',')
+    .map(s => s.trim().toLowerCase())
+    .filter(Boolean),
   // Social OAuth 2.0 Credentials (Google & Facebook)
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID || '',
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET || '',
