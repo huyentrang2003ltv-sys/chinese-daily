@@ -101,28 +101,27 @@ async function run() {
   });
   await new Promise(r => setTimeout(r, 1000));
 
-  // Capture screenshot 1: Full Masterclass Roadmap & Studio Overview
+  // Capture screenshot 1: 90 Days Overview & Day Selector & Step 1 + Step 2
   const snap1 = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
-  const out1 = path.join(ARTIFACTS_DIR, 'hsk90_roadmap_masterclass_studio_verified.png');
+  const out1 = path.join(ARTIFACTS_DIR, 'hsk90_daily_syllabus_and_lesson_step12_verified.png');
   fs.writeFileSync(out1, Buffer.from(snap1.data, 'base64'));
   console.log('Saved screenshot 1 to', out1);
 
-  // Switch to Grammar tab & interactive practice
+  // Scroll to Step 3 & Step 4 (Practice & Homework)
   await send('Runtime.evaluate', {
     expression: `
       (() => {
-        if (window.switchHsk90LectureTab) window.switchHsk90LectureTab('grammar');
         if (window.switchHsk90PracticeMode) window.switchHsk90PracticeMode('reorder');
-        const studio = document.getElementById('hsk90LectureContentArea');
+        const studio = document.getElementById('hsk90PracticeSubArea');
         if (studio) studio.scrollIntoView({ behavior: 'instant', block: 'center' });
       })()
     `
   });
   await new Promise(r => setTimeout(r, 1000));
 
-  // Capture screenshot 2: Grammar Formula & Sentence Scramble
+  // Capture screenshot 2: Step 3 (In-Class Practice) & Step 4 (Homework & Complete)
   const snap2 = await send('Page.captureScreenshot', { format: 'png', captureBeyondViewport: false });
-  const out2 = path.join(ARTIFACTS_DIR, 'hsk90_grammar_and_practice_lab_verified.png');
+  const out2 = path.join(ARTIFACTS_DIR, 'hsk90_daily_lesson_step34_verified.png');
   fs.writeFileSync(out2, Buffer.from(snap2.data, 'base64'));
   console.log('Saved screenshot 2 to', out2);
 
