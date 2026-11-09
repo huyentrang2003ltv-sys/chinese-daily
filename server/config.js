@@ -42,5 +42,12 @@ module.exports = {
   },
   VIP_PRICES: { monthly: 99000, yearly: 499000, lifetime: 899000 },
   TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN || '',
-  TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID || ''
+  TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID || '',
+  // Social OAuth 2.0 Credentials (Google & Facebook)
+  GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID || '',
+  GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET || '',
+  GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL || '',
+  FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || '',
+  FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || '',
+  FACEBOOK_CALLBACK_URL: process.env.FACEBOOK_CALLBACK_URL || ''
 };

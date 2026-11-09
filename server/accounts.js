@@ -234,6 +234,64 @@ function vipInfo(user) {
 }
 
 /** The user as sent to their own browser (no password hash). */
+
+function findOrCreateSocialUser({ email, name, provider = 'google', providerId, avatar }) {
+  if (!email) throw new Error('Email từ nhà cung cấp không hợp lệ.');
+  email = String(email).trim().toLowerCase();
+  let user = findByEmail(email);
+
+  if (user) {
+    user.authProvider = provider;
+    if (providerId) user.providerId = providerId;
+    if (avatar && !user.avatar) user.avatar = avatar;
+    user.lastActiveAt = new Date().toISOString();
+    store.save();
+    syncUser(user);
+    return { user, isNew: false };
+  }
+
+  // Create new user from social auth
+  let baseUsername = email.split('@')[0].replace(/[^a-zA-Z0-9_\u4e00-\u9fa5]/g, '');
+  if (!baseUsername) baseUsername = 'hocvien';
+  let uniqueUsername = baseUsername;
+  let counter = 1;
+  while (findByUsername(uniqueUsername)) {
+    uniqueUsername = `${baseUsername}${counter++}`;
+  }
+
+  const now = new Date().toISOString();
+  const isAdmin = email === 'hoangpham1618@gmail.com';
+  user = {
+    id: newId(),
+    username: uniqueUsername,
+    name: name || uniqueUsername,
+    email: email,
+    passwordHash: null,
+    role: isAdmin ? 'admin' : 'student',
+    authProvider: provider,
+    providerId: providerId || null,
+    avatar: avatar || null,
+    language: 'Tiếng Trung Giản Thể (Chuẩn Phổ Thông)',
+    profession: 'Học viên tự do',
+    purpose: 'Học tiếng Trung giao tiếp & thi HSK',
+    createdAt: now,
+    lastActiveAt: now,
+    isLocked: false,
+    lockReason: null,
+    lockedAt: null,
+    trialStartedAt: now,
+    vipTier: isAdmin ? 'lifetime' : null,
+    vipExpiresAt: null,
+    sessionVersion: 1,
+    progress: { exp: 50, streak: 1, savedWords: [] }
+  };
+
+  users().push(user);
+  store.save();
+  syncUser(user);
+  return { user, isNew: true };
+}
+
 function publicUser(user) {
   if (!user) return null;
   checkInactivityLock(user);
@@ -243,6 +301,8 @@ function publicUser(user) {
     name: user.name,
     email: user.email,
     role: user.role,
+    avatar: user.avatar || null,
+    authProvider: user.authProvider || 'local',
     language: user.language,
     profession: user.profession,
     purpose: user.purpose,
@@ -366,5 +426,6 @@ module.exports = {
   userFromSessionToken,
   sessionCookie,
   getBroadcast,
-  setBroadcast
+  setBroadcast,
+  findOrCreateSocialUser
 };

@@ -1062,9 +1062,9 @@ function switchHsk30LessonTab(tabName) {
     const btn = document.getElementById(`hsk30TabBtn-${t}`);
     if (!btn) return;
     if (t === tabName) {
-      btn.className = 'h-12 px-4 py-2 text-xs font-bold border-b-2 border-[#8B1E1E] dark:border-amber-400 text-[#8B1E1E] dark:text-amber-400 whitespace-nowrap flex items-center gap-1.5 cursor-pointer';
+      btn.className = 'h-full px-4 text-xs font-bold border-b-2 border-[#8B1E1E] dark:border-amber-400 text-[#8B1E1E] dark:text-amber-400 whitespace-nowrap flex items-center gap-2 shrink-0 cursor-pointer';
     } else {
-      btn.className = 'h-12 px-4 py-2 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-1.5 cursor-pointer';
+      btn.className = 'h-full px-4 text-xs font-bold border-b-2 border-transparent text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-200 whitespace-nowrap flex items-center gap-2 shrink-0 cursor-pointer';
     }
   });
 
