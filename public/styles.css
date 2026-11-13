@@ -991,6 +991,8 @@ section[aria-busy="true"]::after {
 #quickSettingsModal,
 #appInstallModal,
 #complaintModal,
+#pvpArenaModal,
+#wordleModal,
 .app-modal-layer {
   z-index: 100 !important;
 }
@@ -1003,8 +1005,74 @@ section[aria-busy="true"]::after {
 #platformPolicyModal > div,
 #quickSettingsModal > div,
 #appInstallModal > div,
-#complaintModal > div {
-  max-height: calc(100vh - 3rem) !important;
+#complaintModal > div,
+#pvpArenaModal > div,
+#wordleModal > div {
+  max-height: calc(100vh - 2.5rem) !important;
   margin-top: auto;
   margin-bottom: auto;
+}
+
+/* ==========================================================================
+   EDUTAINMENT & GAMING ANIMATIONS (WORDLE & PVP ARENA)
+   ========================================================================== */
+@keyframes wordleTilePop {
+  0% { transform: scale(0.85); opacity: 0.6; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.wordle-tile-pop {
+  animation: wordleTilePop 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes wordleRowShake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.wordle-row-shake {
+  animation: wordleRowShake 0.4s ease-in-out;
+}
+
+@keyframes wordleFlipHalf {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(90deg); }
+}
+
+@keyframes wordleFlipFinish {
+  0% { transform: rotateX(90deg); }
+  100% { transform: rotateX(0deg); }
+}
+
+.wordle-flipping-half {
+  animation: wordleFlipHalf 0.18s ease-in forwards;
+}
+
+.wordle-flipping-finish {
+  animation: wordleFlipFinish 0.18s ease-out forwards;
+}
+
+@keyframes floatScorePopup {
+  0% { opacity: 0; transform: translateY(0) scale(0.7); }
+  30% { opacity: 1; transform: translateY(-12px) scale(1.15); }
+  75% { opacity: 1; transform: translateY(-24px) scale(1); }
+  100% { opacity: 0; transform: translateY(-36px) scale(0.9); }
+}
+
+.float-score-popup {
+  animation: floatScorePopup 0.9s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  pointer-events: none;
+}
+
+@keyframes arenaScreenShake {
+  0%, 100% { transform: translate(0, 0); }
+  25% { transform: translate(-4px, 2px); }
+  50% { transform: translate(4px, -2px); }
+  75% { transform: translate(-3px, -2px); }
+}
+
+.arena-screen-shake {
+  animation: arenaScreenShake 0.35s ease-in-out;
 }

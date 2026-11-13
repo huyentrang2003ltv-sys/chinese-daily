@@ -29181,13 +29181,16 @@ if (typeof module !== 'undefined' && module.exports) {
 // =========================================================================
 // ⚔️ ĐẤU TRƯỜNG HÁN TỰ 1VS1 (PVP HANZI BATTLE ARENA / ĐẤU TRÍ PHẢN XẠ 60S)
 // Edutainment & Viral Speed Quiz Engine for Chinese Learners
+// Highly Optimized: Per-Question Speed Gauge, Audio Mute Toggle, Screen Shake & Combat Float
 // =========================================================================
 
 (function(root) {
   'use strict';
 
-  // ---------------- AUDIO SYNTHESIZER (ZERO EXTERNAL ASSETS) ----------------
+  // ---------------- AUDIO SYNTHESIZER ----------------
   let pvpAudioCtx = null;
+  let isPvPAudioMuted = false;
+
   function getPvPAudioContext() {
     try {
       if (!pvpAudioCtx) {
@@ -29204,6 +29207,7 @@ if (typeof module !== 'undefined' && module.exports) {
   }
 
   function playPvPSfx(type, streak = 1) {
+    if (isPvPAudioMuted) return;
     try {
       const ctx = getPvPAudioContext();
       if (!ctx) return;
@@ -29213,12 +29217,12 @@ if (typeof module !== 'undefined' && module.exports) {
         const osc = ctx.createOscillator();
         const g = ctx.createGain();
         osc.frequency.setValueAtTime(440, t);
-        g.gain.setValueAtTime(0.08, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+        g.gain.setValueAtTime(0.06, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
         osc.connect(g);
         g.connect(ctx.destination);
         osc.start(t);
-        osc.stop(t + 0.05);
+        osc.stop(t + 0.04);
       } else if (type === 'countdown') {
         const osc = ctx.createOscillator();
         const g = ctx.createGain();
@@ -29235,34 +29239,34 @@ if (typeof module !== 'undefined' && module.exports) {
         const g = ctx.createGain();
         osc.type = 'triangle';
         osc.frequency.setValueAtTime(523.25, t);
-        osc.frequency.exponentialRampToValueAtTime(1046.5, t + 0.22);
-        g.gain.setValueAtTime(0.2, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + 0.25);
+        osc.frequency.exponentialRampToValueAtTime(1046.5, t + 0.2);
+        g.gain.setValueAtTime(0.18, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.22);
         osc.connect(g);
         g.connect(ctx.destination);
         osc.start(t);
-        osc.stop(t + 0.25);
+        osc.stop(t + 0.22);
       } else if (type === 'correct') {
-        const freqs = [587.33, 880]; // D5 -> A5 bright chime
+        const freqs = [587.33, 880];
         freqs.forEach((freq, idx) => {
           const osc = ctx.createOscillator();
           const g = ctx.createGain();
-          const start = t + idx * 0.07;
+          const start = t + idx * 0.06;
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, start);
-          g.gain.setValueAtTime(0.18, start);
-          g.gain.exponentialRampToValueAtTime(0.001, start + 0.2);
+          g.gain.setValueAtTime(0.16, start);
+          g.gain.exponentialRampToValueAtTime(0.001, start + 0.18);
           osc.connect(g);
           g.connect(ctx.destination);
           osc.start(start);
-          osc.stop(start + 0.22);
+          osc.stop(start + 0.2);
         });
       } else if (type === 'wrong') {
         const osc = ctx.createOscillator();
         const g = ctx.createGain();
         osc.type = 'sawtooth';
         osc.frequency.setValueAtTime(140, t);
-        osc.frequency.linearRampToValueAtTime(100, t + 0.2);
+        osc.frequency.linearRampToValueAtTime(90, t + 0.2);
         g.gain.setValueAtTime(0.18, t);
         g.gain.exponentialRampToValueAtTime(0.001, t + 0.22);
         osc.connect(g);
@@ -29275,24 +29279,24 @@ if (typeof module !== 'undefined' && module.exports) {
         for (let i = 0; i < count; i++) {
           const osc = ctx.createOscillator();
           const g = ctx.createGain();
-          const start = t + i * 0.055;
+          const start = t + i * 0.05;
           osc.type = 'sine';
           osc.frequency.setValueAtTime(base[i], start);
           g.gain.setValueAtTime(0.16, start);
-          g.gain.exponentialRampToValueAtTime(0.001, start + 0.16);
+          g.gain.exponentialRampToValueAtTime(0.001, start + 0.15);
           osc.connect(g);
           g.connect(ctx.destination);
           osc.start(start);
-          osc.stop(start + 0.18);
+          osc.stop(start + 0.16);
         }
       } else if (type === 'victory') {
         const fanfare = [
           { f: 523.25, d: 0.12 },
           { f: 659.25, d: 0.12 },
           { f: 783.99, d: 0.12 },
-          { f: 1046.50, d: 0.3 },
-          { f: 880.00, d: 0.15 },
-          { f: 1046.50, d: 0.5 }
+          { f: 1046.50, d: 0.28 },
+          { f: 880.00, d: 0.14 },
+          { f: 1046.50, d: 0.45 }
         ];
         let offset = 0;
         fanfare.forEach(note => {
@@ -29314,23 +29318,33 @@ if (typeof module !== 'undefined' && module.exports) {
         sadNotes.forEach((f, idx) => {
           const osc = ctx.createOscillator();
           const g = ctx.createGain();
-          const start = t + idx * 0.14;
+          const start = t + idx * 0.12;
           osc.type = 'sine';
           osc.frequency.setValueAtTime(f, start);
-          g.gain.setValueAtTime(0.14, start);
-          g.gain.exponentialRampToValueAtTime(0.001, start + 0.22);
+          g.gain.setValueAtTime(0.13, start);
+          g.gain.exponentialRampToValueAtTime(0.001, start + 0.2);
           osc.connect(g);
           g.connect(ctx.destination);
           osc.start(start);
-          osc.stop(start + 0.25);
+          osc.stop(start + 0.22);
         });
       }
-    } catch (e) {
-      // Audio autoplay policy fallback
+    } catch (e) {}
+  }
+
+  function togglePvPAudio() {
+    isPvPAudioMuted = !isPvPAudioMuted;
+    const btn = document.getElementById('pvpAudioToggleBtn');
+    if (btn) {
+      btn.innerHTML = isPvPAudioMuted ? '🔇' : '🔊';
+      btn.title = isPvPAudioMuted ? 'Bật âm thanh' : 'Tắt âm thanh';
+    }
+    if (typeof showToast === 'function') {
+      showToast(isPvPAudioMuted ? 'Đã tắt âm thanh trận đấu' : 'Đã bật âm thanh trận đấu', 'info');
     }
   }
 
-  // ---------------- AI RIVAL PROFILES ----------------
+  // ---------------- AI RIVALS ----------------
   const AI_RIVALS = {
     easy: {
       id: 'easy',
@@ -29341,7 +29355,7 @@ if (typeof module !== 'undefined' && module.exports) {
       speedMax: 3800,
       accuracy: 0.68,
       badge: 'bg-emerald-500/20 text-emerald-300 border-emerald-500/40',
-      intro: 'Tân binh hiền hòa, thích gặm trúc, thi thoảng hơi lúng túng khi gặp từ ghép!'
+      intro: 'Tân binh gặm trúc đáng yêu, phản xạ nhẹ nhàng!'
     },
     normal: {
       id: 'normal',
@@ -29352,7 +29366,7 @@ if (typeof module !== 'undefined' && module.exports) {
       speedMax: 2600,
       accuracy: 0.84,
       badge: 'bg-amber-500/20 text-amber-300 border-amber-500/40',
-      intro: 'Hổ tướng dày dạn kinh nghiệm luyện đề, phản xạ nhanh và ít khi mắc lỗi sơ đẳng!'
+      intro: 'Chiến binh dày dạn kinh nghiệm luyện đề, phản xạ nhanh!'
     },
     hard: {
       id: 'hard',
@@ -29363,11 +29377,11 @@ if (typeof module !== 'undefined' && module.exports) {
       speedMax: 1800,
       accuracy: 0.94,
       badge: 'bg-rose-500/20 text-rose-300 border-rose-500/40',
-      intro: 'Bắc Kinh học giả thông thạo tứ thư ngũ kinh, tốc độ trả lời như điện xẹt!'
+      intro: 'Giáo sư thông thạo tứ thư ngũ kinh, tốc độ sấm chớp!'
     }
   };
 
-  // ---------------- FALLBACK QUESTION BANK (40+ HIGH QUALITY CURATED QUESTIONS) ----------------
+  // ---------------- FALLBACK QUESTION BANK ----------------
   const FALLBACK_QUESTIONS = [
     {
       category: 'Từ Vựng HSK',
@@ -29434,7 +29448,7 @@ if (typeof module !== 'undefined' && module.exports) {
     },
     {
       category: 'Ngữ Pháp Nhanh',
-      prompt: 'Chọn trợ từ đúng: “他跑 ___ 很块。”',
+      prompt: 'Chọn trợ từ đúng: “他跑 ___ 很快。”',
       options: ['得', '的', '地', '在'],
       correct: 0,
       explanation: 'Bổ ngữ trạng thái dùng “得” sau động từ: 跑得很快.'
@@ -29463,7 +29477,7 @@ if (typeof module !== 'undefined' && module.exports) {
     {
       category: 'Từ Vựng HSK',
       prompt: '“打算” có nghĩa phổ biến nhất là:',
-      options: ['Dự định / Tính toán', 'Đánh đập', 'Dọn dẹp', 'Thắc mắc'],
+      options: ['Dự định / Kế hoạch', 'Đánh đập', 'Dọn dẹp', 'Thắc mắc'],
       correct: 0,
       explanation: '打算 (dǎsuan) nghĩa là kế hoạch, dự định làm việc gì.'
     },
@@ -29482,13 +29496,6 @@ if (typeof module !== 'undefined' && module.exports) {
       explanation: 'Trước âm tiết mang thanh 4 (gè), “一” đổi sang thanh 2 (yí gèrén).'
     },
     {
-      category: 'Từ Vựng HSK',
-      prompt: '“行李箱” nghĩa là đồ vật gì?',
-      options: ['Vali hành lý', 'Tủ quần áo', 'Hộp bút', 'Thùng rác'],
-      correct: 0,
-      explanation: '行李箱 (xínglǐxiāng) nghĩa là vali du lịch / hành lý.'
-    },
-    {
       category: 'Lượng Từ Chuẩn Xác',
       prompt: 'Điền lượng từ: “一 ___ 伞” (Một chiếc ô)',
       options: ['把', '张', '顶', '根'],
@@ -29501,13 +29508,6 @@ if (typeof module !== 'undefined' && module.exports) {
       options: ['到底 (Rốt cuộc)', '也许 (Có lẽ)', '必须 (Phải)', '特别 (Đặc biệt)'],
       correct: 0,
       explanation: '究竟 (jiūjìng) nghĩa là rốt cuộc, đồng nghĩa với 到底.'
-    },
-    {
-      category: 'Thành Ngữ 4 Chữ',
-      prompt: 'Thành ngữ chỉ việc “Biết người biết ta trăm trận trăm thắng”:',
-      options: ['知己知彼', '一箭双雕', '井底之蛙', '自相矛盾'],
-      correct: 0,
-      explanation: '知己知彼，百战百胜: Biết mình biết người, trăm trận trăm thắng.'
     }
   ];
 
@@ -29530,7 +29530,7 @@ if (typeof module !== 'undefined' && module.exports) {
     return Math.abs(hash);
   }
 
-  // ---------------- GAME STATE ----------------
+  // ---------------- STATE MANAGEMENT ----------------
   const ARENA_STORAGE_KEY = 'yuhan_pvp_arena_stats';
   let arenaStats = {
     wins: 0,
@@ -29541,10 +29541,10 @@ if (typeof module !== 'undefined' && module.exports) {
     maxStreak: 0
   };
 
-  let activeMode = 'ai'; // 'ai' or 'friend'
+  let activeMode = 'ai';
   let currentDifficulty = 'normal';
   let currentRival = AI_RIVALS.normal;
-  let friendChallengeConfig = null; // { roomCode, rivalName, targetScore }
+  let friendChallengeConfig = null;
 
   let matchQuestions = [];
   let currentQuestionIndex = 0;
@@ -29553,21 +29553,19 @@ if (typeof module !== 'undefined' && module.exports) {
   let userStreak = 0;
   let maxMatchStreak = 0;
   let correctCount = 0;
-  let battleTimeRemaining = 60; // 60s
+  let battleTimeRemaining = 60;
   let battleTimerInterval = null;
   let rivalTimerTimeout = null;
+  let speedGaugeInterval = null;
   let questionStartTime = 0;
   let isAnswerLocked = false;
   let isMatchRunning = false;
   let userAnswersLog = [];
 
-  // Load stats from storage
   function loadArenaStats() {
     try {
       const saved = localStorage.getItem(ARENA_STORAGE_KEY);
-      if (saved) {
-        arenaStats = Object.assign(arenaStats, JSON.parse(saved));
-      }
+      if (saved) arenaStats = Object.assign(arenaStats, JSON.parse(saved));
     } catch (e) {}
   }
 
@@ -29578,11 +29576,11 @@ if (typeof module !== 'undefined' && module.exports) {
   }
 
   // ---------------- QUESTION GENERATOR ----------------
-  function generateMatchQuestions(count = 15, seedStr = null) {
+  function generateMatchQuestions(count = 20, seedStr = null) {
     const rng = seedStr ? mulberry32(hashStringToInt(seedStr)) : Math.random;
     const pool = [];
 
-    // 1. Pull dynamic items from dictionaryData if loaded
+    // Pull dynamic items from dictionaryData if available
     if (typeof dictionaryData !== 'undefined' && Array.isArray(dictionaryData) && dictionaryData.length > 50) {
       const dictSample = [...dictionaryData].sort(() => rng() - 0.5).slice(0, 30);
       dictSample.forEach(w => {
@@ -29596,30 +29594,28 @@ if (typeof module !== 'undefined' && module.exports) {
         if (distractors.length === 3) {
           const mainMeaning = w.meaning.split(/[,;]/)[0].trim();
           const allOptions = [mainMeaning, ...distractors];
-          // Shuffle options
           const shuffled = allOptions
             .map((v, i) => ({ v, orig: i }))
             .sort(() => rng() - 0.5);
-          const correctIdx = shuffled.findIndex(s => s.orig === 0);
 
           pool.push({
             category: `Từ Vựng HSK ${w.hsk || ''}`,
-            prompt: `Từ “${w.hanzi}” (${w.pinyin || ''}) có nghĩa là gì?`,
+            prompt: `Từ “${w.hanzi}” (${w.pinyin || ''}) có nghĩa là:`,
             options: shuffled.map(s => s.v),
-            correct: correctIdx,
+            correct: shuffled.findIndex(s => s.orig === 0),
             explanation: `${w.hanzi} [${w.pinyin || ''}]: ${w.meaning}`
           });
         }
       });
     }
 
-    // 2. Classifiers
+    // Pull from classifiers
     if (typeof classifiersData !== 'undefined' && Array.isArray(classifiersData) && classifiersData.length > 5) {
       const clsSample = [...classifiersData].sort(() => rng() - 0.5).slice(0, 8);
       clsSample.forEach(c => {
         if (!c.char || !c.examples || !c.examples.length) return;
         const ex = c.examples[Math.floor(rng() * c.examples.length)];
-        const promptText = `Lượng từ chính xác cho “${ex.noun || ex.hanzi || '...' }” là:`;
+        const promptText = `Lượng từ chuẩn cho “${ex.noun || ex.hanzi || '...' }” là:`;
         const distractors = classifiersData
           .filter(x => x.char !== c.char)
           .sort(() => rng() - 0.5)
@@ -29641,7 +29637,7 @@ if (typeof module !== 'undefined' && module.exports) {
       });
     }
 
-    // 3. Blend in curated fallback questions
+    // Blend in curated fallback questions
     FALLBACK_QUESTIONS.forEach(q => {
       const shuffled = q.options
         .map((v, i) => ({ v, orig: i }))
@@ -29655,11 +29651,14 @@ if (typeof module !== 'undefined' && module.exports) {
       });
     });
 
-    // Shuffle entire pool and pick `count`
     return pool.sort(() => rng() - 0.5).slice(0, count);
   }
 
-  // ---------------- UI CONTROLS ----------------
+  // ---------------- DOM TARGET & RENDER ----------------
+  function getArenaContainer() {
+    return document.getElementById('pvpArenaContent') || document.getElementById('tab-arena-content');
+  }
+
   function openPvPArenaModal(mode = 'ai', params = {}) {
     loadArenaStats();
     activeMode = mode;
@@ -29670,6 +29669,11 @@ if (typeof module !== 'undefined' && module.exports) {
     }
     currentRival = AI_RIVALS[currentDifficulty] || AI_RIVALS.normal;
 
+    // Preload heavy data in background
+    if (typeof window.loadDatasets === 'function') {
+      window.loadDatasets(['dictionary', 'classifiers', 'chengyu']);
+    }
+
     const modal = document.getElementById('pvpArenaModal');
     if (!modal) return;
 
@@ -29679,13 +29683,12 @@ if (typeof module !== 'undefined' && module.exports) {
     renderArenaLobby();
     if (typeof refreshIcons === 'function') refreshIcons(modal);
 
-    // Warm up audio context
     getPvPAudioContext();
   }
 
   function closePvPArenaModal() {
     if (isMatchRunning) {
-      if (!confirm('Trận đấu đang diễn ra! Bạn có chắc muốn rút lui và nhận kết quả thua không?')) {
+      if (!confirm('Trận đấu đang diễn ra! Bạn có chắc muốn rút lui và bị xử thua ván này không?')) {
         return;
       }
       endPvPMatch(false);
@@ -29694,6 +29697,7 @@ if (typeof module !== 'undefined' && module.exports) {
     if (modal) modal.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
     clearInterval(battleTimerInterval);
+    clearInterval(speedGaugeInterval);
     clearTimeout(rivalTimerTimeout);
     isMatchRunning = false;
   }
@@ -29706,10 +29710,6 @@ if (typeof module !== 'undefined' && module.exports) {
     renderArenaLobby();
   }
 
-  function getArenaContainer() {
-    return document.getElementById('pvpArenaContent') || document.getElementById('tab-arena-content');
-  }
-
   function renderArenaLobby() {
     const container = getArenaContainer();
     if (!container) return;
@@ -29720,90 +29720,93 @@ if (typeof module !== 'undefined' && module.exports) {
     let friendBoxHtml = '';
     if (activeMode === 'friend' && friendChallengeConfig) {
       friendBoxHtml = `
-        <div class="p-4 rounded-2xl bg-amber-500/10 border border-amber-400/40 text-left space-y-2 mb-4">
+        <div class="p-3.5 rounded-2xl bg-amber-500/10 border border-amber-400/40 text-left space-y-1.5 mb-3">
           <div class="flex items-center gap-2 text-amber-300 font-bold text-xs">
             <span>⚔️ LỜI THÁCH ĐẤU TỪ BẠN BÈ:</span>
             <span class="px-2 py-0.5 rounded-full bg-amber-400 text-stone-950 font-black text-[10px]">${friendChallengeConfig.room || 'PHÒNG ĐẤU'}</span>
           </div>
           <p class="text-xs text-stone-300">
-            Bạn đang so tài với điểm số mục tiêu: <strong class="text-amber-300 font-mono text-sm">${friendChallengeConfig.target || 1200} điểm</strong> của đối thủ <strong>${friendChallengeConfig.creator || 'Chiến Hữu'}</strong>!
+            Bạn đang so tài với mục tiêu: <strong class="text-amber-300 font-mono text-sm">${friendChallengeConfig.target || 1200} điểm</strong> của <strong>${friendChallengeConfig.creator || 'Chiến Hữu'}</strong>!
           </p>
         </div>
       `;
     }
 
     container.innerHTML = `
-      <div class="max-w-2xl mx-auto space-y-6 text-center animate-fade-in py-2">
-        <!-- Badge -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-red-500/20 to-amber-500/20 border border-amber-400/40 text-amber-300 text-xs font-black">
-          <span>⚡ PHẢN XẠ 60 GIÂY • TỶ THÍ ĐỐI KHÁNG</span>
+      <div class="max-w-2xl mx-auto space-y-4 text-center animate-fade-in py-1 select-none">
+        <!-- Top Toolbar with Audio Toggle -->
+        <div class="flex items-center justify-between pb-2 border-b border-amber-500/20">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-red-500/20 to-amber-500/20 border border-amber-400/40 text-amber-300 text-[11px] font-black">
+            <span>⚡ TỐC CHIẾN 60 GIÂY • ĐỐI KHÁNG 1VS1</span>
+          </div>
+          <button id="pvpAudioToggleBtn" onclick="togglePvPAudio()" class="w-8 h-8 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-sm flex items-center justify-center transition-colors cursor-pointer" title="Bật/Tắt âm thanh">
+            ${isPvPAudioMuted ? '🔇' : '🔊'}
+          </button>
         </div>
 
         <div>
-          <h2 class="text-2xl sm:text-4xl font-serif-luxury font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-400 tracking-tight">
+          <h2 class="text-xl sm:text-3xl font-serif-luxury font-black text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-100 to-amber-400">
             Đấu Trường Hán Tự 1vs1
           </h2>
-          <p class="text-xs sm:text-sm text-stone-300 mt-1 max-w-lg mx-auto leading-relaxed">
-            Thử thách tốc độ nhận diện chữ Hán, nghĩa từ vựng và pinyin đối kháng trực tiếp trong 60 giây nghẹt thở!
+          <p class="text-[11px] sm:text-xs text-stone-300 mt-0.5 max-w-md mx-auto">
+            Nhận diện chữ Hán, nghĩa từ vựng & pinyin với phản xạ cực nhanh trong 60 giây!
           </p>
         </div>
 
         ${friendBoxHtml}
 
-        <!-- Dual Avatars Face-off Preview -->
-        <div class="grid grid-cols-2 sm:grid-cols-5 items-center gap-3 p-4 sm:p-6 rounded-3xl bg-slate-900/80 border border-amber-500/30 shadow-2xl relative overflow-hidden">
-          <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-transparent to-red-600/10 pointer-events-none"></div>
-
-          <!-- Player 1: You -->
-          <div class="col-span-1 sm:col-span-2 flex flex-col items-center space-y-2 relative z-10">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 border-2 border-cyan-300 flex items-center justify-center text-3xl sm:text-4xl shadow-lg ring-4 ring-blue-500/20">
+        <!-- Dual Avatars Face-off -->
+        <div class="grid grid-cols-5 items-center gap-2 p-3 sm:p-5 rounded-3xl bg-slate-900/90 border border-amber-500/40 shadow-xl relative overflow-hidden">
+          <!-- Player (Left) -->
+          <div class="col-span-2 flex flex-col items-center space-y-1.5 relative z-10">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-700 border-2 border-cyan-300 flex items-center justify-center text-3xl shadow-lg ring-4 ring-blue-500/20">
               ${myAvatar}
             </div>
             <div class="text-center">
-              <span class="text-xs sm:text-sm font-bold text-white block truncate max-w-[120px] sm:max-w-none">${myName}</span>
-              <span class="text-[10px] text-cyan-300 font-mono">BẠN (Phe Xanh)</span>
+              <span class="text-xs font-bold text-white block truncate max-w-[110px] sm:max-w-none">${myName}</span>
+              <span class="text-[9px] text-cyan-300 font-mono">BẠN (Phe Xanh)</span>
             </div>
           </div>
 
-          <!-- VS Badge in Center -->
-          <div class="hidden sm:flex col-span-1 flex-col items-center justify-center relative z-10">
-            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-red-600 via-amber-600 to-yellow-500 flex items-center justify-center font-black text-stone-950 text-sm shadow-xl animate-pulse ring-4 ring-amber-400/30">
+          <!-- VS Center Badge -->
+          <div class="col-span-1 flex flex-col items-center justify-center relative z-10">
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gradient-to-br from-red-600 via-amber-600 to-yellow-500 flex items-center justify-center font-black text-stone-950 text-xs sm:text-sm shadow-xl animate-pulse ring-4 ring-amber-400/30">
               VS
             </div>
-            <span class="text-[9px] text-amber-200/80 font-bold mt-1 tracking-wider">60 GIÂY</span>
+            <span class="text-[8px] text-amber-200/90 font-bold mt-1">60 GIÂY</span>
           </div>
 
-          <!-- Player 2: Rival -->
-          <div class="col-span-1 sm:col-span-2 flex flex-col items-center space-y-2 relative z-10">
-            <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-gradient-to-br from-red-600 to-rose-800 border-2 border-amber-400 flex items-center justify-center text-3xl sm:text-4xl shadow-lg ring-4 ring-red-500/20">
+          <!-- Rival (Right) -->
+          <div class="col-span-2 flex flex-col items-center space-y-1.5 relative z-10">
+            <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-red-600 to-rose-800 border-2 border-amber-400 flex items-center justify-center text-3xl shadow-lg ring-4 ring-red-500/20">
               ${currentRival.avatar}
             </div>
             <div class="text-center">
-              <span class="text-xs sm:text-sm font-bold text-white block truncate max-w-[120px] sm:max-w-none">${currentRival.name}</span>
-              <span class="text-[10px] text-rose-300 font-mono">ĐỐI THỦ (Phe Đỏ)</span>
+              <span class="text-xs font-bold text-white block truncate max-w-[110px] sm:max-w-none">${currentRival.name}</span>
+              <span class="text-[9px] text-rose-300 font-mono">ĐỐI THỦ (Phe Đỏ)</span>
             </div>
           </div>
         </div>
 
-        <!-- Mode / Difficulty Selector -->
-        <div class="space-y-2 text-left">
-          <label class="text-xs font-bold text-amber-300 flex items-center gap-1.5">
+        <!-- AI Selector -->
+        <div class="space-y-1.5 text-left">
+          <label class="text-[11px] font-bold text-amber-300 flex items-center gap-1.5">
             <i data-lucide="crosshair" class="w-3.5 h-3.5 text-amber-400"></i>
             <span>CHỌN ĐỐI THỦ SO TÀI:</span>
           </label>
-          <div class="grid grid-cols-3 gap-2.5">
+          <div class="grid grid-cols-3 gap-2">
             ${['easy', 'normal', 'hard'].map(k => {
               const r = AI_RIVALS[k];
               const isSel = currentDifficulty === k;
               return `
-                <button onclick="selectPvPArenaDifficulty('${k}')" class="p-3 rounded-2xl border transition-all text-left flex flex-col justify-between cursor-pointer ${isSel ? 'bg-amber-500/20 border-amber-400 text-white ring-2 ring-amber-400/50 shadow-md' : 'bg-slate-900/60 border-slate-700/80 text-stone-400 hover:border-slate-500'}">
+                <button onclick="selectPvPArenaDifficulty('${k}')" class="p-2.5 rounded-2xl border transition-all text-left flex flex-col justify-between cursor-pointer ${isSel ? 'bg-amber-500/20 border-amber-400 text-white ring-2 ring-amber-400/50 shadow-md' : 'bg-slate-900/60 border-slate-700/80 text-stone-400 hover:border-slate-500'}">
                   <div class="flex items-center justify-between">
-                    <span class="text-xl">${r.avatar}</span>
-                    <span class="text-[9px] px-1.5 py-0.5 rounded-full ${r.badge}">${r.levelText.split(' ')[0]}</span>
+                    <span class="text-lg">${r.avatar}</span>
+                    <span class="text-[8px] px-1.5 py-0.2 rounded-full ${r.badge}">${r.levelText.split(' ')[0]}</span>
                   </div>
-                  <div class="mt-2">
-                    <span class="text-xs font-bold block text-stone-100">${r.name.split(' ')[0]}</span>
-                    <span class="text-[10px] text-stone-400 block">${r.levelText}</span>
+                  <div class="mt-1.5">
+                    <span class="text-[11px] font-bold block text-stone-100">${r.name.split(' ')[0]}</span>
+                    <span class="text-[9px] text-stone-400 block">${r.levelText}</span>
                   </div>
                 </button>
               `;
@@ -29811,35 +29814,35 @@ if (typeof module !== 'undefined' && module.exports) {
           </div>
         </div>
 
-        <!-- User Stats Strip -->
-        <div class="grid grid-cols-4 gap-2 p-3 rounded-2xl bg-slate-900/50 border border-slate-800 text-xs">
+        <!-- Stats Strip -->
+        <div class="grid grid-cols-4 gap-2 p-2.5 rounded-2xl bg-slate-900/50 border border-slate-800 text-xs">
           <div>
-            <span class="text-[10px] text-stone-400 block">Thắng / Thua</span>
+            <span class="text-[9px] text-stone-400 block">Thắng / Thua</span>
             <span class="font-bold text-emerald-400 font-mono">${arenaStats.wins}W</span>
             <span class="text-stone-500">/</span>
             <span class="font-bold text-rose-400 font-mono">${arenaStats.losses}L</span>
           </div>
           <div>
-            <span class="text-[10px] text-stone-400 block">Kỷ lục điểm</span>
+            <span class="text-[9px] text-stone-400 block">Kỷ lục điểm</span>
             <span class="font-bold text-amber-300 font-mono">${arenaStats.highScore.toLocaleString('vi-VN')}</span>
           </div>
           <div>
-            <span class="text-[10px] text-stone-400 block">Chuỗi thắng</span>
+            <span class="text-[9px] text-stone-400 block">Chuỗi thắng</span>
             <span class="font-bold text-yellow-400 font-mono">🔥 ${arenaStats.winStreak}</span>
           </div>
           <div>
-            <span class="text-[10px] text-stone-400 block">Max Combo</span>
+            <span class="text-[9px] text-stone-400 block">Max Combo</span>
             <span class="font-bold text-cyan-300 font-mono">⚡ x${arenaStats.maxStreak || 1}</span>
           </div>
         </div>
 
-        <!-- Action CTA -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-          <button onclick="startPvPMatch()" class="w-full sm:w-auto px-8 py-3.5 rounded-2xl bg-gradient-to-r from-red-600 via-amber-600 to-yellow-500 hover:from-red-500 hover:to-yellow-400 text-stone-950 font-black text-sm sm:text-base shadow-xl hover:shadow-amber-500/25 transition-all transform hover:scale-105 flex items-center justify-center gap-2 cursor-pointer">
-            <span class="text-lg">⚔️</span>
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
+          <button onclick="startPvPMatch()" class="w-full sm:w-auto px-7 py-3 rounded-2xl bg-gradient-to-r from-red-600 via-amber-600 to-yellow-500 hover:from-red-500 hover:to-yellow-400 text-stone-950 font-black text-sm shadow-xl hover:scale-105 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span class="text-base">⚔️</span>
             <span>VÀO TRẬN NGAY (CHIẾN!)</span>
           </button>
-          <button onclick="copyPvPChallengeLink()" class="w-full sm:w-auto px-5 py-3.5 rounded-2xl bg-slate-800 hover:bg-slate-700 text-amber-200 border border-amber-400/30 text-xs font-bold transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <button onclick="copyPvPChallengeLink()" class="w-full sm:w-auto px-4 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-amber-200 border border-amber-400/30 text-xs font-bold transition-all flex items-center justify-center gap-1.5 cursor-pointer">
             <i data-lucide="share-2" class="w-4 h-4"></i>
             <span>Tạo Link Thách Đấu Bạn Bè</span>
           </button>
@@ -29850,7 +29853,7 @@ if (typeof module !== 'undefined' && module.exports) {
     if (typeof refreshIcons === 'function') refreshIcons(container);
   }
 
-  // ---------------- MATCH START & COUNTDOWN ----------------
+  // ---------------- COUNTDOWN & BATTLE ----------------
   function startPvPMatch() {
     isMatchRunning = true;
     userScore = 0;
@@ -29863,9 +29866,8 @@ if (typeof module !== 'undefined' && module.exports) {
     userAnswersLog = [];
     isAnswerLocked = false;
 
-    // Generate questions for this match
     const seed = friendChallengeConfig ? friendChallengeConfig.room : null;
-    matchQuestions = generateMatchQuestions(25, seed);
+    matchQuestions = generateMatchQuestions(30, seed);
 
     playPvPSfx('click');
 
@@ -29874,9 +29876,9 @@ if (typeof module !== 'undefined' && module.exports) {
 
     let countdown = 3;
     container.innerHTML = `
-      <div class="h-80 flex flex-col items-center justify-center space-y-4 animate-fade-in">
+      <div class="h-72 flex flex-col items-center justify-center space-y-3 animate-fade-in select-none">
         <span class="text-xs font-bold text-amber-300 uppercase tracking-widest">SẴN SÀNG PHẢN XẠ</span>
-        <div id="pvpCountdownNumber" class="text-7xl sm:text-9xl font-black font-serif-luxury text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 via-amber-400 to-red-600 animate-bounce">
+        <div id="pvpCountdownNumber" class="text-7xl sm:text-8xl font-black font-serif-luxury text-transparent bg-clip-text bg-gradient-to-b from-yellow-300 via-amber-400 to-red-600 animate-bounce">
           ${countdown}
         </div>
         <p class="text-xs text-stone-400 font-mono">Trận đấu bắt đầu sau giây lát...</p>
@@ -29901,14 +29903,12 @@ if (typeof module !== 'undefined' && module.exports) {
         clearInterval(cdInterval);
         launchBattleLoop();
       }
-    }, 900);
+    }, 850);
   }
 
-  // ---------------- ACTIVE BATTLE LOOP ----------------
   function launchBattleLoop() {
     renderBattleStage();
 
-    // 60-Second Master Countdown Timer
     clearInterval(battleTimerInterval);
     battleTimerInterval = setInterval(() => {
       battleTimeRemaining--;
@@ -29916,12 +29916,12 @@ if (typeof module !== 'undefined' && module.exports) {
 
       if (battleTimeRemaining <= 0) {
         clearInterval(battleTimerInterval);
+        clearInterval(speedGaugeInterval);
         clearTimeout(rivalTimerTimeout);
         endPvPMatch(true);
       }
     }, 1000);
 
-    // Present first question
     presentQuestion(0);
   }
 
@@ -29932,78 +29932,84 @@ if (typeof module !== 'undefined' && module.exports) {
     const myName = (typeof userProfile !== 'undefined' && userProfile.name) || 'Bạn';
 
     container.innerHTML = `
-      <div class="space-y-4 max-w-3xl mx-auto animate-fade-in select-none">
-        <!-- Top Status Bar: Scores, Time, Progress -->
-        <div class="grid grid-cols-12 items-center gap-2 sm:gap-4 p-3 sm:p-4 rounded-2xl bg-slate-900/90 border border-amber-500/30 shadow-xl">
-          <!-- User Profile & Score (Left) -->
-          <div class="col-span-5 flex items-center gap-2 sm:gap-3">
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-600/30 border border-cyan-400 flex items-center justify-center text-xl shrink-0">
+      <div class="space-y-3 max-w-2xl mx-auto animate-fade-in select-none relative">
+        <!-- Floating Score/Combat Popups Container -->
+        <div id="pvpFloatingPopupLayer" class="absolute inset-0 pointer-events-none z-30"></div>
+
+        <!-- Top Combat Status Bar -->
+        <div class="grid grid-cols-12 items-center gap-2 p-2.5 sm:p-3 rounded-2xl bg-slate-900/95 border border-amber-500/40 shadow-xl">
+          <!-- Player Profile (Left) -->
+          <div class="col-span-5 flex items-center gap-2">
+            <div id="pvpPlayerAvatarBox" class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-blue-600/30 border border-cyan-400 flex items-center justify-center text-lg sm:text-xl shrink-0 transition-transform">
               🧑‍🎓
             </div>
             <div class="min-w-0 flex-1">
-              <div class="flex items-center gap-1.5">
-                <span class="text-xs sm:text-sm font-bold text-white truncate">${myName}</span>
-                <span id="pvpUserStreakBadge" class="hidden text-[10px] px-1.5 py-0.2 rounded-full bg-yellow-400 text-stone-950 font-black">x1</span>
+              <div class="flex items-center gap-1">
+                <span class="text-xs font-bold text-white truncate">${myName}</span>
+                <span id="pvpUserStreakBadge" class="hidden text-[9px] px-1.5 py-0.2 rounded-full bg-yellow-400 text-stone-950 font-black">x1</span>
               </div>
-              <div class="text-base sm:text-xl font-black font-mono text-cyan-300" id="pvpUserScore">
+              <div class="text-sm sm:text-lg font-black font-mono text-cyan-300" id="pvpUserScore">
                 0
               </div>
             </div>
           </div>
 
-          <!-- Central Timer (Center) -->
+          <!-- Central Timer -->
           <div class="col-span-2 flex flex-col items-center justify-center">
-            <div class="w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-amber-400/80 bg-slate-950 flex flex-col items-center justify-center shadow-lg relative" id="pvpTimerCircle">
-              <span class="text-xs sm:text-base font-black font-mono text-amber-300" id="pvpTimerDisplay">60</span>
-              <span class="text-[7px] text-stone-400 -mt-1">GIÂY</span>
+            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-amber-400/80 bg-slate-950 flex flex-col items-center justify-center shadow-lg relative" id="pvpTimerCircle">
+              <span class="text-xs sm:text-sm font-black font-mono text-amber-300" id="pvpTimerDisplay">60</span>
+              <span class="text-[6px] text-stone-400 -mt-1 font-bold">GIÂY</span>
             </div>
           </div>
 
-          <!-- Rival Profile & Score (Right) -->
-          <div class="col-span-5 flex items-center justify-end gap-2 sm:gap-3 text-right">
+          <!-- Rival Profile (Right) -->
+          <div class="col-span-5 flex items-center justify-end gap-2 text-right">
             <div class="min-w-0 flex-1">
-              <div class="flex items-center justify-end gap-1.5">
-                <span class="text-xs sm:text-sm font-bold text-white truncate">${currentRival.name}</span>
+              <div class="flex items-center justify-end gap-1">
                 <span id="pvpRivalActionBadge" class="hidden text-[9px] px-1.5 py-0.2 rounded bg-rose-500 text-white font-bold">+100</span>
+                <span class="text-xs font-bold text-white truncate">${currentRival.name.split(' ')[0]}</span>
               </div>
-              <div class="text-base sm:text-xl font-black font-mono text-rose-400" id="pvpRivalScore">
+              <div class="text-sm sm:text-lg font-black font-mono text-rose-400" id="pvpRivalScore">
                 0
               </div>
             </div>
-            <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-rose-600/30 border border-rose-400 flex items-center justify-center text-xl shrink-0">
+            <div id="pvpRivalAvatarBox" class="w-9 h-9 sm:w-11 sm:h-11 rounded-xl bg-rose-600/30 border border-rose-400 flex items-center justify-center text-lg sm:text-xl shrink-0 transition-transform">
               ${currentRival.avatar}
             </div>
           </div>
         </div>
 
         <!-- Relative Score Tug-of-War Bar -->
-        <div class="w-full h-2 rounded-full bg-slate-950 overflow-hidden flex border border-slate-800">
+        <div class="w-full h-1.5 rounded-full bg-slate-950 overflow-hidden flex border border-slate-800">
           <div id="pvpUserScoreBar" class="h-full bg-gradient-to-r from-blue-500 to-cyan-400 transition-all duration-300" style="width: 50%;"></div>
           <div id="pvpRivalScoreBar" class="h-full bg-gradient-to-r from-rose-500 to-red-600 transition-all duration-300" style="width: 50%;"></div>
         </div>
 
-        <!-- Question Arena Card -->
-        <div id="pvpQuestionCard" class="p-5 sm:p-7 rounded-3xl bg-slate-900/90 border-2 border-amber-400/40 shadow-2xl space-y-5 text-center relative overflow-hidden">
-          <div class="flex items-center justify-between text-xs text-stone-400 border-b border-slate-800 pb-2.5">
-            <span id="pvpQuestionCategory" class="px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 font-bold text-[10px]">
+        <!-- Question Card with Per-Item Speed Gauge Bar -->
+        <div id="pvpQuestionCard" class="p-4 sm:p-6 rounded-3xl bg-slate-900/90 border-2 border-amber-400/40 shadow-2xl space-y-4 text-center relative overflow-hidden transition-all">
+          <!-- Speed Gauge Bar (Shrinks across 4 seconds) -->
+          <div class="w-full bg-slate-950 h-1 rounded-full overflow-hidden absolute top-0 left-0 right-0">
+            <div id="pvpSpeedGaugeBar" class="h-full bg-gradient-to-r from-amber-400 to-yellow-300 w-full transition-all duration-100 ease-linear"></div>
+          </div>
+
+          <div class="flex items-center justify-between text-xs text-stone-400 border-b border-slate-800 pb-2">
+            <span id="pvpQuestionCategory" class="px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 font-bold text-[10px]">
               TỪ VỰNG HSK
             </span>
-            <span id="pvpQuestionCounter" class="font-mono text-stone-400">
-              Câu 1 / 15
+            <span id="pvpQuestionCounter" class="font-mono text-stone-400 text-xs">
+              Câu 1 / 30
             </span>
           </div>
 
           <!-- Prompt -->
-          <div class="py-2">
-            <h3 id="pvpQuestionPrompt" class="text-xl sm:text-3xl font-chinese font-bold text-amber-100 tracking-wide min-h-[50px] flex items-center justify-center">
+          <div class="py-1">
+            <h3 id="pvpQuestionPrompt" class="text-lg sm:text-2xl font-chinese font-bold text-amber-100 tracking-wide min-h-[46px] flex items-center justify-center">
               Đang tải câu hỏi...
             </h3>
           </div>
 
           <!-- 4 Answer Options -->
-          <div id="pvpOptionsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-            <!-- Rendered dynamically -->
-          </div>
+          <div id="pvpOptionsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1"></div>
         </div>
       </div>
     `;
@@ -30018,8 +30024,8 @@ if (typeof module !== 'undefined' && module.exports) {
 
     timerDisplay.innerText = battleTimeRemaining;
     if (battleTimeRemaining <= 10) {
-      timerDisplay.className = 'text-xs sm:text-base font-black font-mono text-red-400 animate-pulse';
-      if (timerCircle) timerCircle.className = 'w-11 h-11 sm:w-14 sm:h-14 rounded-full border-2 border-red-500 bg-red-950/40 flex flex-col items-center justify-center shadow-lg relative animate-pulse ring-4 ring-red-500/30';
+      timerDisplay.className = 'text-xs sm:text-sm font-black font-mono text-red-400 animate-pulse';
+      if (timerCircle) timerCircle.className = 'w-10 h-10 sm:w-12 sm:h-12 rounded-full border-2 border-red-500 bg-red-950/40 flex flex-col items-center justify-center shadow-lg relative animate-pulse ring-4 ring-red-500/30';
       if (battleTimeRemaining % 2 === 0) playPvPSfx('countdown');
     }
   }
@@ -30046,7 +30052,7 @@ if (typeof module !== 'undefined' && module.exports) {
     }
   }
 
-  // ---------------- PRESENT QUESTION & HANDLE INPUT ----------------
+  // ---------------- PRESENT QUESTION & SPEED GAUGE ----------------
   function presentQuestion(idx) {
     if (idx >= matchQuestions.length || battleTimeRemaining <= 0) {
       endPvPMatch(true);
@@ -30072,8 +30078,8 @@ if (typeof module !== 'undefined' && module.exports) {
         <button 
           id="pvpOptBtn_${optIdx}"
           onclick="submitPvPAnswer(${optIdx})"
-          class="p-4 rounded-2xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 hover:border-amber-400/70 text-stone-100 font-bold text-sm sm:text-base transition-all duration-150 transform hover:-translate-y-0.5 active:translate-y-0 flex items-center gap-3 cursor-pointer group text-left">
-          <span class="w-7 h-7 rounded-xl bg-slate-900 border border-slate-700 text-amber-300 text-xs font-mono flex items-center justify-center shrink-0 group-hover:border-amber-400">
+          class="p-3 sm:p-3.5 rounded-2xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 hover:border-amber-400 text-stone-100 font-bold text-xs sm:text-sm transition-all duration-100 flex items-center gap-2.5 cursor-pointer group text-left">
+          <span class="w-6 h-6 rounded-lg bg-slate-900 border border-slate-700 text-amber-300 text-xs font-mono flex items-center justify-center shrink-0 group-hover:border-amber-400">
             ${['A', 'B', 'C', 'D'][optIdx]}
           </span>
           <span class="flex-1">${opt}</span>
@@ -30081,19 +30087,36 @@ if (typeof module !== 'undefined' && module.exports) {
       `).join('');
     }
 
-    // Schedule AI Rival's move for this question
+    // Start per-question speed gauge (4 seconds)
+    startQuestionSpeedGauge();
+
+    // Schedule AI Rival
     scheduleRivalResponse(q);
+  }
+
+  function startQuestionSpeedGauge() {
+    clearInterval(speedGaugeInterval);
+    const gauge = document.getElementById('pvpSpeedGaugeBar');
+    if (!gauge) return;
+    gauge.style.width = '100%';
+
+    const duration = 4000;
+    const start = Date.now();
+    speedGaugeInterval = setInterval(() => {
+      const elapsed = Date.now() - start;
+      const pct = Math.max(0, 100 - (elapsed / duration) * 100);
+      if (gauge) gauge.style.width = `${pct}%`;
+      if (pct <= 0) clearInterval(speedGaugeInterval);
+    }, 100);
   }
 
   function scheduleRivalResponse(question) {
     clearTimeout(rivalTimerTimeout);
-
     let delay;
     let isCorrect;
 
     if (activeMode === 'friend' && friendChallengeConfig && friendChallengeConfig.target) {
-      // Simulate ghost friend's pacing towards target score
-      delay = 2000 + Math.random() * 1500;
+      delay = 1800 + Math.random() * 1400;
       isCorrect = Math.random() < 0.85;
     } else {
       const minD = currentRival.speedMin || 1800;
@@ -30106,7 +30129,6 @@ if (typeof module !== 'undefined' && module.exports) {
       if (!isMatchRunning) return;
 
       if (isCorrect) {
-        // Base points + speed bonus
         const pts = 100 + Math.floor(Math.random() * 30);
         rivalScore += pts;
         showRivalActionFeedback(`+${pts}`);
@@ -30129,9 +30151,11 @@ if (typeof module !== 'undefined' && module.exports) {
     }, 1200);
   }
 
+  // ---------------- SUBMIT ANSWER & COMBAT DYNAMICS ----------------
   function submitPvPAnswer(optIdx) {
     if (isAnswerLocked || !isMatchRunning) return;
     isAnswerLocked = true;
+    clearInterval(speedGaugeInterval);
 
     const q = matchQuestions[currentQuestionIndex];
     const isCorrect = optIdx === q.correct;
@@ -30146,15 +30170,14 @@ if (typeof module !== 'undefined' && module.exports) {
 
     const chosenBtn = document.getElementById(`pvpOptBtn_${optIdx}`);
     const correctBtn = document.getElementById(`pvpOptBtn_${q.correct}`);
+    const cardEl = document.getElementById('pvpQuestionCard');
 
     if (isCorrect) {
       correctCount++;
       userStreak++;
       if (userStreak > maxMatchStreak) maxMatchStreak = userStreak;
 
-      // Speed bonus: up to +30 pts if answered under 3 seconds
       const speedBonus = Math.max(0, Math.floor((3.5 - responseDuration) * 10));
-      // Streak multiplier
       let multiplier = 1.0;
       if (userStreak >= 5) multiplier = 2.0;
       else if (userStreak >= 3) multiplier = 1.5;
@@ -30164,10 +30187,12 @@ if (typeof module !== 'undefined' && module.exports) {
       userScore += earnedPts;
 
       if (chosenBtn) {
-        chosenBtn.className = 'p-4 rounded-2xl bg-emerald-600/90 border-2 border-emerald-300 text-white font-bold text-sm sm:text-base shadow-lg animate-pulse flex items-center gap-3';
+        chosenBtn.className = 'p-3 sm:p-3.5 rounded-2xl bg-emerald-600/95 border-2 border-emerald-300 text-white font-bold text-xs sm:text-sm shadow-lg flex items-center gap-2.5';
       }
 
-      // SFX & Streak badge
+      // Spawn floating score popup
+      spawnFloatingScore(`+${earnedPts} PTS` + (userStreak >= 2 ? ` (Combo x${multiplier})` : ''));
+
       if (userStreak >= 2) {
         playPvPSfx('combo', userStreak);
         showStreakBanner(userStreak);
@@ -30179,10 +30204,17 @@ if (typeof module !== 'undefined' && module.exports) {
       playPvPSfx('wrong');
 
       if (chosenBtn) {
-        chosenBtn.className = 'p-4 rounded-2xl bg-rose-600/90 border-2 border-rose-300 text-white font-bold text-sm sm:text-base shadow-lg flex items-center gap-3';
+        chosenBtn.className = 'p-3 sm:p-3.5 rounded-2xl bg-rose-600/95 border-2 border-rose-300 text-white font-bold text-xs sm:text-sm shadow-lg flex items-center gap-2.5';
       }
       if (correctBtn) {
-        correctBtn.className = 'p-4 rounded-2xl bg-emerald-700/60 border border-emerald-400 text-white font-bold text-sm sm:text-base flex items-center gap-3';
+        correctBtn.className = 'p-3 sm:p-3.5 rounded-2xl bg-emerald-700/60 border border-emerald-400 text-white font-bold text-xs sm:text-sm flex items-center gap-2.5';
+      }
+
+      // Screen shake on wrong answer
+      if (cardEl) {
+        cardEl.classList.remove('arena-screen-shake');
+        void cardEl.offsetWidth;
+        cardEl.classList.add('arena-screen-shake');
       }
 
       hideStreakBanner();
@@ -30190,12 +30222,23 @@ if (typeof module !== 'undefined' && module.exports) {
 
     updateScoreBars();
 
-    // Advance to next question after 400ms
     setTimeout(() => {
       if (isMatchRunning) {
         presentQuestion(currentQuestionIndex + 1);
       }
-    }, 450);
+    }, 420);
+  }
+
+  function spawnFloatingScore(text) {
+    const layer = document.getElementById('pvpFloatingPopupLayer');
+    if (!layer) return;
+
+    const popup = document.createElement('div');
+    popup.className = 'absolute top-10 left-12 px-3 py-1 rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 text-stone-950 font-black text-xs font-mono shadow-xl float-score-popup z-40';
+    popup.innerText = text;
+    layer.appendChild(popup);
+
+    setTimeout(() => popup.remove(), 950);
   }
 
   function showStreakBanner(streak) {
@@ -30210,16 +30253,16 @@ if (typeof module !== 'undefined' && module.exports) {
     if (badge) badge.classList.add('hidden');
   }
 
-  // ---------------- MATCH OVER & EVALUATION ----------------
+  // ---------------- MATCH FINISH & EVALUATION ----------------
   function endPvPMatch(naturalFinish = true) {
     isMatchRunning = false;
     clearInterval(battleTimerInterval);
+    clearInterval(speedGaugeInterval);
     clearTimeout(rivalTimerTimeout);
 
     const isVictory = userScore > rivalScore;
     const isDraw = userScore === rivalScore;
 
-    // Update stats
     if (isVictory) {
       arenaStats.wins++;
       arenaStats.winStreak++;
@@ -30233,16 +30276,11 @@ if (typeof module !== 'undefined' && module.exports) {
       playPvPSfx('defeat');
     }
 
-    if (userScore > arenaStats.highScore) {
-      arenaStats.highScore = userScore;
-    }
+    if (userScore > arenaStats.highScore) arenaStats.highScore = userScore;
     saveArenaStats();
 
-    // EXP Reward
-    let expAwarded = isVictory ? 50 : (isDraw ? 25 : 15);
-    if (typeof addExp === 'function') {
-      addExp(expAwarded, 'pvp_arena');
-    }
+    const expAwarded = isVictory ? 50 : (isDraw ? 25 : 15);
+    if (typeof addExp === 'function') addExp(expAwarded, 'pvp_arena');
 
     renderMatchResult(isVictory, isDraw, expAwarded);
   }
@@ -30259,77 +30297,76 @@ if (typeof module !== 'undefined' && module.exports) {
     if (isDraw) {
       bannerGradient = 'from-amber-600 via-yellow-600 to-amber-700';
       bannerTitle = '🤝 BẤT PHÂN THẮNG BẠI!';
-      bannerSubtitle = 'Hai cao thủ ngang sức ngang tài đến tận giây cuối cùng!';
+      bannerSubtitle = 'Hai cao thủ giằng co ngang ngửa đến giây cuối cùng!';
       trophyIcon = '⚖️';
     } else if (!isVictory) {
       bannerGradient = 'from-rose-700 via-red-800 to-slate-900';
       bannerTitle = '💔 THUA CUỘC TIẾC NUỐI!';
-      bannerSubtitle = 'Đối thủ có chút nhanh tay hơn. Đừng bỏ cuộc, hãy phục thù ngay!';
+      bannerSubtitle = 'Đối thủ nhanh tay hơn một nhịp. Hãy phục thù ván sau ngay!';
       trophyIcon = '🛡️';
     }
 
     container.innerHTML = `
-      <div class="max-w-2xl mx-auto space-y-6 text-center animate-fade-in py-2">
-        <!-- Result Hero Banner -->
-        <div class="p-6 sm:p-8 rounded-3xl bg-gradient-to-br ${bannerGradient} text-white shadow-2xl relative overflow-hidden border-2 border-amber-400/50">
-          <div class="text-5xl sm:text-6xl mb-2 animate-bounce">${trophyIcon}</div>
-          <h2 class="text-2xl sm:text-4xl font-serif-luxury font-black tracking-tight">${bannerTitle}</h2>
-          <p class="text-xs sm:text-sm text-amber-100/90 mt-1 max-w-md mx-auto leading-relaxed">${bannerSubtitle}</p>
+      <div class="max-w-2xl mx-auto space-y-4 text-center animate-fade-in py-1 select-none">
+        <div class="p-5 sm:p-7 rounded-3xl bg-gradient-to-br ${bannerGradient} text-white shadow-2xl relative overflow-hidden border-2 border-amber-400/50">
+          <div class="text-4xl sm:text-5xl mb-1 animate-bounce">${trophyIcon}</div>
+          <h2 class="text-xl sm:text-3xl font-serif-luxury font-black tracking-tight">${bannerTitle}</h2>
+          <p class="text-xs text-amber-100/90 mt-0.5 max-w-md mx-auto">${bannerSubtitle}</p>
 
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-slate-950/60 border border-amber-300/40 text-amber-300 font-bold text-xs mt-4">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-slate-950/60 border border-amber-300/40 text-amber-300 font-bold text-xs mt-3">
             <span>🎁 THƯỞNG KẾT TRẬN:</span>
             <span class="font-mono text-white text-sm font-black">+${expEarned} EXP</span>
           </div>
         </div>
 
         <!-- Scoreboard Comparison -->
-        <div class="grid grid-cols-2 gap-4 p-5 rounded-3xl bg-slate-900/80 border border-amber-500/30 text-stone-100">
+        <div class="grid grid-cols-2 gap-3 p-4 rounded-3xl bg-slate-900/80 border border-amber-500/30 text-stone-100">
           <div class="text-center p-3 rounded-2xl bg-blue-500/10 border border-cyan-400/30">
             <span class="text-xs text-cyan-300 font-bold block">ĐIỂM CỦA BẠN</span>
-            <span class="text-3xl sm:text-4xl font-black font-mono text-white mt-1 block">
+            <span class="text-2xl sm:text-3xl font-black font-mono text-white mt-0.5 block">
               ${userScore.toLocaleString('vi-VN')}
             </span>
-            <span class="text-[11px] text-stone-400">Đúng ${correctCount}/${userAnswersLog.length} câu • Max x${maxMatchStreak || 1}</span>
+            <span class="text-[10px] text-stone-400">Đúng ${correctCount}/${userAnswersLog.length} • Max x${maxMatchStreak || 1}</span>
           </div>
 
           <div class="text-center p-3 rounded-2xl bg-rose-500/10 border border-rose-400/30">
             <span class="text-xs text-rose-300 font-bold block">${currentRival.name}</span>
-            <span class="text-3xl sm:text-4xl font-black font-mono text-white mt-1 block">
+            <span class="text-2xl sm:text-3xl font-black font-mono text-white mt-0.5 block">
               ${rivalScore.toLocaleString('vi-VN')}
             </span>
-            <span class="text-[11px] text-stone-400">${currentRival.levelText}</span>
+            <span class="text-[10px] text-stone-400">${currentRival.levelText}</span>
           </div>
         </div>
 
-        <!-- Actions -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
-          <button onclick="startPvPMatch()" class="w-full sm:w-auto px-7 py-3 rounded-2xl bg-gradient-to-r from-red-600 via-amber-600 to-yellow-500 text-stone-950 font-black text-sm shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2 cursor-pointer">
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5">
+          <button onclick="startPvPMatch()" class="w-full sm:w-auto px-6 py-2.5 rounded-xl bg-gradient-to-r from-red-600 via-amber-600 to-yellow-500 text-stone-950 font-black text-xs shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-1.5 cursor-pointer">
             <span>🔄</span>
             <span>TÁI ĐẤU NGAY</span>
           </button>
-          <button onclick="copyPvPChallengeLink(${userScore})" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-400/40 font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer">
-            <i data-lucide="share-2" class="w-4 h-4"></i>
-            <span>Thách Đấu Bạn Bè (${userScore} Điểm)</span>
+          <button onclick="copyPvPChallengeLink(${userScore})" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-400/40 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+            <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
+            <span>Thách Đấu (${userScore} Điểm)</span>
           </button>
-          <button onclick="renderArenaLobby()" class="w-full sm:w-auto px-5 py-3 rounded-2xl bg-stone-800 hover:bg-stone-700 text-stone-300 font-bold text-xs cursor-pointer">
+          <button onclick="renderArenaLobby()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-300 font-bold text-xs cursor-pointer">
             <span>Về Phòng Chờ</span>
           </button>
         </div>
 
         <!-- Answers Review Accordion -->
-        <details class="text-left p-4 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs cursor-pointer">
+        <details class="text-left p-3.5 rounded-2xl bg-slate-900/60 border border-slate-800 text-xs cursor-pointer">
           <summary class="font-bold text-amber-300 flex items-center justify-between">
-            <span>📖 Xem lại giải thích các câu trong trận (${userAnswersLog.length} câu)</span>
-            <span class="text-[10px] text-stone-500">Nhấn để mở</span>
+            <span>📖 Xem lại đáp án trong trận (${userAnswersLog.length} câu)</span>
+            <span class="text-[10px] text-stone-500">Mở</span>
           </summary>
-          <div class="space-y-3 pt-3 mt-3 border-t border-slate-800 text-stone-300">
+          <div class="space-y-2 pt-2.5 mt-2.5 border-t border-slate-800 text-stone-300">
             ${userAnswersLog.map((log, i) => `
-              <div class="p-2.5 rounded-xl ${log.isCorrect ? 'bg-emerald-950/30 border border-emerald-500/30' : 'bg-rose-950/30 border border-rose-500/30'}">
+              <div class="p-2 rounded-xl ${log.isCorrect ? 'bg-emerald-950/30 border border-emerald-500/30' : 'bg-rose-950/30 border border-rose-500/30'}">
                 <div class="flex items-center justify-between font-bold">
                   <span>Câu ${i + 1}: ${log.question.prompt}</span>
                   <span class="${log.isCorrect ? 'text-emerald-400' : 'text-rose-400'}">${log.isCorrect ? '✓ Đúng' : '✗ Sai'}</span>
                 </div>
-                <p class="text-[11px] text-stone-400 mt-1">${log.question.explanation}</p>
+                <p class="text-[11px] text-stone-400 mt-0.5">${log.question.explanation}</p>
               </div>
             `).join('')}
           </div>
@@ -30340,21 +30377,21 @@ if (typeof module !== 'undefined' && module.exports) {
     if (typeof refreshIcons === 'function') refreshIcons(container);
   }
 
-  // ---------------- VIRAL SHARE ENGINE ----------------
+  // ---------------- VIRAL CHALLENGE SHARE ----------------
   function copyPvPChallengeLink(score = null) {
     const targetScore = score || arenaStats.highScore || 1000;
     const roomCode = 'ARENA-' + Math.floor(10000 + Math.random() * 90000);
     const myName = (typeof userProfile !== 'undefined' && userProfile.name) || 'Học viên Hán Ngữ';
 
     const challengeUrl = `${window.location.origin}${window.location.pathname}#/arena?room=${roomCode}&target=${targetScore}&creator=${encodeURIComponent(myName)}`;
-    const shareText = `⚔️ Tôi vừa ghi ${targetScore.toLocaleString('vi-VN')} điểm trong Đấu Trường Hán Tự 1vs1! Bạn có dám vào so tài phản xạ tiếng Trung với tôi không? 👉 ${challengeUrl}`;
+    const shareText = `⚔️ Tôi vừa đạt ${targetScore.toLocaleString('vi-VN')} điểm trong Đấu Trường Hán Tự 1vs1! Bạn có dám vào so tài phản xạ tiếng Trung với tôi không? 👉 ${challengeUrl}`;
 
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(shareText).then(() => {
         if (typeof showToast === 'function') {
           showToast('Đã sao chép link thách đấu! Hãy gửi cho bạn bè qua Zalo, Facebook hoặc Threads!', 'success');
         } else {
-          alert('Đã sao chép link thách đấu vào bộ nhớ tạm!');
+          alert('Đã sao chép link thách đấu!');
         }
       }).catch(() => {
         prompt('Hãy sao chép link sau để gửi cho bạn bè:', shareText);
@@ -30362,10 +30399,6 @@ if (typeof module !== 'undefined' && module.exports) {
     } else {
       prompt('Hãy sao chép link sau để gửi cho bạn bè:', shareText);
     }
-  }
-
-  function isPvPBattleActive() {
-    return isMatchRunning;
   }
 
   function initPvPArenaTab() {
@@ -30389,6 +30422,10 @@ if (typeof module !== 'undefined' && module.exports) {
     getPvPAudioContext();
   }
 
+  function isPvPBattleActive() {
+    return isMatchRunning;
+  }
+
   // ---------------- EXPORTS ----------------
   root.initPvPArenaTab = initPvPArenaTab;
   root.openPvPArenaModal = openPvPArenaModal;
@@ -30398,6 +30435,7 @@ if (typeof module !== 'undefined' && module.exports) {
   root.submitPvPAnswer = submitPvPAnswer;
   root.copyPvPChallengeLink = copyPvPChallengeLink;
   root.isPvPBattleActive = isPvPBattleActive;
+  root.togglePvPAudio = togglePvPAudio;
 
 })(typeof window !== 'undefined' ? window : globalThis);
 
@@ -30408,12 +30446,13 @@ if (typeof module !== 'undefined' && module.exports) {
 // =========================================================================
 // 🧩 WORDLE THÀNH NGỮ CHỮ HÁN (DAILY CHENGYU WORDLE - GIẢI MẬT MỖI NGÀY)
 // Edutainment & Viral Daily Puzzle Engine for Chinese Learners
+// Highly Optimized: In-Place Tile Updates, 3D Staggered Flips, Confetti & Native IME
 // =========================================================================
 
 (function(root) {
   'use strict';
 
-  // ---------------- FALLBACK CHENGYU DATASET (IN CASE OF OFFLINE / LAZY LOAD) ----------------
+  // ---------------- FALLBACK CHENGYU DATASET ----------------
   const FALLBACK_CHENYU = [
     {
       id: 'chengyu_1',
@@ -30537,7 +30576,6 @@ if (typeof module !== 'undefined' && module.exports) {
     }
   ];
 
-  // Common characters to use as distractors in keyboard
   const COMMON_KEYBOARD_DISTRACTORS = [
     '天', '地', '人', '山', '水', '风', '月', '日', '心', '目', '手', '口',
     '龙', '虎', '马', '鸟', '鱼', '金', '木', '火', '土', '大', '小', '高',
@@ -30553,17 +30591,16 @@ if (typeof module !== 'undefined' && module.exports) {
   let puzzleDateStr = '';
   let puzzleNumber = 1;
 
-  // Grid state
   const MAX_ATTEMPTS = 6;
   const WORD_LENGTH = 4;
   let currentRowIndex = 0;
-  let currentTileIndex = 0; // 0..3
-  let guesses = []; // Array of strings e.g. ['画蛇添足', ...]
-  let evaluations = []; // Array of arrays e.g. [['correct', 'absent', ...], ...]
+  let guesses = [];
+  let evaluations = [];
   let isGameOver = false;
   let isGameWon = false;
-  let keyboardCharStatus = {}; // char -> 'correct' | 'present' | 'absent'
-  let keyboardPool = []; // 16-20 characters displayed on screen
+  let isFlipping = false;
+  let keyboardCharStatus = {};
+  let keyboardPool = [];
   let hintsRevealed = 0;
 
   let wordleStats = {
@@ -30571,10 +30608,10 @@ if (typeof module !== 'undefined' && module.exports) {
     won: 0,
     currentStreak: 0,
     maxStreak: 0,
-    distribution: [0, 0, 0, 0, 0, 0] // 1..6 tries
+    distribution: [0, 0, 0, 0, 0, 0]
   };
 
-  // ---------------- SOUND EFFECTS ----------------
+  // ---------------- SOUND SYNTHESIS ----------------
   function playWordleSfx(type) {
     try {
       const AudioCtx = window.AudioContext || window.webkitAudioContext;
@@ -30585,7 +30622,7 @@ if (typeof module !== 'undefined' && module.exports) {
       if (type === 'type') {
         const osc = ctx.createOscillator();
         const g = ctx.createGain();
-        osc.frequency.setValueAtTime(500, t);
+        osc.frequency.setValueAtTime(480, t);
         g.gain.setValueAtTime(0.04, t);
         g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
         osc.connect(g);
@@ -30595,7 +30632,7 @@ if (typeof module !== 'undefined' && module.exports) {
       } else if (type === 'delete') {
         const osc = ctx.createOscillator();
         const g = ctx.createGain();
-        osc.frequency.setValueAtTime(300, t);
+        osc.frequency.setValueAtTime(280, t);
         g.gain.setValueAtTime(0.05, t);
         g.gain.exponentialRampToValueAtTime(0.001, t + 0.04);
         osc.connect(g);
@@ -30606,16 +30643,27 @@ if (typeof module !== 'undefined' && module.exports) {
         const osc = ctx.createOscillator();
         const g = ctx.createGain();
         osc.type = 'triangle';
-        osc.frequency.setValueAtTime(400, t);
-        osc.frequency.exponentialRampToValueAtTime(800, t + 0.08);
-        g.gain.setValueAtTime(0.08, t);
-        g.gain.exponentialRampToValueAtTime(0.001, t + 0.1);
+        osc.frequency.setValueAtTime(440, t);
+        osc.frequency.exponentialRampToValueAtTime(750, t + 0.07);
+        g.gain.setValueAtTime(0.09, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.09);
         osc.connect(g);
         g.connect(ctx.destination);
         osc.start(t);
-        osc.stop(t + 0.1);
+        osc.stop(t + 0.09);
+      } else if (type === 'invalid') {
+        const osc = ctx.createOscillator();
+        const g = ctx.createGain();
+        osc.type = 'sawtooth';
+        osc.frequency.setValueAtTime(160, t);
+        g.gain.setValueAtTime(0.12, t);
+        g.gain.exponentialRampToValueAtTime(0.001, t + 0.15);
+        osc.connect(g);
+        g.connect(ctx.destination);
+        osc.start(t);
+        osc.stop(t + 0.16);
       } else if (type === 'win') {
-        const notes = [523.25, 659.25, 783.99, 1046.50];
+        const notes = [523.25, 659.25, 783.99, 1046.50, 1318.51];
         notes.forEach((freq, i) => {
           const osc = ctx.createOscillator();
           const g = ctx.createGain();
@@ -30623,11 +30671,11 @@ if (typeof module !== 'undefined' && module.exports) {
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, start);
           g.gain.setValueAtTime(0.18, start);
-          g.gain.exponentialRampToValueAtTime(0.001, start + 0.25);
+          g.gain.exponentialRampToValueAtTime(0.001, start + 0.28);
           osc.connect(g);
           g.connect(ctx.destination);
           osc.start(start);
-          osc.stop(start + 0.27);
+          osc.stop(start + 0.3);
         });
       } else if (type === 'lose') {
         const osc = ctx.createOscillator();
@@ -30674,14 +30722,12 @@ if (typeof module !== 'undefined' && module.exports) {
     const list = getActiveIdiomList();
     const hash = hashDate(dateStr);
     const idx = hash % list.length;
-    // Calculate puzzle number as days since Jan 1, 2026
     const epoch = new Date('2026-01-01').getTime();
     const current = new Date(dateStr).getTime();
     puzzleNumber = Math.max(1, Math.floor((current - epoch) / (1000 * 60 * 60 * 24)));
     return list[idx];
   }
 
-  // ---------------- STATS MANAGEMENT ----------------
   function loadWordleStats() {
     try {
       const saved = localStorage.getItem(WORDLE_STATS_KEY);
@@ -30693,50 +30739,6 @@ if (typeof module !== 'undefined' && module.exports) {
     try {
       localStorage.setItem(WORDLE_STATS_KEY, JSON.stringify(wordleStats));
     } catch (e) {}
-  }
-
-  // ---------------- GAME INITIALIZATION ----------------
-  function initWordleGame(daily = true) {
-    loadWordleStats();
-    isDailyMode = daily;
-    puzzleDateStr = getTodayDateString();
-
-    if (daily) {
-      currentIdiom = selectDailyIdiom(puzzleDateStr);
-    } else {
-      const list = getActiveIdiomList();
-      currentIdiom = list[Math.floor(Math.random() * list.length)];
-      puzzleNumber = Math.floor(100 + Math.random() * 900);
-    }
-
-    currentRowIndex = 0;
-    currentTileIndex = 0;
-    guesses = [];
-    evaluations = [];
-    isGameOver = false;
-    isGameWon = false;
-    keyboardCharStatus = {};
-    hintsRevealed = 0;
-
-    // Check if daily game state was saved for today
-    if (daily) {
-      try {
-        const savedRaw = localStorage.getItem(`${WORDLE_STORAGE_KEY}_${puzzleDateStr}`);
-        if (savedRaw) {
-          const savedState = JSON.parse(savedRaw);
-          guesses = savedState.guesses || [];
-          evaluations = savedState.evaluations || [];
-          isGameOver = savedState.isGameOver || false;
-          isGameWon = savedState.isGameWon || false;
-          currentRowIndex = guesses.length;
-          keyboardCharStatus = savedState.keyboardCharStatus || {};
-          hintsRevealed = savedState.hintsRevealed || 0;
-        }
-      } catch (e) {}
-    }
-
-    // Generate virtual keyboard character pool (target 4 chars + distractors)
-    generateKeyboardPool();
   }
 
   function generateKeyboardPool() {
@@ -30775,7 +30777,7 @@ if (typeof module !== 'undefined' && module.exports) {
       targetCounts[c] = (targetCounts[c] || 0) + 1;
     }
 
-    // 1st pass: Exact matches (green)
+    // 1st pass: Exact matches
     for (let i = 0; i < WORD_LENGTH; i++) {
       if (guessArr[i] === targetArr[i]) {
         res[i] = 'correct';
@@ -30783,7 +30785,7 @@ if (typeof module !== 'undefined' && module.exports) {
       }
     }
 
-    // 2nd pass: Present matches (yellow)
+    // 2nd pass: Present matches
     for (let i = 0; i < WORD_LENGTH; i++) {
       if (res[i] !== 'correct') {
         const char = guessArr[i];
@@ -30797,7 +30799,53 @@ if (typeof module !== 'undefined' && module.exports) {
     return res;
   }
 
-  // ---------------- UI RENDERING ----------------
+  // ---------------- GAME INITIALIZATION ----------------
+  function initWordleGame(daily = true) {
+    loadWordleStats();
+    isDailyMode = daily;
+    puzzleDateStr = getTodayDateString();
+
+    if (daily) {
+      currentIdiom = selectDailyIdiom(puzzleDateStr);
+    } else {
+      const list = getActiveIdiomList();
+      currentIdiom = list[Math.floor(Math.random() * list.length)];
+      puzzleNumber = Math.floor(100 + Math.random() * 900);
+    }
+
+    currentRowIndex = 0;
+    guesses = [];
+    evaluations = [];
+    isGameOver = false;
+    isGameWon = false;
+    isFlipping = false;
+    keyboardCharStatus = {};
+    hintsRevealed = 0;
+
+    if (daily) {
+      try {
+        const savedRaw = localStorage.getItem(`${WORDLE_STORAGE_KEY}_${puzzleDateStr}`);
+        if (savedRaw) {
+          const s = JSON.parse(savedRaw);
+          guesses = s.guesses || [];
+          evaluations = s.evaluations || [];
+          isGameOver = s.isGameOver || false;
+          isGameWon = s.isGameWon || false;
+          currentRowIndex = guesses.length;
+          keyboardCharStatus = s.keyboardCharStatus || {};
+          hintsRevealed = s.hintsRevealed || 0;
+        }
+      } catch (e) {}
+    }
+
+    generateKeyboardPool();
+  }
+
+  // ---------------- DOM TARGET & RENDER ----------------
+  function getWordleContainer() {
+    return document.getElementById('wordleContent') || document.getElementById('tab-wordle-content');
+  }
+
   function openWordleModal(daily = true) {
     initWordleGame(daily);
     const modal = document.getElementById('wordleModal');
@@ -30806,40 +30854,63 @@ if (typeof module !== 'undefined' && module.exports) {
     modal.classList.remove('hidden');
     document.body.classList.add('overflow-hidden');
 
-    renderWordleStage();
+    renderWordleStageFull();
     if (typeof refreshIcons === 'function') refreshIcons(modal);
+
+    // Attach global keyboard listener
+    window.removeEventListener('keydown', onWordleGlobalKeyDown);
+    window.addEventListener('keydown', onWordleGlobalKeyDown);
   }
 
   function closeWordleModal() {
     const modal = document.getElementById('wordleModal');
     if (modal) modal.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
+    window.removeEventListener('keydown', onWordleGlobalKeyDown);
   }
 
-  function getWordleContainer() {
-    return document.getElementById('wordleContent') || document.getElementById('tab-wordle-content');
+  function onWordleGlobalKeyDown(e) {
+    const modal = document.getElementById('wordleModal');
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    if (e.key === 'Backspace') {
+      e.preventDefault();
+      handleWordleBackspace();
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      handleWordleSubmit();
+    } else if (e.key.length === 1 && !e.ctrlKey && !e.metaKey && !e.altKey) {
+      // Check if typed char exists in Chinese or virtual keyboard
+      const char = e.key;
+      if (keyboardPool.includes(char) || /[\u4e00-\u9fa5]/.test(char)) {
+        handleWordleCharInput(char);
+      }
+    }
   }
 
-  function renderWordleStage() {
+  function renderWordleStageFull() {
     const container = getWordleContainer();
     if (!container) return;
 
     container.innerHTML = `
-      <div class="max-w-xl mx-auto space-y-5 text-center animate-fade-in py-1">
-        <!-- Top Bar -->
-        <div class="flex items-center justify-between border-b border-amber-300/30 pb-3">
+      <div class="max-w-md mx-auto space-y-4 text-center select-none py-1 relative">
+        <!-- Canvas for Confetti -->
+        <canvas id="wordleConfettiCanvas" class="absolute inset-0 pointer-events-none z-30 w-full h-full"></canvas>
+
+        <!-- Header Status Bar -->
+        <div class="flex items-center justify-between border-b border-amber-300/30 pb-2.5">
           <div class="flex items-center gap-2">
             <span class="w-8 h-8 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-800 text-white flex items-center justify-center font-bold text-base shadow-xs">
               🧩
             </span>
             <div class="text-left">
-              <h2 class="text-base sm:text-lg font-serif-luxury font-black text-amber-100 flex items-center gap-2">
+              <h2 class="text-sm sm:text-base font-serif-luxury font-black text-amber-100 flex items-center gap-1.5">
                 <span>Wordle Thành Ngữ</span>
-                <span class="text-[10px] px-2 py-0.5 rounded-full ${isDailyMode ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'} font-bold">
-                  ${isDailyMode ? `Hôm Nay #${puzzleNumber}` : 'Luyện Tập Tự Do'}
+                <span class="text-[9px] px-2 py-0.2 rounded-full ${isDailyMode ? 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40' : 'bg-purple-500/20 text-purple-300 border border-purple-500/40'} font-bold">
+                  ${isDailyMode ? `Hôm Nay #${puzzleNumber}` : 'Luyện Tập'}
                 </span>
               </h2>
-              <p class="text-[11px] text-stone-400">Giải mật mã 4 chữ Hán trong 6 lượt đoán</p>
+              <p class="text-[10px] text-stone-400">Mật mã 4 chữ • Thử thách 6 lượt đoán</p>
             </div>
           </div>
 
@@ -30848,68 +30919,68 @@ if (typeof module !== 'undefined' && module.exports) {
               <i data-lucide="lightbulb" class="w-3.5 h-3.5"></i>
               <span class="hidden sm:inline">Gợi ý</span>
             </button>
-            <button onclick="startWordlePractice()" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-stone-300 border border-slate-700 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer" title="Đổi câu mới để luyện tập">
+            <button onclick="startWordlePractice()" class="px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-stone-300 border border-slate-700 text-xs font-bold transition-all flex items-center gap-1 cursor-pointer" title="Đổi câu mới">
               <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
               <span class="hidden sm:inline">Ván mới</span>
             </button>
           </div>
         </div>
 
-        <!-- Hint Banner (if any) -->
+        <!-- Hint Banner -->
         <div id="wordleHintBanner" class="${hintsRevealed > 0 ? '' : 'hidden'} p-2.5 rounded-2xl bg-amber-500/15 border border-amber-400/40 text-xs text-amber-200 text-left flex items-start gap-2">
           <i data-lucide="sparkles" class="w-4 h-4 text-amber-300 shrink-0 mt-0.5"></i>
           <span id="wordleHintText">${getHintMessage()}</span>
         </div>
 
-        <!-- 6x4 Wordle Grid -->
-        <div class="flex justify-center py-2">
-          <div id="wordleGrid" class="grid grid-rows-6 gap-2 sm:gap-2.5">
-            ${renderGridRowsHtml()}
+        <!-- 6x4 Grid Container (Persistent in DOM) -->
+        <div class="flex justify-center py-1">
+          <div id="wordleGridRows" class="grid grid-rows-6 gap-2">
+            ${renderAllGridRows()}
           </div>
         </div>
 
-        <!-- Optional Direct Typing Input for IME users -->
+        <!-- Direct typing field (subtle, accessible) -->
         <div class="flex items-center justify-center gap-2 max-w-xs mx-auto">
           <input 
             type="text" 
-            id="wordleDirectInput" 
+            id="wordleImeInput" 
             maxlength="4" 
-            placeholder="Gõ hoặc dán chữ Hán..." 
-            class="w-full px-3 py-2 rounded-xl bg-slate-900 border border-slate-700 text-white font-chinese text-center text-sm font-bold focus:border-amber-400 focus:outline-none"
+            placeholder="Gõ bộ gõ IME hoặc dán 4 chữ..." 
+            class="w-full px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-700 text-white font-chinese text-center text-xs font-bold focus:border-amber-400 focus:outline-none"
             onkeydown="if(event.key==='Enter') submitDirectWordleInput()"
           />
-          <button onclick="submitDirectWordleInput()" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs shrink-0 cursor-pointer">
-            Gửi
+          <button onclick="submitDirectWordleInput()" class="px-3 py-1.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-stone-950 font-bold text-xs shrink-0 cursor-pointer">
+            Nhập
           </button>
         </div>
 
-        <!-- Character Keyboard Pool -->
-        <div class="space-y-2 pt-1">
-          <div class="text-[10px] text-stone-400 flex items-center justify-between px-1">
-            <span>BÀN PHÍM KÝ TỰ (Chạm vào chữ để nhập):</span>
+        <!-- Character Keyboard Pool (Persistent in DOM) -->
+        <div class="space-y-1.5 pt-1">
+          <div class="text-[9px] text-stone-400 flex items-center justify-between px-1">
+            <span>CHẠM KÝ TỰ ĐỂ ĐOÁN:</span>
             <span class="flex items-center gap-2">
-              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Đúng</span>
-              <span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-500"></span> Sai vị trí</span>
+              <span class="inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Đúng vị trí</span>
+              <span class="inline-flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> Sai chỗ</span>
             </span>
           </div>
 
-          <div id="wordleKeyboard" class="flex flex-wrap justify-center gap-1.5 sm:gap-2 select-none">
-            ${renderKeyboardHtml()}
+          <div id="wordleKeyboardPool" class="flex flex-wrap justify-center gap-1 sm:gap-1.5">
+            ${renderKeyboardButtons()}
           </div>
 
-          <!-- Bottom Control Buttons -->
+          <!-- Bottom Control Bar -->
           <div class="flex items-center justify-center gap-3 pt-2">
-            <button onclick="handleWordleBackspace()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-rose-300 border border-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer">
-              <span>⌫ Xóa chữ</span>
+            <button onclick="handleWordleBackspace()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-rose-300 border border-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer">
+              <span>⌫ Xóa</span>
             </button>
-            <button onclick="handleWordleSubmit()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
+            <button onclick="handleWordleSubmit()" class="px-6 py-2 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-black shadow-md transition-all flex items-center gap-1.5 cursor-pointer">
               <span>✓ GỬI ĐOÁN (SUBMIT)</span>
             </button>
           </div>
         </div>
 
-        <!-- Post-Game Result Card (rendered dynamically if game over) -->
-        <div id="wordleResultCard" class="${isGameOver ? '' : 'hidden'} mt-4">
+        <!-- Result Card Container -->
+        <div id="wordleResultCard" class="${isGameOver ? '' : 'hidden'} mt-3">
           ${isGameOver ? renderResultCardHtml() : ''}
         </div>
       </div>
@@ -30918,68 +30989,305 @@ if (typeof module !== 'undefined' && module.exports) {
     if (typeof refreshIcons === 'function') refreshIcons(container);
   }
 
-  function renderGridRowsHtml() {
-    let rowsHtml = '';
+  function renderAllGridRows() {
+    let html = '';
     for (let r = 0; r < MAX_ATTEMPTS; r++) {
       const isPast = r < guesses.length;
-      const isCurrent = r === currentRowIndex && !isGameOver;
-      const guessStr = isPast ? guesses[r] : (isCurrent ? (guesses[currentRowIndex] || '') : '');
+      const guessStr = isPast ? guesses[r] : '';
       const evalRow = isPast ? evaluations[r] : null;
 
-      rowsHtml += `<div class="grid grid-cols-4 gap-2 sm:gap-2.5">`;
+      html += `<div id="wRow_${r}" class="grid grid-cols-4 gap-2">`;
       for (let c = 0; c < WORD_LENGTH; c++) {
         const char = guessStr[c] || '';
-        let tileClass = 'w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl transition-all duration-300 ';
+        let tileClass = 'w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl transition-all ';
 
         if (evalRow) {
-          const status = evalRow[c];
-          if (status === 'correct') {
-            tileClass += 'bg-emerald-600 text-white border-2 border-emerald-400 shadow-lg';
-          } else if (status === 'present') {
-            tileClass += 'bg-amber-500 text-stone-950 border-2 border-amber-300 shadow-md';
-          } else {
-            tileClass += 'bg-slate-800/80 text-stone-400 border border-slate-700';
-          }
-        } else if (isCurrent && char) {
-          tileClass += 'bg-slate-900 border-2 border-amber-400 text-amber-200 animate-pulse';
-        } else if (isCurrent && c === currentTileIndex) {
-          tileClass += 'bg-slate-900/60 border-2 border-cyan-400 text-stone-300';
+          const st = evalRow[c];
+          if (st === 'correct') tileClass += 'bg-emerald-600 text-white border-2 border-emerald-400 shadow-md';
+          else if (st === 'present') tileClass += 'bg-amber-500 text-stone-950 border-2 border-amber-300 shadow-xs';
+          else tileClass += 'bg-slate-800/80 text-stone-400 border border-slate-700';
         } else {
-          tileClass += 'bg-slate-900/40 border border-slate-800 text-stone-600';
+          tileClass += 'bg-slate-900/40 border border-slate-800 text-stone-500';
         }
 
-        rowsHtml += `
-          <div class="${tileClass}">
-            ${char}
-          </div>
-        `;
+        html += `<div id="wTile_${r}_${c}" class="${tileClass}">${char}</div>`;
       }
-      rowsHtml += `</div>`;
+      html += `</div>`;
     }
-    return rowsHtml;
+    return html;
   }
 
-  function renderKeyboardHtml() {
+  function renderKeyboardButtons() {
     return keyboardPool.map(char => {
-      const status = keyboardCharStatus[char];
-      let btnClass = 'w-9 h-10 sm:w-11 sm:h-12 rounded-xl font-chinese font-bold text-base sm:text-lg border flex items-center justify-center transition-all cursor-pointer transform active:scale-95 ';
+      const st = keyboardCharStatus[char];
+      let btnClass = 'w-8 h-9 sm:w-10 sm:h-11 rounded-xl font-chinese font-bold text-base sm:text-lg border flex items-center justify-center transition-all cursor-pointer transform active:scale-90 ';
 
-      if (status === 'correct') {
-        btnClass += 'bg-emerald-600 border-emerald-400 text-white shadow-md';
-      } else if (status === 'present') {
-        btnClass += 'bg-amber-500 border-amber-300 text-stone-950 shadow-sm';
-      } else if (status === 'absent') {
-        btnClass += 'bg-slate-900/40 border-slate-800 text-stone-600 opacity-40';
-      } else {
-        btnClass += 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-stone-100 hover:border-amber-400/60';
+      if (st === 'correct') btnClass += 'bg-emerald-600 border-emerald-400 text-white shadow-md';
+      else if (st === 'present') btnClass += 'bg-amber-500 border-amber-300 text-stone-950 shadow-xs';
+      else if (st === 'absent') btnClass += 'bg-slate-900/40 border-slate-800 text-stone-600 opacity-40';
+      else btnClass += 'bg-slate-800 hover:bg-slate-700 border-slate-700 text-stone-100 hover:border-amber-400/60';
+
+      return `<button id="wKey_${char}" onclick="handleWordleCharInput('${char}')" class="${btnClass}">${char}</button>`;
+    }).join('');
+  }
+
+  // ---------------- OPTIMIZED IN-PLACE DOM INPUT ----------------
+  function handleWordleCharInput(char) {
+    if (isGameOver || isFlipping) return;
+    let currentGuess = guesses[currentRowIndex] || '';
+    if (currentGuess.length >= WORD_LENGTH) return;
+
+    const targetCol = currentGuess.length;
+    currentGuess += char;
+    guesses[currentRowIndex] = currentGuess;
+
+    // Targeted in-place tile update
+    const tile = document.getElementById(`wTile_${currentRowIndex}_${targetCol}`);
+    if (tile) {
+      tile.innerText = char;
+      tile.className = 'w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl transition-all bg-slate-900 border-2 border-amber-400 text-amber-200 wordle-tile-pop shadow-md';
+    }
+
+    playWordleSfx('type');
+  }
+
+  function handleWordleBackspace() {
+    if (isGameOver || isFlipping) return;
+    let currentGuess = guesses[currentRowIndex] || '';
+    if (currentGuess.length === 0) return;
+
+    const targetCol = currentGuess.length - 1;
+    currentGuess = currentGuess.slice(0, -1);
+    guesses[currentRowIndex] = currentGuess;
+
+    const tile = document.getElementById(`wTile_${currentRowIndex}_${targetCol}`);
+    if (tile) {
+      tile.innerText = '';
+      tile.className = 'w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl transition-all bg-slate-900/40 border border-slate-800 text-stone-500';
+    }
+
+    playWordleSfx('delete');
+  }
+
+  function submitDirectWordleInput() {
+    const input = document.getElementById('wordleImeInput');
+    if (!input || !input.value) return;
+    const val = input.value.trim();
+    if (val.length !== 4) {
+      if (typeof showToast === 'function') showToast('Vui lòng nhập đúng 4 chữ Hán!', 'warning');
+      return;
+    }
+    // Set guess
+    guesses[currentRowIndex] = val;
+    for (let c = 0; c < 4; c++) {
+      const tile = document.getElementById(`wTile_${currentRowIndex}_${c}`);
+      if (tile) {
+        tile.innerText = val[c];
+        tile.className = 'w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl transition-all bg-slate-900 border-2 border-amber-400 text-amber-200';
+      }
+    }
+    input.value = '';
+    handleWordleSubmit();
+  }
+
+  // ---------------- STAGGERED 3D FLIP EVALUATION ----------------
+  function handleWordleSubmit() {
+    if (isGameOver || isFlipping) return;
+    const currentGuess = guesses[currentRowIndex] || '';
+
+    // If incomplete, shake row!
+    if (currentGuess.length < WORD_LENGTH) {
+      playWordleSfx('invalid');
+      const rowEl = document.getElementById(`wRow_${currentRowIndex}`);
+      if (rowEl) {
+        rowEl.classList.remove('wordle-row-shake');
+        void rowEl.offsetWidth; // trigger reflow
+        rowEl.classList.add('wordle-row-shake');
+      }
+      if (typeof showToast === 'function') {
+        showToast(`Cần nhập đủ 4 chữ Hán! (Hiện có ${currentGuess.length}/4)`, 'warning');
+      }
+      return;
+    }
+
+    isFlipping = true;
+    const evaluation = evaluateGuess(currentGuess, currentIdiom.chengyu);
+    evaluations.push(evaluation);
+
+    // Staggered 3D Tile Flip Animation
+    for (let c = 0; c < WORD_LENGTH; c++) {
+      const delay = c * 220;
+      const char = currentGuess[c];
+      const status = evaluation[c];
+
+      setTimeout(() => {
+        const tile = document.getElementById(`wTile_${currentRowIndex}_${c}`);
+        if (!tile) return;
+
+        playWordleSfx('flip');
+        tile.classList.add('wordle-flipping-half');
+
+        // Halfway through flip, change colors and flip back
+        setTimeout(() => {
+          tile.classList.remove('wordle-flipping-half');
+          if (status === 'correct') {
+            tile.className = 'w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl bg-emerald-600 text-white border-2 border-emerald-400 shadow-md wordle-flipping-finish';
+          } else if (status === 'present') {
+            tile.className = 'w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl bg-amber-500 text-stone-950 border-2 border-amber-300 shadow-xs wordle-flipping-finish';
+          } else {
+            tile.className = 'w-11 h-11 sm:w-13 sm:h-13 rounded-2xl flex items-center justify-center font-chinese font-bold text-xl sm:text-2xl bg-slate-800/80 text-stone-400 border border-slate-700 wordle-flipping-finish';
+          }
+
+          // Update virtual keyboard key color
+          updateKeyboardKeyColor(char, status);
+        }, 180);
+      }, delay);
+    }
+
+    // After all 4 tiles finish flipping
+    setTimeout(() => {
+      isFlipping = false;
+      const isWin = evaluation.every(s => s === 'correct');
+
+      if (isWin) {
+        isGameOver = true;
+        isGameWon = true;
+        playWordleSfx('win');
+
+        wordleStats.played++;
+        wordleStats.won++;
+        wordleStats.currentStreak++;
+        if (wordleStats.currentStreak > wordleStats.maxStreak) wordleStats.maxStreak = wordleStats.currentStreak;
+        wordleStats.distribution[currentRowIndex]++;
+        saveWordleStats();
+
+        if (typeof addExp === 'function') addExp(40, 'wordle_win');
+        saveDailyState();
+
+        // Confetti burst
+        launchWordleConfetti();
+        showResultCard();
+        return;
       }
 
-      return `
-        <button onclick="handleWordleCharInput('${char}')" class="${btnClass}">
-          ${char}
-        </button>
-      `;
-    }).join('');
+      if (currentRowIndex + 1 >= MAX_ATTEMPTS) {
+        isGameOver = true;
+        isGameWon = false;
+        playWordleSfx('lose');
+
+        wordleStats.played++;
+        wordleStats.currentStreak = 0;
+        saveWordleStats();
+        saveDailyState();
+
+        showResultCard();
+        return;
+      }
+
+      currentRowIndex++;
+      saveDailyState();
+    }, (WORD_LENGTH * 220) + 250);
+  }
+
+  function updateKeyboardKeyColor(char, status) {
+    const prev = keyboardCharStatus[char];
+    if (status === 'correct') keyboardCharStatus[char] = 'correct';
+    else if (status === 'present' && prev !== 'correct') keyboardCharStatus[char] = 'present';
+    else if (!prev) keyboardCharStatus[char] = 'absent';
+
+    const keyBtn = document.getElementById(`wKey_${char}`);
+    if (!keyBtn) return;
+
+    const currentStatus = keyboardCharStatus[char];
+    let btnClass = 'w-8 h-9 sm:w-10 sm:h-11 rounded-xl font-chinese font-bold text-base sm:text-lg border flex items-center justify-center transition-all cursor-pointer transform active:scale-90 ';
+    if (currentStatus === 'correct') btnClass += 'bg-emerald-600 border-emerald-400 text-white shadow-md';
+    else if (currentStatus === 'present') btnClass += 'bg-amber-500 border-amber-300 text-stone-950 shadow-xs';
+    else if (currentStatus === 'absent') btnClass += 'bg-slate-900/40 border-slate-800 text-stone-600 opacity-40';
+    keyBtn.className = btnClass;
+  }
+
+  function showResultCard() {
+    const cardEl = document.getElementById('wordleResultCard');
+    if (cardEl) {
+      cardEl.innerHTML = renderResultCardHtml();
+      cardEl.classList.remove('hidden');
+      if (typeof refreshIcons === 'function') refreshIcons(cardEl);
+      cardEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  // ---------------- CONFETTI BURST ENGINE ----------------
+  function launchWordleConfetti() {
+    const canvas = document.getElementById('wordleConfettiCanvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = canvas.parentElement.offsetWidth || 400;
+    canvas.height = canvas.parentElement.offsetHeight || 500;
+
+    const particles = [];
+    const colors = ['#10B981', '#F59E0B', '#FBBF24', '#34D399', '#EF4444', '#EC4899'];
+    for (let i = 0; i < 60; i++) {
+      particles.push({
+        x: canvas.width / 2,
+        y: canvas.height / 2,
+        vx: (Math.random() - 0.5) * 8,
+        vy: (Math.random() - 1) * 9,
+        size: 4 + Math.random() * 5,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        rotation: Math.random() * 360,
+        vr: (Math.random() - 0.5) * 10,
+        alpha: 1
+      });
+    }
+
+    let frame = 0;
+    function anim() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.22; // gravity
+        p.rotation += p.vr;
+        p.alpha -= 0.015;
+
+        if (p.alpha > 0) {
+          ctx.save();
+          ctx.globalAlpha = Math.max(0, p.alpha);
+          ctx.translate(p.x, p.y);
+          ctx.rotate((p.rotation * Math.PI) / 180);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+          ctx.restore();
+        }
+      });
+
+      frame++;
+      if (frame < 70) requestAnimationFrame(anim);
+      else ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+    requestAnimationFrame(anim);
+  }
+
+  function requestWordleHint() {
+    if (hintsRevealed >= 2) {
+      if (typeof showToast === 'function') showToast('Đã mở toàn bộ gợi ý tối đa!', 'info');
+      return;
+    }
+    hintsRevealed++;
+    saveDailyState();
+    playWordleSfx('type');
+
+    const banner = document.getElementById('wordleHintBanner');
+    const textEl = document.getElementById('wordleHintText');
+    if (banner && textEl) {
+      textEl.innerHTML = getHintMessage();
+      banner.classList.remove('hidden');
+    }
+    if (typeof showToast === 'function') {
+      showToast('Đã mở gợi ý mới phía trên bảng câu hỏi!', 'success');
+    }
   }
 
   function getHintMessage() {
@@ -30988,146 +31296,14 @@ if (typeof module !== 'undefined' && module.exports) {
       return `<strong>Gợi ý nghĩa bóng:</strong> ${currentIdiom.figurative} (Pinyin: ${currentIdiom.pinyin})`;
     }
     if (hintsRevealed >= 1) {
-      return `<strong>Gợi ý chữ đầu:</strong> Thành ngữ bắt đầu bằng âm “${currentIdiom.pinyin.split(' ')[0]}” và có nghĩa liên quan đến: ${currentIdiom.literal}`;
+      return `<strong>Gợi ý chữ đầu:</strong> Thành ngữ bắt đầu bằng âm “${currentIdiom.pinyin.split(' ')[0]}” và có nghĩa liên quan: ${currentIdiom.literal}`;
     }
     return '';
   }
 
-  // ---------------- INPUT HANDLERS ----------------
-  function handleWordleCharInput(char) {
-    if (isGameOver) return;
-    let currentGuess = guesses[currentRowIndex] || '';
-    if (currentGuess.length >= WORD_LENGTH) return;
-
-    currentGuess += char;
-    guesses[currentRowIndex] = currentGuess;
-    currentTileIndex = currentGuess.length;
-
-    playWordleSfx('type');
-    renderWordleStage();
-  }
-
-  function handleWordleBackspace() {
-    if (isGameOver) return;
-    let currentGuess = guesses[currentRowIndex] || '';
-    if (currentGuess.length === 0) return;
-
-    currentGuess = currentGuess.slice(0, -1);
-    guesses[currentRowIndex] = currentGuess;
-    currentTileIndex = currentGuess.length;
-
-    playWordleSfx('delete');
-    renderWordleStage();
-  }
-
-  function submitDirectWordleInput() {
-    const input = document.getElementById('wordleDirectInput');
-    if (!input || !input.value) return;
-    const val = input.value.trim();
-    if (val.length !== 4) {
-      if (typeof showToast === 'function') showToast('Vui lòng nhập đúng 4 chữ Hán!', 'warning');
-      return;
-    }
-    guesses[currentRowIndex] = val;
-    input.value = '';
-    handleWordleSubmit();
-  }
-
-  function handleWordleSubmit() {
-    if (isGameOver) return;
-    const currentGuess = guesses[currentRowIndex] || '';
-
-    if (currentGuess.length < WORD_LENGTH) {
-      if (typeof showToast === 'function') {
-        showToast(`Cần nhập đủ 4 chữ Hán! (Hiện có ${currentGuess.length}/4 chữ)`, 'warning');
-      }
-      return;
-    }
-
-    const evaluation = evaluateGuess(currentGuess, currentIdiom.chengyu);
-    evaluations.push(evaluation);
-
-    // Update keyboard color status
-    currentGuess.split('').forEach((c, idx) => {
-      const status = evaluation[idx];
-      const prev = keyboardCharStatus[c];
-      if (status === 'correct') {
-        keyboardCharStatus[c] = 'correct';
-      } else if (status === 'present' && prev !== 'correct') {
-        keyboardCharStatus[c] = 'present';
-      } else if (!prev) {
-        keyboardCharStatus[c] = 'absent';
-      }
-    });
-
-    playWordleSfx('flip');
-
-    // Check Win / Lose
-    const isWin = evaluation.every(s => s === 'correct');
-    if (isWin) {
-      isGameOver = true;
-      isGameWon = true;
-      playWordleSfx('win');
-
-      // Update statistics
-      wordleStats.played++;
-      wordleStats.won++;
-      wordleStats.currentStreak++;
-      if (wordleStats.currentStreak > wordleStats.maxStreak) {
-        wordleStats.maxStreak = wordleStats.currentStreak;
-      }
-      wordleStats.distribution[currentRowIndex]++;
-      saveWordleStats();
-
-      // Award EXP
-      if (typeof addExp === 'function') {
-        addExp(40, 'wordle_win');
-      }
-
-      saveDailyState();
-      renderWordleStage();
-      return;
-    }
-
-    if (currentRowIndex + 1 >= MAX_ATTEMPTS) {
-      isGameOver = true;
-      isGameWon = false;
-      playWordleSfx('lose');
-
-      wordleStats.played++;
-      wordleStats.currentStreak = 0;
-      saveWordleStats();
-
-      saveDailyState();
-      renderWordleStage();
-      return;
-    }
-
-    // Advance to next row
-    currentRowIndex++;
-    currentTileIndex = 0;
-    saveDailyState();
-    renderWordleStage();
-  }
-
-  function requestWordleHint() {
-    if (hintsRevealed >= 2) {
-      if (typeof showToast === 'function') showToast('Đã mở toàn bộ gợi ý tối đa cho câu này!', 'info');
-      return;
-    }
-    hintsRevealed++;
-    saveDailyState();
-    playWordleSfx('type');
-    renderWordleStage();
-
-    if (typeof showToast === 'function') {
-      showToast('Đã mở khóa gợi ý mới phía trên bảng chữ!', 'success');
-    }
-  }
-
   function startWordlePractice() {
     initWordleGame(false);
-    renderWordleStage();
+    renderWordleStageFull();
     if (typeof showToast === 'function') {
       showToast('Đã tạo thành ngữ mới cho chế độ Luyện tập tự do!', 'info');
     }
@@ -31142,24 +31318,24 @@ if (typeof module !== 'undefined' && module.exports) {
     const bannerBg = isWin ? 'bg-gradient-to-br from-emerald-600 via-teal-700 to-slate-900' : 'bg-gradient-to-br from-stone-800 via-slate-900 to-stone-900';
 
     return `
-      <div class="p-5 sm:p-7 rounded-3xl ${bannerBg} border-2 border-amber-400/50 text-white shadow-2xl space-y-4 text-left animate-fade-in">
+      <div class="p-4 sm:p-6 rounded-3xl ${bannerBg} border-2 border-amber-400/50 text-white shadow-2xl space-y-3.5 text-left animate-fade-in">
         <div class="text-center">
           <span class="text-xs font-bold text-amber-300 uppercase tracking-widest">${title}</span>
-          <div class="mt-2 flex items-center justify-center gap-3">
-            <span class="text-3xl sm:text-5xl font-chinese font-black text-amber-200 tracking-wider">
+          <div class="mt-1.5 flex items-center justify-center gap-3">
+            <span class="text-3xl sm:text-4xl font-chinese font-black text-amber-200 tracking-wider">
               ${currentIdiom.chengyu}
             </span>
-            <button onclick="if(typeof playTts==='function') playTts('${currentIdiom.chengyu}', 'zh-CN')" class="w-10 h-10 rounded-xl bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 border border-amber-400/40 flex items-center justify-center transition-all cursor-pointer" title="Nghe phát âm chuẩn">
-              <i data-lucide="volume-2" class="w-5 h-5"></i>
+            <button onclick="if(typeof playTts==='function') playTts('${currentIdiom.chengyu}', 'zh-CN')" class="w-9 h-9 rounded-xl bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 border border-amber-400/40 flex items-center justify-center transition-all cursor-pointer" title="Nghe phát âm chuẩn">
+              <i data-lucide="volume-2" class="w-4 h-4"></i>
             </button>
           </div>
-          <div class="text-xs sm:text-sm font-mono text-cyan-300 mt-1">
+          <div class="text-xs font-mono text-cyan-300 mt-0.5">
             ${currentIdiom.pinyin} • <span class="text-amber-100 font-serif-luxury font-bold">${currentIdiom.hanviet}</span>
           </div>
         </div>
 
         <!-- Meaning Breakdown -->
-        <div class="p-3.5 rounded-2xl bg-slate-950/50 border border-amber-400/20 text-xs space-y-2">
+        <div class="p-3 rounded-2xl bg-slate-950/60 border border-amber-400/20 text-xs space-y-1.5">
           <div>
             <strong class="text-amber-300">📖 Nghĩa đen:</strong>
             <span class="text-stone-300 ml-1">${currentIdiom.literal}</span>
@@ -31181,34 +31357,34 @@ if (typeof module !== 'undefined' && module.exports) {
         </div>
 
         <!-- Wordle Lifetime Stats -->
-        <div class="grid grid-cols-4 gap-2 text-center p-2.5 rounded-xl bg-slate-950/40 border border-slate-800 text-xs">
+        <div class="grid grid-cols-4 gap-2 text-center p-2 rounded-xl bg-slate-950/40 border border-slate-800 text-xs">
           <div>
-            <span class="text-[10px] text-stone-400 block">Số ván</span>
+            <span class="text-[9px] text-stone-400 block">Số ván</span>
             <span class="font-bold text-white font-mono">${wordleStats.played}</span>
           </div>
           <div>
-            <span class="text-[10px] text-stone-400 block">Tỷ lệ thắng</span>
+            <span class="text-[9px] text-stone-400 block">Tỷ lệ thắng</span>
             <span class="font-bold text-emerald-400 font-mono">${wordleStats.played > 0 ? Math.round((wordleStats.won / wordleStats.played) * 100) : 0}%</span>
           </div>
           <div>
-            <span class="text-[10px] text-stone-400 block">Chuỗi thắng</span>
+            <span class="text-[9px] text-stone-400 block">Chuỗi thắng</span>
             <span class="font-bold text-amber-300 font-mono">🔥 ${wordleStats.currentStreak}</span>
           </div>
           <div>
-            <span class="text-[10px] text-stone-400 block">Kỷ lục chuỗi</span>
+            <span class="text-[9px] text-stone-400 block">Kỷ lục chuỗi</span>
             <span class="font-bold text-yellow-400 font-mono">👑 ${wordleStats.maxStreak}</span>
           </div>
         </div>
 
         <!-- Action Buttons -->
-        <div class="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-          <button onclick="shareWordleResult()" class="w-full sm:w-auto px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-black text-xs shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2 cursor-pointer">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
+          <button onclick="shareWordleResult()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-black text-xs shadow-md hover:scale-105 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="share-2" class="w-4 h-4"></i>
             <span>CHIA SẺ KẾT QUẢ (COPY EMOJI)</span>
           </button>
-          <button onclick="startWordlePractice()" class="w-full sm:w-auto px-5 py-3 rounded-2xl bg-slate-800 hover:bg-slate-700 text-stone-200 border border-slate-700 font-bold text-xs transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <button onclick="startWordlePractice()" class="w-full sm:w-auto px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-stone-200 border border-slate-700 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
             <i data-lucide="refresh-cw" class="w-4 h-4"></i>
-            <span>Chơi Ván Khác (Luyện Tập)</span>
+            <span>Chơi Ván Khác</span>
           </button>
         </div>
       </div>
@@ -31247,7 +31423,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
   function initWordleTab() {
     initWordleGame(true);
-    renderWordleStage();
+    renderWordleStageFull();
     const container = document.getElementById('tab-wordle');
     if (typeof refreshIcons === 'function' && container) refreshIcons(container);
   }

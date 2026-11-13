@@ -37,11 +37,11 @@ test('⚔️ & 🧩 Entertainment & Gamification Suite (PvP Arena & Chengyu Word
     assert.ok(html.includes('id="tab-wordle"'), 'Must contain tab-wordle section');
     assert.ok(html.includes('id="tab-wordle-content"'), 'Must contain tab-wordle-content target');
 
-    // Home Action Cards
+    // Home Action Cards & Arcade Hub
     assert.ok(html.includes("openPvPArenaModal('ai')"), 'Home must have 1-click PvP Arena trigger');
-    assert.ok(html.includes("openWordleModal()"), 'Home must have 1-click Wordle trigger');
-    assert.ok(html.includes('Đấu Trường Hán Tự 1vs1'), 'Home card must display Vietnamese title');
-    assert.ok(html.includes('Wordle Thành Ngữ Chữ Hán'), 'Home card must display Wordle title');
+    assert.ok(html.includes("openWordleModal(true)"), 'Home must have 1-click Wordle trigger');
+    assert.ok(html.includes('Đại Sảnh Trò Chơi & Đấu Trường Hán Ngữ'), 'Home must display Edutainment Arcade Hub title');
+    assert.ok(html.includes('Wordle Thành Ngữ'), 'Home card must display Wordle title');
   });
 
   await t.test('2. Validates Router Navigation, Tab Registration & Active Task Guards', () => {
@@ -89,6 +89,7 @@ test('⚔️ & 🧩 Entertainment & Gamification Suite (PvP Arena & Chengyu Word
     assert.equal(typeof sandbox.copyPvPChallengeLink, 'function');
     assert.equal(typeof sandbox.isPvPBattleActive, 'function');
     assert.equal(typeof sandbox.initPvPArenaTab, 'function');
+    assert.equal(typeof sandbox.togglePvPAudio, 'function');
 
     // Battle should initially be inactive
     assert.equal(sandbox.isPvPBattleActive(), false);

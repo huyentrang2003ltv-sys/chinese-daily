@@ -1110,161 +1110,179 @@
         </div>
       </div>
 
-      <!-- ==================== KHU VUI CHƠI & ĐẤU TRƯỜNG GIẢI TRÍ HÁN TỰ (EDUTAINMENT HUB) ==================== -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-
-        <!-- GAME CARD 1: ĐẤU TRƯỜNG HÁN TỰ 1VS1 (PVP ARENA) -->
-        <div onclick="openPvPArenaModal('ai')" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-br from-[#7F1D1D] via-[#991B1B] to-[#450A0A] border-2 border-amber-400/90 shadow-xl cursor-pointer hover:border-amber-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white flex flex-col justify-between">
-          <div class="absolute -right-4 -bottom-4 w-32 h-32 rounded-full border-4 border-amber-400/20 pointer-events-none select-none flex items-center justify-center">
-            <span class="font-hanzi text-6xl text-amber-300/20 font-black">战</span>
-          </div>
-
-          <div class="relative z-10 space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-red-500 to-amber-500 text-white shadow-2xs">
-                ⚔️ ĐỐI KHÁNG 1VS1 • MỚI
-              </span>
-              <span class="text-xs text-amber-300 font-mono font-bold">⚡ 60 GIÂY PHẢN XẠ</span>
-            </div>
-
-            <div class="flex items-center gap-3.5">
-              <div class="w-13 h-13 rounded-2xl bg-gradient-to-br from-red-500 to-amber-600 border-2 border-amber-300 flex items-center justify-center text-3xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
-                ⚔️
-              </div>
-              <div>
-                <h4 class="text-lg lg:text-xl font-black font-serif-luxury text-amber-100">
-                  Đấu Trường Hán Tự 1vs1
-                </h4>
-                <p class="text-[11px] text-amber-200/90 leading-snug mt-0.5">
-                  Tỷ thí phản xạ từ vựng, pinyin & lượng từ trực tiếp với AI hoặc thách đấu bạn bè!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="relative z-10 pt-4 flex items-center justify-between border-t border-amber-500/30 mt-3">
-            <span class="text-[10px] text-amber-200/80 font-mono">+50 EXP Khi Thắng Trận</span>
-            <span class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-black text-xs shadow-md group-hover:scale-105 transition-all flex items-center gap-1.5">
-              <span>Vào Đấu Ngay</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </span>
-          </div>
-        </div>
-
-        <!-- GAME CARD 2: WORDLE THÀNH NGỮ CHỮ HÁN -->
-        <div onclick="openWordleModal()" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-br from-[#064E3B] via-[#065F46] to-[#022C22] border-2 border-emerald-400/90 shadow-xl cursor-pointer hover:border-emerald-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white flex flex-col justify-between">
-          <div class="absolute -right-4 -bottom-4 w-32 h-32 rounded-full border-4 border-emerald-400/20 pointer-events-none select-none flex items-center justify-center">
-            <span class="font-hanzi text-6xl text-emerald-300/20 font-black">谜</span>
-          </div>
-
-          <div class="relative z-10 space-y-3">
-            <div class="flex items-center justify-between">
-              <span class="px-2.5 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-emerald-400 to-teal-400 text-stone-950 shadow-2xs">
-                🧩 WORDLE HÔM NAY • MỚI
-              </span>
-              <span class="text-xs text-emerald-300 font-mono font-bold">🟩 6 LƯỢT ĐOÁN</span>
-            </div>
-
-            <div class="flex items-center gap-3.5">
-              <div class="w-13 h-13 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 border-2 border-emerald-300 flex items-center justify-center text-3xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
-                🧩
-              </div>
-              <div>
-                <h4 class="text-lg lg:text-xl font-black font-serif-luxury text-emerald-100">
-                  Wordle Thành Ngữ Chữ Hán
-                </h4>
-                <p class="text-[11px] text-emerald-200/90 leading-snug mt-0.5">
-                  Giải mã câu thành ngữ 4 chữ ẩn giấu mỗi ngày, mở khóa câu chuyện điển tích cổ đại!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="relative z-10 pt-4 flex items-center justify-between border-t border-emerald-500/30 mt-3">
-            <span class="text-[10px] text-emerald-200/80 font-mono">+40 EXP & Lưới Chia Sẻ</span>
-            <span class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-300 text-stone-950 font-black text-xs shadow-md group-hover:scale-105 transition-all flex items-center gap-1.5">
-              <span>Giải Mật Ngay</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
-            </span>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- ==================== FEATURED GAME 1: XẾP KHỐI GỖ (HÁN NGỮ TÍCH MỘC) ==================== -->
-      <div onclick="switchTab('woodblock')" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-r from-[#78350F] via-[#92400E] to-[#451A03] border-2 border-amber-400/80 shadow-xl cursor-pointer hover:border-amber-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white mb-4">
-        <!-- Background decorative wood pattern -->
-        <div class="absolute -right-6 -bottom-6 w-36 h-36 rounded-full border-4 border-amber-400/20 pointer-events-none select-none flex items-center justify-center">
-          <span class="font-hanzi text-7xl text-amber-300/20 font-black">木</span>
-        </div>
-
-        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#D97706] to-[#78350F] border-2 border-amber-300 flex items-center justify-center text-3xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
-              🧩
+      <!-- ==================== ĐẠI SẢNH TRÒ CHƠI & ĐẤU TRƯỜNG HÁN NGỮ (EDUTAINMENT ARCADE HUB) ==================== -->
+      <div class="glass-card rounded-3xl p-5 lg:p-7 bg-[#FFFDF9] dark:bg-[#161B22] border-2 border-amber-300/90 dark:border-amber-500/30 shadow-xl mb-6 relative overflow-hidden">
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-200/80 dark:border-stone-800 pb-4 mb-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-amber-500 via-rose-600 to-amber-700 text-white flex items-center justify-center text-2xl shadow-md shrink-0">
+              🎮
             </div>
             <div>
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 shadow-2xs">
-                  GAME MỚI • 60 CẤP ĐỘ
-                </span>
-                <span class="text-xs text-amber-200 font-chinese font-bold">
-                  汉语积木 Wood Block Puzzle
+              <div class="flex items-center gap-2 flex-wrap">
+                <h3 class="text-lg sm:text-xl font-serif-luxury font-black text-amber-950 dark:text-amber-200">
+                  Đại Sảnh Trò Chơi & Đấu Trường Hán Ngữ
+                </h3>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-black bg-gradient-to-r from-red-600 to-amber-600 text-white shadow-2xs">
+                  EDUTAINMENT HUB
                 </span>
               </div>
-              <h4 class="text-lg lg:text-xl font-black font-serif-luxury text-amber-100 mt-0.5">
-                Xếp Khối Gỗ Tiếng Trung: Luyện Từ Vựng & Cấu Trúc Câu 3D
-              </h4>
-              <p class="text-xs text-amber-200/90 mt-0.5 leading-relaxed">
-                Kéo thả các khối gỗ đa hình dạng, ghép thành câu và đoạn văn hoàn chỉnh. Thử thách tư duy logic & ngữ pháp từ Sơ cấp đến Cao cấp!
+              <p class="text-xs text-stone-500 dark:text-stone-400 mt-0.5">
+                Vừa học vừa chơi, bứt phá phản xạ Hán tự, mở khóa điển tích thành ngữ và thi đấu nhận thưởng EXP!
               </p>
             </div>
           </div>
 
-          <div class="flex items-center gap-2 self-start md:self-center shrink-0">
-            <span class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-bold text-xs shadow-md group-hover:scale-105 transition-all flex items-center gap-1.5">
-              <span>Chơi Ngay (开始游戏)</span>
-              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+          <div class="flex items-center gap-1.5 self-start sm:self-center shrink-0">
+            <span class="px-3 py-1 rounded-full bg-amber-100 dark:bg-stone-800 text-[#8B1E1E] dark:text-amber-300 text-xs font-bold border border-amber-300/60">
+              🔥 4 Trò Chơi Đỉnh Cao
             </span>
           </div>
         </div>
-      </div>
 
-      <!-- ==================== FEATURED GAME 2: LẬT THẺ ĐỒNG NGHĨA & TRÁI NGHĨA (HÁN NGỮ PHIÊN PHIÊN TẠP) ==================== -->
-      <div onclick="switchTab('flipcard')" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-r from-[#881337] via-[#9F1239] to-[#4C0519] border-2 border-rose-400/70 shadow-xl cursor-pointer hover:border-rose-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white mb-6">
-        <div class="absolute -right-6 -bottom-6 w-36 h-36 rounded-full border-4 border-rose-300/10 pointer-events-none select-none flex items-center justify-center">
-          <span class="font-hanzi text-7xl text-rose-300/15 font-black">卡</span>
-        </div>
+        <!-- 4-Card Responsive Grid (2x2 on desktop, 1x4 on mobile) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-        <div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div class="flex items-center gap-4">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#E11D48] to-[#9F1239] border-2 border-amber-300 flex items-center justify-center text-3xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
-              🎴
+          <!-- 1. ĐẤU TRƯỜNG HÁN TỰ 1VS1 -->
+          <div onclick="openPvPArenaModal('ai')" class="rounded-2xl p-4 sm:p-5 bg-gradient-to-br from-[#7F1D1D] via-[#991B1B] to-[#450A0A] border-2 border-amber-400/90 shadow-md cursor-pointer hover:border-amber-300 transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden text-white flex flex-col justify-between min-h-[190px]">
+            <div class="absolute -right-3 -bottom-3 w-24 h-24 rounded-full border-4 border-amber-400/15 pointer-events-none select-none flex items-center justify-center">
+              <span class="font-hanzi text-5xl text-amber-300/15 font-black">战</span>
             </div>
-            <div>
-              <div class="flex items-center gap-2">
-                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 shadow-2xs">
-                  TRÒ CHƠI MỚI • 3D FLIP
+            <div class="relative z-10 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-amber-400 text-stone-950 shadow-2xs">
+                  ⚡ 60S PHẢN XẠ
                 </span>
-                <span class="text-xs text-rose-200 font-chinese font-bold">
-                  汉语翻翻卡 Memory Flip Cards
-                </span>
+                <span class="text-[10px] text-amber-300 font-bold">+50 EXP</span>
               </div>
-              <h4 class="text-lg lg:text-xl font-black font-serif-luxury text-rose-100 mt-0.5">
-                Lật Thẻ Tìm Từ Đồng Nghĩa & Trái Nghĩa: Bứt Phá Trí Nhớ Từ Vựng
-              </h4>
-              <p class="text-xs text-rose-200/80 mt-0.5 leading-relaxed">
-                Lật mở các thẻ bài 3D phong cách Cung đình phương Đông, tìm cặp từ đồng nghĩa (高兴 - 开心) hoặc trái nghĩa (大 - 小) để mở khóa cấp độ và nhận thưởng EXP!
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-red-500/40 border border-amber-300 flex items-center justify-center text-2xl shadow-sm group-hover:rotate-6 transition-transform">
+                  ⚔️
+                </div>
+                <div>
+                  <h4 class="text-sm sm:text-base font-black font-serif-luxury text-amber-100">
+                    Đấu Trường 1vs1
+                  </h4>
+                  <span class="text-[10px] text-amber-200/80 block">HSK Arena Blitz</span>
+                </div>
+              </div>
+              <p class="text-[11px] text-amber-100/80 leading-relaxed">
+                Tỷ thí phản xạ từ vựng, pinyin & lượng từ đối kháng cùng 3 cấp độ AI hoặc bạn bè.
               </p>
             </div>
+            <div class="relative z-10 pt-3 border-t border-amber-400/30 flex items-center justify-between text-xs font-bold text-amber-200">
+              <span class="text-[10px] text-amber-300/90">Chiến ngay</span>
+              <span class="p-1 rounded-lg bg-amber-400/20 group-hover:bg-amber-400 group-hover:text-stone-950 transition-colors">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
           </div>
 
-          <div class="flex items-center gap-3 shrink-0">
-            <button class="px-5 py-2.5 rounded-2xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-black text-xs shadow-md group-hover:scale-105 transition-all flex items-center gap-1.5 cursor-pointer">
-              <span>Chơi Ngay (开始)</span>
-              <i data-lucide="arrow-right" class="w-4 h-4"></i>
-            </button>
+          <!-- 2. WORDLE THÀNH NGỮ -->
+          <div onclick="openWordleModal(true)" class="rounded-2xl p-4 sm:p-5 bg-gradient-to-br from-[#064E3B] via-[#065F46] to-[#022C22] border-2 border-emerald-400/90 shadow-md cursor-pointer hover:border-emerald-300 transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden text-white flex flex-col justify-between min-h-[190px]">
+            <div class="absolute -right-3 -bottom-3 w-24 h-24 rounded-full border-4 border-emerald-400/15 pointer-events-none select-none flex items-center justify-center">
+              <span class="font-hanzi text-5xl text-emerald-300/15 font-black">谜</span>
+            </div>
+            <div class="relative z-10 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-emerald-400 text-stone-950 shadow-2xs">
+                  🟩 6 LƯỢT ĐOÁN
+                </span>
+                <span class="text-[10px] text-emerald-300 font-bold">+40 EXP</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/40 border border-emerald-300 flex items-center justify-center text-2xl shadow-sm group-hover:rotate-6 transition-transform">
+                  🧩
+                </div>
+                <div>
+                  <h4 class="text-sm sm:text-base font-black font-serif-luxury text-emerald-100">
+                    Wordle Thành Ngữ
+                  </h4>
+                  <span class="text-[10px] text-emerald-200/80 block">Daily Chengyu</span>
+                </div>
+              </div>
+              <p class="text-[11px] text-emerald-100/80 leading-relaxed">
+                Giải mã mật mã 4 chữ Hán mỗi ngày, mở khóa điển tích lịch sử và copy lưới chia sẻ.
+              </p>
+            </div>
+            <div class="relative z-10 pt-3 border-t border-emerald-400/30 flex items-center justify-between text-xs font-bold text-emerald-200">
+              <span class="text-[10px] text-emerald-300/90">Giải mật</span>
+              <span class="p-1 rounded-lg bg-emerald-400/20 group-hover:bg-emerald-400 group-hover:text-stone-950 transition-colors">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
           </div>
+
+          <!-- 3. XẾP KHỐI GỖ 3D -->
+          <div onclick="switchTab('woodblock')" class="rounded-2xl p-4 sm:p-5 bg-gradient-to-br from-[#78350F] via-[#92400E] to-[#451A03] border-2 border-amber-400/80 shadow-md cursor-pointer hover:border-amber-300 transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden text-white flex flex-col justify-between min-h-[190px]">
+            <div class="absolute -right-3 -bottom-3 w-24 h-24 rounded-full border-4 border-amber-400/15 pointer-events-none select-none flex items-center justify-center">
+              <span class="font-hanzi text-5xl text-amber-300/15 font-black">木</span>
+            </div>
+            <div class="relative z-10 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-amber-400 text-stone-950 shadow-2xs">
+                  🧱 60 CẤP ĐỘ
+                </span>
+                <span class="text-[10px] text-amber-300 font-bold">Thử Thách</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-amber-500/40 border border-amber-300 flex items-center justify-center text-2xl shadow-sm group-hover:rotate-6 transition-transform">
+                  🪵
+                </div>
+                <div>
+                  <h4 class="text-sm sm:text-base font-black font-serif-luxury text-amber-100">
+                    Xếp Khối Gỗ 3D
+                  </h4>
+                  <span class="text-[10px] text-amber-200/80 block">Wood Block Puzzle</span>
+                </div>
+              </div>
+              <p class="text-[11px] text-amber-100/80 leading-relaxed">
+                Kéo thả các khối gỗ đa hình dạng, ghép thành câu và đoạn văn chuẩn ngữ pháp HSK.
+              </p>
+            </div>
+            <div class="relative z-10 pt-3 border-t border-amber-400/30 flex items-center justify-between text-xs font-bold text-amber-200">
+              <span class="text-[10px] text-amber-300/90">Ghép khối</span>
+              <span class="p-1 rounded-lg bg-amber-400/20 group-hover:bg-amber-400 group-hover:text-stone-950 transition-colors">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
+          </div>
+
+          <!-- 4. LẬT THẺ TÌM TỪ -->
+          <div onclick="switchTab('flipcard')" class="rounded-2xl p-4 sm:p-5 bg-gradient-to-br from-[#881337] via-[#9F1239] to-[#4C0519] border-2 border-rose-400/70 shadow-md cursor-pointer hover:border-rose-300 transition-all duration-300 hover:scale-[1.02] group relative overflow-hidden text-white flex flex-col justify-between min-h-[190px]">
+            <div class="absolute -right-3 -bottom-3 w-24 h-24 rounded-full border-4 border-rose-400/15 pointer-events-none select-none flex items-center justify-center">
+              <span class="font-hanzi text-5xl text-rose-300/15 font-black">卡</span>
+            </div>
+            <div class="relative z-10 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="px-2 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-rose-400 to-amber-300 text-stone-950 shadow-2xs">
+                  🎴 1.000 CẶP TỪ
+                </span>
+                <span class="text-[10px] text-rose-300 font-bold">Trí Nhớ</span>
+              </div>
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-rose-500/40 border border-amber-300 flex items-center justify-center text-2xl shadow-sm group-hover:rotate-6 transition-transform">
+                  🎴
+                </div>
+                <div>
+                  <h4 class="text-sm sm:text-base font-black font-serif-luxury text-rose-100">
+                    Lật Thẻ Tìm Từ
+                  </h4>
+                  <span class="text-[10px] text-rose-200/80 block">Memory Flip Cards</span>
+                </div>
+              </div>
+              <p class="text-[11px] text-rose-100/80 leading-relaxed">
+                Lật mở thẻ bài 3D phong cách Cung đình, tìm cặp từ đồng nghĩa, trái nghĩa và hình ảnh.
+              </p>
+            </div>
+            <div class="relative z-10 pt-3 border-t border-rose-400/30 flex items-center justify-between text-xs font-bold text-rose-200">
+              <span class="text-[10px] text-rose-300/90">Lật thẻ</span>
+              <span class="p-1 rounded-lg bg-rose-400/20 group-hover:bg-rose-400 group-hover:text-stone-950 transition-colors">
+                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+              </span>
+            </div>
+          </div>
+
         </div>
       </div>
 
