@@ -55,6 +55,20 @@ const TABS = {
   mockexam: { label: 'Thi thử HSK', icon: 'file-check-2', data: ['mockExam'], init: () => initMockExamModule() },
   woodblock: { label: 'Xếp khối gỗ', icon: 'puzzle', data: ['woodBlock'], init: () => initWoodBlockGame() },
   flipcard: { label: 'Lật thẻ tìm từ', icon: 'layers', data: ['flipCard'], init: () => initFlipCardGame() },
+  arena: {
+    label: 'Đấu trường 1vs1', icon: 'swords', data: ['dictionary', 'classifiers', 'chengyu'],
+    init: () => {
+      if (typeof initPvPArenaTab === 'function') initPvPArenaTab();
+      else if (typeof openPvPArenaModal === 'function') openPvPArenaModal();
+    }
+  },
+  wordle: {
+    label: 'Wordle Thành ngữ', icon: 'sparkles', data: ['chengyu'],
+    init: () => {
+      if (typeof initWordleTab === 'function') initWordleTab();
+      else if (typeof openWordleModal === 'function') openWordleModal();
+    }
+  },
   classroom: { label: 'Lớp học thông minh', icon: 'school', data: ['dictionary', 'mockExam'], init: () => initClassroom() },
   admin: {
     label: 'Quản trị hệ thống',
@@ -73,11 +87,18 @@ const NAV_GROUPS = [
   { id: 'hanzi', label: 'Chữ Hán', short: 'Chữ Hán', icon: 'type', tabs: ['etymology', 'radicals'] },
   { id: 'vocab', label: 'Từ vựng', short: 'Từ vựng', icon: 'book-a', tabs: ['dictionary', 'flashcards', 'confusions', 'chengyu'] },
   { id: 'read', label: 'Ngữ pháp & Đọc', short: 'Ngữ pháp', icon: 'library', tabs: ['grammar', 'readings', 'culture'] },
-  { id: 'train', label: 'Luyện tập & Thi', short: 'Luyện thi', icon: 'target', tabs: ['practice', 'translation', 'aichat', 'mockexam', 'woodblock', 'flipcard', 'classroom'] }
+  { id: 'train', label: 'Luyện tập & Thi', short: 'Luyện thi', icon: 'target', tabs: ['practice', 'arena', 'wordle', 'translation', 'aichat', 'mockexam', 'woodblock', 'flipcard', 'classroom'] }
 ];
 
 const DEFAULT_TAB = 'home';
 const TAB_ALIASES = {
+  arena: 'arena',
+  'dautruong': 'arena',
+  'dau-truong': 'arena',
+  'pvp': 'arena',
+  wordle: 'wordle',
+  'chengyu-wordle': 'wordle',
+  'chudoan': 'wordle',
   admin: 'admin',
   'admin-portal': 'admin',
   quantri: 'admin',
@@ -352,6 +373,21 @@ function isTaskInProgress(tabId) {
         subtitle: 'Ván chơi xếp khối gỗ đang diễn ra',
         message: 'Bạn đang ghép dở màn chơi khối gỗ. Nếu thoát bây giờ, tiến trình ván chơi sẽ bị hủy. Bạn có chắc chắn muốn quay về Trang Chủ không?',
         onConfirm: () => {}
+      };
+    }
+  }
+
+  // 4. Kiểm tra trận đấu PvP Arena 1vs1
+  if (tabId === 'arena') {
+    if (typeof isPvPBattleActive === 'function' && isPvPBattleActive()) {
+      return {
+        inProgress: true,
+        title: 'Rút lui khỏi Đấu trường 1vs1?',
+        subtitle: 'Trận đấu phản xạ 60 giây đang diễn ra',
+        message: 'Trận đấu đối kháng đang diễn ra gay cấn. Nếu bạn thoát bây giờ, hệ thống sẽ tính là bạn chịu thua ván này. Bạn có chắc chắn muốn rút lui không?',
+        onConfirm: () => {
+          if (typeof closePvPArenaModal === 'function') closePvPArenaModal();
+        }
       };
     }
   }

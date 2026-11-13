@@ -1110,6 +1110,87 @@
         </div>
       </div>
 
+      <!-- ==================== KHU VUI CHƠI & ĐẤU TRƯỜNG GIẢI TRÍ HÁN TỰ (EDUTAINMENT HUB) ==================== -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+
+        <!-- GAME CARD 1: ĐẤU TRƯỜNG HÁN TỰ 1VS1 (PVP ARENA) -->
+        <div onclick="openPvPArenaModal('ai')" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-br from-[#7F1D1D] via-[#991B1B] to-[#450A0A] border-2 border-amber-400/90 shadow-xl cursor-pointer hover:border-amber-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white flex flex-col justify-between">
+          <div class="absolute -right-4 -bottom-4 w-32 h-32 rounded-full border-4 border-amber-400/20 pointer-events-none select-none flex items-center justify-center">
+            <span class="font-hanzi text-6xl text-amber-300/20 font-black">战</span>
+          </div>
+
+          <div class="relative z-10 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-red-500 to-amber-500 text-white shadow-2xs">
+                ⚔️ ĐỐI KHÁNG 1VS1 • MỚI
+              </span>
+              <span class="text-xs text-amber-300 font-mono font-bold">⚡ 60 GIÂY PHẢN XẠ</span>
+            </div>
+
+            <div class="flex items-center gap-3.5">
+              <div class="w-13 h-13 rounded-2xl bg-gradient-to-br from-red-500 to-amber-600 border-2 border-amber-300 flex items-center justify-center text-3xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
+                ⚔️
+              </div>
+              <div>
+                <h4 class="text-lg lg:text-xl font-black font-serif-luxury text-amber-100">
+                  Đấu Trường Hán Tự 1vs1
+                </h4>
+                <p class="text-[11px] text-amber-200/90 leading-snug mt-0.5">
+                  Tỷ thí phản xạ từ vựng, pinyin & lượng từ trực tiếp với AI hoặc thách đấu bạn bè!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 pt-4 flex items-center justify-between border-t border-amber-500/30 mt-3">
+            <span class="text-[10px] text-amber-200/80 font-mono">+50 EXP Khi Thắng Trận</span>
+            <span class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-black text-xs shadow-md group-hover:scale-105 transition-all flex items-center gap-1.5">
+              <span>Vào Đấu Ngay</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+        <!-- GAME CARD 2: WORDLE THÀNH NGỮ CHỮ HÁN -->
+        <div onclick="openWordleModal()" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-br from-[#064E3B] via-[#065F46] to-[#022C22] border-2 border-emerald-400/90 shadow-xl cursor-pointer hover:border-emerald-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white flex flex-col justify-between">
+          <div class="absolute -right-4 -bottom-4 w-32 h-32 rounded-full border-4 border-emerald-400/20 pointer-events-none select-none flex items-center justify-center">
+            <span class="font-hanzi text-6xl text-emerald-300/20 font-black">谜</span>
+          </div>
+
+          <div class="relative z-10 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="px-2.5 py-0.5 rounded-full text-[9px] font-black bg-gradient-to-r from-emerald-400 to-teal-400 text-stone-950 shadow-2xs">
+                🧩 WORDLE HÔM NAY • MỚI
+              </span>
+              <span class="text-xs text-emerald-300 font-mono font-bold">🟩 6 LƯỢT ĐOÁN</span>
+            </div>
+
+            <div class="flex items-center gap-3.5">
+              <div class="w-13 h-13 rounded-2xl bg-gradient-to-br from-emerald-500 to-teal-700 border-2 border-emerald-300 flex items-center justify-center text-3xl shadow-lg shrink-0 group-hover:rotate-6 transition-transform">
+                🧩
+              </div>
+              <div>
+                <h4 class="text-lg lg:text-xl font-black font-serif-luxury text-emerald-100">
+                  Wordle Thành Ngữ Chữ Hán
+                </h4>
+                <p class="text-[11px] text-emerald-200/90 leading-snug mt-0.5">
+                  Giải mã câu thành ngữ 4 chữ ẩn giấu mỗi ngày, mở khóa câu chuyện điển tích cổ đại!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative z-10 pt-4 flex items-center justify-between border-t border-emerald-500/30 mt-3">
+            <span class="text-[10px] text-emerald-200/80 font-mono">+40 EXP & Lưới Chia Sẻ</span>
+            <span class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-300 text-stone-950 font-black text-xs shadow-md group-hover:scale-105 transition-all flex items-center gap-1.5">
+              <span>Giải Mật Ngay</span>
+              <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
       <!-- ==================== FEATURED GAME 1: XẾP KHỐI GỖ (HÁN NGỮ TÍCH MỘC) ==================== -->
       <div onclick="switchTab('woodblock')" class="glass-card rounded-3xl p-5 lg:p-6 bg-gradient-to-r from-[#78350F] via-[#92400E] to-[#451A03] border-2 border-amber-400/80 shadow-xl cursor-pointer hover:border-amber-300 transition-all duration-300 hover:scale-[1.01] group relative overflow-hidden text-white mb-4">
         <!-- Background decorative wood pattern -->
@@ -2947,6 +3028,30 @@
           </div>
         </div>
 
+        <!-- Gamification & Arena Quick Launcher in Practice Tab -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 rounded-2xl bg-gradient-to-r from-amber-100/60 via-orange-50/50 to-amber-100/60 dark:from-stone-900 dark:to-stone-900 border border-amber-300/60 dark:border-stone-800">
+          <div onclick="openPvPArenaModal('ai')" class="p-3 rounded-xl bg-gradient-to-r from-red-950/80 to-slate-900 border border-amber-400/40 hover:border-amber-300 transition-all cursor-pointer flex items-center justify-between group text-white">
+            <div class="flex items-center gap-2.5">
+              <span class="text-2xl group-hover:scale-110 transition-transform">⚔️</span>
+              <div>
+                <span class="text-xs font-bold text-amber-200 block">Đấu Trường Hán Tự 1vs1</span>
+                <span class="text-[10px] text-stone-300">Tốc chiến 60s đối kháng AI hoặc bạn bè</span>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-amber-400 text-stone-950 text-[10px] font-black shrink-0">Chiến</span>
+          </div>
+          <div onclick="openWordleModal()" class="p-3 rounded-xl bg-gradient-to-r from-emerald-950/80 to-slate-900 border border-emerald-400/40 hover:border-emerald-300 transition-all cursor-pointer flex items-center justify-between group text-white">
+            <div class="flex items-center gap-2.5">
+              <span class="text-2xl group-hover:scale-110 transition-transform">🧩</span>
+              <div>
+                <span class="text-xs font-bold text-emerald-200 block">Wordle Thành Ngữ Chữ Hán</span>
+                <span class="text-[10px] text-stone-300">Mật mã 4 chữ hôm nay • 6 lượt đoán</span>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-lg bg-emerald-400 text-stone-950 text-[10px] font-black shrink-0">Giải Đố</span>
+          </div>
+        </div>
+
         <!-- Practice Questions Container -->
         <div id="practiceQuestionsContainer" class="space-y-6"></div>
       </div>
@@ -3993,6 +4098,50 @@
       </div>
     </section>
 
+    <!-- ==================== TAB: ĐẤU TRƯỜNG HÁN TỰ 1VS1 (PVP HANZI ARENA) ==================== -->
+    <section id="tab-arena" class="space-y-6 hidden animate-fade-in">
+      <div class="glass-card rounded-3xl p-4 sm:p-6 bg-slate-950/90 border-2 border-amber-400/80 shadow-2xl relative overflow-hidden">
+        <div class="flex items-center justify-between border-b border-amber-500/30 pb-3 mb-4">
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl">⚔️</span>
+            <div>
+              <h2 class="text-lg font-black font-serif-luxury text-amber-200">Đấu Trường Hán Tự 1vs1</h2>
+              <p class="text-[11px] text-stone-400">Tỷ thí phản xạ tốc độ 60 giây đối kháng trực tiếp</p>
+            </div>
+          </div>
+          <button onclick="switchTab('home')" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-stone-300 border border-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer">
+            <i data-lucide="x" class="w-4 h-4"></i>
+            <span>Đóng</span>
+          </button>
+        </div>
+        <div id="tab-arena-content">
+          <!-- Rendered dynamically by pvp_arena.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== TAB: WORDLE THÀNH NGỮ CHỮ HÁN ==================== -->
+    <section id="tab-wordle" class="space-y-6 hidden animate-fade-in">
+      <div class="glass-card rounded-3xl p-4 sm:p-6 bg-slate-950/90 border-2 border-emerald-400/80 shadow-2xl relative overflow-hidden">
+        <div class="flex items-center justify-between border-b border-emerald-500/30 pb-3 mb-4">
+          <div class="flex items-center gap-2.5">
+            <span class="text-2xl">🧩</span>
+            <div>
+              <h2 class="text-lg font-black font-serif-luxury text-emerald-200">Wordle Thành Ngữ Chữ Hán</h2>
+              <p class="text-[11px] text-stone-400">Giải mật mã 4 chữ Hán mỗi ngày trong 6 lượt đoán</p>
+            </div>
+          </div>
+          <button onclick="switchTab('home')" class="px-3.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-stone-300 border border-slate-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer">
+            <i data-lucide="x" class="w-4 h-4"></i>
+            <span>Đóng</span>
+          </button>
+        </div>
+        <div id="tab-wordle-content">
+          <!-- Rendered dynamically by wordle.js -->
+        </div>
+      </div>
+    </section>
+
 </main>
 
       <!-- ==================== LEVEL SELECTOR MODAL (BẢN ĐỒ 60 LEVEL) ==================== -->
@@ -4304,6 +4453,66 @@
     </div>
 
 
+
+  <!-- ==================== MODAL: ĐẤU TRƯỜNG HÁN TỰ 1VS1 (PVP ARENA MODAL) ==================== -->
+  <div id="pvpArenaModal" class="hidden fixed inset-0 z-100 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-slate-950/90 backdrop-blur-md animate-fade-in">
+    <div class="glass-card bg-[#0B0F19] border-2 border-amber-400/90 rounded-3xl w-full max-w-4xl max-h-[94vh] flex flex-col shadow-2xl overflow-hidden text-stone-100 relative">
+      <!-- Top Modal Header -->
+      <div class="p-3.5 sm:p-4 border-b border-amber-500/30 bg-gradient-to-r from-red-950/80 via-slate-900 to-amber-950/60 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-red-600 to-amber-600 flex items-center justify-center text-lg font-bold shadow-sm">
+            ⚔️
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-black font-serif-luxury text-amber-200">
+              Đấu Trường Hán Tự 1vs1 (60 Giây Phản Xạ)
+            </h3>
+            <p class="text-[10px] text-stone-400">Tỷ thí trực tiếp với AI Cao Thủ hoặc Thách đấu bạn bè</p>
+          </div>
+        </div>
+        <button onclick="closePvPArenaModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-rose-900/60 text-stone-400 hover:text-white flex items-center justify-center transition-all cursor-pointer border border-slate-700" title="Đóng đấu trường (Esc)">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Stage Content -->
+      <div class="p-4 sm:p-6 overflow-y-auto flex-1 custom-scrollbar">
+        <div id="pvpArenaContent">
+          <!-- Rendered dynamically by pvp_arena.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== MODAL: WORDLE THÀNH NGỮ CHỮ HÁN ==================== -->
+  <div id="wordleModal" class="hidden fixed inset-0 z-100 flex items-center justify-center p-2 sm:p-4 md:p-6 bg-slate-950/90 backdrop-blur-md animate-fade-in">
+    <div class="glass-card bg-[#0B0F19] border-2 border-emerald-400/90 rounded-3xl w-full max-w-2xl max-h-[94vh] flex flex-col shadow-2xl overflow-hidden text-stone-100 relative">
+      <!-- Top Modal Header -->
+      <div class="p-3.5 sm:p-4 border-b border-emerald-500/30 bg-gradient-to-r from-emerald-950/80 via-slate-900 to-teal-950/60 flex items-center justify-between shrink-0">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-emerald-600 to-teal-700 flex items-center justify-center text-lg font-bold shadow-sm">
+            🧩
+          </div>
+          <div>
+            <h3 class="text-sm sm:text-base font-black font-serif-luxury text-emerald-200">
+              Wordle Thành Ngữ Chữ Hán (成语字谜)
+            </h3>
+            <p class="text-[10px] text-stone-400">Giải mật mã 4 chữ Hán mỗi ngày • 6 lượt đoán</p>
+          </div>
+        </div>
+        <button onclick="closeWordleModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-rose-900/60 text-stone-400 hover:text-white flex items-center justify-center transition-all cursor-pointer border border-slate-700" title="Đóng Wordle (Esc)">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Scrollable Stage Content -->
+      <div class="p-4 sm:p-6 overflow-y-auto flex-1 custom-scrollbar">
+        <div id="wordleContent">
+          <!-- Rendered dynamically by wordle.js -->
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- MODAL: TRỢ LÝ AI CHẤM ĐIỂM & SỬA LỖI TỰ LUẬN VIẾT HSK (AI WRITING GRADER) -->
   <div id="aiWritingGraderModal" onclick="if(event.target === this) closeWritingGraderModal()" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 md:p-6 bg-slate-950/75 backdrop-blur-md">
@@ -6436,6 +6645,8 @@
   <script defer src="js/features/ai_writing_grader.js"></script>
   <script defer src="js/features/dictation.js"></script>
   <script defer src="js/features/admin_portal.js"></script>
+  <script defer src="js/features/pvp_arena.js"></script>
+  <script defer src="js/features/wordle.js"></script>
   <script defer src="js/core/router.js"></script>
 
   
