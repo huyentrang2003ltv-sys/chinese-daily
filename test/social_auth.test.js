@@ -135,7 +135,7 @@ test('Sign in with Google (OAuth code flow + PKCE)', async t => {
     tokenServer.closeAllConnections();
     tokenServer.close();
     accounts.flushUsers();
-    fs.rmSync(STORAGE, { recursive: true, force: true });
+    try { fs.rmSync(STORAGE, { recursive: true, force: true, maxRetries: 5, retryDelay: 100 }); } catch (_) {}
   });
 
   await t.test('start redirects to Google with state, nonce and an S256 PKCE challenge', async () => {
