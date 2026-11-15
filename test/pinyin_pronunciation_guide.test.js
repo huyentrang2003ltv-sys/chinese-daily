@@ -229,7 +229,7 @@ test('Comprehensive Chinese Pinyin Pronunciation Guide & Interactive System', as
     assert.equal(resolvePinyinToChinesePhonetic('sh'), '诗', 'Initial sh must resolve to 诗 (shī)');
     assert.equal(resolvePinyinToChinesePhonetic('r'), '日', 'Initial r must resolve to 日 (rì)');
     assert.equal(resolvePinyinToChinesePhonetic('z'), '资', 'Initial z must resolve to 资 (zī)');
-    assert.equal(resolvePinyinToChinesePhonetic('c'), '雌', 'Initial c must resolve to 雌 (cí)');
+    assert.equal(resolvePinyinToChinesePhonetic('c'), '疵', 'Initial c must resolve to 疵 (cī)');
     assert.equal(resolvePinyinToChinesePhonetic('s'), '思', 'Initial s must resolve to 思 (sī)');
     assert.equal(resolvePinyinToChinesePhonetic('j'), '基', 'Initial j must resolve to 基 (jī)');
     assert.equal(resolvePinyinToChinesePhonetic('q'), '期', 'Initial q must resolve to 期 (qī)');
@@ -242,6 +242,9 @@ test('Comprehensive Chinese Pinyin Pronunciation Guide & Interactive System', as
     assert.equal(resolvePinyinToChinesePhonetic('i'), '衣', 'Final i must resolve to 衣 (yī)');
     assert.equal(resolvePinyinToChinesePhonetic('u'), '乌', 'Final u must resolve to 乌 (wū)');
     assert.equal(resolvePinyinToChinesePhonetic('ü'), '迂', 'Final ü must resolve to 迂 (yū)');
+    assert.equal(resolvePinyinToChinesePhonetic('ao'), '凹', 'Final ao must resolve to 凹 (āo)');
+    assert.equal(resolvePinyinToChinesePhonetic('ang'), '肮', 'Final ang must resolve to 肮 (āng)');
+    assert.equal(resolvePinyinToChinesePhonetic('ong'), '翁', 'Final ong must resolve to 翁 (wēng)');
     assert.equal(resolvePinyinToChinesePhonetic('iu (iou)'), '优', 'Final iu (iou) must resolve to 优 (yōu)');
     assert.equal(resolvePinyinToChinesePhonetic('ui (uei)'), '微', 'Final ui (uei) must resolve to 微 (wēi)');
     assert.equal(resolvePinyinToChinesePhonetic('un (uen)'), '温', 'Final un (uen) must resolve to 温 (wēn)');
@@ -249,7 +252,7 @@ test('Comprehensive Chinese Pinyin Pronunciation Guide & Interactive System', as
 
     // Test full initial alphabet
     const fullAlphabet = 'b, p, m, f, d, t, n, l, g, k, h, j, q, x, zh, ch, sh, r, z, c, s, y, w';
-    const expectedFull = '玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌';
+    const expectedFull = '玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、疵、思、衣、乌';
     assert.equal(resolvePinyinToChinesePhonetic(fullAlphabet), expectedFull, 'Full 23-initial sequence must resolve to standard Chinese auxiliary characters');
   });
 });

@@ -287,20 +287,20 @@ const PINYIN_INITIALS_MAP = {
   'g': '哥', 'k': '科', 'h': '喝',
   'j': '基', 'q': '期', 'x': '希',
   'zh': '知', 'ch': '吃', 'sh': '诗', 'r': '日',
-  'z': '资', 'c': '雌', 's': '思',
+  'z': '资', 'c': '疵', 's': '思',
   'y': '衣', 'w': '乌'
 };
 
 const PINYIN_FINALS_MAP = {
   'a': '阿', 'o': '喔', 'e': '婀', 'i': '衣', 'u': '乌', 'ü': '迂', 'v': '迂',
-  'ai': '哀', 'ei': '诶', 'ao': '熬', 'ou': '欧',
+  'ai': '哀', 'ei': '诶', 'ao': '凹', 'ou': '欧',
   'ia': '鸭', 'ie': '耶', 'ua': '蛙', 'uo': '窝', 'üe': '约', 've': '约',
   'iao': '腰', 'iu': '优', 'iou': '优', 'iu (iou)': '优', 'iu(iou)': '优',
   'uai': '歪', 'ui': '微', 'uei': '微', 'ui (uei)': '微', 'ui(uei)': '微',
   'an': '安', 'en': '恩', 'in': '音', 'ün': '晕', 'vn': '晕',
   'ian': '烟', 'uan': '弯', 'üan': '冤', 'van': '冤',
   'un': '温', 'uen': '温', 'un (uen)': '温', 'un(uen)': '温',
-  'ang': '昂', 'eng': '鞥', 'ing': '英', 'ong': '轰',
+  'ang': '肮', 'eng': '鞥', 'ing': '英', 'ong': '翁',
   'iang': '央', 'uang': '汪', 'iong': '拥', 'ueng': '翁',
   'er': '耳'
 };
@@ -313,7 +313,7 @@ function resolvePinyinToChinesePhonetic(rawText) {
   // Full alphabet of 23 initials
   const compactLower = lower.replace(/[\s,，、.]/g, '');
   if (compactLower === 'bpmfdtnlgkhjqxzhchshrzcsyw') {
-    return '玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌';
+    return '玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、疵、思、衣、乌';
   }
   if (compactLower === 'aoeiuü' || compactLower === 'aoeiuv') {
     return '阿、喔、婀、衣、乌、迂';
@@ -3461,7 +3461,7 @@ function renderPinyinTab() {
         </div>
 
         <div class="flex flex-col sm:flex-row md:flex-col gap-2.5 shrink-0">
-          <button onclick="playPinyinAudio('玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <button onclick="playPinyinAudio('玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、疵、思、衣、乌')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="volume-2" class="w-4 h-4"></i>
             <span>Nghe Toàn Bộ 23 Thanh Mẫu</span>
           </button>
@@ -3874,19 +3874,26 @@ function renderPinyinFinalsView(container) {
 
   container.innerHTML = `
     <div class="space-y-6 animate-fade-in">
-      <!-- Filter Bar -->
-      <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar p-2 rounded-2xl bg-white dark:bg-[#161B22] border border-amber-200 dark:border-stone-800 shadow-xs">
-        ${categories.map(c => {
-          const isAct = currentFinalsFilter === c.id;
-          const cls = isAct 
-            ? 'px-3 py-1.5 rounded-xl bg-[#8B1E1E] text-white text-xs font-bold shadow-xs whitespace-nowrap'
-            : 'px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-bold hover:bg-amber-100 dark:hover:bg-stone-700 whitespace-nowrap cursor-pointer';
-          return `
-            <button onclick="filterPinyinFinalsCategory('${c.id}')" class="${cls}">
-              ${c.label}
-            </button>
-          `;
-        }).join('')}
+      <!-- Filter Bar with 6 Single Finals Audio Button -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-2 rounded-2xl bg-white dark:bg-[#161B22] border border-amber-200 dark:border-stone-800 shadow-xs">
+        <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar">
+          ${categories.map(c => {
+            const isAct = currentFinalsFilter === c.id;
+            const cls = isAct 
+              ? 'px-3 py-1.5 rounded-xl bg-[#8B1E1E] text-white text-xs font-bold shadow-xs whitespace-nowrap'
+              : 'px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-bold hover:bg-amber-100 dark:hover:bg-stone-700 whitespace-nowrap cursor-pointer';
+            return `
+              <button onclick="filterPinyinFinalsCategory('${c.id}')" class="${cls}">
+                ${c.label}
+              </button>
+            `;
+          }).join('')}
+        </div>
+
+        <button onclick="playPinyinAudio('阿、喔、婀、衣、乌、迂')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-700 to-teal-800 text-white text-xs font-bold shadow-xs hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer shrink-0" title="Nghe 6 vận mẫu đơn theo giọng chuẩn Bắc Kinh">
+          <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+          <span>Nghe 6 Vận Mẫu Đơn (a, o, e, i, u, ü)</span>
+        </button>
       </div>
 
       <!-- Finals Grid -->
@@ -3907,9 +3914,9 @@ function renderPinyinFinalsView(container) {
                   </div>
                 </div>
 
-                <button onclick="playPinyinAudio('${escapeHtml(item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer">
+                <button onclick="playPinyinAudio('${escapeHtml(item.audioChar || item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer" title="Phát âm chuẩn vận mẫu Bắc Kinh">
                   <i data-lucide="volume-2" class="w-4 h-4"></i>
-                  <span>Nghe</span>
+                  <span>Nghe âm (${escapeHtml(item.audioPinyin || item.symbol)})</span>
                 </button>
               </div>
 

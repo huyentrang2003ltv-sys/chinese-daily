@@ -637,7 +637,7 @@
     },
     {
       "symbol": "c",
-      "name": "Âm đầu lưỡi trước bật hơi c (cí / tsʰư)",
+      "name": "Âm đầu lưỡi trước bật hơi c (cī / tsʰư)",
       "group": "Âm đầu lưỡi trước (舌尖前音)",
       "groupId": "dental",
       "ipa": "[tsʰ]",
@@ -664,8 +664,8 @@
         "cān",
         "cōng"
       ],
-      "audioChar": "雌",
-      "audioPinyin": "cí"
+      "audioChar": "疵",
+      "audioPinyin": "cī"
     },
     {
       "symbol": "s",
@@ -915,8 +915,8 @@
         "meaning": "Cao",
         "audio": "gāo"
       },
-      "audioChar": "熬",
-      "audioPinyin": "áo"
+      "audioChar": "凹",
+      "audioPinyin": "āo"
     },
     {
       "symbol": "ou",
@@ -1238,8 +1238,8 @@
         "meaning": "Bận rộn",
         "audio": "máng"
       },
-      "audioChar": "昂",
-      "audioPinyin": "áng"
+      "audioChar": "肮",
+      "audioPinyin": "āng"
     },
     {
       "symbol": "eng",
@@ -1289,8 +1289,8 @@
         "meaning": "Màu đỏ",
         "audio": "hóng"
       },
-      "audioChar": "轰",
-      "audioPinyin": "hōng"
+      "audioChar": "翁",
+      "audioPinyin": "wēng"
     },
     {
       "symbol": "iang",

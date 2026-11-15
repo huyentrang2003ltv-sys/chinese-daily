@@ -81,7 +81,7 @@ function renderPinyinTab() {
         </div>
 
         <div class="flex flex-col sm:flex-row md:flex-col gap-2.5 shrink-0">
-          <button onclick="playPinyinAudio('玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <button onclick="playPinyinAudio('玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、疵、思、衣、乌')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="volume-2" class="w-4 h-4"></i>
             <span>Nghe Toàn Bộ 23 Thanh Mẫu</span>
           </button>
@@ -494,19 +494,26 @@ function renderPinyinFinalsView(container) {
 
   container.innerHTML = `
     <div class="space-y-6 animate-fade-in">
-      <!-- Filter Bar -->
-      <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar p-2 rounded-2xl bg-white dark:bg-[#161B22] border border-amber-200 dark:border-stone-800 shadow-xs">
-        ${categories.map(c => {
-          const isAct = currentFinalsFilter === c.id;
-          const cls = isAct 
-            ? 'px-3 py-1.5 rounded-xl bg-[#8B1E1E] text-white text-xs font-bold shadow-xs whitespace-nowrap'
-            : 'px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-bold hover:bg-amber-100 dark:hover:bg-stone-700 whitespace-nowrap cursor-pointer';
-          return `
-            <button onclick="filterPinyinFinalsCategory('${c.id}')" class="${cls}">
-              ${c.label}
-            </button>
-          `;
-        }).join('')}
+      <!-- Filter Bar with 6 Single Finals Audio Button -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-2 rounded-2xl bg-white dark:bg-[#161B22] border border-amber-200 dark:border-stone-800 shadow-xs">
+        <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar">
+          ${categories.map(c => {
+            const isAct = currentFinalsFilter === c.id;
+            const cls = isAct 
+              ? 'px-3 py-1.5 rounded-xl bg-[#8B1E1E] text-white text-xs font-bold shadow-xs whitespace-nowrap'
+              : 'px-3 py-1.5 rounded-xl bg-amber-50 dark:bg-stone-800 text-stone-700 dark:text-stone-300 text-xs font-bold hover:bg-amber-100 dark:hover:bg-stone-700 whitespace-nowrap cursor-pointer';
+            return `
+              <button onclick="filterPinyinFinalsCategory('${c.id}')" class="${cls}">
+                ${c.label}
+              </button>
+            `;
+          }).join('')}
+        </div>
+
+        <button onclick="playPinyinAudio('阿、喔、婀、衣、乌、迂')" class="px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-emerald-700 to-teal-800 text-white text-xs font-bold shadow-xs hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 whitespace-nowrap cursor-pointer shrink-0" title="Nghe 6 vận mẫu đơn theo giọng chuẩn Bắc Kinh">
+          <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+          <span>Nghe 6 Vận Mẫu Đơn (a, o, e, i, u, ü)</span>
+        </button>
       </div>
 
       <!-- Finals Grid -->
@@ -527,9 +534,9 @@ function renderPinyinFinalsView(container) {
                   </div>
                 </div>
 
-                <button onclick="playPinyinAudio('${escapeHtml(item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer">
+                <button onclick="playPinyinAudio('${escapeHtml(item.audioChar || item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer" title="Phát âm chuẩn vận mẫu Bắc Kinh">
                   <i data-lucide="volume-2" class="w-4 h-4"></i>
-                  <span>Nghe</span>
+                  <span>Nghe âm (${escapeHtml(item.audioPinyin || item.symbol)})</span>
                 </button>
               </div>
 
