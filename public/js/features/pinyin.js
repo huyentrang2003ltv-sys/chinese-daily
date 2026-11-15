@@ -223,7 +223,7 @@ function renderPinyinMatrixView(container) {
               <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-500 dark:text-stone-400 font-bold">
                 ${s.i} + ${s.f}
               </span>
-              <button onclick="event.stopPropagation(); playPinyinAudio('${escapeHtml((s.tones && s.tones[0]) ? s.tones[0] : s.s)}')" class="p-1 rounded-lg text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 transition-colors" title="Nghe âm chuẩn">
+              <button onclick="event.stopPropagation(); playPinyinAudio('${escapeHtml((s.hanziTones && s.hanziTones[0]) ? s.hanziTones[0] : ((s.tones && s.tones[0]) ? s.tones[0] : s.s))}')" class="p-1 rounded-lg text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 transition-colors" title="Nghe âm chuẩn">
                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
               </button>
             </div>
@@ -253,7 +253,7 @@ function openPinyinSyllableModal(syllableStr) {
   activePinyinSyllable = item;
 
   // Play audio immediately
-  playPinyinAudio((item.tones && item.tones[0]) ? item.tones[0] : item.s);
+  playPinyinAudio((item.hanziTones && item.hanziTones[0]) ? item.hanziTones[0] : ((item.tones && item.tones[0]) ? item.tones[0] : item.s));
 
   let existingModal = document.getElementById('pinyinSyllableDetailModal');
   if (!existingModal) {
@@ -307,9 +307,10 @@ function openPinyinSyllableModal(syllableStr) {
         </span>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
           ${(item.tones || []).map((toneWord, idx) => `
-            <button onclick="playPinyinAudio('${escapeHtml(toneWord)}')" class="p-3 rounded-2xl bg-white dark:bg-stone-800/80 border-2 border-stone-200 dark:border-stone-700 hover:border-amber-400 dark:hover:border-amber-500 text-center space-y-1 cursor-pointer transition-all hover:scale-105 active:scale-95 shadow-xs group">
+            <button onclick="playPinyinAudio('${escapeHtml((item.hanziTones && item.hanziTones[idx]) ? item.hanziTones[idx] : toneWord)}')" class="p-3 rounded-2xl bg-white dark:bg-stone-800/80 border-2 border-stone-200 dark:border-stone-700 hover:border-amber-400 dark:hover:border-amber-500 text-center space-y-1 cursor-pointer transition-all hover:scale-105 active:scale-95 shadow-xs group">
               <span class="text-2xs font-bold text-stone-400 group-hover:text-amber-700 dark:group-hover:text-amber-400 block">Thanh ${idx + 1}</span>
               <span class="text-xl font-black font-mono text-stone-900 dark:text-stone-100 group-hover:text-[#8B1E1E] dark:group-hover:text-red-400 block">${escapeHtml(toneWord)}</span>
+              ${(item.hanziTones && item.hanziTones[idx]) ? `<span class="text-xs font-serif-luxury text-stone-500 dark:text-stone-400 font-bold block">${escapeHtml(item.hanziTones[idx])}</span>` : ''}
               <span class="text-2xs text-amber-800 dark:text-amber-300 flex items-center justify-center gap-0.5 pt-0.5">
                 <i data-lucide="volume-2" class="w-3 h-3"></i>
                 <span>Nghe</span>
@@ -440,7 +441,7 @@ function renderPinyinInitialsView(container) {
                     <span class="font-mono text-amber-900 dark:text-amber-300">${item.example.pinyin}</span>
                     <span class="text-stone-500">(${item.example.meaning})</span>
                   </div>
-                  <button onclick="playPinyinAudio('${escapeHtml(item.example.audio || item.example.hanzi)}')" class="text-amber-800 dark:text-amber-300 hover:underline flex items-center gap-1 cursor-pointer">
+                  <button onclick="playPinyinAudio('${escapeHtml(item.example.hanzi || item.example.audio)}')" class="text-amber-800 dark:text-amber-300 hover:underline flex items-center gap-1 cursor-pointer">
                     <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                     <span>Nghe từ</span>
                   </button>
@@ -567,7 +568,7 @@ function renderPinyinFinalsView(container) {
                   <span class="font-mono text-amber-900 dark:text-amber-300">${item.example.pinyin}</span>
                   <span class="text-stone-500">(${item.example.meaning})</span>
                 </div>
-                <button onclick="playPinyinAudio('${escapeHtml(item.example.audio || item.example.hanzi)}')" class="text-amber-800 dark:text-amber-300 hover:underline flex items-center gap-0.5 cursor-pointer">
+                <button onclick="playPinyinAudio('${escapeHtml(item.example.hanzi || item.example.audio)}')" class="text-amber-800 dark:text-amber-300 hover:underline flex items-center gap-0.5 cursor-pointer">
                   <i data-lucide="volume-2" class="w-3 h-3"></i>
                   <span>Nghe</span>
                 </button>
@@ -615,7 +616,7 @@ function renderPinyinTonesView(container) {
                     </div>
                   </div>
 
-                  <button onclick="playPinyinAudio('${escapeHtml(t.audio)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 flex items-center gap-1 text-xs font-bold cursor-pointer">
+                  <button onclick="playPinyinAudio('${escapeHtml(t.hanzi || t.audio)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 flex items-center gap-1 text-xs font-bold cursor-pointer">
                     <i data-lucide="volume-2" class="w-4 h-4"></i>
                     <span>Nghe</span>
                   </button>
@@ -720,7 +721,7 @@ function renderPinyinConfusionsView(container) {
               <div class="p-4 rounded-2xl bg-amber-50/60 dark:bg-stone-800/40 border border-amber-200 dark:border-stone-700 space-y-2">
                 <div class="flex items-center justify-between">
                   <span class="text-2xl font-black font-mono text-[#8B1E1E] dark:text-amber-400">${p.soundA}</span>
-                  <button onclick="playPinyinAudio('${p.soundA}')" class="px-3 py-1 rounded-xl bg-amber-100 dark:bg-stone-700 text-amber-900 dark:text-amber-200 text-xs font-bold hover:bg-amber-200 flex items-center gap-1 cursor-pointer">
+                  <button onclick="playPinyinAudio('${escapeHtml(p.audioCharA || p.soundA)}')" class="px-3 py-1 rounded-xl bg-amber-100 dark:bg-stone-700 text-amber-900 dark:text-amber-200 text-xs font-bold hover:bg-amber-200 flex items-center gap-1 cursor-pointer">
                     <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                     <span>Nghe âm ${p.soundA}</span>
                   </button>
@@ -732,7 +733,7 @@ function renderPinyinConfusionsView(container) {
               <div class="p-4 rounded-2xl bg-rose-50/60 dark:bg-stone-800/40 border border-rose-200 dark:border-stone-700 space-y-2">
                 <div class="flex items-center justify-between">
                   <span class="text-2xl font-black font-mono text-rose-700 dark:text-rose-400">${p.soundB}</span>
-                  <button onclick="playPinyinAudio('${p.soundB}')" class="px-3 py-1 rounded-xl bg-rose-100 dark:bg-stone-700 text-rose-900 dark:text-rose-200 text-xs font-bold hover:bg-rose-200 flex items-center gap-1 cursor-pointer">
+                  <button onclick="playPinyinAudio('${escapeHtml(p.audioCharB || p.soundB)}')" class="px-3 py-1 rounded-xl bg-rose-100 dark:bg-stone-700 text-rose-900 dark:text-rose-200 text-xs font-bold hover:bg-rose-200 flex items-center gap-1 cursor-pointer">
                     <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                     <span>Nghe âm ${p.soundB} (Bật hơi)</span>
                   </button>
@@ -767,7 +768,7 @@ function renderPinyinConfusionsView(container) {
                     <span>👅</span>
                     <span>Bài vè luyện dẻo miệng (Nhiêu khẩu lệnh):</span>
                   </span>
-                  <button onclick="playPinyinAudio('${escapeHtml(p.tongueTwister)}')" class="text-purple-800 dark:text-purple-300 hover:underline text-2xs font-bold flex items-center gap-1 cursor-pointer">
+                  <button onclick="playPinyinAudio('${escapeHtml(p.tongueTwister.split('(')[0].trim())}')" class="text-purple-800 dark:text-purple-300 hover:underline text-2xs font-bold flex items-center gap-1 cursor-pointer">
                     <i data-lucide="play" class="w-3 h-3"></i>
                     <span>Nghe cả bài</span>
                   </button>

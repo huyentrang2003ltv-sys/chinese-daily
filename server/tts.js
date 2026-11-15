@@ -40,9 +40,30 @@ const PINYIN_FINALS_MAP = {
   'er': '耳'
 };
 
+let PINYIN_TO_HANZI_MAP = null;
+try {
+  PINYIN_TO_HANZI_MAP = require('./pinyin_map.json');
+} catch (e) {}
+
 function resolvePinyinToChinesePhonetic(rawText) {
   if (!rawText || typeof rawText !== 'string') return rawText;
-  const trimmed = rawText.trim();
+  let trimmed = rawText.trim();
+
+  // 1. If text already contains Chinese characters, strip any parenthesized Latin notes/pinyin
+  // e.g. "八百标兵奔北坡，炮兵并排北坡跑。(Bābǎi biāobīng...)" -> "八百标兵奔北坡，炮兵并排北坡跑。"
+  // e.g. "八 (bā - Số 8)" -> "八"
+  if (/[\u4e00-\u9fa5]/.test(trimmed)) {
+    let cleaned = trimmed
+      .replace(/\([^)]*\)/g, '')
+      .replace(/（[^）]*）/g, '')
+      .replace(/\[[^\]]*\]/g, '')
+      .replace(/【[^】]*】/g, '')
+      .trim();
+    if (/[\u4e00-\u9fa5]/.test(cleaned)) {
+      return cleaned;
+    }
+  }
+
   const lower = trimmed.toLowerCase();
 
   // Full alphabet of 23 initials
@@ -62,6 +83,22 @@ function resolvePinyinToChinesePhonetic(rawText) {
 
   const normalizedKey = lower.replace(/\s+/g, ' ');
   if (PINYIN_FINALS_MAP[normalizedKey]) return PINYIN_FINALS_MAP[normalizedKey];
+
+  // Direct syllables / common words match
+  if (PINYIN_TO_HANZI_MAP) {
+    if (PINYIN_TO_HANZI_MAP[lower]) return PINYIN_TO_HANZI_MAP[lower];
+    if (PINYIN_TO_HANZI_MAP[normalizedKey]) return PINYIN_TO_HANZI_MAP[normalizedKey];
+
+    // Try splitting multi-syllable phrases (e.g. "bù yào" -> "不要", "nǐ hǎo" -> "你好")
+    const tokens = lower.split(/[\s\-]+/);
+    if (tokens.length > 1) {
+      const resolvedTokens = tokens.map(t => PINYIN_TO_HANZI_MAP[t] || PINYIN_INITIALS_MAP[t] || PINYIN_FINALS_MAP[t] || t);
+      const hasAnyHanzi = resolvedTokens.some(t => /[\u4e00-\u9fa5]/.test(t));
+      if (hasAnyHanzi) {
+        return resolvedTokens.join('');
+      }
+    }
+  }
 
   return trimmed;
 }

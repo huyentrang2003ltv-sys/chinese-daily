@@ -28,7 +28,7 @@
         "hanzi": "爸爸",
         "pinyin": "bàba",
         "meaning": "Bố / Ba",
-        "audio": "bàba"
+        "audio": "爸爸"
       },
       "practiceSyllables": [
         "bā",
@@ -61,7 +61,7 @@
         "hanzi": "朋友",
         "pinyin": "péngyou",
         "meaning": "Bạn bè",
-        "audio": "péngyou"
+        "audio": "朋友"
       },
       "practiceSyllables": [
         "pā",
@@ -94,7 +94,7 @@
         "hanzi": "妈妈",
         "pinyin": "māma",
         "meaning": "Mẹ",
-        "audio": "māma"
+        "audio": "妈妈"
       },
       "practiceSyllables": [
         "mā",
@@ -127,7 +127,7 @@
         "hanzi": "飞机",
         "pinyin": "fēijī",
         "meaning": "Máy bay",
-        "audio": "fēijī"
+        "audio": "飞机"
       },
       "practiceSyllables": [
         "fā",
@@ -160,7 +160,7 @@
         "hanzi": "弟弟",
         "pinyin": "dìdi",
         "meaning": "Em trai",
-        "audio": "dìdi"
+        "audio": "弟弟"
       },
       "practiceSyllables": [
         "dā",
@@ -193,7 +193,7 @@
         "hanzi": "天气",
         "pinyin": "tiānqì",
         "meaning": "Thời tiết",
-        "audio": "tiānqì"
+        "audio": "天气"
       },
       "practiceSyllables": [
         "tā",
@@ -226,7 +226,7 @@
         "hanzi": "你好",
         "pinyin": "nǐhǎo",
         "meaning": "Xin chào",
-        "audio": "nǐhǎo"
+        "audio": "你好"
       },
       "practiceSyllables": [
         "nā",
@@ -259,7 +259,7 @@
         "hanzi": "老师",
         "pinyin": "lǎoshī",
         "meaning": "Thầy cô giáo",
-        "audio": "lǎoshī"
+        "audio": "老师"
       },
       "practiceSyllables": [
         "lā",
@@ -292,7 +292,7 @@
         "hanzi": "高兴",
         "pinyin": "gāoxìng",
         "meaning": "Vui mừng",
-        "audio": "gāoxìng"
+        "audio": "高兴"
       },
       "practiceSyllables": [
         "gā",
@@ -325,7 +325,7 @@
         "hanzi": "开会",
         "pinyin": "kāihuì",
         "meaning": "Họp hành",
-        "audio": "kāihuì"
+        "audio": "开会"
       },
       "practiceSyllables": [
         "kā",
@@ -358,7 +358,7 @@
         "hanzi": "很好",
         "pinyin": "hěnhǎo",
         "meaning": "Rất tốt",
-        "audio": "hěnhǎo"
+        "audio": "很好"
       },
       "practiceSyllables": [
         "hā",
@@ -391,7 +391,7 @@
         "hanzi": "今天",
         "pinyin": "jīntiān",
         "meaning": "Hôm nay",
-        "audio": "jīntiān"
+        "audio": "今天"
       },
       "practiceSyllables": [
         "jī",
@@ -423,8 +423,8 @@
       "example": {
         "hanzi": "去学校",
         "pinyin": "qù xuéxiào",
-        "meaning": "Đi đến trường",
-        "audio": "qù"
+        "meaning": "Đi học / Đi đến trường",
+        "audio": "去学校"
       },
       "practiceSyllables": [
         "qī",
@@ -457,7 +457,7 @@
         "hanzi": "谢谢",
         "pinyin": "xièxie",
         "meaning": "Cảm ơn",
-        "audio": "xièxie"
+        "audio": "谢谢"
       },
       "practiceSyllables": [
         "xī",
@@ -490,7 +490,7 @@
         "hanzi": "中国",
         "pinyin": "zhōngguó",
         "meaning": "Trung Quốc",
-        "audio": "zhōngguó"
+        "audio": "中国"
       },
       "practiceSyllables": [
         "zhī",
@@ -522,7 +522,7 @@
         "hanzi": "吃饭",
         "pinyin": "chīfàn",
         "meaning": "Ăn cơm",
-        "audio": "chīfàn"
+        "audio": "吃饭"
       },
       "practiceSyllables": [
         "chī",
@@ -551,10 +551,10 @@
       "secretTip": "Uốn cong đầu lưỡi lên vòm họng và thổi nhẹ luồng gió ra.",
       "commonMistakes": "Duỗi thẳng lưỡi khiến âm biến thành âm 's' nhẹ (như sān thành shān).",
       "example": {
-        "hanzi": "什么是",
+        "hanzi": "什么",
         "pinyin": "shénme",
         "meaning": "Cái gì",
-        "audio": "shénme"
+        "audio": "什么"
       },
       "practiceSyllables": [
         "shī",
@@ -586,7 +586,7 @@
         "hanzi": "认识",
         "pinyin": "rènshi",
         "meaning": "Quen biết",
-        "audio": "rènshi"
+        "audio": "认识"
       },
       "practiceSyllables": [
         "rī",
@@ -618,7 +618,7 @@
         "hanzi": "再见",
         "pinyin": "zàijiàn",
         "meaning": "Tạm biệt",
-        "audio": "zàijiàn"
+        "audio": "再见"
       },
       "practiceSyllables": [
         "zī",
@@ -647,10 +647,10 @@
       "secretTip": "Cắn nhẹ hai hàm răng, đầu lưỡi chạm răng trên và tống hơi thật mạnh xì qua kẽ răng. Giấy bay mạnh!",
       "commonMistakes": "Quên bật hơi (nghe thành z) hoặc uốn lưỡi (thành ch).",
       "example": {
-        "hanzi": "中国菜",
+        "hanzi": "菜",
         "pinyin": "cài",
         "meaning": "Món ăn / Rau",
-        "audio": "cài"
+        "audio": "菜"
       },
       "practiceSyllables": [
         "cī",
@@ -679,10 +679,10 @@
       "secretTip": "Lưỡi thẳng, hai hàm răng khép hờ, hơi xì êm ái.",
       "commonMistakes": "Uốn cong lưỡi thành âm 'sh'.",
       "example": {
-        "hanzi": "一二三四",
+        "hanzi": "四",
         "pinyin": "sì",
         "meaning": "Số 4",
-        "audio": "sì"
+        "audio": "四"
       },
       "practiceSyllables": [
         "sī",
@@ -714,7 +714,7 @@
         "hanzi": "月亮",
         "pinyin": "yuèliang",
         "meaning": "Mặt trăng",
-        "audio": "yuèliang"
+        "audio": "月亮"
       },
       "practiceSyllables": [
         "yī",
@@ -746,7 +746,7 @@
         "hanzi": "我们",
         "pinyin": "wǒmen",
         "meaning": "Chúng tôi",
-        "audio": "wǒmen"
+        "audio": "我们"
       },
       "practiceSyllables": [
         "wū",
@@ -777,7 +777,7 @@
         "hanzi": "大",
         "pinyin": "dà",
         "meaning": "To / Lớn",
-        "audio": "dà"
+        "audio": "大"
       },
       "audioChar": "阿",
       "audioPinyin": "ā"
@@ -794,7 +794,7 @@
         "hanzi": "我",
         "pinyin": "wǒ",
         "meaning": "Tôi / Bản thân",
-        "audio": "wǒ"
+        "audio": "我"
       },
       "audioChar": "喔",
       "audioPinyin": "ō"
@@ -811,7 +811,7 @@
         "hanzi": "哥哥",
         "pinyin": "gēge",
         "meaning": "Anh trai",
-        "audio": "gēge"
+        "audio": "哥哥"
       },
       "audioChar": "婀",
       "audioPinyin": "ē"
@@ -828,7 +828,7 @@
         "hanzi": "一",
         "pinyin": "yī",
         "meaning": "Số 1",
-        "audio": "yī"
+        "audio": "一"
       },
       "audioChar": "衣",
       "audioPinyin": "yī"
@@ -845,7 +845,7 @@
         "hanzi": "五",
         "pinyin": "wǔ",
         "meaning": "Số 5",
-        "audio": "wǔ"
+        "audio": "五"
       },
       "audioChar": "乌",
       "audioPinyin": "wū"
@@ -862,7 +862,7 @@
         "hanzi": "绿",
         "pinyin": "lǜ",
         "meaning": "Màu xanh lá",
-        "audio": "lǜ"
+        "audio": "绿"
       },
       "audioChar": "迂",
       "audioPinyin": "yū"
@@ -879,7 +879,7 @@
         "hanzi": "爱",
         "pinyin": "ài",
         "meaning": "Yêu",
-        "audio": "ài"
+        "audio": "爱"
       },
       "audioChar": "哀",
       "audioPinyin": "āi"
@@ -896,7 +896,7 @@
         "hanzi": "黑",
         "pinyin": "hēi",
         "meaning": "Màu đen",
-        "audio": "hēi"
+        "audio": "黑"
       },
       "audioChar": "诶",
       "audioPinyin": "ēi"
@@ -913,7 +913,7 @@
         "hanzi": "高",
         "pinyin": "gāo",
         "meaning": "Cao",
-        "audio": "gāo"
+        "audio": "高"
       },
       "audioChar": "凹",
       "audioPinyin": "āo"
@@ -930,7 +930,7 @@
         "hanzi": "手",
         "pinyin": "shǒu",
         "meaning": "Bàn tay",
-        "audio": "shǒu"
+        "audio": "手"
       },
       "audioChar": "欧",
       "audioPinyin": "ōu"
@@ -947,7 +947,7 @@
         "hanzi": "家",
         "pinyin": "jiā",
         "meaning": "Gia đình / Nhà",
-        "audio": "jiā"
+        "audio": "家"
       },
       "audioChar": "鸭",
       "audioPinyin": "yā"
@@ -964,7 +964,7 @@
         "hanzi": "写",
         "pinyin": "xiě",
         "meaning": "Viết",
-        "audio": "xiě"
+        "audio": "写"
       },
       "audioChar": "耶",
       "audioPinyin": "yē"
@@ -981,7 +981,7 @@
         "hanzi": "花",
         "pinyin": "huā",
         "meaning": "Hoa",
-        "audio": "huā"
+        "audio": "花"
       },
       "audioChar": "蛙",
       "audioPinyin": "wā"
@@ -998,7 +998,7 @@
         "hanzi": "多",
         "pinyin": "duō",
         "meaning": "Nhiều",
-        "audio": "duō"
+        "audio": "多"
       },
       "audioChar": "窝",
       "audioPinyin": "wō"
@@ -1015,7 +1015,7 @@
         "hanzi": "月",
         "pinyin": "yuè",
         "meaning": "Tháng / Mặt trăng",
-        "audio": "yuè"
+        "audio": "月"
       },
       "audioChar": "约",
       "audioPinyin": "yuē"
@@ -1032,7 +1032,7 @@
         "hanzi": "小",
         "pinyin": "xiǎo",
         "meaning": "Nhỏ / Bé",
-        "audio": "xiǎo"
+        "audio": "小"
       },
       "audioChar": "腰",
       "audioPinyin": "yāo"
@@ -1049,7 +1049,7 @@
         "hanzi": "六",
         "pinyin": "liù",
         "meaning": "Số 6",
-        "audio": "liù"
+        "audio": "六"
       },
       "audioChar": "优",
       "audioPinyin": "yōu"
@@ -1066,7 +1066,7 @@
         "hanzi": "快",
         "pinyin": "kuài",
         "meaning": "Nhanh / Sắp",
-        "audio": "kuài"
+        "audio": "快"
       },
       "audioChar": "歪",
       "audioPinyin": "wāi"
@@ -1083,7 +1083,7 @@
         "hanzi": "对",
         "pinyin": "duì",
         "meaning": "Đúng / Đối",
-        "audio": "duì"
+        "audio": "对"
       },
       "audioChar": "微",
       "audioPinyin": "wēi"
@@ -1100,7 +1100,7 @@
         "hanzi": "看",
         "pinyin": "kàn",
         "meaning": "Xem / Nhìn",
-        "audio": "kàn"
+        "audio": "看"
       },
       "audioChar": "安",
       "audioPinyin": "ān"
@@ -1117,7 +1117,7 @@
         "hanzi": "很",
         "pinyin": "hěn",
         "meaning": "Rất",
-        "audio": "hěn"
+        "audio": "很"
       },
       "audioChar": "恩",
       "audioPinyin": "ēn"
@@ -1134,7 +1134,7 @@
         "hanzi": "新",
         "pinyin": "xīn",
         "meaning": "Mới",
-        "audio": "xīn"
+        "audio": "新"
       },
       "audioChar": "音",
       "audioPinyin": "yīn"
@@ -1151,7 +1151,7 @@
         "hanzi": "云",
         "pinyin": "yún",
         "meaning": "Mây",
-        "audio": "yún"
+        "audio": "云"
       },
       "audioChar": "晕",
       "audioPinyin": "yūn"
@@ -1168,7 +1168,7 @@
         "hanzi": "天",
         "pinyin": "tiān",
         "meaning": "Trời / Ngày",
-        "audio": "tiān"
+        "audio": "天"
       },
       "audioChar": "烟",
       "audioPinyin": "yān"
@@ -1185,7 +1185,7 @@
         "hanzi": "关",
         "pinyin": "guān",
         "meaning": "Đóng",
-        "audio": "guān"
+        "audio": "关"
       },
       "audioChar": "弯",
       "audioPinyin": "wān"
@@ -1202,7 +1202,7 @@
         "hanzi": "远",
         "pinyin": "yuǎn",
         "meaning": "Xa",
-        "audio": "yuǎn"
+        "audio": "远"
       },
       "audioChar": "冤",
       "audioPinyin": "yuān"
@@ -1219,7 +1219,7 @@
         "hanzi": "问",
         "pinyin": "wèn",
         "meaning": "Hỏi",
-        "audio": "wèn"
+        "audio": "问"
       },
       "audioChar": "温",
       "audioPinyin": "wēn"
@@ -1236,7 +1236,7 @@
         "hanzi": "忙",
         "pinyin": "máng",
         "meaning": "Bận rộn",
-        "audio": "máng"
+        "audio": "忙"
       },
       "audioChar": "肮",
       "audioPinyin": "āng"
@@ -1253,7 +1253,7 @@
         "hanzi": "冷",
         "pinyin": "lěng",
         "meaning": "Lạnh",
-        "audio": "lěng"
+        "audio": "冷"
       },
       "audioChar": "鞥",
       "audioPinyin": "ēng"
@@ -1270,7 +1270,7 @@
         "hanzi": "明",
         "pinyin": "míng",
         "meaning": "Sáng / Rõ",
-        "audio": "míng"
+        "audio": "明"
       },
       "audioChar": "英",
       "audioPinyin": "yīng"
@@ -1287,7 +1287,7 @@
         "hanzi": "红",
         "pinyin": "hóng",
         "meaning": "Màu đỏ",
-        "audio": "hóng"
+        "audio": "红"
       },
       "audioChar": "翁",
       "audioPinyin": "wēng"
@@ -1304,7 +1304,7 @@
         "hanzi": "想",
         "pinyin": "xiǎng",
         "meaning": "Muốn / Nhớ",
-        "audio": "xiǎng"
+        "audio": "想"
       },
       "audioChar": "央",
       "audioPinyin": "yāng"
@@ -1321,7 +1321,7 @@
         "hanzi": "黄",
         "pinyin": "huáng",
         "meaning": "Màu vàng",
-        "audio": "huáng"
+        "audio": "黄"
       },
       "audioChar": "汪",
       "audioPinyin": "wāng"
@@ -1338,7 +1338,7 @@
         "hanzi": "穷",
         "pinyin": "qióng",
         "meaning": "Nghèo",
-        "audio": "qióng"
+        "audio": "穷"
       },
       "audioChar": "拥",
       "audioPinyin": "yōng"
@@ -1352,10 +1352,10 @@
       "vietnameseComparison": "Giống vần 'Uâng' trong tiếng Việt (như 'quâng').",
       "secretTip": "Thường đứng độc lập không đi sau phụ âm khác, viết là weng (như wēng).",
       "example": {
-        "hanzi": "嗡",
+        "hanzi": "翁",
         "pinyin": "wēng",
-        "meaning": "Tiếng ong kêu vo ve",
-        "audio": "wēng"
+        "meaning": "Ông lão",
+        "audio": "翁"
       },
       "audioChar": "翁",
       "audioPinyin": "wēng"
@@ -1372,7 +1372,7 @@
         "hanzi": "二",
         "pinyin": "èr",
         "meaning": "Số 2",
-        "audio": "èr"
+        "audio": "二"
       },
       "audioChar": "耳",
       "audioPinyin": "ěr"
@@ -1388,8 +1388,9 @@
       "description": "Bắt đầu ở nốt cao nhất (Sol cao) và ngân đều ngang không rơi giọng.",
       "vietnameseComparison": "Cao hơn thanh không (thanh ngang) của tiếng Việt khoảng 1 quãng tám, kéo dài và ngân đều như hát.",
       "formula": "mā (妈 - mẹ)",
-      "audio": "mā",
-      "secretTip": "Giữ cổ họng căng và cao độ ổn định suốt từ đầu tới cuối âm, không hạ giọng xuống như tiếng Việt."
+      "audio": "妈",
+      "secretTip": "Giữ cổ họng căng và cao độ ổn định suốt từ đầu tới cuối âm, không hạ giọng xuống như tiếng Việt.",
+      "hanzi": "妈"
     },
     {
       "number": 2,
@@ -1400,8 +1401,9 @@
       "description": "Bắt đầu từ cao độ trung bình (3) và vút nhanh dứt khoát lên cao độ đỉnh (5).",
       "vietnameseComparison": "Tương tự dấu Sắc trong tiếng Việt nhưng âm đi từ từ dưới lên trên mượt mà hơn.",
       "formula": "má (麻 - cây gai)",
-      "audio": "má",
-      "secretTip": "Tưởng tượng giọng bạn ngạc nhiên hỏi 'Hả? Cái gì cơ?' để bắt đúng cao độ vút lên."
+      "audio": "麻",
+      "secretTip": "Tưởng tượng giọng bạn ngạc nhiên hỏi 'Hả? Cái gì cơ?' để bắt đúng cao độ vút lên.",
+      "hanzi": "麻"
     },
     {
       "number": 3,
@@ -1412,8 +1414,9 @@
       "description": "Từ cao độ trung bình thấp (2) trượt xuống đáy trầm (1) rồi lượn nhẹ lên cao độ (4).",
       "vietnameseComparison": "Gần giống dấu Hỏi tiếng Việt nhưng phần đáy sâu và kéo dài hơn.",
       "formula": "mǎ (马 - con ngựa)",
-      "audio": "mǎ",
-      "secretTip": "Khi phát âm độc lập phải xuống thật trầm rồi mới hất nhẹ lên. Trong câu thực tế thường chỉ đọc 'nửa thanh 3' (hạ trầm 21)."
+      "audio": "马",
+      "secretTip": "Khi phát âm độc lập phải xuống thật trầm rồi mới hất nhẹ lên. Trong câu thực tế thường chỉ đọc 'nửa thanh 3' (hạ trầm 21).",
+      "hanzi": "马"
     },
     {
       "number": 4,
@@ -1424,8 +1427,9 @@
       "description": "Bắt đầu từ nốt cao nhất (5) phóng thẳng xuống đáy thấp nhất (1) cực kỳ dứt khoát.",
       "vietnameseComparison": "Không giống dấu huyền cũng không giống dấu nặng! Giống tiếng ra lệnh dứt khoát 'Không!', 'Dừng!'.",
       "formula": "mà (骂 - mắng chửi)",
-      "audio": "mà",
-      "secretTip": "Tưởng tượng như ném một hòn đá từ trên đỉnh núi rơi thẳng xuống chân núi: dứt khoát, không kéo dài."
+      "audio": "骂",
+      "secretTip": "Tưởng tượng như ném một hòn đá từ trên đỉnh núi rơi thẳng xuống chân núi: dứt khoát, không kéo dài.",
+      "hanzi": "骂"
     },
     {
       "number": 5,
@@ -1436,8 +1440,9 @@
       "description": "Phát âm cực ngắn, nhẹ nhàng, thả lỏng toàn bộ cơ miệng.",
       "vietnameseComparison": "Giống như âm đuôi lướt nhẹ không mang trọng âm trong tiếng Việt.",
       "formula": "māma (妈妈), bàba (爸爸)",
-      "audio": "māma",
-      "secretTip": "Không nhấn giọng vào âm này, đọc như một cái chạm nhẹ của ngọn gió thoảng."
+      "audio": "妈妈",
+      "secretTip": "Không nhấn giọng vào âm này, đọc như một cái chạm nhẹ của ngọn gió thoảng.",
+      "hanzi": "妈妈"
     }
   ],
   "toneSandhiRules": [
@@ -1584,7 +1589,9 @@
           "wordB": "皮 (pí - Da)"
         }
       ],
-      "tongueTwister": "八百标兵奔北坡，炮兵并排北坡跑。(Bābǎi biāobīng bēn běi pō, pàobīng bìngpái běi pō pǎo.)"
+      "tongueTwister": "八百标兵奔北坡，炮兵并排北坡跑。(Bābǎi biāobīng bēn běi pō, pàobīng bìngpái běi pō pǎo.)",
+      "audioCharA": "玻",
+      "audioCharB": "坡"
     },
     {
       "id": "pair_d_t",
@@ -1607,7 +1614,9 @@
           "wordB": "套 (tào - Bộ)"
         }
       ],
-      "tongueTwister": "吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮。(Chī pútáo bù tǔ pútáo pí...)"
+      "tongueTwister": "吃葡萄不吐葡萄皮，不吃葡萄倒吐葡萄皮。(Chī pútáo bù tǔ pútáo pí...)",
+      "audioCharA": "得",
+      "audioCharB": "特"
     },
     {
       "id": "pair_g_k",
@@ -1630,7 +1639,9 @@
           "wordB": "看 (kàn - Xem)"
         }
       ],
-      "tongueTwister": "哥挎瓜筐过宽沟，赶快过沟看怪狗。(Gē kuà guā kuāng guò kuān gōu...)"
+      "tongueTwister": "哥挎瓜筐过宽沟，赶快过沟看怪狗。(Gē kuà guā kuāng guò kuān gōu...)",
+      "audioCharA": "哥",
+      "audioCharB": "科"
     },
     {
       "id": "pair_j_q",
@@ -1653,7 +1664,9 @@
           "wordB": "切 (qiē - Cắt)"
         }
       ],
-      "tongueTwister": "七巷一个漆匠，西巷一个锡匠。(Qī xiàng yí gè qījiàng, xī xiàng yí gè xījiàng...)"
+      "tongueTwister": "七巷一个漆匠，西巷一个锡匠。(Qī xiàng yí gè qījiàng, xī xiàng yí gè xījiàng...)",
+      "audioCharA": "基",
+      "audioCharB": "期"
     },
     {
       "id": "pair_zh_ch",
@@ -1676,7 +1689,9 @@
           "wordB": "长 (cháng - Dài)"
         }
       ],
-      "tongueTwister": "知道就说知道，不知道就说不知道。(Zhīdào jiù shuō zhīdào...)"
+      "tongueTwister": "知道就说知道，不知道就说不知道。(Zhīdào jiù shuō zhīdào...)",
+      "audioCharA": "知",
+      "audioCharB": "吃"
     },
     {
       "id": "pair_z_c",
@@ -1699,7 +1714,9 @@
           "wordB": "粗 (cū - Thô)"
         }
       ],
-      "tongueTwister": "四是四，十是十，十四是十四，四十是四十。(Sì shì sì, shí shì shí...)"
+      "tongueTwister": "四是四，十是十，十四是十四，四十是四十。(Sì shì sì, shí shì shí...)",
+      "audioCharA": "资",
+      "audioCharB": "疵"
     },
     {
       "id": "pair_sh_s",
@@ -1722,7 +1739,9 @@
           "wordB": "撕 (sī - Xé)"
         }
       ],
-      "tongueTwister": "山上四十四棵柿子树，山下四十四只野鸭子。(Shānshàng sìshísì kē shìzishù...)"
+      "tongueTwister": "山上四十四棵柿子树，山下四十四只野鸭子。(Shānshàng sìshísì kē shìzishù...)",
+      "audioCharA": "诗",
+      "audioCharB": "思"
     }
   ],
   "interactiveMatrix": {
@@ -1798,7 +1817,13 @@
           "bǎ",
           "bà"
         ],
-        "tip": "Ba (bố), bā (số 8)"
+        "tip": "Ba (bố), bā (số 8)",
+        "hanziTones": [
+          "八",
+          "拔",
+          "把",
+          "爸"
+        ]
       },
       {
         "i": "p",
@@ -1810,7 +1835,13 @@
           "pǎ",
           "pà"
         ],
-        "tip": "Bật hơi: pà (sợ)"
+        "tip": "Bật hơi: pà (sợ)",
+        "hanziTones": [
+          "趴",
+          "爬",
+          "趴",
+          "怕"
+        ]
       },
       {
         "i": "m",
@@ -1822,7 +1853,13 @@
           "mǎ",
           "mà"
         ],
-        "tip": "mā (mẹ), ma (trợ từ hỏi)"
+        "tip": "mā (mẹ), ma (trợ từ hỏi)",
+        "hanziTones": [
+          "妈",
+          "麻",
+          "马",
+          "骂"
+        ]
       },
       {
         "i": "f",
@@ -1834,7 +1871,13 @@
           "fǎ",
           "fà"
         ],
-        "tip": "fā (phát), fǎ (pháp luật)"
+        "tip": "fā (phát), fǎ (pháp luật)",
+        "hanziTones": [
+          "发",
+          "罚",
+          "法",
+          "发"
+        ]
       },
       {
         "i": "d",
@@ -1846,7 +1889,13 @@
           "dǎ",
           "dà"
         ],
-        "tip": "dà (to lớn), dǎ (đánh)"
+        "tip": "dà (to lớn), dǎ (đánh)",
+        "hanziTones": [
+          "答",
+          "答",
+          "打",
+          "大"
+        ]
       },
       {
         "i": "t",
@@ -1858,7 +1907,13 @@
           "tǎ",
           "tà"
         ],
-        "tip": "tā (anh ấy / cô ấy)"
+        "tip": "tā (anh ấy / cô ấy)",
+        "hanziTones": [
+          "他",
+          "塔",
+          "塔",
+          "踏"
+        ]
       },
       {
         "i": "n",
@@ -1870,7 +1925,13 @@
           "nǎ",
           "nà"
         ],
-        "tip": "nà (kia), nǎ (nào)"
+        "tip": "nà (kia), nǎ (nào)",
+        "hanziTones": [
+          "哪",
+          "拿",
+          "哪",
+          "那"
+        ]
       },
       {
         "i": "l",
@@ -1882,7 +1943,13 @@
           "lǎ",
           "là"
         ],
-        "tip": "là (cay), lā (kéo)"
+        "tip": "là (cay), lā (kéo)",
+        "hanziTones": [
+          "拉",
+          "拉",
+          "喇",
+          "辣"
+        ]
       },
       {
         "i": "g",
@@ -1894,7 +1961,13 @@
           "gǎ",
           "gà"
         ],
-        "tip": "Đọc như Ca tiếng Việt"
+        "tip": "Đọc như Ca tiếng Việt",
+        "hanziTones": [
+          "嘎",
+          "尬",
+          "尕",
+          "尬"
+        ]
       },
       {
         "i": "k",
@@ -1906,7 +1979,13 @@
           "kǎ",
           "kà"
         ],
-        "tip": "Bật hơi: kāfēi (cà phê)"
+        "tip": "Bật hơi: kāfēi (cà phê)",
+        "hanziTones": [
+          "咖",
+          "卡",
+          "卡",
+          "咯"
+        ]
       },
       {
         "i": "h",
@@ -1918,7 +1997,13 @@
           "hǎ",
           "hà"
         ],
-        "tip": "hā (ha ha)"
+        "tip": "hā (ha ha)",
+        "hanziTones": [
+          "哈",
+          "蛤",
+          "哈",
+          "吓"
+        ]
       },
       {
         "i": "zh",
@@ -1930,7 +2015,13 @@
           "zhǎ",
           "zhà"
         ],
-        "tip": "Uốn lưỡi: zhā (cắm)"
+        "tip": "Uốn lưỡi: zhā (cắm)",
+        "hanziTones": [
+          "渣",
+          "闸",
+          "眨",
+          "诈"
+        ]
       },
       {
         "i": "ch",
@@ -1942,7 +2033,13 @@
           "chǎ",
           "chà"
         ],
-        "tip": "Uốn lưỡi bật hơi: chá (trà)"
+        "tip": "Uốn lưỡi bật hơi: chá (trà)",
+        "hanziTones": [
+          "叉",
+          "茶",
+          "衩",
+          "差"
+        ]
       },
       {
         "i": "sh",
@@ -1954,7 +2051,13 @@
           "shǎ",
           "shà"
         ],
-        "tip": "Uốn lưỡi: shā (cát)"
+        "tip": "Uốn lưỡi: shā (cát)",
+        "hanziTones": [
+          "沙",
+          "啥",
+          "傻",
+          "厦"
+        ]
       },
       {
         "i": "z",
@@ -1966,7 +2069,13 @@
           "zǎ",
           "zà"
         ],
-        "tip": "Lưỡi thẳng: zá (tạp)"
+        "tip": "Lưỡi thẳng: zá (tạp)",
+        "hanziTones": [
+          "扎",
+          "杂",
+          "砸",
+          "咋"
+        ]
       },
       {
         "i": "c",
@@ -1978,7 +2087,13 @@
           "cǎ",
           "cà"
         ],
-        "tip": "Bật hơi thẳng lưỡi: cā (lau)"
+        "tip": "Bật hơi thẳng lưỡi: cā (lau)",
+        "hanziTones": [
+          "擦",
+          "擦",
+          "擦",
+          "菜"
+        ]
       },
       {
         "i": "s",
@@ -1990,7 +2105,13 @@
           "sǎ",
           "sà"
         ],
-        "tip": "Lưỡi thẳng: sǎ (rắc)"
+        "tip": "Lưỡi thẳng: sǎ (rắc)",
+        "hanziTones": [
+          "撒",
+          "撒",
+          "洒",
+          "萨"
+        ]
       },
       {
         "i": "b",
@@ -2002,7 +2123,13 @@
           "bǒ",
           "bò"
         ],
-        "tip": "bō (sóng), bóbó (bác)"
+        "tip": "bō (sóng), bóbó (bác)",
+        "hanziTones": [
+          "播",
+          "博",
+          "跛",
+          "薄"
+        ]
       },
       {
         "i": "p",
@@ -2014,7 +2141,13 @@
           "pǒ",
           "pò"
         ],
-        "tip": "pópo (bà nội)"
+        "tip": "pópo (bà nội)",
+        "hanziTones": [
+          "坡",
+          "婆",
+          "叵",
+          "破"
+        ]
       },
       {
         "i": "m",
@@ -2026,7 +2159,13 @@
           "mǒ",
           "mò"
         ],
-        "tip": "mō (sờ mó)"
+        "tip": "mō (sờ mó)",
+        "hanziTones": [
+          "摸",
+          "磨",
+          "抹",
+          "末"
+        ]
       },
       {
         "i": "f",
@@ -2038,7 +2177,13 @@
           "fǒ",
           "fò"
         ],
-        "tip": "fó (Phật)"
+        "tip": "fó (Phật)",
+        "hanziTones": [
+          "佛",
+          "佛",
+          "佛",
+          "佛"
+        ]
       },
       {
         "i": "d",
@@ -2050,7 +2195,13 @@
           "duǒ",
           "duò"
         ],
-        "tip": "duō (nhiều)"
+        "tip": "duō (nhiều)",
+        "hanziTones": [
+          "多",
+          "夺",
+          "朵",
+          "惰"
+        ]
       },
       {
         "i": "t",
@@ -2062,7 +2213,13 @@
           "tuǒ",
           "tuò"
         ],
-        "tip": "tuō (cởi ra)"
+        "tip": "tuō (cởi ra)",
+        "hanziTones": [
+          "托",
+          "陀",
+          "妥",
+          "拓"
+        ]
       },
       {
         "i": "n",
@@ -2074,7 +2231,13 @@
           "nuǒ",
           "nuò"
         ],
-        "tip": "nuò (nhu nhược)"
+        "tip": "nuò (nhu nhược)",
+        "hanziTones": [
+          "挪",
+          "挪",
+          "懦",
+          "糯"
+        ]
       },
       {
         "i": "l",
@@ -2086,7 +2249,13 @@
           "luǒ",
           "luò"
         ],
-        "tip": "luóbo (củ cải)"
+        "tip": "luóbo (củ cải)",
+        "hanziTones": [
+          "罗",
+          "逻",
+          "裸",
+          "络"
+        ]
       },
       {
         "i": "g",
@@ -2098,7 +2267,13 @@
           "guǒ",
           "guò"
         ],
-        "tip": "guó (nước), guǒ (quả)"
+        "tip": "guó (nước), guǒ (quả)",
+        "hanziTones": [
+          "锅",
+          "国",
+          "果",
+          "过"
+        ]
       },
       {
         "i": "k",
@@ -2110,7 +2285,13 @@
           "kuǒ",
           "kuò"
         ],
-        "tip": "kuò (rộng rãi)"
+        "tip": "kuò (rộng rãi)",
+        "hanziTones": [
+          "括",
+          "阔",
+          "廓",
+          "阔"
+        ]
       },
       {
         "i": "h",
@@ -2122,7 +2303,13 @@
           "huǒ",
           "huò"
         ],
-        "tip": "huǒ (lửa)"
+        "tip": "huǒ (lửa)",
+        "hanziTones": [
+          "豁",
+          "活",
+          "火",
+          "祸"
+        ]
       },
       {
         "i": "zh",
@@ -2134,7 +2321,13 @@
           "zhuǒ",
           "zhuò"
         ],
-        "tip": "zhuōzi (cái bàn)"
+        "tip": "zhuōzi (cái bàn)",
+        "hanziTones": [
+          "桌",
+          "卓",
+          "拙",
+          "着"
+        ]
       },
       {
         "i": "ch",
@@ -2146,7 +2339,13 @@
           "chuǒ",
           "chuò"
         ],
-        "tip": "chuō (chọc)"
+        "tip": "chuō (chọc)",
+        "hanziTones": [
+          "戳",
+          "戳",
+          "戳",
+          "绰"
+        ]
       },
       {
         "i": "sh",
@@ -2158,7 +2357,13 @@
           "shuǒ",
           "shuò"
         ],
-        "tip": "shuō (nói)"
+        "tip": "shuō (nói)",
+        "hanziTones": [
+          "说",
+          "硕",
+          "说",
+          "硕"
+        ]
       },
       {
         "i": "r",
@@ -2170,7 +2375,13 @@
           "ruǒ",
           "ruò"
         ],
-        "tip": "ruò (yếu)"
+        "tip": "ruò (yếu)",
+        "hanziTones": [
+          "弱",
+          "若",
+          "弱",
+          "弱"
+        ]
       },
       {
         "i": "z",
@@ -2182,7 +2393,13 @@
           "zuǒ",
           "zuò"
         ],
-        "tip": "zuò (làm, ngồi)"
+        "tip": "zuò (làm, ngồi)",
+        "hanziTones": [
+          "作",
+          "昨",
+          "左",
+          "坐"
+        ]
       },
       {
         "i": "c",
@@ -2194,7 +2411,13 @@
           "cuǒ",
           "cuò"
         ],
-        "tip": "cuò (sai)"
+        "tip": "cuò (sai)",
+        "hanziTones": [
+          "搓",
+          "挫",
+          "错",
+          "错"
+        ]
       },
       {
         "i": "s",
@@ -2206,7 +2429,13 @@
           "suǒ",
           "suò"
         ],
-        "tip": "suǒ (khóa)"
+        "tip": "suǒ (khóa)",
+        "hanziTones": [
+          "缩",
+          "索",
+          "所",
+          "锁"
+        ]
       },
       {
         "i": "d",
@@ -2218,7 +2447,13 @@
           "dě",
           "de"
         ],
-        "tip": "de (trợ từ kết cấu 的)"
+        "tip": "de (trợ từ kết cấu 的)",
+        "hanziTones": [
+          "得",
+          "得",
+          "得",
+          "的"
+        ]
       },
       {
         "i": "t",
@@ -2230,7 +2465,13 @@
           "tě",
           "tè"
         ],
-        "tip": "tèbié (đặc biệt)"
+        "tip": "tèbié (đặc biệt)",
+        "hanziTones": [
+          "特",
+          "特",
+          "特",
+          "特"
+        ]
       },
       {
         "i": "n",
@@ -2242,7 +2483,13 @@
           "ně",
           "ne"
         ],
-        "tip": "ne (trợ từ ngữ khí 呢)"
+        "tip": "ne (trợ từ ngữ khí 呢)",
+        "hanziTones": [
+          "讷",
+          "哪",
+          "哪",
+          "呢"
+        ]
       },
       {
         "i": "l",
@@ -2254,7 +2501,13 @@
           "lě",
           "le"
         ],
-        "tip": "le (trợ từ 了)"
+        "tip": "le (trợ từ 了)",
+        "hanziTones": [
+          "勒",
+          "勒",
+          "肋",
+          "了"
+        ]
       },
       {
         "i": "g",
@@ -2266,7 +2519,13 @@
           "gě",
           "gè"
         ],
-        "tip": "gēge (anh trai), gè (lượng từ)"
+        "tip": "gēge (anh trai), gè (lượng từ)",
+        "hanziTones": [
+          "歌",
+          "格",
+          "葛",
+          "个"
+        ]
       },
       {
         "i": "k",
@@ -2278,7 +2537,13 @@
           "kě",
           "kè"
         ],
-        "tip": "kěyǐ (có thể), kè (bài học)"
+        "tip": "kěyǐ (có thể), kè (bài học)",
+        "hanziTones": [
+          "棵",
+          "咳",
+          "可",
+          "课"
+        ]
       },
       {
         "i": "h",
@@ -2290,7 +2555,13 @@
           "hě",
           "hè"
         ],
-        "tip": "hē (uống), hé (và)"
+        "tip": "hē (uống), hé (và)",
+        "hanziTones": [
+          "喝",
+          "和",
+          "喝",
+          "贺"
+        ]
       },
       {
         "i": "zh",
@@ -2302,7 +2573,13 @@
           "zhě",
           "zhe"
         ],
-        "tip": "zhe (trợ từ 着), zhè (đây)"
+        "tip": "zhe (trợ từ 着), zhè (đây)",
+        "hanziTones": [
+          "遮",
+          "哲",
+          "者",
+          "着"
+        ]
       },
       {
         "i": "ch",
@@ -2314,7 +2591,13 @@
           "chě",
           "chè"
         ],
-        "tip": "chē (xe cộ)"
+        "tip": "chē (xe cộ)",
+        "hanziTones": [
+          "车",
+          "车",
+          "扯",
+          "彻"
+        ]
       },
       {
         "i": "sh",
@@ -2326,7 +2609,13 @@
           "shě",
           "shè"
         ],
-        "tip": "shèhuì (xã hội)"
+        "tip": "shèhuì (xã hội)",
+        "hanziTones": [
+          "奢",
+          "蛇",
+          "舍",
+          "社"
+        ]
       },
       {
         "i": "r",
@@ -2338,7 +2627,13 @@
           "rě",
           "rè"
         ],
-        "tip": "rè (nóng)"
+        "tip": "rè (nóng)",
+        "hanziTones": [
+          "热",
+          "热",
+          "惹",
+          "热"
+        ]
       },
       {
         "i": "z",
@@ -2350,7 +2645,13 @@
           "zě",
           "zè"
         ],
-        "tip": "zěnme (thế nào)"
+        "tip": "zěnme (thế nào)",
+        "hanziTones": [
+          "择",
+          "择",
+          "怎",
+          "仄"
+        ]
       },
       {
         "i": "c",
@@ -2362,7 +2663,13 @@
           "cě",
           "cè"
         ],
-        "tip": "cèsuǒ (nhà vệ sinh)"
+        "tip": "cèsuǒ (nhà vệ sinh)",
+        "hanziTones": [
+          "侧",
+          "策",
+          "测",
+          "厕"
+        ]
       },
       {
         "i": "s",
@@ -2374,7 +2681,13 @@
           "sě",
           "sè"
         ],
-        "tip": "yánsè (màu sắc)"
+        "tip": "yánsè (màu sắc)",
+        "hanziTones": [
+          "色",
+          "塞",
+          "涩",
+          "色"
+        ]
       },
       {
         "i": "b",
@@ -2386,7 +2699,13 @@
           "bǐ",
           "bì"
         ],
-        "tip": "bǐ (so sánh / cái bút)"
+        "tip": "bǐ (so sánh / cái bút)",
+        "hanziTones": [
+          "逼",
+          "鼻",
+          "比",
+          "必"
+        ]
       },
       {
         "i": "p",
@@ -2398,7 +2717,13 @@
           "pǐ",
           "pì"
         ],
-        "tip": "pí (da, vỏ)"
+        "tip": "pí (da, vỏ)",
+        "hanziTones": [
+          "批",
+          "脾",
+          "匹",
+          "屁"
+        ]
       },
       {
         "i": "m",
@@ -2410,7 +2735,13 @@
           "mǐ",
           "mì"
         ],
-        "tip": "mǐfàn (cơm)"
+        "tip": "mǐfàn (cơm)",
+        "hanziTones": [
+          "咪",
+          "迷",
+          "米",
+          "密"
+        ]
       },
       {
         "i": "d",
@@ -2422,7 +2753,13 @@
           "dǐ",
           "dì"
         ],
-        "tip": "dìdi (em trai)"
+        "tip": "dìdi (em trai)",
+        "hanziTones": [
+          "低",
+          "敌",
+          "底",
+          "地"
+        ]
       },
       {
         "i": "t",
@@ -2434,7 +2771,13 @@
           "tǐ",
           "tì"
         ],
-        "tip": "tī (đá bóng)"
+        "tip": "tī (đá bóng)",
+        "hanziTones": [
+          "梯",
+          "提",
+          "体",
+          "替"
+        ]
       },
       {
         "i": "n",
@@ -2446,7 +2789,13 @@
           "nǐ",
           "nì"
         ],
-        "tip": "nǐ (bạn)"
+        "tip": "nǐ (bạn)",
+        "hanziTones": [
+          "妮",
+          "泥",
+          "你",
+          "腻"
+        ]
       },
       {
         "i": "l",
@@ -2458,7 +2807,13 @@
           "lǐ",
           "lì"
         ],
-        "tip": "lǐ (bên trong)"
+        "tip": "lǐ (bên trong)",
+        "hanziTones": [
+          "哩",
+          "离",
+          "里",
+          "利"
+        ]
       },
       {
         "i": "j",
@@ -2470,7 +2825,13 @@
           "jǐ",
           "jì"
         ],
-        "tip": "jī (con gà), jǐ (mấy)"
+        "tip": "jī (con gà), jǐ (mấy)",
+        "hanziTones": [
+          "鸡",
+          "急",
+          "几",
+          "寄"
+        ]
       },
       {
         "i": "q",
@@ -2482,7 +2843,13 @@
           "qǐ",
           "qì"
         ],
-        "tip": "qī (số 7), qǐlái (dậy)"
+        "tip": "qī (số 7), qǐlái (dậy)",
+        "hanziTones": [
+          "七",
+          "骑",
+          "起",
+          "汽"
+        ]
       },
       {
         "i": "x",
@@ -2494,7 +2861,13 @@
           "xǐ",
           "xì"
         ],
-        "tip": "xǐhuan (thích)"
+        "tip": "xǐhuan (thích)",
+        "hanziTones": [
+          "西",
+          "习",
+          "洗",
+          "细"
+        ]
       },
       {
         "i": "zh",
@@ -2506,7 +2879,13 @@
           "zhǐ",
           "zhì"
         ],
-        "tip": "⚠️ Đọc là 'TRƯ' uốn lưỡi: zhīdao (biết)"
+        "tip": "⚠️ Đọc là 'TRƯ' uốn lưỡi: zhīdao (biết)",
+        "hanziTones": [
+          "支",
+          "直",
+          "纸",
+          "置"
+        ]
       },
       {
         "i": "ch",
@@ -2518,7 +2897,13 @@
           "chǐ",
           "chì"
         ],
-        "tip": "⚠️ Đọc là 'TRƯ' uốn lưỡi bật hơi: chīfàn (ăn cơm)"
+        "tip": "⚠️ Đọc là 'TRƯ' uốn lưỡi bật hơi: chīfàn (ăn cơm)",
+        "hanziTones": [
+          "吃",
+          "迟",
+          "尺",
+          "翅"
+        ]
       },
       {
         "i": "sh",
@@ -2530,7 +2915,13 @@
           "shǐ",
           "shì"
         ],
-        "tip": "⚠️ Đọc là 'SƯ' uốn lưỡi: shì (là, vâng)"
+        "tip": "⚠️ Đọc là 'SƯ' uốn lưỡi: shì (là, vâng)",
+        "hanziTones": [
+          "师",
+          "十",
+          "始",
+          "事"
+        ]
       },
       {
         "i": "r",
@@ -2542,7 +2933,13 @@
           "rǐ",
           "rì"
         ],
-        "tip": "⚠️ Đọc là 'RƯ' uốn lưỡi: rì (ngày)"
+        "tip": "⚠️ Đọc là 'RƯ' uốn lưỡi: rì (ngày)",
+        "hanziTones": [
+          "日",
+          "日",
+          "日",
+          "日"
+        ]
       },
       {
         "i": "z",
@@ -2554,7 +2951,13 @@
           "zǐ",
           "zì"
         ],
-        "tip": "⚠️ Đọc là 'TƯ' lưỡi thẳng: zì (chữ Hán)"
+        "tip": "⚠️ Đọc là 'TƯ' lưỡi thẳng: zì (chữ Hán)",
+        "hanziTones": [
+          "资",
+          "字",
+          "仔",
+          "字"
+        ]
       },
       {
         "i": "c",
@@ -2566,7 +2969,13 @@
           "cǐ",
           "cì"
         ],
-        "tip": "⚠️ Đọc là 'TƯ' bật hơi: cì (lần)"
+        "tip": "⚠️ Đọc là 'TƯ' bật hơi: cì (lần)",
+        "hanziTones": [
+          "疵",
+          "词",
+          "此",
+          "次"
+        ]
       },
       {
         "i": "s",
@@ -2578,7 +2987,13 @@
           "sǐ",
           "sì"
         ],
-        "tip": "⚠️ Đọc là 'XƯ' lưỡi thẳng: sì (số 4)"
+        "tip": "⚠️ Đọc là 'XƯ' lưỡi thẳng: sì (số 4)",
+        "hanziTones": [
+          "司",
+          "死",
+          "死",
+          "四"
+        ]
       },
       {
         "i": "b",
@@ -2590,7 +3005,13 @@
           "bǔ",
           "bù"
         ],
-        "tip": "bù (không)"
+        "tip": "bù (không)",
+        "hanziTones": [
+          "哺",
+          "不",
+          "捕",
+          "部"
+        ]
       },
       {
         "i": "p",
@@ -2602,7 +3023,13 @@
           "pǔ",
           "pù"
         ],
-        "tip": "pǔtōnghuà (tiếng phổ thông)"
+        "tip": "pǔtōnghuà (tiếng phổ thông)",
+        "hanziTones": [
+          "扑",
+          "脯",
+          "普",
+          "瀑"
+        ]
       },
       {
         "i": "m",
@@ -2614,7 +3041,13 @@
           "mǔ",
           "mù"
         ],
-        "tip": "mù (mục / mắt)"
+        "tip": "mù (mục / mắt)",
+        "hanziTones": [
+          "木",
+          "模",
+          "母",
+          "目"
+        ]
       },
       {
         "i": "f",
@@ -2626,7 +3059,13 @@
           "fǔ",
           "fù"
         ],
-        "tip": "fúwùyuán (phục vụ)"
+        "tip": "fúwùyuán (phục vụ)",
+        "hanziTones": [
+          "肤",
+          "幅",
+          "辅",
+          "富"
+        ]
       },
       {
         "i": "d",
@@ -2638,7 +3077,13 @@
           "dǔ",
           "dù"
         ],
-        "tip": "dú (đọc sách)"
+        "tip": "dú (đọc sách)",
+        "hanziTones": [
+          "都",
+          "读",
+          "笃",
+          "度"
+        ]
       },
       {
         "i": "t",
@@ -2650,7 +3095,13 @@
           "tǔ",
           "tù"
         ],
-        "tip": "túshūguǎn (thư viện)"
+        "tip": "túshūguǎn (thư viện)",
+        "hanziTones": [
+          "突",
+          "图",
+          "土",
+          "兔"
+        ]
       },
       {
         "i": "n",
@@ -2662,7 +3113,13 @@
           "nǔ",
           "nù"
         ],
-        "tip": "nǔlì (nỗ lực)"
+        "tip": "nǔlì (nỗ lực)",
+        "hanziTones": [
+          "奴",
+          "奴",
+          "努",
+          "怒"
+        ]
       },
       {
         "i": "l",
@@ -2674,7 +3131,13 @@
           "lǔ",
           "lù"
         ],
-        "tip": "lù (đường sá)"
+        "tip": "lù (đường sá)",
+        "hanziTones": [
+          "撸",
+          "炉",
+          "鲁",
+          "路"
+        ]
       },
       {
         "i": "g",
@@ -2686,7 +3149,13 @@
           "gǔ",
           "gù"
         ],
-        "tip": "gùshi (câu chuyện)"
+        "tip": "gùshi (câu chuyện)",
+        "hanziTones": [
+          "估",
+          "骨",
+          "古",
+          "故"
+        ]
       },
       {
         "i": "k",
@@ -2698,7 +3167,13 @@
           "kǔ",
           "kù"
         ],
-        "tip": "kū (khóc)"
+        "tip": "kū (khóc)",
+        "hanziTones": [
+          "哭",
+          "哭",
+          "苦",
+          "裤"
+        ]
       },
       {
         "i": "h",
@@ -2710,7 +3185,13 @@
           "hǔ",
           "hù"
         ],
-        "tip": "hùzhào (hộ chiếu)"
+        "tip": "hùzhào (hộ chiếu)",
+        "hanziTones": [
+          "呼",
+          "糊",
+          "虎",
+          "护"
+        ]
       },
       {
         "i": "zh",
@@ -2722,7 +3203,13 @@
           "zhǔ",
           "zhù"
         ],
-        "tip": "zhù (ở, chúc)"
+        "tip": "zhù (ở, chúc)",
+        "hanziTones": [
+          "株",
+          "逐",
+          "主",
+          "住"
+        ]
       },
       {
         "i": "ch",
@@ -2734,7 +3221,13 @@
           "chǔ",
           "chù"
         ],
-        "tip": "chū (ra ngoài)"
+        "tip": "chū (ra ngoài)",
+        "hanziTones": [
+          "出",
+          "厨",
+          "杵",
+          "处"
+        ]
       },
       {
         "i": "sh",
@@ -2746,7 +3239,13 @@
           "shǔ",
           "shù"
         ],
-        "tip": "shū (sách)"
+        "tip": "shū (sách)",
+        "hanziTones": [
+          "书",
+          "熟",
+          "属",
+          "束"
+        ]
       },
       {
         "i": "r",
@@ -2758,7 +3257,13 @@
           "rǔ",
           "rù"
         ],
-        "tip": "rúguǒ (nếu như)"
+        "tip": "rúguǒ (nếu như)",
+        "hanziTones": [
+          "如",
+          "如",
+          "乳",
+          "入"
+        ]
       },
       {
         "i": "z",
@@ -2770,7 +3275,13 @@
           "zǔ",
           "zù"
         ],
-        "tip": "zū (thuê)"
+        "tip": "zū (thuê)",
+        "hanziTones": [
+          "租",
+          "足",
+          "组",
+          "租"
+        ]
       },
       {
         "i": "c",
@@ -2782,7 +3293,13 @@
           "cǔ",
           "cù"
         ],
-        "tip": "cù (giấm)"
+        "tip": "cù (giấm)",
+        "hanziTones": [
+          "粗",
+          "粗",
+          "醋",
+          "促"
+        ]
       },
       {
         "i": "s",
@@ -2794,7 +3311,13 @@
           "sǔ",
           "sù"
         ],
-        "tip": "sùshè (ký túc xá)"
+        "tip": "sùshè (ký túc xá)",
+        "hanziTones": [
+          "酥",
+          "俗",
+          "素",
+          "速"
+        ]
       },
       {
         "i": "n",
@@ -2806,7 +3329,13 @@
           "nǚ",
           "nǜ"
         ],
-        "tip": "nǚ (nữ, phụ nữ - có 2 chấm)"
+        "tip": "nǚ (nữ, phụ nữ - có 2 chấm)",
+        "hanziTones": [
+          "女",
+          "女",
+          "女",
+          "衄"
+        ]
       },
       {
         "i": "l",
@@ -2818,7 +3347,13 @@
           "lǚ",
           "lǜ"
         ],
-        "tip": "lǜ (xanh lá - có 2 chấm)"
+        "tip": "lǜ (xanh lá - có 2 chấm)",
+        "hanziTones": [
+          "绿",
+          "驴",
+          "旅",
+          "虑"
+        ]
       },
       {
         "i": "j",
@@ -2830,7 +3365,13 @@
           "jǔ",
           "jù"
         ],
-        "tip": "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': jù (vở kịch)"
+        "tip": "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': jù (vở kịch)",
+        "hanziTones": [
+          "居",
+          "局",
+          "举",
+          "句"
+        ]
       },
       {
         "i": "q",
@@ -2842,7 +3383,13 @@
           "qǔ",
           "qù"
         ],
-        "tip": "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': qù (đi)"
+        "tip": "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': qù (đi)",
+        "hanziTones": [
+          "区",
+          "渠",
+          "取",
+          "去"
+        ]
       },
       {
         "i": "x",
@@ -2854,7 +3401,13 @@
           "xǔ",
           "xù"
         ],
-        "tip": "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': xūyào (cần)"
+        "tip": "⚠️ Bỏ 2 chấm nhưng đọc là 'ü': xūyào (cần)",
+        "hanziTones": [
+          "须",
+          "徐",
+          "许",
+          "续"
+        ]
       },
       {
         "i": "y",
@@ -2866,7 +3419,13 @@
           "yǔ",
           "yù"
         ],
-        "tip": "⚠️ Đọc là 'ü': yǔ (mưa), yú (con cá)"
+        "tip": "⚠️ Đọc là 'ü': yǔ (mưa), yú (con cá)",
+        "hanziTones": [
+          "迂",
+          "鱼",
+          "雨",
+          "育"
+        ]
       },
       {
         "i": "b",
@@ -2878,7 +3437,13 @@
           "bǎi",
           "bài"
         ],
-        "tip": "bái (trắng), bǎi (trăm)"
+        "tip": "bái (trắng), bǎi (trăm)",
+        "hanziTones": [
+          "掰",
+          "白",
+          "百",
+          "败"
+        ]
       },
       {
         "i": "p",
@@ -2890,7 +3455,13 @@
           "pǎi",
           "pài"
         ],
-        "tip": "pái (hàng)"
+        "tip": "pái (hàng)",
+        "hanziTones": [
+          "拍",
+          "排",
+          "派",
+          "派"
+        ]
       },
       {
         "i": "m",
@@ -2902,7 +3473,13 @@
           "mǎi",
           "mài"
         ],
-        "tip": "mǎi (mua), mài (bán)"
+        "tip": "mǎi (mua), mài (bán)",
+        "hanziTones": [
+          "买",
+          "埋",
+          "买",
+          "卖"
+        ]
       },
       {
         "i": "d",
@@ -2914,7 +3491,13 @@
           "dǎi",
           "dài"
         ],
-        "tip": "dài (mang theo)"
+        "tip": "dài (mang theo)",
+        "hanziTones": [
+          "呆",
+          "歹",
+          "歹",
+          "带"
+        ]
       },
       {
         "i": "t",
@@ -2926,7 +3509,13 @@
           "tǎi",
           "tài"
         ],
-        "tip": "tài (quá, lắm)"
+        "tip": "tài (quá, lắm)",
+        "hanziTones": [
+          "胎",
+          "台",
+          "态",
+          "太"
+        ]
       },
       {
         "i": "n",
@@ -2938,7 +3527,13 @@
           "nǎi",
           "nài"
         ],
-        "tip": "nǎinai (bà nội)"
+        "tip": "nǎinai (bà nội)",
+        "hanziTones": [
+          "乃",
+          "奶",
+          "奶",
+          "耐"
+        ]
       },
       {
         "i": "l",
@@ -2950,7 +3545,13 @@
           "lǎi",
           "lài"
         ],
-        "tip": "lái (đến)"
+        "tip": "lái (đến)",
+        "hanziTones": [
+          "来",
+          "来",
+          "赖",
+          "赖"
+        ]
       },
       {
         "i": "g",
@@ -2962,7 +3563,13 @@
           "gǎi",
           "gài"
         ],
-        "tip": "yīnggāi (nên)"
+        "tip": "yīnggāi (nên)",
+        "hanziTones": [
+          "该",
+          "改",
+          "改",
+          "概"
+        ]
       },
       {
         "i": "k",
@@ -2974,7 +3581,13 @@
           "kǎi",
           "kài"
         ],
-        "tip": "kāi (mở)"
+        "tip": "kāi (mở)",
+        "hanziTones": [
+          "开",
+          "凯",
+          "慨",
+          "慨"
+        ]
       },
       {
         "i": "h",
@@ -2986,7 +3599,13 @@
           "hǎi",
           "hài"
         ],
-        "tip": "hái (vẫn còn), hǎi (biển)"
+        "tip": "hái (vẫn còn), hǎi (biển)",
+        "hanziTones": [
+          "嗨",
+          "还",
+          "海",
+          "害"
+        ]
       },
       {
         "i": "b",
@@ -2998,7 +3617,13 @@
           "bǎn",
           "bàn"
         ],
-        "tip": "bān (lớp học), bàn (làm)"
+        "tip": "bān (lớp học), bàn (làm)",
+        "hanziTones": [
+          "班",
+          "板",
+          "板",
+          "办"
+        ]
       },
       {
         "i": "p",
@@ -3010,7 +3635,13 @@
           "pǎn",
           "pàn"
         ],
-        "tip": "pánzi (cái đĩa)"
+        "tip": "pánzi (cái đĩa)",
+        "hanziTones": [
+          "攀",
+          "盘",
+          "判",
+          "判"
+        ]
       },
       {
         "i": "m",
@@ -3022,7 +3653,13 @@
           "mǎn",
           "màn"
         ],
-        "tip": "màn (chậm chạp)"
+        "tip": "màn (chậm chạp)",
+        "hanziTones": [
+          "满",
+          "馒",
+          "满",
+          "慢"
+        ]
       },
       {
         "i": "d",
@@ -3034,7 +3671,13 @@
           "dǎn",
           "dàn"
         ],
-        "tip": "dànsì (nhưng)"
+        "tip": "dànsì (nhưng)",
+        "hanziTones": [
+          "单",
+          "胆",
+          "胆",
+          "但"
+        ]
       },
       {
         "i": "t",
@@ -3046,7 +3689,13 @@
           "tǎn",
           "tàn"
         ],
-        "tip": "tán (nói chuyện)"
+        "tip": "tán (nói chuyện)",
+        "hanziTones": [
+          "贪",
+          "弹",
+          "毯",
+          "探"
+        ]
       },
       {
         "i": "n",
@@ -3058,7 +3707,13 @@
           "nǎn",
           "nàn"
         ],
-        "tip": "nán (khó / nam)"
+        "tip": "nán (khó / nam)",
+        "hanziTones": [
+          "囡",
+          "男",
+          "南",
+          "难"
+        ]
       },
       {
         "i": "zh",
@@ -3070,7 +3725,13 @@
           "zhǎng",
           "zhàng"
         ],
-        "tip": "zhāng (họ Trương, tờ)"
+        "tip": "zhāng (họ Trương, tờ)",
+        "hanziTones": [
+          "张",
+          "长",
+          "涨",
+          "障"
+        ]
       },
       {
         "i": "ch",
@@ -3082,7 +3743,13 @@
           "chǎng",
           "chàng"
         ],
-        "tip": "chàng (hát)"
+        "tip": "chàng (hát)",
+        "hanziTones": [
+          "昌",
+          "常",
+          "场",
+          "唱"
+        ]
       },
       {
         "i": "sh",
@@ -3094,7 +3761,13 @@
           "shǎng",
           "shàng"
         ],
-        "tip": "shàng (trên, lên)"
+        "tip": "shàng (trên, lên)",
+        "hanziTones": [
+          "商",
+          "赏",
+          "赏",
+          "上"
+        ]
       },
       {
         "i": "j",
@@ -3106,7 +3779,13 @@
           "jiǎn",
           "jiàn"
         ],
-        "tip": "⚠️ ian đọc là 'IÊN': jiàn (gặp)"
+        "tip": "⚠️ ian đọc là 'IÊN': jiàn (gặp)",
+        "hanziTones": [
+          "间",
+          "简",
+          "检",
+          "见"
+        ]
       },
       {
         "i": "q",
@@ -3118,7 +3797,13 @@
           "qiǎn",
           "qiàn"
         ],
-        "tip": "⚠️ ian đọc là 'IÊN' bật hơi: qián (tiền)"
+        "tip": "⚠️ ian đọc là 'IÊN' bật hơi: qián (tiền)",
+        "hanziTones": [
+          "千",
+          "钱",
+          "浅",
+          "欠"
+        ]
       },
       {
         "i": "x",
@@ -3130,7 +3815,13 @@
           "xiǎn",
           "xiàn"
         ],
-        "tip": "⚠️ ian đọc là 'IÊN': xiànzài (bây giờ)"
+        "tip": "⚠️ ian đọc là 'IÊN': xiànzài (bây giờ)",
+        "hanziTones": [
+          "先",
+          "咸",
+          "显",
+          "现"
+        ]
       },
       {
         "i": "t",
@@ -3142,7 +3833,13 @@
           "tiǎn",
           "tiàn"
         ],
-        "tip": "⚠️ ian đọc là 'IÊN': tiān (trời, ngày)"
+        "tip": "⚠️ ian đọc là 'IÊN': tiān (trời, ngày)",
+        "hanziTones": [
+          "天",
+          "甜",
+          "舔",
+          "填"
+        ]
       },
       {
         "i": "d",
@@ -3154,7 +3851,13 @@
           "diǎn",
           "diàn"
         ],
-        "tip": "⚠️ ian đọc là 'IÊN': diànhuà (điện thoại)"
+        "tip": "⚠️ ian đọc là 'IÊN': diànhuà (điện thoại)",
+        "hanziTones": [
+          "颠",
+          "典",
+          "点",
+          "电"
+        ]
       },
       {
         "i": "zh",
@@ -3166,7 +3869,13 @@
           "zhǒng",
           "zhòng"
         ],
-        "tip": "zhōngguó (Trung Quốc)"
+        "tip": "zhōngguó (Trung Quốc)",
+        "hanziTones": [
+          "中",
+          "种",
+          "种",
+          "重"
+        ]
       },
       {
         "i": "t",
@@ -3178,7 +3887,13 @@
           "tǒng",
           "tòng"
         ],
-        "tip": "tóngxué (bạn cùng lớp)"
+        "tip": "tóngxué (bạn cùng lớp)",
+        "hanziTones": [
+          "通",
+          "同",
+          "统",
+          "痛"
+        ]
       },
       {
         "i": "d",
@@ -3190,7 +3905,13 @@
           "dǒng",
           "dòng"
         ],
-        "tip": "dōngxi (đồ vật)"
+        "tip": "dōngxi (đồ vật)",
+        "hanziTones": [
+          "东",
+          "懂",
+          "懂",
+          "动"
+        ]
       }
     ]
   },
@@ -3198,7 +3919,7 @@
     {
       "id": "q1",
       "question": "Nghe âm thanh và xác định thanh mẫu nào phát âm BẬT HƠI?",
-      "audioTarget": "pà",
+      "audioTarget": "怕",
       "options": [
         {
           "label": "A. b (bà)",
@@ -3222,7 +3943,7 @@
     {
       "id": "q2",
       "question": "Âm tiết 'tiān' (trời/ngày) có vận mẫu 'ian' được phát âm gần giống âm nào trong tiếng Việt?",
-      "audioTarget": "tiān",
+      "audioTarget": "天",
       "options": [
         {
           "label": "A. Ti-an",
@@ -3246,7 +3967,7 @@
     {
       "id": "q3",
       "question": "Khi phát âm từ '你好' (Nǐ hǎo), âm 'Nǐ' sẽ được biến điệu thành thanh mấy?",
-      "audioTarget": "nǐhǎo",
+      "audioTarget": "你好",
       "options": [
         {
           "label": "A. Giữ nguyên thanh 3 (Nǐ)",
@@ -3270,7 +3991,7 @@
     {
       "id": "q4",
       "question": "Trong từ '中国' (zhōngguó), thanh mẫu 'zh' thuộc nhóm âm nào?",
-      "audioTarget": "zhōngguó",
+      "audioTarget": "中国",
       "options": [
         {
           "label": "A. Âm đầu lưỡi thẳng không uốn",
@@ -3294,7 +4015,7 @@
     {
       "id": "q5",
       "question": "Nghe âm thanh và xác định thanh điệu của từ sau:",
-      "audioTarget": "mà",
+      "audioTarget": "骂",
       "options": [
         {
           "label": "A. Thanh 1 (mā - ngang cao)",
@@ -3318,7 +4039,7 @@
     {
       "id": "q6",
       "question": "Khi kết hợp với 'j, q, x, y', chữ 'ü' (u 2 chấm) có quy tắc viết và đọc như thế nào?",
-      "audioTarget": "qù",
+      "audioTarget": "去",
       "options": [
         {
           "label": "A. Bỏ 2 chấm và đọc thành 'U' tiếng Việt",
@@ -3342,7 +4063,7 @@
     {
       "id": "q7",
       "question": "Chữ '不' (bù) trong cụm từ '不是' (không phải) được phát âm thành:",
-      "audioTarget": "búshì",
+      "audioTarget": "不是",
       "options": [
         {
           "label": "A. Bù shì (thanh 4)",
@@ -3366,7 +4087,7 @@
     {
       "id": "q8",
       "question": "Vận mẫu 'e' trong từ '哥哥' (gēge - anh trai) được phát âm gần giống âm nào trong tiếng Việt?",
-      "audioTarget": "gēge",
+      "audioTarget": "哥哥",
       "options": [
         {
           "label": "A. E (e thẹn)",

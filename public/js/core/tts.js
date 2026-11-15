@@ -23,9 +23,40 @@ const PINYIN_FINALS_MAP = {
   'er': '耳'
 };
 
+let clientPinyinMap = null;
+async function loadClientPinyinMap() {
+  if (clientPinyinMap) return clientPinyinMap;
+  try {
+    const res = await fetch('/data/pinyin_map.json');
+    if (res.ok) {
+      clientPinyinMap = await res.json();
+    }
+  } catch (e) {}
+  return clientPinyinMap;
+}
+if (typeof window !== 'undefined') {
+  loadClientPinyinMap();
+}
+
 function resolvePinyinToChinesePhonetic(rawText) {
   if (!rawText || typeof rawText !== 'string') return rawText;
-  const trimmed = rawText.trim();
+  let trimmed = rawText.trim();
+
+  // 1. If text already contains Chinese characters, strip any parenthesized Latin notes/pinyin
+  // e.g. "八百标兵奔北坡，炮兵并排北坡跑。(Bābǎi biāobīng...)" -> "八百标兵奔北坡，炮兵并排北坡跑。"
+  // e.g. "八 (bā - Số 8)" -> "八"
+  if (/[\u4e00-\u9fa5]/.test(trimmed)) {
+    let cleaned = trimmed
+      .replace(/\([^)]*\)/g, '')
+      .replace(/（[^）]*）/g, '')
+      .replace(/\[[^\]]*\]/g, '')
+      .replace(/【[^】]*】/g, '')
+      .trim();
+    if (/[\u4e00-\u9fa5]/.test(cleaned)) {
+      return cleaned;
+    }
+  }
+
   const lower = trimmed.toLowerCase();
 
   // Full alphabet of 23 initials
@@ -45,6 +76,21 @@ function resolvePinyinToChinesePhonetic(rawText) {
 
   const normalizedKey = lower.replace(/\s+/g, ' ');
   if (PINYIN_FINALS_MAP[normalizedKey]) return PINYIN_FINALS_MAP[normalizedKey];
+
+  // Direct syllables / common words match (if loaded)
+  if (clientPinyinMap) {
+    if (clientPinyinMap[lower]) return clientPinyinMap[lower];
+    if (clientPinyinMap[normalizedKey]) return clientPinyinMap[normalizedKey];
+
+    const tokens = lower.split(/[\s\-]+/);
+    if (tokens.length > 1) {
+      const resolvedTokens = tokens.map(t => clientPinyinMap[t] || PINYIN_INITIALS_MAP[t] || PINYIN_FINALS_MAP[t] || t);
+      const hasAnyHanzi = resolvedTokens.some(t => /[\u4e00-\u9fa5]/.test(t));
+      if (hasAnyHanzi) {
+        return resolvedTokens.join('');
+      }
+    }
+  }
 
   return trimmed;
 }
