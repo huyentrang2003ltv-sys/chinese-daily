@@ -134,6 +134,7 @@ const PLATFORM_POLICIES = {
     content: `
       <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 mb-2">Bảo vệ Thông tin Cá nhân Người học</h4>
       <p class="mb-3 leading-relaxed">• Chúng tôi áp dụng thuật toán mã hóa mật khẩu Scrypt tiên tiến nhất, đảm bảo ngay cả quản trị viên cũng không thể đọc được mật khẩu gốc.<br>• Dữ liệu học tập cá nhân (tiến độ bài học, điểm số, thẻ ghi nhớ SRS) được lưu trữ an toàn trên thiết bị của bạn (localStorage) và đồng bộ qua cookie phiên bảo mật HttpOnly.<br>• Cam kết không bao giờ bán, cho thuê hoặc tiết lộ dữ liệu cá nhân của học viên cho bất kỳ bên thứ ba nào vì mục đích quảng cáo.</p>
+      <p class="mt-2"><a href="/privacy.html" class="text-rose-700 dark:text-amber-400 font-bold underline">Đọc đầy đủ Chính sách quyền riêng tư →</a></p>
     `
   },
   rights: {
