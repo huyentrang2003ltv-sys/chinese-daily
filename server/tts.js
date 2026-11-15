@@ -16,6 +16,57 @@ const TTS_CACHE_MAX_BYTES = 64 * 1024 * 1024;
 const TTS_TIMEOUT_MS = 15000;
 const VOICES = { female: 'zh-CN-XiaoxiaoNeural', male: 'zh-CN-YunyangNeural' };
 
+const PINYIN_INITIALS_MAP = {
+  'b': '玻', 'p': '坡', 'm': '摸', 'f': '佛',
+  'd': '得', 't': '特', 'n': '讷', 'l': '勒',
+  'g': '哥', 'k': '科', 'h': '喝',
+  'j': '基', 'q': '期', 'x': '希',
+  'zh': '知', 'ch': '吃', 'sh': '诗', 'r': '日',
+  'z': '资', 'c': '雌', 's': '思',
+  'y': '衣', 'w': '乌'
+};
+
+const PINYIN_FINALS_MAP = {
+  'a': '阿', 'o': '喔', 'e': '婀', 'i': '衣', 'u': '乌', 'ü': '迂', 'v': '迂',
+  'ai': '哀', 'ei': '诶', 'ao': '熬', 'ou': '欧',
+  'ia': '鸭', 'ie': '耶', 'ua': '蛙', 'uo': '窝', 'üe': '约', 've': '约',
+  'iao': '腰', 'iu': '优', 'iou': '优', 'iu (iou)': '优', 'iu(iou)': '优',
+  'uai': '歪', 'ui': '微', 'uei': '微', 'ui (uei)': '微', 'ui(uei)': '微',
+  'an': '安', 'en': '恩', 'in': '音', 'ün': '晕', 'vn': '晕',
+  'ian': '烟', 'uan': '弯', 'üan': '冤', 'van': '冤',
+  'un': '温', 'uen': '温', 'un (uen)': '温', 'un(uen)': '温',
+  'ang': '昂', 'eng': '鞥', 'ing': '英', 'ong': '轰',
+  'iang': '央', 'uang': '汪', 'iong': '拥', 'ueng': '翁',
+  'er': '耳'
+};
+
+function resolvePinyinToChinesePhonetic(rawText) {
+  if (!rawText || typeof rawText !== 'string') return rawText;
+  const trimmed = rawText.trim();
+  const lower = trimmed.toLowerCase();
+
+  // Full alphabet of 23 initials
+  const compactLower = lower.replace(/[\s,，、.]/g, '');
+  if (compactLower === 'bpmfdtnlgkhjqxzhchshrzcsyw') {
+    return '玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌';
+  }
+  if (compactLower === 'aoeiuü' || compactLower === 'aoeiuv') {
+    return '阿、喔、婀、衣、乌、迂';
+  }
+
+  // Direct initials match
+  if (PINYIN_INITIALS_MAP[lower]) return PINYIN_INITIALS_MAP[lower];
+
+  // Direct finals match
+  if (PINYIN_FINALS_MAP[lower]) return PINYIN_FINALS_MAP[lower];
+
+  const normalizedKey = lower.replace(/\s+/g, ' ');
+  if (PINYIN_FINALS_MAP[normalizedKey]) return PINYIN_FINALS_MAP[normalizedKey];
+
+  return trimmed;
+}
+
+
 /** Simple LRU keyed by voice/rate/text, bounded by total bytes. */
 const ttsCache = new Map();
 let ttsCacheBytes = 0;
@@ -72,7 +123,8 @@ async function handleTts(req, res, url) {
     return;
   }
 
-  const text = (url.searchParams.get('text') || '').trim();
+  const rawText = (url.searchParams.get('text') || '').trim();
+  const text = resolvePinyinToChinesePhonetic(rawText);
   const gender = url.searchParams.get('gender') === 'male' ? 'male' : 'female';
   const speed = parseFloat(url.searchParams.get('speed')) || 0.85;
 
@@ -125,4 +177,4 @@ async function handleTts(req, res, url) {
   }
 }
 
-module.exports = { handleTts };
+module.exports = { handleTts, resolvePinyinToChinesePhonetic };

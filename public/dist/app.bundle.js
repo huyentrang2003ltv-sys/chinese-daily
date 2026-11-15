@@ -280,6 +280,57 @@ if (typeof window !== 'undefined') {
 ;
 
 /* --- FILE: js/core/tts.js --- */
+
+const PINYIN_INITIALS_MAP = {
+  'b': '玻', 'p': '坡', 'm': '摸', 'f': '佛',
+  'd': '得', 't': '特', 'n': '讷', 'l': '勒',
+  'g': '哥', 'k': '科', 'h': '喝',
+  'j': '基', 'q': '期', 'x': '希',
+  'zh': '知', 'ch': '吃', 'sh': '诗', 'r': '日',
+  'z': '资', 'c': '雌', 's': '思',
+  'y': '衣', 'w': '乌'
+};
+
+const PINYIN_FINALS_MAP = {
+  'a': '阿', 'o': '喔', 'e': '婀', 'i': '衣', 'u': '乌', 'ü': '迂', 'v': '迂',
+  'ai': '哀', 'ei': '诶', 'ao': '熬', 'ou': '欧',
+  'ia': '鸭', 'ie': '耶', 'ua': '蛙', 'uo': '窝', 'üe': '约', 've': '约',
+  'iao': '腰', 'iu': '优', 'iou': '优', 'iu (iou)': '优', 'iu(iou)': '优',
+  'uai': '歪', 'ui': '微', 'uei': '微', 'ui (uei)': '微', 'ui(uei)': '微',
+  'an': '安', 'en': '恩', 'in': '音', 'ün': '晕', 'vn': '晕',
+  'ian': '烟', 'uan': '弯', 'üan': '冤', 'van': '冤',
+  'un': '温', 'uen': '温', 'un (uen)': '温', 'un(uen)': '温',
+  'ang': '昂', 'eng': '鞥', 'ing': '英', 'ong': '轰',
+  'iang': '央', 'uang': '汪', 'iong': '拥', 'ueng': '翁',
+  'er': '耳'
+};
+
+function resolvePinyinToChinesePhonetic(rawText) {
+  if (!rawText || typeof rawText !== 'string') return rawText;
+  const trimmed = rawText.trim();
+  const lower = trimmed.toLowerCase();
+
+  // Full alphabet of 23 initials
+  const compactLower = lower.replace(/[\s,，、.]/g, '');
+  if (compactLower === 'bpmfdtnlgkhjqxzhchshrzcsyw') {
+    return '玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌';
+  }
+  if (compactLower === 'aoeiuü' || compactLower === 'aoeiuv') {
+    return '阿、喔、婀、衣、乌、迂';
+  }
+
+  // Direct initials match
+  if (PINYIN_INITIALS_MAP[lower]) return PINYIN_INITIALS_MAP[lower];
+
+  // Direct finals match
+  if (PINYIN_FINALS_MAP[lower]) return PINYIN_FINALS_MAP[lower];
+
+  const normalizedKey = lower.replace(/\s+/g, ' ');
+  if (PINYIN_FINALS_MAP[normalizedKey]) return PINYIN_FINALS_MAP[normalizedKey];
+
+  return trimmed;
+}
+
 // =========================================================================
 // Dual-Voice Beijing TTS Engine (Giọng Đọc Chuẩn Bắc Kinh 普通话: Nam & Nữ)
 // =========================================================================
@@ -324,7 +375,8 @@ let currentTtsAudio = null;
 
 function playChineseTTS(text, forceGender = null) {
   if (!text || !text.toString().trim()) return;
-  const cleanText = text.toString().trim();
+  const resolvedText = resolvePinyinToChinesePhonetic(text.toString().trim());
+  const cleanText = resolvedText;
   const targetGender = forceGender || currentTtsGender || 'female';
   const targetSpeed = currentTtsSpeed || 0.85;
 
@@ -502,6 +554,8 @@ if (typeof document !== 'undefined') {
     }
   });
 }
+
+if (typeof window !== "undefined") window.resolvePinyinToChinesePhonetic = resolvePinyinToChinesePhonetic;
 
 ;
 
@@ -3407,7 +3461,7 @@ function renderPinyinTab() {
         </div>
 
         <div class="flex flex-col sm:flex-row md:flex-col gap-2.5 shrink-0">
-          <button onclick="playPinyinAudio('b, p, m, f, d, t, n, l, g, k, h, j, q, x, zh, ch, sh, r, z, c, s, y, w')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <button onclick="playPinyinAudio('玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="volume-2" class="w-4 h-4"></i>
             <span>Nghe Toàn Bộ 23 Thanh Mẫu</span>
           </button>
@@ -3549,7 +3603,7 @@ function renderPinyinMatrixView(container) {
               <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-500 dark:text-stone-400 font-bold">
                 ${s.i} + ${s.f}
               </span>
-              <button onclick="event.stopPropagation(); playPinyinAudio('${escapeHtml(s.s)}')" class="p-1 rounded-lg text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 transition-colors" title="Nghe âm chuẩn">
+              <button onclick="event.stopPropagation(); playPinyinAudio('${escapeHtml((s.tones && s.tones[0]) ? s.tones[0] : s.s)}')" class="p-1 rounded-lg text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 transition-colors" title="Nghe âm chuẩn">
                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
               </button>
             </div>
@@ -3579,7 +3633,7 @@ function openPinyinSyllableModal(syllableStr) {
   activePinyinSyllable = item;
 
   // Play audio immediately
-  playPinyinAudio(item.s);
+  playPinyinAudio((item.tones && item.tones[0]) ? item.tones[0] : item.s);
 
   let existingModal = document.getElementById('pinyinSyllableDetailModal');
   if (!existingModal) {
@@ -3725,9 +3779,9 @@ function renderPinyinInitialsView(container) {
                   </div>
                 </div>
 
-                <button onclick="playPinyinAudio('${escapeHtml(item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer">
+                <button onclick="playPinyinAudio('${escapeHtml(item.audioChar || item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer" title="Phát âm chuẩn xướng âm Bắc Kinh">
                   <i data-lucide="volume-2" class="w-4 h-4"></i>
-                  <span>Nghe âm</span>
+                  <span>Nghe âm (${escapeHtml(item.audioPinyin || item.symbol)})</span>
                 </button>
               </div>
 

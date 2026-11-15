@@ -15,7 +15,7 @@
   "initials": [
     {
       "symbol": "b",
-      "name": "Âm hai môi b (pua)",
+      "name": "Âm hai môi b (bō / pua)",
       "group": "Âm hai môi (双唇音)",
       "groupId": "labial",
       "ipa": "[p]",
@@ -42,11 +42,13 @@
         "bēn",
         "bīng",
         "bù"
-      ]
+      ],
+      "audioChar": "玻",
+      "audioPinyin": "bō"
     },
     {
       "symbol": "p",
-      "name": "Âm hai môi bật hơi p (pʰua)",
+      "name": "Âm hai môi bật hơi p (pō / pʰua)",
       "group": "Âm hai môi (双唇音)",
       "groupId": "labial",
       "ipa": "[pʰ]",
@@ -73,11 +75,13 @@
         "pēn",
         "píng",
         "pù"
-      ]
+      ],
+      "audioChar": "坡",
+      "audioPinyin": "pō"
     },
     {
       "symbol": "m",
-      "name": "Âm hai môi mũi m (mua)",
+      "name": "Âm hai môi mũi m (mō / mua)",
       "group": "Âm hai môi (双唇音)",
       "groupId": "labial",
       "ipa": "[m]",
@@ -104,11 +108,13 @@
         "mēn",
         "míng",
         "mù"
-      ]
+      ],
+      "audioChar": "摸",
+      "audioPinyin": "mō"
     },
     {
       "symbol": "f",
-      "name": "Âm môi - răng f (fua)",
+      "name": "Âm răng - môi f (fó / fua)",
       "group": "Âm môi - răng (唇齿音)",
       "groupId": "labio_dental",
       "ipa": "[f]",
@@ -135,11 +141,13 @@
         "fēn",
         "fēng",
         "fù"
-      ]
+      ],
+      "audioChar": "佛",
+      "audioPinyin": "fó"
     },
     {
       "symbol": "d",
-      "name": "Âm đầu lưỡi d (tưa)",
+      "name": "Âm đầu lưỡi d (dé / tưa)",
       "group": "Âm đầu lưỡi giữa (舌尖中音)",
       "groupId": "alveolar",
       "ipa": "[t]",
@@ -166,11 +174,13 @@
         "dēng",
         "dōng",
         "dū"
-      ]
+      ],
+      "audioChar": "得",
+      "audioPinyin": "dé"
     },
     {
       "symbol": "t",
-      "name": "Âm đầu lưỡi bật hơi t (tʰưa)",
+      "name": "Âm đầu lưỡi bật hơi t (tè / tʰưa)",
       "group": "Âm đầu lưỡi giữa (舌尖中音)",
       "groupId": "alveolar",
       "ipa": "[tʰ]",
@@ -197,11 +207,13 @@
         "tēng",
         "tōng",
         "tū"
-      ]
+      ],
+      "audioChar": "特",
+      "audioPinyin": "tè"
     },
     {
       "symbol": "n",
-      "name": "Âm mũi đầu lưỡi n (nưa)",
+      "name": "Âm mũi đầu lưỡi n (nè / nưa)",
       "group": "Âm đầu lưỡi giữa (舌尖中音)",
       "groupId": "alveolar",
       "ipa": "[n]",
@@ -228,11 +240,13 @@
         "nēn",
         "náng",
         "nǐ"
-      ]
+      ],
+      "audioChar": "讷",
+      "audioPinyin": "nè"
     },
     {
       "symbol": "l",
-      "name": "Âm bên đầu lưỡi l (lưa)",
+      "name": "Âm bên đầu lưỡi l (lè / lưa)",
       "group": "Âm đầu lưỡi giữa (舌尖中音)",
       "groupId": "alveolar",
       "ipa": "[l]",
@@ -259,11 +273,13 @@
         "lēng",
         "líng",
         "lù"
-      ]
+      ],
+      "audioChar": "勒",
+      "audioPinyin": "lè"
     },
     {
       "symbol": "g",
-      "name": "Âm cuống lưỡi g (cưa)",
+      "name": "Âm gốc lưỡi g (gē / cưa)",
       "group": "Âm cuống lưỡi (舌根音)",
       "groupId": "velar",
       "ipa": "[k]",
@@ -290,11 +306,13 @@
         "gēn",
         "gāng",
         "gōng"
-      ]
+      ],
+      "audioChar": "哥",
+      "audioPinyin": "gē"
     },
     {
       "symbol": "k",
-      "name": "Âm cuống lưỡi bật hơi k (kʰưa)",
+      "name": "Âm gốc lưỡi bật hơi k (kē / kʰưa)",
       "group": "Âm cuống lưỡi (舌根音)",
       "groupId": "velar",
       "ipa": "[kʰ]",
@@ -321,11 +339,13 @@
         "kēn",
         "kāng",
         "kōng"
-      ]
+      ],
+      "audioChar": "科",
+      "audioPinyin": "kē"
     },
     {
       "symbol": "h",
-      "name": "Âm xát cuống lưỡi h (hưa)",
+      "name": "Âm xát gốc lưỡi h (hē / hưa)",
       "group": "Âm cuống lưỡi (舌根音)",
       "groupId": "velar",
       "ipa": "[x]",
@@ -352,11 +372,13 @@
         "hēn",
         "hāng",
         "hóng"
-      ]
+      ],
+      "audioChar": "喝",
+      "audioPinyin": "hē"
     },
     {
       "symbol": "j",
-      "name": "Âm mặt lưỡi j (chi)",
+      "name": "Âm mặt lưỡi j (jī / chi)",
       "group": "Âm mặt lưỡi (舌面音)",
       "groupId": "palatal",
       "ipa": "[tɕ]",
@@ -383,11 +405,13 @@
         "jiù",
         "jū",
         "jué"
-      ]
+      ],
+      "audioChar": "基",
+      "audioPinyin": "jī"
     },
     {
       "symbol": "q",
-      "name": "Âm mặt lưỡi bật hơi q (chʰi)",
+      "name": "Âm mặt lưỡi bật hơi q (qī / chʰi)",
       "group": "Âm mặt lưỡi (舌面音)",
       "groupId": "palatal",
       "ipa": "[tɕʰ]",
@@ -414,11 +438,13 @@
         "qiù",
         "qū",
         "qué"
-      ]
+      ],
+      "audioChar": "期",
+      "audioPinyin": "qī"
     },
     {
       "symbol": "x",
-      "name": "Âm xát mặt lưỡi x (xi)",
+      "name": "Âm xát mặt lưỡi x (xī / xi)",
       "group": "Âm mặt lưỡi (舌面音)",
       "groupId": "palatal",
       "ipa": "[ɕ]",
@@ -445,11 +471,13 @@
         "xiù",
         "xū",
         "xué"
-      ]
+      ],
+      "audioChar": "希",
+      "audioPinyin": "xī"
     },
     {
       "symbol": "zh",
-      "name": "Âm uốn lưỡi zh (trư)",
+      "name": "Âm uốn lưỡi zh (zhī / trư)",
       "group": "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
       "groupId": "retroflex",
       "ipa": "[ʈʂ]",
@@ -475,11 +503,13 @@
         "zhào",
         "zhān",
         "zhōng"
-      ]
+      ],
+      "audioChar": "知",
+      "audioPinyin": "zhī"
     },
     {
       "symbol": "ch",
-      "name": "Âm uốn lưỡi bật hơi ch (trʰư)",
+      "name": "Âm uốn lưỡi bật hơi ch (chī / trʰư)",
       "group": "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
       "groupId": "retroflex",
       "ipa": "[ʈʂʰ]",
@@ -505,11 +535,13 @@
         "chào",
         "chān",
         "chōng"
-      ]
+      ],
+      "audioChar": "吃",
+      "audioPinyin": "chī"
     },
     {
       "symbol": "sh",
-      "name": "Âm xát uốn lưỡi sh (sư)",
+      "name": "Âm xát uốn lưỡi sh (shī / sư)",
       "group": "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
       "groupId": "retroflex",
       "ipa": "[ʂ]",
@@ -535,11 +567,13 @@
         "shào",
         "shān",
         "shēng"
-      ]
+      ],
+      "audioChar": "诗",
+      "audioPinyin": "shī"
     },
     {
       "symbol": "r",
-      "name": "Âm uốn lưỡi r (rư)",
+      "name": "Âm xát uốn lưỡi r (rì / rư)",
       "group": "Âm uốn lưỡi (卷舌音 / 舌尖后音)",
       "groupId": "retroflex",
       "ipa": "[ʐ]",
@@ -565,11 +599,13 @@
         "rēn",
         "ráng",
         "róng"
-      ]
+      ],
+      "audioChar": "日",
+      "audioPinyin": "rì"
     },
     {
       "symbol": "z",
-      "name": "Âm đầu lưỡi trước z (tư)",
+      "name": "Âm đầu lưỡi trước z (zī / tư)",
       "group": "Âm đầu lưỡi trước (舌尖前音)",
       "groupId": "dental",
       "ipa": "[ts]",
@@ -595,11 +631,13 @@
         "zào",
         "zān",
         "zōng"
-      ]
+      ],
+      "audioChar": "资",
+      "audioPinyin": "zī"
     },
     {
       "symbol": "c",
-      "name": "Âm đầu lưỡi trước bật hơi c (tsʰư)",
+      "name": "Âm đầu lưỡi trước bật hơi c (cí / tsʰư)",
       "group": "Âm đầu lưỡi trước (舌尖前音)",
       "groupId": "dental",
       "ipa": "[tsʰ]",
@@ -625,11 +663,13 @@
         "cào",
         "cān",
         "cōng"
-      ]
+      ],
+      "audioChar": "雌",
+      "audioPinyin": "cí"
     },
     {
       "symbol": "s",
-      "name": "Âm xát đầu lưỡi trước s (xư)",
+      "name": "Âm xát đầu lưỡi trước s (sī / xư)",
       "group": "Âm đầu lưỡi trước (舌尖前音)",
       "groupId": "dental",
       "ipa": "[s]",
@@ -655,11 +695,13 @@
         "sào",
         "sān",
         "sōng"
-      ]
+      ],
+      "audioChar": "思",
+      "audioPinyin": "sī"
     },
     {
       "symbol": "y",
-      "name": "Bán nguyên âm y (i)",
+      "name": "Bán nguyên âm y (yī / i)",
       "group": "Phụ âm số 0 / Bán nguyên âm",
       "groupId": "semi_vowel",
       "ipa": "[j]",
@@ -685,11 +727,13 @@
         "yáng",
         "yòng",
         "yǔ"
-      ]
+      ],
+      "audioChar": "衣",
+      "audioPinyin": "yī"
     },
     {
       "symbol": "w",
-      "name": "Bán nguyên âm w (u)",
+      "name": "Bán nguyên âm w (wū / u)",
       "group": "Phụ âm số 0 / Bán nguyên âm",
       "groupId": "semi_vowel",
       "ipa": "[w]",
@@ -715,7 +759,9 @@
         "wēn",
         "wāng",
         "wǒ"
-      ]
+      ],
+      "audioChar": "乌",
+      "audioPinyin": "wū"
     }
   ],
   "finals": [
@@ -732,7 +778,9 @@
         "pinyin": "dà",
         "meaning": "To / Lớn",
         "audio": "dà"
-      }
+      },
+      "audioChar": "阿",
+      "audioPinyin": "ā"
     },
     {
       "symbol": "o",
@@ -747,7 +795,9 @@
         "pinyin": "wǒ",
         "meaning": "Tôi / Bản thân",
         "audio": "wǒ"
-      }
+      },
+      "audioChar": "喔",
+      "audioPinyin": "ō"
     },
     {
       "symbol": "e",
@@ -762,7 +812,9 @@
         "pinyin": "gēge",
         "meaning": "Anh trai",
         "audio": "gēge"
-      }
+      },
+      "audioChar": "婀",
+      "audioPinyin": "ē"
     },
     {
       "symbol": "i",
@@ -777,7 +829,9 @@
         "pinyin": "yī",
         "meaning": "Số 1",
         "audio": "yī"
-      }
+      },
+      "audioChar": "衣",
+      "audioPinyin": "yī"
     },
     {
       "symbol": "u",
@@ -792,7 +846,9 @@
         "pinyin": "wǔ",
         "meaning": "Số 5",
         "audio": "wǔ"
-      }
+      },
+      "audioChar": "乌",
+      "audioPinyin": "wū"
     },
     {
       "symbol": "ü",
@@ -807,7 +863,9 @@
         "pinyin": "lǜ",
         "meaning": "Màu xanh lá",
         "audio": "lǜ"
-      }
+      },
+      "audioChar": "迂",
+      "audioPinyin": "yū"
     },
     {
       "symbol": "ai",
@@ -822,7 +880,9 @@
         "pinyin": "ài",
         "meaning": "Yêu",
         "audio": "ài"
-      }
+      },
+      "audioChar": "哀",
+      "audioPinyin": "āi"
     },
     {
       "symbol": "ei",
@@ -837,7 +897,9 @@
         "pinyin": "hēi",
         "meaning": "Màu đen",
         "audio": "hēi"
-      }
+      },
+      "audioChar": "诶",
+      "audioPinyin": "ēi"
     },
     {
       "symbol": "ao",
@@ -852,7 +914,9 @@
         "pinyin": "gāo",
         "meaning": "Cao",
         "audio": "gāo"
-      }
+      },
+      "audioChar": "熬",
+      "audioPinyin": "áo"
     },
     {
       "symbol": "ou",
@@ -867,7 +931,9 @@
         "pinyin": "shǒu",
         "meaning": "Bàn tay",
         "audio": "shǒu"
-      }
+      },
+      "audioChar": "欧",
+      "audioPinyin": "ōu"
     },
     {
       "symbol": "ia",
@@ -882,7 +948,9 @@
         "pinyin": "jiā",
         "meaning": "Gia đình / Nhà",
         "audio": "jiā"
-      }
+      },
+      "audioChar": "鸭",
+      "audioPinyin": "yā"
     },
     {
       "symbol": "ie",
@@ -897,7 +965,9 @@
         "pinyin": "xiě",
         "meaning": "Viết",
         "audio": "xiě"
-      }
+      },
+      "audioChar": "耶",
+      "audioPinyin": "yē"
     },
     {
       "symbol": "ua",
@@ -912,7 +982,9 @@
         "pinyin": "huā",
         "meaning": "Hoa",
         "audio": "huā"
-      }
+      },
+      "audioChar": "蛙",
+      "audioPinyin": "wā"
     },
     {
       "symbol": "uo",
@@ -927,7 +999,9 @@
         "pinyin": "duō",
         "meaning": "Nhiều",
         "audio": "duō"
-      }
+      },
+      "audioChar": "窝",
+      "audioPinyin": "wō"
     },
     {
       "symbol": "üe",
@@ -942,7 +1016,9 @@
         "pinyin": "yuè",
         "meaning": "Tháng / Mặt trăng",
         "audio": "yuè"
-      }
+      },
+      "audioChar": "约",
+      "audioPinyin": "yuē"
     },
     {
       "symbol": "iao",
@@ -957,7 +1033,9 @@
         "pinyin": "xiǎo",
         "meaning": "Nhỏ / Bé",
         "audio": "xiǎo"
-      }
+      },
+      "audioChar": "腰",
+      "audioPinyin": "yāo"
     },
     {
       "symbol": "iu (iou)",
@@ -972,7 +1050,9 @@
         "pinyin": "liù",
         "meaning": "Số 6",
         "audio": "liù"
-      }
+      },
+      "audioChar": "优",
+      "audioPinyin": "yōu"
     },
     {
       "symbol": "uai",
@@ -987,7 +1067,9 @@
         "pinyin": "kuài",
         "meaning": "Nhanh / Sắp",
         "audio": "kuài"
-      }
+      },
+      "audioChar": "歪",
+      "audioPinyin": "wāi"
     },
     {
       "symbol": "ui (uei)",
@@ -1002,7 +1084,9 @@
         "pinyin": "duì",
         "meaning": "Đúng / Đối",
         "audio": "duì"
-      }
+      },
+      "audioChar": "微",
+      "audioPinyin": "wēi"
     },
     {
       "symbol": "an",
@@ -1017,7 +1101,9 @@
         "pinyin": "kàn",
         "meaning": "Xem / Nhìn",
         "audio": "kàn"
-      }
+      },
+      "audioChar": "安",
+      "audioPinyin": "ān"
     },
     {
       "symbol": "en",
@@ -1032,7 +1118,9 @@
         "pinyin": "hěn",
         "meaning": "Rất",
         "audio": "hěn"
-      }
+      },
+      "audioChar": "恩",
+      "audioPinyin": "ēn"
     },
     {
       "symbol": "in",
@@ -1047,7 +1135,9 @@
         "pinyin": "xīn",
         "meaning": "Mới",
         "audio": "xīn"
-      }
+      },
+      "audioChar": "音",
+      "audioPinyin": "yīn"
     },
     {
       "symbol": "ün",
@@ -1062,7 +1152,9 @@
         "pinyin": "yún",
         "meaning": "Mây",
         "audio": "yún"
-      }
+      },
+      "audioChar": "晕",
+      "audioPinyin": "yūn"
     },
     {
       "symbol": "ian",
@@ -1077,7 +1169,9 @@
         "pinyin": "tiān",
         "meaning": "Trời / Ngày",
         "audio": "tiān"
-      }
+      },
+      "audioChar": "烟",
+      "audioPinyin": "yān"
     },
     {
       "symbol": "uan",
@@ -1092,7 +1186,9 @@
         "pinyin": "guān",
         "meaning": "Đóng",
         "audio": "guān"
-      }
+      },
+      "audioChar": "弯",
+      "audioPinyin": "wān"
     },
     {
       "symbol": "üan",
@@ -1107,7 +1203,9 @@
         "pinyin": "yuǎn",
         "meaning": "Xa",
         "audio": "yuǎn"
-      }
+      },
+      "audioChar": "冤",
+      "audioPinyin": "yuān"
     },
     {
       "symbol": "un (uen)",
@@ -1122,7 +1220,9 @@
         "pinyin": "wèn",
         "meaning": "Hỏi",
         "audio": "wèn"
-      }
+      },
+      "audioChar": "温",
+      "audioPinyin": "wēn"
     },
     {
       "symbol": "ang",
@@ -1137,7 +1237,9 @@
         "pinyin": "máng",
         "meaning": "Bận rộn",
         "audio": "máng"
-      }
+      },
+      "audioChar": "昂",
+      "audioPinyin": "áng"
     },
     {
       "symbol": "eng",
@@ -1152,7 +1254,9 @@
         "pinyin": "lěng",
         "meaning": "Lạnh",
         "audio": "lěng"
-      }
+      },
+      "audioChar": "鞥",
+      "audioPinyin": "ēng"
     },
     {
       "symbol": "ing",
@@ -1167,7 +1271,9 @@
         "pinyin": "míng",
         "meaning": "Sáng / Rõ",
         "audio": "míng"
-      }
+      },
+      "audioChar": "英",
+      "audioPinyin": "yīng"
     },
     {
       "symbol": "ong",
@@ -1182,7 +1288,9 @@
         "pinyin": "hóng",
         "meaning": "Màu đỏ",
         "audio": "hóng"
-      }
+      },
+      "audioChar": "轰",
+      "audioPinyin": "hōng"
     },
     {
       "symbol": "iang",
@@ -1197,7 +1305,9 @@
         "pinyin": "xiǎng",
         "meaning": "Muốn / Nhớ",
         "audio": "xiǎng"
-      }
+      },
+      "audioChar": "央",
+      "audioPinyin": "yāng"
     },
     {
       "symbol": "uang",
@@ -1212,7 +1322,9 @@
         "pinyin": "huáng",
         "meaning": "Màu vàng",
         "audio": "huáng"
-      }
+      },
+      "audioChar": "汪",
+      "audioPinyin": "wāng"
     },
     {
       "symbol": "iong",
@@ -1227,7 +1339,9 @@
         "pinyin": "qióng",
         "meaning": "Nghèo",
         "audio": "qióng"
-      }
+      },
+      "audioChar": "拥",
+      "audioPinyin": "yōng"
     },
     {
       "symbol": "ueng",
@@ -1242,7 +1356,9 @@
         "pinyin": "wēng",
         "meaning": "Tiếng ong kêu vo ve",
         "audio": "wēng"
-      }
+      },
+      "audioChar": "翁",
+      "audioPinyin": "wēng"
     },
     {
       "symbol": "er",
@@ -1257,7 +1373,9 @@
         "pinyin": "èr",
         "meaning": "Số 2",
         "audio": "èr"
-      }
+      },
+      "audioChar": "耳",
+      "audioPinyin": "ěr"
     }
   ],
   "tones": [

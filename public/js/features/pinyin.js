@@ -81,7 +81,7 @@ function renderPinyinTab() {
         </div>
 
         <div class="flex flex-col sm:flex-row md:flex-col gap-2.5 shrink-0">
-          <button onclick="playPinyinAudio('b, p, m, f, d, t, n, l, g, k, h, j, q, x, zh, ch, sh, r, z, c, s, y, w')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
+          <button onclick="playPinyinAudio('玻、坡、摸、佛、得、特、讷、勒、哥、科、喝、基、期、希、知、吃、诗、日、资、雌、思、衣、乌')" class="px-5 py-3 rounded-2xl bg-gradient-to-r from-[#8B1E1E] via-[#A52A2A] to-[#B8860B] text-white font-bold text-xs shadow-md hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="volume-2" class="w-4 h-4"></i>
             <span>Nghe Toàn Bộ 23 Thanh Mẫu</span>
           </button>
@@ -223,7 +223,7 @@ function renderPinyinMatrixView(container) {
               <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-stone-100 dark:bg-stone-800 text-stone-500 dark:text-stone-400 font-bold">
                 ${s.i} + ${s.f}
               </span>
-              <button onclick="event.stopPropagation(); playPinyinAudio('${escapeHtml(s.s)}')" class="p-1 rounded-lg text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 transition-colors" title="Nghe âm chuẩn">
+              <button onclick="event.stopPropagation(); playPinyinAudio('${escapeHtml((s.tones && s.tones[0]) ? s.tones[0] : s.s)}')" class="p-1 rounded-lg text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 transition-colors" title="Nghe âm chuẩn">
                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
               </button>
             </div>
@@ -253,7 +253,7 @@ function openPinyinSyllableModal(syllableStr) {
   activePinyinSyllable = item;
 
   // Play audio immediately
-  playPinyinAudio(item.s);
+  playPinyinAudio((item.tones && item.tones[0]) ? item.tones[0] : item.s);
 
   let existingModal = document.getElementById('pinyinSyllableDetailModal');
   if (!existingModal) {
@@ -399,9 +399,9 @@ function renderPinyinInitialsView(container) {
                   </div>
                 </div>
 
-                <button onclick="playPinyinAudio('${escapeHtml(item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer">
+                <button onclick="playPinyinAudio('${escapeHtml(item.audioChar || item.symbol)}')" class="p-2 rounded-xl bg-amber-50 dark:bg-stone-800 text-amber-800 dark:text-amber-300 hover:bg-amber-100 dark:hover:bg-stone-700 flex items-center gap-1 text-xs font-bold transition-all cursor-pointer" title="Phát âm chuẩn xướng âm Bắc Kinh">
                   <i data-lucide="volume-2" class="w-4 h-4"></i>
-                  <span>Nghe âm</span>
+                  <span>Nghe âm (${escapeHtml(item.audioPinyin || item.symbol)})</span>
                 </button>
               </div>
 
