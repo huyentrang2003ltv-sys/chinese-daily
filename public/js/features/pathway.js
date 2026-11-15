@@ -1592,24 +1592,159 @@ async function renderHsk30DedicatedTab() {
   if (!hsk30RoadmapData && typeof loadData === 'function') {
     await loadData('hsk30Roadmap');
   }
+  const bannerContainer = document.getElementById('hsk30DedicatedLevelBanner');
+  if (bannerContainer) renderHsk30LevelHighlightBanner(currentHsk30DedicatedFilter);
   const container = document.getElementById('hsk30DedicatedCardsContainer');
   if (!container) return;
   renderHsk30DedicatedCards(container);
   if (window.lucide) lucide.createIcons();
 }
 
+const HSK_LEVEL_THEMES = {
+  1: {
+    name: 'HSK 1',
+    levelLabel: 'Nhập Môn Căn Bản',
+    badgeClass: 'bg-blue-600 bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-2xs',
+    cardBorder: 'border-blue-200/90 dark:border-blue-900/40 hover:border-blue-400 dark:hover:border-blue-500',
+    headerBg: 'bg-blue-500',
+    accentText: 'text-blue-700 dark:text-blue-400',
+    ctaBtn: 'bg-blue-600 bg-gradient-to-r from-blue-600 via-sky-600 to-blue-700 hover:from-blue-700 hover:to-sky-800 text-white shadow-blue-500/20',
+    avatarA: '李',
+    avatarB: '语'
+  },
+  2: {
+    name: 'HSK 2',
+    levelLabel: 'Sơ Cấp Thực Chiến',
+    badgeClass: 'bg-emerald-600 bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-2xs',
+    cardBorder: 'border-emerald-200/90 dark:border-emerald-900/40 hover:border-emerald-400 dark:hover:border-emerald-500',
+    headerBg: 'bg-emerald-500',
+    accentText: 'text-emerald-700 dark:text-emerald-400',
+    ctaBtn: 'bg-emerald-600 bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 hover:from-emerald-700 hover:to-teal-800 text-white shadow-emerald-500/20',
+    avatarA: '王',
+    avatarB: '语'
+  },
+  3: {
+    name: 'HSK 3',
+    levelLabel: 'Trung Cấp 1 • Độc Lập',
+    badgeClass: 'bg-rose-700 bg-gradient-to-r from-rose-600 to-red-700 text-white shadow-2xs',
+    cardBorder: 'border-rose-200/90 dark:border-rose-900/40 hover:border-rose-400 dark:hover:border-rose-500',
+    headerBg: 'bg-rose-600',
+    accentText: 'text-rose-700 dark:text-rose-400',
+    ctaBtn: 'bg-[#8B1E1E] bg-gradient-to-r from-[#8B1E1E] via-rose-700 to-[#A52A2A] hover:from-[#721818] hover:to-rose-800 text-white shadow-rose-900/20',
+    avatarA: '张',
+    avatarB: '语'
+  },
+  4: {
+    name: 'HSK 4',
+    levelLabel: 'Trung Cấp 2 • Học Thuật & Thương Mại',
+    badgeClass: 'bg-amber-600 bg-gradient-to-r from-amber-500 to-orange-600 text-white shadow-2xs',
+    cardBorder: 'border-amber-200/90 dark:border-amber-900/40 hover:border-amber-400 dark:hover:border-amber-500',
+    headerBg: 'bg-amber-500',
+    accentText: 'text-amber-700 dark:text-amber-400',
+    ctaBtn: 'bg-amber-600 bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 hover:from-amber-700 hover:to-orange-800 text-white shadow-amber-500/20',
+    avatarA: '刘',
+    avatarB: '语'
+  }
+};
+
+const HSK_LEVEL_HIGHLIGHTS = {
+  1: {
+    badge: '📘 Cấp Độ Nhập Môn • HSK 1',
+    title: 'HSK 1: Làm Quen Trợ Lý AI Xiaoyu & Nền Tảng Giao Tiếp (15 Bài)',
+    desc: 'Bắt đầu từ con số 0: Tự tin chào hỏi, giới thiệu bản thân, số đếm, thời gian, gia đình, sở thích và các sinh hoạt hàng ngày.',
+    pills: ['15 Bài Học Căn Bản', '500 Từ Vựng Cốt Lõi', 'Đại Từ & Con Số', 'Mẫu Câu S-V-O Chuẩn'],
+    bg: 'from-blue-500/10 via-sky-500/5 to-transparent border-blue-300 dark:border-blue-800'
+  },
+  2: {
+    badge: '📗 Cấp Độ Sơ Cấp • HSK 2',
+    title: 'HSK 2: Nâng Tầm Đàm Thoại Đời Sống Thực Chiến (15 Bài)',
+    desc: 'Mở rộng ngữ cảnh giao tiếp: Đi mua sắm, trả giá, gọi món ăn, hỏi đường, đặt phòng khách sạn, khám bệnh và diễn đạt cảm xúc.',
+    pills: ['15 Bài Học Đời Sống', '772 Từ Vựng Tích Lũy', 'So Sánh Chữ 比', 'Trợ Từ 着, 了, 过'],
+    bg: 'from-emerald-500/10 via-teal-500/5 to-transparent border-emerald-300 dark:border-emerald-800'
+  },
+  3: {
+    badge: '📕 Cấp Độ Trung Cấp 1 • HSK 3',
+    title: 'HSK 3: Độc Lập Giao Tiếp & Nắm Vững Ngữ Pháp Trọng Điểm (18 Bài)',
+    desc: 'Bước nhảy vọt lên trung cấp: Làm chủ câu chữ 把, câu bị động chữ 被, các bổ ngữ xu hướng phức hợp, tự tin thảo luận công việc và xã hội.',
+    pills: ['18 Bài Học Chuyên Sâu', '973 Từ Vựng Trung Cấp', 'Câu Chữ 把 & 被', 'Bổ Ngữ Xu Hướng'],
+    bg: 'from-rose-500/10 via-red-500/5 to-transparent border-rose-300 dark:border-rose-800'
+  },
+  4: {
+    badge: '📙 Cấp Độ Trung Cấp 2 • HSK 4',
+    title: 'HSK 4: Học Thuật, Thương Mại & Đọc Báo Chí (20 Bài · 4A & 4B)',
+    desc: 'Chinh phục năng lực tiếng Trung toàn diện: Đọc hiểu tin tức báo chí, phỏng vấn tuyển dụng, đàm phán thương mại và viết luận ngắn chuẩn HSK.',
+    pills: ['20 Bài Toàn Tập 4A & 4B', '1,000+ Từ Vựng Cao Cấp', 'Đàm Phán Thương Mại', 'Văn Hóa Đương Đại'],
+    bg: 'from-amber-500/10 via-orange-500/5 to-transparent border-amber-300 dark:border-amber-800'
+  }
+};
+
+function renderHsk30LevelHighlightBanner(level) {
+  const container = document.getElementById('hsk30DedicatedLevelBanner');
+  if (!container) return;
+  if (!level || level === 0) {
+    container.innerHTML = '';
+    return;
+  }
+  const info = HSK_LEVEL_HIGHLIGHTS[level];
+  if (!info) {
+    container.innerHTML = '';
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="glass-card rounded-2xl p-4 sm:p-5 bg-gradient-to-r ${info.bg} border border-stone-200 dark:border-stone-800 shadow-xs space-y-2.5 animate-fade-in">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3">
+        <div class="space-y-1 max-w-2xl">
+          <div class="flex items-center gap-2">
+            <span class="inline-flex items-center gap-1.5 px-3 py-0.5 rounded-full text-2xs font-black uppercase tracking-wider bg-white/95 dark:bg-stone-800 text-stone-900 dark:text-stone-100 border border-stone-200 dark:border-stone-700 shadow-2xs">
+              ${escapeHtml(info.badge)}
+            </span>
+            <span class="text-xs font-bold text-stone-500">• Mục tiêu then chốt</span>
+          </div>
+          <h3 class="text-base font-black font-serif-luxury text-stone-900 dark:text-stone-100">
+            ${escapeHtml(info.title)}
+          </h3>
+          <p class="text-xs text-stone-600 dark:text-stone-300 leading-relaxed">
+            ${escapeHtml(info.desc)}
+          </p>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-2 shrink-0 pt-1 md:pt-0">
+          ${info.pills.map(p => `
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl text-2xs font-bold bg-white/95 dark:bg-stone-800 text-stone-800 dark:text-stone-200 border border-stone-200/90 dark:border-stone-700 shadow-2xs">
+              <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-emerald-600"></i>
+              <span>${escapeHtml(p)}</span>
+            </span>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+  `;
+  if (window.lucide) lucide.createIcons();
+}
+
 function filterHsk30DedicatedLevel(level) {
   currentHsk30DedicatedFilter = level;
   const levels = [0, 1, 2, 3, 4];
+  const activeClasses = {
+    0: 'bg-[#8B1E1E] bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-xs',
+    1: 'bg-blue-600 bg-gradient-to-r from-sky-600 to-blue-700 text-white shadow-xs',
+    2: 'bg-emerald-600 bg-gradient-to-r from-emerald-600 to-teal-700 text-white shadow-xs',
+    3: 'bg-rose-700 bg-gradient-to-r from-rose-600 to-red-700 text-white shadow-xs',
+    4: 'bg-amber-600 bg-gradient-to-r from-amber-600 to-orange-700 text-white shadow-xs'
+  };
+
   levels.forEach(lvl => {
     const btn = document.getElementById(`btn-hsk30-dedicated-${lvl}`);
     if (!btn) return;
     if (lvl === level) {
-      btn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-2xs transition-all whitespace-nowrap cursor-pointer';
+      btn.className = `px-3.5 py-2 text-xs font-bold rounded-xl ${activeClasses[lvl]} transition-all whitespace-nowrap cursor-pointer hover:scale-105 active:scale-95 flex items-center gap-1.5`;
     } else {
-      btn.className = 'px-3.5 py-1.5 text-xs font-bold rounded-xl bg-white hover:bg-amber-50 text-stone-700 border border-stone-200 transition-all whitespace-nowrap cursor-pointer';
+      btn.className = 'px-3.5 py-2 text-xs font-bold rounded-xl bg-white dark:bg-stone-800 hover:bg-stone-100 dark:hover:bg-stone-700 text-stone-700 dark:text-stone-300 border border-stone-200 dark:border-stone-700 transition-all whitespace-nowrap cursor-pointer hover:scale-105 active:scale-95 flex items-center gap-1.5';
     }
   });
+
+  renderHsk30LevelHighlightBanner(level);
   const container = document.getElementById('hsk30DedicatedCardsContainer');
   if (container) renderHsk30DedicatedCards(container);
 }
@@ -1640,56 +1775,160 @@ function renderHsk30DedicatedCards(container) {
 
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="glass-card rounded-2xl p-8 text-center text-stone-500">
-        Không tìm thấy bài học nào phù hợp với bộ lọc "${currentHsk30DedicatedSearchQuery}".
+      <div class="glass-card rounded-3xl p-12 text-center text-stone-500 space-y-3 bg-white dark:bg-[#161B22] border-2 border-stone-200 dark:border-stone-800">
+        <div class="text-4xl">🔍</div>
+        <h4 class="text-base font-bold text-stone-800 dark:text-stone-200">Không tìm thấy bài học phù hợp</h4>
+        <p class="text-xs text-stone-500 max-w-md mx-auto">Không có bài học nào khớp với từ khóa "${escapeHtml(currentHsk30DedicatedSearchQuery)}". Hãy thử tìm theo số bài, tên bài, hoặc điểm ngữ pháp khác.</p>
+        <button onclick="document.getElementById('hsk30DedicatedSearchInput').value=''; searchHsk30DedicatedLessons('');" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#8B1E1E] text-white hover:bg-rose-800 transition-all cursor-pointer">
+          Xóa tìm kiếm & Hiện tất cả
+        </button>
       </div>
     `;
     return;
   }
 
   container.innerHTML = `
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      ${filtered.map(l => `
-        <div onclick="openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3 hover:border-amber-400 hover:shadow-md transition-all cursor-pointer group">
-          <div class="space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${l.hskLevel === 1 ? 'bg-blue-100 text-blue-800' : (l.hskLevel === 2 ? 'bg-emerald-100 text-emerald-800' : (l.hskLevel === 3 ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'))}">
-                HSK ${l.hskLevel} · Bài ${l.lessonNumber}
-              </span>
-              <button onclick="event.stopPropagation(); playChineseTTS(${jsArg(l.titleZh)})" class="p-1 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" title="Nghe tiêu đề">
-                <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      ${filtered.map(l => {
+        const theme = HSK_LEVEL_THEMES[l.hskLevel] || HSK_LEVEL_THEMES[1];
+        const vocabCount = (l.vocabulary && l.vocabulary.length) || 0;
+        const grammarCount = (l.grammarPoints && l.grammarPoints.length) || 0;
+        const quizCount = (l.practice && l.practice.length) || 0;
+
+        // Structured speech preview (First 2 dialogue lines with avatars)
+        let dialoguePreviewHtml = '';
+        if (l.dialogues && l.dialogues.length >= 2) {
+          const d1 = l.dialogues[0];
+          const d2 = l.dialogues[1];
+          dialoguePreviewHtml = `
+            <div class="space-y-2 p-3 rounded-2xl bg-stone-50/90 dark:bg-stone-900/70 border border-stone-200/70 dark:border-stone-800 text-xs">
+              <!-- Bubble 1 -->
+              <div class="flex items-start gap-2">
+                <div class="w-6 h-6 rounded-full bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+                  ${escapeHtml(d1.speaker ? d1.speaker.slice(0, 1) : theme.avatarA)}
+                </div>
+                <div class="bg-white dark:bg-stone-800 rounded-2xl rounded-tl-xs px-3 py-1.5 border border-stone-200/80 dark:border-stone-700 shadow-2xs flex-1">
+                  <div class="font-hanzi font-bold text-stone-900 dark:text-stone-100 leading-snug">${escapeHtml(d1.hanzi)}</div>
+                  <div class="text-[11px] text-stone-500 dark:text-stone-400 mt-0.5 line-clamp-1 truncate">${escapeHtml(d1.vi)}</div>
+                </div>
+              </div>
+              <!-- Bubble 2 -->
+              <div class="flex items-start gap-2">
+                <div class="w-6 h-6 rounded-full bg-rose-100 dark:bg-rose-950 text-rose-700 dark:text-rose-300 flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+                  ${escapeHtml(d2.speaker ? d2.speaker.slice(0, 1) : theme.avatarB)}
+                </div>
+                <div class="bg-amber-50/70 dark:bg-stone-800/90 rounded-2xl rounded-tl-xs px-3 py-1.5 border border-amber-200/70 dark:border-stone-700 shadow-2xs flex-1">
+                  <div class="font-hanzi font-bold text-stone-900 dark:text-stone-100 leading-snug">${escapeHtml(d2.hanzi)}</div>
+                  <div class="text-[11px] text-amber-900 dark:text-amber-300 mt-0.5 line-clamp-1 truncate">${escapeHtml(d2.vi)}</div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (l.dialogueZh) {
+          dialoguePreviewHtml = `
+            <div class="p-3 rounded-2xl bg-stone-50/90 dark:bg-stone-900/70 border border-stone-200/70 dark:border-stone-800 text-xs space-y-1">
+              <p class="font-hanzi font-bold text-stone-800 dark:text-stone-200 line-clamp-2 leading-relaxed">${escapeHtml(l.dialogueZh)}</p>
+              <p class="text-stone-500 dark:text-stone-400 text-[11px] line-clamp-1 truncate">${escapeHtml(l.dialogueVi || '')}</p>
+            </div>
+          `;
+        }
+
+        return `
+          <div onclick="openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="glass-card rounded-3xl p-5 bg-white dark:bg-[#161B22] border-2 ${theme.cardBorder} shadow-xs flex flex-col justify-between space-y-4 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer group relative overflow-hidden">
+            <!-- Subtle Level Gradient Top Accent Strip -->
+            <div class="absolute top-0 left-0 right-0 h-1 ${theme.headerBg}"></div>
+
+            <div class="space-y-3.5">
+              <!-- Top Row: Badge & Audio Player -->
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="px-3 py-1 rounded-xl text-xs font-black ${theme.badgeClass}">
+                    HSK ${l.hskLevel} • BÀI ${String(l.lessonNumber).padStart(2, '0')}
+                  </span>
+                  <span class="px-2 py-0.5 rounded-lg text-2xs font-bold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">
+                    ${escapeHtml(theme.levelLabel)}
+                  </span>
+                </div>
+                <button onclick="event.stopPropagation(); playChineseTTS(${jsArg(l.titleZh)})" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 dark:bg-stone-800 dark:hover:bg-stone-700 text-amber-800 dark:text-amber-300 hover:scale-110 active:scale-95 transition-all shadow-2xs cursor-pointer" title="Phát âm tiêu đề chuẩn Bắc Kinh">
+                  <i data-lucide="volume-2" class="w-4 h-4"></i>
+                </button>
+              </div>
+
+              <!-- Title Block -->
+              <div class="space-y-1">
+                <h4 class="font-hanzi font-black text-xl sm:text-2xl text-stone-900 dark:text-stone-100 group-hover:text-[#8B1E1E] dark:group-hover:text-amber-400 transition-colors leading-snug">
+                  ${escapeHtml(l.titleZh)}
+                </h4>
+                <div class="flex items-center gap-2 flex-wrap pt-0.5">
+                  <span class="inline-block font-mono text-xs font-bold text-amber-900 dark:text-amber-300 bg-amber-50/90 dark:bg-stone-800 px-2 py-0.5 rounded-md border border-amber-200/60 dark:border-stone-700">
+                    ${escapeHtml(l.titlePinyin || '')}
+                  </span>
+                  <span class="text-xs font-semibold text-stone-600 dark:text-stone-300">
+                    ${escapeHtml(l.titleVi)}
+                  </span>
+                </div>
+              </div>
+
+              <!-- Key Focus Tags (Trực quan & Bắt mắt) -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-2xs">
+                <div class="p-2 rounded-xl bg-amber-50/70 dark:bg-stone-800/60 border border-amber-200/60 dark:border-stone-700 flex items-start gap-1.5">
+                  <span class="text-amber-700 dark:text-amber-400 text-xs shrink-0">💬</span>
+                  <div class="truncate">
+                    <span class="font-bold text-amber-950 dark:text-amber-200 block truncate">${escapeHtml(l.vocabTheme || 'Từ vựng giao tiếp')}</span>
+                    <span class="text-[10px] text-stone-500">Chủ đề bài học</span>
+                  </div>
+                </div>
+                <div class="p-2 rounded-xl bg-blue-50/70 dark:bg-stone-800/60 border border-blue-200/60 dark:border-stone-700 flex items-start gap-1.5">
+                  <span class="text-blue-700 dark:text-blue-400 text-xs shrink-0">⚡</span>
+                  <div class="truncate">
+                    <span class="font-bold text-blue-950 dark:text-blue-200 block truncate">${escapeHtml(l.grammar || 'Ngữ pháp then chốt')}</span>
+                    <span class="text-[10px] text-stone-500">Điểm ngữ pháp</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Live Dialogue Sneak Peek (Chat Preview) -->
+              ${dialoguePreviewHtml}
+
+              <!-- Educational Tip Box -->
+              ${l.tip ? `
+                <div class="p-2.5 rounded-xl bg-gradient-to-r from-amber-50 to-orange-50/60 dark:from-stone-800/80 dark:to-stone-800/40 border border-amber-200/80 dark:border-stone-700 text-2xs leading-relaxed text-amber-950 dark:text-amber-300 flex items-start gap-2">
+                  <span class="text-amber-600 text-xs shrink-0">💡</span>
+                  <p class="italic line-clamp-2">${escapeHtml(l.tip)}</p>
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- Footer: Curriculum Scope & CTA -->
+            <div class="space-y-3 pt-3 border-t border-stone-100 dark:border-stone-800">
+              <div class="flex items-center justify-between text-2xs text-stone-500 dark:text-stone-400">
+                <div class="flex items-center gap-2 flex-wrap font-medium">
+                  <span class="inline-flex items-center gap-1 text-stone-700 dark:text-stone-300 font-bold">
+                    <i data-lucide="book-open" class="w-3 h-3 text-amber-600"></i>
+                    <span>${vocabCount} từ vựng</span>
+                  </span>
+                  <span>•</span>
+                  <span class="inline-flex items-center gap-1 text-stone-700 dark:text-stone-300 font-bold">
+                    <i data-lucide="compass" class="w-3 h-3 text-blue-600"></i>
+                    <span>${grammarCount} ngữ pháp</span>
+                  </span>
+                  <span>•</span>
+                  <span class="inline-flex items-center gap-1 text-stone-700 dark:text-stone-300 font-bold">
+                    <i data-lucide="check-square" class="w-3 h-3 text-emerald-600"></i>
+                    <span>${quizCount} trắc nghiệm</span>
+                  </span>
+                </div>
+                <span class="font-black text-amber-600 dark:text-amber-400 shrink-0 bg-amber-50 dark:bg-stone-800 px-2 py-0.5 rounded-md border border-amber-200/50 dark:border-stone-700">+20 EXP</span>
+              </div>
+
+              <button onclick="event.stopPropagation(); openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold ${theme.ctaBtn} shadow-xs hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer group-hover:brightness-105">
+                <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+                <span>Vào Học Bài Này • Chi Tiết →</span>
               </button>
             </div>
-            <div>
-              <h5 class="font-hanzi font-black text-base text-stone-900 dark:text-stone-100 group-hover:text-[#8B1E1E] dark:group-hover:text-amber-400 transition-colors">${l.titleZh}</h5>
-              <p class="text-xs text-stone-500 dark:text-stone-400 italic">${l.titlePinyin || ''}</p>
-              <p class="text-xs font-medium text-stone-700 dark:text-stone-300 mt-0.5">${l.titleVi}</p>
-            </div>
-            <div class="p-2 rounded-xl bg-amber-50/60 dark:bg-stone-800/60 border border-amber-200/60 dark:border-stone-700 text-2xs space-y-1">
-              <p><strong>Ngữ pháp:</strong> ${l.grammar || l.focus || 'Trọng điểm ngữ pháp'}</p>
-              <p><strong>Chủ đề từ:</strong> ${l.vocabTheme || l.vocabularyTheme || 'Từ vựng giao tiếp'}</p>
-            </div>
-            ${l.dialogueZh ? `
-              <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-900 border border-stone-200 dark:border-stone-800 text-2xs space-y-1">
-                <p class="font-hanzi font-bold text-stone-800 dark:text-stone-200 whitespace-pre-line leading-relaxed">${l.dialogueZh}</p>
-                <p class="text-stone-500 dark:text-stone-400 whitespace-pre-line">${l.dialogueVi}</p>
-              </div>
-            ` : ''}
           </div>
-          
-          <div class="space-y-2 pt-2 border-t border-stone-100 dark:border-stone-800">
-            ${l.tip ? `
-              <div class="text-[11px] text-amber-800 dark:text-amber-400 italic leading-snug">
-                💡 ${l.tip}
-              </div>
-            ` : ''}
-            <button onclick="event.stopPropagation(); openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="w-full py-2 px-3 rounded-xl text-xs font-bold bg-amber-100/80 hover:bg-gradient-to-r hover:from-amber-600 hover:to-amber-700 hover:text-white text-stone-800 dark:bg-stone-800 dark:hover:bg-amber-600 dark:text-stone-200 dark:hover:text-white border border-amber-300/80 dark:border-stone-700 shadow-2xs flex items-center justify-center gap-1.5 transition-all cursor-pointer">
-              <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
-              <span>Xem Chi Tiết Bài Học →</span>
-            </button>
-          </div>
-        </div>
-      `).join('')}
+        `;
+      }).join('')}
     </div>
   `;
   if (window.lucide) lucide.createIcons();
