@@ -302,14 +302,6 @@ function switchTab(tabId, options = {}) {
   return job;
 }
 
-if (typeof window !== 'undefined') {
-  window.switchTab = switchTab;
-  window.isTaskInProgress = isTaskInProgress;
-  window.requestExitActiveTask = requestExitActiveTask;
-  window.confirmExitActiveTask = confirmExitActiveTask;
-  window.cancelExitActiveTask = cancelExitActiveTask;
-}
-
 /** Dọn dẹp các nút close góc tự động lỗi thời nếu còn tồn tại */
 function cleanupStrayTabCloseButtons() {
   document.querySelectorAll('.tab-corner-close-btn').forEach(el => el.remove());
@@ -466,6 +458,16 @@ function proceedExitTask() {
   if (typeof showToast === 'function') {
     showToast('Đã hủy tác vụ dở dang và quay về Trang Chủ.', 'info');
   }
+}
+
+if (typeof window !== 'undefined') {
+  window.switchTab = switchTab;
+  window.isTaskInProgress = typeof isTaskInProgress !== 'undefined' ? isTaskInProgress : null;
+  window.requestExitActiveTask = typeof requestExitActiveTask !== 'undefined' ? requestExitActiveTask : null;
+  window.cancelExitTask = typeof cancelExitTask !== 'undefined' ? cancelExitTask : null;
+  window.proceedExitTask = typeof proceedExitTask !== 'undefined' ? proceedExitTask : null;
+  window.confirmExitActiveTask = typeof proceedExitTask !== 'undefined' ? proceedExitTask : null;
+  window.cancelExitActiveTask = typeof cancelExitTask !== 'undefined' ? cancelExitTask : null;
 }
 
 window.addEventListener('popstate', () => {
