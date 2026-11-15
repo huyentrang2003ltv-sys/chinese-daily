@@ -395,17 +395,31 @@
     } catch (e) {}
   }
 
-  // ---------------- QUESTION GENERATOR ----------------
-  function generateMatchQuestions(count = 20, seedStr = null) {
+  // ---------------- QUESTION GENERATOR (HSK-TIERED DIFFICULTY) ----------------
+  function generateMatchQuestions(count = 20, seedStr = null, difficulty = null) {
+    const diff = difficulty || currentDifficulty || 'normal';
     const rng = seedStr ? mulberry32(hashStringToInt(seedStr)) : Math.random;
     const pool = [];
 
-    // Pull dynamic items from dictionaryData if available
+    // Pull dynamic items from dictionaryData filtered strictly by HSK difficulty tier
     if (typeof dictionaryData !== 'undefined' && Array.isArray(dictionaryData) && dictionaryData.length > 50) {
-      const dictSample = [...dictionaryData].sort(() => rng() - 0.5).slice(0, 30);
+      let filteredDict = dictionaryData;
+      if (diff === 'easy') {
+        // Tiểu Vũ: HSK 1 - 2
+        filteredDict = dictionaryData.filter(w => !w.hsk || w.hsk === 1 || w.hsk === 2);
+      } else if (diff === 'normal') {
+        // Đại Lực: HSK 3 - 4
+        filteredDict = dictionaryData.filter(w => w.hsk === 3 || w.hsk === 4);
+      } else if (diff === 'hard') {
+        // Lão Sư Trương: HSK 5 - 6
+        filteredDict = dictionaryData.filter(w => w.hsk === 5 || w.hsk === 6);
+      }
+      if (!filteredDict.length) filteredDict = dictionaryData;
+
+      const dictSample = [...filteredDict].sort(() => rng() - 0.5).slice(0, 35);
       dictSample.forEach(w => {
         if (!w.hanzi || !w.meaning) return;
-        const distractors = dictionaryData
+        const distractors = filteredDict
           .filter(d => d.hanzi !== w.hanzi && d.meaning)
           .sort(() => rng() - 0.5)
           .slice(0, 3)
@@ -418,8 +432,9 @@
             .map((v, i) => ({ v, orig: i }))
             .sort(() => rng() - 0.5);
 
+          const hskTierTag = w.hsk ? `HSK ${w.hsk}` : (diff === 'easy' ? 'HSK 1-2' : (diff === 'normal' ? 'HSK 3-4' : 'HSK 5-6'));
           pool.push({
-            category: `Từ Vựng HSK ${w.hsk || ''}`,
+            category: `Từ Vựng ${hskTierTag}`,
             prompt: `Từ “${w.hanzi}” (${w.pinyin || ''}) có nghĩa là:`,
             options: shuffled.map(s => s.v),
             correct: shuffled.findIndex(s => s.orig === 0),
@@ -429,7 +444,7 @@
       });
     }
 
-    // Pull from classifiers
+    // Pull from classifiers (Lượng từ)
     if (typeof classifiersData !== 'undefined' && Array.isArray(classifiersData) && classifiersData.length > 5) {
       const clsSample = [...classifiersData].sort(() => rng() - 0.5).slice(0, 8);
       clsSample.forEach(c => {
@@ -457,18 +472,57 @@
       });
     }
 
-    // Blend in curated fallback questions
-    FALLBACK_QUESTIONS.forEach(q => {
-      const shuffled = q.options
-        .map((v, i) => ({ v, orig: i }))
-        .sort(() => rng() - 0.5);
-      pool.push({
-        category: q.category,
-        prompt: q.prompt,
-        options: shuffled.map(s => s.v),
-        correct: shuffled.findIndex(s => s.orig === q.correct),
-        explanation: q.explanation
+    // If hard mode: Pull from Chengyu (Thành ngữ Điển Cố 4 Chữ - HSK 5-6)
+    if (diff === 'hard' && typeof chengyuData !== 'undefined' && Array.isArray(chengyuData) && chengyuData.length > 5) {
+      const cySample = [...chengyuData].sort(() => rng() - 0.5).slice(0, 8);
+      cySample.forEach(cy => {
+        if (!cy.idiom || cy.idiom.length !== 4) return;
+        const missingIdx = Math.floor(rng() * 4);
+        const correctChar = cy.idiom[missingIdx];
+        const masked = cy.idiom.substring(0, missingIdx) + ' ___ ' + cy.idiom.substring(missingIdx + 1);
+
+        const distChars = [];
+        chengyuData.forEach(other => {
+          if (other.idiom && other.idiom !== cy.idiom) {
+            for (const ch of other.idiom) {
+              if (ch !== correctChar && !distChars.includes(ch)) distChars.push(ch);
+            }
+          }
+        });
+        const chosenDist = distChars.sort(() => rng() - 0.5).slice(0, 3);
+        if (chosenDist.length === 3) {
+          const allOpts = [correctChar, ...chosenDist];
+          const shuffled = allOpts
+            .map((v, i) => ({ v, orig: i }))
+            .sort(() => rng() - 0.5);
+          pool.push({
+            category: 'Thành Ngữ Điển Cố (HSK 5-6)',
+            prompt: `Điền chữ còn thiếu vào thành ngữ: “${masked}”`,
+            options: shuffled.map(s => s.v),
+            correct: shuffled.findIndex(s => s.orig === 0),
+            explanation: `Thành ngữ chuẩn: ${cy.idiom} (${cy.pinyin || ''}) - ${cy.meaning || ''}`
+          });
+        }
       });
+    }
+
+    // Blend in curated fallback questions filtered by difficulty
+    FALLBACK_QUESTIONS.forEach(q => {
+      let keep = true;
+      if (diff === 'easy' && q.category.includes('Thành Ngữ')) keep = false;
+      if (diff === 'hard' && q.category.includes('Cơ bản')) keep = false;
+      if (keep) {
+        const shuffled = q.options
+          .map((v, i) => ({ v, orig: i }))
+          .sort(() => rng() - 0.5);
+        pool.push({
+          category: q.category,
+          prompt: q.prompt,
+          options: shuffled.map(s => s.v),
+          correct: shuffled.findIndex(s => s.orig === q.correct),
+          explanation: q.explanation
+        });
+      }
     });
 
     return pool.sort(() => rng() - 0.5).slice(0, count);
@@ -517,7 +571,7 @@
     if (modal) modal.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
     clearInterval(battleTimerInterval);
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
     clearTimeout(rivalTimerTimeout);
     isMatchRunning = false;
   }
@@ -687,7 +741,7 @@
     isAnswerLocked = false;
 
     const seed = friendChallengeConfig ? friendChallengeConfig.room : null;
-    matchQuestions = generateMatchQuestions(30, seed);
+    matchQuestions = generateMatchQuestions(30, seed, currentDifficulty);
 
     playPvPSfx('click');
 
@@ -736,7 +790,7 @@
 
       if (battleTimeRemaining <= 0) {
         clearInterval(battleTimerInterval);
-        clearInterval(speedGaugeInterval);
+        stopQuestionSpeedGauge();
         clearTimeout(rivalTimerTimeout);
         endPvPMatch(true);
       }
@@ -915,19 +969,31 @@
   }
 
   function startQuestionSpeedGauge() {
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
     const gauge = document.getElementById('pvpSpeedGaugeBar');
     if (!gauge) return;
-    gauge.style.width = '100%';
+    gauge.style.transition = 'none';
+    gauge.style.transformOrigin = 'left center';
+    gauge.style.transform = 'scaleX(1)';
+    gauge.style.willChange = 'transform';
+    void gauge.offsetWidth; // Trigger reflow once
+    gauge.style.transition = 'transform 4s linear';
+    gauge.style.transform = 'scaleX(0)';
+  }
 
-    const duration = 4000;
-    const start = Date.now();
-    speedGaugeInterval = setInterval(() => {
-      const elapsed = Date.now() - start;
-      const pct = Math.max(0, 100 - (elapsed / duration) * 100);
-      if (gauge) gauge.style.width = `${pct}%`;
-      if (pct <= 0) clearInterval(speedGaugeInterval);
-    }, 100);
+  function stopQuestionSpeedGauge() {
+    const gauge = document.getElementById('pvpSpeedGaugeBar');
+    if (gauge) {
+      try {
+        const computed = window.getComputedStyle(gauge).transform;
+        gauge.style.transition = 'none';
+        gauge.style.transform = computed || 'scaleX(0)';
+      } catch (e) {}
+    }
+    if (speedGaugeInterval) {
+      stopQuestionSpeedGauge();
+      speedGaugeInterval = null;
+    }
   }
 
   function scheduleRivalResponse(question) {
@@ -975,7 +1041,7 @@
   function submitPvPAnswer(optIdx) {
     if (isAnswerLocked || !isMatchRunning) return;
     isAnswerLocked = true;
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
 
     const q = matchQuestions[currentQuestionIndex];
     const isCorrect = optIdx === q.correct;
@@ -1077,7 +1143,7 @@
   function endPvPMatch(naturalFinish = true) {
     isMatchRunning = false;
     clearInterval(battleTimerInterval);
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
     clearTimeout(rivalTimerTimeout);
 
     const isVictory = userScore > rivalScore;
@@ -1164,6 +1230,10 @@
             <span>🔄</span>
             <span>TÁI ĐẤU NGAY</span>
           </button>
+          <button onclick="generatePvPShareCard()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+            <span>🎨</span>
+            <span>Tải Ảnh Story (Khoe Bạn Bè)</span>
+          </button>
           <button onclick="copyPvPChallengeLink(${userScore})" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-400/40 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
             <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
             <span>Thách Đấu (${userScore} Điểm)</span>
@@ -1246,6 +1316,210 @@
     return isMatchRunning;
   }
 
+
+  // ---------------- CANVAS STORY SHARE CARD (9:16) ----------------
+  function generatePvPShareCard() {
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 1920;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // 1. Background Gradient (Luxury Imperial Dark Onyx & Crimson)
+      const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
+      bgGrad.addColorStop(0, '#1c1917');
+      bgGrad.addColorStop(0.3, '#2a1215');
+      bgGrad.addColorStop(0.7, '#1f0d11');
+      bgGrad.addColorStop(1, '#0c0a09');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      // 2. Ambient Glows
+      const rad1 = ctx.createRadialGradient(540, 400, 50, 540, 400, 500);
+      rad1.addColorStop(0, 'rgba(245, 158, 11, 0.18)');
+      rad1.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = rad1;
+      ctx.fillRect(0, 0, 1080, 1000);
+
+      // 3. Ornate Double Gold Border
+      ctx.strokeStyle = '#c59a3f';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(50, 50, 980, 1820);
+      ctx.strokeStyle = 'rgba(197, 154, 63, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(66, 66, 948, 1788);
+
+      // Corner Accents
+      const corners = [[50, 50], [1030, 50], [50, 1870], [1030, 1870]];
+      corners.forEach(([cx, cy]) => {
+        ctx.fillStyle = '#c59a3f';
+        ctx.beginPath();
+        ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 4. Header: Seal & Brand
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#c59a3f';
+      ctx.font = 'bold 34px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('每日中文 · YUHAN HSK', 540, 160);
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('ĐẤU TRƯỜNG HÁN NGỮ 1VS1 · ĐỈNH CAO TỐC ĐỘ', 540, 210);
+
+      // 5. Outcome Badge & Trophy
+      const isVictory = userScore > rivalScore;
+      const isDraw = userScore === rivalScore;
+      let badgeTitle = isVictory ? 'CHIẾN THẮNG HUY HOÀNG' : (isDraw ? 'BẤT PHÂN THẮNG BẠI' : 'TẬP SỰ QUẢ CẢM');
+      let outcomeColor = isVictory ? '#fbbf24' : (isDraw ? '#38bdf8' : '#f87171');
+      let emojiTrophy = isVictory ? '👑' : (isDraw ? '🤝' : '⚔️');
+
+      ctx.font = '110px serif';
+      ctx.fillText(emojiTrophy, 540, 360);
+
+      ctx.fillStyle = outcomeColor;
+      ctx.font = '900 56px "Noto Serif SC", serif';
+      ctx.fillText(badgeTitle, 540, 460);
+
+      // Subtitle
+      ctx.fillStyle = 'rgba(254, 243, 199, 0.85)';
+      ctx.font = '28px "Plus Jakarta Sans", sans-serif';
+      const sub = isVictory ? 'Vượt qua đối thủ bằng bản lĩnh và tốc độ phản xạ chuẩn xác!' : 'Trận đối đầu gay cấn 60 giây nghẹt thở!';
+      ctx.fillText(sub, 540, 510);
+
+      // 6. Scoreboard Comparison Card
+      ctx.fillStyle = 'rgba(30, 41, 59, 0.7)';
+      roundRect(ctx, 120, 580, 840, 420, 36);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(197, 154, 63, 0.5)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // User Side
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('ĐIỂM CỦA BẠN', 320, 660);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 76px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(userScore.toLocaleString('vi-VN'), 320, 755);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`Đúng ${correctCount}/${userAnswersLog.length} câu`, 320, 810);
+
+      // Divider VS
+      ctx.fillStyle = '#f59e0b';
+      ctx.font = '900 48px "Noto Serif SC", serif';
+      ctx.fillText('VS', 540, 740);
+
+      // Rival Side
+      ctx.fillStyle = '#f43f5e';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText((currentRival.name || 'ĐỐI THỦ').toUpperCase(), 760, 660);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 76px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(rivalScore.toLocaleString('vi-VN'), 760, 755);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(currentRival.levelText || currentRival.title || 'Đối thủ AI', 760, 810);
+
+      // Level / Difficulty Badge inside card
+      ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
+      roundRect(ctx, 160, 870, 760, 90, 20);
+      ctx.fill();
+      ctx.fillStyle = '#fcd34d';
+      ctx.font = 'bold 26px "Plus Jakarta Sans", sans-serif';
+      const diffLabel = currentDifficulty === 'hard' ? 'Cấp độ: Cao Thủ (HSK 5-6 & Thành ngữ)' : (currentDifficulty === 'normal' ? 'Cấp độ: Trung Cấp (HSK 3-4)' : 'Cấp độ: Tập Sự (HSK 1-2)');
+      ctx.fillText(`⚡ ${diffLabel}`, 540, 925);
+
+      // 7. Match Stats Grid (3 boxes)
+      const statBoxes = [
+        { label: 'CHUỖI COMBO CAO NHẤT', val: `x${maxMatchStreak || 1} 🔥` },
+        { label: 'ĐỘ CHÍNH XÁC', val: `${userAnswersLog.length ? Math.round((correctCount / userAnswersLog.length) * 100) : 0}% 🎯` },
+        { label: 'THỜI GIAN', val: '60s ⏱️' }
+      ];
+      statBoxes.forEach((s, idx) => {
+        const x = 120 + idx * 290;
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+        roundRect(ctx, x, 1040, 260, 180, 24);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.font = 'bold 18px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(s.label, x + 130, 1100);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 42px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(s.val, x + 130, 1165);
+      });
+
+      // 8. Inspirational Chinese Quote
+      ctx.fillStyle = '#fcd34d';
+      ctx.font = 'bold 36px "Noto Serif SC", serif';
+      ctx.fillText('“ 熟能生巧 · 敏而好学 ”', 540, 1340);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('Trăm hay không bằng tay quen — Càng luyện tập, phản xạ càng bén sắc', 540, 1390);
+
+      // 9. Web invitation seal banner
+      ctx.fillStyle = 'rgba(139, 30, 30, 0.4)';
+      roundRect(ctx, 120, 1470, 840, 180, 28);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = '#fef08a';
+      ctx.font = 'bold 30px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('🔥 BẠN CÓ DÁM THỬ SỨC ĐÁNH BẠI ĐIỂM SỐ NÀY?', 540, 1540);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.font = 'bold 26px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('👉 Truy cập thi đấu: hanzidaily.hoangp.work', 540, 1600);
+
+      // 10. Footer Date
+      const todayStr = new Date().toLocaleDateString('vi-VN');
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.font = '22px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`Chứng nhận thi đấu ngày ${todayStr} · Bản quyền Yuhan HSK`, 540, 1780);
+
+      // Trigger automatic PNG download
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `dau_truong_pvp_${Date.now()}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      if (typeof showToast === 'function') {
+        showToast('🎨 Đã tạo và tải ảnh Story vinh danh thành công! Hãy khoe ngay với bạn bè nhé!', 'success');
+      }
+    } catch (err) {
+      console.error('Error generating PvP share card:', err);
+      if (typeof showToast === 'function') {
+        showToast('Không thể tạo ảnh: ' + err.message, 'error');
+      }
+    }
+  }
+
+  function roundRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  }
+
   // ---------------- EXPORTS ----------------
   root.initPvPArenaTab = initPvPArenaTab;
   root.openPvPArenaModal = openPvPArenaModal;
@@ -1256,5 +1530,7 @@
   root.copyPvPChallengeLink = copyPvPChallengeLink;
   root.isPvPBattleActive = isPvPBattleActive;
   root.togglePvPAudio = togglePvPAudio;
+  root.generatePvPShareCard = generatePvPShareCard;
+  root.stopQuestionSpeedGauge = stopQuestionSpeedGauge;
 
 })(typeof window !== 'undefined' ? window : globalThis);

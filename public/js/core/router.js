@@ -294,12 +294,20 @@ function switchTab(tabId, options = {}) {
   document.title = `${TABS[tabId].label} · Học Tiếng Trung Mỗi Ngày`;
   renderNav();
 
-  if (changed && !options.keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (changed && !options.keepScroll) window.scrollTo({ top: 0, behavior: 'auto' });
   // The dashboard summarises other tabs, so refresh it every time it is shown.
   const alreadyRendered = renderedTabs.has(tabId);
   const job = ensureTabRendered(tabId);
   if (alreadyRendered && changed && tabId === 'home') renderHomeDashboard();
   return job;
+}
+
+if (typeof window !== 'undefined') {
+  window.switchTab = switchTab;
+  window.isTaskInProgress = isTaskInProgress;
+  window.requestExitActiveTask = requestExitActiveTask;
+  window.confirmExitActiveTask = confirmExitActiveTask;
+  window.cancelExitActiveTask = cancelExitActiveTask;
 }
 
 /** Dọn dẹp các nút close góc tự động lỗi thời nếu còn tồn tại */

@@ -12,7 +12,7 @@ const html = fs.readFileSync(path.join(PUBLIC, 'index.html'), 'utf8');
 
 const scriptSrcs = [...html.matchAll(/<script[^>]+src="([^"]+)"/g)]
   .map(m => m[1])
-  .filter(src => !/^https?:/.test(src));
+  .filter(src => !/^https?:/.test(src) && !src.includes('app.bundle.js'));
 
 console.log(`Found ${scriptSrcs.length} frontend scripts to bundle...`);
 
@@ -27,7 +27,7 @@ for (const src of scriptSrcs) {
   }
   const code = fs.readFileSync(filePath, 'utf8');
   totalOriginalBytes += code.length;
-  combinedCode += `\n/* --- FILE: ${src} --- */\n(function(){\n${code}\n})();\n`;
+  combinedCode += `\n/* --- FILE: ${src} --- */\n${code}\n;\n`;
 }
 
 const bundlePath = path.join(DIST, 'app.bundle.js');

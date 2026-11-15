@@ -933,6 +933,10 @@
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
+          <button onclick="generateWordleShareCard()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span>🎨</span>
+            <span>TẢI ẢNH STORY (KHOE BẠN BÈ)</span>
+          </button>
           <button onclick="shareWordleResult()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-black text-xs shadow-md hover:scale-105 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="share-2" class="w-4 h-4"></i>
             <span>CHIA SẺ KẾT QUẢ (COPY EMOJI)</span>
@@ -983,6 +987,217 @@
     if (typeof refreshIcons === 'function' && container) refreshIcons(container);
   }
 
+
+  // ---------------- CANVAS STORY SHARE CARD (9:16) ----------------
+  function generateWordleShareCard() {
+    try {
+      if (!currentIdiom) return;
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 1920;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // 1. Background Gradient (Imperial Emerald & Deep Teal / Midnight Slate)
+      const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
+      bgGrad.addColorStop(0, '#0f172a');
+      bgGrad.addColorStop(0.35, '#064e3b');
+      bgGrad.addColorStop(0.7, '#022c22');
+      bgGrad.addColorStop(1, '#090d16');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      // Ambient radial glow behind wordle
+      const glow = ctx.createRadialGradient(540, 680, 50, 540, 680, 480);
+      glow.addColorStop(0, 'rgba(16, 185, 129, 0.22)');
+      glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 300, 1080, 800);
+
+      // 2. Double Golden Border & Ornate Corners
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(50, 50, 980, 1820);
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(66, 66, 948, 1788);
+
+      const corners = [[50, 50], [1030, 50], [50, 1870], [1030, 1870]];
+      corners.forEach(([cx, cy]) => {
+        ctx.fillStyle = '#f59e0b';
+        ctx.beginPath();
+        ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 3. Header: Seal & Brand
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = 'bold 34px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('每日中文 · YUHAN HSK', 540, 160);
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('THỬ THÁCH THÀNH NGỮ HẰNG NGÀY (WORDLE CHENGYU)', 540, 210);
+
+      // 4. Status Badge & Trophy
+      const isWin = isGameWon;
+      const statusText = isWin ? `GIẢI ĐỐ THÀNH CÔNG (${guesses.length}/${MAX_ATTEMPTS})` : 'THỬ THÁCH ĐÃ HOÀN THÀNH';
+      const statusIcon = isWin ? '🎉' : '💡';
+      ctx.font = '100px serif';
+      ctx.fillText(statusIcon, 540, 340);
+
+      ctx.fillStyle = isWin ? '#34d399' : '#fbbf24';
+      ctx.font = '900 52px "Noto Serif SC", serif';
+      ctx.fillText(statusText, 540, 430);
+
+      // Date Pill
+      const dateText = isDailyMode ? (dailyDateStr || new Date().toISOString().split('T')[0]) : 'Luyện Tập Tự Do';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+      roundRect(ctx, 360, 470, 360, 54, 27);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.fillStyle = '#fde68a';
+      ctx.font = 'bold 22px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`📅 Ngày giải đố: ${dateText}`, 540, 506);
+
+      // 5. Draw the 6x4 Wordle Grid on Canvas
+      const startY = 570;
+      const tileSize = 96;
+      const gap = 16;
+      const totalGridW = 4 * tileSize + 3 * gap;
+      const gridStartX = 540 - (totalGridW / 2);
+
+      for (let r = 0; r < MAX_ATTEMPTS; r++) {
+        const rowY = startY + r * (tileSize + gap);
+        const evalRow = evaluations[r];
+        const guessStr = guesses[r] || '';
+
+        for (let c = 0; c < 4; c++) {
+          const tileX = gridStartX + c * (tileSize + gap);
+          let tileBg = 'rgba(15, 23, 42, 0.7)';
+          let tileBorder = 'rgba(51, 65, 85, 0.8)';
+          let textColor = '#ffffff';
+
+          if (evalRow) {
+            const st = evalRow[c];
+            if (st === 'correct') {
+              tileBg = '#059669';
+              tileBorder = '#34d399';
+            } else if (st === 'present') {
+              tileBg = '#d97706';
+              tileBorder = '#fde68a';
+            } else {
+              tileBg = '#1e293b';
+              tileBorder = '#334155';
+              textColor = '#94a3b8';
+            }
+          }
+
+          ctx.fillStyle = tileBg;
+          roundRect(ctx, tileX, rowY, tileSize, tileSize, 16);
+          ctx.fill();
+          ctx.strokeStyle = tileBorder;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          if (guessStr[c]) {
+            ctx.fillStyle = textColor;
+            ctx.font = 'bold 50px "Noto Serif SC", serif';
+            ctx.fillText(guessStr[c], tileX + tileSize / 2, rowY + tileSize / 2 + 18);
+          }
+        }
+      }
+
+      // 6. Idiom Reveal Card (at bottom)
+      const idiomCardY = 1270;
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+      roundRect(ctx, 100, idiomCardY, 880, 360, 32);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Idiom Characters
+      ctx.fillStyle = '#fde68a';
+      ctx.font = '900 64px "Noto Serif SC", serif';
+      ctx.fillText(currentIdiom.chengyu, 540, idiomCardY + 90);
+
+      // Pinyin & Sino-Vietnamese
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`${currentIdiom.pinyin}  •  ${currentIdiom.hanviet}`, 540, idiomCardY + 145);
+
+      // Meaning
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.font = '26px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`“${currentIdiom.figurative || currentIdiom.literal}”`, 540, idiomCardY + 210);
+
+      // Morality / History note
+      if (currentIdiom.story) {
+        ctx.fillStyle = 'rgba(253, 230, 138, 0.85)';
+        ctx.font = 'italic 21px "Plus Jakarta Sans", sans-serif';
+        const storyExcerpt = currentIdiom.story.length > 75 ? currentIdiom.story.substring(0, 72) + '...' : currentIdiom.story;
+        ctx.fillText(`Xuất xứ: ${storyExcerpt}`, 540, idiomCardY + 265);
+      }
+
+      // Streak / Stats Footer inside card
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      ctx.font = 'bold 22px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`🔥 Chuỗi ngày thắng liên tục: ${wordleStats.currentStreak} ngày  |  Kỷ lục: ${wordleStats.maxStreak} ngày`, 540, idiomCardY + 320);
+
+      // 7. QR / Call to action watermark
+      ctx.fillStyle = 'rgba(16, 185, 129, 0.2)';
+      roundRect(ctx, 120, 1660, 840, 130, 24);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#a7f3d0';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('ĐỐ BẠN GIẢI ĐƯỢC THÀNH NGỮ NÀY DƯỚI 6 LẦN ĐOÁN!', 540, 1718);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('👉 Thử sức tại: hanzidaily.hoangp.work', 540, 1760);
+
+      // Trigger automatic PNG download
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      const fname = isDailyMode ? `wordle_chengyu_${dailyDateStr || Date.now()}.png` : `wordle_chengyu_${Date.now()}.png`;
+      a.download = fname;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      if (typeof showToast === 'function') {
+        showToast('🎨 Đã tạo và tải ảnh Story Wordle thành công! Đăng Story khoe ngay nhé!', 'success');
+      }
+    } catch (err) {
+      console.error('Error generating Wordle share card:', err);
+      if (typeof showToast === 'function') {
+        showToast('Không thể tạo ảnh: ' + err.message, 'error');
+      }
+    }
+  }
+
+  function roundRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  }
+
   // ---------------- EXPORTS ----------------
   root.initWordleTab = initWordleTab;
   root.openWordleModal = openWordleModal;
@@ -994,5 +1209,6 @@
   root.requestWordleHint = requestWordleHint;
   root.startWordlePractice = startWordlePractice;
   root.shareWordleResult = shareWordleResult;
+  root.generateWordleShareCard = generateWordleShareCard;
 
 })(typeof window !== 'undefined' ? window : globalThis);

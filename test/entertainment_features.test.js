@@ -183,4 +183,57 @@ test('⚔️ & 🧩 Entertainment & Gamification Suite (PvP Arena & Chengyu Word
       ['correct', 'absent', 'correct', 'absent']
     );
   });
+
+  await t.test('6. Validates PvP HSK Difficulty Tiering Logic', () => {
+    const pvpCode = fs.readFileSync(path.join(ROOT, 'public/js/features/pvp_arena.js'), 'utf8');
+    const mockDict = [
+      { hanzi: '你好', pinyin: 'nǐhǎo', meaning: 'xin chào', hsk: 1 },
+      { hanzi: '再见', pinyin: 'zàijiàn', meaning: 'tạm biệt', hsk: 1 },
+      { hanzi: '高兴', pinyin: 'gāoxìng', meaning: 'vui vẻ', hsk: 2 },
+      { hanzi: '舒服', pinyin: 'shūfu', meaning: 'dễ chịu', hsk: 3 },
+      { hanzi: '精彩', pinyin: 'jīngcǎi', meaning: 'tuyệt vời', hsk: 4 },
+      { hanzi: '甚至', pinyin: 'shènzhì', meaning: 'thậm chí', hsk: 4 },
+      { hanzi: '逻辑', pinyin: 'luójí', meaning: 'logic', hsk: 5 },
+      { hanzi: '悠久', pinyin: 'yōujiǔ', meaning: 'lâu đời', hsk: 6 }
+    ];
+
+    const sandbox = {
+      window: {},
+      document: { getElementById: () => null, body: { classList: { add: () => {}, remove: () => {} } } },
+      localStorage: { getItem: () => null, setItem: () => {} },
+      dictionaryData: mockDict,
+      classifiersData: [{ char: '只', examples: [{ noun: '猫' }] }],
+      chengyuData: [{ idiom: '画蛇添足', pinyin: 'huà shé tiān zú', meaning: 'vẽ rắn thêm chân' }],
+      setTimeout,
+      clearTimeout,
+      Date,
+      Math
+    };
+    sandbox.window = sandbox;
+    sandbox.globalThis = sandbox;
+    vm.createContext(sandbox);
+    vm.runInContext(pvpCode, sandbox);
+
+    assert.equal(typeof sandbox.generatePvPShareCard, 'function', 'generatePvPShareCard must be exported');
+  });
+
+  await t.test('7. Validates HTML5 Canvas Share Card Handlers in Wordle & PvP', () => {
+    const wordleCode = fs.readFileSync(path.join(ROOT, 'public/js/features/wordle.js'), 'utf8');
+    const sandbox = {
+      window: {},
+      document: { getElementById: () => null, body: { classList: { add: () => {}, remove: () => {} } } },
+      localStorage: { getItem: () => null, setItem: () => {} },
+      chengyuData: [{ idiom: '画蛇添足', pinyin: 'huà shé tiān zú', meaning: 'vẽ rắn thêm chân' }],
+      setTimeout,
+      clearTimeout,
+      Date,
+      Math
+    };
+    sandbox.window = sandbox;
+    sandbox.globalThis = sandbox;
+    vm.createContext(sandbox);
+    vm.runInContext(wordleCode, sandbox);
+
+    assert.equal(typeof sandbox.generateWordleShareCard, 'function', 'generateWordleShareCard must be exported');
+  });
 });

@@ -1,7 +1,6 @@
 /* Hi HSK - Học Tiếng Trung Mỗi Ngày Unified Production Bundle */
 
 /* --- FILE: js/core/utils.js --- */
-(function(){
 // =========================================================================
 // Shared helpers (loaded first; every other module may use them)
 // =========================================================================
@@ -167,10 +166,9 @@ async function copyToClipboard(text, successMessage = 'Đã sao chép!') {
   }
 }
 
-})();
+;
 
 /* --- FILE: js/core/data.js --- */
-(function(){
 // =========================================================================
 // Data layer: JSON datasets are fetched lazily, once, when a tab needs them.
 // =========================================================================
@@ -279,10 +277,9 @@ if (typeof window !== 'undefined') {
   window.loadDatasets = loadDatasets;
 }
 
-})();
+;
 
 /* --- FILE: js/core/tts.js --- */
-(function(){
 // =========================================================================
 // Dual-Voice Beijing TTS Engine (Giọng Đọc Chuẩn Bắc Kinh 普通话: Nam & Nữ)
 // =========================================================================
@@ -506,10 +503,9 @@ if (typeof document !== 'undefined') {
   });
 }
 
-})();
+;
 
 /* --- FILE: js/core/theme.js --- */
-(function(){
 // Module state
 let currentAppTheme = storage.getRaw('appTheme') || 'light';
 
@@ -599,10 +595,9 @@ function applyAppTheme(theme) {
   }
 }
 
-})();
+;
 
 /* --- FILE: js/core/profile.js --- */
-(function(){
 // Gamification & Profile State (persisted in localStorage)
 const PROFILE_STORAGE_KEY = 'yuhan_hsk_user_profile';
 let userProfile = {
@@ -793,10 +788,9 @@ async function reviewNotebookInFlashcards() {
   startFlashcardSession('notebook');
 }
 
-})();
+;
 
 /* --- FILE: js/core/srs.js --- */
-(function(){
 // =========================================================================
 // Spaced repetition (Leitner boxes) shared by Flashcards, Notebook and "Hôm nay"
 // =========================================================================
@@ -892,10 +886,9 @@ function srsStats() {
   };
 }
 
-})();
+;
 
 /* --- FILE: js/core/account.js --- */
-(function(){
 // =========================================================================
 // Accounts: sign-in state (HttpOnly session cookie), progress sync, user menu, admin panel
 // =========================================================================
@@ -1443,10 +1436,9 @@ document.addEventListener('DOMContentLoaded', checkOAuthUrlParams);
 window.handleSocialAuth = handleSocialAuth;
 
 
-})();
+;
 
 /* --- FILE: js/core/vip.js --- */
-(function(){
 // =========================================================================
 // VIP subscription: status comes from the server (account), payment via VietQR transfer
 // =========================================================================
@@ -1620,10 +1612,9 @@ async function confirmVipPaymentTransfer() {
   });
 }
 
-})();
+;
 
 /* --- FILE: js/core/visitors.js --- */
-(function(){
 // =========================================================================
 // Visitor counters (real numbers from /api/visitors; anonymous random client id)
 // =========================================================================
@@ -1692,10 +1683,9 @@ function toggleVisitorStatsModal() {
   else openVisitorStatsModal();
 }
 
-})();
+;
 
 /* --- FILE: js/core/backup.js --- */
-(function(){
 // =========================================================================
 // Progress backup / restore (all learner data lives in localStorage)
 // =========================================================================
@@ -1750,10 +1740,9 @@ async function importProgress(file) {
   }
 }
 
-})();
+;
 
 /* --- FILE: js/features/etymology.js --- */
-(function(){
 'use strict';
 
 // Module state
@@ -2402,10 +2391,9 @@ function handleEtymologySearchKeyDown(e) {
 }
 
 
-})();
+;
 
 /* --- FILE: js/features/culture.js --- */
-(function(){
 // Module state
 let activeCultureCategory = 'all';
 let cultureSearchQuery = '';
@@ -2705,10 +2693,9 @@ function renderCultureCards() {
   refreshIcons(container);
 }
 
-})();
+;
 
 /* --- FILE: js/features/mindmap.js --- */
-(function(){
 // Module state
 let mindmapActiveBranch = 'all';
 let mindmapSearchQuery = '';
@@ -3129,10 +3116,9 @@ function renderMindmap() {
   refreshIcons();
 }
 
-})();
+;
 
 /* --- FILE: js/features/confusions.js --- */
-(function(){
 // public/js/features/confusions.js
 // ---------------- TAB: PHÂN BIỆT TỪ DỄ LẪN (近义词辨析) ----------------
 // Ma trận so sánh từ đồng nghĩa, phân tích cốt lõi, khẩu quyết và trắc nghiệm
@@ -3335,10 +3321,9 @@ if (typeof module !== 'undefined' && module.exports) {
   };
 }
 
-})();
+;
 
 /* --- FILE: js/features/pinyin.js --- */
-(function(){
 // =========================================================================
 // MODULE: BẢNG PHIÊN ÂM PINYIN & CẨM NĂNG PHÁT ÂM CHUẨN TOÀN DIỆN 2026
 // Hệ thống ngữ âm tiêu chuẩn Bắc Kinh & Chuẩn HSK 3.0 cho người học Việt Nam
@@ -4229,10 +4214,9 @@ function renderPinyinQuizView(container) {
   `;
 }
 
-})();
+;
 
 /* --- FILE: js/features/hsk90.js --- */
-(function(){
 // =========================================================================
 // Khung Lộ Trình Gia Tốc 90 Ngày Chinh Phục HSK 3 (Giáo Án Từng Ngày & Thực Hành)
 // =========================================================================
@@ -5288,10 +5272,9 @@ function renderPinyinQuizView(container) {
 
 })(window);
 
-})();
+;
 
 /* --- FILE: js/features/pathway.js --- */
-(function(){
 // Module state
 let currentHskLevel = 1;
 let currentPathwayLessonsTab = 'standard48'; // 'standard48' or 'all1040'
@@ -6989,10 +6972,9 @@ function renderHsk30DedicatedCards(container) {
   if (window.lucide) lucide.createIcons();
 }
 
-})();
+;
 
 /* --- FILE: js/features/translation.js --- */
-(function(){
 // =========================================================================
 // TAB: LUYỆN DỊCH HSK THỰC CHIẾN (CÂU ĐƠN ➔ CÂU PHỨC ➔ ĐOẠN VĂN ĐỜI THƯỜNG ➔ VIẾT LUẬN)
 // =========================================================================
@@ -7573,10 +7555,9 @@ function renderTranslationStage() {
   refreshIcons();
 }
 
-})();
+;
 
 /* --- FILE: js/features/practice.js --- */
-(function(){
 // Module state
 let currentPracticeLevel = 1;
 let currentPracticeSkill = 'all';
@@ -8265,10 +8246,9 @@ window.finishPracticeSession = function () {
   }
 };
 
-})();
+;
 
 /* --- FILE: js/features/flashcards.js --- */
-(function(){
 // =========================================================================
 // TAB 5: FLASHCARD + SPACED REPETITION (KHO TỪ VỰNG TOÀN DIỆN HSK & CHỦ ĐỀ)
 // =========================================================================
@@ -8733,10 +8713,9 @@ window.buildFlashcardQueue = buildFlashcardQueue;
 window.getFlashcardQueue = () => flashcardQueue;
 window.getCurrentFlashcard = () => currentFlashcard;
 
-})();
+;
 
 /* --- FILE: js/features/topic_visuals.js --- */
-(function(){
 // public/js/features/topic_visuals.js
 // Hệ Thống Hình Ảnh Minh Họa Chuyên Biệt Cho Từ Vựng Theo Chủ Đề (Thematic Visual Illustration Engine)
 
@@ -9184,10 +9163,9 @@ window.getCurrentFlashcard = () => currentFlashcard;
 
 })(window);
 
-})();
+;
 
 /* --- FILE: js/features/dictionary.js --- */
-(function(){
 // Module state
 let currentTopicPillFilter = '';
 let dictRendered = 0;
@@ -10114,10 +10092,9 @@ async function startTopicFlashcards() {
   showToast(`Đã nạp ${customCards.length} từ vựng chủ đề "${topicName}" vào Flashcard để ôn tập!`, 'success');
 }
 
-})();
+;
 
 /* --- FILE: js/features/vocab_expansion.js --- */
-(function(){
 // =========================================================================
 // Cẩm Nang Mở Rộng Từ Vựng Tiếng Trung (汉语词汇扩展指南)
 // Sơ Đồ Tư Duy Mở Rộng Từ Vựng (Radial Mindmap & Word Tree Formation)
@@ -10795,10 +10772,9 @@ if (typeof window !== 'undefined') {
   window.saveVocabExpToNotebook = saveVocabExpToNotebook;
 }
 
-})();
+;
 
 /* --- FILE: js/features/classifiers.js --- */
-(function(){
 // public/js/features/classifiers.js
 // =========================================================================
 // BÁCH KHOA LƯỢNG TỪ THỰC CHIẾN (汉语量词宝典 - Chinese Classifiers Compendium)
@@ -11131,10 +11107,9 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 
-})();
+;
 
 /* --- FILE: js/features/polyphonic.js --- */
-(function(){
 // public/js/features/polyphonic.js
 // =========================================================================
 // CẨM NANG CHỮ ĐA ÂM ĐA NGHĨA (多音多义字 - Polyphonic Characters Compendium)
@@ -11416,10 +11391,9 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 
-})();
+;
 
 /* --- FILE: js/features/complements.js --- */
-(function(){
 // public/js/features/complements.js
 // =========================================================================
 // BÁCH KHOA BỔ NGỮ TIẾNG HÁN TOÀN DIỆN (汉语补语宝典 - Chinese Complements Masterclass)
@@ -11750,10 +11724,9 @@ if (typeof module !== 'undefined' && module.exports) {
   };
 }
 
-})();
+;
 
 /* --- FILE: js/features/search.js --- */
-(function(){
 // ==========================================
 // INTELLIGENT PHONETIC & LINGUISTIC NORMALIZERS
 // ==========================================
@@ -12755,10 +12728,9 @@ if (typeof document !== 'undefined') {
   }
 }
 
-})();
+;
 
 /* --- FILE: js/features/writing.js --- */
-(function(){
 // Module state
 let currentWriter = null;
 let currentWritingChar = '你';
@@ -13016,10 +12988,9 @@ function loadCustomWritingChar() {
   openWritingModal(val, '', 'Chữ tự chọn');
 }
 
-})();
+;
 
 /* --- FILE: js/features/aichat.js --- */
-(function(){
 // =========================================================================
 // MODULE: 150 BÀI HỘI THOẠI TÌNH HUỐNG & TRỢ LÝ AI (SITUATIONAL DIALOGUES)
 // =========================================================================
@@ -14541,10 +14512,9 @@ if (typeof window !== 'undefined') {
   });
 }
 
-})();
+;
 
 /* --- FILE: js/features/assistant.js --- */
-(function(){
 // ==========================================
 // MODULE: TRỢ LÝ GIA SƯ AI THÔNG MINH (AI CONVERSATIONAL TUTOR & ASSISTANT)
 // ==========================================
@@ -15022,10 +14992,9 @@ window.clearFloatingAiChat = clearFloatingAiChat;
 window.sendFloatingAiMessage = sendFloatingAiMessage;
 window.startFloatingAiSpeechInput = startFloatingAiSpeechInput;
 
-})();
+;
 
 /* --- FILE: js/features/support.js --- */
-(function(){
 // ==================== UNIFIED FLOATING DOCK & POLICY ENGINE ====================
 function initFloatingDock() {
   const isHidden = storage.getRaw('chinese_daily_dock_hidden') === 'true';
@@ -15493,10 +15462,9 @@ window.switchPlatformPolicyTab = switchPlatformPolicyTab;
 window.showAppInstallModal = showAppInstallModal;
 window.closeAppInstallModal = closeAppInstallModal;
 
-})();
+;
 
 /* --- FILE: js/features/mockexam.js --- */
-(function(){
 // ==========================================
 // MODULE: THI THỬ HSK MÔ PHỎNG CHUẨN HANBAN CTI & STUDY4
 // Kho 360 Đề Thi (60 Đề / Cấp Độ HSK 1 - 6)
@@ -17263,10 +17231,9 @@ window.openOfficialCtiCertificateModal = openOfficialCtiCertificateModal;
 window.closeOfficialCtiCertificateModal = closeOfficialCtiCertificateModal;
 window.nextIbtSection = nextIbtSection;
 
-})();
+;
 
 /* --- FILE: js/features/hskk_exam.js --- */
-(function(){
 // ==========================================
 // MODULE: PHÒNG KHẢO THÍ KHẨU NGỮ HSKK CHUẨN CTI HANBAN
 // HSKK Oral Examination Lab (初级 • 中级 • 高级)
@@ -17838,10 +17805,9 @@ window.startHskkRecording = startHskkRecording;
 window.stopHskkRecording = stopHskkRecording;
 window.evaluateHskkSubmission = evaluateHskkSubmission;
 
-})();
+;
 
 /* --- FILE: js/features/radicals.js --- */
-(function(){
 // Module state
 let activeRadicalStroke = 'all';
 let radicalSearchQuery = '';
@@ -18013,10 +17979,9 @@ function renderRadicals() {
   refreshIcons();
 }
 
-})();
+;
 
 /* --- FILE: js/features/chengyu.js --- */
-(function(){
 // Module state
 let activeChengyuCategory = 'all';
 let chengyuSearchQuery = '';
@@ -18179,10 +18144,9 @@ function renderChengyu() {
   refreshIcons();
 }
 
-})();
+;
 
 /* --- FILE: js/features/readings.js --- */
-(function(){
 // Module state
 let activeReadingId = 'reading_01';
 let showReadingTranslation = true;
@@ -18944,10 +18908,9 @@ function playAllReadingParagraphs(gender = 'female') {
   playChineseTTS(fullText, gender);
 }
 
-})();
+;
 
 /* --- FILE: js/features/grammar.js --- */
-(function(){
 // Module state
 let activeGrammarCategory = 'all';
 let activeGrammarLevel = 'all';
@@ -19257,10 +19220,9 @@ function renderGrammarCompendium() {
   if (typeof refreshIcons === 'function') refreshIcons();
 }
 
-})();
+;
 
 /* --- FILE: js/features/jiaocheng.js --- */
-(function(){
 // Module state
 let activeJiaochengVolume = 'all';
 let jiaochengSearchQuery = '';
@@ -20653,10 +20615,9 @@ function renderLessonCulture(lesson) {
   `;
 }
 
-})();
+;
 
 /* --- FILE: js/features/home.js --- */
-(function(){
 // ==================== HOME DASHBOARD MODULE ====================
 // Needs dataset: dictionary (loaded by the router before renderHomeDashboard()).
 
@@ -21360,10 +21321,9 @@ function onProfileChanged() {
   if (typeof renderBeginnerGoldenPath === 'function') renderBeginnerGoldenPath();
 }
 
-})();
+;
 
 /* --- FILE: js/features/beginner.js --- */
-(function(){
 // ==========================================
 // MODULE: LỘ TRÌNH NHẬP MÔN 7 NGÀY (ZERO-TO-HERO 7-DAY GOLDEN PATH)
 // Thiết kế chuyên biệt cho người mới bắt đầu (F0), giải phóng nỗi sợ chữ Hán & thanh điệu
@@ -22205,10 +22165,9 @@ function triggerBeginnerAiWelcome() {
   }
 }
 
-})();
+;
 
 /* --- FILE: js/features/woodblock.js --- */
-(function(){
 // ==================== WOOD BLOCK CHINESE PUZZLE GAME ENGINE (汉语积木) ====================
 
 let currentWoodLevelIndex = 0;
@@ -23132,10 +23091,9 @@ window.getWoodBoardState = () => woodBoardState;
 window.getWoodSelectedPieceId = () => woodSelectedPieceId;
 window.getCurrentWoodLevelIndex = () => currentWoodLevelIndex;
 
-})();
+;
 
 /* --- FILE: js/features/flipcard.js --- */
-(function(){
 // ==================== LẬT THẺ TÌM TỪ ĐỒNG NGHĨA & TRÁI NGHĨA (汉语翻翻卡) ENGINE ====================
 
 let currentFlipLevelIndex = 0;
@@ -24062,10 +24020,9 @@ window.getMatchedPairsCount = () => matchedPairsCount;
 window.getFlipMovesCount = () => flipMovesCount;
 window.isFlipCardProcessing = () => isFlipCardProcessing;
 
-})();
+;
 
 /* --- FILE: js/features/classroom.js --- */
-(function(){
 // ---------------- TAB: LỚP HỌC THÔNG MINH & PHÒNG HỌC NHÓM BẠN BÈ ----------------
 // Cho phép học viên tự tạo phòng học/phòng họp nhóm (Smart Peer Study Room) với bạn bè,
 // chia sẻ mã phòng hoặc link mời trực tiếp, cùng nhau thi thử HSK, luyện từ vựng tương tác,
@@ -26023,10 +25980,9 @@ function exportClassroomCsv(id) {
   downloadFile(`ket-qua-${id}.csv`, '﻿' + lines.join('\r\n'), 'text/csv;charset=utf-8');
 }
 
-})();
+;
 
 /* --- FILE: js/features/placement_test.js --- */
-(function(){
 /**
  * placement_test.js
  * 1. Đánh giá năng lực đầu vào 15 phút (Placement Test) & Tư vấn cấp độ phù hợp
@@ -26419,10 +26375,9 @@ function triggerStudyNotification() {
   }
 }
 
-})();
+;
 
 /* --- FILE: js/features/cheer_comfort.js --- */
-(function(){
 /**
  * cheer_comfort.js
  * Chế độ Khuyến Khích & An Ủi Người Dùng Khi Hoàn Thành Bài
@@ -26797,10 +26752,9 @@ window.getCompanionMode = function () {
   return localStorage.getItem('yh_cheer_comfort_mode') || 'gentle';
 };
 
-})();
+;
 
 /* --- FILE: js/features/ai_writing_grader.js --- */
-(function(){
 // public/js/features/ai_writing_grader.js
 // =========================================================================
 // TRỢ LÝ AI CHẤM ĐIỂM & SỬA LỖI TỰ LUẬN VIẾT HSK (AI Writing Grader & Corrector)
@@ -27218,10 +27172,9 @@ if (typeof module !== 'undefined' && module.exports) {
   };
 }
 
-})();
+;
 
 /* --- FILE: js/features/dictation.js --- */
-(function(){
 // public/js/features/dictation.js
 // =========================================================================
 // PHÒNG LUYỆN NGHE PHẢN XẠ & CHÉP CHÍNH TẢ (Shadowing & Dictation Lab)
@@ -27818,10 +27771,9 @@ if (typeof module !== 'undefined' && module.exports) {
   };
 }
 
-})();
+;
 
 /* --- FILE: js/features/admin_portal.js --- */
-(function(){
 // =========================================================================
 // Hi HSK - Hệ Thống Quản Trị Hệ Thống & Bảng Điều Khiển (Admin Portal)
 // Route: #/admin (hoặc #/admin-portal, #/quantri)
@@ -28983,10 +28935,9 @@ if (typeof module !== 'undefined' && module.exports) {
 
 })(typeof window !== 'undefined' ? window : globalThis);
 
-})();
+;
 
 /* --- FILE: js/features/pvp_arena.js --- */
-(function(){
 // =========================================================================
 // ⚔️ ĐẤU TRƯỜNG HÁN TỰ 1VS1 (PVP HANZI BATTLE ARENA / ĐẤU TRÍ PHẢN XẠ 60S)
 // Edutainment & Viral Speed Quiz Engine for Chinese Learners
@@ -29384,17 +29335,31 @@ if (typeof module !== 'undefined' && module.exports) {
     } catch (e) {}
   }
 
-  // ---------------- QUESTION GENERATOR ----------------
-  function generateMatchQuestions(count = 20, seedStr = null) {
+  // ---------------- QUESTION GENERATOR (HSK-TIERED DIFFICULTY) ----------------
+  function generateMatchQuestions(count = 20, seedStr = null, difficulty = null) {
+    const diff = difficulty || currentDifficulty || 'normal';
     const rng = seedStr ? mulberry32(hashStringToInt(seedStr)) : Math.random;
     const pool = [];
 
-    // Pull dynamic items from dictionaryData if available
+    // Pull dynamic items from dictionaryData filtered strictly by HSK difficulty tier
     if (typeof dictionaryData !== 'undefined' && Array.isArray(dictionaryData) && dictionaryData.length > 50) {
-      const dictSample = [...dictionaryData].sort(() => rng() - 0.5).slice(0, 30);
+      let filteredDict = dictionaryData;
+      if (diff === 'easy') {
+        // Tiểu Vũ: HSK 1 - 2
+        filteredDict = dictionaryData.filter(w => !w.hsk || w.hsk === 1 || w.hsk === 2);
+      } else if (diff === 'normal') {
+        // Đại Lực: HSK 3 - 4
+        filteredDict = dictionaryData.filter(w => w.hsk === 3 || w.hsk === 4);
+      } else if (diff === 'hard') {
+        // Lão Sư Trương: HSK 5 - 6
+        filteredDict = dictionaryData.filter(w => w.hsk === 5 || w.hsk === 6);
+      }
+      if (!filteredDict.length) filteredDict = dictionaryData;
+
+      const dictSample = [...filteredDict].sort(() => rng() - 0.5).slice(0, 35);
       dictSample.forEach(w => {
         if (!w.hanzi || !w.meaning) return;
-        const distractors = dictionaryData
+        const distractors = filteredDict
           .filter(d => d.hanzi !== w.hanzi && d.meaning)
           .sort(() => rng() - 0.5)
           .slice(0, 3)
@@ -29407,8 +29372,9 @@ if (typeof module !== 'undefined' && module.exports) {
             .map((v, i) => ({ v, orig: i }))
             .sort(() => rng() - 0.5);
 
+          const hskTierTag = w.hsk ? `HSK ${w.hsk}` : (diff === 'easy' ? 'HSK 1-2' : (diff === 'normal' ? 'HSK 3-4' : 'HSK 5-6'));
           pool.push({
-            category: `Từ Vựng HSK ${w.hsk || ''}`,
+            category: `Từ Vựng ${hskTierTag}`,
             prompt: `Từ “${w.hanzi}” (${w.pinyin || ''}) có nghĩa là:`,
             options: shuffled.map(s => s.v),
             correct: shuffled.findIndex(s => s.orig === 0),
@@ -29418,7 +29384,7 @@ if (typeof module !== 'undefined' && module.exports) {
       });
     }
 
-    // Pull from classifiers
+    // Pull from classifiers (Lượng từ)
     if (typeof classifiersData !== 'undefined' && Array.isArray(classifiersData) && classifiersData.length > 5) {
       const clsSample = [...classifiersData].sort(() => rng() - 0.5).slice(0, 8);
       clsSample.forEach(c => {
@@ -29446,18 +29412,57 @@ if (typeof module !== 'undefined' && module.exports) {
       });
     }
 
-    // Blend in curated fallback questions
-    FALLBACK_QUESTIONS.forEach(q => {
-      const shuffled = q.options
-        .map((v, i) => ({ v, orig: i }))
-        .sort(() => rng() - 0.5);
-      pool.push({
-        category: q.category,
-        prompt: q.prompt,
-        options: shuffled.map(s => s.v),
-        correct: shuffled.findIndex(s => s.orig === q.correct),
-        explanation: q.explanation
+    // If hard mode: Pull from Chengyu (Thành ngữ Điển Cố 4 Chữ - HSK 5-6)
+    if (diff === 'hard' && typeof chengyuData !== 'undefined' && Array.isArray(chengyuData) && chengyuData.length > 5) {
+      const cySample = [...chengyuData].sort(() => rng() - 0.5).slice(0, 8);
+      cySample.forEach(cy => {
+        if (!cy.idiom || cy.idiom.length !== 4) return;
+        const missingIdx = Math.floor(rng() * 4);
+        const correctChar = cy.idiom[missingIdx];
+        const masked = cy.idiom.substring(0, missingIdx) + ' ___ ' + cy.idiom.substring(missingIdx + 1);
+
+        const distChars = [];
+        chengyuData.forEach(other => {
+          if (other.idiom && other.idiom !== cy.idiom) {
+            for (const ch of other.idiom) {
+              if (ch !== correctChar && !distChars.includes(ch)) distChars.push(ch);
+            }
+          }
+        });
+        const chosenDist = distChars.sort(() => rng() - 0.5).slice(0, 3);
+        if (chosenDist.length === 3) {
+          const allOpts = [correctChar, ...chosenDist];
+          const shuffled = allOpts
+            .map((v, i) => ({ v, orig: i }))
+            .sort(() => rng() - 0.5);
+          pool.push({
+            category: 'Thành Ngữ Điển Cố (HSK 5-6)',
+            prompt: `Điền chữ còn thiếu vào thành ngữ: “${masked}”`,
+            options: shuffled.map(s => s.v),
+            correct: shuffled.findIndex(s => s.orig === 0),
+            explanation: `Thành ngữ chuẩn: ${cy.idiom} (${cy.pinyin || ''}) - ${cy.meaning || ''}`
+          });
+        }
       });
+    }
+
+    // Blend in curated fallback questions filtered by difficulty
+    FALLBACK_QUESTIONS.forEach(q => {
+      let keep = true;
+      if (diff === 'easy' && q.category.includes('Thành Ngữ')) keep = false;
+      if (diff === 'hard' && q.category.includes('Cơ bản')) keep = false;
+      if (keep) {
+        const shuffled = q.options
+          .map((v, i) => ({ v, orig: i }))
+          .sort(() => rng() - 0.5);
+        pool.push({
+          category: q.category,
+          prompt: q.prompt,
+          options: shuffled.map(s => s.v),
+          correct: shuffled.findIndex(s => s.orig === q.correct),
+          explanation: q.explanation
+        });
+      }
     });
 
     return pool.sort(() => rng() - 0.5).slice(0, count);
@@ -29506,7 +29511,7 @@ if (typeof module !== 'undefined' && module.exports) {
     if (modal) modal.classList.add('hidden');
     document.body.classList.remove('overflow-hidden');
     clearInterval(battleTimerInterval);
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
     clearTimeout(rivalTimerTimeout);
     isMatchRunning = false;
   }
@@ -29676,7 +29681,7 @@ if (typeof module !== 'undefined' && module.exports) {
     isAnswerLocked = false;
 
     const seed = friendChallengeConfig ? friendChallengeConfig.room : null;
-    matchQuestions = generateMatchQuestions(30, seed);
+    matchQuestions = generateMatchQuestions(30, seed, currentDifficulty);
 
     playPvPSfx('click');
 
@@ -29725,7 +29730,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
       if (battleTimeRemaining <= 0) {
         clearInterval(battleTimerInterval);
-        clearInterval(speedGaugeInterval);
+        stopQuestionSpeedGauge();
         clearTimeout(rivalTimerTimeout);
         endPvPMatch(true);
       }
@@ -29904,19 +29909,31 @@ if (typeof module !== 'undefined' && module.exports) {
   }
 
   function startQuestionSpeedGauge() {
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
     const gauge = document.getElementById('pvpSpeedGaugeBar');
     if (!gauge) return;
-    gauge.style.width = '100%';
+    gauge.style.transition = 'none';
+    gauge.style.transformOrigin = 'left center';
+    gauge.style.transform = 'scaleX(1)';
+    gauge.style.willChange = 'transform';
+    void gauge.offsetWidth; // Trigger reflow once
+    gauge.style.transition = 'transform 4s linear';
+    gauge.style.transform = 'scaleX(0)';
+  }
 
-    const duration = 4000;
-    const start = Date.now();
-    speedGaugeInterval = setInterval(() => {
-      const elapsed = Date.now() - start;
-      const pct = Math.max(0, 100 - (elapsed / duration) * 100);
-      if (gauge) gauge.style.width = `${pct}%`;
-      if (pct <= 0) clearInterval(speedGaugeInterval);
-    }, 100);
+  function stopQuestionSpeedGauge() {
+    const gauge = document.getElementById('pvpSpeedGaugeBar');
+    if (gauge) {
+      try {
+        const computed = window.getComputedStyle(gauge).transform;
+        gauge.style.transition = 'none';
+        gauge.style.transform = computed || 'scaleX(0)';
+      } catch (e) {}
+    }
+    if (speedGaugeInterval) {
+      stopQuestionSpeedGauge();
+      speedGaugeInterval = null;
+    }
   }
 
   function scheduleRivalResponse(question) {
@@ -29964,7 +29981,7 @@ if (typeof module !== 'undefined' && module.exports) {
   function submitPvPAnswer(optIdx) {
     if (isAnswerLocked || !isMatchRunning) return;
     isAnswerLocked = true;
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
 
     const q = matchQuestions[currentQuestionIndex];
     const isCorrect = optIdx === q.correct;
@@ -30066,7 +30083,7 @@ if (typeof module !== 'undefined' && module.exports) {
   function endPvPMatch(naturalFinish = true) {
     isMatchRunning = false;
     clearInterval(battleTimerInterval);
-    clearInterval(speedGaugeInterval);
+    stopQuestionSpeedGauge();
     clearTimeout(rivalTimerTimeout);
 
     const isVictory = userScore > rivalScore;
@@ -30153,6 +30170,10 @@ if (typeof module !== 'undefined' && module.exports) {
             <span>🔄</span>
             <span>TÁI ĐẤU NGAY</span>
           </button>
+          <button onclick="generatePvPShareCard()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+            <span>🎨</span>
+            <span>Tải Ảnh Story (Khoe Bạn Bè)</span>
+          </button>
           <button onclick="copyPvPChallengeLink(${userScore})" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-400/40 font-bold text-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer">
             <i data-lucide="share-2" class="w-3.5 h-3.5"></i>
             <span>Thách Đấu (${userScore} Điểm)</span>
@@ -30235,6 +30256,210 @@ if (typeof module !== 'undefined' && module.exports) {
     return isMatchRunning;
   }
 
+
+  // ---------------- CANVAS STORY SHARE CARD (9:16) ----------------
+  function generatePvPShareCard() {
+    try {
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 1920;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // 1. Background Gradient (Luxury Imperial Dark Onyx & Crimson)
+      const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
+      bgGrad.addColorStop(0, '#1c1917');
+      bgGrad.addColorStop(0.3, '#2a1215');
+      bgGrad.addColorStop(0.7, '#1f0d11');
+      bgGrad.addColorStop(1, '#0c0a09');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      // 2. Ambient Glows
+      const rad1 = ctx.createRadialGradient(540, 400, 50, 540, 400, 500);
+      rad1.addColorStop(0, 'rgba(245, 158, 11, 0.18)');
+      rad1.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = rad1;
+      ctx.fillRect(0, 0, 1080, 1000);
+
+      // 3. Ornate Double Gold Border
+      ctx.strokeStyle = '#c59a3f';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(50, 50, 980, 1820);
+      ctx.strokeStyle = 'rgba(197, 154, 63, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(66, 66, 948, 1788);
+
+      // Corner Accents
+      const corners = [[50, 50], [1030, 50], [50, 1870], [1030, 1870]];
+      corners.forEach(([cx, cy]) => {
+        ctx.fillStyle = '#c59a3f';
+        ctx.beginPath();
+        ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 4. Header: Seal & Brand
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#c59a3f';
+      ctx.font = 'bold 34px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('每日中文 · YUHAN HSK', 540, 160);
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('ĐẤU TRƯỜNG HÁN NGỮ 1VS1 · ĐỈNH CAO TỐC ĐỘ', 540, 210);
+
+      // 5. Outcome Badge & Trophy
+      const isVictory = userScore > rivalScore;
+      const isDraw = userScore === rivalScore;
+      let badgeTitle = isVictory ? 'CHIẾN THẮNG HUY HOÀNG' : (isDraw ? 'BẤT PHÂN THẮNG BẠI' : 'TẬP SỰ QUẢ CẢM');
+      let outcomeColor = isVictory ? '#fbbf24' : (isDraw ? '#38bdf8' : '#f87171');
+      let emojiTrophy = isVictory ? '👑' : (isDraw ? '🤝' : '⚔️');
+
+      ctx.font = '110px serif';
+      ctx.fillText(emojiTrophy, 540, 360);
+
+      ctx.fillStyle = outcomeColor;
+      ctx.font = '900 56px "Noto Serif SC", serif';
+      ctx.fillText(badgeTitle, 540, 460);
+
+      // Subtitle
+      ctx.fillStyle = 'rgba(254, 243, 199, 0.85)';
+      ctx.font = '28px "Plus Jakarta Sans", sans-serif';
+      const sub = isVictory ? 'Vượt qua đối thủ bằng bản lĩnh và tốc độ phản xạ chuẩn xác!' : 'Trận đối đầu gay cấn 60 giây nghẹt thở!';
+      ctx.fillText(sub, 540, 510);
+
+      // 6. Scoreboard Comparison Card
+      ctx.fillStyle = 'rgba(30, 41, 59, 0.7)';
+      roundRect(ctx, 120, 580, 840, 420, 36);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(197, 154, 63, 0.5)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // User Side
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('ĐIỂM CỦA BẠN', 320, 660);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 76px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(userScore.toLocaleString('vi-VN'), 320, 755);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`Đúng ${correctCount}/${userAnswersLog.length} câu`, 320, 810);
+
+      // Divider VS
+      ctx.fillStyle = '#f59e0b';
+      ctx.font = '900 48px "Noto Serif SC", serif';
+      ctx.fillText('VS', 540, 740);
+
+      // Rival Side
+      ctx.fillStyle = '#f43f5e';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText((currentRival.name || 'ĐỐI THỦ').toUpperCase(), 760, 660);
+      ctx.fillStyle = '#ffffff';
+      ctx.font = '900 76px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(rivalScore.toLocaleString('vi-VN'), 760, 755);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.65)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(currentRival.levelText || currentRival.title || 'Đối thủ AI', 760, 810);
+
+      // Level / Difficulty Badge inside card
+      ctx.fillStyle = 'rgba(245, 158, 11, 0.15)';
+      roundRect(ctx, 160, 870, 760, 90, 20);
+      ctx.fill();
+      ctx.fillStyle = '#fcd34d';
+      ctx.font = 'bold 26px "Plus Jakarta Sans", sans-serif';
+      const diffLabel = currentDifficulty === 'hard' ? 'Cấp độ: Cao Thủ (HSK 5-6 & Thành ngữ)' : (currentDifficulty === 'normal' ? 'Cấp độ: Trung Cấp (HSK 3-4)' : 'Cấp độ: Tập Sự (HSK 1-2)');
+      ctx.fillText(`⚡ ${diffLabel}`, 540, 925);
+
+      // 7. Match Stats Grid (3 boxes)
+      const statBoxes = [
+        { label: 'CHUỖI COMBO CAO NHẤT', val: `x${maxMatchStreak || 1} 🔥` },
+        { label: 'ĐỘ CHÍNH XÁC', val: `${userAnswersLog.length ? Math.round((correctCount / userAnswersLog.length) * 100) : 0}% 🎯` },
+        { label: 'THỜI GIAN', val: '60s ⏱️' }
+      ];
+      statBoxes.forEach((s, idx) => {
+        const x = 120 + idx * 290;
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.05)';
+        roundRect(ctx, x, 1040, 260, 180, 24);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+        ctx.font = 'bold 18px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(s.label, x + 130, 1100);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 42px "Plus Jakarta Sans", sans-serif';
+        ctx.fillText(s.val, x + 130, 1165);
+      });
+
+      // 8. Inspirational Chinese Quote
+      ctx.fillStyle = '#fcd34d';
+      ctx.font = 'bold 36px "Noto Serif SC", serif';
+      ctx.fillText('“ 熟能生巧 · 敏而好学 ”', 540, 1340);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('Trăm hay không bằng tay quen — Càng luyện tập, phản xạ càng bén sắc', 540, 1390);
+
+      // 9. Web invitation seal banner
+      ctx.fillStyle = 'rgba(139, 30, 30, 0.4)';
+      roundRect(ctx, 120, 1470, 840, 180, 28);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      ctx.fillStyle = '#fef08a';
+      ctx.font = 'bold 30px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('🔥 BẠN CÓ DÁM THỬ SỨC ĐÁNH BẠI ĐIỂM SỐ NÀY?', 540, 1540);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.font = 'bold 26px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('👉 Truy cập thi đấu: hanzidaily.hoangp.work', 540, 1600);
+
+      // 10. Footer Date
+      const todayStr = new Date().toLocaleDateString('vi-VN');
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.4)';
+      ctx.font = '22px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`Chứng nhận thi đấu ngày ${todayStr} · Bản quyền Yuhan HSK`, 540, 1780);
+
+      // Trigger automatic PNG download
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `dau_truong_pvp_${Date.now()}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      if (typeof showToast === 'function') {
+        showToast('🎨 Đã tạo và tải ảnh Story vinh danh thành công! Hãy khoe ngay với bạn bè nhé!', 'success');
+      }
+    } catch (err) {
+      console.error('Error generating PvP share card:', err);
+      if (typeof showToast === 'function') {
+        showToast('Không thể tạo ảnh: ' + err.message, 'error');
+      }
+    }
+  }
+
+  function roundRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  }
+
   // ---------------- EXPORTS ----------------
   root.initPvPArenaTab = initPvPArenaTab;
   root.openPvPArenaModal = openPvPArenaModal;
@@ -30245,13 +30470,14 @@ if (typeof module !== 'undefined' && module.exports) {
   root.copyPvPChallengeLink = copyPvPChallengeLink;
   root.isPvPBattleActive = isPvPBattleActive;
   root.togglePvPAudio = togglePvPAudio;
+  root.generatePvPShareCard = generatePvPShareCard;
+  root.stopQuestionSpeedGauge = stopQuestionSpeedGauge;
 
 })(typeof window !== 'undefined' ? window : globalThis);
 
-})();
+;
 
 /* --- FILE: js/features/wordle.js --- */
-(function(){
 // =========================================================================
 // 🧩 WORDLE THÀNH NGỮ CHỮ HÁN (DAILY CHENGYU WORDLE - GIẢI MẬT MỖI NGÀY)
 // Edutainment & Viral Daily Puzzle Engine for Chinese Learners
@@ -31187,6 +31413,10 @@ if (typeof module !== 'undefined' && module.exports) {
 
         <!-- Action Buttons -->
         <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5 pt-1">
+          <button onclick="generateWordleShareCard()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-700 hover:from-emerald-500 hover:to-teal-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <span>🎨</span>
+            <span>TẢI ẢNH STORY (KHOE BẠN BÈ)</span>
+          </button>
           <button onclick="shareWordleResult()" class="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-400 to-yellow-400 text-stone-950 font-black text-xs shadow-md hover:scale-105 transition-all flex items-center justify-center gap-2 cursor-pointer">
             <i data-lucide="share-2" class="w-4 h-4"></i>
             <span>CHIA SẺ KẾT QUẢ (COPY EMOJI)</span>
@@ -31237,6 +31467,217 @@ if (typeof module !== 'undefined' && module.exports) {
     if (typeof refreshIcons === 'function' && container) refreshIcons(container);
   }
 
+
+  // ---------------- CANVAS STORY SHARE CARD (9:16) ----------------
+  function generateWordleShareCard() {
+    try {
+      if (!currentIdiom) return;
+      const canvas = document.createElement('canvas');
+      canvas.width = 1080;
+      canvas.height = 1920;
+      const ctx = canvas.getContext('2d');
+      if (!ctx) return;
+
+      // 1. Background Gradient (Imperial Emerald & Deep Teal / Midnight Slate)
+      const bgGrad = ctx.createLinearGradient(0, 0, 1080, 1920);
+      bgGrad.addColorStop(0, '#0f172a');
+      bgGrad.addColorStop(0.35, '#064e3b');
+      bgGrad.addColorStop(0.7, '#022c22');
+      bgGrad.addColorStop(1, '#090d16');
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, 1080, 1920);
+
+      // Ambient radial glow behind wordle
+      const glow = ctx.createRadialGradient(540, 680, 50, 540, 680, 480);
+      glow.addColorStop(0, 'rgba(16, 185, 129, 0.22)');
+      glow.addColorStop(1, 'rgba(0, 0, 0, 0)');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 300, 1080, 800);
+
+      // 2. Double Golden Border & Ornate Corners
+      ctx.strokeStyle = '#f59e0b';
+      ctx.lineWidth = 4;
+      ctx.strokeRect(50, 50, 980, 1820);
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.35)';
+      ctx.lineWidth = 1.5;
+      ctx.strokeRect(66, 66, 948, 1788);
+
+      const corners = [[50, 50], [1030, 50], [50, 1870], [1030, 1870]];
+      corners.forEach(([cx, cy]) => {
+        ctx.fillStyle = '#f59e0b';
+        ctx.beginPath();
+        ctx.arc(cx, cy, 8, 0, Math.PI * 2);
+        ctx.fill();
+      });
+
+      // 3. Header: Seal & Brand
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#fbbf24';
+      ctx.font = 'bold 34px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('每日中文 · YUHAN HSK', 540, 160);
+
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+      ctx.font = '24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('THỬ THÁCH THÀNH NGỮ HẰNG NGÀY (WORDLE CHENGYU)', 540, 210);
+
+      // 4. Status Badge & Trophy
+      const isWin = isGameWon;
+      const statusText = isWin ? `GIẢI ĐỐ THÀNH CÔNG (${guesses.length}/${MAX_ATTEMPTS})` : 'THỬ THÁCH ĐÃ HOÀN THÀNH';
+      const statusIcon = isWin ? '🎉' : '💡';
+      ctx.font = '100px serif';
+      ctx.fillText(statusIcon, 540, 340);
+
+      ctx.fillStyle = isWin ? '#34d399' : '#fbbf24';
+      ctx.font = '900 52px "Noto Serif SC", serif';
+      ctx.fillText(statusText, 540, 430);
+
+      // Date Pill
+      const dateText = isDailyMode ? (dailyDateStr || new Date().toISOString().split('T')[0]) : 'Luyện Tập Tự Do';
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
+      roundRect(ctx, 360, 470, 360, 54, 27);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 1;
+      ctx.stroke();
+      ctx.fillStyle = '#fde68a';
+      ctx.font = 'bold 22px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`📅 Ngày giải đố: ${dateText}`, 540, 506);
+
+      // 5. Draw the 6x4 Wordle Grid on Canvas
+      const startY = 570;
+      const tileSize = 96;
+      const gap = 16;
+      const totalGridW = 4 * tileSize + 3 * gap;
+      const gridStartX = 540 - (totalGridW / 2);
+
+      for (let r = 0; r < MAX_ATTEMPTS; r++) {
+        const rowY = startY + r * (tileSize + gap);
+        const evalRow = evaluations[r];
+        const guessStr = guesses[r] || '';
+
+        for (let c = 0; c < 4; c++) {
+          const tileX = gridStartX + c * (tileSize + gap);
+          let tileBg = 'rgba(15, 23, 42, 0.7)';
+          let tileBorder = 'rgba(51, 65, 85, 0.8)';
+          let textColor = '#ffffff';
+
+          if (evalRow) {
+            const st = evalRow[c];
+            if (st === 'correct') {
+              tileBg = '#059669';
+              tileBorder = '#34d399';
+            } else if (st === 'present') {
+              tileBg = '#d97706';
+              tileBorder = '#fde68a';
+            } else {
+              tileBg = '#1e293b';
+              tileBorder = '#334155';
+              textColor = '#94a3b8';
+            }
+          }
+
+          ctx.fillStyle = tileBg;
+          roundRect(ctx, tileX, rowY, tileSize, tileSize, 16);
+          ctx.fill();
+          ctx.strokeStyle = tileBorder;
+          ctx.lineWidth = 2;
+          ctx.stroke();
+
+          if (guessStr[c]) {
+            ctx.fillStyle = textColor;
+            ctx.font = 'bold 50px "Noto Serif SC", serif';
+            ctx.fillText(guessStr[c], tileX + tileSize / 2, rowY + tileSize / 2 + 18);
+          }
+        }
+      }
+
+      // 6. Idiom Reveal Card (at bottom)
+      const idiomCardY = 1270;
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.85)';
+      roundRect(ctx, 100, idiomCardY, 880, 360, 32);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(245, 158, 11, 0.4)';
+      ctx.lineWidth = 2;
+      ctx.stroke();
+
+      // Idiom Characters
+      ctx.fillStyle = '#fde68a';
+      ctx.font = '900 64px "Noto Serif SC", serif';
+      ctx.fillText(currentIdiom.chengyu, 540, idiomCardY + 90);
+
+      // Pinyin & Sino-Vietnamese
+      ctx.fillStyle = '#38bdf8';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`${currentIdiom.pinyin}  •  ${currentIdiom.hanviet}`, 540, idiomCardY + 145);
+
+      // Meaning
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.9)';
+      ctx.font = '26px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`“${currentIdiom.figurative || currentIdiom.literal}”`, 540, idiomCardY + 210);
+
+      // Morality / History note
+      if (currentIdiom.story) {
+        ctx.fillStyle = 'rgba(253, 230, 138, 0.85)';
+        ctx.font = 'italic 21px "Plus Jakarta Sans", sans-serif';
+        const storyExcerpt = currentIdiom.story.length > 75 ? currentIdiom.story.substring(0, 72) + '...' : currentIdiom.story;
+        ctx.fillText(`Xuất xứ: ${storyExcerpt}`, 540, idiomCardY + 265);
+      }
+
+      // Streak / Stats Footer inside card
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+      ctx.font = 'bold 22px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText(`🔥 Chuỗi ngày thắng liên tục: ${wordleStats.currentStreak} ngày  |  Kỷ lục: ${wordleStats.maxStreak} ngày`, 540, idiomCardY + 320);
+
+      // 7. QR / Call to action watermark
+      ctx.fillStyle = 'rgba(16, 185, 129, 0.2)';
+      roundRect(ctx, 120, 1660, 840, 130, 24);
+      ctx.fill();
+      ctx.strokeStyle = 'rgba(52, 211, 153, 0.4)';
+      ctx.lineWidth = 1.5;
+      ctx.stroke();
+
+      ctx.fillStyle = '#a7f3d0';
+      ctx.font = 'bold 28px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('ĐỐ BẠN GIẢI ĐƯỢC THÀNH NGỮ NÀY DƯỚI 6 LẦN ĐOÁN!', 540, 1718);
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+      ctx.font = 'bold 24px "Plus Jakarta Sans", sans-serif';
+      ctx.fillText('👉 Thử sức tại: hanzidaily.hoangp.work', 540, 1760);
+
+      // Trigger automatic PNG download
+      const dataUrl = canvas.toDataURL('image/png');
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      const fname = isDailyMode ? `wordle_chengyu_${dailyDateStr || Date.now()}.png` : `wordle_chengyu_${Date.now()}.png`;
+      a.download = fname;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+
+      if (typeof showToast === 'function') {
+        showToast('🎨 Đã tạo và tải ảnh Story Wordle thành công! Đăng Story khoe ngay nhé!', 'success');
+      }
+    } catch (err) {
+      console.error('Error generating Wordle share card:', err);
+      if (typeof showToast === 'function') {
+        showToast('Không thể tạo ảnh: ' + err.message, 'error');
+      }
+    }
+  }
+
+  function roundRect(ctx, x, y, width, height, radius) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+  }
+
   // ---------------- EXPORTS ----------------
   root.initWordleTab = initWordleTab;
   root.openWordleModal = openWordleModal;
@@ -31248,13 +31689,13 @@ if (typeof module !== 'undefined' && module.exports) {
   root.requestWordleHint = requestWordleHint;
   root.startWordlePractice = startWordlePractice;
   root.shareWordleResult = shareWordleResult;
+  root.generateWordleShareCard = generateWordleShareCard;
 
 })(typeof window !== 'undefined' ? window : globalThis);
 
-})();
+;
 
 /* --- FILE: js/core/router.js --- */
-(function(){
 // =========================================================================
 // Navigation: grouped tabs, hash routing (#/tab), lazy tab rendering
 // =========================================================================
@@ -31551,12 +31992,20 @@ function switchTab(tabId, options = {}) {
   document.title = `${TABS[tabId].label} · Học Tiếng Trung Mỗi Ngày`;
   renderNav();
 
-  if (changed && !options.keepScroll) window.scrollTo({ top: 0, behavior: 'smooth' });
+  if (changed && !options.keepScroll) window.scrollTo({ top: 0, behavior: 'auto' });
   // The dashboard summarises other tabs, so refresh it every time it is shown.
   const alreadyRendered = renderedTabs.has(tabId);
   const job = ensureTabRendered(tabId);
   if (alreadyRendered && changed && tabId === 'home') renderHomeDashboard();
   return job;
+}
+
+if (typeof window !== 'undefined') {
+  window.switchTab = switchTab;
+  window.isTaskInProgress = isTaskInProgress;
+  window.requestExitActiveTask = requestExitActiveTask;
+  window.confirmExitActiveTask = confirmExitActiveTask;
+  window.cancelExitActiveTask = cancelExitActiveTask;
 }
 
 /** Dọn dẹp các nút close góc tự động lỗi thời nếu còn tồn tại */
@@ -31745,4 +32194,4 @@ function initApp() {
 
 window.addEventListener('DOMContentLoaded', initApp);
 
-})();
+;
