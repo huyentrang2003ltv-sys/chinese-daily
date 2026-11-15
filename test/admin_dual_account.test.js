@@ -107,19 +107,12 @@ test('Dual Admin Account Architecture (hoangpham1618 & huyentrang2003ltv)', asyn
     user.lastActiveAt = oldActive;
   });
 
-  await t.test('4. accounts.findOrCreateSocialUser maintains admin status for huyentrang2003ltv@gmail.com', () => {
-    const { user, isNew } = accounts.findOrCreateSocialUser({
-      provider: 'google',
-      email: 'huyentrang2003ltv@gmail.com',
-      name: 'Huyền Trang',
-      avatar: 'https://example.com/avatar.jpg'
-    });
-    assert.equal(user.role, 'admin');
-    assert.equal(user.vipTier, 'lifetime');
-    assert.equal(user.isLocked, false);
+  await t.test('4. Admin-list emails are only honoured after Google verification (no email-only login helper)', () => {
+    assert.equal(accounts.findOrCreateSocialUser, undefined, 'email-only social login helper must not exist');
+    assert.equal(typeof accounts.signInWithGoogle, 'function');
   });
 
-  await t.test('5. POST /api/auth/social-quick creates valid admin session for huyentrang2003ltv@gmail.com', async () => {
+  await t.test('5. POST /api/auth/social-quick no longer exists, so typing an admin email grants nothing', async () => {
     const res = await makeRequest(handleApi, {
       method: 'POST',
       url: '/api/auth/social-quick',
@@ -130,11 +123,8 @@ test('Dual Admin Account Architecture (hoangpham1618 & huyentrang2003ltv)', asyn
       }
     });
 
-    assert.equal(res.status, 200);
-    assert.equal(res.json.ok, true);
-    assert.equal(res.json.user.role, 'admin');
-    assert.equal(res.json.user.email, 'huyentrang2003ltv@gmail.com');
-    assert.ok(res.headers['set-cookie'], 'Must issue signed session cookie');
+    assert.equal(res.status, 404);
+    assert.equal(res.headers['set-cookie'], undefined, 'Must not issue a session cookie');
   });
 
   await t.test('6. huyentrang2003ltv@gmail.com has full access to /api/admin/users', async () => {
@@ -167,10 +157,10 @@ test('Dual Admin Account Architecture (hoangpham1618 & huyentrang2003ltv)', asyn
     assert.equal(inLeaderboard, false, 'Admin must not appear in student leaderboard');
   });
 
-  await t.test('8. Client integration: quick modal has 1-click button for huyentrang2003ltv@gmail.com', () => {
+  await t.test('8. Client integration: no hard-coded admin quick-login in account.js', () => {
     const accountJs = fs.readFileSync(path.join(__dirname, '../public/js/core/account.js'), 'utf8');
-    assert.ok(accountJs.includes('huyentrang2003ltv@gmail.com'), 'account.js must include huyentrang2003ltv@gmail.com');
-    assert.ok(accountJs.includes('Huyền Trang'), 'account.js must include Huyền Trang');
+    assert.ok(!accountJs.includes('social-quick'), 'account.js must not call the removed social-quick endpoint');
+    assert.ok(!accountJs.includes('huyentrang2003ltv@gmail.com'), 'account.js must not hard-code admin accounts');
 
     const adminPortalJs = fs.readFileSync(path.join(__dirname, '../public/js/features/admin_portal.js'), 'utf8');
     assert.ok(adminPortalJs.includes('huyentrang2003ltv@gmail.com'), 'admin_portal.js must reference huyentrang2003ltv@gmail.com');

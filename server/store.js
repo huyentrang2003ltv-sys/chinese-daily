@@ -42,16 +42,22 @@ function createJsonStore(name, fallback, { delayMs = 200 } = {}) {
   const file = storagePath(name);
   let data = readJsonFile(file, fallback);
   let timer = null;
+  let failures = 0;
+  const MAX_RETRIES = 10;
 
   function flush() {
     clearTimeout(timer);
     timer = null;
     try {
       writeJsonFileAtomic(file, data);
+      failures = 0;
     } catch (e) {
-      console.error(`Không ghi được ${file}:`, e.message);
-      // Typically a transient lock (antivirus, backup tool, Windows rename): try again shortly.
-      if (!timer) timer = setTimeout(flush, 1000);
+      failures += 1;
+      console.error(`Không ghi được ${file} (lần ${failures}):`, e.message);
+      // Typically a transient lock (antivirus, backup tool, Windows rename): try again shortly,
+      // but give up eventually so a missing directory cannot keep the process busy forever.
+      // The data stays in memory and the next change schedules another write.
+      if (failures < MAX_RETRIES && !timer) timer = setTimeout(flush, 1000);
     }
   }
 

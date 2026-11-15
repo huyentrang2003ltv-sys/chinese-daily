@@ -80,6 +80,14 @@ Chạy khi server đã dừng, hoặc khởi động lại server sau đó. Dữ
 
 Nâng cấp từ bản cũ: `deploy.sh` tự chép `data/users.json` sang `storage/legacy-users.json` và server nhập một lần. Tài khoản đang dùng mật khẩu mặc định cũ phải được đặt lại bằng `npm run admin -- password <email>`.
 
+### Đăng nhập bằng Google
+Luồng OAuth 2.0 / OpenID Connect (authorization code + PKCE) chạy hoàn toàn ở máy chủ: trình duyệt chỉ đi theo chuyển hướng, không bao giờ thấy token của Google.
+1. Google Cloud Console → *APIs & Services* → *OAuth consent screen*: tên ứng dụng, logo, email hỗ trợ, link chính sách quyền riêng tư; scope chỉ cần `openid`, `email`, `profile` (không cần Google duyệt). Chuyển trạng thái sang **In production** (chế độ *Testing* chỉ cho tối đa 100 tài khoản test).
+2. *Credentials* → *Create OAuth client ID* → *Web application* → *Authorized redirect URI*: `https://<domain>/api/auth/google/callback` (phải là domain cố định có HTTPS; link tunnel ngẫu nhiên không dùng được).
+3. Điền `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_CALLBACK_URL` vào `.env` rồi khởi động lại server. Chưa cấu hình thì nút Google báo "chưa được bật".
+
+Tài khoản gắn với mã định danh cố định (`sub`) của Google. Lần đầu, nếu email đã có tài khoản mật khẩu thì hai tài khoản được liên kết và **mật khẩu cũ bị hủy** (vì lúc đăng ký mật khẩu email chưa được xác minh), từ đó học viên đăng nhập bằng Google. Email Google chưa xác minh bị từ chối.
+
 ### Triển khai (production)
 - **Docker:** `docker compose up -d --build` (ứng dụng chạy ở cổng 3000, có healthcheck `/healthz`).
 - **VPS + PM2:** clone repo rồi chạy `sudo ./deploy.sh`.

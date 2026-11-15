@@ -56,9 +56,11 @@ function verifyPassword(password, stored) {
 // ---------------------------------------------------------------------------
 // Designated System Administrator Accounts
 // ---------------------------------------------------------------------------
+// Sign-up does not verify email addresses, so an address on this list only grants admin
+// rights once its owner has proven it by signing in with Google (emailVerified).
+// `npm run admin -- grant <email>` remains the way to promote any other account.
 const ADMIN_EMAILS = new Set(
-  (Array.isArray(CONFIG_ADMIN_EMAILS) && CONFIG_ADMIN_EMAILS.length ? CONFIG_ADMIN_EMAILS : ['hoangpham1618@gmail.com', 'huyentrang2003ltv@gmail.com'])
-    .map(e => String(e).trim().toLowerCase())
+  (Array.isArray(CONFIG_ADMIN_EMAILS) ? CONFIG_ADMIN_EMAILS : []).map(e => String(e).trim().toLowerCase())
 );
 
 function isSystemAdminEmail(email) {
@@ -66,26 +68,27 @@ function isSystemAdminEmail(email) {
   return ADMIN_EMAILS.has(email.trim().toLowerCase());
 }
 
+/** Promote a verified admin-list account; returns true when something changed. */
+function applyAdminEmailRole(user) {
+  if (!user.emailVerified || !isSystemAdminEmail(user.email)) return false;
+  if (user.role === 'admin' && !user.isLocked && user.vipTier === 'lifetime') return false;
+  user.role = 'admin';
+  user.isLocked = false;
+  user.lockReason = null;
+  user.lockedAt = null;
+  user.vipTier = 'lifetime';
+  return true;
+}
+
 function ensureAdminAccounts() {
-  const allUsers = store.get() || [];
   let modified = false;
-  for (const u of allUsers) {
-    if (isSystemAdminEmail(u.email)) {
-      if (u.role !== 'admin' || u.isLocked || u.vipTier !== 'lifetime') {
-        u.role = 'admin';
-        u.isLocked = false;
-        u.lockReason = null;
-        u.lockedAt = null;
-        u.vipTier = 'lifetime';
-        syncUser(u);
-        modified = true;
-      }
+  for (const u of store.get() || []) {
+    if (applyAdminEmailRole(u)) {
+      syncUser(u);
+      modified = true;
     }
   }
-  if (modified) {
-    store.save();
-    console.log('[accounts] Đã kích hoạt quyền Quản Trị Viên & VIP trọn đời cho Ban Quản Trị:', Array.from(ADMIN_EMAILS).join(', '));
-  }
+  if (modified) store.save();
 }
 
 // ---------------------------------------------------------------------------
@@ -191,14 +194,14 @@ function newId() {
 
 function createUser({ username, name, email, password, language, profession, purpose, progress }) {
   const now = new Date().toISOString();
-  const isAdmin = isSystemAdminEmail(email);
   const user = {
     id: newId(),
     username: username || name,
     name: name || username,
     email: email.toLowerCase(),
     passwordHash: hashPassword(password),
-    role: isAdmin ? 'admin' : 'student',
+    // Never admin here: the address is not verified at sign-up.
+    role: 'student',
     language,
     profession,
     purpose,
@@ -208,7 +211,7 @@ function createUser({ username, name, email, password, language, profession, pur
     lockReason: null,
     lockedAt: null,
     trialStartedAt: now,
-    vipTier: isAdmin ? 'lifetime' : null,
+    vipTier: null,
     vipExpiresAt: null,
     sessionVersion: 1,
     progress: progress || { exp: 0, streak: 1, savedWords: [] }
@@ -272,72 +275,79 @@ function vipInfo(user) {
   return { isVip: false, isTrial: false, isExpired: true, daysRemaining: 0, label: '🔒 Hết Hạn Dùng Thử', tier: 'expired', expiresAt: new Date(trialEnd).toISOString() };
 }
 
-/** The user as sent to their own browser (no password hash). */
+const findByGoogleSub = sub => users().find(u => u.googleSub === sub) || null;
 
-function findOrCreateSocialUser({ email, name, provider = 'google', providerId, avatar }) {
-  if (!email) throw new Error('Email từ nhà cung cấp không hợp lệ.');
-  email = String(email).trim().toLowerCase();
-  let user = findByEmail(email);
-  const isAdmin = isSystemAdminEmail(email);
-
-  if (user) {
-    if (isAdmin && (user.role !== 'admin' || user.isLocked || user.vipTier !== 'lifetime')) {
-      user.role = 'admin';
-      user.isLocked = false;
-      user.lockReason = null;
-      user.lockedAt = null;
-      user.vipTier = 'lifetime';
-    }
-    user.authProvider = provider;
-    if (providerId) user.providerId = providerId;
-    if (avatar && !user.avatar) user.avatar = avatar;
-    user.lastActiveAt = new Date().toISOString();
-    store.save();
-    syncUser(user);
-    return { user, isNew: false };
-  }
-
-  // Create new user from social auth
-  let baseUsername = email.split('@')[0].replace(/[^a-zA-Z0-9_\u4e00-\u9fa5]/g, '');
-  if (!baseUsername) baseUsername = 'hocvien';
-  let uniqueUsername = baseUsername;
-  let counter = 1;
-  while (findByUsername(uniqueUsername)) {
-    uniqueUsername = `${baseUsername}${counter++}`;
-  }
-
-  const now = new Date().toISOString();
-  user = {
-    id: newId(),
-    username: uniqueUsername,
-    name: name || uniqueUsername,
-    email: email,
-    passwordHash: null,
-    role: isAdmin ? 'admin' : 'student',
-    authProvider: provider,
-    providerId: providerId || null,
-    avatar: avatar || null,
-    language: 'Tiếng Trung Giản Thể (Chuẩn Phổ Thông)',
-    profession: 'Học viên tự do',
-    purpose: 'Học tiếng Trung giao tiếp & thi HSK',
-    createdAt: now,
-    lastActiveAt: now,
-    isLocked: false,
-    lockReason: null,
-    lockedAt: null,
-    trialStartedAt: now,
-    vipTier: isAdmin ? 'lifetime' : null,
-    vipExpiresAt: null,
-    sessionVersion: 1,
-    progress: { exp: 50, streak: 1, savedWords: [] }
-  };
-
-  users().push(user);
-  store.save();
-  syncUser(user);
-  return { user, isNew: true };
+function uniqueUsernameFor(email) {
+  const base = email.split('@')[0].replace(/[^a-zA-Z0-9_一-龥]/g, '') || 'hocvien';
+  let candidate = base;
+  for (let i = 1; findByUsername(candidate); i++) candidate = `${base}${i}`;
+  return candidate;
 }
 
+/**
+ * Sign in with a Google identity whose ID token the caller has already validated
+ * (issuer, audience, expiry, nonce, email_verified). Accounts are keyed by Google's
+ * stable `sub`; the email is only used to link an existing account the first time.
+ * Returns { user, isNew, linked }.
+ */
+function signInWithGoogle({ sub, email, name, picture }) {
+  if (!sub || !email) throw new Error('Thiếu thông tin danh tính Google.');
+  email = String(email).trim().toLowerCase();
+  let user = findByGoogleSub(sub);
+  let isNew = false;
+  let linked = false;
+
+  if (!user) {
+    user = findByEmail(email);
+    if (user) {
+      linked = true;
+      if (!user.emailVerified) {
+        // Anyone could have registered this address with a password before its owner showed up
+        // (accounts are not email-verified at sign-up). Google has now proven ownership, so drop
+        // the unverified password and every existing session.
+        user.passwordHash = null;
+        user.sessionVersion = (user.sessionVersion || 1) + 1;
+      }
+    } else {
+      const now = new Date().toISOString();
+      user = {
+        id: newId(),
+        username: uniqueUsernameFor(email),
+        name: String(name || '').trim().slice(0, 60) || email.split('@')[0],
+        email,
+        passwordHash: null,
+        role: 'student',
+        language: '',
+        profession: '',
+        purpose: '',
+        createdAt: now,
+        lastActiveAt: now,
+        isLocked: false,
+        lockReason: null,
+        lockedAt: null,
+        trialStartedAt: now,
+        vipTier: null,
+        vipExpiresAt: null,
+        sessionVersion: 1,
+        progress: { exp: 0, streak: 1, savedWords: [] }
+      };
+      users().push(user);
+      isNew = true;
+    }
+    user.googleSub = sub;
+  }
+
+  if (user.email === email) user.emailVerified = true;
+  user.authProvider = 'google';
+  if (picture && /^https:\/\//.test(picture) && !user.avatar) user.avatar = String(picture).slice(0, 500);
+  applyAdminEmailRole(user);
+  user.lastActiveAt = new Date().toISOString();
+  store.save();
+  syncUser(user);
+  return { user, isNew, linked };
+}
+
+/** The user as sent to their own browser (no password hash). */
 function publicUser(user) {
   if (!user) return null;
   checkInactivityLock(user);
@@ -382,16 +392,14 @@ const secret = loadSecret();
 
 const sign = payload => crypto.createHmac('sha256', secret).update(payload).digest('base64url');
 
-function createSessionToken(user) {
-  const payload = Buffer.from(JSON.stringify({
-    uid: user.id,
-    v: user.sessionVersion || 1,
-    exp: Date.now() + SESSION_DAYS * DAY_MS
-  })).toString('base64url');
+/** "<base64url JSON>.<HMAC>" token carrying `data` until `ttlMs` from now. */
+function createSignedToken(data, ttlMs) {
+  const payload = Buffer.from(JSON.stringify({ ...data, exp: Date.now() + ttlMs })).toString('base64url');
   return `${payload}.${sign(payload)}`;
 }
 
-function userFromSessionToken(token) {
+/** The token's data if the signature is valid, it has not expired and its `typ` matches; else null. */
+function readSignedToken(token, typ) {
   if (typeof token !== 'string') return null;
   const parts = token.split('.');
   if (parts.length !== 2) return null;
@@ -403,11 +411,22 @@ function userFromSessionToken(token) {
   try {
     const data = JSON.parse(Buffer.from(payload, 'base64url').toString('utf8'));
     if (!data || typeof data.exp !== 'number' || data.exp < Date.now()) return null;
-    const user = findById(data.uid);
-    return user && (user.sessionVersion || 1) === data.v ? user : null;
+    return data.typ === typ ? data : null;
   } catch (e) {
     return null;
   }
+}
+
+// Session tokens carry no `typ` (kept compatible with cookies issued before typed tokens existed).
+function createSessionToken(user) {
+  return createSignedToken({ uid: user.id, v: user.sessionVersion || 1 }, SESSION_DAYS * DAY_MS);
+}
+
+function userFromSessionToken(token) {
+  const data = readSignedToken(token, undefined);
+  if (!data) return null;
+  const user = findById(data.uid);
+  return user && (user.sessionVersion || 1) === data.v ? user : null;
 }
 
 function sessionCookie(token, { secure, clear = false } = {}) {
@@ -468,12 +487,15 @@ module.exports = {
   checkInactivityLock,
   unlockUser,
   touchUserActivity,
+  createSignedToken,
+  readSignedToken,
   createSessionToken,
   userFromSessionToken,
   sessionCookie,
   getBroadcast,
   setBroadcast,
-  findOrCreateSocialUser,
+  signInWithGoogle,
+  findByGoogleSub,
   ADMIN_EMAILS,
   isSystemAdminEmail,
   ensureAdminAccounts

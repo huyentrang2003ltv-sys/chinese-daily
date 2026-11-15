@@ -29,6 +29,7 @@ module.exports = {
   PORT: Number(process.env.PORT) || 3005,
   HOST: process.env.HOST || '0.0.0.0',
   IS_PROD: process.env.NODE_ENV === 'production',
+  IS_TEST: process.env.NODE_ENV === 'test',
   /** Trust X-Forwarded-For / X-Forwarded-Proto (set when running behind nginx or Cloudflare). */
   TRUST_PROXY: /^(1|true|yes|on)$/i.test(process.env.TRUST_PROXY || ''),
   SESSION_SECRET: process.env.SESSION_SECRET || '',
@@ -47,11 +48,9 @@ module.exports = {
     .split(',')
     .map(s => s.trim().toLowerCase())
     .filter(Boolean),
-  // Social OAuth 2.0 Credentials (Google & Facebook)
+  /** Sign in with Google (OAuth client of type "Web application" in Google Cloud Console). */
   GOOGLE_CLIENT_ID: process.env.GOOGLE_CLIENT_ID || '',
   GOOGLE_CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET || '',
-  GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL || '',
-  FACEBOOK_APP_ID: process.env.FACEBOOK_APP_ID || '',
-  FACEBOOK_APP_SECRET: process.env.FACEBOOK_APP_SECRET || '',
-  FACEBOOK_CALLBACK_URL: process.env.FACEBOOK_CALLBACK_URL || ''
+  /** Exact authorized redirect URI, e.g. https://your-domain/api/auth/google/callback */
+  GOOGLE_CALLBACK_URL: process.env.GOOGLE_CALLBACK_URL || ''
 };
