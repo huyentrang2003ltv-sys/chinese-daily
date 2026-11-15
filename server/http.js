@@ -93,9 +93,17 @@ function readJson(req, maxBytes = 16 * 1024) {
   });
 }
 
+/**
+ * Client IP for rate limiting. Behind one trusted reverse proxy (nginx with
+ * `$proxy_add_x_forwarded_for`) only the LAST X-Forwarded-For entry was added by the proxy;
+ * earlier entries come from the client and can be forged to dodge the limits.
+ */
 function clientIp(req) {
   const forwarded = req.headers['x-forwarded-for'];
-  if (TRUST_PROXY && forwarded) return forwarded.split(',')[0].trim();
+  if (TRUST_PROXY && forwarded) {
+    const hops = String(forwarded).split(',').map(s => s.trim()).filter(Boolean);
+    if (hops.length) return hops[hops.length - 1];
+  }
   return req.socket.remoteAddress || 'unknown';
 }
 
