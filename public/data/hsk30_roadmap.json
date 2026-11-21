@@ -18550,41 +18550,41 @@
       "tip": "Cấu trúc \"还是……吧\" dùng để đưa ra lời gợi ý, lựa chọn tối ưu sau khi đã cân nhắc các phương án.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "现在路上堵车吗？",
-          "pinyin": "",
-          "vi": "Bây giờ trên đường có kẹt xe không?"
+          "speaker": "李文",
+          "hanzi": "现在路上堵车吗？我们怎么去北京大学？",
+          "pinyin": "Xiànzài lùshang dǔchē ma? Wǒmen zěnme qù Běijīng Dàxué?",
+          "vi": "Bây giờ trên đường có kẹt xe không? Chúng mình đến Đại học Bắc Kinh bằng cách nào?"
         },
         {
-          "speaker": "B",
-          "hanzi": "有点堵，还是打车去北大吧，坐地铁也挺方便。",
-          "pinyin": "",
-          "vi": "Có chút kẹt, hay là đi taxi đến Đại học Bắc Kinh đi, đi tàu điện ngầm cũng khá tiện."
+          "speaker": "张明",
+          "hanzi": "早高峰路上有点儿堵，还是打车去北大吧。",
+          "pinyin": "Zǎogāofēng lùshang yǒudiǎnr dǔ, háishi dǎchē qù Běidà ba.",
+          "vi": "Giờ cao điểm sáng hơi tắc đường, hay là bắt taxi đi Bắc Đại đi."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“还是打车去北大吧”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Hay là đi taxi đến Đại học Bắc Kinh đi\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "李文",
+          "hanzi": "坐地铁不是更快吗？从这里直达。",
+          "pinyin": "Zuò dìtiě bú shì gèng kuài ma? Cóng zhèlǐ zhídá.",
+          "vi": "Đi tàu điện ngầm chẳng phải nhanh hơn sao? Từ đây đi thẳng tới luôn."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "张明",
+          "hanzi": "好主意！那我们快走吧，免得迟到了。",
+          "pinyin": "Hǎo zhǔyi! Nà wǒmen kuài zǒu ba, miǎnde chídào le.",
+          "vi": "Ý kiến hay! Vậy chúng ta đi nhanh thôi, kẻo muộn mất."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "还是打",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Hay là đi taxi đến Đại học Bắc Kinh đi",
+          "hanzi": "还是打车去北大吧",
+          "pinyin": "Háishi dǎchē qù Běidà ba",
+          "hanviet": "Hải thị đả xa khứ Bắc Đại ba",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Hay là chúng ta bắt taxi đến Đại học Bắc Kinh đi",
           "example": {
-            "hanzi": "还是打车去北大吧",
-            "pinyin": "",
-            "vi": "Hay là đi taxi đến Đại học Bắc Kinh đi"
+            "hanzi": "时间不早了，还是打车去北大吧。",
+            "pinyin": "Shíjiān bù zǎo le, háishi dǎchē qù Běidà ba.",
+            "vi": "Thời gian không còn sớm nữa, hay là bắt taxi đến Đại học Bắc Kinh đi."
           }
         },
         {
@@ -18763,41 +18763,41 @@
       "tip": "Chủ điểm: Du lịch, Dự định. Ngữ pháp: Bổ ngữ kết quả; Lặp lại động từ.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我想去西安旅游",
-          "pinyin": "",
-          "vi": "Tôi muốn đi Tây An du lịch"
+          "speaker": "玛丽",
+          "hanzi": "这个假期你有什么旅行计划吗？",
+          "pinyin": "Zhè ge jiàqī nǐ yǒu shénme lǚxíng jìhuà ma?",
+          "vi": "Kỳ nghỉ này bạn có kế hoạch du lịch gì không?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "王林",
+          "hanzi": "我想去西安旅游，听说那里的兵马俑很有名。",
+          "pinyin": "Wǒ xiǎng qù Xī'ān lǚyóu, tīngshuō nàlǐ de bīngmǎyǒng hěn yǒumíng.",
+          "vi": "Tôi muốn đi du lịch Tây An, nghe nói đội quân đất nung ở đó rất nổi tiếng."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我想去西安旅游”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi muốn đi Tây An du lịch\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "玛丽",
+          "hanzi": "你打算坐高铁还是乘飞机去？",
+          "pinyin": "Nǐ dǎsuàn zuò gāotiě háishi chéng fēijī qù?",
+          "vi": "Bạn định đi tàu cao tốc hay đi máy bay?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "王林",
+          "hanzi": "坐高铁只要四个多小时，沿途还能看风景。",
+          "pinyin": "Zuò gāotiě zhǐ yào sì gè duō xiǎoshí, yántú hái néng kàn fēngjǐng.",
+          "vi": "Đi tàu cao tốc chỉ hơn 4 tiếng, dọc đường còn ngắm được phong cảnh."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我想去",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi muốn đi Tây An du lịch",
+          "hanzi": "我想去西安旅游",
+          "pinyin": "Wǒ xiǎng qù Xī'ān lǚyóu",
+          "hanviet": "Ngã tưởng khứ Tây An lữ du",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi muốn đi du lịch Tây An",
           "example": {
-            "hanzi": "我想去西安旅游",
-            "pinyin": "",
-            "vi": "Tôi muốn đi Tây An du lịch"
+            "hanzi": "今年放暑假，我想去西安旅游。",
+            "pinyin": "Jīnnián fàng shǔjià, wǒ xiǎng qù Xī'ān lǚyóu.",
+            "vi": "Kỳ nghỉ hè năm nay, tôi muốn đi du lịch Tây An."
           }
         },
         {
@@ -18976,41 +18976,41 @@
       "tip": "Chủ điểm: Quần áo, Màu sắc. Ngữ pháp: Trợ từ động thái “过”; Câu phức nguyên nhân (因为…所以…); Cụm từ chữ “的”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "你穿红色的很好看",
-          "pinyin": "",
-          "vi": "Bạn mặc màu đỏ rất đẹp"
+          "speaker": "小雪",
+          "hanzi": "你帮我看看，这件红大衣怎么样？",
+          "pinyin": "Nǐ bāng wǒ kànkan, zhè jiàn hóng dàyī zěnmeyàng?",
+          "vi": "Bạn xem giúp mình với, chiếc áo khoác đỏ này thế nào?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "李文",
+          "hanzi": "特别衬你的肤色，你穿红色的很好看！",
+          "pinyin": "Tèbié chèn nǐ de fūsè, nǐ chuān hóngsè de hěn hǎokàn!",
+          "vi": "Tôn màu da của bạn lắm, bạn mặc màu đỏ rất đẹp!"
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“你穿红色的很好看”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Bạn mặc màu đỏ rất đẹp\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "小雪",
+          "hanzi": "那黑色的呢？黑色的好像更显瘦。",
+          "pinyin": "Nà hēisè de ne? Hēisè de hǎoxiàng gèng xiǎn shòu.",
+          "vi": "Thế chiếc màu đen thì sao? Màu đen có vẻ trông gầy hơn."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "李文",
+          "hanzi": "两件都不错，但我更推荐红色这件，显得很喜庆。",
+          "pinyin": "Liǎng jiàn dōu búcuò, dàn wǒ gèng tuījiàn hóngsè zhè jiàn, xiǎnde hěn xǐqìng.",
+          "vi": "Cả hai đều đẹp, nhưng mình khuyên chọn chiếc màu đỏ, trông rất tươi vui."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "你穿红",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Bạn mặc màu đỏ rất đẹp",
+          "hanzi": "你穿红色的很好看",
+          "pinyin": "Nǐ chuān hóngsè de hěn hǎokàn",
+          "hanviet": "Nhĩ xuyên hồng sắc đích hãn hảo khán",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Bạn mặc đồ màu đỏ trông rất đẹp",
           "example": {
-            "hanzi": "你穿红色的很好看",
-            "pinyin": "",
-            "vi": "Bạn mặc màu đỏ rất đẹp"
+            "hanzi": "这条裙子太适合你了，你穿红色的很好看。",
+            "pinyin": "Zhè tiáo qúnzi tài shìhé nǐ le, nǐ chuān hóngsè de hěn hǎokàn.",
+            "vi": "Chiếc váy này hợp với bạn quá, bạn mặc đồ màu đỏ rất đẹp."
           }
         },
         {
@@ -19189,41 +19189,41 @@
       "tip": "Chủ điểm: Khách khứa, Lễ tiết. Ngữ pháp: Bổ ngữ xu hướng đơn (1) & (2); Cấu trúc “都……了”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "第一次去中国朋友家",
-          "pinyin": "",
-          "vi": "Lần đầu đến nhà bạn Trung Quốc"
+          "speaker": "大卫",
+          "hanzi": "明天我第一次去中国朋友家做客，需要注意什么？",
+          "pinyin": "Míngtiān wǒ dì-yī cì qù Zhōngguó péngyou jiā zuòkè, xūyào zhùyì shénme?",
+          "vi": "Ngày mai là lần đầu tiên tôi đến nhà bạn Trung Quốc làm khách, cần lưu ý điều gì?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "小雪",
+          "hanzi": "你可以买点儿新鲜水果或者茶叶作为礼物。",
+          "pinyin": "Nǐ kěyǐ mǎi diǎnr xīnxiān shuǐguǒ huòzhě cháyè zuòwéi lǐwù.",
+          "vi": "Bạn có thể mua một ít hoa quả tươi hoặc trà làm quà biếu."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“第一次去中国朋友家”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Lần đầu đến nhà bạn Trung Quốc\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "大卫",
+          "hanzi": "进门需要换鞋吗？",
+          "pinyin": "Jìnmén xūyào huàn xié ma?",
+          "vi": "Vào cửa có cần đổi dép không?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "小雪",
+          "hanzi": "通常主人会准备拖鞋，进门换鞋很有礼貌。",
+          "pinyin": "Tōngcháng zhǔrén huì zhǔnbèi tuōxié, jìnmén huàn xié hěn yǒu lǐmào.",
+          "vi": "Thường thì chủ nhà sẽ chuẩn bị dép đi trong nhà, vào cửa đổi dép rất lịch sự."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "第一次",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Lần đầu đến nhà bạn Trung Quốc",
+          "hanzi": "第一次去中国朋友家",
+          "pinyin": "Dì-yī cì qù Zhōngguó péngyou jiā",
+          "hanviet": "Đệ nhất thứ khứ Trung Quốc bằng hữu gia",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Lần đầu tiên đến chơi nhà bạn người Trung Quốc",
           "example": {
-            "hanzi": "第一次去中国朋友家",
-            "pinyin": "",
-            "vi": "Lần đầu đến nhà bạn Trung Quốc"
+            "hanzi": "今天是我第一次去中国朋友家做客。",
+            "pinyin": "Jīntiān shì wǒ dì-yī cì qù Zhōngguó péngyou jiā zuòkè.",
+            "vi": "Hôm nay là lần đầu tiên tôi đến làm khách ở nhà bạn người Trung Quốc."
           }
         },
         {
@@ -19402,41 +19402,41 @@
       "tip": "Chủ điểm: Sinh nhật, Trạng thái. Ngữ pháp: Lặp lại tính từ; Cụm từ cố định “什么的”; Trợ từ kết cấu “地”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "小雪，生日快乐！",
-          "pinyin": "",
-          "vi": "Tiểu Tuyết, sinh nhật vui vẻ!"
+          "speaker": "李明",
+          "hanzi": "小雪，生日快乐！这是我送你的书。",
+          "pinyin": "Xiǎoxuě, shēngrì kuàilè! Zhè shì wǒ sòng nǐ de shū.",
+          "vi": "Tiểu Tuyết, sinh nhật vui vẻ! Đây là cuốn sách mình tặng bạn."
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "小雪",
+          "hanzi": "谢谢你李明！快请进，大家都在呢。",
+          "pinyin": "Xièxie nǐ Lǐ Míng! Kuài qǐng jìn, dàjiā dōu zài ne.",
+          "vi": "Cảm ơn Lý Minh nhé! Mau vào nhà đi, mọi người đều đến đủ cả rồi."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“小雪，生日快乐！”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tiểu Tuyết, sinh nhật vui vẻ!\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "李明",
+          "hanzi": "今天准备了什么好吃的蛋糕？",
+          "pinyin": "Jīntiān zhǔnbèi le shénme hǎochī de dàngāo?",
+          "vi": "Hôm nay chuẩn bị bánh kem ngon gì thế?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "小雪",
+          "hanzi": "妈妈给我做了一个草莓水果蛋糕，一会儿一起尝尝！",
+          "pinyin": "Māma gěi wǒ zuò le yí gè cǎoméi shuǐguǒ dàngāo, yíhuìr yìqǐ chángchang!",
+          "vi": "Mẹ làm cho mình một chiếc bánh dâu tây hoa quả, lát nữa cùng nếm thử nhé!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "小雪生",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tiểu Tuyết, sinh nhật vui vẻ!",
+          "hanzi": "小雪，生日快乐！",
+          "pinyin": "Xiǎoxuě, shēngrì kuàilè!",
+          "hanviet": "Tiểu Tuyết, sinh nhật khoái lạc!",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tiểu Tuyết, chúc mừng sinh nhật!",
           "example": {
-            "hanzi": "小雪，生日快乐！",
-            "pinyin": "",
-            "vi": "Tiểu Tuyết, sinh nhật vui vẻ!"
+            "hanzi": "祝你学习进步，小雪，生日快乐！",
+            "pinyin": "Zhù nǐ xuéxí jìnbù, Xiǎoxuě, shēngrì kuàilè!",
+            "vi": "Chúc bạn học tập tiến bộ, Tiểu Tuyết, sinh nhật vui vẻ!"
           }
         },
         {
@@ -19833,41 +19833,41 @@
       "tip": "Chủ điểm: Trí nhớ, So sánh cơ bản. Ngữ pháp: Câu so sánh (1) & (2); Câu phức chuyển ngoặt (虽然…但是…).",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "虽然你忘了，但是我还记得",
-          "pinyin": "",
-          "vi": "Tuy bạn quên rồi nhưng tôi vẫn nhớ"
+          "speaker": "王芳",
+          "hanzi": "哎呀，我真糊涂，今天忘了带借书卡！",
+          "pinyin": "Āiyā, wǒ zhēn hútu, jīntiān wàng le dài jièshūkǎ!",
+          "vi": "Ôi trời, tôi lú lẫn thật, hôm nay quên mang thẻ thư viện rồi!"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "张伟",
+          "hanzi": "虽然你忘了，但是我还记得帮你带了一张。",
+          "pinyin": "Suīrán nǐ wàng le, dànshì wǒ hái jìde bāng nǐ dài le yì zhāng.",
+          "vi": "Tuy bạn quên nhưng tôi vẫn nhớ mang giúp bạn một cái này."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“虽然你忘了，但是我还记得”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tuy bạn quên rồi nhưng tôi vẫn nhớ\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "王芳",
+          "hanzi": "太感谢你了！每次你都这么细心。",
+          "pinyin": "Tài gǎnxiè nǐ le! Měi cì nǐ dōu zhème xìxīn.",
+          "vi": "Cảm ơn bạn nhiều lắm! Lần nào bạn cũng chu đáo như vậy."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "张伟",
+          "hanzi": "朋友之间互相照应是应该的。",
+          "pinyin": "Péngyou zhījiān hùxiāng zhàoying shì yīnggāi de.",
+          "vi": "Bạn bè giúp đỡ lẫn nhau là chuyện nên làm mà."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "虽然你",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tuy bạn quên rồi nhưng tôi vẫn nhớ",
+          "hanzi": "虽然你忘了，但是我还记得",
+          "pinyin": "Suīrán nǐ wàng le, dànshì wǒ hái jìde",
+          "hanviet": "Tuy nhiên nhĩ vong liễu, đãn thị ngã hoàn ký đắc",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tuy bạn đã quên nhưng tôi vẫn nhớ",
           "example": {
-            "hanzi": "虽然你忘了，但是我还记得",
-            "pinyin": "",
-            "vi": "Tuy bạn quên rồi nhưng tôi vẫn nhớ"
+            "hanzi": "虽然你忘了昨天的约定，但是我还记得。",
+            "pinyin": "Suīrán nǐ wàng le zuótiān de yuēdìng, dànshì wǒ hái jìde.",
+            "vi": "Tuy bạn đã quên hẹn hôm qua, nhưng tôi vẫn còn nhớ."
           }
         },
         {
@@ -20046,41 +20046,41 @@
       "tip": "Văn hóa trà sữa (奶茶文化) là nét sống hiện đại cực kỳ phổ biến của giới trẻ Trung Quốc ngày nay.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "你去哪儿？",
-          "pinyin": "",
-          "vi": "Bạn đi đâu đấy?"
+          "speaker": "小美",
+          "hanzi": "下午有点儿困，我去买杯奶茶，你想喝什么？",
+          "pinyin": "Xiàwǔ yǒudiǎnr kùn, wǒ qù mǎi bēi nǎichá, nǐ xiǎng hē shénme?",
+          "vi": "Buổi chiều hơi buồn ngủ, tôi đi mua cốc trà sữa, bạn muốn uống gì?"
         },
         {
-          "speaker": "B",
-          "hanzi": "我去买杯奶茶。离这儿不远有一家很有名的奶茶店。",
-          "pinyin": "",
-          "vi": "Tôi đi mua cốc trà sữa. Cách đây không xa có một quán trà sữa rất nổi tiếng."
+          "speaker": "李强",
+          "hanzi": "给我带一杯珍珠奶茶吧，少糖少冰。",
+          "pinyin": "Gěi wǒ dài yì bēi zhēnzhū nǎichá ba, shǎo táng shǎo bīng.",
+          "vi": "Mua cho tôi một cốc trà sữa trân châu nhé, ít đường ít đá."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我去买杯奶茶”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi đi mua cốc trà sữa\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "小美",
+          "hanzi": "好，那家店现在排队人不多，我很快回来。",
+          "pinyin": "Hǎo, nà jiā diàn xiànzài páiduì rén bù duō, wǒ hěn kuài huílái.",
+          "vi": "Được, quán đó giờ không đông người xếp hàng, tôi sẽ về nhanh thôi."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "李强",
+          "hanzi": "辛苦啦，我微信把钱转给你。",
+          "pinyin": "Xīnkǔ la, wǒ Wēixìn bǎ qián zhuǎn gěi nǐ.",
+          "vi": "Vất vả cho bạn rồi, tôi chuyển tiền WeChat cho bạn nhé."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我去买",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi đi mua cốc trà sữa",
+          "hanzi": "我去买杯奶茶",
+          "pinyin": "Wǒ qù mǎi bēi nǎichá",
+          "hanviet": "Ngã khứ mãi bôi nãi trà",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi đi mua một cốc trà sữa",
           "example": {
-            "hanzi": "我去买杯奶茶",
-            "pinyin": "",
-            "vi": "Tôi đi mua cốc trà sữa"
+            "hanzi": "学累了吧？我去买杯奶茶喝。",
+            "pinyin": "Xué lèi le ba? Wǒ qù mǎi bēi nǎichá hē.",
+            "vi": "Học mệt rồi phải không? Tôi đi mua cốc trà sữa uống nhé."
           }
         },
         {
@@ -20259,41 +20259,41 @@
       "tip": "Chủ điểm: Thi cử, Thời gian sắp tới. Ngữ pháp: Câu vị ngữ chủ vị; Câu hỏi lựa chọn; Cấu trúc “要/快/快要/就要……了”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "就要考试了",
-          "pinyin": "",
-          "vi": "Sắp thi rồi"
+          "speaker": "张敏",
+          "hanzi": "下个星期就要考试了，你准备得怎么样？",
+          "pinyin": "Xià gè xīngqī jiù yào kǎoshì le, nǐ zhǔnbèi de zěnmeyàng?",
+          "vi": "Tuần sau sắp thi rồi, bạn chuẩn bị đến đâu rồi?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "刘洋",
+          "hanzi": "听力部分还可以，就是生词还没完全背熟。",
+          "pinyin": "Tīnglì bùfen hái kěyǐ, jiù shì shēngcí hái méi wánquán bèi shú.",
+          "vi": "Phần nghe thì tạm ổn, chỉ là từ mới vẫn chưa học thuộc hết."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“就要考试了”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Sắp thi rồi\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "张敏",
+          "hanzi": "今晚我们去图书馆一起互相提问吧。",
+          "pinyin": "Jīnwǎn wǒmen qù túshūguǎn yìqǐ hùxiāng tíwèn ba.",
+          "vi": "Tối nay chúng mình ra thư viện cùng nhau hỏi bài đi."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "刘洋",
+          "hanzi": "太好了，有你一起复习我放心多了！",
+          "pinyin": "Tài hǎo le, yǒu nǐ yìqǐ fùxí wǒ fàngxīn duō le!",
+          "vi": "Tuyệt quá, có bạn cùng ôn tập là tôi yên tâm hơn nhiều rồi!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "就要考",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
+          "hanzi": "就要考试了",
+          "pinyin": "Jiù yào kǎoshì le",
+          "hanviet": "Tựu yếu khảo thí liễu",
+          "pos": "Mẫu câu cốt lõi",
           "vi": "Sắp thi rồi",
           "example": {
-            "hanzi": "就要考试了",
-            "pinyin": "",
-            "vi": "Sắp thi rồi"
+            "hanzi": "下星期就要考试了，大家加紧复习吧。",
+            "pinyin": "Xià xīngqī jiù yào kǎoshì le, dàjiā jiājǐn fùxí ba.",
+            "vi": "Tuần sau sắp thi rồi, mọi người hãy đẩy nhanh ôn tập nhé."
           }
         },
         {
@@ -20472,41 +20472,41 @@
       "tip": "Chủ điểm: Sở thích, Trạng thái duy trì. Ngữ pháp: Trợ từ động thái “着”; Phó từ mức độ “最”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我最喜欢吃中国菜",
-          "pinyin": "",
-          "vi": "Tôi thích ăn món Trung Quốc nhất"
+          "speaker": "约翰",
+          "hanzi": "今天中午你想去吃什么？",
+          "pinyin": "Jīntiān zhōngwǔ nǐ xiǎng qù chī shénme?",
+          "vi": "Trưa nay bạn muốn đi ăn gì?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "小燕",
+          "hanzi": "我最喜欢吃中国菜，学校附近新开了一家川菜馆。",
+          "pinyin": "Wǒ zuì xǐhuan chī Zhōngguócài, xuéxiào fùjìn xīn kāi le yì jiā Chuāncàiguǎn.",
+          "vi": "Tôi thích ăn món Trung Quốc nhất, gần trường mới mở quán món Tứ Xuyên đấy."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我最喜欢吃中国菜”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi thích ăn món Trung Quốc nhất\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "约翰",
+          "hanzi": "川菜是不是很辣？我不太能吃辣。",
+          "pinyin": "Chuāncài shì bu shì hěn là? Wǒ bú tài néng chī là.",
+          "vi": "Món Tứ Xuyên có cay lắm không? Tôi ăn cay không giỏi lắm."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "小燕",
+          "hanzi": "别担心，他们家也有宫保鸡丁和番茄炒蛋，味道特别香。",
+          "pinyin": "Bié dānxīn, tāmen jiā yě yǒu gōngbǎo jīdīng hé fānqié chǎodàn, wèidao tèbié xiāng.",
+          "vi": "Đừng lo, quán đó có cả gà Cung Bảo và trứng xào cà chua, vị thơm ngon lắm."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我最喜",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi thích ăn món Trung Quốc nhất",
+          "hanzi": "我最喜欢吃中国菜",
+          "pinyin": "Wǒ zuì xǐhuan chī Zhōngguócài",
+          "hanviet": "Ngã tối hỉ hoan ngật Trung Quốc thái",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi thích ăn món ăn Trung Quốc nhất",
           "example": {
-            "hanzi": "我最喜欢吃中国菜",
-            "pinyin": "",
-            "vi": "Tôi thích ăn món Trung Quốc nhất"
+            "hanzi": "在所有美食中，我最喜欢吃中国菜。",
+            "pinyin": "Zài suǒyǒu měishí zhōng, wǒ zuì xǐhuan chī Zhōngguócài.",
+            "vi": "Trong tất cả các món ăn, tôi thích ăn món Trung Quốc nhất."
           }
         },
         {
@@ -20685,41 +20685,41 @@
       "tip": "Chủ điểm: Khí hậu, So sánh chi tiết. Ngữ pháp: Câu so sánh (4), (5) & (6).",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "这里比北京冷多了",
-          "pinyin": "",
-          "vi": "Ở đây lạnh hơn Bắc Kinh nhiều"
+          "speaker": "大山",
+          "hanzi": "这几天北方的天气怎么样？",
+          "pinyin": "Zhè jǐ tiān běifāng de tiānqì zěnmeyàng?",
+          "vi": "Mấy hôm nay thời tiết phương Bắc thế nào?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "李明",
+          "hanzi": "冷风一吹，这里比北京冷多了，都降到零下十度了。",
+          "pinyin": "Lěngfēng yì chuī, zhèlǐ bǐ Běijīng lěng duō le, dōu jiàng dào língxià shí dù le.",
+          "vi": "Gió lạnh thổi qua, ở đây lạnh hơn Bắc Kinh nhiều, hạ xuống âm 10 độ rồi."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“这里比北京冷多了”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Ở đây lạnh hơn Bắc Kinh nhiều\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "大山",
+          "hanzi": "那你出门一定要多穿点儿羽绒服。",
+          "pinyin": "Nà nǐ chūmén yídìng yào duō chuān diǎnr yǔróngfú.",
+          "vi": "Thế thì bạn ra ngoài nhớ mặc áo phao ấm vào nhé."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "李明",
+          "hanzi": "嗯，手套和帽子我都戴好了，屋里有暖气很舒服。",
+          "pinyin": "En, shǒutào hé màozi wǒ dōu dài hǎo le, wūlǐ yǒu nuǎnqì hěn shūfu.",
+          "vi": "Ừ, găng tay và mũ tôi đội đủ rồi, trong phòng có lò sưởi dễ chịu lắm."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "这里比",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
+          "hanzi": "这里比北京冷多了",
+          "pinyin": "Zhèlǐ bǐ Běijīng lěng duō le",
+          "hanviet": "Giá lý bỉ Bắc Kinh lãnh đa liễu",
+          "pos": "Mẫu câu cốt lõi",
           "vi": "Ở đây lạnh hơn Bắc Kinh nhiều",
           "example": {
-            "hanzi": "这里比北京冷多了",
-            "pinyin": "",
-            "vi": "Ở đây lạnh hơn Bắc Kinh nhiều"
+            "hanzi": "冬天的时候，哈尔滨比北京冷多了。",
+            "pinyin": "Dōngtiān de shíhou, Hā'ěrbīn bǐ Běijīng lěng duō le.",
+            "vi": "Vào mùa đông, Cáp Nhĩ Tân lạnh hơn Bắc Kinh nhiều."
           }
         },
         {
@@ -20898,41 +20898,41 @@
       "tip": "Chủ điểm: Học tập, Cảm xúc. Ngữ pháp: Câu song tân ngữ (2); Câu so sánh (7) & (8).",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我们爱上中文课",
-          "pinyin": "",
-          "vi": "Chúng tôi yêu giờ học tiếng Trung"
+          "speaker": "保罗",
+          "hanzi": "你们班今天的汉语课学了什么？",
+          "pinyin": "Nǐmen bān jīntiān de Hànyǔ kè xué le shénme?",
+          "vi": "Lớp các bạn hôm nay học gì trong giờ tiếng Hán thế?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "安娜",
+          "hanzi": "我们学了成语和中国剪纸，大家都很兴奋。",
+          "pinyin": "Wǒmen xué le chéngyǔ hé Zhōngguó jiǎnzhǐ, dàjiā dōu hěn xīngfèn.",
+          "vi": "Chúng mình học thành ngữ và cắt giấy nghệ thuật Trung Hoa, ai cũng hào hứng."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我们爱上中文课”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Chúng tôi yêu giờ học tiếng Trung\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "保罗",
+          "hanzi": "看来你们爱上中文课不是假的！",
+          "pinyin": "Kànlái nǐmen àishàng Zhōngwén kè bú shì jiǎ de!",
+          "vi": "Xem ra các bạn mê giờ học tiếng Trung là thật rồi!"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "安娜",
+          "hanzi": "对啊，一边学语言一边体验文化，进步特别快。",
+          "pinyin": "Duì a, yìbiān xué yǔyán yìbiān tǐyàn wénhuà, jìnbù tèbié kuài.",
+          "vi": "Đúng vậy, vừa học ngôn ngữ vừa trải nghiệm văn hóa, tiến bộ nhanh lắm."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我们爱",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Chúng tôi yêu giờ học tiếng Trung",
+          "hanzi": "我们爱上中文课",
+          "pinyin": "Wǒmen àishàng Zhōngwén kè",
+          "hanviet": "Ngã môn ái thượng Trung văn khóa",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Chúng tôi thích học giờ tiếng Trung",
           "example": {
-            "hanzi": "我们爱上中文课",
-            "pinyin": "",
-            "vi": "Chúng tôi yêu giờ học tiếng Trung"
+            "hanzi": "老师讲得生动有趣，我们都爱上中文课。",
+            "pinyin": "Lǎoshī jiǎng de shēngdòng yǒuqù, wǒmen dōu àishàng Zhōngwén kè.",
+            "vi": "Thầy cô giảng bài sinh động và thú vị, chúng tôi ai cũng yêu thích giờ học tiếng Trung."
           }
         },
         {
@@ -21111,41 +21111,41 @@
       "tip": "Chủ điểm: Lễ Tết, Cảm nhận. Ngữ pháp: Câu tồn hiện (2); Phó từ “多”; Bổ ngữ xu hướng phức.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "一个人过年多没意思啊",
-          "pinyin": "",
-          "vi": "Một người đón Tết thật chẳng thú vị gì"
+          "speaker": "小林",
+          "hanzi": "春节学校放假，你怎么不回国？",
+          "pinyin": "Chūnjié xuéxiào fàngjià, nǐ zěnme bù huíguó?",
+          "vi": "Nghỉ Tết trường cho nghỉ, sao bạn không về nước?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "托马斯",
+          "hanzi": "机票太贵了，我打算在宿舍看看电影。",
+          "pinyin": "Jīpiào tài guì le, wǒ dǎsuàn zài sùshè kànkan diànyǐng.",
+          "vi": "Vé máy bay đắt quá, tôi định ở ký túc xá xem phim thôi."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“一个人过年多没意思啊”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Một người đón Tết thật chẳng thú vị gì\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "小林",
+          "hanzi": "一个人过年多没意思啊！去我家吧，我妈包饺子特别好吃。",
+          "pinyin": "Yí gè rén guònián duō méi yìsi a! Qù wǒ jiā ba, wǒ mā bāo jiǎozi tèbié hǎochī.",
+          "vi": "Đón Tết một mình chán lắm! Về nhà mình đi, mẹ mình gói sủi cảo ngon tuyệt cú mèo."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "托马斯",
+          "hanzi": "真的可以吗？那太感谢你了，我想体验正宗的中国年！",
+          "pinyin": "Zhēn de kěyǐ ma? Nà tài gǎnxiè nǐ le, wǒ xiǎng tǐyàn zhèngzōng de Zhōngguó nián!",
+          "vi": "Thật thế được sao? Cảm ơn bạn nhiều nhé, tôi muốn trải nghiệm Tết cổ truyền chuẩn mực!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "一个人",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Một người đón Tết thật chẳng thú vị gì",
+          "hanzi": "一个人过年多没意思啊",
+          "pinyin": "Yí gè rén guònián duō méi yìsi a",
+          "hanviet": "Nhất cá nhân quá niên đa một ý tứ a",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Đón Tết một mình thì thật chẳng thú vị chút nào",
           "example": {
-            "hanzi": "一个人过年多没意思啊",
-            "pinyin": "",
-            "vi": "Một người đón Tết thật chẳng thú vị gì"
+            "hanzi": "来我家一起吃年夜饭吧，一个人过年多没意思啊。",
+            "pinyin": "Lái wǒ jiā yìqǐ chī niányèfàn ba, yí gè rén guònián duō méi yìsi a.",
+            "vi": "Đến nhà tôi cùng ăn bữa cơm tất niên đi, một mình đón Tết chẳng có ý nghĩa gì cả."
           }
         },
         {
@@ -21324,41 +21324,41 @@
       "tip": "Chủ điểm: Mong muốn, Tần suất. Ngữ pháp: Bổ ngữ động lượng; Câu chữ “有” (2).",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我想再去一次中国",
-          "pinyin": "",
-          "vi": "Tôi muốn đi Trung Quốc lần nữa"
+          "speaker": "艾玛",
+          "hanzi": "去年你去的北京和上海，感觉怎么样？",
+          "pinyin": "Qùnián nǐ qù de Běijīng hé Shànghǎi, gǎnjué zěnmeyàng?",
+          "vi": "Năm ngoái bạn đi Bắc Kinh và Thượng Hải thấy thế nào?"
         },
         {
-          "speaker": "B",
-          "hanzi": "好主意，就这么办！",
-          "pinyin": "",
-          "vi": "Ý hay đấy, cứ quyết định thế đi!"
+          "speaker": "李明",
+          "hanzi": "印象非常深刻，我想再去一次中国，去看看成都和大熊猫。",
+          "pinyin": "Yìnxiàng fēicháng shēnkè, wǒ xiǎng zài qù yí cì Zhōngguó, qù kànkan Chéngdū hé dàxióngmāo.",
+          "vi": "Ấn tượng sâu sắc lắm, mình muốn đi Trung Quốc lần nữa, đến Thành Đô ngắm gấu trúc lớn."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我想再去一次中国”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi muốn đi Trung Quốc lần nữa\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "艾玛",
+          "hanzi": "听说成都的美食也数不胜数呢。",
+          "pinyin": "Tīngshuō Chéngdū de měishí yě shǔ bù shèng shǔ ne.",
+          "vi": "Nghe nói ẩm thực Thành Đô cũng nhiều không đếm xuể luôn."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "李明",
+          "hanzi": "对啊，下次我们一起组团去吧！",
+          "pinyin": "Duì a, xià cì wǒmen yìqǐ zǔtuán qù ba!",
+          "vi": "Đúng rồi, lần tới hai đứa mình cùng rủ nhau đi chung nhé!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我想再",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi muốn đi Trung Quốc lần nữa",
+          "hanzi": "我想再去一次中国",
+          "pinyin": "Wǒ xiǎng zài qù yí cì Zhōngguó",
+          "hanviet": "Ngã tưởng tái khứ nhất thứ Trung Quốc",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi muốn đến Trung Quốc thêm một lần nữa",
           "example": {
-            "hanzi": "我想再去一次中国",
-            "pinyin": "",
-            "vi": "Tôi muốn đi Trung Quốc lần nữa"
+            "hanzi": "中国的风景太美了，我想再去一次中国。",
+            "pinyin": "Zhōngguó de fēngjǐng tài měi le, wǒ xiǎng zài qù yí cì Zhōngguó.",
+            "vi": "Phong cảnh Trung Quốc đẹp quá, tôi muốn sang Trung Quốc thêm một lần nữa."
           }
         },
         {
@@ -21537,41 +21537,41 @@
       "tip": "Chủ điểm: Đón tiếp, Gặp gỡ. Ngữ pháp: Cấu trúc đa项 định ngữ (Thứ tự định ngữ); Cách dùng “看上去”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我们去机场接你们",
-          "pinyin": "",
-          "vi": "Chúng tôi đi sân bay đón các bạn"
+          "speaker": "王伟",
+          "hanzi": "你们的航班明天几点到达首都机场？",
+          "pinyin": "Nǐmen de hángbān míngtiān jǐ diǎn dàodá Shǒudū Jīchǎng?",
+          "vi": "Chuyến bay của các bạn ngày mai mấy giờ hạ cánh sân bay Thủ đô?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "玛丽",
+          "hanzi": "预计下午三点半落地，取行李大概需要半小时。",
+          "pinyin": "Yùjì xiàwǔ sān diǎn bàn luòdì, qǔ xíngli dàgài xūyào bàn xiǎoshí.",
+          "vi": "Dự kiến 3 rưỡi chiều hạ cánh, lấy hành lý chắc mất tầm nửa tiếng."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我们去机场接你们”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Chúng tôi đi sân bay đón các bạn\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "王伟",
+          "hanzi": "那四点左右我们在国际到达出口等你们，我们去机场接你们！",
+          "pinyin": "Nà sì diǎn zuǒyòu wǒmen zài guójì dàodá chūkǒu děng nǐmen, wǒmen qù jīchǎng jiē nǐmen!",
+          "vi": "Thế khoảng 4 giờ chúng tôi đứng ở cửa ra quốc tế đợi, chúng tôi đến sân bay đón các bạn!"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "玛丽",
+          "hanzi": "太麻烦你们了，明天见！",
+          "pinyin": "Tài máfan nǐmen le, míngtiān jiàn!",
+          "vi": "Làm phiền các bạn quá, ngày mai gặp nhé!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我们去",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Chúng tôi đi sân bay đón các bạn",
+          "hanzi": "我们去机场接你们",
+          "pinyin": "Wǒmen qù jīchǎng jiē nǐmen",
+          "hanviet": "Ngã môn khứ cơ trường tiếp nhĩ môn",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Chúng tôi ra sân bay đón các bạn",
           "example": {
-            "hanzi": "我们去机场接你们",
-            "pinyin": "",
-            "vi": "Chúng tôi đi sân bay đón các bạn"
+            "hanzi": "你们几点落地？我们去机场接你们。",
+            "pinyin": "Nǐmen jǐ diǎn luòdì? Wǒmen qù jīchǎng jiē nǐmen.",
+            "vi": "Các bạn mấy giờ hạ cánh? Chúng tôi sẽ ra sân bay đón các bạn."
           }
         },
         {
@@ -21750,41 +21750,41 @@
       "tip": "Chủ điểm: Ăn uống, Gọi món. Ngữ pháp: Đại từ nghi vấn dùng làm đại từ bất định; Câu phức “又…又…”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "你们想吃什么就点什么",
-          "pinyin": "",
-          "vi": "Các bạn muốn ăn gì thì gọi nấy"
+          "speaker": "老板",
+          "hanzi": "几位请坐，这是菜单，扫码也可以点餐。",
+          "pinyin": "Jǐ wèi qǐng zuò, zhè shì càidān, sǎomǎ yě kěyǐ diǎncān.",
+          "vi": "Mời mấy vị ngồi, đây là thực đơn, quét mã cũng gọi món được ạ."
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "张总",
+          "hanzi": "今天大家辛苦了，想吃什么就点什么，千万别客气！",
+          "pinyin": "Jīntiān dàjiā xīnkǔ le, xiǎng chī shénme jiù diǎn shénme, qiānwàn bié kèqi!",
+          "vi": "Hôm nay mọi người vất vả rồi, muốn ăn gì cứ gọi nấy, tuyệt đối đừng khách sáo!"
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“你们想吃什么就点什么”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Các bạn muốn ăn gì thì gọi nấy\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "小李",
+          "hanzi": "那我就不客气啦，先来一份北京烤鸭和水煮鱼吧！",
+          "pinyin": "Nà wǒ jiù bú kèqi la, xiān lái yí fèn Běijīng kǎoyā hé shuǐzhǔyú ba!",
+          "vi": "Thế em không khách sáo đâu nhé, cho trước một phần vịt quay Bắc Kinh và cá nấu cay!"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "张总",
+          "hanzi": "没问题，再来一扎鲜榨西瓜汁。",
+          "pinyin": "Méi wèntí, zài lái yì zhā xiānzhà xīguāzhī.",
+          "vi": "Không thành vấn đề, thêm một bình nước dưa hấu ép tươi nữa."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "你们想",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Các bạn muốn ăn gì thì gọi nấy",
+          "hanzi": "你们想吃什么就点什么",
+          "pinyin": "Nǐmen xiǎng chī shénme jiù diǎn shénme",
+          "hanviet": "Nhĩ môn tưởng ngật thập ma tựu điểm thập ma",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Các bạn muốn ăn gì thì cứ gọi món nấy",
           "example": {
-            "hanzi": "你们想吃什么就点什么",
-            "pinyin": "",
-            "vi": "Các bạn muốn ăn gì thì gọi nấy"
+            "hanzi": "今天我请客，你们想吃什么就点什么。",
+            "pinyin": "Jīntiān wǒ qǐngkè, nǐmen xiǎng chī shénme jiù diǎn shénme.",
+            "vi": "Hôm nay tôi đãi, các bạn muốn ăn gì thì cứ gọi nấy."
           }
         },
         {
@@ -21963,41 +21963,41 @@
       "tip": "Chủ điểm: Nhà ở, Môi trường sống. Ngữ pháp: Phó từ mức độ “挺”; Phân biệt cách dùng “就” và “才”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "这个小区挺好的",
-          "pinyin": "",
-          "vi": "Khu chung cư này khá tốt"
+          "speaker": "租客",
+          "hanzi": "中介先生，这个小区的绿化和治安怎么样？",
+          "pinyin": "Zhōngjiè xiānsheng, zhè ge xiǎoqū de lǜhuà hé zhì'ān zěnmeyàng?",
+          "vi": "Anh môi giới ơi, cây xanh và an ninh của khu chung cư này thế nào?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "中介",
+          "hanzi": "这个小区挺好的，门禁管理严格，而且下楼就是超市。",
+          "pinyin": "Zhè ge xiǎoqū tǐng hǎo de, ménjìn guǎnlǐ yángé, érqiě xiàlóu jiù shì chāoshì.",
+          "vi": "Khu này khá tốt, cổng ra vào quản lý nghiêm ngặt, bước xuống nhà là có siêu thị."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“这个小区挺好的”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Khu chung cư này khá tốt\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "租客",
+          "hanzi": "离最近的地铁站大概走几分钟？",
+          "pinyin": "Lí zuì jìn de dìtiězhàn dàgài zǒu jǐ fēnzhōng?",
+          "vi": "Cách ga tàu điện ngầm gần nhất đi bộ khoảng mấy phút?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "中介",
+          "hanzi": "步行只要五分钟，上班通勤非常方便。",
+          "pinyin": "Bùxíng zhǐ yào wǔ fēnzhōng, shàngbān tōngqín fēicháng fāngbiàn.",
+          "vi": "Đi bộ chỉ mất 5 phút thôi, đi làm rất thuận tiện."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "这个小",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Khu chung cư này khá tốt",
+          "hanzi": "这个小区挺好的",
+          "pinyin": "Zhè ge xiǎoqū tǐng hǎo de",
+          "hanviet": "Giá cá tiểu khu đĩnh hảo đích",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Khu chung cư này khá là tốt",
           "example": {
-            "hanzi": "这个小区挺好的",
-            "pinyin": "",
-            "vi": "Khu chung cư này khá tốt"
+            "hanzi": "交通便利环境优美，这个小区挺好的。",
+            "pinyin": "Jiāotōng biànlì huánjìng yōuměi, zhè ge xiǎoqū tǐng hǎo de.",
+            "vi": "Giao thông thuận tiện môi trường trong lành, khu chung cư này khá tốt."
           }
         },
         {
@@ -22176,41 +22176,41 @@
       "tip": "Chủ điểm: Khách sạn, So sánh. Ngữ pháp: Cấu trúc phủ định tuyệt đối: “一… 也/没 …”; Cấu trúc “除了…以外”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "这家宾馆跟别的不一样",
-          "pinyin": "",
-          "vi": "Khách sạn này không giống những cái khác"
+          "speaker": "游客",
+          "hanzi": "你看，房间里摆放了许多古代书法和瓷器呢！",
+          "pinyin": "Nǐ kàn, fángjiān lǐ bǎifàng le xǔduō gǔdài shūfǎ hé cíqì ne!",
+          "vi": "Bạn xem kìa, trong phòng bài trí rất nhiều thư pháp và đồ gốm sứ cổ!"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "导游",
+          "hanzi": "是的，这家宾馆跟别的不一样，是四合院改造的主题酒店。",
+          "pinyin": "Shì de, zhè jiā bīnguǎn gēn bié de bù yíyàng, shì sìhéyuàn gǎizào de zhǔtí jiǔdiàn.",
+          "vi": "Đúng vậy, khách sạn này không giống các nơi khác, là khách sạn chủ đề cải tạo từ Tứ hợp viện."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“这家宾馆跟别的不一样”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Khách sạn này không giống những cái khác\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "游客",
+          "hanzi": "服务也很贴心，还送了特色的茉莉花茶。",
+          "pinyin": "Fúwù yě hěn tiēxīn, hái sòng le tèsè de mòlihuā chá.",
+          "vi": "Dịch vụ cũng rất chu đáo, lại còn tặng cả trà hoa nhài đặc sản."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "导游",
+          "hanzi": "希望你们在这里住得舒适愉快。",
+          "pinyin": "Xīwàng nǐmen zài zhèlǐ zhù de shūshì yúkuài.",
+          "vi": "Chúc quý khách ở đây thật thoải mái và dễ chịu."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "这家宾",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Khách sạn này không giống những cái khác",
+          "hanzi": "这家宾馆跟别的不一样",
+          "pinyin": "Zhè jiā bīnguǎn gēn bié de bù yíyàng",
+          "hanviet": "Giá gia tân quán cân biệt đích bất nhất dạng",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Khách sạn này không giống với những nơi khác",
           "example": {
-            "hanzi": "这家宾馆跟别的不一样",
-            "pinyin": "",
-            "vi": "Khách sạn này không giống những cái khác"
+            "hanzi": "装修很有传统特色，这家宾馆跟别的不一样。",
+            "pinyin": "Zhuāngxiū hěn yǒu chuántǒng tèsè, zhè jiā bīnguǎn gēn bié de bù yíyàng.",
+            "vi": "Nội thất mang đậm nét truyền thống, khách sạn này chẳng giống những nơi khác."
           }
         },
         {
@@ -22389,41 +22389,41 @@
       "tip": "Chủ điểm: Sức khỏe, Thể thao. Ngữ pháp: Lặp lại lượng từ; Giới từ “对”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "运动对身体好",
-          "pinyin": "",
-          "vi": "Thể thao tốt cho sức khỏe"
+          "speaker": "小刘",
+          "hanzi": "最近我总觉得脖子酸痛，整天坐在电脑前。",
+          "pinyin": "Zuìjìn wǒ zǒng juéde bózi suāntòng, zhěng tiān zuò zài diànnǎo qián.",
+          "vi": "Dạo này mình hay thấy đau mỏi cổ, cả ngày ngồi trước máy tính."
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "大夫",
+          "hanzi": "要多起来活动活动，打打羽毛球，运动对身体好。",
+          "pinyin": "Yào duō qǐlái huódòng huodong, dǎda yǔmáoqiú, yùndòng duì shēntǐ hǎo.",
+          "vi": "Cần đứng dậy vận động nhiều hơn, chơi cầu lông chẳng hạn, thể thao rất tốt cho cơ thể."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“运动对身体好”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Thể thao tốt cho sức khỏe\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "小刘",
+          "hanzi": "我平时工作太忙，抽不出大块时间。",
+          "pinyin": "Wǒ píngshí gōngzuò tài máng, chōu bù chū dà kuài shíjiān.",
+          "vi": "Bình thường tôi bận việc quá, không dành ra được thời gian dài."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "大夫",
+          "hanzi": "哪怕散步二十分钟也有效，关键是持之以恒。",
+          "pinyin": "Nǎpà sànbù èrshí fēnzhōng yě yǒuxiào, guānjiàn shì chízhīyǐhéng.",
+          "vi": "Dù chỉ đi bộ 20 phút cũng có tác dụng, mấu chốt là sự kiên trì."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "运动对",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Thể thao tốt cho sức khỏe",
+          "hanzi": "运动对身体好",
+          "pinyin": "Yùndòng duì shēntǐ hǎo",
+          "hanviet": "Vận động đối thân thể hảo",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tập thể dục rất tốt cho sức khỏe",
           "example": {
-            "hanzi": "运动对身体好",
-            "pinyin": "",
-            "vi": "Thể thao tốt cho sức khỏe"
+            "hanzi": "每天坚持慢跑三十分钟，运动对身体好。",
+            "pinyin": "Měitiān jiānchí mànpǎo sānshí fēnzhōng, yùndòng duì shēntǐ hǎo.",
+            "vi": "Mỗi ngày kiên trì chạy bộ 30 phút, vận động rất tốt cho cơ thể."
           }
         },
         {
@@ -22602,41 +22602,41 @@
       "tip": "Dịch vụ đường sắt cao tốc Trung Quốc (CRH) tích hợp gọi đồ ăn online qua mã QR ghế ngồi, thể hiện sự tiện ích công nghệ 4.0 vượt trội.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "高铁上还可以点外卖吗？",
-          "pinyin": "",
-          "vi": "Trên tàu cao tốc mà cũng gọi đồ ăn ngoài được ư?"
+          "speaker": "乘客A",
+          "hanzi": "中午到点了，车厢餐车有什么盒饭吗？",
+          "pinyin": "Zhōngwǔ dào diǎn le, chēxiāng cānchē yǒu shénme héfàn ma?",
+          "vi": "Đến trưa rồi, toa ăn có cơm hộp gì thế?"
         },
         {
-          "speaker": "B",
-          "hanzi": "当然可以！扫二维码下单，乘务员会送到你的座位。",
-          "pinyin": "",
-          "vi": "Đương nhiên rồi! Quét mã QR đặt hàng, tiếp viên sẽ mang tận nơi đến ghế ngồi của bạn."
+          "speaker": "乘客B",
+          "hanzi": "其实用手机铁路12306，高铁上还可以点沿途车站的外卖呢！",
+          "pinyin": "Qíshí yòng shǒujī Tiělù yāorèrlíngliù, gāotiě shang hái kěyǐ diǎn yántú chēzhàn de wàimài ne!",
+          "vi": "Thực ra dùng app 12306, trên tàu cao tốc còn đặt được đồ ăn ở các ga dọc đường đấy!"
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“高铁上还可以点外卖”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Trên tàu cao tốc còn có thể đặt đồ ăn\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "乘客A",
+          "hanzi": "真的吗？送过来会送到我的座位上吗？",
+          "pinyin": "Zhēn de ma? Sòng guòlái huì sòng dào wǒ de zuòwèi shang ma?",
+          "vi": "Thật thế sao? Đồ ăn có giao tận chỗ ngồi của mình không?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "乘客B",
+          "hanzi": "对啊，列车员会直接送到你手里，热腾腾的特别方便！",
+          "pinyin": "Duì a, lièchēyuán huì zhíjiē sòng dào nǐ shǒulǐ, rèténgténg de tèbié fāngbiàn!",
+          "vi": "Đúng vậy, nhân viên tàu sẽ giao thẳng đến tay bạn, nóng hổi tiện lợi lắm!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "高铁上",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Trên tàu cao tốc còn có thể đặt đồ ăn",
+          "hanzi": "高铁上还可以点外卖",
+          "pinyin": "Gāotiě shang hái kěyǐ diǎn wàimài",
+          "hanviet": "Cao thiết thượng hoàn khả dĩ điểm ngoại mại",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Trên tàu cao tốc còn có thể gọi đồ ăn giao tận nơi",
           "example": {
-            "hanzi": "高铁上还可以点外卖",
-            "pinyin": "",
-            "vi": "Trên tàu cao tốc còn có thể đặt đồ ăn"
+            "hanzi": "中国的高铁服务真先进，高铁上还可以点外卖。",
+            "pinyin": "Zhōngguó de gāotiě fúwù zhēn xiānjìn, gāotiě shang hái kěyǐ diǎn wàimài.",
+            "vi": "Dịch vụ đường sắt cao tốc Trung Quốc thật tân tiến, trên tàu cao tốc còn đặt được đồ ăn."
           }
         },
         {
@@ -22815,41 +22815,41 @@
       "tip": "Chủ điểm: Thời trang, Mua sắm. Ngữ pháp: Câu phức tăng tiến “不但…而且…”; So sánh hơn với “更”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "那条裙子比短裤更好看",
-          "pinyin": "",
-          "vi": "Chiếc váy đó đẹp hơn quần đùi nhiều"
+          "speaker": "丽丽",
+          "hanzi": "明天去参加朋友的婚礼，我穿短裤合适吗？",
+          "pinyin": "Míngtiān qù cānjiā péngyou de hūnlǐ, wǒ chuān duǎnkù héshì ma?",
+          "vi": "Ngày mai đi đám cưới bạn, mình mặc quần đùi có hợp không?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "小芳",
+          "hanzi": "婚礼是正式场合，那条浅蓝色的长裙比短裤更好看。",
+          "pinyin": "Hūnlǐ shì zhèngshì chǎnghé, nà tiáo qiǎnlánsè de chángqún bǐ duǎnkù gèng hǎokàn.",
+          "vi": "Đám cưới là dịp trang trọng, chiếc váy dài xanh nhạt kia đẹp hơn quần đùi nhiều."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“那条裙子比短裤更好看”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Chiếc váy đó đẹp hơn quần đùi nhiều\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "丽丽",
+          "hanzi": "那我再配一双米色的高跟鞋怎么样？",
+          "pinyin": "Nà wǒ zài pèi yì shuāng mǐsè de gāogēnxié zěnmeyàng?",
+          "vi": "Thế mình phối thêm đôi giày cao gót màu be được không?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "小芳",
+          "hanzi": "简直太完美了，既端庄又大方！",
+          "pinyin": "Jiǎnzhí tài wánměi le, jì duānzhuāng yòu dàfāng!",
+          "vi": "Quá hoàn hảo luôn, vừa đoan trang lại vừa trang nhã!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "那条裙",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Chiếc váy đó đẹp hơn quần đùi nhiều",
+          "hanzi": "那条裙子比短裤更好看",
+          "pinyin": "Nà tiáo qúnzi bǐ duǎnkù gèng hǎokàn",
+          "hanviet": "Na điều quần tử bỉ đoản khố cánh hảo khán",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Chiếc váy đó trông đẹp hơn quần đùi nhiều",
           "example": {
-            "hanzi": "那条裙子比短裤更好看",
-            "pinyin": "",
-            "vi": "Chiếc váy đó đẹp hơn quần đùi nhiều"
+            "hanzi": "去参加晚宴的话，那条裙子比短裤更好看。",
+            "pinyin": "Qù cānjiā wǎnyàn de huà, nà tiáo qúnzi bǐ duǎnkù gèng hǎokàn.",
+            "vi": "Nếu đi dự tiệc tối, chiếc váy đó đẹp hơn quần đùi nhiều."
           }
         },
         {
@@ -23028,41 +23028,41 @@
       "tip": "Chủ điểm: Bệnh viện, Phục hồi. Ngữ pháp: Nghĩa bóng/Mở rộng của bổ ngữ xu hướng.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "今天我出院了",
-          "pinyin": "",
-          "vi": "Hôm nay tôi xuất viện rồi"
+          "speaker": "病友",
+          "hanzi": "看你精神这么好，是在办手续吗？",
+          "pinyin": "Kàn nǐ jīngshén zhème hǎo, shì zài bàn shǒuxù ma?",
+          "vi": "Thấy anh phấn chấn thế này, đang làm thủ tục à?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "张叔",
+          "hanzi": "对啊，医生说康复了，今天我出院了！",
+          "pinyin": "Duì a, yīshēng shuō kāngfù le, jīntiān wǒ chūyuàn le!",
+          "vi": "Đúng vậy, bác sĩ bảo bình phục rồi, hôm nay tôi xuất viện đây!"
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“今天我出院了”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Hôm nay tôi xuất viện rồi\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "病友",
+          "hanzi": "恭喜恭喜！回家之后还是要按时吃药。",
+          "pinyin": "Gōngxǐ gōngxǐ! Huíjiā zhīhòu hái shì yào ànshí chī yào.",
+          "vi": "Chúc mừng chúc mừng! Về nhà rồi anh vẫn nhớ uống thuốc đúng giờ nhé."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "张叔",
+          "hanzi": "谢谢关心，你也早日康复出院！",
+          "pinyin": "Xièxie guānxīn, nǐ yě zǎorì kāngfù chūyuàn!",
+          "vi": "Cảm ơn anh quan tâm, chúc anh cũng mau bình phục xuất viện nhé!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "今天我",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
+          "hanzi": "今天我出院了",
+          "pinyin": "Jīntiān wǒ chūyuàn le",
+          "hanviet": "Kim thiên ngã xuất viện liễu",
+          "pos": "Mẫu câu cốt lõi",
           "vi": "Hôm nay tôi xuất viện rồi",
           "example": {
-            "hanzi": "今天我出院了",
-            "pinyin": "",
-            "vi": "Hôm nay tôi xuất viện rồi"
+            "hanzi": "身体恢复得很好，今天我出院了。",
+            "pinyin": "Shēntǐ huīfù de hěn hǎo, jīntiān wǒ chūyuàn le.",
+            "vi": "Sức khỏe hồi phục rất tốt, hôm nay tôi xuất viện rồi."
           }
         },
         {
@@ -23241,41 +23241,41 @@
       "tip": "Chủ điểm: Thể thao, Giải trí. Ngữ pháp: Bổ ngữ khả năng (V+得/不+Kết quả); Câu phức mục đích “为了”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "打不好没关系",
-          "pinyin": "",
-          "vi": "Đánh không tốt cũng không sao"
+          "speaker": "小刚",
+          "hanzi": "我平时很少打网球，技术不太过关。",
+          "pinyin": "Wǒ píngshí hěn shǎo dǎ wǎngqiú, jìshù bú tài guòguān.",
+          "vi": "Bình thường mình ít chơi tennis, kỹ thuật không giỏi lắm."
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "教练",
+          "hanzi": "打不好没关系，多练习发球和接球，慢慢就熟练了。",
+          "pinyin": "Dǎ bu hǎo méi guānxi, duō liànxí fāqiú hé jiēqiú, mànmàn jiù shúliàn le.",
+          "vi": "Đánh không tốt cũng không sao, luyện giao bóng và đỡ bóng nhiều là quen tay dần thôi."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“打不好没关系”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Đánh không tốt cũng không sao\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "小刚",
+          "hanzi": "好的，那我先跟着你的节奏来。",
+          "pinyin": "Hǎo de, nà wǒ xiān gēnzhe nǐ de jiézòu lái.",
+          "vi": "Vâng, vậy em bắt nhịp theo thầy trước."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "教练",
+          "hanzi": "放轻松，享受挥拍的乐趣才是最重要的。",
+          "pinyin": "Fàng qīngsōng, xiǎngshòu huīpāi de lèqù cái shì zuì zhòngyào de.",
+          "vi": "Thả lỏng ra nào, tận hưởng niềm vui vung vợt mới là điều quan trọng nhất."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "打不好",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
+          "hanzi": "打不好没关系",
+          "pinyin": "Dǎ bu hǎo méi guānxi",
+          "hanviet": "Đả bất hảo một quan hệ",
+          "pos": "Mẫu câu cốt lõi",
           "vi": "Đánh không tốt cũng không sao",
           "example": {
-            "hanzi": "打不好没关系",
-            "pinyin": "",
-            "vi": "Đánh không tốt cũng không sao"
+            "hanzi": "重在参与锻炼，打不好没关系。",
+            "pinyin": "Zhòng zài cānyù duànliàn, dǎ bu hǎo méi guānxi.",
+            "vi": "Quan trọng là tham gia rèn luyện, đánh không tốt cũng không sao."
           }
         },
         {
@@ -23672,41 +23672,41 @@
       "tip": "Chủ điểm: Giải quyết khó khăn. Ngữ pháp: Phân biệt “还是” và “或者”; Câu chữ 把 (2).",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "看来我没法解决这个问题",
-          "pinyin": "",
-          "vi": "Xem ra tôi không có cách giải quyết vấn đề này"
+          "speaker": "工程师",
+          "hanzi": "服务器连不上了，尝试了好几种配置还是报错。",
+          "pinyin": "Fúwùqì lián bu shàng le, chángshì le hǎo jǐ zhǒng pèizhì hái shì bàocuò.",
+          "vi": "Máy chủ không kết nối được rồi, thử mấy loại cấu hình mà vẫn báo lỗi."
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "李工",
+          "hanzi": "看来我一个人没法解决这个问题，我们叫上安全团队一起排查。",
+          "pinyin": "Kànlái wǒ yí gè rén méi fǎ jiějué zhè ge wèntí, wǒmen jiàoshang ānquán tuánduì yìqǐ páichá.",
+          "vi": "Xem ra một mình tôi không giải quyết nổi vấn đề này, mình gọi đội an ninh vào cùng rà soát đi."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“看来我没法解决这个问题”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Xem ra tôi không có cách giải quyết vấn đề này\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "工程师",
+          "hanzi": "好，我先把目前的错误日志导出汇总。",
+          "pinyin": "Hǎo, wǒ xiān bǎ mùqián de cuòwù rìzhì dǎochū huìzǒng.",
+          "vi": "Vâng, em trích xuất tổng hợp nhật ký lỗi hiện tại trước."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "李工",
+          "hanzi": "大家分工协作，一定能尽快恢复业务。",
+          "pinyin": "Dàjiā fēngōng xiézuò, yídìng néng jǐnkuài huīfù yèwù.",
+          "vi": "Mọi người chia việc phối hợp thì nhất định sẽ sớm khôi phục dịch vụ."
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "看来我",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
+          "hanzi": "看来我没法解决这个问题",
+          "pinyin": "Kànlái wǒ méi fǎ jiějué zhè ge wèntí",
+          "hanviet": "Khán lai ngã một pháp giải quyết giá cá vấn đề",
+          "pos": "Mẫu câu cốt lõi",
           "vi": "Xem ra tôi không có cách giải quyết vấn đề này",
           "example": {
-            "hanzi": "看来我没法解决这个问题",
-            "pinyin": "",
-            "vi": "Xem ra tôi không có cách giải quyết vấn đề này"
+            "hanzi": "代码报错太复杂，看来我没法解决这个问题，得请教主管。",
+            "pinyin": "Dàimǎ bàocuò tài fùzá, kànlái wǒ méi fǎ jiějué zhè ge wèntí, děi qǐngjiào zhǔguǎn.",
+            "vi": "Mã lỗi phức tạp quá, xem ra tôi không xử lý nổi vấn đề này, phải hỏi quản lý thôi."
           }
         },
         {
@@ -23885,41 +23885,41 @@
       "tip": "Chủ điểm: Sự thích nghi, Thói quen. Ngữ pháp: Phó từ “刚” và “刚才”; Cách dùng “确实”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "刚开始确实有点儿不习惯",
-          "pinyin": "",
-          "vi": "Mới đầu thực sự có chút không quen"
+          "speaker": "房东",
+          "hanzi": "小陈，来北京留学这两个月过得习惯吗？",
+          "pinyin": "Xiǎo Chén, lái Běijīng liúxué zhè liǎng gè yuè guò de xíguàn ma?",
+          "vi": "Tiểu Trần ơi, sang Bắc Kinh du học 2 tháng này quen nếp sống chưa?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "小陈",
+          "hanzi": "刚开始确实有点儿不习惯，尤其是气候干燥和饮食口味。",
+          "pinyin": "Gāng kāishǐ quèshí yǒudiǎnr bù xíguàn, yóuqí shì qìhòu gānzào hé yǐnshí kǒuwèi.",
+          "vi": "Mới đầu quả thực có chút chưa quen, nhất là khí hậu khô hanh và khẩu vị đồ ăn."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“刚开始确实有点儿不习惯”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Mới đầu thực sự có chút không quen\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "房东",
+          "hanzi": "现在适应得挺好吧？",
+          "pinyin": "Xiànzài shìyìng de tǐng hǎo ba?",
+          "vi": "Giờ thì thích nghi tốt rồi chứ?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "小陈",
+          "hanzi": "交了不少中国朋友，现在连豆汁和炸酱面都爱吃了！",
+          "pinyin": "Jiāo le bù shǎo Zhōngguó péngyou, xiànzài lián dòuzhī hé zhájiàngmiàn dōu ài chī le!",
+          "vi": "Em kết thân được bao nhiêu bạn Trung Quốc, giờ đến cả sữa đậu lên men với mì tương đen cũng nghiện luôn!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "刚开始",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Mới đầu thực sự có chút không quen",
+          "hanzi": "刚开始确实有点儿不习惯",
+          "pinyin": "Gāng kāishǐ quèshí yǒudiǎnr bù xíguàn",
+          "hanviet": "Cương khai thủy xác thực hữu điểm nhi bất tập quán",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Mới đầu quả thực có chút chưa quen",
           "example": {
-            "hanzi": "刚开始确实有点儿不习惯",
-            "pinyin": "",
-            "vi": "Mới đầu thực sự có chút không quen"
+            "hanzi": "到了新的城市，刚开始确实有点儿不习惯。",
+            "pinyin": "Dào le xīn de chéngshì, gāng kāishǐ quèshí yǒudiǎnr bù xíguàn.",
+            "vi": "Đến thành phố mới, mới đầu thực sự có chút chưa quen."
           }
         },
         {
@@ -24098,41 +24098,41 @@
       "tip": "Chủ điểm: Hàng xóm, Giao lưu. Ngữ pháp: Câu phức song song “一边…一边…”; Cấu trúc “…的话”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我的新邻居来自英国",
-          "pinyin": "",
-          "vi": "Hàng xóm mới của tôi đến từ Anh"
+          "speaker": "奶奶",
+          "hanzi": "隔壁那套空置的房子有人搬进来了吗？",
+          "pinyin": "Gébì nà tào kōngzhì de fángzi yǒurén bān jìnlái le ma?",
+          "vi": "Căn nhà để trống bên cạnh có người dọn vào ở rồi à con?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "小孙",
+          "hanzi": "对啊，我的新邻居来自英国，是一位大学英语老师。",
+          "pinyin": "Duì a, wǒ de xīn línjū láizì Yīngguó, shì yí wèi dàxué Yīngyǔ lǎoshī.",
+          "vi": "Vâng ạ, hàng xóm mới của con đến từ nước Anh, là giảng viên tiếng Anh đại học."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我的新邻居来自英国”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Hàng xóm mới của tôi đến từ Anh\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "奶奶",
+          "hanzi": "人家初来乍到，咱得热情点儿，送盘热饺子过去。",
+          "pinyin": "Rénjiā chūláizhàdào, zán děi rèqíng diǎnr, sòng pán rè jiǎozi guòqu.",
+          "vi": "Người ta mới đến còn bỡ ngỡ, mình phải niềm nở, mang đĩa sủi cảo nóng sang biếu."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "小孙",
+          "hanzi": "好嘞，他还会说几句流利的普通话呢！",
+          "pinyin": "Hǎolei, tā hái huì shuō jǐ jù liúlì de pǔtōnghuà ne!",
+          "vi": "Dạ vâng, chú ấy còn nói được mấy câu tiếng phổ thông trôi chảy lắm ạ!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我的新",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Hàng xóm mới của tôi đến từ Anh",
+          "hanzi": "我的新邻居来自英国",
+          "pinyin": "Wǒ de xīn línjū láizì Yīngguó",
+          "hanviet": "Ngã đích tân lân cư lai tự Anh quốc",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Hàng xóm mới của tôi đến từ nước Anh",
           "example": {
-            "hanzi": "我的新邻居来自英国",
-            "pinyin": "",
-            "vi": "Hàng xóm mới của tôi đến từ Anh"
+            "hanzi": "住在隔壁的一家人，我的新邻居来自英国。",
+            "pinyin": "Zhù zài gébì de yì jiā rén, wǒ de xīn línjū láizì Yīngguó.",
+            "vi": "Gia đình sống ở sát vách, hàng xóm mới của tôi đến từ nước Anh."
           }
         },
         {
@@ -24524,41 +24524,41 @@
       "tip": "Chủ điểm: Bản sắc, Quê hương. Ngữ pháp: Lặp lại cụm Số + Lượng; Giới từ “根据” (Căn cứ vào).",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我是半个南京人",
-          "pinyin": "",
-          "vi": "Tôi là một nửa người Nam Kinh"
+          "speaker": "游客",
+          "hanzi": "听你介绍夫子庙和玄武湖如数家珍，你是本地人吗？",
+          "pinyin": "Tīng nǐ jièshào Fūzǐmiào hé Xuánwǔ Hú rúshǔjiāzhēn, nǐ shì běndì rén ma?",
+          "vi": "Nghe anh giới thiệu miếu Phu Tử với hồ Huyền Vũ vanh vách thế này, anh là dân bản địa à?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "老张",
+          "hanzi": "哈哈，虽然老家在北方，但在南京读完大学工作至今，我是半个南京人啦！",
+          "pinyin": "Hāhā, suīrán lǎojiā zài běifāng, dàn zài Nánjīng dúwán dàxué gōngzuò zhìjīn, wǒ shì bàn gè Nánjīng rén la!",
+          "vi": "Haha, tuy quê gốc ở phương Bắc nhưng học xong đại học rồi làm việc ở Nam Kinh tới nay, tôi thành nửa người Nam Kinh rồi!"
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我是半个南京人”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi là một nửa người Nam Kinh\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "游客",
+          "hanzi": "那南京最有特色的美食一定要吃什么？",
+          "pinyin": "Nà Nánjīng zuì yǒu tèsè de měishí yídìng yào chī shénme?",
+          "vi": "Thế món ăn đặc sắc nhất Nam Kinh nhất định phải thử là gì?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "老张",
+          "hanzi": "必须是金陵盐水鸭和鸭血粉丝汤，鲜美无比！",
+          "pinyin": "Bìxū shì Jīnlíng yánshuǐyā hé yāxiě fěnsītāng, xiānměi wúbǐ!",
+          "vi": "Chắc chắn là vịt muối Kim Lăng và canh miến tiết vịt, tươi ngon không gì sánh bằng!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我是半",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi là một nửa người Nam Kinh",
+          "hanzi": "我是半个南京人",
+          "pinyin": "Wǒ shì bàn gè Nánjīng rén",
+          "hanviet": "Ngã thị bán cá Nam Kinh nhân",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi được coi là nửa người Nam Kinh rồi",
           "example": {
-            "hanzi": "我是半个南京人",
-            "pinyin": "",
-            "vi": "Tôi là một nửa người Nam Kinh"
+            "hanzi": "在这里生活了十年，我是半个南京人。",
+            "pinyin": "Zài zhèlǐ shēnghuó le shí nián, wǒ shì bàn gè Nánjīng rén.",
+            "vi": "Sống ở đây mười năm rồi, tôi coi như là một nửa người Nam Kinh."
           }
         },
         {
@@ -24737,41 +24737,41 @@
       "tip": "Chủ điểm: Tin tức, Động vật. Ngữ pháp: Giới từ “关于”; Cấu trúc “一会儿…一会儿…”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我听说有的熊猫出国了",
-          "pinyin": "",
-          "vi": "Tôi nghe nói có vài chú gấu trúc đã ra nước ngoài"
+          "speaker": "乐乐",
+          "hanzi": "昨天新闻里说大熊猫在海外动物园特别受欢迎呢！",
+          "pinyin": "Zuótiān xīnwén lǐ shuō dàxióngmāo zài hǎiwài dòngwùyuán tèbié shòuhuānyíng ne!",
+          "vi": "Hôm qua thời sự nói gấu trúc lớn ở sở thú nước ngoài được mến mộ lắm!"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "爸爸",
+          "hanzi": "对啊，我听说有的熊猫出国了，在国外也有专人精心照料。",
+          "pinyin": "Duì a, wǒ tīngshuō yǒude xióngmāo chūguó le, zài guówài yě yǒu zhuānrén jīngxīn zhàoliào.",
+          "vi": "Đúng vậy, ba nghe nói có mấy chú gấu trúc ra nước ngoài, bên đó cũng có người chuyên chăm sóc chu đáo."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我听说有的熊猫出国了”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi nghe nói có vài chú gấu trúc đã ra nước ngoài\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "乐乐",
+          "hanzi": "它们每天都要吃好多新鲜竹子吧？",
+          "pinyin": "Tāmen měitiān dōu yào chī hǎo duō xīnxiān zhúzi ba?",
+          "vi": "Mỗi ngày các bạn ấy đều ăn nhiều tre tươi lắm phải không ba?"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "爸爸",
+          "hanzi": "是的，新鲜竹子从四川空运过去，待遇非常好！",
+          "pinyin": "Shì de, xīnxiān zhúzi cóng Sìchuān kōngyùn guòqu, dàiyù fēicháng hǎo!",
+          "vi": "Đúng rồi, tre tươi được vận chuyển đường hàng không từ Tứ Xuyên sang, đãi ngộ tốt lắm!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我听说",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi nghe nói có vài chú gấu trúc đã ra nước ngoài",
+          "hanzi": "我听说有的熊猫出国了",
+          "pinyin": "Wǒ tīngshuō yǒude xióngmāo chūguó le",
+          "hanviet": "Ngã thính thuyết hữu đích hùng miêu xuất quốc liễu",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi nghe nói có mấy chú gấu trúc đã ra nước ngoài",
           "example": {
-            "hanzi": "我听说有的熊猫出国了",
-            "pinyin": "",
-            "vi": "Tôi nghe nói có vài chú gấu trúc đã ra nước ngoài"
+            "hanzi": "作为友谊的使者，我听说有的熊猫出国了。",
+            "pinyin": "Zuòwéi yǒuyì de shǐzhě, wǒ tīngshuō yǒude xióngmāo chūguó le.",
+            "vi": "Làm sứ giả của tình hữu nghị, tôi nghe nói có mấy chú gấu trúc đã ra nước ngoài."
           }
         },
         {
@@ -24950,41 +24950,41 @@
       "tip": "Chủ điểm: Tính cách, Học hỏi. Ngữ pháp: Câu phản vấn “不是…吗?”; Câu phức điều kiện “只有…才…”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我要多向认真的人学习",
-          "pinyin": "",
-          "vi": "Tôi phải học hỏi thêm ở những người nghiêm túc"
+          "speaker": "李涛",
+          "hanzi": "小陈整理的报表不仅整洁，连小数点都没出过错。",
+          "pinyin": "Xiǎo Chén zhěnglǐ de bàobiǎo bùjǐn zhěngjié, lián xiǎoshùdiǎn dōu méi chū guò cuò.",
+          "vi": "Báo cáo Tiểu Trần tổng hợp không chỉ gọn gàng, mà đến dấu phẩy thập phân cũng chẳng sai bao giờ."
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "赵刚",
+          "hanzi": "确实，这种敬业负责的态度值得钦佩，我要多向认真的人学习。",
+          "pinyin": "Quèshí, zhè zhǒng jìngyè fùzé de tàidu zhídé qīnpèi, wǒ yào duō xiàng rènzhēn de rén xuéxí.",
+          "vi": "Quả thực, thái độ tận tâm trách nhiệm này rất đáng khâm phục, tôi phải học hỏi thêm ở những người nghiêm túc."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我要多向认真的人学习”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi phải học hỏi thêm ở những người nghiêm túc\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "李涛",
+          "hanzi": "细节决定成败，平时多检查一遍就能避免不少返工。",
+          "pinyin": "Xìjié juédìng chéngbài, píngshí duō jiǎnchá yí biàn jiù néng bìmiǎn bù shǎo fǎngōng.",
+          "vi": "Chi tiết quyết định thành bại, bình thường kiểm tra thêm một lần là tránh được bao nhiêu việc phải làm lại."
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "赵刚",
+          "hanzi": "你说得对，我们共同进步！",
+          "pinyin": "Nǐ shuō de duì, wǒmen gòngtóng jìnbù!",
+          "vi": "Bạn nói đúng lắm, chúng mình cùng nhau tiến bộ nhé!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我要多",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi phải học hỏi thêm ở những người nghiêm túc",
+          "hanzi": "我要多向认真的人学习",
+          "pinyin": "Wǒ yào duō xiàng rènzhēn de rén xuéxí",
+          "hanviet": "Ngã yếu đa hướng nhận chân đích nhân học tập",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi phải học hỏi nhiều hơn ở những người nghiêm túc",
           "example": {
-            "hanzi": "我要多向认真的人学习",
-            "pinyin": "",
-            "vi": "Tôi phải học hỏi thêm ở những người nghiêm túc"
+            "hanzi": "为了提高工作效率，我要多向认真的人学习。",
+            "pinyin": "Wèile tígāo gōngzuò xiàolǜ, wǒ yào duō xiàng rènzhēn de rén xuéxí.",
+            "vi": "Để nâng cao hiệu suất công việc, tôi cần học hỏi thêm ở những người làm việc nghiêm túc."
           }
         },
         {
@@ -25163,41 +25163,41 @@
       "tip": "Chủ điểm: Kỹ năng, Thành quả. Ngữ pháp: Câu phức điều kiện “只要…就…”; Cấu trúc “从…起”.",
       "dialogues": [
         {
-          "speaker": "A",
-          "hanzi": "我学会了包饺子",
-          "pinyin": "",
-          "vi": "Tôi đã học được cách gói sủi cảo"
+          "speaker": "玛丽",
+          "hanzi": "阿姨，包饺子的面皮捏不紧怎么办？",
+          "pinyin": "Āyí, bāo jiǎozi de miànpí niē bu jǐn zěnmebàn?",
+          "vi": "Dì ơi, vỏ bánh sủi cảo bóp không chặt thì làm thế nào ạ?"
         },
         {
-          "speaker": "B",
-          "hanzi": "没问题，我们按计划进行。",
-          "pinyin": "",
-          "vi": "Không thành vấn đề, chúng ta cứ theo kế hoạch mà làm."
+          "speaker": "阿姨",
+          "hanzi": "边缘抹一点点清水，双手拇指往中间一挤就合上了。",
+          "pinyin": "Biānyuán mǒ yìdiǎndiǎn qīngshuǐ, shuāngshǒu mǔzhǐ wǎng zhōngjiān yì jǐ jiù héshang le.",
+          "vi": "Mép thoa một tí xíu nước lọc, hai ngón tay cái ép vào giữa là dính chặt liền."
         },
         {
-          "speaker": "小明",
-          "hanzi": "关于“我学会了包饺子”，我们一起多练习吧！",
-          "pinyin": "",
-          "vi": "Về chủ đề \"Tôi đã học được cách gói sủi cảo\", chúng ta cùng nhau luyện tập thêm nhé!"
+          "speaker": "玛丽",
+          "hanzi": "哇，真的成了！看，我学会了包饺子！",
+          "pinyin": "Wā, zhēn de chéng le! Kàn, wǒ xuéhuì le bāo jiǎozi!",
+          "vi": "Oa, được thật rồi này! Dì nhìn xem, cháu biết gói sủi cảo rồi!"
         },
         {
-          "speaker": "老师",
-          "hanzi": "好啊，多听多说，你的汉语一定会越来越好。",
-          "pinyin": "",
-          "vi": "Được chứ, nghe nhiều nói nhiều thì tiếng Trung của em nhất định sẽ ngày càng tiến bộ."
+          "speaker": "阿姨",
+          "hanzi": "包得像个金元宝一样好看，快下锅煮吧！",
+          "pinyin": "Bāo de xiàng gè jīnyuánbǎo yíyàng hǎokàn, kuài xiàguō zhǔ ba!",
+          "vi": "Gói khéo như nén vàng thỏi vậy, mau cho vào nồi luộc thôi con!"
         }
       ],
       "vocabulary": [
         {
-          "hanzi": "我学会",
-          "pinyin": "",
-          "hanviet": "trọng điểm",
-          "pos": "Từ vựng cốt lõi",
-          "vi": "Tôi đã học được cách gói sủi cảo",
+          "hanzi": "我学会了包饺子",
+          "pinyin": "Wǒ xuéhuì le bāo jiǎozi",
+          "hanviet": "Ngã học hội liễu bao giảo tử",
+          "pos": "Mẫu câu cốt lõi",
+          "vi": "Tôi đã học được cách gói sủi cảo rồi",
           "example": {
-            "hanzi": "我学会了包饺子",
-            "pinyin": "",
-            "vi": "Tôi đã học được cách gói sủi cảo"
+            "hanzi": "经过一个下午的练习，我学会了包饺子。",
+            "pinyin": "Jīngguò yí gè xiàwǔ de liànxí, wǒ xuéhuì le bāo jiǎozi.",
+            "vi": "Qua một buổi chiều luyện tập, tôi đã học được cách gói sủi cảo."
           }
         },
         {
