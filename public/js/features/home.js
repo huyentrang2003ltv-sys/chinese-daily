@@ -300,36 +300,95 @@ async function startHomeSrsReview() {
 // ---------- Resume last lesson ----------
 
 function renderHomeResume() {
-  const last = userProfile.lastLesson;
   const volEl = document.getElementById('homeResumeVolume');
   const titleEl = document.getElementById('homeResumeTitle');
   const hintEl = document.getElementById('homeResumeHint');
   const badgeEl = document.getElementById('homeResumeBadge');
   const btnText = document.getElementById('homeResumeBtnText');
 
-  if (last && last.id) {
-    if (volEl) volEl.textContent = last.volumeName || 'Giáo trình Hán Ngữ';
-    if (titleEl) {
-      const pinyin = [last.titlePinyin, last.titleMeaning].filter(Boolean).join(' - ');
-      titleEl.innerHTML = `${escapeHtml(last.titleHanzi || '')}${pinyin ? ` <span class="text-xs font-normal text-stone-500 dark:text-stone-400">(${escapeHtml(pinyin)})</span>` : ''}`;
+  // Check HSK 3.0 progress first (core modern curriculum)
+  const completed = (typeof getHsk30CompletedLessons === 'function') ? getHsk30CompletedLessons() : (storage.get('yuhan_hsk30_completed_lessons', {}) || {});
+  const completedCount = Object.keys(completed).length;
+  const lastHsk = storage.get('yuhan_hsk30_last_lesson') || (userProfile && userProfile.lastHsk30Lesson);
+
+  if (completedCount > 0 || (lastHsk && lastHsk.lessonNumber)) {
+    // Return or next lesson
+    let target = lastHsk;
+    if (typeof getNextUncompletedHsk30Lesson === 'function') {
+      const nextUncompleted = getNextUncompletedHsk30Lesson();
+      if (nextUncompleted) {
+        target = {
+          level: nextUncompleted.hskLevel,
+          lessonNumber: nextUncompleted.lessonNumber,
+          titleZh: nextUncompleted.titleZh,
+          titleVi: nextUncompleted.titleVi,
+          titlePinyin: nextUncompleted.titlePinyin
+        };
+      }
     }
-    if (hintEl) hintEl.textContent = 'Bài bạn mở gần nhất. Bấm để học tiếp.';
-    if (badgeEl) badgeEl.textContent = 'Gần Nhất';
-    if (btnText) btnText.textContent = 'Mở Bài Học Tiếp Tục';
+
+    const lvl = (target && target.level) || 1;
+    const num = (target && target.lessonNumber) || 1;
+    const zh = (target && target.titleZh) || 'Bài Học HSK 3.0';
+    const vi = (target && target.titleVi) || 'Giao tiếp thực tế';
+
+    if (volEl) volEl.textContent = 'Lộ Trình Chuẩn HSK 3.0 Toàn Tập';
+    if (badgeEl) {
+      badgeEl.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-300 animate-pulse';
+      badgeEl.textContent = `Bài Tiếp Theo ⚡`;
+    }
+    if (titleEl) {
+      titleEl.innerHTML = `<span class="font-hanzi font-bold text-lg text-[#8B1E1E] dark:text-amber-400">HSK ${lvl} • Bài ${String(num).padStart(2, '0')}: ${escapeHtml(zh)}</span> <span class="text-xs font-normal text-stone-500 dark:text-stone-400">(${escapeHtml(vi)})</span>`;
+    }
+    if (hintEl) {
+      hintEl.textContent = `Tiến độ tổng thể: Đã hoàn thành ${completedCount}/68 bài HSK 3.0 (${Math.round(completedCount / 68 * 100)}%). Bấm để tiếp tục mạch học.`;
+    }
+    if (btnText) btnText.textContent = `▶ Tiếp Tục Bài ${num} (5 Phút)`;
   } else {
-    if (volEl) volEl.textContent = 'Giáo trình Hán Ngữ 6 quyển';
-    if (titleEl) titleEl.textContent = 'Bạn chưa mở bài học nào';
-    if (hintEl) hintEl.textContent = 'Bắt đầu từ giáo trình để xây nền tảng phát âm và từ vựng.';
-    if (badgeEl) badgeEl.textContent = 'Bắt Đầu';
-    if (btnText) btnText.textContent = 'Bắt Đầu Học';
+    // Brand new learner - Start with Lesson 1
+    if (volEl) volEl.textContent = 'Khung Chuẩn HSK 3.0 & Ngữ Âm Pinyin';
+    if (badgeEl) {
+      badgeEl.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300';
+      badgeEl.textContent = 'Khởi Động 🌱';
+    }
+    if (titleEl) {
+      titleEl.innerHTML = '<span class="font-hanzi font-bold text-lg text-[#8B1E1E] dark:text-amber-400">HSK 1 • Bài 01: AI小语，你好！</span> <span class="text-xs font-normal text-stone-500 dark:text-stone-400">(AI Xiaoyu, chào bạn!)</span>';
+    }
+    if (hintEl) {
+      hintEl.textContent = 'Bài học mở đầu: Chào hỏi cơ bản, 8 từ vựng nền tảng và làm quen với trợ lý AI Xiaoyu.';
+    }
+    if (btnText) btnText.textContent = '▶ Bắt Đầu Học Bài 1 (5 Phút)';
   }
 }
 
 async function resumeLastLesson() {
-  const lessonId = userProfile.lastLesson && userProfile.lastLesson.id;
-  await switchTab('jiaocheng');
-  if (lessonId) openLessonDetailModal(lessonId);
+  const completed = (typeof getHsk30CompletedLessons === 'function') ? getHsk30CompletedLessons() : (storage.get('yuhan_hsk30_completed_lessons', {}) || {});
+  const lastHsk = storage.get('yuhan_hsk30_last_lesson') || (userProfile && userProfile.lastHsk30Lesson);
+
+  let targetLvl = 1;
+  let targetNum = 1;
+
+  if (typeof getNextUncompletedHsk30Lesson === 'function') {
+    const nextUn = getNextUncompletedHsk30Lesson();
+    if (nextUn) {
+      targetLvl = Number(nextUn.hskLevel);
+      targetNum = Number(nextUn.lessonNumber);
+    }
+  } else if (lastHsk && lastHsk.lessonNumber) {
+    targetLvl = Number(lastHsk.level || 1);
+    targetNum = Number(lastHsk.lessonNumber || 1);
+  }
+
+  if (typeof openHsk30LessonModal === 'function') {
+    openHsk30LessonModal(targetLvl, targetNum);
+  } else {
+    await switchTab('hsk30');
+    if (typeof openHsk30LessonModal === 'function') {
+      openHsk30LessonModal(targetLvl, targetNum);
+    }
+  }
 }
+
 
 // ---------- Hanzi of the day ----------
 

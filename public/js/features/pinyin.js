@@ -93,6 +93,20 @@ function renderPinyinTab() {
       </div>
     </div>
 
+    <!-- Master Learning Bridge Banner -->
+    <div id="pinyinToHskBridgeBanner" class="p-4 rounded-2xl bg-gradient-to-r from-amber-500/15 via-rose-500/10 to-amber-500/15 border border-amber-300 dark:border-amber-700/60 shadow-2xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <span class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#8B1E1E] to-rose-700 text-white flex items-center justify-center font-bold text-lg shrink-0 shadow-xs">🎯</span>
+        <div>
+          <h4 class="text-xs sm:text-sm font-bold text-stone-900 dark:text-stone-100">Đã Luyện Xong Ngữ Âm Pinyin? Hãy Bắt Đầu Bài Giao Tiếp Đầu Tiên</h4>
+          <p class="text-[11px] text-stone-600 dark:text-stone-400">Chuyển tiếp liền mạch sang Giáo trình Chuẩn HSK 3.0 • Bài 1: AI Xiaoyu, chào bạn!</p>
+        </div>
+      </div>
+      <button onclick="if(typeof openHsk30LessonModal==='function') openHsk30LessonModal(1, 1); else { switchTab('hsk30'); openHsk30LessonModal(1, 1); }" class="px-4 py-2 rounded-xl bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white font-bold text-xs shadow-xs transition-all cursor-pointer whitespace-nowrap shrink-0">
+        Vào Học HSK 1 Bài 1 Ngay →
+      </button>
+    </div>
+
     <!-- Sub-tab Navigation Bar -->
     <div class="flex items-center gap-2 overflow-x-auto custom-scrollbar p-1.5 rounded-2xl bg-amber-50/60 dark:bg-stone-900/40 border border-amber-200 dark:border-stone-800">
       <button id="btn-pinyin-sub-matrix" onclick="switchPinyinSubTab('matrix')" class="pinyin-sub-btn px-4 py-2 text-xs font-bold rounded-xl transition-all whitespace-nowrap bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] text-white shadow-sm flex items-center gap-1.5 cursor-pointer border border-transparent">

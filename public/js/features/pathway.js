@@ -1,3 +1,101 @@
+var escapeHtml = (typeof escapeHtml === 'function') ? escapeHtml : function(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+};
+
+
+// ==================== HSK 3.0 MASTER PROGRESS & LEARNING LOOP ====================
+const HSK30_COMPLETED_KEY = 'yuhan_hsk30_completed_lessons';
+const HSK30_LAST_LESSON_KEY = 'yuhan_hsk30_last_lesson';
+
+function getHsk30CompletedLessons() {
+  if (typeof storage !== 'undefined' && storage.get) {
+    return storage.get(HSK30_COMPLETED_KEY, {}) || {};
+  }
+  try {
+    return JSON.parse(((typeof localStorage !== 'undefined' && localStorage) ? localStorage.getItem(HSK30_COMPLETED_KEY) : null) || '{}');
+  } catch (e) {
+    return {};
+  }
+}
+
+function isHsk30LessonCompleted(level, lessonNumber) {
+  const completed = getHsk30CompletedLessons();
+  return !!completed[`${level}_${lessonNumber}`];
+}
+
+function markHsk30LessonCompleted(level, lessonNumber) {
+  const completed = getHsk30CompletedLessons();
+  const key = `${level}_${lessonNumber}`;
+  if (!completed[key]) {
+    completed[key] = { completedAt: Date.now() };
+    if (typeof storage !== 'undefined' && storage.set) {
+      storage.set(HSK30_COMPLETED_KEY, completed);
+    } else {
+      if (typeof localStorage !== 'undefined' && localStorage) localStorage.setItem(HSK30_COMPLETED_KEY, JSON.stringify(completed));
+    }
+    }
+
+  recordHsk30LessonVisited(level, lessonNumber, true);
+
+  if (typeof renderHomeResume === 'function') renderHomeResume();
+  const container = document.getElementById('hsk30DedicatedCardsContainer');
+  if (container && document.getElementById('tab-hsk30') && !document.getElementById('tab-hsk30').classList.contains('hidden')) {
+    renderHsk30DedicatedCards(container);
+  }
+}
+
+function recordHsk30LessonVisited(level, lessonNumber, isCompleted = false) {
+  const all = (typeof hsk30RoadmapData !== 'undefined' && hsk30RoadmapData && (hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons)) || [];
+  const found = all.find(l => Number(l.hskLevel) === Number(level) && Number(l.lessonNumber) === Number(lessonNumber));
+  const record = {
+    level: Number(level),
+    lessonNumber: Number(lessonNumber),
+    titleZh: found ? found.titleZh : '',
+    titleVi: found ? found.titleVi : '',
+    titlePinyin: found ? found.titlePinyin : '',
+    completed: isCompleted,
+    timestamp: Date.now()
+  };
+
+  if (typeof storage !== 'undefined' && storage.set) {
+    storage.set(HSK30_LAST_LESSON_KEY, record);
+  } else {
+    if (typeof localStorage !== 'undefined' && localStorage) localStorage.setItem(HSK30_LAST_LESSON_KEY, JSON.stringify(record));
+  }
+
+  if (typeof userProfile !== 'undefined' && userProfile) {
+    userProfile.lastHsk30Lesson = record;
+    if (typeof storage !== 'undefined' && storage.set && typeof PROFILE_STORAGE_KEY !== 'undefined') {
+      storage.set(PROFILE_STORAGE_KEY, userProfile);
+    }
+  }
+
+  if (typeof renderHomeResume === 'function') renderHomeResume();
+}
+
+function getNextHsk30Lesson(level, lessonNumber) {
+  if (typeof hsk30RoadmapData === 'undefined' || !hsk30RoadmapData) return null;
+  const all = hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons || [];
+  const idx = all.findIndex(l => Number(l.hskLevel) === Number(level) && Number(l.lessonNumber) === Number(lessonNumber));
+  if (idx >= 0 && idx < all.length - 1) {
+    return all[idx + 1];
+  }
+  return null;
+}
+
+function getNextUncompletedHsk30Lesson() {
+  if (typeof hsk30RoadmapData === 'undefined' || !hsk30RoadmapData) return null;
+  const all = hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons || [];
+  const completed = getHsk30CompletedLessons();
+  for (const l of all) {
+    if (!completed[`${l.hskLevel}_${l.lessonNumber}`]) {
+      return l;
+    }
+  }
+  return all[0] || null;
+}
+
 // Module state
 let currentHskLevel = 1;
 let currentPathwayLessonsTab = 'standard48'; // 'standard48' or 'all1040'
@@ -965,7 +1063,7 @@ let currentViewingHsk30Lesson = null;
 let currentHsk30LessonTab = 'dialogues';
 let hsk30LessonQuizState = {};
 
-async function openHsk30LessonModal(level, lessonNumber) {
+async function openHsk30LessonModal(level, lessonNumber, initialTab = 'vocabulary') {
   if (!hsk30RoadmapData && typeof loadData === 'function') {
     await loadData('hsk30Roadmap');
   }
@@ -978,7 +1076,8 @@ async function openHsk30LessonModal(level, lessonNumber) {
   }
 
   currentViewingHsk30Lesson = lesson;
-  currentHsk30LessonTab = 'dialogues';
+  currentHsk30LessonTab = initialTab;
+  recordHsk30LessonVisited(level, lessonNumber);
   hsk30LessonQuizState = {};
 
   const modal = document.getElementById('hsk30LessonDetailModal');
@@ -1003,7 +1102,7 @@ async function openHsk30LessonModal(level, lessonNumber) {
   }
 
   updateHsk30LessonModalFooter();
-  switchHsk30LessonTab('dialogues');
+  switchHsk30LessonTab(currentHsk30LessonTab || 'vocabulary');
 
   const container = document.getElementById('hsk30LessonModalBody');
   if (container) container.scrollTop = 0;
@@ -1078,58 +1177,40 @@ function renderHsk30LessonDetailContent() {
   const container = document.getElementById('hsk30LessonModalBody');
   if (!container || !currentViewingHsk30Lesson) return;
   const l = currentViewingHsk30Lesson;
+  const isL1B1 = Number(l.hskLevel) === 1 && Number(l.lessonNumber) === 1;
+  const nextL = getNextHsk30Lesson(l.hskLevel, l.lessonNumber);
 
-  if (currentHsk30LessonTab === 'dialogues') {
-    const dialogues = l.dialogues || [];
-    container.innerHTML = `
-      <div class="space-y-4">
-        <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-stone-800">
-          <div>
-            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
-              <i data-lucide="message-square" class="w-4 h-4 text-amber-600"></i>
-              <span>Văn Bản Hội Thoại Chuẩn HSK 3.0</span>
-            </h4>
-            <p class="text-xs text-stone-500">Đối thoại ngữ cảnh sinh động chuẩn mực phát âm Bắc Kinh</p>
-          </div>
-          <button onclick="playHsk30AllDialogues()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-100 hover:bg-amber-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 flex items-center gap-1.5 transition-colors shadow-2xs cursor-pointer">
-            <i data-lucide="headphones" class="w-3.5 h-3.5 text-amber-600"></i>
-            <span>Nghe Toàn Bài</span>
-          </button>
-        </div>
-
-        <div class="space-y-3">
-          ${dialogues.map((d, idx) => `
-            <div class="p-3.5 rounded-2xl ${idx % 2 === 0 ? 'bg-amber-50/60 dark:bg-stone-900/60 border border-amber-200/60 dark:border-stone-800' : 'bg-stone-50/90 dark:bg-stone-800/40 border border-stone-200 dark:border-stone-700'} flex items-start gap-3">
-              <div class="w-8 h-8 rounded-full ${idx % 2 === 0 ? 'bg-amber-600 text-white' : 'bg-stone-600 text-white'} flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
-                ${(d.speaker || 'A').slice(0, 1)}
-              </div>
-              <div class="flex-1 space-y-1">
-                <div class="flex items-center justify-between">
-                  <span class="text-xs font-bold text-stone-600 dark:text-stone-400">${d.speaker}</span>
-                  <button onclick="playChineseTTS(${jsArg(d.hanzi)})" class="p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors cursor-pointer" title="Phát âm câu này">
-                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
-                  </button>
-                </div>
-                <p class="font-hanzi font-bold text-base text-stone-900 dark:text-stone-100 leading-relaxed">${d.hanzi}</p>
-                ${d.pinyin ? `<p class="text-xs text-stone-500 dark:text-stone-400 italic">${d.pinyin}</p>` : ''}
-                <p class="text-xs text-stone-700 dark:text-stone-300 font-medium">${d.vi}</p>
-              </div>
-            </div>
-          `).join('')}
+  // Friendly bridge for beginner on HSK 1 Lesson 1
+  const beginnerPinyinTip = isL1B1 ? `
+    <div class="p-3.5 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 dark:from-stone-900 dark:to-stone-800 border border-amber-300/80 dark:border-amber-700/60 shadow-2xs flex items-center justify-between gap-3 text-xs mb-3">
+      <div class="flex items-center gap-2.5">
+        <span class="text-lg">🌱</span>
+        <div>
+          <p class="font-bold text-amber-950 dark:text-amber-200">Bạn là người mới bắt đầu từ con số 0?</p>
+          <p class="text-[11px] text-stone-600 dark:text-stone-400">Nên khởi động bằng 4 thanh điệu Pinyin để phát âm chuẩn các từ vựng này.</p>
         </div>
       </div>
-    `;
-  } else if (currentHsk30LessonTab === 'vocabulary') {
+      <button onclick="closeHsk30LessonModal(); switchTab('pinyin');" class="px-3 py-1.5 rounded-xl bg-[#8B1E1E] text-white font-bold text-xs hover:bg-rose-800 transition-colors shadow-2xs cursor-pointer whitespace-nowrap">
+        Bảng Pinyin (2 Phút) →
+      </button>
+    </div>
+  ` : '';
+
+  if (currentHsk30LessonTab === 'vocabulary') {
     const vocab = l.vocabulary || [];
     container.innerHTML = `
       <div class="space-y-4">
+        ${beginnerPinyinTip}
         <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-stone-800">
           <div>
-            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
-              <i data-lucide="book-open" class="w-4 h-4 text-emerald-600"></i>
-              <span>Từ Vựng Trọng Tâm Bài Học (${vocab.length} từ)</span>
-            </h4>
-            <p class="text-xs text-stone-500">Kèm phiên âm, âm Hán Việt, từ loại và câu ví dụ thực tế</p>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 uppercase tracking-wider">BƯỚC 1 / 5</span>
+              <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                <i data-lucide="book-open" class="w-4 h-4 text-emerald-600"></i>
+                <span>Từ Vựng Trọng Tâm (${vocab.length} từ)</span>
+              </h4>
+            </div>
+            <p class="text-xs text-stone-500 mt-0.5">Nạp vốn từ vựng kèm phát âm chuẩn, từ loại và ví dụ câu thực tế</p>
           </div>
           <button onclick="saveAllHsk30LessonVocab()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 hover:bg-emerald-200 flex items-center gap-1.5 transition-colors shadow-2xs cursor-pointer">
             <i data-lucide="bookmark-plus" class="w-3.5 h-3.5"></i>
@@ -1145,40 +1226,41 @@ function renderHsk30LessonDetailContent() {
                 <div>
                   <div class="flex items-start justify-between gap-2">
                     <div>
-                      <span class="font-hanzi font-black text-xl text-stone-900 dark:text-stone-100">${v.hanzi}</span>
-                      <span class="text-xs text-stone-500 dark:text-stone-400 italic ml-2">${v.pinyin || ''}</span>
+                      <span class="font-hanzi font-black text-xl text-stone-900 dark:text-stone-100">${escapeHtml(v.hanzi)}</span>
+                      <span class="text-xs text-stone-500 dark:text-stone-400 italic ml-2">${escapeHtml(v.pinyin || '')}</span>
                     </div>
                     <div class="flex items-center gap-1">
                       <button onclick="playChineseTTS(${jsArg(v.hanzi)})" class="p-1.5 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 transition-colors cursor-pointer" title="Nghe từ">
                         <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                       </button>
-                      <button onclick="handleToggleHsk30Vocab(${jsArg(v.hanzi)}, ${jsArg(v.pinyin || '')}, ${jsArg(v.vi || '')}, ${l.hskLevel})" class="p-1.5 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 ${saved ? 'text-amber-600' : 'text-stone-400'} transition-colors cursor-pointer" title="${saved ? 'Đã lưu' : 'Lưu vào sổ từ'}">
+                      <button onclick="handleToggleHsk30Vocab(${jsArg(v.hanzi)}, ${jsArg(v.pinyin || '')}, ${jsArg(v.vi || '')}, ${l.hskLevel || 1})" class="p-1.5 rounded-lg ${saved ? 'text-amber-600 bg-amber-50 dark:bg-stone-800' : 'text-stone-400 hover:text-stone-600'} transition-colors cursor-pointer" title="${saved ? 'Bỏ lưu' : 'Lưu vào sổ tay'}">
                         <i data-lucide="${saved ? 'bookmark-check' : 'bookmark'}" class="w-3.5 h-3.5"></i>
                       </button>
                     </div>
                   </div>
-                  <div class="flex items-center gap-2 mt-1">
-                    ${v.hanviet ? `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-amber-100 dark:bg-stone-800 text-amber-900 dark:text-amber-300">HV: ${v.hanviet}</span>` : ''}
-                    <span class="px-2 py-0.5 rounded text-[10px] font-semibold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-300">${v.pos || 'Từ vựng'}</span>
-                  </div>
-                  <p class="text-xs font-semibold text-stone-800 dark:text-stone-200 mt-1.5">${v.vi}</p>
+                  <p class="text-xs font-semibold text-stone-800 dark:text-stone-200 mt-1">${escapeHtml(v.vi || '')}</p>
+                  ${v.pos ? `<span class="inline-block px-1.5 py-0.2 rounded text-[10px] bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 font-mono mt-1">${escapeHtml(v.pos)}</span>` : ''}
                 </div>
 
-                ${v.example && v.example.hanzi ? `
-                  <div class="p-2 rounded-xl bg-stone-50 dark:bg-stone-800/50 border border-stone-100 dark:border-stone-800 text-[11px] space-y-0.5 mt-2">
-                    <div class="flex items-center justify-between">
-                      <p class="font-hanzi font-bold text-stone-800 dark:text-stone-200">${v.example.hanzi}</p>
-                      <button onclick="playChineseTTS(${jsArg(v.example.hanzi)})" class="text-stone-400 hover:text-stone-700 cursor-pointer">
-                        <i data-lucide="volume-2" class="w-3 h-3"></i>
-                      </button>
-                    </div>
-                    ${v.example.pinyin ? `<p class="text-stone-400 italic">${v.example.pinyin}</p>` : ''}
-                    <p class="text-stone-600 dark:text-stone-400">${v.example.vi}</p>
+                ${v.exampleZh ? `
+                  <div class="p-2 rounded-xl bg-amber-50/50 dark:bg-stone-800/50 border border-amber-200/50 dark:border-stone-700/60 text-xs space-y-0.5 mt-2">
+                    <p class="font-hanzi font-bold text-stone-800 dark:text-stone-200">${escapeHtml(v.exampleZh)}</p>
+                    <p class="text-[11px] text-stone-500 dark:text-stone-400 italic">${escapeHtml(v.examplePinyin || '')}</p>
+                    <p class="text-[11px] text-stone-600 dark:text-stone-300">${escapeHtml(v.exampleVi || '')}</p>
                   </div>
                 ` : ''}
               </div>
             `;
           }).join('')}
+        </div>
+
+        <!-- Step Next Bar -->
+        <div class="pt-4 mt-6 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <span class="text-xs text-stone-500">Đã nắm từ mới? Tiếp tục học ngữ pháp</span>
+          <button onclick="switchHsk30LessonTab('grammar')" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-700 to-indigo-700 hover:opacity-95 text-white flex items-center gap-1.5 shadow-xs transition-all cursor-pointer group">
+            <span>Bước 2: Học Ngữ Pháp</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </button>
         </div>
       </div>
     `;
@@ -1187,37 +1269,37 @@ function renderHsk30LessonDetailContent() {
     container.innerHTML = `
       <div class="space-y-4">
         <div class="pb-2 border-b border-stone-200 dark:border-stone-800">
-          <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
-            <i data-lucide="compass" class="w-4 h-4 text-purple-600"></i>
-            <span>Trọng Điểm Ngữ Pháp Cốt Lõi (${grammar.length} điểm)</span>
-          </h4>
-          <p class="text-xs text-stone-500">Phân tích công thức, quy tắc ứng dụng và ví dụ song ngữ chuẩn Hanban</p>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-black bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 uppercase tracking-wider">BƯỚC 2 / 5</span>
+            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+              <i data-lucide="compass" class="w-4 h-4 text-purple-600"></i>
+              <span>Trọng Điểm Ngữ Pháp Cốt Lõi (${grammar.length} điểm)</span>
+            </h4>
+          </div>
+          <p class="text-xs text-stone-500 mt-0.5">Phân tích công thức, quy tắc ứng dụng và ví dụ song ngữ chuẩn Hanban</p>
         </div>
 
         <div class="space-y-4">
           ${grammar.map(g => `
             <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-purple-200/80 dark:border-stone-800 shadow-2xs space-y-3">
-              <h5 class="text-sm font-bold text-purple-950 dark:text-purple-300 font-serif-luxury">${g.title}</h5>
-              
+              <h5 class="text-sm font-bold text-purple-950 dark:text-purple-300 font-serif-luxury">${escapeHtml(g.title)}</h5>
               <div class="p-3 rounded-xl bg-purple-50/60 dark:bg-purple-950/30 border border-purple-100 dark:border-purple-900/40 text-xs font-mono font-semibold text-purple-900 dark:text-purple-300">
-                📌 Công thức: ${g.formula}
+                📌 Công thức: ${escapeHtml(g.formula)}
               </div>
-
               <div class="text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
-                ${g.explanation}
+                ${escapeHtml(g.explanation)}
               </div>
-
               ${g.examples && g.examples.length ? `
-                <div class="p-3 rounded-xl bg-stone-50 dark:bg-stone-800/40 border border-stone-200 dark:border-stone-800 space-y-2">
-                  <span class="text-[11px] font-bold text-stone-500 uppercase tracking-wider block">Ví dụ minh họa:</span>
+                <div class="space-y-2 pt-1 border-t border-purple-100/60 dark:border-stone-800">
+                  <span class="text-2xs font-bold uppercase tracking-wider text-purple-800 dark:text-purple-400">Ví Dụ Thực Tế:</span>
                   ${g.examples.map(ex => `
-                    <div class="flex items-start justify-between gap-2 text-xs">
+                    <div class="p-2.5 rounded-xl bg-stone-50 dark:bg-stone-800/60 border border-stone-200/60 dark:border-stone-700 flex items-start justify-between gap-2 text-xs">
                       <div class="space-y-0.5">
-                        <p class="font-hanzi font-bold text-stone-900 dark:text-stone-100">${ex.hanzi}</p>
-                        ${ex.pinyin ? `<p class="text-stone-500 italic text-[11px]">${ex.pinyin}</p>` : ''}
-                        <p class="text-stone-600 dark:text-stone-400 font-medium">${ex.vi}</p>
+                        <p class="font-hanzi font-bold text-stone-900 dark:text-stone-100">${escapeHtml(ex.zh)}</p>
+                        <p class="text-stone-500 text-[11px] italic">${escapeHtml(ex.pinyin || '')}</p>
+                        <p class="text-stone-700 dark:text-stone-300 font-medium text-[11px]">${escapeHtml(ex.vi)}</p>
                       </div>
-                      <button onclick="playChineseTTS(${jsArg(ex.hanzi)})" class="p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-400 shrink-0 cursor-pointer">
+                      <button onclick="playChineseTTS(${jsArg(ex.zh)})" class="p-1 rounded text-stone-400 hover:text-stone-700 cursor-pointer shrink-0">
                         <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                       </button>
                     </div>
@@ -1227,6 +1309,76 @@ function renderHsk30LessonDetailContent() {
             </div>
           `).join('')}
         </div>
+
+        <!-- Step Next Bar -->
+        <div class="pt-4 mt-6 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <button onclick="switchHsk30LessonTab('vocabulary')" class="px-3.5 py-2 rounded-xl text-xs font-bold text-stone-600 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+            ← Quay lại Từ Vựng
+          </button>
+          <button onclick="switchHsk30LessonTab('dialogues')" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-[#8B1E1E] to-[#A52A2A] hover:opacity-95 text-white flex items-center gap-1.5 shadow-xs transition-all cursor-pointer group">
+            <span>Bước 3: Luyện Hội Thoại</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+          </button>
+        </div>
+      </div>
+    `;
+  } else if (currentHsk30LessonTab === 'dialogues') {
+    const dialogues = l.dialogues || [];
+    container.innerHTML = `
+      <div class="space-y-4">
+        <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-stone-800">
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-black bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300 uppercase tracking-wider">BƯỚC 3 / 5</span>
+              <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                <i data-lucide="message-square" class="w-4 h-4 text-amber-600"></i>
+                <span>Văn Bản Hội Thoại Chuẩn HSK 3.0</span>
+              </h4>
+            </div>
+            <p class="text-xs text-stone-500 mt-0.5">Đối thoại ngữ cảnh sinh động chuẩn mực phát âm Bắc Kinh</p>
+          </div>
+          <button onclick="playHsk30AllDialogues()" class="px-3 py-1.5 rounded-xl text-xs font-bold bg-amber-100 hover:bg-amber-200 dark:bg-stone-800 dark:hover:bg-stone-700 text-stone-800 dark:text-stone-200 flex items-center gap-1.5 transition-colors shadow-2xs cursor-pointer">
+            <i data-lucide="headphones" class="w-3.5 h-3.5 text-amber-600"></i>
+            <span>Nghe Toàn Bài</span>
+          </button>
+        </div>
+
+        <div class="space-y-3">
+          ${dialogues.map((d, idx) => `
+            <div class="p-3.5 rounded-2xl ${idx % 2 === 0 ? 'bg-amber-50/60 dark:bg-stone-900/60 border border-amber-200/60 dark:border-stone-800' : 'bg-stone-50/90 dark:bg-stone-800/40 border border-stone-200 dark:border-stone-700'} flex items-start gap-3">
+              <div class="w-8 h-8 rounded-full ${idx % 2 === 0 ? 'bg-amber-600 text-white' : 'bg-stone-600 text-white'} flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+                ${escapeHtml((d.speaker || 'A').slice(0, 1))}
+              </div>
+              <div class="flex-1 space-y-1">
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-stone-600 dark:text-stone-400">${escapeHtml(d.speaker)}</span>
+                  <button onclick="playChineseTTS(${jsArg(d.hanzi)})" class="p-1 rounded-lg hover:bg-stone-200 dark:hover:bg-stone-700 text-stone-400 hover:text-stone-700 dark:hover:text-stone-200 transition-colors cursor-pointer" title="Phát âm câu này">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
+                <p class="font-hanzi font-bold text-base text-stone-900 dark:text-stone-100 leading-relaxed">${escapeHtml(d.hanzi)}</p>
+                ${d.pinyin ? `<p class="text-xs text-stone-500 dark:text-stone-400 italic">${escapeHtml(d.pinyin)}</p>` : ''}
+                <p class="text-xs text-stone-700 dark:text-stone-300 font-medium">${escapeHtml(d.vi)}</p>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+
+        <!-- Step Next Bar -->
+        <div class="pt-4 mt-6 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <button onclick="switchHsk30LessonTab('grammar')" class="px-3.5 py-2 rounded-xl text-xs font-bold text-stone-600 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+            ← Quay lại Ngữ Pháp
+          </button>
+          <div class="flex items-center gap-2">
+            <button onclick="switchHsk30LessonTab('culture')" class="px-3.5 py-2 rounded-xl text-xs font-bold bg-amber-100 hover:bg-amber-200 text-amber-900 dark:bg-stone-800 dark:text-amber-300 transition-all cursor-pointer">
+              Mẹo Văn Hóa →
+            </button>
+            <button onclick="switchHsk30LessonTab('practice')" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-rose-700 to-amber-700 hover:opacity-95 text-white flex items-center gap-1.5 shadow-xs transition-all cursor-pointer group">
+              <span>Làm Bài Tập Vượt Ải (+20 EXP)</span>
+              <i data-lucide="sparkles" class="w-4 h-4 text-amber-200"></i>
+            </button>
+          </div>
+        </div>
       </div>
     `;
   } else if (currentHsk30LessonTab === 'culture') {
@@ -1234,11 +1386,14 @@ function renderHsk30LessonDetailContent() {
     container.innerHTML = `
       <div class="space-y-4">
         <div class="pb-2 border-b border-stone-200 dark:border-stone-800">
-          <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
-            <i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i>
-            <span>Văn Hóa Đời Sống & Chiến Thuật Thi HSK 3.0</span>
-          </h4>
-          <p class="text-xs text-stone-500">Bí kíp thực chiến từ giáo viên bản xứ và chuyên gia khảo thí</p>
+          <div class="flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded-md text-[10px] font-black bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 uppercase tracking-wider">BƯỚC 4 / 5</span>
+            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+              <i data-lucide="lightbulb" class="w-4 h-4 text-amber-500"></i>
+              <span>Văn Hóa Đời Sống & Chiến Thuật Thi HSK 3.0</span>
+            </h4>
+          </div>
+          <p class="text-xs text-stone-500 mt-0.5">Bí kíp thực chiến từ giáo viên bản xứ và chuyên gia khảo thí</p>
         </div>
 
         <div class="space-y-3">
@@ -1248,29 +1403,30 @@ function renderHsk30LessonDetailContent() {
               <span>Văn Hóa Giao Tiếp & Đời Sống Trung Hoa</span>
             </div>
             <p class="text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
-              ${tips.culture || l.tip || 'HSK 3.0 chú trọng giao tiếp thực chiến và hòa nhập văn hóa bản xứ.'}
+              ${escapeHtml(tips.culture || l.tip || 'HSK 3.0 chú trọng giao tiếp thực chiến và hòa nhập văn hóa bản xứ.')}
             </p>
           </div>
 
           <div class="p-4 rounded-2xl bg-blue-50/70 dark:bg-[#1a2333] border border-blue-200 dark:border-blue-900/50 space-y-1.5">
             <div class="flex items-center gap-2 text-blue-900 dark:text-blue-300 font-bold text-xs">
               <i data-lucide="shield-check" class="w-4 h-4 text-blue-600"></i>
-              <span>Chiến Thuật Thi HSK 3.0 & Bẫy Cần Tránh</span>
+              <span>Bí Quyết Tránh Bẫy Trong Đề Thi Chuẩn</span>
             </div>
             <p class="text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
-              ${tips.examTip || 'Lưu ý các hư từ, trật tự câu và tránh viết sai nét bút thuận trong bài thi.'}
+              ${escapeHtml(tips.examTip || 'Lưu ý trật tự từ và trợ từ ngữ khí trong các câu hỏi giao tiếp.')}
             </p>
           </div>
+        </div>
 
-          <div class="p-4 rounded-2xl bg-emerald-50/70 dark:bg-[#1b2621] border border-emerald-200 dark:border-emerald-900/50 space-y-1.5">
-            <div class="flex items-center gap-2 text-emerald-900 dark:text-emerald-300 font-bold text-xs">
-              <i data-lucide="smartphone" class="w-4 h-4 text-emerald-600"></i>
-              <span>Ứng Dụng Thực Tế Thời Đại 4.0</span>
-            </div>
-            <p class="text-xs text-stone-700 dark:text-stone-300 leading-relaxed">
-              ${tips.practicalApp || 'Áp dụng trực tiếp trong nhắn tin WeChat, đặt vé tàu cao tốc và mua sắm trực tuyến.'}
-            </p>
-          </div>
+        <!-- Step Next Bar -->
+        <div class="pt-4 mt-6 border-t border-stone-200 dark:border-stone-800 flex items-center justify-between">
+          <button onclick="switchHsk30LessonTab('dialogues')" class="px-3.5 py-2 rounded-xl text-xs font-bold text-stone-600 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors">
+            ← Quay lại Hội Thoại
+          </button>
+          <button onclick="switchHsk30LessonTab('practice')" class="px-4 py-2 rounded-xl text-xs font-bold bg-gradient-to-r from-amber-600 to-amber-700 hover:opacity-95 text-white flex items-center gap-1.5 shadow-xs transition-all cursor-pointer group">
+            <span>Bước 5: Làm Bài Tập Vượt Ải (+20 EXP)</span>
+            <i data-lucide="sparkles" class="w-4 h-4 text-amber-200"></i>
+          </button>
         </div>
       </div>
     `;
@@ -1294,11 +1450,14 @@ function renderHsk30LessonDetailContent() {
       <div class="space-y-4">
         <div class="flex items-center justify-between pb-2 border-b border-stone-200 dark:border-stone-800">
           <div>
-            <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-2">
-              <i data-lucide="pencil" class="w-4 h-4 text-rose-600"></i>
-              <span>Luyện Tập Củng Cố Kiến Thức (${totalQ} câu hỏi)</span>
-            </h4>
-            <p class="text-xs text-stone-500">Trả lời đúng toàn bộ nhận ngay +20 EXP vào hồ sơ học viên</p>
+            <div class="flex items-center gap-2">
+              <span class="px-2 py-0.5 rounded-md text-[10px] font-black bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 uppercase tracking-wider">BƯỚC 5 / 5 (VƯỢT ẢI)</span>
+              <h4 class="text-sm font-bold text-stone-900 dark:text-stone-100 flex items-center gap-1.5">
+                <i data-lucide="pencil" class="w-4 h-4 text-rose-600"></i>
+                <span>Luyện Tập Củng Cố Kiến Thức (${totalQ} câu hỏi)</span>
+              </h4>
+            </div>
+            <p class="text-xs text-stone-500 mt-0.5">Trả lời đúng toàn bộ nhận ngay +20 EXP và tự động mở khóa bài kế tiếp</p>
           </div>
           <span class="px-2.5 py-1 rounded-full text-xs font-bold ${isAllCorrect ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300' : 'bg-stone-100 text-stone-700 dark:bg-stone-800 dark:text-stone-300'}">
             Đúng ${correctCount}/${totalQ} câu
@@ -1306,48 +1465,70 @@ function renderHsk30LessonDetailContent() {
         </div>
 
         ${isAllCorrect ? `
-          <div class="p-4 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-md flex items-center justify-between gap-3 animate-scale-up">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center font-bold text-lg">🎉</div>
-              <div>
-                <h5 class="text-sm font-bold">Xuất Sắc! Bạn Đã Làm Đúng Toàn Bộ!</h5>
-                <p class="text-xs opacity-90">+20 EXP đã được cộng vào tài khoản của bạn.</p>
+          <div class="p-5 rounded-2xl bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white shadow-lg space-y-3 animate-scale-up">
+            <div class="flex items-center justify-between flex-wrap gap-3">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center font-bold text-2xl shadow-inner">🎉</div>
+                <div>
+                  <h5 class="text-base font-black">XUẤT SẮC! BẠN ĐÃ HOÀN THÀNH BÀI ${l.lessonNumber}!</h5>
+                  <p class="text-xs opacity-90">+20 EXP đã được cộng và tiến độ bài học đã lưu vào Lộ trình.</p>
+                </div>
               </div>
+              <span class="px-3 py-1 rounded-full text-xs font-black bg-white text-emerald-800 shadow-xs">
+                ĐẠT CHUẨN 100%
+              </span>
             </div>
-            <button onclick="navigateHsk30Lesson('next')" class="px-3.5 py-1.5 rounded-xl bg-white text-emerald-800 font-bold text-xs shadow-xs hover:bg-emerald-50 transition-all cursor-pointer">
-              Bài tiếp theo →
-            </button>
+            <div class="pt-2 flex items-center justify-end gap-2.5">
+              <button onclick="closeHsk30LessonModal()" class="px-4 py-2 rounded-xl text-xs font-bold bg-white/10 hover:bg-white/20 text-white transition-all cursor-pointer">
+                Đóng
+              </button>
+              ${nextL ? `
+                <button onclick="navigateHsk30Lesson('next')" class="px-5 py-2.5 rounded-xl text-xs font-black bg-white hover:bg-amber-50 text-emerald-900 shadow-md flex items-center gap-2 hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                  <span>HOÀN THÀNH & SANG BÀI KẾ TIẾP (BÀI ${nextL.lessonNumber}: ${nextL.titleZh})</span>
+                  <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </button>
+              ` : ''}
+            </div>
           </div>
         ` : ''}
 
         <div class="space-y-4">
-          ${quiz.map((q, qIdx) => {
-            const userPick = hsk30LessonQuizState[qIdx];
+          ${quiz.map((q, idx) => {
+            const userPick = hsk30LessonQuizState[idx];
             const isAnswered = userPick !== undefined;
             return `
-              <div class="p-4 rounded-2xl bg-white dark:bg-stone-900 border border-stone-200 dark:border-stone-800 shadow-2xs space-y-3">
-                <p class="text-xs font-bold text-stone-900 dark:text-stone-100 leading-snug">
-                  <span class="w-5 h-5 rounded-full bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400 font-bold inline-flex items-center justify-center text-[10px] mr-1.5">${qIdx + 1}</span>
-                  ${q.question}
-                </p>
+              <div class="p-4 rounded-2xl bg-stone-50 dark:bg-stone-900/60 border border-stone-200 dark:border-stone-800 space-y-3">
+                <div class="flex items-start justify-between gap-2">
+                  <h5 class="text-xs font-bold text-stone-800 dark:text-stone-200">
+                    Câu ${idx + 1}: ${escapeHtml(q.question)}
+                  </h5>
+                  <button onclick="playChineseTTS(${jsArg(q.question)})" class="p-1 rounded text-stone-400 hover:text-stone-600 cursor-pointer">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                  </button>
+                </div>
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
                   ${(q.options || []).map((opt, optIdx) => {
-                    let btnStyle = 'bg-stone-50 hover:bg-amber-50 dark:bg-stone-800/60 dark:hover:bg-stone-700 border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200';
+                    let optClass = 'bg-white dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-stone-800 dark:text-stone-200 hover:border-amber-400';
                     if (isAnswered) {
                       if (optIdx === q.answer) {
-                        btnStyle = 'bg-emerald-100 border-emerald-400 text-emerald-900 dark:bg-emerald-950/80 dark:border-emerald-600 dark:text-emerald-200 font-bold';
-                      } else if (optIdx === userPick) {
-                        btnStyle = 'bg-rose-100 border-rose-400 text-rose-900 dark:bg-rose-950/80 dark:border-rose-600 dark:text-rose-200 line-through';
+                        optClass = 'bg-emerald-100 dark:bg-emerald-950/80 border-emerald-500 text-emerald-900 dark:text-emerald-200 font-bold';
+                      } else if (userPick === optIdx) {
+                        optClass = 'bg-rose-100 dark:bg-rose-950/80 border-rose-500 text-rose-900 dark:text-rose-200 line-through';
                       } else {
-                        btnStyle = 'opacity-50 bg-stone-50 dark:bg-stone-800 border-stone-200 dark:border-stone-700 text-stone-400';
+                        optClass = 'opacity-40 border-stone-200 dark:border-stone-700';
                       }
                     }
+
                     return `
-                      <button onclick="checkHsk30LessonQuiz(${qIdx}, ${optIdx})" class="p-2.5 rounded-xl border text-left text-xs transition-all flex items-center justify-between cursor-pointer ${btnStyle}">
-                        <span>${opt}</span>
-                        ${isAnswered && optIdx === q.answer ? '<i data-lucide="check" class="w-4 h-4 text-emerald-600 shrink-0"></i>' : ''}
-                        ${isAnswered && optIdx === userPick && optIdx !== q.answer ? '<i data-lucide="x" class="w-4 h-4 text-rose-600 shrink-0"></i>' : ''}
+                      <button 
+                        onclick="checkHsk30LessonQuiz(${idx}, ${optIdx})" 
+                        ${isAnswered ? 'disabled' : ''}
+                        class="p-2.5 rounded-xl border text-xs text-left transition-all flex items-center justify-between cursor-pointer ${optClass}"
+                      >
+                        <span>${escapeHtml(opt)}</span>
+                        ${isAnswered && optIdx === q.answer ? '<i data-lucide="check" class="w-3.5 h-3.5 text-emerald-600"></i>' : ''}
+                        ${isAnswered && userPick === optIdx && optIdx !== q.answer ? '<i data-lucide="x" class="w-3.5 h-3.5 text-rose-600"></i>' : ''}
                       </button>
                     `;
                   }).join('')}
@@ -1359,7 +1540,7 @@ function renderHsk30LessonDetailContent() {
                       <i data-lucide="${userPick === q.answer ? 'check-circle-2' : 'alert-circle'}" class="w-3.5 h-3.5"></i>
                       <span>${userPick === q.answer ? 'Chính xác!' : 'Chưa chính xác.'}</span>
                     </p>
-                    <p class="text-[11px] leading-relaxed opacity-95">${q.explain}</p>
+                    <p class="text-[11px] leading-relaxed opacity-95">${escapeHtml(q.explain || '')}</p>
                   </div>
                 ` : ''}
               </div>
@@ -1396,7 +1577,8 @@ function checkHsk30LessonQuiz(qIdx, optIdx) {
   if (allAnswered && allCorrect && !hsk30LessonQuizState.__awarded) {
     hsk30LessonQuizState.__awarded = true;
     if (typeof addExp === 'function') addExp(20, 'Hoàn thành bài tập HSK 3.0');
-    if (typeof showToast === 'function') showToast('Chúc mừng! Bạn đã nhận được +20 EXP!');
+    if (typeof showToast === 'function') showToast('Chúc mừng! Bạn đã hoàn thành bài học và nhận được +20 EXP!');
+    markHsk30LessonCompleted(currentViewingHsk30Lesson.hskLevel, currentViewingHsk30Lesson.lessonNumber);
   }
 
   renderHsk30LessonDetailContent();
@@ -1794,6 +1976,9 @@ function renderHsk30DedicatedCards(container) {
         const vocabCount = (l.vocabulary && l.vocabulary.length) || 0;
         const grammarCount = (l.grammarPoints && l.grammarPoints.length) || 0;
         const quizCount = (l.practice && l.practice.length) || 0;
+        const isCompleted = isHsk30LessonCompleted(l.hskLevel, l.lessonNumber);
+        const nextTarget = getNextUncompletedHsk30Lesson();
+        const isNextTarget = nextTarget && Number(nextTarget.hskLevel) === Number(l.hskLevel) && Number(nextTarget.lessonNumber) === Number(l.lessonNumber);
 
         // Structured speech preview (First 2 dialogue lines with avatars)
         let dialoguePreviewHtml = '';
@@ -1848,6 +2033,17 @@ function renderHsk30DedicatedCards(container) {
                   <span class="px-2 py-0.5 rounded-lg text-2xs font-bold bg-stone-100 dark:bg-stone-800 text-stone-600 dark:text-stone-400">
                     ${escapeHtml(theme.levelLabel)}
                   </span>
+                  ${isCompleted ? `
+                    <span class="px-2 py-0.5 rounded-lg text-2xs font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 flex items-center gap-1 shadow-2xs">
+                      <span>✓</span>
+                      <span>Đã Hoàn Thành</span>
+                    </span>
+                  ` : (isNextTarget ? `
+                    <span class="px-2 py-0.5 rounded-lg text-2xs font-black bg-amber-500 text-white animate-pulse flex items-center gap-1 shadow-2xs">
+                      <span>⚡</span>
+                      <span>Bài Kế Tiếp</span>
+                    </span>
+                  ` : '')}
                 </div>
                 <button onclick="event.stopPropagation(); playChineseTTS(${jsArg(l.titleZh)})" class="p-2 rounded-xl bg-amber-50 hover:bg-amber-100 dark:bg-stone-800 dark:hover:bg-stone-700 text-amber-800 dark:text-amber-300 hover:scale-110 active:scale-95 transition-all shadow-2xs cursor-pointer" title="Phát âm tiêu đề chuẩn Bắc Kinh">
                   <i data-lucide="volume-2" class="w-4 h-4"></i>
@@ -1923,7 +2119,7 @@ function renderHsk30DedicatedCards(container) {
 
               <button onclick="event.stopPropagation(); openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="w-full py-2.5 px-4 rounded-xl text-xs font-bold ${theme.ctaBtn} shadow-xs hover:shadow-md hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2 cursor-pointer group-hover:brightness-105">
                 <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
-                <span>Vào Học Bài Này • Chi Tiết →</span>
+                <span>${isCompleted ? '✓ Đã Hoàn Thành • Ôn Lại →' : (isNextTarget ? '▶ Tiếp Tục Học Bài Này →' : 'Vào Học Bài Này • Chi Tiết →')}</span>
               </button>
             </div>
           </div>
