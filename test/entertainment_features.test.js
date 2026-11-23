@@ -47,8 +47,8 @@ test('⚔️ & 🧩 Entertainment & Gamification Suite (PvP Arena & Chengyu Word
   await t.test('2. Validates Router Navigation, Tab Registration & Active Task Guards', () => {
     assert.ok(routerCode.includes("arena: {"), 'Router TABS must include arena');
     assert.ok(routerCode.includes("wordle: {"), 'Router TABS must include wordle');
-    assert.ok(routerCode.includes("'arena'"), 'NAV_GROUPS must include arena');
-    assert.ok(routerCode.includes("'wordle'"), 'NAV_GROUPS must include wordle');
+    assert.ok(!routerCode.match(/id:\s*'train'[^}]*tabs:\s*\[[^\]]*'arena'/), 'NAV_GROUPS train group must not include arena');
+    assert.ok(!routerCode.match(/id:\s*'train'[^}]*tabs:\s*\[[^\]]*'wordle'/), 'NAV_GROUPS train group must not include wordle');
     assert.ok(routerCode.includes("'dautruong': 'arena'"), 'TAB_ALIASES must alias dautruong to arena');
     assert.ok(routerCode.includes("'pvp': 'arena'"), 'TAB_ALIASES must alias pvp to arena');
     assert.ok(routerCode.includes("'chudoan': 'wordle'"), 'TAB_ALIASES must alias chudoan to wordle');
