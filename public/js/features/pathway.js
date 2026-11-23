@@ -899,9 +899,15 @@ function renderPathwayLessonsView(container) {
             </button>
             <button 
               onclick="filterHsk30CourseLevel(3)" 
-              class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 3 ? 'bg-[#8B1E1E] text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-rose-50'}"
+              class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 3 ? 'bg-amber-600 text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-amber-50'}"
             >
               HSK 3 (18 Bài)
+            </button>
+            <button 
+              onclick="filterHsk30CourseLevel(4)" 
+              class="px-3.5 py-1.5 text-xs font-bold rounded-xl transition-all cursor-pointer whitespace-nowrap ${currentHsk30CourseFilter === 4 ? 'bg-purple-600 text-white shadow-2xs' : 'bg-stone-100 dark:bg-stone-800 text-stone-700 dark:text-stone-300 hover:bg-purple-50'}"
+            >
+              HSK 4 (20 Bài)
             </button>
           </div>
 
@@ -987,7 +993,7 @@ function searchHsk30Lessons(query) {
 
 function renderHsk30StandardCourseCards(container) {
   if (!container || !hsk30RoadmapData) return;
-  const allLessons = hsk30RoadmapData.standardCourse48Lessons || [];
+  const allLessons = hsk30RoadmapData.standardCourse68Lessons || hsk30RoadmapData.standardCourseLessons || hsk30RoadmapData.standardCourse48Lessons || [];
 
   const filtered = allLessons.filter(l => {
     const matchLevel = (currentHsk30CourseFilter === 0) || (l.hskLevel === currentHsk30CourseFilter);
@@ -1015,9 +1021,23 @@ function renderHsk30StandardCourseCards(container) {
         <div onclick="openHsk30LessonModal(${l.hskLevel}, ${l.lessonNumber})" class="glass-card rounded-2xl p-4 bg-white dark:bg-[#161B22] border border-amber-200/80 dark:border-stone-800 shadow-xs flex flex-col justify-between space-y-3 hover:border-amber-400 hover:shadow-md transition-all cursor-pointer group">
           <div class="space-y-2">
             <div class="flex items-center justify-between">
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${l.hskLevel === 1 ? 'bg-blue-100 text-blue-800' : (l.hskLevel === 2 ? 'bg-emerald-100 text-emerald-800' : (l.hskLevel === 3 ? 'bg-rose-100 text-rose-800' : 'bg-amber-100 text-amber-800'))}">
-                HSK ${l.hskLevel} · Bài ${l.lessonNumber}
-              </span>
+              <div class="flex items-center gap-1.5 flex-wrap">
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-black ${l.hskLevel === 1 ? 'bg-blue-100 text-blue-800' : (l.hskLevel === 2 ? 'bg-emerald-100 text-emerald-800' : (l.hskLevel === 3 ? 'bg-amber-100 text-amber-800' : 'bg-purple-100 text-purple-800'))}">
+                  HSK ${l.hskLevel} · Bài ${l.lessonNumber}
+                </span>
+                ${isHsk30LessonCompleted(l.hskLevel, l.lessonNumber) ? `
+                  <span class="px-1.5 py-0.5 rounded-md text-[9px] font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 flex items-center gap-0.5">
+                    <span>✓</span><span>Đã học</span>
+                  </span>
+                ` : ((() => {
+                  const nt = getNextUncompletedHsk30Lesson();
+                  return nt && Number(nt.hskLevel) === Number(l.hskLevel) && Number(nt.lessonNumber) === Number(l.lessonNumber);
+                })() ? `
+                  <span class="px-1.5 py-0.5 rounded-md text-[9px] font-bold bg-amber-500 text-white animate-pulse">
+                    ⚡ Tiếp theo
+                  </span>
+                ` : '')}
+              </div>
               <button onclick="event.stopPropagation(); playChineseTTS(${jsArg(l.titleZh)})" class="p-1 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800 text-stone-500 hover:text-stone-800 dark:hover:text-stone-200 transition-colors" title="Nghe tiêu đề">
                 <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
               </button>
