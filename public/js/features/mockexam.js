@@ -1,3 +1,15 @@
+if (typeof escapeJs !== 'function') {
+  escapeJs = function (str) {
+    if (!str) return '';
+    return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
+  };
+}
+if (typeof escapeHtml !== 'function') {
+  escapeHtml = function (str) {
+    if (!str) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  };
+}
 // ==========================================
 // MODULE: THI THỬ HSK MÔ PHỎNG CHUẨN HANBAN CTI & STUDY4
 // Kho 360 Đề Thi (60 Đề / Cấp Độ HSK 1 - 6)
@@ -1022,15 +1034,6 @@ function renderMockExam() {
   renderQuestionPalette();
 }
 
-function escapeJs(str) {
-  if (!str) return '';
-  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
-}
-
-function escapeHtml(str) {
-  if (!str) return '';
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
 
 // ---------------- 60 EXAMS SELECTOR MODAL ----------------
 function openExamSelectorModal() {

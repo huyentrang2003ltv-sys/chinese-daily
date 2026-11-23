@@ -1,3 +1,9 @@
+if (typeof escapeJs !== 'function') {
+  escapeJs = function (str) {
+    if (!str) return '';
+    return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
+  };
+}
 // ==========================================
 // MODULE: PHÒNG KHẢO THÍ KHẨU NGỮ HSKK CHUẨN CTI HANBAN
 // HSKK Oral Examination Lab (初级 • 中级 • 高级)
@@ -217,10 +223,6 @@ function getAllHskkQuestionsForCurrentLevel() {
   return list;
 }
 
-function escapeJs(str) {
-  if (!str) return '';
-  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
-}
 
 // ---------------- RENDER HSKK WORKBENCH ----------------
 function renderHskkWorkbench() {

@@ -1522,6 +1522,7 @@
 
   // ---------------- EXPORTS ----------------
   root.initPvPArenaTab = initPvPArenaTab;
+  root.renderArenaLobby = renderArenaLobby;
   root.openPvPArenaModal = openPvPArenaModal;
   root.closePvPArenaModal = closePvPArenaModal;
   root.selectPvPArenaDifficulty = selectPvPArenaDifficulty;

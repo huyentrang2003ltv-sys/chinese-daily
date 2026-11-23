@@ -900,6 +900,14 @@ async function openWordModalWithToken(hanzi, pinyin, vi) {
   await openWordModalByTitle(hanzi);
 }
 
+async function openWordModal(hanzi, pinyin, vi) {
+  if (!hanzi) return;
+  await openWordModalByTitle(hanzi);
+}
+if (typeof window !== 'undefined') {
+  window.openWordModal = openWordModal;
+}
+
 // ---------------- FLOATING WORD QUICK LOOKUP (GLOBAL TAP & SELECTION) ----------------
 function hideFloatingWordLookup() {
   const pill = document.getElementById('floatingWordLookupBtn');

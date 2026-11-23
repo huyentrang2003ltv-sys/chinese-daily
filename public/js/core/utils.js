@@ -37,6 +37,12 @@ function jsArg(value) {
   return escapeHtml(JSON.stringify(value == null ? '' : String(value)));
 }
 
+/** Escape a value for insertion into single-quoted JS strings in inline handlers. */
+function escapeJs(str) {
+  if (!str) return '';
+  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
+}
+
 /** localStorage wrappers that never throw (private mode, quota, disabled storage). */
 const storage = {
   get(key, fallback = null) {

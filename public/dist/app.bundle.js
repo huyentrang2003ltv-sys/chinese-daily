@@ -40,6 +40,12 @@ function jsArg(value) {
   return escapeHtml(JSON.stringify(value == null ? '' : String(value)));
 }
 
+/** Escape a value for insertion into single-quoted JS strings in inline handlers. */
+function escapeJs(str) {
+  if (!str) return '';
+  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
+}
+
 /** localStorage wrappers that never throw (private mode, quota, disabled storage). */
 const storage = {
   get(key, fallback = null) {
@@ -5397,11 +5403,12 @@ function renderPinyinQuizView(container) {
 ;
 
 /* --- FILE: js/features/pathway.js --- */
-var escapeHtml = (typeof escapeHtml === 'function') ? escapeHtml : function(s) {
-  if (s === null || s === undefined) return '';
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-};
-
+if (typeof escapeHtml !== 'function') {
+  escapeHtml = function (s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+  };
+}
 
 // ==================== HSK 3.0 MASTER PROGRESS & LEARNING LOOP ====================
 const HSK30_COMPLETED_KEY = 'yuhan_hsk30_completed_lessons';
@@ -13206,6 +13213,14 @@ async function openWordModalWithToken(hanzi, pinyin, vi) {
   await openWordModalByTitle(hanzi);
 }
 
+async function openWordModal(hanzi, pinyin, vi) {
+  if (!hanzi) return;
+  await openWordModalByTitle(hanzi);
+}
+if (typeof window !== 'undefined') {
+  window.openWordModal = openWordModal;
+}
+
 // ---------------- FLOATING WORD QUICK LOOKUP (GLOBAL TAP & SELECTION) ----------------
 function hideFloatingWordLookup() {
   const pill = document.getElementById('floatingWordLookupBtn');
@@ -16043,6 +16058,18 @@ window.closeAppInstallModal = closeAppInstallModal;
 ;
 
 /* --- FILE: js/features/mockexam.js --- */
+if (typeof escapeJs !== 'function') {
+  escapeJs = function (str) {
+    if (!str) return '';
+    return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
+  };
+}
+if (typeof escapeHtml !== 'function') {
+  escapeHtml = function (str) {
+    if (!str) return '';
+    return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  };
+}
 // ==========================================
 // MODULE: THI THỬ HSK MÔ PHỎNG CHUẨN HANBAN CTI & STUDY4
 // Kho 360 Đề Thi (60 Đề / Cấp Độ HSK 1 - 6)
@@ -17067,15 +17094,6 @@ function renderMockExam() {
   renderQuestionPalette();
 }
 
-function escapeJs(str) {
-  if (!str) return '';
-  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
-}
-
-function escapeHtml(str) {
-  if (!str) return '';
-  return String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-}
 
 // ---------------- 60 EXAMS SELECTOR MODAL ----------------
 function openExamSelectorModal() {
@@ -17812,6 +17830,12 @@ window.nextIbtSection = nextIbtSection;
 ;
 
 /* --- FILE: js/features/hskk_exam.js --- */
+if (typeof escapeJs !== 'function') {
+  escapeJs = function (str) {
+    if (!str) return '';
+    return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
+  };
+}
 // ==========================================
 // MODULE: PHÒNG KHẢO THÍ KHẨU NGỮ HSKK CHUẨN CTI HANBAN
 // HSKK Oral Examination Lab (初级 • 中级 • 高级)
@@ -18031,10 +18055,6 @@ function getAllHskkQuestionsForCurrentLevel() {
   return list;
 }
 
-function escapeJs(str) {
-  if (!str) return '';
-  return String(str).replace(/\\/g, '\\\\').replace(/'/g, "\\'").replace(/\n/g, '\\n').replace(/\r/g, '');
-}
 
 // ---------------- RENDER HSKK WORKBENCH ----------------
 function renderHskkWorkbench() {
@@ -31099,6 +31119,7 @@ if (typeof module !== 'undefined' && module.exports) {
 
   // ---------------- EXPORTS ----------------
   root.initPvPArenaTab = initPvPArenaTab;
+  root.renderArenaLobby = renderArenaLobby;
   root.openPvPArenaModal = openPvPArenaModal;
   root.closePvPArenaModal = closePvPArenaModal;
   root.selectPvPArenaDifficulty = selectPvPArenaDifficulty;
@@ -31997,7 +32018,7 @@ if (typeof module !== 'undefined' && module.exports) {
             <span class="text-3xl sm:text-4xl font-chinese font-black text-amber-200 tracking-wider">
               ${currentIdiom.chengyu}
             </span>
-            <button onclick="if(typeof playTts==='function') playTts('${currentIdiom.chengyu}', 'zh-CN')" class="w-9 h-9 rounded-xl bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 border border-amber-400/40 flex items-center justify-center transition-all cursor-pointer" title="Nghe phát âm chuẩn">
+            <button onclick="playChineseTTS('${currentIdiom.chengyu}')" class="w-9 h-9 rounded-xl bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 border border-amber-400/40 flex items-center justify-center transition-all cursor-pointer" title="Nghe phát âm chuẩn">
               <i data-lucide="volume-2" class="w-4 h-4"></i>
             </button>
           </div>

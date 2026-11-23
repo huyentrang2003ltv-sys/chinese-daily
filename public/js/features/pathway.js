@@ -1,8 +1,9 @@
-var escapeHtml = (typeof escapeHtml === 'function') ? escapeHtml : function(s) {
-  if (s === null || s === undefined) return '';
-  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
-};
-
+if (typeof escapeHtml !== 'function') {
+  escapeHtml = function (s) {
+    if (s === null || s === undefined) return '';
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+  };
+}
 
 // ==================== HSK 3.0 MASTER PROGRESS & LEARNING LOOP ====================
 const HSK30_COMPLETED_KEY = 'yuhan_hsk30_completed_lessons';

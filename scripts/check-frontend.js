@@ -35,17 +35,26 @@ for (const src of scripts) {
 
 // Top-level declarations per file
 const declared = new Map();
+const handlerCallable = new Set();
 const declRe = /^(?:async\s+)?function\s+([A-Za-z_$][\w$]*)|^(?:let|const|var)\s+([A-Za-z_$][\w$]*)/gm;
 for (const [src, code] of Object.entries(sources)) {
   for (const m of code.matchAll(declRe)) {
     const name = m[1] || m[2];
     if (declared.has(name)) errors.push(`"${name}" declared in both ${declared.get(name)} and ${src}`);
-    else declared.set(name, src);
+    else {
+      declared.set(name, src);
+      handlerCallable.add(name);
+    }
+  }
+  // Handlers can also call functions exported on window, globalThis, or root
+  const winRe = /(?:window|globalThis|root)\.([A-Za-z_$][\w$]*)\s*=/g;
+  for (const m of code.matchAll(winRe)) {
+    handlerCallable.add(m[1]);
   }
 }
 
 // Functions called from inline handlers in HTML and in JS template strings
-const BUILTINS = new Set(['event', 'this', 'window', 'document', 'if', 'return', 'decodeURIComponent', 'encodeURIComponent', 'setTimeout']);
+const BUILTINS = new Set(['event', 'this', 'window', 'document', 'if', 'return', 'decodeURIComponent', 'encodeURIComponent', 'setTimeout', 'showToast']);
 const handlerRe = /\bon(?:click|change|input|keydown|keyup|submit)="([^"]*)"/g;
 const callRe = /(?:^|[;\s(!])([A-Za-z_$][\w$]*)\s*\(/g;
 const allText = [html, ...Object.values(sources)].join('\n');
@@ -58,7 +67,7 @@ for (const m of allText.matchAll(handlerRe)) {
   }
 }
 for (const name of called) {
-  if (!declared.has(name)) errors.push(`Inline handler calls undefined function: ${name}()`);
+  if (!handlerCallable.has(name)) errors.push(`Inline handler calls undefined function: ${name}()`);
 }
 
 if (errors.length) {

@@ -880,7 +880,7 @@
             <span class="text-3xl sm:text-4xl font-chinese font-black text-amber-200 tracking-wider">
               ${currentIdiom.chengyu}
             </span>
-            <button onclick="if(typeof playTts==='function') playTts('${currentIdiom.chengyu}', 'zh-CN')" class="w-9 h-9 rounded-xl bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 border border-amber-400/40 flex items-center justify-center transition-all cursor-pointer" title="Nghe phát âm chuẩn">
+            <button onclick="playChineseTTS('${currentIdiom.chengyu}')" class="w-9 h-9 rounded-xl bg-amber-500/20 hover:bg-amber-500/40 text-amber-300 border border-amber-400/40 flex items-center justify-center transition-all cursor-pointer" title="Nghe phát âm chuẩn">
               <i data-lucide="volume-2" class="w-4 h-4"></i>
             </button>
           </div>
