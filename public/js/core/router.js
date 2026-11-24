@@ -10,13 +10,13 @@ const TABS = {
     label: 'Khung 90 Ngày HSK 3', icon: 'flame', data: ['hsk90Curriculum'],
     init: () => { if (typeof renderHsk90Tab === 'function') renderHsk90Tab(); else if (window.renderHsk90Tab) window.renderHsk90Tab(); }
   },
-  pathway: { label: 'Lộ trình HSK 3.0', icon: 'map', data: ['hsk30Roadmap'], init: () => renderPathwayTab() },
+  pathway: { label: 'Lộ trình HSK 3.0 (Trục chính)', icon: 'map', data: ['hsk30Roadmap'], init: () => renderPathwayTab() },
   hsk30: {
     label: 'Giáo trình HSK 3.0', icon: 'graduation-cap', data: ['hsk30Roadmap'],
     init: () => renderHsk30DedicatedTab()
   },
   jiaocheng: {
-    label: 'Giáo trình Hán ngữ', icon: 'book-marked', data: ['jiaocheng'],
+    label: 'Giáo trình Hán ngữ (Tham khảo)', icon: 'book-marked', data: ['jiaocheng'],
     init: () => { renderJiaocheng(); setupJiaochengSearch(); }
   },
   etymology: {
@@ -83,7 +83,7 @@ const TABS = {
 /** Top-level groups shown in the main nav (bottom bar on mobile). */
 const NAV_GROUPS = [
   { id: 'home', label: 'Trang chủ', short: 'Trang chủ', icon: 'house', tabs: ['home'] },
-  { id: 'path', label: 'Lộ trình & Ngữ âm', short: 'Lộ trình', icon: 'route', tabs: ['pinyin', 'hsk90', 'pathway', 'hsk30', 'jiaocheng'] },
+  { id: 'path', label: 'Lộ trình & Ngữ âm', short: 'Lộ trình', icon: 'route', tabs: ['pinyin', 'pathway', 'jiaocheng', 'hsk90'] },
   { id: 'hanzi', label: 'Chữ Hán', short: 'Chữ Hán', icon: 'type', tabs: ['etymology', 'radicals'] },
   { id: 'vocab', label: 'Từ vựng', short: 'Từ vựng', icon: 'book-a', tabs: ['dictionary', 'flashcards', 'confusions', 'chengyu'] },
   { id: 'read', label: 'Ngữ pháp & Đọc', short: 'Ngữ pháp', icon: 'library', tabs: ['grammar', 'readings', 'culture'] },

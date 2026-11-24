@@ -338,27 +338,34 @@ function renderHomeResume() {
       badgeEl.textContent = `Bài Tiếp Theo ⚡`;
     }
     if (titleEl) {
-      titleEl.innerHTML = `<span class="font-hanzi font-bold text-lg text-[#8B1E1E] dark:text-amber-400">HSK ${lvl} • Bài ${String(num).padStart(2, '0')}: ${escapeHtml(zh)}</span> <span class="text-xs font-normal text-stone-500 dark:text-stone-400">(${escapeHtml(vi)})</span>`;
+      titleEl.innerHTML = `<span class="font-hanzi font-black text-xl lg:text-2xl text-amber-200 tracking-wide">HSK ${lvl} • Bài ${String(num).padStart(2, '0')}: ${escapeHtml(zh)}</span> <span class="text-xs sm:text-sm font-normal text-amber-100/90 ml-1.5">(${escapeHtml(vi)})</span>`;
     }
     if (hintEl) {
       hintEl.textContent = `Tiến độ tổng thể: Đã hoàn thành ${completedCount}/68 bài HSK 3.0 (${Math.round(completedCount / 68 * 100)}%). Bấm để tiếp tục mạch học.`;
     }
-    if (btnText) btnText.textContent = `▶ Tiếp Tục Bài ${num} (5 Phút)`;
+    if (btnText) btnText.textContent = `▶ Tiếp Tục Bài ${num} (15 Phút)`;
   } else {
     // Brand new learner - Start with Lesson 1
     if (volEl) volEl.textContent = 'Khung Chuẩn HSK 3.0 & Ngữ Âm Pinyin';
     if (badgeEl) {
-      badgeEl.className = 'px-2.5 py-0.5 rounded-full text-[10px] font-black bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300';
+      badgeEl.className = 'px-3 py-1 rounded-full text-xs font-black bg-amber-400 text-stone-950 shadow-xs animate-pulse';
       badgeEl.textContent = 'Khởi Động 🌱';
     }
     if (titleEl) {
-      titleEl.innerHTML = '<span class="font-hanzi font-bold text-lg text-[#8B1E1E] dark:text-amber-400">HSK 1 • Bài 01: AI小语，你好！</span> <span class="text-xs font-normal text-stone-500 dark:text-stone-400">(AI Xiaoyu, chào bạn!)</span>';
+      titleEl.innerHTML = '<span class="font-hanzi font-black text-xl lg:text-2xl text-amber-200 tracking-wide">HSK 1 • Bài 01: AI小语，你好！</span> <span class="text-xs sm:text-sm font-normal text-amber-100/90 ml-1.5">(AI Xiaoyu, chào bạn!)</span>';
     }
     if (hintEl) {
       hintEl.textContent = 'Bài học mở đầu: Chào hỏi cơ bản, 8 từ vựng nền tảng và làm quen với trợ lý AI Xiaoyu.';
     }
-    if (btnText) btnText.textContent = '▶ Bắt Đầu Học Bài 1 (5 Phút)';
+    if (btnText) btnText.textContent = '▶ Bắt Đầu Học Bài 1 (15 Phút)';
   }
+
+  // Update visual progress bar on Hero card
+  const progressFill = document.getElementById('homeResumeProgressBar');
+  const progressText = document.getElementById('homeResumeProgressPercent');
+  const pct = Math.min(100, Math.round(completedCount / 68 * 100));
+  if (progressFill) progressFill.style.width = `${pct}%`;
+  if (progressText) progressText.textContent = `${pct}% Hoàn Thành (${completedCount}/68 bài)`;
 }
 
 async function resumeLastLesson() {
